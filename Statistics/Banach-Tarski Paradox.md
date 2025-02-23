@@ -1,4 +1,3 @@
-
 One can decompose a solid ball in three-dimensional space into a finite number of disjoint subsets and, by applying only rotations and translations (i.e., rigid motions), reassemble these pieces into two solid balls each congruent to the original.
 
 There exists a finite partition of the ball into non-overlapping sets $A_1, A_2, \ldots, A_n$ such that, by appropriately choosing isometries (rotations and translations), one can form two copies of the original ball. Symbolically, if $B$ is the ball, there exist isometries $T_1, T_2, \ldots, T_k$ such that

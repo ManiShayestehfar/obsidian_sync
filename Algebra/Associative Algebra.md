@@ -1,4 +1,4 @@
->[!tip] Definition
+>[!info] Definition
 >An **Associative algebra** over a field $k$ is a vector space $A$ over $k$ equipped with a multiplication operator  $x,y \to xy$ for $x,y \in A$ with properties:
 >
 >1. **Associativity:**   $x(yz) = (xy)z$   for $x,y,z \in A$ 
