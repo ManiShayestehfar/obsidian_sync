@@ -1,5 +1,4 @@
 
-
 >[!info] Definition
 >A **vector space** is a set $V$ together with two operations—**vector addition** and **scalar multiplication**—that satisfy the following axioms. 
 
