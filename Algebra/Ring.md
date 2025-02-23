@@ -1,6 +1,6 @@
 >[!info] Definition
 >A ring $(R,+,\cdot)$ is a triple consisting of a set $R$ with binary operations $+,\cdot: R \times R \to R$  such that
->1. **Associativity:**   $(R, +)$ is an abelian group. i.e. $a + (b + c) = (a + b) + c$   and   $a + b = b + a$ 
+>1. **Associativity:**   $(R, +)$ is an abelian [[Group]]. i.e. $a + (b + c) = (a + b) + c$   and   $a + b = b + a$ 
 >2.  **Identity:**  There exists $0 = 0_R$ such that $0 + a = a$
 >3. **Inverse:**  For all $a \in R$, there exists $-a\in R$  such that  $a + (-a) = 0_R$ 
 >4. **Multiplicative associativity:**   $a \cdot (b \cdot c) = (a \cdot b) \cdot c$ 
