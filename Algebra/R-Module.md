@@ -2,10 +2,34 @@
 >[!info] Definition
 >Let $R$ be a [[Ring]]. An **R-Module** is an additive abelian [[Group]] $V$ with a ring homomorphism $\Phi: \mathbb{R} \to \text{End}(V)$ or $\Phi: \mathbb{R} \times V \to V$ such that $\Phi(1_R) = 1_V$ is the identity map on $V$.
 
+$$R\text{-Module is a Vector Space} \iff R\text{   is a field  } \mathbb{F}$$
+
+## Subspace
+
+A **subspace** of $V$ is an abelian subgroup $W$ of $V$. I.e. $W$ is a subset that is closed under addition and scalar multiplication (w.r.t $\mathbb{F}$).
+
+>[!tip] Subspace Criterion
+>A non-empty subset $U$ of $V$ is a vector subspace if and only if $u - u' \in U$ for $u,u'\in U$.
+
+## Coset
+
+If $W$ is a subspace of $V$ and $v \in V$, then the **coset** of $v$ in $W$ is 
+$$[v] =v + W = \{v+w \:|\: \omega \in W\}$$
+
+- $v + W = v'+ W \iff v - v' \in W$ 
+- $v + W$ is a subspace of $V$ $\iff v \in W$ 
+	- $v + W = W = 0 + W$
+
+
+## Quotient Space
+
+If $W$ is a subspace of $V$ then the **quotient space** 
+$$V / W = \{v + W \:|\: v \in V\}$$
+then $V / W$ is a $\mathbb{F}-$vector space with
 
 # Action
 
-For $r \in R$, let $\varphi_{r}= \Phi(r) \in \text{End}(V)$. Then $\varphi_{r}: V\to V$ is a homomorphism. Since $\Phi$ is a ring homomorphism
+For $r \in R$, let $\varphi_{r}= \Phi(r) \in \text{End}(V)$. Then $\varphi_{r}: V\to V$ is a homomorphism. Since $\Phi$ is a [[Ring]] homomorphism
 1. $\varphi_{r+s} = \Phi(r+s) = \Phi(r) + \Phi(s) = \varphi_{r}+ \varphi_s$ 
 2. $\varphi_{rs} = \Phi(rs) = \varphi_{r}\circ \varphi_{s}\quad$   for $r,s\in R$ 
 
