@@ -12,3 +12,7 @@ The set of all possible outcomes is the **sample space** $\Omega$.
 **Events** are subsets of $\Omega$ to which we can assign a probability. 
 - An event $A$ has occurred if the outcome, or sample point $\omega \in \Omega$ satisfies $\omega \in A$. 
 
+
+## de Morgan Laws
+$$(A\cup B)^{c}= A^{c}\cap B^c$$
+$$(A \cap B)^{c}= A^{c}\cup B^c$$

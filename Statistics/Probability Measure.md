@@ -10,7 +10,9 @@
 >
 >
  
-- Parts 1 and 3 of the definition beg the existence of [[Banach-Tarski Paradox]]
+- Parts 1 and 3 of the definition beg the existence of [[Banach-Tarski Paradox]].
+
+- If $A,B$ are disjoint events then $P(A\cup B) = P(A) + P(B)$ 
 
 
 

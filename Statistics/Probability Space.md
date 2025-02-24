@@ -4,6 +4,7 @@
 >2. $\mathcal{F}$ is a [[Sigma-Algebra]] 
 >3. $P$ is a [[Probability Measure]] on $(\Omega, \mathcal{F})$
 
+
 ## Example
 
 ### Rolling a fair die
