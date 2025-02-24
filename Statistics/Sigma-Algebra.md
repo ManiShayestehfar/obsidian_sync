@@ -14,3 +14,4 @@
 >$A,B \in \mathcal{F} \overset{(2)}{\implies} A^c , B^c \in \mathcal{F} \overset{(3)}{\implies} A^{c}\cup B^{c}\in \mathcal{F} \overset{\small \text{de M.}}{\implies} (A\cap B)^c \in \mathcal{F} \overset{(2)}{\implies} A\cap B \in \mathcal{F}$
 
 
+
