@@ -9,7 +9,7 @@
 ### Rolling a fair die
 
 - $\Omega = \{1,2,3,4,5,6\}$
-- $\mathcal{F} = 2^{|\Omega|}$
+- $\mathcal{F} = 2^{\Omega}$
 - $P(\{i\}) = 1/6$  for $i = 1,...,6$
 - $P(A) = |A| / 6$  for $A \in \mathcal{F}$
 

@@ -7,7 +7,6 @@ The set of all possible outcomes is the **sample space** $\Omega$.
 1. Rolling a die: $\Omega = \{1,2,3,4,5,6\}$
 2. Coin flip: $\Omega = \{H,T\}$
 
-
 ## Events
 
 **Events** are subsets of $\Omega$ to which we can assign a probability. 
