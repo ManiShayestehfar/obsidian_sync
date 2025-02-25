@@ -1,6 +1,6 @@
 
 >[!info] Definition
->A collection of subsets of $\Omega, \mathcal{F},$ is a $\sigma-algebra$ if:
+>A collection of subsets of $\Omega, \mathcal{F},$ is a $\sigma-$algebra if:
 >1. $\Omega \in \mathcal{F}$
 >2. $A \in \mathcal{F} \implies A^{c}\in \mathcal{F}$ 
 >3. $A_1,A_{2,...}\in \mathcal{F} \implies \bigcup_{n=1}^{\infty}A_{n}\in \mathcal{F}$ (w.r.t a countable union)
