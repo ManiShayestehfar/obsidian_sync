@@ -3,6 +3,7 @@
 >$$X: \Sigma \to \mathbb{R}$$
 >Some times the range being $\bar{\mathbb{R}} := \mathbb{R}\cup \{-\infty, \infty\}$ 
 
+
 >[!info] Definition
 >A random variable is **discrete** if its range, $X(\Omega)$, is a countable set.
 
