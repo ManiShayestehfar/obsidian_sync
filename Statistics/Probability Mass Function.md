@@ -56,7 +56,7 @@ A negative binomial random variable $X^r$, where $r \in \mathbb{N}_1$ is a fixed
 $$X^r(\Omega)= \{r,r+1,...\} \cup \{\infty\}$$
 
 **What is its pmf?**
-Fix $k \in \{k, k+1,...\}$ and consider configuration for which $X^r = k$. That is $k-r$ many fails and $r$ many successes. Probability of each configuration is 
+Fix $k \in \{r, r+1,...\}$ and consider configuration for which $X^r = k$. That is $k-r$ many fails and $r$ many successes. Probability of each configuration is 
 $$(1-p)^{k-1}p^r$$
 
 How many configurations are there for which $X^r = k$?

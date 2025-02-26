@@ -2,6 +2,7 @@
 >Events $A,B\in\mathcal{F}$ are **independent** if 
 >$$P(A \cap B) = P(A)P(B)$$
 
+
 - Independent DOES NOT MEAN Disjoint. Disjoint means $P(A \cap B) = 0$ .
 
 
