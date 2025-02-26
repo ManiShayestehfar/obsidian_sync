@@ -1,5 +1,5 @@
 >[!info] Definition
->An **Equiprobable space** consists of a *finite* sample space $\Omega$ such that
+>An **Equiprobable space** consists of a *finite* [[Basic Definitions|sample space]] $\Omega$ such that
 >$$\forall \omega \in \Omega,\quad P_e(\{\omega\}) = c > 0$$  
 >where $c = 1 / |\Omega|$.
 
@@ -40,3 +40,32 @@ $$P_e(A)=\frac{|A|}{|\Omega|}.\quad \square$$
 #### Examples
 - A fair die rolled and its outcome noted. For $A \subset \{1,...,6\},$
 $$P(A) = \frac{|A|}{6}$$
+
+#### Birthday Problem
+
+>A group of $n$ people meet at a party. What is the probability that at least two of the share their birthday?
+
+- Each individual birthday in $\{1,2,...,365\}$
+- Each combination of $n$ days is equally likely. So sample space is
+$$\Omega := \{(i_1,i_2,...,i_n):i_{k}\in\{1,...,365\},\quad k =1,...,n\}$$
+$\implies |\Omega| = 365^n$. So $P(\omega) = 1/365^{n}$
+
+Let $A = \{(i_1,i_2,...,i_{n})\in \Omega:\exists j\neq k \:\:\text{s.t.}\:\: i_j=i_k\}$. We need $P(A)$.
+
+Start from the negation. $A^{c}= \{(i_1,i_2,...,i_{n})\in \Omega:\forall j\neq k \:\:\text{s.t.}\:\: i_{j} \neq i_k\}$.
+$$|A^{c}|= 365\times 364\times ... \times (365 - (n-1)) = \prod_{i=1}^{n}(365 - (i-1))$$
+$$\begin{align*}\implies P(A^{c}) &=  \frac{\prod_{i=1}^{n}(365 - (i-1))}{\prod_{i=1}^{n}365} \\[6pt]
+&= \prod_{i=1}^{n}\left(1-\frac{i-1}{365}\right)
+ \end{align*}$$
+ For $n=23, P(A^{c})\approx 0.5$. $\implies P(A) = 0.5\quad\square$.
+
+#### A slightly different problem
+
+> What is the probability that at least one of $n$ guests shares the host's birthday? i.e. what is the number of guests $n$ such that $P(B) = 0.5$?
+
+$B = \{(i_1,...,i_{n})\in\Omega : \exists j\:\:\text{s.t.}\:\: i_{j}=x\}$ where $x$ is the host's birthday.
+
+$B^{c}= \{(i_1,...,i_{n})\in\Omega : \forall j\:\:\text{s.t.}\:\: i_{j}\neq x\}$.
+$|B^{c}| = 364 \times 364 \times ... \times 364 = 364^n$, so $P(B^{c})= \frac{364^{n}}{365^{n}} = (1 - \frac{1}{365})^{n}\approx e^\frac{-n}{365}$  
+
+For $n =253, P(B^c) \approx 0.5 \implies P(B) = 0.5 \quad\square$

@@ -16,3 +16,7 @@ The set of all possible outcomes is the **sample space** $\Omega$.
 ## de Morgan Laws
 $$(A\cup B)^{c}= A^{c}\cap B^c$$
 $$(A \cap B)^{c}= A^{c}\cup B^c$$
+
+## Distributive laws
+
+![[Pasted image 20250226213110.png]]
