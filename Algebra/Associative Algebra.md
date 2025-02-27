@@ -10,6 +10,9 @@
 >
 There is always a unit such that $1 \cdot x = x \cdot 1 = x$  for all $x \in A$
 
+
+
+
 >[!tip] Every Associative Algebra is an [[R-Module]] with the added feature of having **bilinear and associative multiplication**.
 
 # Examples
