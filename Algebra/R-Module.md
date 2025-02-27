@@ -5,8 +5,6 @@
 $$R\text{-Module is a Vector Space} \iff R\text{   is a field  } \mathbb{F}$$
 
 
-
-
 ## Subspace
 
 A **subspace** of $V$ is an abelian subgroup $W$ of $V$. I.e. $W$ is a subset that is closed under addition and scalar multiplication (w.r.t $\mathbb{F}$).
