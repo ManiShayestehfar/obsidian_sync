@@ -16,3 +16,6 @@
 - If the operation $\ast$ is **commutative** (i.e., $a \ast b = b \ast a$ for all $a, b \in G$), then the group is called an **abelian group**.
 
 
+## Normal Subgroup
+
+A **Normal Subgroup** $H \leq G$ is defined if $gH = Hg$ for all $g \in G$. We write $H \trianglelefteq G$.  
