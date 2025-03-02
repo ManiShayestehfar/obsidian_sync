@@ -19,3 +19,7 @@
 ## Normal Subgroup
 
 A **Normal Subgroup** $H \leq G$ is defined if $gH = Hg$ for all $g \in G$. We write $H \trianglelefteq G$.  
+
+### Simple Group
+
+A group $G$ is **simple** if it has no proper normal subgroups
