@@ -1,6 +1,8 @@
 
 >[!info] Definition
->A **representation** of an [[Associative Algebra]] is a vector space $V$ equipped with homomorphism $\rho:\: A \to \textrm{End}\: V$.  i.e. a linear map preserving the multiplication and unit.
+>A **representation** of an [[Associative Algebra]]  or a **left $A$-module** is a [[vector space]] $V$ equipped with homomorphism $\rho:\: A \to \textrm{End}\: V$.  i.e. a linear map preserving the multiplication and unit.
+
+A **left $A-$module** is a vector space $V$ with *anti*-homomorphism $\rho:A \to \text{End}V$. The two only differ in associativity laws.
 
 A **sub-representation** of a representation $V$ is a subspace $U \subset V$ which is invariant under all operators $\rho(a), \:\:\:a\in A$.  
 
