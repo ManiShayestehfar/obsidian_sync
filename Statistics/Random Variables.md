@@ -1,6 +1,6 @@
 >[!info] Definition
 >A **random variable** is a *measurable* function
->$$X: \Sigma \to \mathbb{R}$$
+>$$X: \Omega \to \mathbb{R}$$
 >Some times the range being $\bar{\mathbb{R}} := \mathbb{R}\cup \{-\infty, \infty\}$ 
 
 
