@@ -51,3 +51,19 @@ E(X) &= pf'(q) \\[2pt]
 
 - For example, the alternating harmonic series $\sum {a_k}$ where $a_k = (-1)^{k+1}\frac{1}{k} = x_k \cdot p_X(x_k)$.
 	- Converges depending on the value of $k$
+
+>[!example] We say $E(X)$ is *well-defined* if the series $\sum_k x_kp_X(k)$ does not depend on the order of summation
+
+Let $S^+$ and $S^-$ denote the sum of positive and minus the negative elements $a_n$ respectively where $\{a_n\}\subset \mathbb{R}$.
+$$\begin{align*}
+S^+ &:= \sum_n a_n1_{a_n>0}\\[4pt]
+S^- &:= \sum_n (-a_n)1_{a_n<0}
+\end{align*}$$
+
+![[Pasted image 20250305232741.png]]
+![[Pasted image 20250305233031.png|500]]
+
+>[!info] Definition 
+>Denote $L^1 = L^1(\Omega, \mathcal{F}. P) = L^1(\Omega)$ the space of all discrete random variables $X: \Omega \to \mathbb{R}$ such that with $\{x_n\} = X(\Omega)$,
+>$$\sum_n |x_n|\cdot p_X(x_n) < \infty $$ 
+>
