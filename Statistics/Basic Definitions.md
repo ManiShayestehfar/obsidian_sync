@@ -20,3 +20,6 @@ $$(A \cap B)^{c}= A^{c}\cup B^c$$
 ## Distributive laws
 
 ![[Pasted image 20250226213110.png]]
+
+## Binomial expansion
+$$(a+b)^n = \sum_{k=0}^n \begin{pmatrix}n \\ k \end{pmatrix} a^k \: b^{n-k}$$

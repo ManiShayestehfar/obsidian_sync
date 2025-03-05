@@ -48,3 +48,56 @@ $$P(Z=\ell) = \begin{pmatrix} n \\ \ell \end{pmatrix} p^\ell (1-p)^{n-\ell}$$ i.
 
 	![[Screenshot 2025-03-05 at 11.20.06 am.png|400]]
 	- i.e $Z \sim \text{Poisson}(\lambda + \gamma)$ 
+
+
+# Conditional Distribution of the Summand Given Total
+
+## Binomial Sum
+
+Let $X \sim \text{Binomial}(m,p)$, and  $Y \sim \text{Binomial}(n-m,p)$
+
+- We know that $Z = X+Y \sim \text{Binomial}(n,p)$
+
+> *What is the conditional distribution of $X$ given $Z =r$?*
+
+![[Screenshot 2025-03-05 at 3.58.15 pm.png]]
+**NOTE:** This is conditional on $Z = X+Y =r$. 
+
+This is conditional probability is described by a [[Hypergeometric Random Variable]] $\text{Hyper}(m,n,r)$
+
+![[Screenshot 2025-03-05 at 4.04.58 pm.png|500]]
+
+> [!quote]  How to think of this?
+> This described by [[Hypergeometric Random Variable]] because the conditional probability is like asking: From $n$ trials, I have had $r$ successes. What is the probability that $k$ of them are $X$-coloured from a total of $m$-many $X$-coloured balls?
+
+- Here for $r$ with $P(Z=r)>0$, we can define **conditional[[Probability Mass Function | pmf]]** of $X$ given $Z=r$ as 
+$$p_{X|Z}(k|r) := P(X=k \:|\: Z=1)$$
+
+
+## Poisson Sum
+
+Let $X \sim \text{Poisson}(\lambda)$, and  $Y \sim \text{Poisson}(\gamma)$ 
+
+- Consider the *conditional pmf* of $X$ given $Z=X+Y = n\in\mathbb{N}$ 
+- Since $Y\geq 0$, and $Z=n$, then $X = k \in \{0,1,...,n\}$
+
+![[Screenshot 2025-03-05 at 4.18.26 pm.png|500]]
+
+$\implies$ The conditional distribution pf $X$, given $X+Y=n$ is $\text{Binomial}(n, p=1- \frac{\lambda}{\lambda+\gamma})$  
+
+> [!quote] How to think of this?
+> Imagine two sources emitting particles at rates $\lambda,\gamma$
+> Each of the observed particles can be independently attributed to the first source with a fixed probability related to its relative intensity/rate.
+
+
+
+
+
+
+
+
+
+
+
+
+
