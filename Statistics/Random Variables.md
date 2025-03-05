@@ -6,7 +6,6 @@
 >[!info] Definition
 >A random variable is **discrete** if its range, $X(\Omega)$, is a countable set.
 
-
 # Independent Random Variables
 
 > [!info] Definition
