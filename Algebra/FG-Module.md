@@ -30,3 +30,4 @@ $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatri
 >[!tip] Proposition 1
 >Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{f})$ 
 
+![[Screenshot 2025-03-06 at 12.50.18 pm.png]]
