@@ -7,5 +7,6 @@
 >5. **Multiplicative Identity:**   There exists $1 = 1_{R}\in R$  such that $\forall a \in R$,   $a\cdot 1 = 1 \cdot a = a$
 >6.   $a\cdot(b+c) = a\cdot b + a\cdot c$    and   $(a+b) \cdot c  = a \cdot c + b \cdot c$ 
 
+
 --> In a ring, a **multiplicative identity element, and inverse are not required**
 

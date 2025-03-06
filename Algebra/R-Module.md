@@ -28,9 +28,6 @@ $$[v] =v + W = \{v+w \:|\: \omega \in W\}$$
 
 
 
-
-
-
 ## Quotient Space
 
 If $W$ is a subspace of $V$ then the **quotient space** 

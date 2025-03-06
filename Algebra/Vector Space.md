@@ -23,5 +23,20 @@ Let $\mathbb{F}$ be a field. Let $V$ and $W$ be  $\mathbb{F}$-vector spaces. The
 - $\varphi(\lambda v) = \lambda \varphi(v)$        for all $\lambda \in \mathbb{F}$ and $v,v'\in V$.
 
 
->[!theorem 1.1 (The Isomorphism Theorems)]  
->
+>[!theorem 1 (The Isomorphism Theorems)]  
+>![[Screenshot 2025-03-06 at 11.41.54 am.png]]
+
+
+## Direct Sum
+
+Let $X_1,...,X_n$ be vector spaces
+
+>[!info] Definition 
+>The **External Direct Sum** of them is the vector space
+>$$X_1\oplus...\oplus X_n = \{(x_1,...,x_n)\:|\: x_1\in X_1,...,x_n\in X_n\}$$
+>where addition and multiplication are defined componentwise
+
+$$X_1+\cdots +X_n \cong X_1 \oplus \cdots \oplus X_n \iff x'\in X_1+\cdots+X_n, \:\:x' = \sum_{i=1}^nx_i\:\:\text{for}\: x_i \in X_i$$
+- In this case $X_1+\dots+X_n$ is the **internal direct sum** of $X_1,\dots X_n$
+
+
