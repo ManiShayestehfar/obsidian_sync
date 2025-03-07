@@ -65,6 +65,17 @@ $$\begin{align*}
 2. Let $w = \varphi(v)$ for $v \in V$ and $w \in W$. And $gw = g\varphi(w) = \varphi(gw) \in \text{im}\: W$ for all $g \in G$ and so $gw \in \text{im }W$. $\square$ 
 
 
+# Maschke's Theorem
+
+>[!tip] Theorem
+> Let $\mathbb{F}$ be a field of characteristic $p$, and $G$ a finite group of order *not* divisible by $p \geq 0$.  
+> Let $V$ be a $G$-module, and $W$ a $G$-submodule of $V$. 
+> Then there exists a $G$-module $U$ of $V$ such that $V = U \oplus W$ as $G$-modules.
+
+
+
+
+
 
 
 
