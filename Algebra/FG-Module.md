@@ -68,9 +68,18 @@ $$\begin{align*}
 # Maschke's Theorem
 
 >[!tip] Theorem
-> Let $\mathbb{F}$ be a field of characteristic $p$, and $G$ a finite group of order *not* divisible by $p \geq 0$.  
-> Let $V$ be a $G$-module, and $W$ a $G$-submodule of $V$. 
+> - $\mathbb{F}$ be a field of characteristic $p$,
+> - $G$ a finite group of order *not* divisible by $p \geq 0$.  
+> - Let $V$ be a $G$-module, and $W$ a $G$-submodule of $V$. 
+> 
 > Then there exists a $G$-module $U$ of $V$ such that $V = U \oplus W$ as $G$-modules.
+##### Proof
+- It should be clear that as a vector space we can find a subspace $U'$ of $V$ such that $V = U' \oplus W$. The problem is making sure $U'$ is a $G$-module.
+
+We can define a vector space homomorphism that is a projection map corresponding to the decomposition $V = U' \oplus W$
+
+
+
 
 
 
