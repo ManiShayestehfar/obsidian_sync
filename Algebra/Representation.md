@@ -15,3 +15,18 @@ A nonzero representation $V$ of $A$ is said to be **irreducible** if its only su
 and $V$ itself.
 
 It is called **indecomposable** if it cannot be written as a direct sum of two nonzero sub-representations. 
+
+# Regular Representation
+
+> [!info] Definition
+> The (left) **regular representation** of $G$ is the $\mathbb{F}$-vector space $\mathbb{F}G$ that has as its basis the elements of $G$ and the $G$-action is given by left multiplication. Thus
+> $$\mathbb{F}G = \left\{\sum_{x\in G}\lambda_x x \;|\; \lambda_x \in \mathbb{F} \right\}$$
+> and $g\left(\sum_{x\in G}\lambda_x x \right) = \sum_{x \in G} \lambda_x (gx) = \sum_{y = xg \in G} \lambda_{g^{-1}y}y$ 
+
+- Since the elements of $G$ are a basis for $\mathbb{F}G$, then addition and multiplication in $\mathbb{F}G$ are component-wise operations.
+
+
+>[!tip] Lemma 1
+>The vector space $\mathbb{F}G$ is a $G$-module.
+
+

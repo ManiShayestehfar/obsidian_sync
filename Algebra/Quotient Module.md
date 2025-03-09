@@ -1,3 +1,4 @@
+
 If $W$ and $V$ are [[FG-Module|submodules]], then we can form a **quotient module** 
 $$V/W =\{v+W\:|\:v\in V\}$$
 
