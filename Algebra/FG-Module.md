@@ -38,6 +38,7 @@ $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatri
 > [!info] G-Module Isomorphism
 > A **$G-$Module Isomorphism** is a bijective $G-$module homomorphism, $\phi : V \to W$ that commutes with the $G-$action. i.e. $\phi(gv) = g\phi(v)$ for all $g\in G$, $v\in V$. We write $V\cong W$. 
 
+
 # Submodules
 - Let $V,W$ be $G-$modules, and let
 $$\begin{align*}
@@ -65,22 +66,14 @@ $$\begin{align*}
 2. Let $w = \varphi(v)$ for $v \in V$ and $w \in W$. And $gw = g\varphi(w) = \varphi(gw) \in \text{im}\: W$ for all $g \in G$ and so $gw \in \text{im }W$. $\square$ 
 
 
-# Maschke's Theorem
+# Irreducible $G$-modules
 
->[!tip] Theorem
-> - $\mathbb{F}$ be a field of characteristic $p$,
-> - $G$ a finite group of order *not* divisible by $p \geq 0$.  
-> - Let $V$ be a $G$-module, and $W$ a $G$-submodule of $V$. 
-> 
-> Then there exists a $G$-module $U$ of $V$ such that $V = U \oplus W$ as $G$-modules.
-##### Proof
-- It should be clear that as a vector space we can find a subspace $U'$ of $V$ such that $V = U' \oplus W$. The problem is making sure $U'$ is a $G$-module.
-
-We can define a vector space homomorphism that is a projection map corresponding to the decomposition $V = U' \oplus W$
-
-
-
-
+>[!info] Definition
+>A $G$-module $V$ is **irreducible** if it contains no proper nonzero submodules. i.e its only submodules are $0$ and $V$.
+>
+>Otherwise, $V$ is **reducible**.
+>
+>A $G$-module $V$ is **completely reducible**, or **semisimple**, if it is isomorphic to a direct sum of irreducible $G$-modules.
 
 
 
