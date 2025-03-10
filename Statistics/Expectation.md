@@ -59,15 +59,15 @@ $$\begin{align*}
 S^+ &:= \sum_n a_n1_{a_n>0}\\[4pt]
 S^- &:= \sum_n (-a_n)1_{a_n<0}
 \end{align*}$$
-
-![[Pasted image 20250305232741.png]]
-![[Pasted image 20250305233031.png|500]]
-
 >[!info] Definition 
->Denote $L^1 = L^1(\Omega, \mathcal{F}. P) = L^1(\Omega)$ the space of all discrete random variables $X: \Omega \to \mathbb{R}$ such that with $\{x_n\} = X(\Omega)$,
+>Denote $L^1 = L^1(\Omega, \mathcal{F}, P) = L^1(\Omega)$ the space of all discrete random variables $X: \Omega \to \mathbb{R}$ such that with $\{x_n\} = X(\Omega)$,
 >$$\sum_n |x_n|\cdot p_X(x_n) < \infty $$ 
 >
 
+![[Pasted image 20250305232741.png]]
+![[Pasted image 20250305233031.png|500]]
+#### Proof
+See Lecture 8 
 
 # Fubini-Tonelli's Theorem
 
@@ -79,5 +79,23 @@ S^- &:= \sum_n (-a_n)1_{a_n<0}
 >2. $\sum_i\sum_j |a_{ij}| < \infty$  (or $\sum_j\sum_i |a_{ij}| < \infty$ )
 
 
+# Expectation of a Sum
+
+>[!warning] Goal
+>Find $E(X+Y) = ?$. When is it well-defined?
+
+Let $g: \mathbb{R}^2 \to \mathbb{R}$ and let $Z = g(X,Y)$ where $X,Y$ are jointly distributed RVs with joint pmf $p_{XY}$ ($\{x_i\} = X(\Omega)$, $\{y_i\} = Y(\Omega)$)
 
 
+
+>[!tip] Claim 1
+>![[Pasted image 20250310222816.png]]
+
+
+
+# Linearity of Expectation
+
+$X,Y\in L^1$ jointly distributed RVs, and $\alpha,\beta \in \mathbb{R}$. Then 
+
+1. $\alpha X + \beta Y \in L^1$
+2. $E(\alpha X + \beta Y) = \alpha E(X) + \beta E(Y)$.

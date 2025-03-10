@@ -18,3 +18,47 @@ $\square$
 
 - The $(+)$ is important when the summands are not convergent and the sum is to $\infty$. i.e.
 ![[Pasted image 20250310213649.png]]
+
+
+# Examples of Variance
+## Bernoulli
+$X \sim \text{Bernoulli}(p)$, $E(X) = p$.
+
+$$\begin{align*}
+E(X^2) &= \sum_{k}x_k^2p(x_k) \\
+&= 0^2 \cdot (1-p) + 1^2 \cdot p \\
+&= p
+\end{align*}$$
+
+So $\text{Var}(X) = E(X^2) - E(X)^2 = p^2 - p = p(1-p)$
+
+![[Pasted image 20250310221242.png|450]]
+
+
+## Binomial
+
+## Geometric
+
+$X \sim \text{Geometric}(p)$ with $p \in (0,1)$. $E(X) = 1/p$.
+$$\begin{align*}
+E(X^2) &= \sum_{k=1}^\infty k^2 \cdot P(X=k) \\
+&=  \sum_{k=1}^\infty k^2 \cdot (1-p)^{k-1}p \\
+&=  \sum_{k=1}^\infty k^2 q^{k-1}p \tag{$q=p-1$}
+\end{align*}$$
+![[Pasted image 20250310221641.png|700]]
+![[Pasted image 20250310221740.png]]
+So 
+$$E(X^2)=p\left(\frac{2q}{p^3}+\frac{1}{p^2}\right) = \frac{2-p}{p^2}$$
+$$\text{Var}(X) = E(X^2)-E(X)^2 = \frac{2-p}{p^2}-\frac{1}{p^2} = \frac{1-p}{p^2}$$
+$$\implies \text{Var}(X) = \frac{1-p}{p^2}$$
+
+## Poisson
+$X \sim \text{Poisson}(\lambda)$ for $\lambda >0$. $E(X) = \lambda$
+
+![[Pasted image 20250310222112.png|600]]
+So
+$$\begin{align*}
+\text{Var}(X) &= E(X^2) - E(X)^2\\
+&= \lambda(\lambda+1)- \lambda^2 \\
+&= \lambda
+\end{align*}$$
