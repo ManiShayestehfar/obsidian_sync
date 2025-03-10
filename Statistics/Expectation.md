@@ -67,3 +67,17 @@ S^- &:= \sum_n (-a_n)1_{a_n<0}
 >Denote $L^1 = L^1(\Omega, \mathcal{F}. P) = L^1(\Omega)$ the space of all discrete random variables $X: \Omega \to \mathbb{R}$ such that with $\{x_n\} = X(\Omega)$,
 >$$\sum_n |x_n|\cdot p_X(x_n) < \infty $$ 
 >
+
+
+# Fubini-Tonelli's Theorem
+
+>[!tip] Theorem
+>Let $\{a_{ij}\}$ be real numbers indexed by $i_j \in \mathbb{N}$. Then
+>$$\sum_i\sum_j a_{ij} = \sum_j\sum_i a_{ij}$$
+>if 
+>1. $a_{ij}\geq 0\quad \forall i,j$  (or $a_{ij} \leq 0$)
+>2. $\sum_i\sum_j |a_{ij}| < \infty$  (or $\sum_j\sum_i |a_{ij}| < \infty$ )
+
+
+
+
