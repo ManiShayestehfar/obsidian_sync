@@ -67,7 +67,7 @@ S^- &:= \sum_n (-a_n)1_{a_n<0}
 ![[Pasted image 20250305232741.png]]
 ![[Pasted image 20250305233031.png|500]]
 #### Proof
-See Lecture 8 
+See Lecture 7 
 
 # Fubini-Tonelli's Theorem
 
@@ -89,7 +89,10 @@ Let $g: \mathbb{R}^2 \to \mathbb{R}$ and let $Z = g(X,Y)$ where $X,Y$ are jointl
 
 
 >[!tip] Claim 1
->![[Pasted image 20250310222816.png]]
+>![[Pasted image 20250311214944.png]]
+
+
+
 
 
 
@@ -99,3 +102,32 @@ $X,Y\in L^1$ jointly distributed RVs, and $\alpha,\beta \in \mathbb{R}$. Then
 
 1. $\alpha X + \beta Y \in L^1$
 2. $E(\alpha X + \beta Y) = \alpha E(X) + \beta E(Y)$.
+
+#### Proof
+Let $g: \mathbb{R}^2 \to \mathbb{R}$ be $g(x,y)=\alpha x + \beta y$ and $Z = g(X,Y)= \alpha X + \beta Y$
+
+Then 
+![[Pasted image 20250311215337.png]]
+where $X,Y \in L^1$. 
+Hence, $Z = \alpha X + \beta Y \in L^1$, finishing the proof for 1.
+
+Proof for 2. follows by removing $|\cdot|$ and following the same procedure. $\square$ 
+
+
+## General case of Linearity
+
+> [!tip] Claim 2
+> If $X_1,...,X_n \in L^1(\Omega)$, then $\forall \alpha_i \in \mathbb{R}$, $\sum_{i=1}^n \alpha_i X_i \in L^1$, and 
+> $$E\left(\sum_{i=1}^n \alpha_i X_i\right) = \sum_{i=1}^n \alpha_i E(X_i)$$
+
+
+## Examples
+
+### Sum of Bernoulli RVs
+Let $X_i \sim \text{Bernoulli}(p_i)$ (not necessarily independent). Let $S_n = \sum_{i=1}^n X_i$. Then
+$$\begin{align*}
+E(S_n) &= E(\sum_{i=1}^n X_i) \\
+&= \sum_{i=1}^n E(X_i)\\
+&= \sum_{i=1}^n p \\
+&= np \end{align*}$$
+--> If $X \sim \text{Binomial}(n,p)$ then $X = \sum_{i=1}^n X_i$ where $X_i \sim \text{Bernoulli}(p)$
