@@ -59,10 +59,6 @@ $$\begin{align*}
 S^+ &:= \sum_n a_n1_{a_n>0}\\[4pt]
 S^- &:= \sum_n (-a_n)1_{a_n<0}
 \end{align*}$$
->[!info] Definition 
->Denote $L^1 = L^1(\Omega, \mathcal{F}, P) = L^1(\Omega)$ the space of all discrete random variables $X: \Omega \to \mathbb{R}$ such that with $\{x_n\} = X(\Omega)$,
->$$\sum_n |x_n|\cdot p_X(x_n) < \infty $$ 
->
 
 ![[Pasted image 20250305232741.png]]
 ![[Pasted image 20250305233031.png|500]]
@@ -90,9 +86,6 @@ Let $g: \mathbb{R}^2 \to \mathbb{R}$ and let $Z = g(X,Y)$ where $X,Y$ are jointl
 
 >[!tip] Claim 1
 >![[Pasted image 20250311214944.png]]
-
-
-
 
 
 
@@ -131,3 +124,21 @@ E(S_n) &= E(\sum_{i=1}^n X_i) \\
 &= \sum_{i=1}^n p \\
 &= np \end{align*}$$
 --> If $X \sim \text{Binomial}(n,p)$ then $X = \sum_{i=1}^n X_i$ where $X_i \sim \text{Bernoulli}(p)$
+
+
+# Expectation of a Product of RVs
+
+Does $E(XY) = E(X)E(Y)$? **Not generally**. 
+
+**Counter example:** $X = Y \sim \text{Bernoulli}(p)$
+
+>[!tip] Claim 3
+>Suppose $X,Y \in L^1$ are *independent* then $XY \in L^1$ and 
+>$$E(XY) = E(X)E(Y)$$
+#### Proof
+Let $g: \mathbb{R}^2 \to \mathbb{R}$ be $g(x,y) = x\cdot y$ and define $Z = g(X,Y) = XY$. Then
+
+![[Pasted image 20250311223746.png]]
+
+Therefore $Z=XY \in L^1$. Following Fubini (ii) proves the statement. $\square$ 
+
