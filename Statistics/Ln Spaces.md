@@ -6,6 +6,8 @@
 >L^1 &= \{X: \sum_k |x_k|p_X(x_k) < \infty\} \\
 >L^2 &= \{X: \sum_k x_k^2 p_X(x_k) < \infty\}
 \end{align*}$$
+![[Screenshot 2025-03-12 at 10.18.05 am.png]]
+
 
 > [!tip] Claim 1
 > $X \in L^2 \implies X \in L^1$    **(for finite-measure spaces only)**
