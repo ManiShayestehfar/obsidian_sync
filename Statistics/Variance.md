@@ -81,3 +81,13 @@ V(\alpha X + \beta)&= E[((\alpha X + \beta) - (\alpha \mu + \beta))^2] \\[4pt]
 &= \alpha^2E[(X-\mu)^2] \\[4pt]
 	&= \alpha^2\sigma^2
 \end{align*}$$
+>[!tip] Claims 3,4,5
+>3. If $X,Y \in L^1$ are *independent*, then $XY \in L^1$ and $E(XY) = E(X)E(Y)$
+>
+>4. If $X,Y \in L^2$, then $XY \in L^1$
+>   
+>5. If $X \in L^2$ and $\alpha,\beta \in \mathbb{R}$, then
+>$$B(\alpha X + \beta) = \alpha^2 \sigma^2$$
+
+
+
