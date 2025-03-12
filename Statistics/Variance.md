@@ -76,5 +76,8 @@ Let $\mu = E(X) \in \mathbb{R}$. Recall the $E(X)$ is linear. Then
 $$E(\alpha X + \beta) = \alpha \mu + \beta$$
 Therefore,
 $$\begin{align*}
-V(\alpha X + \beta)&= E[(\alpha X + B)]
+V(\alpha X + \beta)&= E[((\alpha X + \beta) - (\alpha \mu + \beta))^2] \\[4pt]
+&= E[(\alpha (X -\mu))^2] \\[4pt]
+&= \alpha^2E[(X-\mu)^2] \\[4pt]
+	&= \alpha^2\sigma^2
 \end{align*}$$
