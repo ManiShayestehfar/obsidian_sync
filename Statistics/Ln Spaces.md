@@ -23,3 +23,24 @@ where the second term is finite as $x_k \in L^2$.  $\square$
 >$X \in L^2 \iff \text{Var}(X)$ exists and is **finite**.
 #### Proof
 Know that for $X \in L^1$, $\text{Var}(X) < \infty \iff X \in L^2 \iff X \in L^1$, by Claim 1.
+
+
+>[!tip] Claim 2
+>$$X,Y \in L^2 \implies XY\in L^1$$
+#### Proof
+From the AM-GM inequality, for $x,y\in \mathbb{R}$
+$$|xy| \leq \frac{x^2+y^2}{2}.$$
+Let $Z = g(X,Y) = XY$, then
+![[Screenshot 2025-03-12 at 2.20.27 pm.png]]$\square$ 
+
+>[!tip] Corollary 2 
+>If $X,Y \in L^2$, then $\forall \alpha,\beta \in \mathbb{R}$
+>$$\alpha X + \beta Y \in L^2.$$
+>i.e. $L^2$ is a [[Vector Space|vector subspace]] of $L^1$
+>
+#### Proof
+$$Z^2 = (\alpha X + \beta Y)^2 = \alpha^2 X^2 + 2\alpha\beta XY + \beta^2 Y^2 \in L^1$$
+
+As proved above, $Z \in L^2 \iff Z^2 \in L^1$. This is true as $X^2,Y^2, XY \in L^1$.  $\square$ 
+
+

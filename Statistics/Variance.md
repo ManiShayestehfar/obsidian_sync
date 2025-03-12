@@ -36,6 +36,7 @@ So $\text{Var}(X) = E(X^2) - E(X)^2 = p^2 - p = p(1-p)$
 
 
 ## Binomial
+Coming soon...
 
 ## Geometric
 
@@ -61,4 +62,19 @@ $$\begin{align*}
 \text{Var}(X) &= E(X^2) - E(X)^2\\
 &= \lambda(\lambda+1)- \lambda^2 \\
 &= \lambda
+\end{align*}$$
+
+
+# Variance of Linear Transformations
+
+>[!tip] Claim 2
+>Let $V(X) = \sigma^2 < \infty$ then $\forall \alpha,\beta \in \mathbb{R}$
+>$$V(\alpha X + \beta) = \alpha^2 \sigma^2.$$
+>i.e. Variance is shift-invariant, and scales quadratically.
+#### Proof
+Let $\mu = E(X) \in \mathbb{R}$. Recall the $E(X)$ is linear. Then 
+$$E(\alpha X + \beta) = \alpha \mu + \beta$$
+Therefore,
+$$\begin{align*}
+V(\alpha X + \beta)&= E[(\alpha X + B)]
 \end{align*}$$
