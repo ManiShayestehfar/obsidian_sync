@@ -91,3 +91,43 @@ V(\alpha X + \beta)&= E[((\alpha X + \beta) - (\alpha \mu + \beta))^2] \\[4pt]
 
 
 
+# Variance of a Sum
+
+>[!tip] Claim 6
+>If $X,Y \in L^2$, then 
+>$$V(X+Y) = V(X) + V(Y) + 2 \text{Cov}(X,Y)$$
+>
+>Generally for $X_1,...,X_n \in L^2$,
+>$$V\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^{n}V(X_i) + \sum_{i\neq j}\text{Cov}(X_i,X_j).$$
+#### Proof
+![[Pasted image 20250312224525.png]]
+
+
+>[!tip] Claim 7 
+>If $X_i$ are *(pairwise) independent* $L^2-$RVs then
+>$$V\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^{n}V(X_i)$$
+
+
+## Variance of Binomial Distribution
+
+![[Pasted image 20250312225419.png]]
+
+## Expectation and Variance of Hypergeometric
+
+Let $X = \#$ of red balls in a sample of $m$ balls from an urn with $r$ red balls and $n-r$ black balls. 
+- $X \sim \text{Hyper}(r,n,m)$
+
+For $i=1,2,...,m\leq n$, let$X_i = 1_{\text{ith drawn ball is red}}$, otherwise $0$.
+- This is a  $X_i \sim \text{Bernoulli}(p)$ where
+
+![[Pasted image 20250312225737.png|600]]
+
+Clearly $X = \sum_{i=1}^n X_i$. 
+- Note that $X_i$'s are not *independent*. Taking a ball out affects the odds of the next ball drawn.
+$$E(X) = \sum_{i=1}^m E(X_i) = m\frac{r}{n}$$
+$$V(X) = \sum_{i=1}^{n}V(X_i) + \sum_{i\neq j}\text{Cov}(X_i,X_j)$$
+where 
+$$\begin{align*}
+V(X_i) &= p(1-p) \\[7pt]
+&= \frac{r}{n}\left(1- \frac{r}{n}\right)
+\end{align*}$$
