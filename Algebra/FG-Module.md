@@ -78,6 +78,14 @@ $$\begin{align*}
 
 
 
+# FG-Modules vs G-Modules
+
+>[!tip] Proposition 2
+>Let $G$ be a finite group and $\mathbb{F}$ a field
+>1. Every $G$-module is an $\mathbb{F}G$-module
+>2. Every $\mathbb{F}G$-module is a $G$-module
+>3. Let $V$ and $W$ be $G$-modules of $\mathbb{F}G$-modules. Then $V \cong W$ as $G$-modules $\iff\: V \cong W$ as $\mathbb{F}G$-modules.
+
 
 
 

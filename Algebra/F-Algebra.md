@@ -33,7 +33,15 @@
 - An **$A$- submodule** of an $A$-module $V$ is a vector subspace $W$ such that $aw \in W$ for all $a \in A$ and $w \in W$.
 
 - Similarly, an $A$-module **homomorphism** is a vector space homomorphism $\phi: V \to W$ such that $\varphi(av) = a \varphi(v)$ for all $a \in A$ and $v \in V$.  
-   
+
+
+>[!tip] Image & Kernel
+>Let  $V$ and $W$ be $A$-modules and let $\varphi: V \to W$ be an $A$-module homomorphism. Then
+>1. $\ker \varphi = \{v \in V\:|\: \varphi(v) = 0 \}$ is an $A$-submodule of $V$ 
+>2. $\text{im }\varphi = \{\phi(v)\:|: v \in V\}$ is an $A$-submodule of $W$.
+
+
+
 
 
 
