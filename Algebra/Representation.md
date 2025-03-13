@@ -45,6 +45,6 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 
 
 >[!success] NOTE
->$F\mathbb{FG}$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
+>$\mathbb{F}G$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
 
 

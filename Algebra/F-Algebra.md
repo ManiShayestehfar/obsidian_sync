@@ -41,7 +41,14 @@
 >2. $\text{im }\varphi = \{\phi(v)\:|: v \in V\}$ is an $A$-submodule of $W$.
 
 
+## Isomorphism Theorems
 
+Suppose $V$ is an $A$-module.
+
+1. Suppose $\varphi:V \to W$ is an $A$-module homomorphism. Then $V/\ker\varphi \cong \text{im }\varphi$ 
+2. Suppose $X$ and $Y$ are $A$-submodules of $V$. Then $(X+Y)/Y \cong X/(X\cap Y)$
+3. Suppose $U\leq W \leq V$ are $A$-submodules of $V$. Then $V/W \cong (V/U)/(W/U)$
+4. Suppose $W$ is a submodule of $V$. Then there is a 1-to-1 inclusion preserving correspondence between the submodules of $V$ that contain $W$ and the submodules of $V/W$.
 
 
 
