@@ -32,7 +32,7 @@
 
 - An **$A$- submodule** of an $A$-module $V$ is a vector subspace $W$ such that $aw \in W$ for all $a \in A$ and $w \in W$.
 
-- Similarly, an $A$-module **homomorphism**
+- Similarly, an $A$-module **homomorphism** is a vector space homomorphism $\phi: V \to W$ such that $\varphi(av) = a \varphi(v)$ for all $a \in A$ and $v \in V$.  
    
 
 
