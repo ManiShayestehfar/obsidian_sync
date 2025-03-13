@@ -48,3 +48,5 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 >$\mathbb{F}G$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
 
 
+$\text{im }\varphi$ 
+
