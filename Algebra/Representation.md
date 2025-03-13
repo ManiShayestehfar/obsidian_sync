@@ -28,5 +28,23 @@ It is called **indecomposable** if it cannot be written as a direct sum of two n
 
 >[!tip] Lemma 1
 >The vector space $\mathbb{F}G$ is a $G$-module.
+#### Proof
+- $\mathbb{F}G$ is a a $\mathbb{F}$-vector space by definition $\checkmark$  
+- Action of $G$ on $\mathbb{F}G$ is linear with $1_G$ as identify $\checkmark$ 
+- Need to check associativity on basis $\{x | x \in G\}$ of $\mathbb{F}G$:
+$$(gh)x = g(hx)$$
+for all $g,h,x \in G$ and therefore associativity is given. $\square$
+
+
+>[!tip] Proposition 1
+>With the natural multiplication defined, $\mathbb{F}G$ is an associative ring with $1_G$ as identity. The natural multiplication comes from a natural multiplication in $G$:
+>
+>![[Screenshot 2025-03-13 at 11.41.14 am.png]]
+#### Proof
+![[Screenshot 2025-03-13 at 11.42.54 am.png]]
+
+
+>[!success] NOTE
+>$F\mathbb{FG}$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
 
 
