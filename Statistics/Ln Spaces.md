@@ -3,8 +3,8 @@
 >$$\sum_n |x_n|\cdot p_X(x_n) < \infty $$
 >i.e. 
 >$$\begin{align*} 
->L^1 &= \{X: \sum_k |x_k|p_X(x_k) < \infty\} \\
->L^2 &= \{X: \sum_k x_k^2 p_X(x_k) < \infty\}
+>L^1 &= \{X: \sum_k |x_k|\:p_X(x_k) < \infty\} \\
+>L^2 &= \{X: \sum_k x_k^2\:p_X(x_k) < \infty\}
 \end{align*}$$
 ![[Screenshot 2025-03-12 at 10.18.05 am.png]]
 
