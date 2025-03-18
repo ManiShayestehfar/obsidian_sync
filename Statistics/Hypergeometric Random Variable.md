@@ -1,6 +1,11 @@
 
 A **Hypergeometric RV** $X$ models the number of red balls in a sample of $m$ balls drawn *without replacement* from a box of $r$ red balls and $n-r$ black balls.
 
+>[!note]
+>If the balls are drawn ***with*** replacement, then the RV is described as 
+>$$X \sim \text{Binomial}\left(m,p=\frac{r}{n}\right)$$
+
+
 - 3-parameter family $(r,n,m)$
 
 - RV $X(\Omega) \subset \{0,1,...,\min\{r,m\}\}$ where all samples of size $m$ are equally likely
