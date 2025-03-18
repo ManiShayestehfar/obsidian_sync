@@ -65,6 +65,26 @@ $$\begin{align*}
 &= \lambda
 \end{align*}$$
 
+## Negative Binomial
+$r \in N_1$ (number of successs) and $p\in(0,1)$ (probability of success).
+
+>[!tip] Claim
+>If $X_i$ are iid $\text{Geometric}(p)$ random variables then $\sum_{i=1}^r X_i$ is a $\text{NegBinom}(r,p)$.
+>
+>Conversely, if $X$ counts the number of iid $\text{Bernoulli}(p)$ trials until the $r$th success, then $X = \sum_{i=1}^r X_i$ where $X_i$ are iid $\text{Geometric}(p)$. 
+
+>[!tip] Corollary
+>$X \sim \text{NegBin}(r,p)$, then
+>$$\begin{align*}
+>E(X) &= E\left(\sum_{i=1}^r X_i\right) = \sum_{i=1}^r E(X_i) = r\cdot\frac{1}{p} \\[10pt]
+>V(X) &= V\left(\sum_{i=1}^r X_i\right) = \sum_{i=1}^r E(X_i) = r\cdot\frac{1-p}{p^2} \end{align*}$$
+
+![[Screenshot 2025-03-19 at 9.55.28 am.png]]
+
+
+
+
+
 
 # Variance of Linear Transformations
 
