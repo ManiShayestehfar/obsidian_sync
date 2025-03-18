@@ -28,3 +28,24 @@ $$\implies P(X=k) = \frac{\begin{pmatrix}r \\ k \end{pmatrix} \begin{pmatrix}n-r
 $X \sim HG(r=13, n=30,m=12)$
 
 $$\begin{align*} P(X \geq 10) &= \sum_{k=10}^{12} P(X=k) \\[6pt] &= \sum_{k=10}^{12} \frac{\begin{pmatrix}13 \\ k \end{pmatrix} \begin{pmatrix}17 \\ 12-k \end{pmatrix}}{ \begin{pmatrix}30 \\ 12 \end{pmatrix}} \\ &\approx 0.000465\\ \end{align*}$$
+
+
+## Expectation and Variance of Hypergeometric
+
+Let $X = \#$ of red balls in a sample of $m$ balls from an urn with $r$ red balls and $n-r$ black balls. 
+- $X \sim \text{Hyper}(r,n,m)$
+
+For $i=1,2,...,m\leq n$, let$X_i = 1_{\text{ith drawn ball is red}}$, otherwise $0$.
+- This is a  $X_i \sim \text{Bernoulli}(p)$ where
+
+![[Pasted image 20250312225737.png|600]]
+
+Clearly $X = \sum_{i=1}^n X_i$. 
+- Note that $X_i$'s are not *independent*. Taking a ball out affects the odds of the next ball drawn.
+$$E(X) = \sum_{i=1}^m E(X_i) = m\frac{r}{n}$$
+$$V(X) = \sum_{i=1}^{n}V(X_i) + \sum_{i\neq j}\text{Cov}(X_i,X_j)$$
+where 
+$$\begin{align*}
+V(X_i) &= p(1-p) \\[7pt]
+&= \frac{r}{n}\left(1- \frac{r}{n}\right)
+\end{align*}$$
