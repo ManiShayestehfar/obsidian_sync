@@ -37,7 +37,7 @@ So $\text{Var}(X) = E(X^2) - E(X)^2 = p^2 - p = p(1-p)$
 
 
 ## Binomial
-Coming soon...
+![[Pasted image 20250312225419.png]]
 
 ## Geometric
 
@@ -103,13 +103,8 @@ V(\alpha X + \beta)&= E[((\alpha X + \beta) - (\alpha \mu + \beta))^2] \\[4pt]
 #### Proof
 ![[Pasted image 20250312224525.png]]
 
-
 >[!tip] Claim 7 
 >If $X_i$ are *(pairwise) independent* $L^2-$RVs then
 >$$V\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^{n}V(X_i)$$
 
-
-## Variance of Binomial Distribution
-
-![[Pasted image 20250312225419.png]]
 
