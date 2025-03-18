@@ -28,6 +28,9 @@
 >2. **Associativity:** $(ab)v = a(bv)$ for all $a,b \in G$ and $v \in V$
 >3. **Bilinearity:** $a(\lambda v + \mu w) = \lambda (av) + \mu (aw)$, and $(\lambda a + \mu b)v = \lambda (av) + \mu (bv)$  for all $a,b \in A$, $\lambda_\mu \in \mathbb{F}$, $v,w \in V$. 
 
+## Examples
+- A [[Representation|regular representation]] of $A$. i.e $A$ an $\mathbb{F}$-algebra, then the right $A$-module with $A$-action as right multiplication.
+
 ## Submodules
 
 - An **$A$- submodule** of an $A$-module $V$ is a vector subspace $W$ such that $aw \in W$ for all $a \in A$ and $w \in W$.
@@ -50,6 +53,8 @@ Suppose $V$ is an $A$-module.
 3. Suppose $U\leq W \leq V$ are $A$-submodules of $V$. Then $V/W \cong (V/U)/(W/U)$
 4. Suppose $W$ is a submodule of $V$. Then there is a 1-to-1 inclusion preserving correspondence between the submodules of $V$ that contain $W$ and the submodules of $V/W$.
 
+## Irreducibility
+An $A$-module $V$ is **irreducible** (or **simple**) if $V$ contains no nonzero proper submodules.
 
-
+It is **completely reducible**, or **semi-simple** if it is a direct sum of irreducible $A$-modules.
 
