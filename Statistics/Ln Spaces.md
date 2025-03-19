@@ -1,3 +1,4 @@
+# L1, L2
 >[!info] Definition 
 >Denote $L^1 = L^1(\Omega, \mathcal{F}, P) = L^1(\Omega)$ the space of all discrete random variables $X: \Omega \to \mathbb{R}$ such that with $\{x_n\} = X(\Omega)$,
 >$$\sum_n |x_n|\cdot p_X(x_n) < \infty $$
@@ -8,6 +9,13 @@
 \end{align*}$$
 ![[Screenshot 2025-03-12 at 10.18.05 am.png]]
 
+# Ln
+>[!info] Generalisation
+>$$L^n := \left\{X: \Omega \to \mathbb{R}\:\:\text{is an RV with}\:\: \sum_{i} |x_i|^k p_X(x_i) < \infty\right\}$$
+>where $X(\Omega) = \{x_i\}$ is the countable set of values $X$ can have. <br>
+>$$X \in L^n \quad\iff\quad E|X|^k < \infty \quad\iff\quad X^k \in L^1$$
+
+# Some Claims for L1,L2
 
 > [!tip] Claim 1
 > $X \in L^2 \implies X \in L^1$    **(for finite-measure spaces only)**

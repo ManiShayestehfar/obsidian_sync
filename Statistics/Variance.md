@@ -84,7 +84,7 @@ $r \in N_1$ (number of successs) and $p\in(0,1)$ (probability of success).
 
 
 
-
+ 
 
 # Variance of Linear Transformations
 

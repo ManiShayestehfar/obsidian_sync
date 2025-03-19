@@ -20,4 +20,5 @@ $$\mathbf{N} = (3,2,3,2,1,4)$$
 
 ## PMF
 $$p_{\mathbf{N}}(n_1,...,n_r) = \binom{n}{n_1\:...\:n_r}\:p_1^{n_1}\cdots p_r^{n_r}$$
+- Proof in Lecture 11
 
