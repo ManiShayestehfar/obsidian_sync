@@ -1,3 +1,24 @@
+# Summary
+
+1. Expressing moments of the distribution in terms of the unknown parameters $\mathbf{\theta} = (\theta_1,...,\theta_r)$
+2. Inverting this map to express parameters in terms of moments
+$$\begin{align*}
+\theta_1 &= f_1(\mu_1,...,\mu_k) \\
+\theta_2 &= f_2(\mu_1,...,\mu_k) \\
+&\:\:\vdots \\
+\theta_r &= f_r(\mu_1,...,\mu_k) \\
+\end{align*}$$
+	where $k \geq r$ is minimal and $f_i :\mathbb{R}^k \to \mathbb{R}$
+3. Plugging the sample moments $\hat{\mu}_k := \frac{1}{n}\sum_i x_i^k$  for the distributional moments:
+	$$\hat{\theta}_i = f_i(\hat{\mu}_1,...,\hat{\mu}_k)$$
+
+# Estimate and Estimator
+
+For a particular sample $x_1,...,x_n$ from Bernoulli or Poisson,
+$$\mathbf{\bar{x}} = \sum_ix_i \cdot \frac{1}{n}\quad\quad \text{is the \textit{estimate}}$$
+but when modelling the sample with iid RVs $X_1,...,X_n$
+$$\bar{X} = \sum_iX_i \cdot \frac{1}{n}\quad\quad \text{is the \textit{estimator}\:\:RV}$$
+
 
 # Estimating $\mu_k$ 
 
@@ -64,4 +85,4 @@ $$\begin{align*}
 \end{align*}$$
 where $\hat{\mu} = \bar{\mathbf{x}}$, and
 
-![[Screenshot 2025-03-19 at 4.17.33 pm.png|550]]
+
