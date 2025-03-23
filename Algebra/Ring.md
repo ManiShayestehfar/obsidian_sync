@@ -25,5 +25,16 @@
 >$$R_a = (a) = \{ra \:|\: r \in R\} \subseteq R$$
 
 
+## Maximal Idea
+
+>[!info] Definition
+>An ideal $I \trianglelefteq R$ is **maximal** if 
+>1. $I \neq R$
+>2. If $J \trianglelefteq R$ such that $I \subseteq J \subseteq R$, then $I=J$ or $R = J$ 
 
 
+
+
+
+
+ 
