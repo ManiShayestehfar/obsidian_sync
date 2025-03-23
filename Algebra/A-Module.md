@@ -33,9 +33,9 @@ Suppose $V$ is an $A$-module.
 4. Suppose $W$ is a submodule of $V$. Then there is a 1-to-1 inclusion preserving correspondence between the submodules of $V$ that contain $W$ and the submodules of $V/W$.
 
 # Irreducibility
-An $A$-module $V$ is **irreducible** (or **simple**) if $V$ contains no nonzero proper submodules.
 
-It is **completely reducible**, or **semi-simple** if it is a direct sum of irreducible $A$-modules.
+- An $A$-module $V$ is **irreducible** (or **simple**) if $V$ contains no nonzero proper submodules.
+- It is **completely reducible**, or **semi-simple** if it is a direct sum of irreducible $A$-modules.
 
 
 ## Some Propositions
@@ -44,6 +44,11 @@ It is **completely reducible**, or **semi-simple** if it is a direct sum of irre
 >Suppose $V$ is an $A$-module. 
 >
 >1. $V$ is irreducible $\implies \: V \cong A/M$ for some maximal ideal $M$ of $A$
+>2. $n = \dim V$ $\implies \: V \cong A^{\oplus n} / X$ for some $A$-submodules $X$ of $A^{\oplus n}$ 
+
+
+
+
 
 
 
