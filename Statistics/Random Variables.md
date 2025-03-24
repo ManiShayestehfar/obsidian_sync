@@ -12,7 +12,7 @@
 > The discrete random variables $X$ and $Y$ are independent if $\forall x,y \in \mathbb{R}$, the events $\{X = x\}$ and $\{Y=y\}$ are independent. i.e 
 > $$p_{XY}(x,y) = P(X=x,Y=y) = P(X=x)P(Y=y) = p_X(x)p_Y(y)$$
 
-- If $X$ and $Y are independent then $P(X=x | Y=y) = P(X=x)$ 
+- If $X$ and $Y$ are independent then $P(X=x | Y=y) = P(X=x)$ 
 
 >[!tip] Claim 1
 >The discrete RVs $X$ and $Y$ are independent $\iff$ 

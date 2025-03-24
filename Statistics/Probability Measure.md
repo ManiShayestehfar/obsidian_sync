@@ -36,7 +36,7 @@ for example for $n=2$, $P(A \cup B) = P(A) + P(B)$
 > $\forall A,B\in \mathcal{F}$,   $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 ##### Proof
 Write $A\cup B$ as disjoint union: $A \cup B = A \sqcup (B\backslash A)$, where 
-$$B\backslash A = B \cap A^{c}= \in \mathcal{F}\quad{\color{teal} \text{(this can  be shown)}}$$ 
+$$B\backslash A = B \cap A^{c}\in \mathcal{F}\quad{\color{teal} \text{(this can  be shown)}}$$ 
 Hence, $P(A \cup B) = P(A) + P(B\backslash A)$. Similarly you can define $B$ as 
 $$\begin{align*}B &= (B\backslash A)\sqcup(B\cap A) \\[3pt] \implies P(B) &= P(B\backslash A) + P(B\cap A)   \end{align*}$$
 and $\therefore P(A \cup B) = P(A) + P(B) - P(A \cap B).\quad \square$
