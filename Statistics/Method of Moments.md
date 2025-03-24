@@ -80,7 +80,7 @@ Hence, $\sigma^2 = \mu_1(1-p) \implies p = \frac{\mu_1 - \sigma^2}{\mu_1}$, and 
 
 Let $\mu = \mu_1$, then
 $$\begin{align*}
-\hat{p} &= \frac{\hat{\mu} - \hat{\sigma}}{\hat{\mu}}\\[6pt]
+\hat{p} &= \frac{\hat{\mu} - \hat{\sigma}^2}{\hat{\mu}}\\[6pt]
 \hat{m} &= \frac{\hat{\mu}^2}{\hat{\mu}- \hat{\sigma}^2}
 \end{align*}$$
 where $\hat{\mu} = \bar{\mathbf{x}}$, and

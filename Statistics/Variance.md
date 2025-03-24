@@ -108,8 +108,7 @@ V(\alpha X + \beta)&= E[((\alpha X + \beta) - (\alpha \mu + \beta))^2] \\[4pt]
 >1. If $X,Y \in L^2$, then $XY \in L^1$
 >   
 >5. If $X \in L^2$ and $\alpha,\beta \in \mathbb{R}$, then
->$$B(\alpha X + \beta) = \alpha^2 \sigma^2$$
-
+>$$V(\alpha X + \beta) = \alpha^2 \sigma^2$$
 
 
 # Variance of a Sum

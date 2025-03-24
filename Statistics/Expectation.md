@@ -7,7 +7,7 @@
 
 ## Bernoulli
 - $X \sim \text{Bernoulli}(p)$
-$$E(X) = 0\cdot (1-p) + 1 * p = p$$
+$$E(X) = 0\cdot (1-p) + 1 \cdot p = p$$
 
 ## Poisson
 - $X \sim \text{Poisson}(\lambda)$
@@ -47,7 +47,7 @@ E(X) &= pf'(q) \\[2pt]
 
 # A Well-defined Series and Expectation
 
-- The top definition of $E(X)$ depends on the order in which te series is summed up and the order is arbitrary
+- The top definition of $E(X)$ depends on the order in which the series is summed up and the order is arbitrary
 
 - For example, the alternating harmonic series $\sum {a_k}$ where $a_k = (-1)^{k+1}\frac{1}{k} = x_k \cdot p_X(x_k)$.
 	- Converges depending on the value of $k$
