@@ -85,4 +85,4 @@ $$\begin{align*}
 \end{align*}$$
 where $\hat{\mu} = \bar{\mathbf{x}}$, and
 
-
+![[Screenshot 2025-03-26 at 7.57.59 am.png]]
