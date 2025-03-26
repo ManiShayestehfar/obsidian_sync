@@ -22,3 +22,20 @@ $$\mathbf{N} = (3,2,3,2,1,4)$$
 $$p_{\mathbf{N}}(n_1,...,n_r) = \binom{n}{n_1\:...\:n_r}\:p_1^{n_1}\cdots p_r^{n_r}$$
 - Proof in Lecture 11
 
+
+# MLE
+
+ Suppose a sample size $n=1$
+ $$\mathbf{x} = (x_1,...,x_r)$$
+ is drawn from a $\text{Multinomial}(m;p_1,...,p_r)$ where $m$ is known $(m = \sum_{i=1}^n x_i)$ but $\mathbf{\theta}:=(p_1,...,p_r)$ is not known.
+
+- i.e. in $m=1000$, rolls of a die we observe $\mathbf{x} = (105,207,253,152,182,101)$.
+
+**How to estimate $p_i$ using moments?** With MLE
+
+$$\begin{align*}
+L(\mathbf{\theta}) &= P_\theta(X_1=x_1,...,X_r=x_r) \\[8pt]
+&= \binom{m}{x_1,...,x_r}\prod_{i=1}^r \theta_i^{x_i}
+\end{align*}$$
+$$\ell(\mathbf{\theta}) = \log \binom{m}{x_1,...,x_r} \:+\: \sum_{i=1}^r x_i \log \theta_i$$
+Let $g(\mathbf{\theta}) = \sum_{i=1}^r x_i \log \theta_i$
