@@ -39,3 +39,45 @@ L(\mathbf{\theta}) &= P_\theta(X_1=x_1,...,X_r=x_r) \\[8pt]
 \end{align*}$$
 $$\ell(\mathbf{\theta}) = \log \binom{m}{x_1,...,x_r} \:+\: \sum_{i=1}^r x_i \log \theta_i$$
 Let $g(\mathbf{\theta}) = \sum_{i=1}^r x_i \log \theta_i$
+$$\hat{\mathbf{\theta}}_{MLE} = \text{argmax}\{g(\mathbf{\theta})\::\: \mathbf{\theta} \in \mathbb{R}^r, \theta_i \geq 0, \sum_{i=1}^r \theta_i = 1\}$$
+<mark style="background: #FFB86CA6;">This is a constrained optimisation problem</mark>. *Lagrange multipliers*, or *ad-hoc*
+
+## Ad-Hoc Optimisation
+
+Consider 
+$$\mathbf{x} = (10,0,0) \implies g(\mathbf{\theta}) = 10\log\theta_1\implies \hat{\mathbf{\theta}} = (1,0,0)$$
+Similarly
+$$\mathbf{x} = (4,6,0) \implies g(\mathbf{\theta}) =  4\log\theta_1 + 4\log\theta_2\implies \hat{\mathbf{\theta}} = (*,*,0)$$
+
+We need to optimise $\mathbf{\theta}\in \mathbb{R}^r$ with $\sum_{i=1}^r \theta_i = 1$. Therefore for those $\mathbf{\theta}$ 
+$$g(\theta_1,...,\theta_r) = g\left(\theta_1,...,\theta_{r-1}, 1 - \sum_{i=1}^{r-1}\theta_i\right)$$
+Define
+$$\begin{align*}
+h(\theta_1,...,\theta_{r-1}) &:= g\left(\theta_1,...,\theta_{r-1}, 1 - \sum_{i=1}^{r-1}\theta_i\right) \\[6pt]
+&= \sum_{i=1}^{r-1} x_i \log\theta_i \:+\: x_r\log\left(1 - \sum_{i=1}^{r-1}\theta_i\right)
+\end{align*}
+$$
+
+And so the problem becomes
+$$\hat{\mathbf{\theta}}_{MLE} = \text{argmax}\{h(\theta_1,...,\theta_{r-1})\::\: \mathbf{\theta} \in \mathbb{R}^{r-1}, \theta_i \geq 0, \sum_{i=1}^r \theta_i \leq 1\}$$
+which is an <mark style="background: #BBFABBA6;">unconstrained optimisation </mark>
+
+
+### Example
+
+![[Pasted image 20250327084005.png]]
+
+- Generally the maximum of $h$ on the given simplex is either on the boundary $\theta_i =0$, or at critical point
+$$\frac{\partial h}{\partial \theta_i} = 0 \quad\quad i =1,2,...,r-1$$
+- In this case boundary does not give the maximum since for $\theta_i = 0$, $\log \theta_i \to -\infty$ 
+
+At the critical point
+
+![[Screenshot 2025-03-27 085407.png]]
+
+Hence at a critical point
+$$\theta_k = \frac{x_k}{c} = \frac{x_k}{m}\quad\quad \text{for }k=1,2,...,r$$
+The critical point is *unique* and because $h \to -\infty$ near boundary, the critical point has to be a global maximum. 
+
+Therefore the MLE is
+$$\hat{\theta}_k = \frac{x_k}{m}\quad\quad k=1,...,r $$
