@@ -28,3 +28,6 @@ P(M\to a, F\to A) + P(M\to A, F\to a) &= \theta(1-\theta) + \theta(1-\theta) = 2
 ## Method of Moments
 
 **What is the distribution of $T_3$?**
+$$T_3 \sim \text{Binomial}(n, \theta^2)$$
+So 
+$$E(T_3) = n\theta^2 \implies \theta = \sqrt{\frac{E(T_3)}{n}}$$
