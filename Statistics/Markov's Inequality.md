@@ -1,7 +1,7 @@
 
 # Statement
 
-Let $X$ be a non-negative RV. i.e. $X(\omega) >= 0$, then
+Let $X$ be a non-negative RV. i.e. $X(\omega) \geq 0$, then
 $\forall t > 0$, 
 $$P(X\geq t) \:\:\leq\:\: \frac{E(X)}{t}$$
 
