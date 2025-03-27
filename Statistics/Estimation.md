@@ -56,3 +56,26 @@ E(\hat{\Theta}) &= E\left(\frac{1}{n}\sum_{i=1}^nX_i\right)\\[6pt]
 &= E(X_i) = \theta
 
 \end{align*}$$
+- Therefore $\hat{\mathbf{\Theta}}$ is an *unbiased* estimator.
+- The MSE is
+![[Screenshot 2025-03-27 213947.png]]
+
+- The problem is that the MSE depends on $\theta$ which we are trying to estimate, and is unknown. But we can:
+1. Use $\theta(1-\theta) \leq 1/4$ for $\theta \in [0,1]$ to conclude that $MSE(\hat{\mathbf{\Theta}}) \leq 1/4n$ 
+2. Estimate $MSE(\hat{\mathbf{\Theta}})$ by plugging $\hat{\theta} = \bar{\mathbf{x}}$ :
+$$\widehat{MSE}(\hat{\mathbf{\Theta}}) = \frac{\bar{\mathbf{x}}(1-\bar{\mathbf{x}})}{n}$$
+	and clearly $\widehat{MSE}(\hat{\mathbf{\Theta}_n}) \underset{n}{\longrightarrow} 0$.
+
+
+## Consistent Estimator
+
+Recall the [[Convergence in Probability]] ,
+
+>[!info] Definition
+>An estimator $\hat{\mathbf{\Theta}}=\hat{\mathbf{\Theta}}_n$ is **consistent** if $\hat{\mathbf{\Theta}}_n \underset{n}{\longrightarrow}\theta$ in probability. .i.e.
+>$$\forall \varepsilon > 0, \quad P_\theta(|\hat{\mathbf{\Theta}} - \theta| \geq \varepsilon) \underset{n}{\longrightarrow} 0$$
+
+
+
+
+
