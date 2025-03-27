@@ -2,7 +2,6 @@
 > The expected value of a function $g(X)$ of an RV $X$ can be expressed as
 > $$E[g(X)] = \sum_xg(x)p_X(x)$$
 
-
 # Expectation of a Function of a RV
 
 - Let $X$ be a discrete RV with range $X(\Omega)=\{x_k\}$, and let $g:\mathbb{R} \to \mathbb{R}$. 
