@@ -61,3 +61,26 @@ In our case $\mathbf{p} = ((1-\theta)^2\:,\: 2\theta(1-\theta)\:,\: \theta^2)$. 
 
 Therefore $\theta = (t_2+2t_3)/2n$ maximises $\ell(\theta)$ in $(0,1)$. So
 $$\hat{\theta}_{MLE} = \frac{t_2+2t_3}{2n}$$
+
+
+## Analysing the Estimators
+
+- We previously estimated $\theta$ with both MLE and MoM
+- Now we analyse the estimation methods
+
+Consider the multinomial random vector $\mathbf{T}$ above to define estimators
+
+$$\tilde{\Theta} = \tilde{\Theta}_n = \sqrt{\frac{T_3}{n}},\quad\quad\quad \hat{\Theta} = \hat{\Theta}_n = \frac{T_2+2T_3}{2n}$$
+- **Question:** Are they consistent/unbiased?
+
+### Bias
+$$E_\theta(\hat{\Theta}) = E\left(\frac{T_2+2T_3}{2n}\right) = \theta \tag{see above}$$
+$\therefore$ $\hat{\Theta}$ is *unbiased*.
+
+![[Pasted image 20250327223726.png]]
+
+- e.g. if $\theta = 1/\sqrt{2}$, then for $\theta^2 = 1/2$ and up to 4 decimal points
+
+![[Pasted image 20250327223916.png]]
+
+This shows that as $n \to \infty$ the $E(\tilde{\Theta})$ does not decreased and therefore $\tilde{\Theta}$ is *biased.*

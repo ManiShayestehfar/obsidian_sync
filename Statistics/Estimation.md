@@ -75,7 +75,29 @@ Recall the [[Convergence in Probability]] ,
 >An estimator $\hat{\mathbf{\Theta}}=\hat{\mathbf{\Theta}}_n$ is **consistent** if $\hat{\mathbf{\Theta}}_n \underset{n}{\longrightarrow}\theta$ in probability. .i.e.
 >$$\forall \varepsilon > 0, \quad P_\theta(|\hat{\mathbf{\Theta}} - \theta| \geq \varepsilon) \underset{n}{\longrightarrow} 0$$
 
+>[!tip] Claim 2 
+>If $MSE(\hat{\mathbf{\Theta}}_n) \underset{n}{\longrightarrow}0$ then $\hat{\mathbf{\Theta}}$ is a consistent estimator
+##### Proof
 
+![[Pasted image 20250327221342.png]]
 
+#### Example: Poisson$(\theta)$ Estimator
 
+$X_1,X_2,...,X_n$ are independent $\text{Poisson}(\theta)$ RVs.
+
+- Recall that both MLE and MoM where $\hat{\Theta} = \bar{\mathbf{X}}$.
+
+Therefore 
+$$E_\theta(\hat{\Theta}) = E(X_i) = \theta$$
+implying that $\hat{\Theta}$ is an *unbiased* estimator.
+
+$$\begin{align*}
+MSE(\hat{\Theta}_n) &= V(\hat{\Theta}_n) \\[5pt]
+&= \frac{V(X_i)}{n} \\
+&= \frac{\theta}{n} \longrightarrow 0
+\end{align*}$$
+Hence $\hat{\Theta}_n$ is a *consistent* estimator.
+
+- This MSE is not bounded but can be estimated as 
+$$\widehat{MSE}(\hat{\Theta}_n) = \frac{\bar{\mathbf{x}}}{n}$$
 
