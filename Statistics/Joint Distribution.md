@@ -11,7 +11,7 @@ Similarly
 ![[Pasted image 20250304231214.png]]
 
 - $p_X$ and $p_Y$ are called the **marginal [[Probability Mass Function|pmf]]**.
-- The RV $X$ is [[Independence|independent]] from $Y$ if the [[distribution]] of $X$ is the same, regardless of which value $Y$ attains
+- The RV $X$ is [[Independence|independent]] from $Y$ if the [[Distributions|distribution]] of $X$ is the same, regardless of which value $Y$ attains
 
 ## Examples
 

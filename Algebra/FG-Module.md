@@ -23,7 +23,7 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 The natural representation is 
 $$V = \mathbb{F}^n = \left\{\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix}\:\Bigg|\: \lambda_i \in \mathbb{F}\right\} 
 $$
-If $A = (a_ij) \in G$, then $A\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix}$ is given by matrix multiplication
+If $A = (a_{ij}) \in G$, then $A\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix}$ is given by matrix multiplication
 
 2. $G = S_n = \text{symmetric group of permutation of}\:\:\{1,2,...,n\}$. 
 $V = \mathbb{F}^n$ with $S_n$-action
