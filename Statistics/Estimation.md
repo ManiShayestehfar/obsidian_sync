@@ -25,7 +25,7 @@ $$\hat{\Theta} = \varphi(X_1,...,X_n)\tag{estimator}$$
 ### MSE
 >[!info] Definition
 >The **mean square error (MSE)** of an estimator $\hat{\Theta}$ is 
->$$MSE(\hat{\Theta}) := E_\theta(\hat{\Theta} - \theta)^2$$
+>$$MSE(\hat{\Theta}) := E_\theta(\:\underbrace{\hat{\Theta} - \theta}_{\text{error}}\:)^2$$
 
 >[!tip] Claim 1
 >$$MSE(\hat{\Theta}) = V(\hat{\Theta}) + [\:\underbrace{E(\hat{\Theta}) - \theta}_{\text{bias}}\:]^2$$
