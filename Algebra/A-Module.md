@@ -45,6 +45,8 @@ Suppose $V$ is an $A$-module.
 >
 >1. $V$ is irreducible $\implies \: V \cong A/M$ for some maximal ideal $M$ of $A$
 >2. $n = \dim V$ $\implies \: V \cong A^{\oplus n} / X$ for some $A$-submodules $X$ of $A^{\oplus n}$ 
+##### Proof of (1)
+Let $v$ be any nonzero element of $V$. 
 
 
 
