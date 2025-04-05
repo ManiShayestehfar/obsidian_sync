@@ -48,7 +48,7 @@ In our case
 >$$E(\tilde{\Theta}) = \underbrace{\theta - \frac{1-\theta^2}{8n\theta}}_{\text{same as $\delta$-method}}  + R_n $$
 >where $nR_n \underset{n}{\longrightarrow} 0$
 ##### Proof
-Proof in Lecture 16
+Proof in Lecture 16 and 17
 
 >[!tip] Corollary 1
 >For $\theta \in (0,1)$,
