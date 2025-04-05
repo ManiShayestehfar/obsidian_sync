@@ -63,7 +63,7 @@ Therefore $\theta = (t_2+2t_3)/2n$ maximises $\ell(\theta)$ in $(0,1)$. So
 $$\hat{\theta}_{MLE} = \frac{t_2+2t_3}{2n}$$
 
 
-## Analysing the Estimators
+# Analysing the Estimators
 
 - We previously estimated $\theta$ with both MLE and MoM
 - Now we analyse the estimation methods
@@ -73,7 +73,7 @@ Consider the multinomial random vector $\mathbf{T}$ above to define estimators
 $$\tilde{\Theta} = \tilde{\Theta}_n = \sqrt{\frac{T_3}{n}},\quad\quad\quad \hat{\Theta} = \hat{\Theta}_n = \frac{T_2+2T_3}{2n}$$
 - **Question:** Are they consistent/unbiased?
 
-### Bias
+## Bias
 $$E_\theta(\hat{\Theta}) = E\left(\frac{T_2+2T_3}{2n}\right) = \theta \tag{see above}$$
 $\therefore$ $\hat{\Theta}$ is *unbiased*.
 
@@ -105,3 +105,21 @@ $$\sigma_{\hat{\Theta}} = \sqrt{V(\hat{\Theta})} = \sqrt{\frac{\theta(1-\theta)}
 ### MoM $\tilde{\Theta}$
 
 ![[Pasted image 20250405111523.png]]
+
+- $MSE \geq 0$ so bias has to be negative
+
+## Conclusion
+
+![[Pasted image 20250405114016.png]]
+
+- **So the MLE $\hat{\Theta}$ is a better estimator as its MSE is smaller**
+
+- In fact, if we claim that the ratio between the MSEs is $3/2$, Then even for $\hat{\Theta}_{2/3\cdot n}$ (a sample size 2/3 as large as n), $MSE(\hat{\Theta}_{2/3\cdot n}) \leq MSE(\tilde{\Theta})$ !
+- So MLE $\hat{\Theta}$ is also a more *efficient* estimator
+
+- This holds for any $\theta \in (0, 1/2)$ and any sufficiently large $n$
+
+
+*General statement:* 
+
+![[Pasted image 20250405115714.png]]
