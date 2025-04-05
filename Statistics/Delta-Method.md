@@ -22,3 +22,14 @@ $$X = \tilde{\Theta}_n^2 = \frac{T_3}{n}\quad\text{and}\quad g(x) = \sqrt{x} \qu
 - Consider the second order Taylor expansion of $g$ about $\mu = E(X)$
 $$g(X) = g(\mu) + g'(\mu)(x-\mu) + \tfrac{1}{2}g''(\mu)(x-\mu)^2 + TR_2(x)$$
 	where $TR_2(x) / (x-\mu)^2 \to 0$ as $x \to \mu$.
+
+- If $X \approx \mu$ and we plug $X$ into $g$ then
+$$Y = g(X) \approx g(\mu) + g'(\mu)(X-\mu) + \tfrac{1}{2}g''(\mu)(X-\mu)^2$$
+and so
+$$E(Y) = g(\mu) + \tfrac{1}{2}g''(\mu)\sigma^2$$
+
+
+In our case
+
+![[Pasted image 20250405145521.png]]
+
