@@ -84,3 +84,24 @@ $\therefore$ $\hat{\Theta}$ is *unbiased*.
 ![[Pasted image 20250327223916.png]]
 
 This shows that as $n \to \infty$ the $E(\tilde{\Theta})$ does not decreased and therefore $\tilde{\Theta}$ is *biased.*
+
+## MSE
+### MLE $\hat{\Theta}$
+
+![[Pasted image 20250405104257.png]]
+
+Hence
+$$MSE(\hat{\Theta}_n) = \frac{1}{2n}\theta(1-\theta) \underset{n}{\longrightarrow}0$$
+
+So $\hat{\Theta}$ is a *consistent* estimator.
+
+#### Standard Error
+$$\sigma_{\hat{\Theta}} = \sqrt{V(\hat{\Theta})} = \sqrt{\frac{\theta(1-\theta)}{2n}}$$
+- Dependent on $\theta$
+
+![[Pasted image 20250405111346.png]]
+
+
+### MoM $\tilde{\Theta}$
+
+![[Pasted image 20250405111523.png]]
