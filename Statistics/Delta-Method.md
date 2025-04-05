@@ -33,3 +33,24 @@ In our case
 
 ![[Pasted image 20250405145521.png]]
 
+![[Pasted image 20250405153953.png]]
+![[Pasted image 20250405154029.png]]
+
+
+>[!warning] 
+>- Note that this calculation is valid only if $X \approx E(X)$
+
+
+# Asymptotic Expression for $E(\hat{\Theta})$
+
+>[!tip] Claim 1
+>For $\theta \in (0,1)$,
+>$$E(\tilde{\Theta}) = \underbrace{\theta - \frac{1-\theta^2}{8n\theta}}_{\text{same as $\delta$-method}}  + R_n $$
+>where $nR_n \underset{n}{\longrightarrow} 0$
+
+
+
+
+
+
+
