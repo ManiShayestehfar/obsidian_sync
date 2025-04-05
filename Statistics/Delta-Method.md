@@ -47,10 +47,26 @@ In our case
 >For $\theta \in (0,1)$,
 >$$E(\tilde{\Theta}) = \underbrace{\theta - \frac{1-\theta^2}{8n\theta}}_{\text{same as $\delta$-method}}  + R_n $$
 >where $nR_n \underset{n}{\longrightarrow} 0$
+##### Proof
+Proof in Lecture 16
+
+>[!tip] Corollary 1
+>For $\theta \in (0,1)$,
+>$$MSE(\tilde{\Theta}_n) = \underbrace{\frac{1-\theta^2}{4n}}_{\text{same as $\delta$-method}}  + R'_n $$
+>where $nR'_n \underset{n}{\longrightarrow} 0$
+##### Proof
+
+Recall from [[Hardy-Weinberg Equilibrium Model]],
+
+![[Pasted image 20250405163415.png]]
+
+where $nR'_n = -2\theta\cdot nR_n \underset{n}{\longrightarrow} 0$  
 
 
+>[!example] Remark 1
+>This *rigorously* establishes the consistency of $\tilde{\Theta}$ for $\theta \in (0,1)$:
+>$$MSE(\tilde{\Theta}_n) = \frac{1-\theta^2}{4n} + R'_n \underset{n}{\longrightarrow} 0$$
 
+![[Pasted image 20250405163825.png]]
 
-
-
-
+![[Pasted image 20250405163834.png]]
