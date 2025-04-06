@@ -39,7 +39,9 @@ $$\ell(\theta) = s \cdot \log \theta + (n-s)\log(1-\theta)$$
 **How to maximise $\ell(\theta)$?** Differentiate $\ell(\theta)$
  
 ![[Screenshot 2025-03-22 134100.png]]
+
 ![[Pasted image 20250322134526.png|600]]
+
 
 - Therefore $\theta = \mathbf{\hat{x}} = s/n$ is a unique critical point in $(0,1)$ and it is a global maximum in $(0,1)$
 - Still need that $\theta \in \{0,1\}$, but for $\mathbf{\hat{x}} \in (0,1) \iff s,n-s > 0$ so the maximum cannot be attained for $\theta \in \{0,1\}$  
