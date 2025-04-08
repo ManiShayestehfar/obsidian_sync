@@ -1,5 +1,6 @@
 
 # Motivating Example
+
 ![[Pasted image 20250406144307.png]]
 
 - Which estimator is better? This is difficult to answer analytically

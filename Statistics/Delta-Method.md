@@ -41,7 +41,7 @@ In our case
 >- Note that this calculation is valid only if $X \approx E(X)$
 
 
-# Asymptotic Expression for $E(\hat{\Theta})$
+# Asymptotic Expression for $E(\tilde{\Theta})$
 
 >[!tip] Claim 1
 >For $\theta \in (0,1)$,
