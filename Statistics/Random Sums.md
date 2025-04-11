@@ -17,7 +17,7 @@ $X_i \sim \text{Bernoulli}(p)$ and $N \sim \text{Poisson}(\lambda)$, $T = \sum_1
 
 $$E\left(\sum_1^n X_i\right) = \sum_1^nE(X_i) = n E(X_i)$$
 but it doesn't follow that 
-$$E(T) = E\left(\sum_1^N X_i\right)\neq NE(X_i)$$as $N$ is a random variable. 
+$$E(T) = E\left(\sum_1^N X_i\right)\neq NE(X_i)$$as $N$ is a random variable NOT a number. 
 
 >[!success] True answer
 >$$E(T) = E(N) E(X_i)$$
