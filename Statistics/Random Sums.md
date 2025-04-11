@@ -35,4 +35,15 @@ P(T=s \:|\: N=n) &= \frac{P(T=s, N=n)}{P(N=n)}\\[4pt]
 &= P(S_n = s)
 \end{align*}$$
 
+>[!tip] Claim 
+>For $n \in N(\Omega)$ the distribution of $T$ given that $N=n$ is the same as the *(unconditional)* distribution of $S_n = \sum_1^n X_i$, and in particular $S_n(\Omega) \subset T(\Omega)$ 
+
+>[!tip] Corollary 
+>If $X_i\in L^1$ and $n \in N(\Omega)$, then
+>$$E(T|N=n) = nE(X_i).$$
+>meaning that the conditional expectation is well-defined and real.
+##### Proof
+
+**Qualitative Realisation:** Conditional dist. of $T$ given $N=n$ is the same as $S_n$ so in particular the expectations should match. Alternatively, let $\{s_k\} = T(\Omega)$
+
 
