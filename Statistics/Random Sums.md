@@ -46,4 +46,17 @@ P(T=s \:|\: N=n) &= \frac{P(T=s, N=n)}{P(N=n)}\\[4pt]
 
 **Qualitative Realisation:** Conditional dist. of $T$ given $N=n$ is the same as $S_n$ so in particular the expectations should match. Alternatively, let $\{s_k\} = T(\Omega)$
 
+$$\begin{align*}
+\sum_k |s_k| \:P(T=s_k \:|\: N=n) &= \sum_k |s_k| \:P(S_n = s_k)\\[4pt]
+&= E(|S_n|) \tag{$S_n(\Omega) \subset T(\Omega)$} \\[4pt]
+&= E\left(\left|\sum_1^n X_i\right|\right) \\[4pt]
+&< \infty
+\end{align*}$$
+$\implies  E(T|N=n)$ is well-defined. Moreover
+$$\begin{align*}
+\sum_k s_k\:P(T=s_k|N=n) &= \sum_k s_k \:P(S_n=s_k) \\[4pt]
+&= E(S_n) \\[4pt]
+&= \sum_{1}^n E(X_i) \\[4pt]
+&= nE(X_i)
 
+\end{align*}$$
