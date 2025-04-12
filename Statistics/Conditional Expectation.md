@@ -44,6 +44,16 @@ $\square$
 
 # Variance of means
 
+What is $V[E(Y|X)]$?
 ## Faulty Monitor Examples
 
-$N \sim \text{Poisson}(\lambda), \quad X_i \sim \text{Bernoulli}(p)$ where $T = \sum_1^N X_i$
+$N \sim \text{Poisson}(\lambda), \quad X_i \sim \text{Bernoulli}(p)$ where $T = \sum_1^N X_i$. 
+- $\implies T \sim \text{Poisson}(\lambda p) \implies Var(T) = \lambda p$
+
+$$\begin{align*}
+V[E(T|N)] &= V[NE(X_i)] \\
+&= p^2 V(N)\\
+&= p^2\lambda\\
+&\leq p\lambda \tag{Since $p \in (0,1)$}
+&= V(T)
+\end{align*}$$
