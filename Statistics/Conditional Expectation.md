@@ -57,3 +57,5 @@ V[E(T|N)] &= V[NE(X_i)] \\[3pt]
 &\leq p\lambda \tag{Since $p \in (0,1)$} \\[3pt]
 &= V(T)
 \end{align*}$$
+**Why does this make sense?** Averaging by reducing the sample size to $T|N$ reduces the variance
+

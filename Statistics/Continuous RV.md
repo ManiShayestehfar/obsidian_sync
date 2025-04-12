@@ -1,0 +1,2 @@
+- We often model random quantities that take a continuous set of possible values. e.g. lifetime, temperature, height of individuals, etc.
+- In this case the [[Probability Mass Function|pmf]] cannot be used to specify such a distribution. In fact for such RVs usually $P(X=x) = 0$ for all $x \in X(\Omega)$. We need [[Cumulative Distribution Function | CDF]]
