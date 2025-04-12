@@ -51,9 +51,9 @@ $N \sim \text{Poisson}(\lambda), \quad X_i \sim \text{Bernoulli}(p)$ where $T = 
 - $\implies T \sim \text{Poisson}(\lambda p) \implies Var(T) = \lambda p$
 
 $$\begin{align*}
-V[E(T|N)] &= V[NE(X_i)] \\
-&= p^2 V(N)\\
-&= p^2\lambda\\
-&\leq p\lambda \tag{Since $p \in (0,1)$}
+V[E(T|N)] &= V[NE(X_i)] \\[3pt]
+&= p^2 V(N)\\[3pt]
+&= p^2\lambda\\[3pt]
+&\leq p\lambda \tag{Since $p \in (0,1)$} \\[3pt]
 &= V(T)
 \end{align*}$$
