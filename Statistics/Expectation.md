@@ -142,3 +142,9 @@ Let $g: \mathbb{R}^2 \to \mathbb{R}$ be $g(x,y) = x\cdot y$ and define $Z = g(X,
 
 Therefore $Z=XY \in L^1$. Following Fubini (ii) proves the statement. $\square$ 
 
+
+# Total Expectation Law
+
+>[!info] !
+>$$E(Y) = \sum_x E(Y=X=x)P(X=x)$$
+

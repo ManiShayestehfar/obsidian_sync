@@ -60,6 +60,23 @@ Theorem connecting to [[Conditional Expectation]]
 >If $Y \in L^1$ then $E(Y|X) \in L^1$ and 
 >$$E[E(Y|X)] = E(Y).$$
 >The equation holds for $Y\geq 0$ and $Y\leq 0$. 
+>
+>![[Pasted image 20250411155022.png|450]]
+##### Proof
 
-![[Pasted image 20250411155022.png]]
+Recall that $E(Y|X) = h(X)$ where $h(x) := E(Y|X=x)$. Hence $E(Y|X) \in L^1 \iff h(X) \in L^1$.
+$$\begin{align*}
+\sum_{x\in X(\Omega)} |h(x)| P(X=x) &= \sum_x |E(Y|X=x)|\:\cdot\:P(X=x)\\[4pt]
+&= \sum_x\left|\sum_y y P(Y=y | X=x) \right |\:\cdot\: P(X=x) \\[4pt]
+&\leq \sum_x \sum_y |y| \cdot |P(Y=y | X=x)| \:\cdot\: P(X=x) \\[4pt]
+&\overset{\text{Fubini}}{=} \sum_y |y| \sum_x |P(Y=y|X=x)| \:\cdot\: P(X=x) \\[4pt]
+&= \sum_y |y|P(Y=y) \quad < \infty
+
+\end{align*}$$
+$\implies E(Y|X) \in L^1$. Also following the same process without $|\cdot|$, 
+$$\implies E[E(Y|X)] = E[h(x)] = \sum_xh(x) P(X=x) = E(Y)$$
+
+
+
+
 

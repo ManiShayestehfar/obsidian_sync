@@ -60,3 +60,16 @@ $$\begin{align*}
 &= nE(X_i)
 
 \end{align*}$$
+# Random Sum Expectation
+
+>[!tip] Corollary
+>If $T=\sum_1^N X_i$ is a random sum with $X_i,N \in L^1$, then
+>$$E(T) = E(N)E(X_i)$$
+##### Proof
+
+Recall from above that $E(T|N) = N\cdot E(X_i)$. Assuming that $T \in L^1$,
+$$\begin{align*}
+E(T) &= E[E(T|N)] \\[4pt]
+&= E[N\cdot E(X_i)]\\[4pt]
+&= E(N) \cdot E(X_i)\quad \quad\square
+\end{align*}$$

@@ -42,4 +42,8 @@ $$\implies \left|\sum_y y\:P(Y=y|X=x)\right| \:\:\leq\:\: \sum |y| \:\:P(Y=y|X=x
 $\square$ 
 
 
+# Variance of means
 
+## Faulty Monitor Examples
+
+$N \sim \text{Poisson}(\lambda), \quad X_i \sim \text{Bernoulli}(p)$ where $T = \sum_1^N X_i$
