@@ -29,10 +29,41 @@ $\implies$ For any (measurable) set $B \subset \mathbb{R}$, $P(X \in B) = \int_B
 >For *any* RV $X$, and $b \in \mathbb{R}$, 
 >$$P(X=b) = F(b) - \lim_{n\to\infty} F(b - \tfrac{1}{n}) = F(b) - F(b^-)$$
 >![[Pasted image 20250413214540.png]]
+##### Proof
+$\{\omega : X(\omega) = b\} = \bigcap_n \underbrace{\{b- \tfrac{1}{n} < X \leq b\}}_{B_n}$. 
+![[Pasted image 20250413221447.png|300]]
 
+$$\begin{align*}
+\implies P(X=b) &= P\left(\bigcap_n B_n\right) \\[6pt]
+&= \lim_{n\to\infty} P(B_n) \\[6pt]
+&= \lim_{n \to \infty} P(X \in (b-\tfrac{1}{n},b])\\[6pt]
+&= \lim_{n \to \infty}[F(b) - f(b - \tfrac{1}{n})] \quad \square
+\end{align*}$$
+
+7. If $X$ is a cont. RV, then for $a<b$:
+$$P(X \in [a,b]) = P(X \in (a,b)) = P(X \in (a,b]) = \int_a^b f(x') \:dx'$$
+which is true since $P(X \in \{a,b\}) = P(X=a) + P(X=b) = 0$.
 ---
 
 >[!tip] Corollary
 >a. $P(X=b) = 0$ if $F$ is continuous at $b$.
 >b. If $X$ is a cont. RV then for any $x \in \mathbb{R}$, $P(X=x) = 0$. 
+>c. The CDF always determines the pmf. In general, the pmf does not specify the CDF. For example, if $F_x$ is cont., then $p_X = 0$.  
+
+>[!tip] Claim
+>If $f$ is a pdf then:
+>1. $f \geq 0$
+>2. $\int_{-\infty}^{\infty} f(x)\: dx = 1$
+>   
+>   Conversely, if $f$ is integrable and it satisfies (1) and (2), then $f$ is a pdf of a cont. RV $X$ with CDF $F(x) = \int_{-\infty}^x f(x') \: dx'$ 
+##### Proof
+If $f$ is a pdf, then (1) follows from the definition, but for (2):
+$$\int_{-\infty}^{\infty} f(x)\:dx = \lim_{x \to \infty} \int_{-\infty}^x f(x') \: dx' = \lim_{x \to \infty} F(x) = 1$$
+
+To prove the converse, we need to show that $F(x) := \int_{-\infty}^x f(x') \:dx'$ satisfies properties (1)-(3) of a CDF.
+
+
+
+
+
 
