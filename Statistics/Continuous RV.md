@@ -63,6 +63,7 @@ $$\int_{-\infty}^{\infty} f(x)\:dx = \lim_{x \to \infty} \int_{-\infty}^x f(x') 
 To prove the converse, we need to show that $F(x) := \int_{-\infty}^x f(x') \:dx'$ satisfies properties (1)-(3) of a CDF.
 
 
+# Example
 
 
 
