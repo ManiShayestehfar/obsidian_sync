@@ -73,4 +73,79 @@ $$f(u) = 1_{[0,1]}(u) = \begin{cases}
 0 & u \not\in [0,1]
 \end{cases}$$
 
+```tikz
+\begin{document}
+
+\begin{tikzpicture}[scale=2]
+  % Axes
+  \draw[->, thick] (-0.5,0) -- (2,0) node[right] {$u$};
+  \draw[->, thick] (0,-0.5) -- (0,1.5);
+
+  % Function f
+  \draw[green, thick] (-0.5,0) -- (0,0); % Left zero
+  \draw[green, thick] (0,1) -- (1,1);    % Top line from 0 to 1
+  \draw[green, thick] (1,0) -- (2,0);    % Right zero
+
+  % Dots at transitions
+  \filldraw[green] (0,1) circle (1pt);
+  \filldraw[green] (1,0) circle (1pt);
+  \filldraw[red] (0.7,0) circle (1pt);
+  
+  % Labels
+  \node at (0,-0.2) {$0$};
+  \node at (1,-0.2) {$1$};
+  \node at (-0.1,1) {$1$};
+  \node at (0.7,-0.15) {\textcolor{red}{u}};
+  \node[green] at (1.1,1.1) {$f$};
+\end{tikzpicture}
+
+\end{document}
+```
+
+$$\implies F(u) = \int_{-\infty}^u f(t) \:dt = \begin{cases}
+0 & u \leq 0 \\[3pt]
+\int_0^u 1 = u & u \in (0,1) \\[3pt]
+1 & u \geq 1
+\end{cases}$$
+
+```tikz
+\begin{document}
+
+\begin{tikzpicture}[scale=2]
+  % Axes
+  \draw[->, thick] (-0.5,0) -- (2,0) node[right] {$u$};
+  \draw[->, thick] (0,-0.5) -- (0,1.5);
+
+  % Function f
+  \draw[green, thick] (-0.5,0) -- (0,0); 
+  \draw[green, thick] (0,0) -- (1,1);   
+  \draw[green, thick] (1,1) -- (2,1);    
+  
+  % tiks at transitions
+  \draw[thick] (1,0.05) -- (1,-0.05);  % Tick at x = 1
+  \draw[thick] (0.05,1) -- (-0.05,1);  % Tick at y = 1
+  
+  % Labels
+  \node at (0,-0.2) {$0$};
+  \node at (1,-0.2) {$1$};
+  \node at (-0.1,1) {$1$};
+  \node[green] at (2.1,1) {$F$};
+\end{tikzpicture}
+
+\end{document}
+```
+- Note that $F'(x) = f(x)$ except for $x \in \{0,1\}$
+
+
+
+
+
+
+
+
+
+
+
+
+
 
