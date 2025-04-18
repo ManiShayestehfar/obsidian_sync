@@ -68,7 +68,7 @@ To prove the converse, we need to show that $F(x) := \int_{-\infty}^x f(x') \:dx
 ## Uniform Distribution
 
 $U$ has a $\text{Uniform}(0,1)$ dist. if it has a density
-$$f(u) = 1_{[0,1]}(u) = \begin{cases}
+$$f(u) = \mathbb{1}_{[a,b]}(u) = \begin{cases}
 1 & u \in [0,1] \\[4pt]
 0 & u \not\in [0,1]
 \end{cases}$$
@@ -135,7 +135,7 @@ $$\implies F(u) = \int_{-\infty}^u f(t) \:dt = \begin{cases}
 \end{document}
 ```
 - Note that $F'(x) = f(x)$ except for $x \in \{0,1\}$
-
+- For $a<b$,  $f(u) = \frac{1}{b-a}\cdot \mathbb{1}_{[a,b]}(u)$
 
 
 
