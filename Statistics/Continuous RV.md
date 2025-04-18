@@ -65,6 +65,12 @@ To prove the converse, we need to show that $F(x) := \int_{-\infty}^x f(x') \:dx
 
 # Example
 
+## Uniform Distribution
 
+$U$ has a $\text{Uniform}(0,1)$ dist. if it has a density
+$$f(u) = 1_{[0,1]}(u) = \begin{cases}
+1 & u \in [0,1] \\[4pt]
+0 & u \not\in [0,1]
+\end{cases}$$
 
 
