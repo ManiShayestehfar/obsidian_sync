@@ -216,15 +216,29 @@ $$f_V(v) = f_U\left(\frac{1}{v}\right) \left|-\frac{1}{v^2}\right| = \begin{case
 ![[Pasted image 20250419153913.png|600]]
 
 
+### Different Normal Dist. 
+
+$Z \sim N(0,1)$, so $f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}$ and let $Y = Z^2 = g(Z)$ where $g(z)=z^2$. Find $f_Y$.
+
+$g^{-1}(y) = \sqrt{y}$, and using the Theorem for $y > 0$
+
+$$f_Y(y) = \frac{1}{\sqrt{2\pi}} e^{-\frac{y}{2}} \cdot \left|\frac{1}{2\sqrt{y}}\right|$$
+Sanity check:
+$$\begin{align*}
+\int_{-\infty}^{\infty} f_Y(y)\:dy &= \int_{0}^\infty \frac{1}{\sqrt{2\pi}} e^{-\frac{y}{2}} \cdot \frac{1}{2\sqrt{y}} \:dy \tag{\small $t :=\sqrt{y}\implies dt = \tfrac{dy}{2\sqrt{y}}$} \\[4pt]
+&= \int_{0}^\infty \frac{1}{\sqrt{2\pi}}e^{-t^2/2}\:dt \\[4pt]
+&= \frac{1}{2} \quad {\color{aquamarine} (!)}
+\end{align*}$$
+- *What is the problem?* $g(z) = z^2$ is not strictly monotone on $\mathbb{R}= Z(\Omega)$.
+Instead of theorem we can find $f_Y$ directly:
+
+![[Pasted image 20250419164123.png|600]]
 
 
 
 
+## Special Cases
 
-
-
-
-
-
+### Distribution of $U = F_X(X)$ 
 
 
