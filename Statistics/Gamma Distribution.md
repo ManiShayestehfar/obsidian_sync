@@ -20,3 +20,15 @@ $$\text{Stirling's Formula}: \quad n! \sim \sqrt{2\pi n}\:\left(\frac{n}{e}\righ
 >The **Gamma Distribution** is a 2-parameter family of distributions defined by pdf
 >$$f_{\lambda,\alpha}(x) = \frac{\lambda^\alpha x^{\alpha -1} e^{-\lambda x}}{\Gamma(\alpha)} \cdot \mathbb{1}_{x\geq 0}$$
 >where $\alpha > 0$ is the *shape* parameter, and $\lambda > 0$ is the *rate* parameter.
+
+- For $\alpha = 1$, $f_{\lambda,1}(x) = \lambda e^{-\lambda x}\:\mathbb{1}_{x\geq 0}$  (exponential pdf). So the Gamma dist. generalises the [[Exponential Distribution]].
+
+>[!note] 
+>The Gamma dist. often models the time of the $n-$th event with exponentially distributed waiting times between events. (similar to relation between Geometric and Negative Binomial in the discrete case). 
+
+
+# Example
+
+## Lambda: 1, alpha: 1/2,1,5,10
+
+![[Pasted image 20250419122913.png|400]]
