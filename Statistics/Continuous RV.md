@@ -138,6 +138,8 @@ $$\implies F(u) = \int_{-\infty}^u f(t) \:dt = \begin{cases}
 - For $a<b$,  $f(u) = \frac{1}{b-a}\cdot \mathbb{1}_{[a,b]}(u)$
 
 
+# Functions of RVs
+
 
 
 
