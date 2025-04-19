@@ -241,4 +241,34 @@ Instead of theorem we can find $f_Y$ directly:
 
 ### Distribution of $U = F_X(X)$ 
 
+>[!tip] Claim
+> Let $X$ be a RV with a continuous $F=F_X$ strictly increasing on $X(\Omega)$ (e.g. $X$ has a positive density). Then $F(X) \sim U(0,1)$.  
+##### Proof
 
+$F$ is cont. and strictly increasing so in this case, $F^{-1}:(0,1) \to \mathbb{R}$ is well-defined: 
+
+![[Pasted image 20250419221105.png|350]]
+
+Also $F^{-1}$ is strictly increasing on $(0,1)$ and therefore $\forall p \in (0,1)$ 
+$$F(X) \leq p \iff X \leq F^{-1}(p)$$
+Therefore with $U = F(X)$ and $p \in (0,1)$
+$$\begin{align*}
+P(U \leq p) &= P(F(X) \leq p) \\[4pt]
+&= P(X \leq F^{-1}(p))\\[4pt]
+&= F(F^{-1}(p)) \\[4pt]
+&= p
+\end{align*}$$
+
+
+### The null distribution of the p-value
+
+The **p-value** is used to quantify the level of surprise, or deviation from the null-hypothesis. 
+
+![[Pasted image 20250419222333.png]]
+
+By the Claim above, $F_T(T) \sim U(0,1)$ therefore
+$$P(F_T(T) \leq 0.05) = 0.05$$
+More generally, for any test statistic $T$, with a continuous and strictly increasing $F_T$ on $T(\Omega)$, the p-value $\sim U(0,1)$ under the null hypothesis. 
+
+
+### Sampling given a uniform sample
