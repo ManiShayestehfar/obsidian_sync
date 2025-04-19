@@ -272,3 +272,18 @@ More generally, for any test statistic $T$, with a continuous and strictly incre
 
 
 ### Sampling given a uniform sample
+
+>[!warning] Motivation
+>$U = F(X) \sim U(0,1) \implies X = F^{-1}(U) \sim F.$
+
+>[!tip] Claim 
+>Suppose the CDF $F$ has an inverse $F^{-1}$ on $(0,1)$ (i.e. again that $F$ is cont. strictly increasing on $I = F^{-1}(0,1)$), and let $U \sim U(0,1)$.
+>
+>Define $X = F^{-1}(U)$, then $F_X \equiv F$. i.e. $X \sim F$.
+
+![[Pasted image 20250419225720.png]]
+
+
+ 
+
+
