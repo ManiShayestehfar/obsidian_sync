@@ -140,6 +140,83 @@ $$\implies F(u) = \int_{-\infty}^u f(t) \:dt = \begin{cases}
 
 # Functions of RVs
 
+>[!example] Theorem
+>Suppose $X$ is a continuous RV with:
+>1. pdf $f_X$
+>2. $g$ a continuously differentiable and strictly monotone function on interval $I \supset X(\Omega)$ .
+>   
+>Then $Y := g(X$ is a continuous RV with pdf 
+>$$f_y(Y) = f_X(g^{-1}(y)) \left|\frac{d}{dy} g^{-1}(y)\right| = f_X(g^{-1}(y)) \left|\frac{1}{g'(g^{-1}(y))}\right|$$
+##### Proof
+Since $g$ is strictly monotone, $g^{-1}$ exists and is also monotone. Also since $g$ is cont. diff., $g^{-1}$ is also cont. diff. and by chain rule:
+$$\begin{align*}
+1 &= \frac{d}{dy}y\\
+&=\frac{d}{dy} g(g^{-1}(y))\\
+&= g'(g^{-1}(y)) \:\frac{d}{dy} g^{-1}(y)\\
+\implies \frac{d}{dy}(g^{-1}(y)) &= \frac{1}{g'(g^{-1}(y))}.
+\end{align*}$$
+
+- *Assumption:* $F_X$ is differentiable everywhere. Same argument holds if $F_X$ is diff everywhere except for a finite number of points. 
+
+$$\begin{align*}
+F_Y(y) &= P(Y \leq y) \\[4pt]
+&= P(g(X) \leq y)
+\end{align*}$$
+- Assume $g \uparrow \implies g^{-1} \uparrow$, and so $\forall y \in Y(\Omega)$
+	$$\begin{align*}
+F_Y(y) &= P(X \leq g^{-1}(y)) \\[4pt]
+&= F_X(g^{-1}(y))
+\end{align*}$$
+And by chain rule $F_Y$ is diff. and 
+$$\begin{align*}
+f_Y(y) &= F'_X(g^{-1}(y)) \cdot \frac{d}{dy}g^{-1}(y) \\
+&= f_X(g^{-1}(y))\cdot \left|\frac{d}{dy}g^{-1}(y)\right|
+\end{align*}$$
+- Assume $g \downarrow \implies g^{-1} \downarrow$, and so $\forall y \in Y(\Omega)$
+	$$\begin{align*}
+F_Y(y) &= P(X \geq g^{-1}(y)) \\[4pt]
+&= 1 - P(X < g^{-1}(y)) \\[4pt]
+&= 1 - F_X(g^{-1}(y))
+\end{align*}$$
+And again by chain rule, given $F_Y$ is diff.
+$$\begin{align*}
+f_Y(y) &= F'_X(g^{-1}(y)) \cdot \frac{d}{dy}g^{-1}(y) \\[4pt]
+&= -f_X(g^{-1}(y))\cdot \frac{d}{dy}g^{-1}(y) \\[4pt]
+&= f_X(g^{-1}(y))\cdot \left|\frac{d}{dy}g^{-1}(y)\right|
+\end{align*}$$
+$\square$ 
+
+
+## Examples
+
+### Standard Normal RV 
+
+$X$ A standard normal RV and for $\sigma > 0$ and $\mu \in \mathbb{R}$ define $Y = \sigma \cdot X + \mu$.
+The claim here is that $Y$ is continuous RV and 
+$$f_Y(y) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(y - \mu)^2}{2\sigma^2}}$$
+##### Proof
+$\sigma > 0$ so $g(x) = \sigma x + \mu$ is strictly increasing for $x \in \mathbb{R} = X(\Omega)$.
+
+By theorem above, $Y = g(X)$ is a continuous RV and 
+$$f_Y(y) = f_X(g^{-1}(y)) \cdot \left|\frac{d}{dy}g^{-1}(y)\right|$$
+where $x = g^{-1}(y) = \frac{y- \mu}{\sigma}$ and $f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ so
+$$f_Y(y) = \frac{1}{\sqrt{2\pi}} e^{-\frac{(y - \mu)^2}{2\sigma^2}} \cdot \frac{1}{\sigma}$$
+$\square$
+
+
+### Uniform Distribution
+$U \sim U(0,1)$ and $V = \frac{1}{U}$, find $f_V$.
+
+$V = g(U)$ where $g(u) = \frac{1}{u}$ is smooth and strictly decreasing on $(0,1) = U(\Omega)$. Hence by theorem
+$$f_V(v) = f_U\left(\frac{1}{v}\right) \left|-\frac{1}{v^2}\right| = \begin{cases}
+\tfrac{1}{v^2} & v > 1  \\[5pt]
+0 & v \leq 1
+\end{cases}$$
+
+![[Pasted image 20250419153913.png|600]]
+
+
+
 
 
 
