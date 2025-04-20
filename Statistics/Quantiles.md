@@ -41,3 +41,5 @@ Suppose $F$ is a continuous [[Cumulative Distribution Function|CDF]] which is st
 ![[Pasted image 20250419232236.png]]
 
 
+>[!tip] Claim 
+
