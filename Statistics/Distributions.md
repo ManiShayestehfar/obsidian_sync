@@ -90,6 +90,7 @@ $\implies$ The conditional distribution pf $X$, given $X+Y=n$ is $\text{Binomial
 > Each of the observed particles can be independently attributed to the first source with a fixed probability related to its relative intensity/rate.
 
 
+# Marginal Distributions
 
 
 

@@ -82,4 +82,27 @@ $$
 $$\begin{align*}
 f(x,y) &= \lambda^2 e^{-\lambda(x+y)} \:\:\mathbb{1}_{x>0}\:\mathbb{1}_{y>0} \tag{$\lambda>0$} \\[5pt]
 &= \lambda e^{-\lambda x} \:\mathbb{1}_{x>0} \:\:\cdot\:\: \lambda e^{-\lambda y} \:\mathbb{1}_{y>0}
-\end{align*}$$ $\implies $
+\end{align*}$$ $\implies \int_{\infty}^{\infty}f(x,y) \:dx\:dy = \int_0^\infty \lambda e^{-\lambda x} \:dx\int_0^\infty \lambda e^{-\lambda y} \:dy = 1$
+
+$\implies f$ is a joint pdf of RVs with joint CDF
+$$\begin{align*}
+F(X,Y) &= \int_{-\infty}^x \int_{-\infty}^y f(s,t) \, dt \, ds \\[4pt]
+&= \int_0^x \lambda e^{-\lambda s} \:ds \: \int_0^y \lambda e^{-\lambda t} \:dt \\[4pt]
+ &= (1- e^{-\lambda x})(1- e^{-\lambda y})
+\end{align*}$$
+
+3. From $P((X,Y) \in B_{xy}) = F_{XY}(x,y) = \iint_{B_{xy}}f\:ds\:dt$  $\forall (x,y) \in \mathbb{R}^2$ it follows that for any (Borel measurable) set $B \subset \mathbb{R}^2$,
+	$$P((X,Y) \in B) = \iint_Bf\:\:ds\:dt$$
+4. If $f$ is a continuous function (again except possibly at finite # of points) then everywhere that $f$ is continuous we have 
+	$$f(x,y) = \frac{\partial^2}{\partial x\partial y} \left. F_{XY} \right |_{(x,y)} = \frac{\partial^2}{\partial y\partial x} \left. F_{XY} \right |_{(x,y)}$$
+	 and in particular $f$ is determined where it is continuous.
+
+5. $X$ and $Y$ can be continuous RVs but *not* jointly continuous.
+
+6. If $X$ is a cont. RV with pdf $f_X$, then if $f_X$ is continuous at $x$ and $\delta >0$ is small:
+	$$\begin{align*}
+P(X \in \underbrace{(x - \delta/2, \: x + \delta/2)}_{\large I_x}) &= \int_{x-\delta/2}^{x + \delta/2} f_X(s) \:ds \\
+&\approx f_X(x) |I_x| = f_X(x)\cdot \delta
+\end{align*} $$
+	similarly if $(X,Y)$ are jointly cont. wit pdf $f_{XY}$, then of $f_{XY}$ is cont. at $(x,y)$ and $\delta,\varepsilon>0$ are small, then with
+	![[Pasted image 20250421133942.png|600]]
