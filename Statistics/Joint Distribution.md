@@ -45,3 +45,41 @@ Let $X = 1_{\{\text{heads on first toss}\}} = \# \:\: \text{of heads in first to
 >$$F_{XY}(x,y) = P(X\leq x, Y \leq y)$$
 
 ![[Pasted image 20250421101837.png]]
+
+- $F_{XY}$ explicitly specifies the probability that $(X,Y) \in (x_1,x_2] \times (y_1,y_2]$ 
+
+![[Pasted image 20250421122453.png]]
+
+>[!info]  Result
+>$$P((X,Y) \in (x_1,x_2] \times (y_1,y_2]) = F(x_2,y_2) - F(x_1,y_2) - F(x_2,y_1) + F(x_1,y_1)$$ 
+
+## Jointly Continuous 
+
+>[!info] Definition
+>The $\mathbb{R}$-valued RVs $X,Y$ are **jointly continuous** if $\exists f:\mathbb{R}^2 \to \mathbb{R}^+$ such that $\forall (x,y) \in \mathbb{R}^2$:
+>$$F_{XY}(x,y) = \int_{-\infty}^x \int_{-\infty}^y f(s,t) \: dt\:ds = \iint_{B_{xy}} f(s,t) \:ds\:dt$$
+>In this case $f$ is the **joint density** of $X,Y$.
+
+### Comments
+
+1. By *Tonelli’s Theorem*, the iterated/repeated integral of a non-negative function is the same as the double integral:
+
+$$
+\int_{-\infty}^x \int_{-\infty}^y f(s,t) \, dt \, ds = \iint_{B_{xy}} f(s,t) \, ds \, dt = \int_{-\infty}^y \int_{-\infty}^x f(s,t) \, ds \, dt
+$$
+
+	*Fubini’s extension*: For any integrable $f$, if when $f$ is replaced by $|f|$, one of the above three integrals is finite, then the equalities still hold.
+	_Assuming all these improper Riemann integrals are well-defined._
+
+
+2. If $f : \mathbb{R}^2 \to \mathbb{R}^+$ is integrable with $\iint_{\mathbb{R}^2} f = 1,$ then
+$$
+F(x, y) := \int_{-\infty}^x \int_{-\infty}^y f(s,t) \, dt \, ds
+$$
+	is the **joint CDF** of jointly continuous random variables with the joint pdf $f$.
+
+#### Example for 2.
+$$\begin{align*}
+f(x,y) &= \lambda^2 e^{-\lambda(x+y)} \:\:\mathbb{1}_{x>0}\:\mathbb{1}_{y>0} \tag{$\lambda>0$} \\[5pt]
+&= \lambda e^{-\lambda x} \:\mathbb{1}_{x>0} \:\:\cdot\:\: \lambda e^{-\lambda y} \:\mathbb{1}_{y>0}
+\end{align*}$$ $\implies $
