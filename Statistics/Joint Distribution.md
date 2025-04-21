@@ -106,3 +106,25 @@ P(X \in \underbrace{(x - \delta/2, \: x + \delta/2)}_{\large I_x}) &= \int_{x-\d
 \end{align*} $$
 	similarly if $(X,Y)$ are jointly cont. wit pdf $f_{XY}$, then of $f_{XY}$ is cont. at $(x,y)$ and $\delta,\varepsilon>0$ are small, then with
 	![[Pasted image 20250421133942.png|600]]
+
+
+
+# Marginal Distributions
+
+Recall: $p_X(x) = \sum_y P_{XY}(x,y)$ 
+
+>[!tip] Claim 
+>If $X,Y$ have a joint pdf $f_{XY}$, then $X$ is a cont. RV and 
+>$$f_X(x) = \int_\mathbb{R}f_{XY}(x,y) \:dy$$ 
+>called the **marginal density**.
+##### Proof
+![[Pasted image 20250421141526.png|650]]
+
+
+## Examples
+
+1. $f_{XY}(x,y) = \lambda^2 e^{-\lambda y}, \quad y>x \geq 0, \lambda >0$.                               ![[Pasted image 20250421141832.png|150]]
+	 $$f_X(x) = \int_{-\infty}^{\infty} f_{XY}(x,y) \:dy$$
+
+![[Pasted image 20250421142058.png|600]]
+![[Pasted image 20250421142243.png]]
