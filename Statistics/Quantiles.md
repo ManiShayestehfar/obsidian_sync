@@ -65,6 +65,10 @@ $\square$
 >[!tip] Corollary 2
 >If $F$ is continuous and strictly $\uparrow$, then $F^{-1} \equiv Q_F$ 
 >i.e *the quantile function generalises the notion of $F^{-1}$* 
+>
+>-> Because $F$ is strictly $\uparrow$, there can only be one pth-quantile for each $p$ and both $F^{-1}(p)$ and $Q_F(p)$ are such quantiles
 
 
+
+ 
 

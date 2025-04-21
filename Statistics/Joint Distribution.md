@@ -1,6 +1,6 @@
 Suppose two measurements $X$ and $Y$ are take for each $\omega \in \Omega$
 
-The join pmf of $X$ and $Y$ is 
+The **joint pmf** of $X$ and $Y$ is 
 $$p_{XY}(x,y) = P(X=x,Y=y)\quad x,y\in \mathbb{R}$$
 where $\{X=x, Y=y\} = \{\omega: X(\omega)= x, Y(\omega)=y\}$ .
 
@@ -36,3 +36,12 @@ Let $X = 1_{\{\text{heads on first toss}\}} = \# \:\: \text{of heads in first to
 
 
  
+# Continuous Case
+
+>[!warning] Context
+>Think of jointly distribute RVs $(X,Y)$ as selecting a random point in a subset of $\mathbb{R}^2$. Their joint distribution consists of $P((X,Y) \in B)$ for any *reasonable* $B \subset \mathbb{R}^2$. 
+>
+>However in the continuous case the pmf provides partial/no information. Instead the joint distribution of two $\mathbb{R}$-valued RVs is determined by the joint distribution function:
+>$$F_{XY}(x,y) = P(X\leq x, Y \leq y)$$
+
+![[Pasted image 20250421101837.png]]

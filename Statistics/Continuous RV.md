@@ -284,6 +284,17 @@ More generally, for any test statistic $T$, with a continuous and strictly incre
 ![[Pasted image 20250419225720.png]]
 
 
- 
+ >[!tip] Generalisation of Claim Above 
+ >Let $F$ be a CDF and $U \sim U(0,1)$ RV. Then $Q_F(U) \sim F$ 
+##### Proof
+We showed in [[Quantiles]] that $\forall p \in (0,1), x \in \mathbb{R}:$
+$$Q_F(p) \leq x \iff p \leq F(x)$$
+Therefore,
+$$\begin{align*}
+\{\omega: Q_F(U(\omega)) \leq x\} &= \{\omega: U(\omega) \leq F(x)\} \\[7pt]
+\implies P(Q_F(U(\omega)) \leq x) &= P(U \leq F(x)) \\[7pt]
+&= F(x)
+\end{align*}$$
 
-
+>[!tip] Corollary
+>If $U_1,...,U_n$ is a sample from the $U(0,1)$ distribution, then $Q_F(U_1),...,Q_F(U_n)$ is a sample from the distribution determined by the CDF $F$. 
