@@ -68,8 +68,7 @@ $$
 \int_{-\infty}^x \int_{-\infty}^y f(s,t) \, dt \, ds = \iint_{B_{xy}} f(s,t) \, ds \, dt = \int_{-\infty}^y \int_{-\infty}^x f(s,t) \, ds \, dt
 $$
 
-	*Fubini’s extension*: For any integrable $f$, if when $f$ is replaced by $|f|$, one of the above three integrals is finite, then the equalities still hold.
-	_Assuming all these improper Riemann integrals are well-defined._
+*Fubini’s extension*: For any integrable $f$, if when $f$ is replaced by $|f|$, one of the above three integrals is finite, then the equalities still hold. _Assuming all these improper Riemann integrals are well-defined._
 
 
 2. If $f : \mathbb{R}^2 \to \mathbb{R}^+$ is integrable with $\iint_{\mathbb{R}^2} f = 1,$ then
@@ -127,4 +126,5 @@ Recall: $p_X(x) = \sum_y P_{XY}(x,y)$
 	 $$f_X(x) = \int_{-\infty}^{\infty} f_{XY}(x,y) \:dy$$
 
 ![[Pasted image 20250421142058.png|600]]
-![[Pasted image 20250421142243.png]]
+![[Pasted image 20250421142243.png|600]]
+
