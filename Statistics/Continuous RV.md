@@ -145,7 +145,7 @@ $$\implies F(u) = \int_{-\infty}^u f(t) \:dt = \begin{cases}
 >1. pdf $f_X$
 >2. $g$ a continuously differentiable and strictly monotone function on interval $I \supset X(\Omega)$ .
 >   
->Then $Y := g(X$ is a continuous RV with pdf 
+>Then $Y := g(X)$ is a continuous RV with pdf 
 >$$f_y(Y) = f_X(g^{-1}(y)) \left|\frac{d}{dy} g^{-1}(y)\right| = f_X(g^{-1}(y)) \left|\frac{1}{g'(g^{-1}(y))}\right|$$
 ##### Proof
 Since $g$ is strictly monotone, $g^{-1}$ exists and is also monotone. Also since $g$ is cont. diff., $g^{-1}$ is also cont. diff. and by chain rule:
