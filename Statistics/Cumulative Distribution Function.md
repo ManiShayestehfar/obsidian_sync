@@ -15,7 +15,7 @@ $a\leq b \implies \{X \leq a\} \subset \{X \leq b\}$. So
 $$F(a) = P(X\leq a) \leq P(X\leq b) = F(b) \quad \quad \square$$
 
 ##### (iii)
->[!tip] Lemma (Continuity if the probability measure)
+>[!tip] Lemma (Continuity of the probability measure)
 >1. If the events $A_n$ are increasing, i.e. if $A_n \subset A_{n+1}$, then $P\left(\bigcup_n A_n \right) = \lim_{n \to \infty} P(A_n)$
 >2. If $A_n$ are decreasing, i.e. if $A_{n+1}\subset A_n$, then $P\left(\bigcap_n A_n\right) = \lim_{n \to \infty} P(A_n)$
 
