@@ -129,7 +129,7 @@ Recall: $p_X(x) = \sum_y P_{XY}(x,y)$
 ![[Pasted image 20250421142243.png|600]]
 
 
-1. Recall that $U(a,b)$ the uniform distribution on $I=(a,b)$, has a density $f = C \cdot \mathbb{1}_{I}$ where $C = 1 / |I| = 1 / (b-a)$. 
+2. Recall that $U(a,b)$ the uniform distribution on $I=(a,b)$, has a density $f = C \cdot \mathbb{1}_{I}$ where $C = 1 / |I| = 1 / (b-a)$. 
 	- This models the random selection of a random point in $I$ such that for any sub interval $A \subset I$ 
 	$$P(X \in A) = \int_A f\:dx = \int_A C \:dx = C\int_A dx = \frac{|A|}{|I|}$$
 	- We can extend this to a uniform distribution over *any "nice"* region $R \subset \mathbb{R}^2$ that is *"measurable"*. 
@@ -155,4 +155,7 @@ P((X,Y)\in A) &= \iint_A \:f\: dx\:dy \\
 >The probability that the randomly chosen point lies in $A \subset R$ is proportional to its area
 
 
+
+3. Uniform dist. on the unit disc
+$$E = \{(x,y) \in \mathbb{R}^2 : x^2 +y^2 \leq 1\}$$ $|R| = \pi$, so uniform dist. on $R$ is given by $f_{XY}(x,y) = \frac{1}{\pi}\cdot 1_{x^2 + y^2 \leq 1}$ 
 
