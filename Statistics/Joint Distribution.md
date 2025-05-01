@@ -128,3 +128,31 @@ Recall: $p_X(x) = \sum_y P_{XY}(x,y)$
 ![[Pasted image 20250421142058.png|600]]
 ![[Pasted image 20250421142243.png|600]]
 
+
+1. Recall that $U(a,b)$ the uniform distribution on $I=(a,b)$, has a density $f = C \cdot \mathbb{1}_{I}$ where $C = 1 / |I| = 1 / (b-a)$. 
+	- This models the random selection of a random point in $I$ such that for any sub interval $A \subset I$ 
+	$$P(X \in A) = \int_A f\:dx = \int_A C \:dx = C\int_A dx = \frac{|A|}{|I|}$$
+	- We can extend this to a uniform distribution over *any "nice"* region $R \subset \mathbb{R}^2$ that is *"measurable"*. 
+
+>[!info] Definition 
+>A random point has a uniform distribution over $R \subset \mathbb{R}^2$ if it has a (joint) density
+>$$f(x,y) = C \cdot \mathbb{1}_{R} = \begin{cases} 
+>C & (x,y) \in R \\
+>0 & \text{otherwise}
+\end{cases}$$
+
+- Note that $1 = \iint_{\mathbb{R}^2} \:f(x,y)\: dx\:dy = \iint_R\:C\:dx\:dy = C \cdot |R|$ 
+	- hence $C = 1/|R|$ 
+
+- Again, $\forall A \subset R$, 
+	$$\begin{align*}
+P((X,Y)\in A) &= \iint_A \:f\: dx\:dy \\
+&= \iint_A C\:dx\:dy \\
+&= C \iint_A\:dx\:dy \\
+&= \frac{|A|}{|R|}
+\end{align*}$$
+>[!quote] Conclusion
+>The probability that the randomly chosen point lies in $A \subset R$ is proportional to its area
+
+
+
