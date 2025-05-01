@@ -121,15 +121,19 @@ Recall: $p_X(x) = \sum_y P_{XY}(x,y)$
 
 
 ## Examples
+### Joint Distribution of an Independent Uniform and Exponential Variables
 
-1. $f_{XY}(x,y) = \lambda^2 e^{-\lambda y}, \quad y>x \geq 0, \lambda >0$.                               ![[Pasted image 20250421141832.png|150]]
+$f_{XY}(x,y) = \lambda^2 e^{-\lambda y}, \quad y>x \geq 0, \lambda >0$.                               ![[Pasted image 20250421141832.png|150]]
 	 $$f_X(x) = \int_{-\infty}^{\infty} f_{XY}(x,y) \:dy$$
 
 ![[Pasted image 20250421142058.png|600]]
 ![[Pasted image 20250421142243.png|600]]
 
 
-2. Recall that $U(a,b)$ the uniform distribution on $I=(a,b)$, has a density $f = C \cdot \mathbb{1}_{I}$ where $C = 1 / |I| = 1 / (b-a)$. 
+
+### Uniform Distribution on an Interval
+
+Recall that $U(a,b)$ the uniform distribution on $I=(a,b)$, has a density $f = C \cdot \mathbb{1}_{I}$ where $C = 1 / |I| = 1 / (b-a)$. 
 	- This models the random selection of a random point in $I$ such that for any sub interval $A \subset I$ 
 	$$P(X \in A) = \int_A f\:dx = \int_A C \:dx = C\int_A dx = \frac{|A|}{|I|}$$
 	- We can extend this to a uniform distribution over *any "nice"* region $R \subset \mathbb{R}^2$ that is *"measurable"*. 
@@ -155,7 +159,36 @@ P((X,Y)\in A) &= \iint_A \:f\: dx\:dy \\
 >The probability that the randomly chosen point lies in $A \subset R$ is proportional to its area
 
 
+### Uniform distribution on a unit disc
+$$R = \{(x,y) \in \mathbb{R}^2 : x^2 +y^2 \leq 1\}$$ $|R| = \pi$, so uniform dist. on $R$ is given by $f_{XY}(x,y) = \frac{1}{\pi}\cdot 1_{x^2 + y^2 \leq 1}$ 
 
-3. Uniform dist. on the unit disc
-$$E = \{(x,y) \in \mathbb{R}^2 : x^2 +y^2 \leq 1\}$$ $|R| = \pi$, so uniform dist. on $R$ is given by $f_{XY}(x,y) = \frac{1}{\pi}\cdot 1_{x^2 + y^2 \leq 1}$ 
+**What are the marginal distributions?**
 
+![[Pasted image 20250501223204.png]]
+
+$$f_X(x) = \int_{-\infty}^{\infty} f_{XY}(x,y)\:dy = 0 \quad\quad \text{if}\:\:x \not\in[-1,1]$$
+if $x \in [-1,1]$
+$$f_X(x) = \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\:\frac{1}{\pi}\:dy = \frac{2}{\pi}\sqrt{1-x^2}$$
+- The circle is axially symmetric so $f_Y$ is calculated similarly
+
+- **NOTE:** Even though $(X,Y)$ are uniformly distributed over $R$, $X$ itself is NOT uniformly distributed on $[-1,1]$ as shown above 
+
+
+### (Standard) Bivariate Normal
+
+The random point $(Z,W)$ has a (standard) bivariate normal distribution if it has a density
+$$f_{ZW}(z,w) = \frac{1}{2\pi\sqrt{1-\rho^2}} e^{-\frac{1}{2(1-\rho^2)}(z^2 - 2\rho zw + w^2)}$$
+where $\rho \in (-1,1)$ is a parameter. 
+
+**What is the marginal density?**
+
+Firstly, $z^2 - 2\rho zw + w^2 = (w-\rho z)^2 + (1-\rho^2)z^2$. So 
+
+$$\begin{align*}
+f_Z(z) &= \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}} e^{{-z^2}/2} \cdot \frac{1}{\sqrt{2\pi (1-\rho^2)}} e^{-\frac{(w-\rho z)^2}{2(1-\rho^2)}}\: dw \\[7pt]
+&= \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}} e^{{-z^2}/2} \cdot \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(w-\mu)^2}{2\sigma^2}}\: dw
+\end{align*}$$
+where we have set $\mu := \rho z$ and $\sigma^2 = (1-\rho^2)>0$ .
+
+So $N(\mu=\rho z, \sigma^2 = 1-\rho^2)$ has a density $f_Z(z) = \frac{1}{\sqrt{2\pi}}e^{-z^2/2}$ 
+$\implies Z \sim N(0,1)$ and by symmetry $W \sim N(0,1)$ 
