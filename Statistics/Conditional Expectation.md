@@ -59,3 +59,20 @@ V[E(T|N)] &= V[NE(X_i)] \\[3pt]
 \end{align*}$$
 **Why does this make sense?** Averaging by reducing the sample size to $T|N$ reduces the variance
 
+
+# Continuous Conditional Distribution
+
+Suppose we have $X,Y$ with joint density $f_{XY}$. We want to make sense of $F_{X|Y}(x|y) = P(X \leq x | Y=y)$. But $P(Y=y)$ and so we are dividing by zero! 
+$\implies$ need to replace $p_{X|Y}$ with $f_{X|Y} = f_{XY} / f_Y$.
+
+Assume $f_{XY}$ and $f_Y$ are continuous functions and consider $y \in \mathbb{R}$ with $f_Y(y) > 0$, $\forall \delta > 0$,
+$$P(Y \in [y,y+\delta]) = \int_{y}^{y+\delta} f_Y(t) \:dt >0$$
+$$\begin{align*}
+\implies P(X \leq x |y \leq Y \leq y+\delta) &= \frac{P(X\leq x, Y \in [y,y+\delta])}{P(Y \in [y, y+\delta])} \\[7pt]
+&= \frac{\int_{-\infty}^x \int_y^{y+\delta} f_{XY}(s,t)\:dt\:ds}{\int_y^{y+\delta} f_Y(t)\:dt}
+\end{align*}$$
+which is well-defined.
+
+![[Pasted image 20250502225646.png|250]]
+
+![[Pasted image 20250502231155.png]]
