@@ -76,3 +76,11 @@ which is well-defined.
 ![[Pasted image 20250502225646.png|250]]
 
 ![[Pasted image 20250502231155.png]]
+
+Therefore,
+$$P(X\leq x | y \leq Y\leq y+\delta) \overset{\delta\to 0}{\longrightarrow} \frac{\int_{-\infty}^x f_{XY}(s,y)\:ds}{f_Y(y)} = \int_{-\infty}^x \frac{f_{XY}(s,y)}{f_Y(y)}\:\:ds$$
+
+>[!info] Definition
+>For $y\in \mathbb{R}$ where $f_Y$ is continuous and $f_Y(y) >0$ we define the **conditional distribution** of $X$ given $Y=y$ as the distribution defined by the **conditional CDF**:
+>$$F_{X|Y}(x|y) = \int_{-\infty}^x f_{X|Y}(s|y)\:ds$$
+
