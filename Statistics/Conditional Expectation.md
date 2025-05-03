@@ -121,3 +121,5 @@ $\implies X|Y = y \sim U(0,y)$
 
 $\implies Z|W = w \sim N(\rho w, 1- \rho^2)$ for $\rho\in (-1,1)$
 
+
+## Sum of RVs
