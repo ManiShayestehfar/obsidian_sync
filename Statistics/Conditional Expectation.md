@@ -1,4 +1,5 @@
-- Suppose $X$ and $Y$ are jointly distributed discrete RVs. Then $\forall x \in X(\Omega)$, the **conditional distribution/pmf** of $Y$ given $X=x$:
+>[!info] Definition
+>Suppose $X$ and $Y$ are jointly distributed discrete RVs. Then $\forall x \in X(\Omega)$, the **conditional distribution/pmf** of $Y$ given $X=x$:
 $$P_{Y|X}(y|x) = P(Y=y|X=x)$$
 
 **Some Properties:**
@@ -83,4 +84,40 @@ $$P(X\leq x | y \leq Y\leq y+\delta) \overset{\delta\to 0}{\longrightarrow} \fra
 >[!info] Definition
 >For $y\in \mathbb{R}$ where $f_Y$ is continuous and $f_Y(y) >0$ we define the **conditional distribution** of $X$ given $Y=y$ as the distribution defined by the **conditional CDF**:
 >$$F_{X|Y}(x|y) = \int_{-\infty}^x f_{X|Y}(s|y)\:ds$$
+>where
+>$$f_{X|Y}(x|y) = \frac{f_{XY}(x,y)}{f_Y(y)}$$
+>is the conditional density of $X$ given $Y=y$.
+
+--> You can prove $f_{X|Y}(x,y)$ is indeed a density as $\int_{-\infty}^{\infty}f_{X|Y}(x,y) = 1$.
+
+
+>[!example] Remark
+>If $X,Y$ are [[Independent RV|independent RVs]], then
+>$$f_{X|Y}(x,y) = \frac{f_X(x)f_Y(y)}{f_Y(y)} = f_X(x)$$
+
+## Examples
+
+### Joint Distribution of an Independent Uniform and Exponential Variables
+
+$f_{XY}(x,y) = \lambda^2 e^{-\lambda y}, \quad y>x \geq 0, \lambda >0$, and we got that
+$$f_X(x) = \lambda e^{-\lambda x}\cdot\mathbb{1}_{x\geq0}\:\:, \quad\quad f_Y(y) = \lambda^2 y e^{-\lambda y}\cdot\mathbb{1}_{y>0}$$
+
+![[Pasted image 20250421141832.png|150]]
+
+for $y > 0,$
+$$\begin{align*}
+f_{X|Y}(x,y) &= \frac{f_{X|Y}(x|y)}{f_Y(y)} \\[6pt]
+&= \begin{cases}
+\frac{1}{y} & x \in [0,y) \\[3pt]
+0 & x \not\in [0,y)
+\end{cases}
+\end{align*}$$
+$\implies X|Y = y \sim U(0,y)$
+
+
+### Bivariate Standard Normal
+
+![[Pasted image 20250503141459.png]]
+
+$\implies Z|W = w \sim N(\rho w, 1- \rho^2)$ for $\rho\in (-1,1)$
 
