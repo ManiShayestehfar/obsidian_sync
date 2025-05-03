@@ -123,3 +123,42 @@ $\implies Z|W = w \sim N(\rho w, 1- \rho^2)$ for $\rho\in (-1,1)$
 
 
 ## Sum of RVs
+
+Let $Z = X+Y$ where $X,Y$ have a joint pdf $f_{XY}$. *We want to find the distribution of $Z$*. 
+
+$F_Z(z) = P(X+Y\leq z) = P((X,Y)\in A_z)$ where 
+
+![[Pasted image 20250503154429.png|550]]
+so 
+$$\begin{align*}
+F_Z(z) &= P((X,Y) \in A_z)\\[4pt]
+ &= \iint_{A_z}f_{XY}(x,y)\:dx\:dy \\[4pt]
+&= \int_{x=-\infty}^\infty \int_{y=-\infty}^{z-x} f_{XY}(x,y) \:dy\:dx \\[4pt]
+&= \int_{x=-\infty}^\infty \int_{v=-\infty}^z f_{XY}(x,v-x) \:dv\:dx \tag{set $v = x+y$}\\[4pt]
+&\overset{\text{Fubini}}{=} \int_{v=-\infty}^{z}\underbrace{\left[ \int_{x=-\infty}^{\infty}\:f_{XY} (x,v-x)\:dx\right]}_{g(v)} \:dv 
+\end{align*}$$
+$\implies Z$ is a continuous RV with density
+$$f_Z(v) = g(v) = \int_{-\infty}^\infty f_{XY}(x,v-x)\:dx = \int_{-\infty}^\infty f_{XY}(v-y,y)\:dy$$
+
+- If $X,Y$ are [[Independent RV]], then
+$$f_Z(z) = \int_{-\infty}^\infty f_X(x)\:f_Y(z-x)\:dx$$
+	- Note that the integrand is $f_X \star f_Y$ the convolution of $f_X,f_Y$ 
+
+### Examples
+
+#### Gamma dist.
+$X \sim \Gamma(\alpha, \lambda)$ independent of $Y \sim \Gamma(\beta,\lambda)$. Then for $z > 0$,
+
+$$\begin{align*}
+f_{X+Y}(z) &= \int_{-\infty}^\infty f_X(x)f_Y(z-x)\:dx \\
+&= \int_0^z \frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)} e^{-\lambda x}\cdot \frac{\lambda^\beta (z-x)^{\beta-1}}{\Gamma(\beta)} e^{-\lambda (z-x)}\:dx \\
+&= \frac{\lambda^{\alpha+\beta}}{\Gamma(\alpha)\Gamma(\beta)} e^{-\lambda z} \cdot \int_0^z x^{\alpha-1}(z-x)^{\beta-1}\:dx
+\end{align*}$$
+with $x=zt$,
+$$\int_0^z x^{\alpha-1}(z-x)^{\beta-1}\:dx = z^{\alpha+\beta-1}\underbrace{\int_{0}^1 t^{\alpha-1} (1-t)^{\beta-1}\:dt}_{B(\alpha,\beta); \text{ Beta function}}$$
+$$\implies f_{X+Y}(z) = \frac{\lambda^{\alpha+\beta}}{\Gamma(\alpha)\Gamma(\beta) / B(\alpha,\beta)}\cdot z^{\alpha+\beta-1}\cdot e^{-\lambda z} \cdot \mathbb{1}_{z>0}$$
+$$\implies X+Y \sim \Gamma(\alpha+\beta,\lambda)$$
+
+>[!tip] Corollary 
+>$$\Gamma(\alpha+\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{B(\alpha,\beta)},\quad \text{or}\quad B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$$
+
