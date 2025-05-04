@@ -298,3 +298,35 @@ $$\begin{align*}
 
 >[!tip] Corollary
 >If $U_1,...,U_n$ is a sample from the $U(0,1)$ distribution, then $Q_F(U_1),...,Q_F(U_n)$ is a sample from the distribution determined by the CDF $F$. 
+
+
+# Functions of Jointly Continuous RVs
+
+Suppose $X,Y$ have a joint density $f_{XY}$, and $T:\mathbb{R}^2 \to \mathbb{R}^2$ is *bijective* and *differentiable*, and define the random point
+$$(U,V):= T(X,Y).$$
+Let $(u,v) = T(x,y) = (x+y, x-y)$, and $\delta >0$ so 
+
+![[Pasted image 20250504123246.png]]
+
+$S_\delta$ is a square with $|S_\delta| = \delta^2$. $T(S_\delta)$ is a square with sides of length $\sqrt{2}\delta$, so $|T(S_\delta)| = 2\delta^2$.
+
+$$\begin{align*}
+\implies P((X,Y) \in S_\delta) &= \iint_{S_\delta} f_{XY}(s,t) \:ds\:dt \\[4pt]
+&= \iint_{S_\delta} (f_{XY}(s,t) - f_{XY}(x,y))\:ds\:dt \:\:+\:\: \iint_{S_\delta} f_{XY}(x,y)\:ds\:dt \\[4pt]
+&= R_\delta |S_\delta| \quad+ \quad f_{XY}(x,y)|S_\delta|
+\end{align*}$$
+where $R_\delta(x,y) := \frac{1}{|S_\delta|} \iint_{S_\delta} (f_{XY}(s,t) - f_{XY}(x,y))\:ds\:dt$.
+
+- *Assuming* $f_{XY}$ is continuous, $R_\delta \underset{\delta\to 0}{\longrightarrow} 0$. 
+- Similarly, assuming $f_{UV}$ exists and is continuous,  
+$$\begin{align*}
+P((U,V) \in T(S_\delta)) &= \iint_{T(S_\delta)} f_{UV}(q,r)\:dq\:dr \\
+&= R'_\delta |T(S_\delta)| \quad+\quad f_{UV}(u,v) |T(S_\delta)|
+\end{align*}$$
+	where $R'_\delta \underset{\delta\to 0}{\longrightarrow} 0$. 
+
+![[Pasted image 20250504124337.png|600]]
+![[Pasted image 20250504124512.png|600]]
+![[Pasted image 20250504124601.png|600]]
+
+![[Pasted image 20250504124830.png|600]]
