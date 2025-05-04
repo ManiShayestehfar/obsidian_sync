@@ -162,3 +162,11 @@ $$\implies X+Y \sim \Gamma(\alpha+\beta,\lambda)$$
 >[!tip] Corollary 
 >$$\Gamma(\alpha+\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{B(\alpha,\beta)},\quad \text{or}\quad B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$$
 
+>[!tip] Corollary
+>Recall that $\text{Exp}(\lambda) \equiv \Gamma(1,\lambda)$.
+>If $X_1,...,X_n$ are iid $\text{Exp}(\lambda)$ RVs then
+>$$\sum_1^n X_i = ((((X_1+X_2)+X_3)+X_4)+...+X_{n-1})+X_n \sim \Gamma(n,\lambda)$$
+##### Proof
+We saw that $X_i \sim \Gamma(1,\lambda)$ so by induction $\sum_{1}^n X_i \sim \Gamma(n,\lambda)$ 
+
+![[Pasted image 20250504100854.png|500]]
