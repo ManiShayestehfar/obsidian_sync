@@ -330,3 +330,35 @@ P((U,V) \in T(S_\delta)) &= \iint_{T(S_\delta)} f_{UV}(q,r)\:dq\:dr \\
 ![[Pasted image 20250504124601.png|600]]
 
 ![[Pasted image 20250504124830.png|600]]
+
+### Theorem of Density of function of a random point
+
+>[!example] Theorem (Density of function of a random point)
+>Suppose $T : \underset{\text{open}}{D} \in \mathbb{R}^2 \to R \underset{\text{open}}{R} \subset \mathbb{R}^2$ is bijective. Also $T$ is differentiable on $D$ with $J_T \neq 0$. (i.e. $T^{-1}$ is differentiable).
+>Suppose $(X,Y)$ is jointly continuous with density $f_{XY}$ which vanishes outside of $D$, and let $(U,V) = T(X,Y)$. Then $(U,V)$ is jointly continuous and $\forall (u,v) \in R$,
+>$$\begin{align*}
+f_{UV} &= f_{XY}(T^{-1}(u,v)) |J_{T^{-1}}(u,v)| \\[5pt]
+&= f_{XY}(T^{-1}(u,v))|J_T(T^{-1}(u,v))|
+\end{align*}$$
+### A Remark
+
+![[Pasted image 20250506213625.png]]
+
+### Examples
+
+#### $V = X+Y$ 
+
+$(u,v)  = T(x,y) = (x,x+y)$ a linear map.
+$\implies (x,y) = T^{-1}(u,v) = (u,v-u)$
+
+$\implies J_{T^{-1}} = \left|\begin{pmatrix}1 & 0 \\ -1 & 1\end{pmatrix}\right| = 1$
+
+$\implies f_{UV}(u,v) = f_{XY}(u,v-u) \cdot 1$. So the marginal density is 
+
+![[Pasted image 20250506213233.png|500]]
+
+- Since $V = X+Y$, we rediscovered the pdf of $X+Y$.
+
+#### Standard Bivariate Normal
+
+Recall $Z,W$ and $\rho \in (-1,1)$ with $f_{ZW}(z,w)$ as befo
