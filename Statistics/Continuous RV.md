@@ -361,4 +361,16 @@ $\implies f_{UV}(u,v) = f_{XY}(u,v-u) \cdot 1$. So the marginal density is
 
 #### Standard Bivariate Normal
 
-Recall $Z,W$ and $\rho \in (-1,1)$ with $f_{ZW}(z,w)$ as befo
+Recall $Z,W$ and $\rho \in (-1,1)$ with $f_{ZW}(z,w)$ as before.
+Let $\sigma_i >0, \mu_i \in \mathbb{R}$, and $U = \sigma_1 Z + \mu_1, V = \sigma_2 W + \mu_2$.
+
+i.e. $T(z,w) = (\sigma_1 z + \mu_1, \sigma_2 w + \mu_2)$.  $(z,w) = T^{-1}(u,v) = (\frac{u-\mu_1}{\sigma_1},\frac{v-\mu_2}{\sigma_2})$  
+
+$\implies J_{T^{-1}}  \left|\begin{pmatrix} 1/ \sigma_1 & 0 \\ 0 & 1/\sigma_2\end{pmatrix}\right| = 1/\sigma_1\sigma_2 > 0$.  
+
+![[Pasted image 20250506223211.png|580]]
+
+#### Polar Coordinate Transformation
+See Lecture 27, Page 5
+
+![[Pasted image 20250506225139.png]]
