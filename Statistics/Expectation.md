@@ -145,6 +145,45 @@ Therefore $Z=XY \in L^1$. Following Fubini (ii) proves the statement. $\square$
 
 # Total Expectation Law
 
->[!info] !
+>[!info] Defintion
 >$$E(Y) = \sum_x E(Y=X=x)P(X=x)$$
+
+
+# Expectation of a Continuous RV
+
+>[!info] Definition
+>For a continuous RV $X$
+>$$E(X) = \int_{-\infty}^\infty xf_X(x)\:dx$$
+>provided 
+> - $E^+(X) := \int_{0}^\infty xf_X(x)\:dx < \infty$ or
+> - $E^-(X) := \int_{-\infty}^0 xf_X(x)\:dx < \infty$ 
+>   and then $E(X) = E^+-E^-$ 
+
+## Examples
+
+### Gamma
+
+$X \sim \Gamma(\alpha,\lambda)$, $\alpha,\lambda >0$
+$$\begin{align*}
+E(X) &= E^+(X) \\[4pt]
+&= \int_0^\infty x \cdot \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\lambda x} \, dx \quad (E^- = 0) \\[4pt]
+&= \frac{1}{\Gamma(\alpha)} \int_0^\infty (\lambda x)^\alpha e^{-\lambda x} \, dx \\[4pt]
+&= \frac{1}{\Gamma(\alpha)} \int_0^\infty t^\alpha e^{-t} \cdot \frac{dt}{\lambda} \quad \text{(let } t = \lambda x \text{)} \\[4pt]
+&= \frac{1}{\Gamma(\alpha)} \cdot \frac{1}{\lambda} \int_0^\infty t^\alpha e^{-t} \, dt \\[4pt]
+&= \frac{\Gamma(\alpha + 1)}{\Gamma(\alpha)} \cdot \frac{1}{\lambda} \\[4pt]
+&= \frac{\alpha \Gamma(\alpha)}{\Gamma(\alpha)} \cdot \frac{1}{\lambda} = \frac{\alpha}{\lambda} \\[4pt]
+\\[4pt]
+\implies\quad \text{If } X \sim \text{Exp}(\lambda) \text{ then } E(X) &= \frac{1}{\lambda}
+\end{align*}$$
+
+### Uniform 
+$X \sim U(0,1)$
+$$E(X) = E^+(X) = \int_0^1 x \cdot 1\:dx = \frac{1}{2}$$
+
+### Beta
+$X \sim \text{Beta}(a,b)\quad a,b>0$
+
+![[Pasted image 20250508230641.png|600]]
+![[Pasted image 20250508230944.png|600]]
+
 

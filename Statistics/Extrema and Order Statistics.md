@@ -1,3 +1,5 @@
+# PDF and CDF
+
 >[!warning] Motivation
 >Let $X_1,...,X_n$ be i.i.d RVs with CDF $F$. 
 >Let $U = X_{(n)} = \max\{X_1,...,X_n\}$, $V = X_{(1)} = \min\{X_1,...,X_n\}$.
@@ -41,6 +43,13 @@ $$\implies F_{X_{(k)}} (x) = \sum_{j=k}^n \binom{j}{k} [F(x)]^j[1-F(x)]^{n-j}$$
 ![[Pasted image 20250508221144.png]]
 $$\implies f_{X_{(k)}} (x) = k \binom{n}{k} [F(x)]^{k-1}[1-F(x)]^{n-k}f(x)$$
 
+# Examples
+
+## Uniform 
+
+$X_i \sim U(0,1)$. $\implies F_X(x) = x, f_X(x) = 1$ for $x\in(0,1)$. 
+
+$\implies f_{X_{(k)}}(X) = k\binom{n}{k}x^{k-1}(1-x)^{n-k}\cdot\mathbb{1}_{x\in (0,1)}$         $\implies X_{(k)}\sim \text{Beta}(k, n-k+1)$
 
 
 
