@@ -11,7 +11,7 @@ F_U(u) &= P(U \leq u) \\[4pt]
 &= [F_X(u)]^n
 \end{align*}$$
 If $F$ has a density $f$, then by chain rule so does $F_U$
-$$F_U(u) = n[F_X(u)]^{n-1}\:f(u)$$
+$$f_U(u) = n[F_X(u)]^{n-1}\:f(u)$$
 
 Similarly,
 $$\begin{align*}
@@ -23,6 +23,23 @@ F_V(v) &= 1 - P(V>v) \\[4pt]
 If $F$ has a density $f$, then by chain rule
 $$f_V(v) = n[1-F_V(v)]^{n-1} f(v)$$
 
+
+- Generally, let $X_{(1)} \leq X_{(2)} \leq ...\leq X_{(n)}$ be the sorted values of $X_1,...,X_n$. 
+  Then $X_{(i)}$ are called the **order statistics**. 
+- *What is the distribution of $X_{(k)}$?*
+
+>[!tip] Claim
+>If $F$ is a continuous function (i.e. $\forall x, \:P(X=x) = 0$), then 
+>$$X_{(1)} \leq X_{(2)} \leq ...\leq X_{(n)}$$
+>with probability 1. 
+
+>[!tip] Corollary
+> There is no ambiguity which of the $X_i$s is $X_{(k)}$
+
+![[Pasted image 20250508220939.png]]
+$$\implies F_{X_{(k)}} (x) = \sum_{j=k}^n \binom{j}{k} [F(x)]^j[1-F(x)]^{n-j}$$
+![[Pasted image 20250508221144.png]]
+$$\implies f_{X_{(k)}} (x) = k \binom{n}{k} [F(x)]^{k-1}[1-F(x)]^{n-k}f(x)$$
 
 
 
