@@ -13,6 +13,15 @@ F_U(u) &= P(U \leq u) \\[4pt]
 If $F$ has a density $f$, then by chain rule so does $F_U$
 $$F_U(u) = n[F_X(u)]^{n-1}\:f(u)$$
 
+Similarly,
+$$\begin{align*}
+F_V(v) &= 1 - P(V>v) \\[4pt]
+&= 1 - P(X_1 > v, ..., X_n >v) \\[4pt]
+&= 1 - \prod_{i=1}^n P(X_i>v)\\[4pt]
+&= 1-[1-F_X(v)]^n
+\end{align*}$$
+If $F$ has a density $f$, then by chain rule
+$$f_V(v) = n[1-F_V(v)]^{n-1} f(v)$$
 
 
 
