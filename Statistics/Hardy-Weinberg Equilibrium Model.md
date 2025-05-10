@@ -54,7 +54,7 @@ In our case $\mathbf{p} = ((1-\theta)^2\:,\: 2\theta(1-\theta)\:,\: \theta^2)$. 
 
 ![[Screenshot 2025-03-27 at 4.13.19 pm.png]]
 
-- If $(t_2+2t_3)/2n = 0$ then $t_1=n$ and $\text{argmax}\ell(\theta)= 0 = (t_2+2t_3)/2n$
+- If $(t_2+2t_3)/2n = 0$ then $t_1=n$ and $\text{argmax}\:\ell(\theta)= 0 = (t_2+2t_3)/2n$
 - But for $(t_2+2t_3)/2n \in (0,1)$ and for $\theta \in (0,1)$
 
 ![[Screenshot 2025-03-27 at 4.15.45 pm.png|550]]

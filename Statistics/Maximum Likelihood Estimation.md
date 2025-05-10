@@ -7,7 +7,7 @@
 >-> $L(\theta)$ is NOT the probability of $\theta$. 
 >
 
-- When the sample is modeled as iid
+- When the sample is modeled as *iid*
 $$L(\theta) = \prod_1^n f_\theta(x_i)$$
 
 # Examples
