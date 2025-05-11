@@ -3,6 +3,9 @@
 >The **distribution** of a [[Random Variables| random variable]] $X$, $\mu_x$,is a function defined on *measurable* subsets of $\mathbb{R}$ such that for any *measurable* $A \subset \mathbb{R}$,
 >$$\mu_X(A) = P(X \in A).$$ 
 
+# Distributions Summary
+## Discrete
+
 | Distribution              | PMF $P(X = k)$                                                                             | Expectation $E[X]$ | Variance $Var(X)$                                                    | Description                                                                                                 |
 | ------------------------- | ------------------------------------------------------------------------------------------ | ------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | $\text{Bernoulli}(p)$     | $p^k (1 - p)^{1-k}$<br>$k \in \{0, 1\}$                                                    | $p$                | $p(1 - p)$                                                           | Models a single trial with two outcomes (success or failure).                                               |
@@ -11,8 +14,19 @@
 | $\text{NegBinom}(r,p)$    | $\displaystyle \binom{k-1}{r-1} p^r (1 - p)^{k-r}$<br>$k = r, r+1, \ldots$                 | $\frac{r}{p}$      | $\frac{r(1 - p)}{p^2}$                                               | Generalization of geometric; models trials needed to get $r$ successes.                                     |
 | $\text{Poisson}(\lambda)$ | $\displaystyle \frac{e^{-\lambda} \lambda^k}{k!}$<br>$k = 0, 1, 2, \ldots$                 | $\lambda$          | $\lambda$                                                            | Models the number of events in a fixed interval with a known constant rate.                                 |
 | $\text{Hyper}(n,r,m)$     | $\displaystyle \frac{\binom{r}{k} \,\binom{n-r}{m-k}}{\binom{n}{m}}$<br>$k = 0, \ldots, n$ | $m \frac{r}{n}$    | $m\frac{r}{n}\left(1-\frac{r}{n}\right)\left(\frac{n-m}{n-1}\right)$ | Models the number of successes without replacement from a finite population of size $N$ with $K$ successes. |
-| **Uniform (Discrete)**    | $\displaystyle \frac{1}{b - a + 1}$<br>$k \in \{a, a+1, \dots, b\}$                        | $\frac{a + b}{2}$  | $\frac{(b - a + 1)^2 - 1}{12}$                                       | Models a variable equally likely to take any integer value from $a$ to $b$.                                 |
+| $\text{Uniform}(a,b)$     | $\displaystyle \frac{1}{b - a + 1}$<br>$k \in \{a, a+1, \dots, b\}$                        | $\frac{a + b}{2}$  | $\frac{(b - a + 1)^2 - 1}{12}$                                       | Models a variable equally likely to take any integer value from $a$ to $b$.                                 |
 
+## Continuous
+
+| Distribution             | PDF $f(x)$                                                                               | Mean $E[X]$                     | Variance $Var(X)$                                            | Parameters                         | Description                                                                             |
+| ------------------------ | ---------------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------ | ---------------------------------- | --------------------------------------------------------------------------------------- |
+| **Exponential**          | $\lambda e^{-\lambda x}$<br>$x \ge 0$                                                    | $\frac{1}{\lambda}$             | $\frac{1}{\lambda^2}$                                        | $\lambda > 0$                      | Models time between events in a Poisson process.                                        |
+| **Gamma**                | $\frac{\lambda^k x^{k-1} e^{-\lambda x}}{\Gamma(k)}$<br>$x > 0$<br>                      | $\frac{k}{\lambda}$             | $\frac{k}{\lambda^2}$                                        | $k > 0$, $\lambda > 0$             | Generalization of exponential; models waiting time for $k$ events in a Poisson process. |
+| **Normal (Gaussian)**    | $\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$<br>$x \in \mathbb{R}$ | $\mu$                           | $\sigma^2$                                                   | $\mu \in \mathbb{R}$, $\sigma > 0$ | Models symmetric data around a mean; central in the Central Limit Theorem.              |
+| **Beta**                 | $\frac{1}{B(\alpha,\beta)} x^{\alpha - 1}(1 - x)^{\beta - 1}$<br>$x \in (0, 1)$          | $\frac{\alpha}{\alpha + \beta}$ | $\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ | $\alpha, \beta > 0$                | Models probabilities and proportions bounded between 0 and 1.                           |
+| **Cauchy**               | $\frac{1}{\pi \gamma [1 + ((x - x_0)/\gamma)^2]}$<br>$x \in \mathbb{R}$                  | undefined                       | undefined                                                    | $x_0 \in \mathbb{R}, \gamma > 0$   | Heavy-tailed distribution; mean and variance do not exist.                              |
+| **Uniform (Continuous)** | $\frac{1}{b - a}$<br>$x \in [a, b]$                                                      | $\frac{a + b}{2}$               | $\frac{(b - a)^2}{12}$                                       | $a < b, \, a, b \in \mathbb{R}$    | Models equal probability over a fixed interval.                                         |
+| **Log-Normal**           | $\frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{(\ln x - \mu)^2}{2\sigma^2}}$<br>$x > 0$       | $e^{\mu + \sigma^2/2}$          | $(e^{\sigma^2} - 1)e^{2\mu + \sigma^2}$                      | $\mu \in \mathbb{R}, \sigma > 0$   | Models multiplicative growth; log of variable is normally distributed.                  |
 
 
 # Distribution of a sum of random variables
