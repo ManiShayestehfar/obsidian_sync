@@ -25,7 +25,7 @@ Roll a fair die and let $Y$ = outcome and $X=1_{\{\text{even outcome}\}}$
 	- Suppose $A \subset \Omega$
 	- For $A = \{1,3,5\}$, $X=0 \implies E(Y|X=0) = 3$
 	- For $A = \{2,4,6\}$, $X = 1\implies E(Y|X=1) = 4$
-	$$E(Y|X)(\omega) \begin{cases}
+	$$E(Y|X)(\omega) = \begin{cases}
 3 & \omega \in \{1,3,5\} \\
 4 & \omega \in \{2,4,6\}
 \end{cases}$$
