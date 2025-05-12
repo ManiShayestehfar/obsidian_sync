@@ -25,9 +25,9 @@ $$F(a) = P(X\leq a) \leq P(X\leq b) = F(b) \quad \quad \square$$
 
 $B_n$ are disjoint events and $\bigcup_{k=1}^n B_k = A_n$. In particular $\bigcup_1^\infty A_n = \underbrace{\cup_1^\infty B_n}_{\text{disjoint}}$.
 $$\begin{align*}
-P\left(\sum_{1}^\infty A_n\right) &= P\left(\sum_{1}^\infty B_n\right) \\[5pt]
+P\left(\bigcup_{1}^\infty A_n\right) &= P\left(\bigcup_{1}^\infty B_n\right) \\[5pt]
 &= \sum_1^\infty P(B_n) \\[5pt]
-&= \lim_{N\to \infty} \sum_{1}^\infty P(B_n) \\[5pt]
+&= \lim_{N\to \infty} \sum_{1}^N P(B_n) \\[5pt]
 &= \lim_{N\to \infty} P\left(\bigcup_1^N B_n\right) \\[5pt]
 &= \lim_{N\to \infty} P(A_n)  \quad\quad \square
 \end{align*}$$
