@@ -68,7 +68,7 @@ To prove the converse, we need to show that $F(x) := \int_{-\infty}^x f(x') \:dx
 ## Uniform Distribution
 
 $U$ has a $\text{Uniform}(0,1)$ dist. if it has a density
-$$f(u) = \mathbb{1}_{[a,b]}(u) = \begin{cases}
+$$f(u) = \mathbb{1}_{[0,1]}(u) = \begin{cases}
 1 & u \in [0,1] \\[4pt]
 0 & u \not\in [0,1]
 \end{cases}$$
@@ -143,7 +143,7 @@ $$\implies F(u) = \int_{-\infty}^u f(t) \:dt = \begin{cases}
 >[!example] Theorem
 >Suppose $X$ is a continuous RV with:
 >1. pdf $f_X$
->2. $g$ a continuously differentiable and strictly monotone function on interval $I \supset X(\Omega)$ .
+>2. $g$ a continuously differentiable and strictly monotone function on interval $I \subset X(\Omega)$ .
 >   
 >Then $Y := g(X)$ is a continuous RV with pdf 
 >$$f_y(Y) = f_X(g^{-1}(y)) \left|\frac{d}{dy} g^{-1}(y)\right| = f_X(g^{-1}(y)) \left|\frac{1}{g'(g^{-1}(y))}\right|$$

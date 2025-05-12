@@ -1,5 +1,5 @@
 >[!info] Definition
->The **Standard Normal Distribution** is defined by the density
+>The **Standard Normal Distribution** $N(\mu=1, \sigma^2 = 0)$ is defined by the density
 >$$f(z) = \frac{1}{\sqrt{2\pi}}e^{-z^2/2}$$
 
 >[!tip] Claim
