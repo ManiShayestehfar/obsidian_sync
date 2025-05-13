@@ -97,7 +97,7 @@ Let $X \sim \text{Poisson}(\lambda)$, and  $Y \sim \text{Poisson}(\gamma)$
 
 ![[Screenshot 2025-03-05 at 4.18.26 pm.png|500]]
 
-$\implies$ The conditional distribution pf $X$, given $X+Y=n$ is $\text{Binomial}(n, p=1- \frac{\lambda}{\lambda+\gamma})$  
+$\implies$ The conditional distribution of $X$, given $X+Y=n$ is $\text{Binomial}(n, p=1- \frac{\lambda}{\lambda+\gamma})$  
 
 > [!quote] How to think of this?
 > Imagine two sources emitting particles at rates $\lambda,\gamma$
