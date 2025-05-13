@@ -33,7 +33,7 @@ Suppose $F$ is a continuous [[Cumulative Distribution Function|CDF]] which is st
 >The **qunatile function** is defined as
 >$$Q_F(p) = \inf \{x:F(x) \geq p\}\quad p \in (0,1)$$
 >
->-> Using right-continuity of $F$ we cans how that $Q_F(p) = \min \{x : F(x) \geq p\}$
+>-> Using right-continuity of $F$ we can show that $Q_F(p) = \min \{x : F(x) \geq p\}$
 
 
 >[!tip] Claim 2
