@@ -25,7 +25,6 @@ F_V(v) &= 1 - P(V>v) \\[4pt]
 If $F$ has a density $f$, then by chain rule
 $$f_V(v) = n[1-F_V(v)]^{n-1} f(v)$$
 
-
 - Generally, let $X_{(1)} \leq X_{(2)} \leq ...\leq X_{(n)}$ be the sorted values of $X_1,...,X_n$. 
   Then $X_{(i)}$ are called the **order statistics**. 
 - *What is the distribution of $X_{(k)}$?*
