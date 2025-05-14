@@ -187,3 +187,8 @@ $X \sim \text{Beta}(a,b)\quad a,b>0$
 ![[Pasted image 20250508230944.png|600]]
 
 
+### Cauchy 
+
+$X \sim \text{Cauchy}$,  $f_X(x) = \frac{1}{\pi} \frac{1}{1 + x^2}$ 
+$$E(X) = \int_{-\infty}^\infty \underbrace{x\:\frac{1}{\pi} \frac{1}{1+x^2}\:dx}_{\text{odd}}$$
+The distribution is symmetric about 0. 

@@ -27,5 +27,11 @@ P(|S_n/n-p| \geq \varepsilon) &\leq \frac{V(S_n/n)}{\varepsilon^2} \\[5pt]
 >[!abstract] Theorem
 >If $X_1,X_2,...$ are iid $L^1$ RVs with mean $\mu$, then for $S_n = \sum_{i=1}^n X_i$
 >$$\frac{S_n}{n}\longrightarrow \mu \quad\quad \text{as $n \to \infty$ in probability.}$$
+- *In probability* convergence
+# Strong Law of Large Numbers (SLLN)
 
+>[!abstract] Theorem
+>If $X_1,X_2,...$ are iid $L^1$ RVs with mean $\mu$, then for $S_n = \sum_{i=1}^n X_i$
+>$$\frac{S_n}{n}\longrightarrow \mu \quad\quad \text{with probability 1.}$$
+- *almost surely* convergence
 
