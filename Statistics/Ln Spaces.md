@@ -52,3 +52,20 @@ $$Z^2 = (\alpha X + \beta Y)^2 = \alpha^2 X^2 + 2\alpha\beta XY + \beta^2 Y^2 \i
 As proved above, $Z \in L^2 \iff Z^2 \in L^1$. This is true as $X^2,Y^2, XY \in L^1$.  $\square$ 
 
 
+# Continuous RVs
+
+Recall that for discrete RVs we defined $L^1$ as the space of RVs $X:\Omega\to \mathbb{R}$ such that 
+$$X\in L^1 \iff E(X) = E^+ - E^- \in \mathbb{R} \quad(\text{finite})$$
+
+For continuous RVs,
+
+>[!tip] Theorem 
+>A continuous RV $X \in L^1$ if 
+>$$E^+ + E^- = \int_0^\infty xf_X(x)\:dx \quad+\quad \int_{-\infty}^0 (-x)f_X(x)\:dx \:\:=\:\:  \int_{-\infty}^\infty |x| f_X(x) \:dx \leq \infty $$
+so
+$$X\in L^1 \iff E(X) = E^+ - E^- \in \mathbb{R}\:(\text{finite})$$
+
+## Examples
+
+### Normal 
+$Z \sim N(0,1)$ 

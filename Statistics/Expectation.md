@@ -192,3 +192,25 @@ $X \sim \text{Beta}(a,b)\quad a,b>0$
 $X \sim \text{Cauchy}$,  $f_X(x) = \frac{1}{\pi} \frac{1}{1 + x^2}$ 
 $$E(X) = \int_{-\infty}^\infty \underbrace{x\:\frac{1}{\pi} \frac{1}{1+x^2}\:dx}_{\text{odd}}$$
 The distribution is symmetric about 0. 
+
+By [[Law of Large Numbers|SLLN]], if $X_i\sim\text{Cauchy}$ Then $S_n/n \to 0$ as $n \to \infty$ with probability 1. 
+In particular $S_n/n$ should increasingly concentrate about 0. 
+But it can be shown that $S_n/n$ is itself a Cauchy RV!
+
+$P(S_n/n < -1) \equiv F_C(-1) > 0 \forall n$ and in particular $S_n/n$ does *not* converge (even weakly) to 0.
+
+*What is wrong?*
+
+$$\begin{align*}
+E^+(X) &= \int_0^\infty x \frac{1}{\pi}\frac{1}{1+x^2}\:dx \\[4pt]
+&\geq \int_1^\infty \frac{1}{\pi}\frac{x}{1+x^2}\:dx \\[4pt]
+&\geq \int_1^\infty \frac{1}{\pi}\frac{x}{2x^2}\:dx \\[4pt]
+&= \frac{1}{2\pi} \int_1^\infty \frac{1}{x}\:dx &= \infty
+\end{align*}$$
+and similarly $E^-(X) = \infty$.
+
+$\therefore$ **Cauchy distribution does not have a well-defined expectation.**
+
+
+
+
