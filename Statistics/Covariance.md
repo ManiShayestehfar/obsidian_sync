@@ -52,3 +52,53 @@ $$\rho_{X'Y'} = \frac{\text{Cov}(X'Y')}{\sigma_{X'}\sigma_{Y'}} = \text{Cov}(X/\
 and $Y = a+bX \iff Y' = \underbrace{\frac{a}{\sigma_Y}}_{a'} + \underbrace{\frac{b\sigma_X}{\sigma_Y}}_{b'}X'$ .
 
 ![[Covariance-1747392645137.png]]
+
+
+- If $X,Y \in L^1$ are ind. then $\text{Cov}(X,Y)=0$ so if they are also $\in L^2$, they are *uncorrelated* $(\rho_{XY} = 0)$.
+
+### Examples
+
+#### Standard Normal
+$Z \sim N(0,1)$. We saw that $E(Z) = 0$. 
+$$\begin{align*}
+E(Z^2) &= \int_{-\infty}^\infty z^2 \frac{1}{\sqrt{2\pi}}e^{-z^2/2}\:dz\\[4pt]
+&= \left[-z \cdot \frac{1}{\sqrt{2\pi}}e^{-z^2/2}\right]^\infty_0 + \int_{-\infty}^\infty\frac{1}{\sqrt{2\pi}} e^{-z^2/2}\:dz\\[4pt]
+&= 0 + 1
+\end{align*}$$
+$$\implies V(Z) = E(Z^2) - E(Z)^2 = 1$$
+
+#### General Normal
+If $X = \sigma Z + \mu$ where $Z \sim N(0,1)$, $\sigma >0, \mu \in \mathbb{R}$, then $X \sim N(\mu, \sigma^2)$ then
+$$\begin{align*}
+E(X) &= E(\sigma Z + \mu) \\[4pt]
+&= \sigma E(Z) + \mu \\[4pt]
+&= \mu \\[10pt]
+V(X) &= V(\sigma Z + \mu) \\[4pt]
+&= \sigma^2 V(Z)\\[4pt]
+&= \sigma^2 
+\end{align*}$$
+#### Gamma 
+$X \sim \Gamma(\alpha,\lambda)\quad \alpha,\lambda >0$. We saw that $E(X) = \alpha/\lambda$ 
+
+$$\begin{align*}
+E(X^2) &= \int_0^\infty x^2 \frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda x}\:dx \\[4pt]
+&= \frac{1}{\lambda^2 \Gamma(\alpha)}\int_0^\infty (\lambda x)^{\alpha+1} e^{-\lambda x}\:\lambda\:dx \\[4pt]
+&= \frac{1}{\lambda^2 \Gamma(\alpha)}\int_0^\infty t^{\alpha+1}e^{-t}\:dt \tag{$t=\lambda x$} \\[4pt]
+&= \frac{\Gamma(\alpha+2)}{\lambda^2 \Gamma(\alpha)} \\[4pt]
+&= \frac{\alpha(\alpha+1) \Gamma(\alpha)}{\lambda^2\Gamma(\alpha)} \\[4pt]
+&= \frac{\alpha(\alpha+1)}{\lambda^2}
+\end{align*}$$
+$$\implies V(X) = \frac{\alpha(\alpha+1)}{\lambda^2} - \frac{\alpha^2}{\lambda^2} = \frac{\alpha}{\lambda^2}$$
+
+![[Covariance-1747397581143.png|600]]
+
+#### Bivariate Standard Normal
+We showed that $Z,W\sim N(0,1)$, and $Z|W = w \sim N(\rho w, 1-\rho^2)$
+
+Notice that $ZW\in L^1$ since they are individually in $L^2$ and hence $\iint_{\mathbb{R}^2} |zw|f_{ZW}(z,w) \:dz\:dw < \infty$  and
+
+![[Covariance-1747398028620.png|600]]
+
+$\implies \text{Cov}(Z,W) = E(ZW) - E(z)E(W) = \rho$ 
+$\implies \rho_{ZW} = \frac{\text{Cov}(Z,W)}{\sigma_Z\sigma_W} = \rho$.
+
