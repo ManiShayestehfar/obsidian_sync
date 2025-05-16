@@ -70,4 +70,5 @@ $$X\in L^1 \iff E(X) = E^+ - E^- \in \mathbb{R}\:(\text{finite})$$
 ### Normal 
 $Z \sim N(0,1)$ 
 $$ \int_{-\infty}^\infty |z| \frac{1}{\sqrt{2\pi}} e^{-z^2/2}\:dz = \frac{2}{\sqrt{2\pi}} \int_0^\infty z\:e^{-z^2/2}\:dz = \sqrt{\frac{2}{\pi}} \left[-e^{-z^2/2}\right]_0^\infty = \sqrt{\frac{2}{\pi}} $$
-$\implies Z \in L^1$ and $E(Z) =  \int_{-\infty}^\infty \underbrace{z \frac{1}{\sqrt{2\pi}} e^{-z^2/2}}_{\text{odd}}\:dz$ 
+
+$\implies Z \in L^1$ and $E(Z) =  \int_{-\infty}^\infty \underbrace{z \frac{1}{\sqrt{2\pi}} e^{-z^2/2}}_{\text{odd}}\:dz = 0$  

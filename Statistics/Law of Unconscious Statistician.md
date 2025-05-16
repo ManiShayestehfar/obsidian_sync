@@ -8,3 +8,11 @@
 - Then $Y  = g(X)$ is a discrete RV with pmf $p_Y$
 
 ![[Pasted image 20250305233446.png]]
+
+
+# Continuous RV Analogy
+
+If $X$ is a cont. RV and $g: \mathbb{R}\to\mathbb{R}$ (measurable) then $Y = g(X)$ is *not necessarily a cont. RV*, nevertheless
+$$Y \in L^1 \iff \int_\mathbb{R}|g(x)| \:f_X(x) \:dx < \infty$$
+and if $Y \in L^1$ (or $Y\geq 0$ or $Y \leq 0$) then 
+$$E(Y) = \int_\mathbb{R}g(x)f_X(x)\:dx$$
