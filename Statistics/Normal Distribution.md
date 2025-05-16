@@ -14,6 +14,11 @@
 >$\sigma>0$ is the *scale* parameter, and $\mu$ is a *location* parameter.
 - The standard normal distribution is $N(0,1)$
 
+# Standard Bivariate
+![[Normal Distribution-1747400579310.png|650]]
+$$\implies \rho_{XY} = \frac{\text{Cov}(X,Y)}{\sigma_X\sigma_Y} = \rho$$
+
+![[Normal Distribution-1747400670175.png|650]]
 
 # Examples
 

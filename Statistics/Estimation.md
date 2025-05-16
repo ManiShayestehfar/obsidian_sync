@@ -101,3 +101,6 @@ Hence $\hat{\Theta}_n$ is a *consistent* estimator.
 - This MSE is not bounded but can be estimated as 
 $$\widehat{MSE}(\hat{\Theta}_n) = \frac{\bar{\mathbf{x}}}{n}$$
 
+# Continuous RV
+
+![[Estimation-1747401080845.png]]
