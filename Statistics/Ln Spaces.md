@@ -65,6 +65,14 @@ For continuous RVs,
 so
 $$X\in L^1 \iff E(X) = E^+ - E^- \in \mathbb{R}\:(\text{finite})$$
 
+>[!tip] Corollary
+>If $\alpha,\beta \in \mathbb{R}$ and $X\in L^1$ with density $f_X$, then $Y = \alpha X + \beta  \in L^1$ and $E(Y) = \alpha E(X) + \beta$.
+#### Proof
+
+![[image.png]]
+![[image-1.png]]
+
+
 ## Examples
 
 ### Normal 

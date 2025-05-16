@@ -52,6 +52,10 @@ E(T|N) &= h(n) \\[4pt]
 \end{align*}$$
 $\implies$ if $N \in L^1$, $E[E(T|N)] = E(N)E(X_i)$ 
 
+>[!warning] For continuous RV
+>![[Conditional Expectation _RV_-1747387079619.png]]
+
+
 # Theorem
 
 Theorem connecting to [[Conditional Expectation]]

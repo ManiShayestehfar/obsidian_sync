@@ -127,3 +127,13 @@ V(\alpha X + \beta)&= E[((\alpha X + \beta) - (\alpha \mu + \beta))^2] \\[4pt]
 >$$V\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^{n}V(X_i)$$
 
 
+# Continuous RV
+
+>[!info] Definition
+For $X\in L^1$ we define **variance** of $X$ as 
+$$V(X) = E[X - E(X)]^2$$
+and
+$$V(x) = E(X^2) - E^2(X)$$ 
+
+
+
