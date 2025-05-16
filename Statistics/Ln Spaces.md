@@ -72,6 +72,12 @@ $$X\in L^1 \iff E(X) = E^+ - E^- \in \mathbb{R}\:(\text{finite})$$
 ![[image.png]]
 ![[image-1.png]]
 
+## $L^k$
+
+>[!info] Definition
+>A cont. RV $X$ is in **$L^k$** for $k \in \mathbb{N}_1$ if 
+>$$\int_{-\infty}^\infty|x|^k\:f_X(x)\:dx < \infty$$
+
 
 ## Examples
 

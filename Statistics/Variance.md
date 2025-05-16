@@ -133,7 +133,7 @@ V(\alpha X + \beta)&= E[((\alpha X + \beta) - (\alpha \mu + \beta))^2] \\[4pt]
 For $X\in L^1$ we define **variance** of $X$ as 
 $$V(X) = E[X - E(X)]^2$$
 and
-$$V(x) = E(X^2) - E^2(X)$$ 
+$$V(X) = E(X^2) - E^2(X)$$ 
 
 
 

@@ -24,3 +24,8 @@ $$\text{Cov}(X,Y) = 0$$
 - If $X$ and $Y$ are uncorrelated it follows that you cannot predict $Y$ using a *linear* function of $X$. i.e the regression line has a slope $=0$. 
 
  
+# Continuous RV
+
+>[!tip] Claim
+>If $X,Y,Z \in L^2$, $\alpha,\beta\in \mathbb{R}$ then
+>$$\text{Cov}(\alpha X+\beta Y,Z) = \alpha \text{Cov}(X,Z) + \beta \text{Cov}(Y,Z)$$
