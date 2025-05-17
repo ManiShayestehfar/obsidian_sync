@@ -86,3 +86,38 @@ $$\begin{align*}
 where $\hat{\mu} = \bar{\mathbf{x}}$, and
 
 ![[Screenshot 2025-03-26 at 7.57.59 am.png]]
+
+
+
+# Continuous RV
+
+![[Method of Moments-1747439832949.png]]
+
+
+## Examples
+
+### Normal (1 unknown)
+
+$X_1,...,X_n$ is a sample from $N(\theta,1)$. $\theta = E(X_j) = \mu_1$  $\implies \tilde{\theta} = \tilde{\mu}_1 = \bar{x}$ 
+
+
+### Normal (all unknown)
+$X_1,...,X_n \sim N(\mu, \sigma^2)$. 
+
+$\mu = E(X_j) = \mu_1$,   $\sigma^2 = V(X_j) = \mu_2 - \mu_1^2$
+
+$\implies \tilde{\mu} = \tilde{\mu}_1 = \bar{x}$   and $\tilde{\sigma}^2 = \tilde{\mu}_2 - \tilde{\mu}_1^2 = \tfrac{1}{n}\sum_{j}(x_j-\bar{x})^2$
+
+- Note that $\tfrac{1}{n}\sum_{j}(x_j-\bar{x})^2$ is a bias estimator, so we use $1/(n-1)$ to get the unbiased estimator
+
+### Exponential
+$X_1,...,X_n \sim \text{Exp}(\theta)$
+
+$E(X_j) = \frac{1}{\theta}$  $\implies \theta = \frac{1}{\mu_1}$   $\implies \tilde{\theta} = \frac{1}{\bar{x}}$
+
+### Scaled Cauchy
+$X_1,...,X_n \sim \theta \cdot X$   where $X \sim \text{Cauchy}$ 
+
+So $E(X_j) = E(\theta \cdot X) = \theta E(X)$ but Cauchy does not have a defined expectation so this dist. has no moments!
+
+

@@ -100,3 +100,18 @@ Instead for each value $m = \max\{x_i\},  \max\{x_i\}+1,  \max\{x_i\}+2,...$
 where in reality there is no upper bound to $m$.
 
 So we can only compute an *approximate* MLE.
+
+
+
+# Continuous RV
+
+The only difference here is that the pdf which is the continuous analogy to the pmf gives $P_\theta(X=x) = 0$ so instead we use
+$$\ell(\theta;x) = \log f_{X,\theta}(x) \overset{i.i.d}{=} \sum_j \log f_{X,\theta}(x_j)$$
+
+## Example
+
+### Normal
+
+$x_1,...,x_n$ drawn from $N(\theta,1);\:\:f_\theta(X) = \frac{1}{\sqrt{2\pi}} e^{-(x-\theta)^2/2}$ 
+$$\ell(\theta;x) = \sum_{j=1}^n \left[ \log \frac{1}{\sqrt{2\pi}} + \left(-\frac{(x_j-\theta)^2}{2}\right)\right]$$
+![[Maximum Likelihood Estimation-1747441034749.png|600]]
