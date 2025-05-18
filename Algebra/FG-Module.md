@@ -51,7 +51,7 @@ $$\begin{align*}
 >If $V$ is an $\mathbb{F}$-vector space then a subset $W$ of $V$ is a **submodule** of $G$ if 
 >
 >1. $W$ is a subspace of $V$
->2. $wg \in W$ for all $w \in W$ and all $g \in G$
+>2. $gw \in W$ for all $w \in W$ and all $g \in G$
 >   
 >   Every submodule $W$ of a $G-$module is by definition a $G-$module.
 
@@ -60,10 +60,10 @@ $$\begin{align*}
 > ![[Pasted image 20250306222032.png]]
 ##### Proof for a)
 1.  Clearly $\ker\varphi \subset V$ 
-2. Let $g \in G$. $\varphi(vg) = g\varphi(v) = g\cdot 0 = 0$ and so $vg \in \ker \varphi$, where the choice of $v$ and $g$ were arbitrary. $\square$ 
+2. Let $g \in G$. $\varphi(vg) = g\varphi(v) = g\cdot 0 = 0$ and so $vg \in \ker \varphi$, where the choice of $v$ and $g$ were arbitrary.    $\square$ 
 ##### Proof for b)
 1. $\text{im}\:\phi \subset W$   
-2. Let $w = \varphi(v)$ for $v \in V$ and $w \in W$. And $gw = g\varphi(w) = \varphi(gw) \in \text{im}\: W$ for all $g \in G$ and so $gw \in \text{im }W$. $\square$ 
+2. Let $w = \varphi(v)$ for $v \in V$ and $w \in W$. And $gw = g\varphi(v) = \varphi(gv) \in \text{im}\: W$ for all $g \in G$ and so $gw \in \text{im }W$.     $\square$ 
 
 
 # Irreducible $G$-modules

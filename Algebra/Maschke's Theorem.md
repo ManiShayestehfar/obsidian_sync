@@ -1,5 +1,5 @@
 
->[!tip] Theorem
+>[!tip] Maschke's Theorem
 > - $\mathbb{F}$ be a field of characteristic $p$,
 > - $G$ a finite group of order *not* divisible by $p \geq 0$.  
 > - Let $V$ be a $G$-module, and $W$ a $G$-submodule of $V$. 

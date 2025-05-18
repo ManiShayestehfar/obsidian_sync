@@ -66,9 +66,16 @@ Moreover since $V$ is irreducible, $\ker \varphi$ is a maximal ideal of $A$ by t
 >
 
 ##### Proof
+Here we treat $A$ as a **left $A$-module over itself**.  i.e. scalar multiplication is ring multiplication where both scalars and set elements being acted on come from $A$.
 ###### $(\Rightarrow)$ 
-If $V$ is a submodule of $A$, then $V$ is an $\mathbb{F}$-vector subspace of $A$ and so $v-w \in V$ for $v,w \in V$. 
+If $V$ is a submodule of $A$, then $V$ is an $\mathbb{F}$-vector subspace of $A$ and so $v-w \in V$ for $v,w \in V$. Also since $V$ is an $A$-module, it's closed under left multiplication. i.e. $av \in V$ for all $a \in A,$ $v\in V$.  We then have both
+1. Additive closure (i.e. $v - w \in V$), and
+2. left multiplication closure
+and therefore $V$ is a left-ideal.
 
+###### $(\Leftarrow)$ 
+If $V$ is a left-ideal of $A$, then by additive closure, $v-w\in V$ and so $V$ is an $\mathbb{F}$-vector subspace, and it is closed under left multiplication by $A$. 
+Hence it is an $A$-submodule. 
  
 
 
