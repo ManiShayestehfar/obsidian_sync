@@ -115,3 +115,23 @@ $$\ell(\theta;x) = \log f_{X,\theta}(x) \overset{i.i.d}{=} \sum_j \log f_{X,\the
 $x_1,...,x_n$ drawn from $N(\theta,1);\:\:f_\theta(X) = \frac{1}{\sqrt{2\pi}} e^{-(x-\theta)^2/2}$ 
 $$\ell(\theta;x) = \sum_{j=1}^n \left[ \log \frac{1}{\sqrt{2\pi}} + \left(-\frac{(x_j-\theta)^2}{2}\right)\right]$$
 ![[Maximum Likelihood Estimation-1747441034749.png|600]]
+
+### General Normal
+$x_1,...,x_n$ drawn from $N(\mu,\sigma^2)$, $f_\theta(x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{(x-\mu)^2 / 2\sigma^2}$ 
+$$\ell(\mu,\sigma) = \sum_{i=1}^n \left[ \log \frac{1}{\sqrt{2\pi}} -  \log \sigma - \frac{(x_i-\mu)^2}{2\sigma^2} \right]$$
+$$\begin{align*}
+\implies \partial\ell/\partial\mu &= \frac{n}{\sigma^2}(\bar{x}-\mu)
+\end{align*}$$
+hence $\forall \sigma > 0$, $\mu = \bar{x}$. Now we maximise
+$$\varphi(\sigma) = \ell(\mu=\bar{x}, \sigma) = \sum_{i=1}^n \left[ \log \frac{1}{\sqrt{2\pi}} -  \log \sigma - \frac{(x_i-\bar{x})^2}{2\sigma^2} \right]$$
+$$\begin{align*}
+\implies  d\varphi / d\sigma &= \sum_{i=1}^n \left[-\frac{1}{\sigma} + \frac{(x_i - \bar{x})^2}{\sigma^3}\right] \\[4pt]
+&= \frac{n}{\sigma^3}\left[-\sigma^2 + \sum_{i=1}^n (x_i - \bar{x})^2\right]
+\end{align*}$$
+hence $\varphi(\sigma)$ has a global maximum when $\sigma^2 = \sum_{i=1}^n (x_i - \bar{x})^2$.
+
+$\therefore$ The MLE estimates are:
+$$\begin{align*}
+\hat{\mu} &= \bar{x} \\[5pt]
+\hat{\sigma}^2 &= \sum_{i=1}^n (x_i - \bar{x})^2
+\end{align*}$$
