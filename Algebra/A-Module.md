@@ -72,7 +72,6 @@ If $V$ is a submodule of $A$, then $V$ is an $\mathbb{F}$-vector subspace of $A$
 1. Additive closure (i.e. $v - w \in V$), and
 2. left multiplication closure
 and therefore $V$ is a left-ideal.
-
 ###### $(\Leftarrow)$ 
 If $V$ is a left-ideal of $A$, then by additive closure, $v-w\in V$ and so $V$ is an $\mathbb{F}$-vector subspace, and it is closed under left multiplication by $A$. 
 Hence it is an $A$-submodule. 
