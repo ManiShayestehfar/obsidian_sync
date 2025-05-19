@@ -100,9 +100,9 @@ $$P(X\leq x | y \leq Y\leq y+\delta) \overset{\delta\to 0}{\longrightarrow} \fra
 >$$ \int_{-\infty}^\infty |y|\:f_{Y|X}(y|x)\:dy < \infty$$
 >In particular, for such $X$'s we can define the **conditional expectation** of $Y$ given $X=x$ as 
 >$$E(Y|X=x) =  \int_{-\infty}^\infty y\:f_{Y|X}(y|x)\:dy\quad\in \mathbb{R}$$
-
-
-
+##### Proof
+![[Screenshot 2025-05-19 at 9.37.43 pm.png|650]]
+![[Screenshot 2025-05-19 at 9.38.50 pm.png]]
 
 
 
