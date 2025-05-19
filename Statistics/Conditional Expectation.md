@@ -95,6 +95,18 @@ $$P(X\leq x | y \leq Y\leq y+\delta) \overset{\delta\to 0}{\longrightarrow} \fra
 >If $X,Y$ are [[Independent RV|independent RVs]], then
 >$$f_{X|Y}(x,y) = \frac{f_X(x)f_Y(y)}{f_Y(y)} = f_X(x)$$
 
+>[!tip] Claim
+>If $Y \in L^1$ then for "almost every" $x$ s.t. $f_X(x) > 0$, 
+>$$ \int_{-\infty}^\infty |y|\:f_{Y|X}(y|x)\:dy < \infty$$
+>In particular, for such $X$'s we can define the **conditional expectation** of $Y$ given $X=x$ as 
+>$$E(Y|X=x) =  \int_{-\infty}^\infty y\:f_{Y|X}(y|x)\:dy\quad\in \mathbb{R}$$
+
+
+
+
+
+
+
 ## Examples
 
 ### Joint Distribution of an Independent Uniform and Exponential Variables
@@ -143,6 +155,8 @@ $$f_Z(v) = g(v) = \int_{-\infty}^\infty f_{XY}(x,v-x)\:dx = \int_{-\infty}^\inft
 - If $X,Y$ are [[Independent RV]], then
 $$f_Z(z) = \int_{-\infty}^\infty f_X(x)\:f_Y(z-x)\:dx$$
 	- Note that the integrand is $f_X \star f_Y$ the convolution of $f_X,f_Y$ 
+
+
 
 ### Examples
 
