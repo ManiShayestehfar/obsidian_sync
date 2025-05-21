@@ -101,10 +101,15 @@ $$P(X\leq x | y \leq Y\leq y+\delta) \overset{\delta\to 0}{\longrightarrow} \fra
 >In particular, for such $X$'s we can define the **conditional expectation** of $Y$ given $X=x$ as 
 >$$E(Y|X=x) =  \int_{-\infty}^\infty y\:f_{Y|X}(y|x)\:dy\quad\in \mathbb{R}$$
 ##### Proof
-![[Screenshot 2025-05-19 at 9.37.43 pm.png|650]]
-![[Screenshot 2025-05-19 at 9.38.50 pm.png]]
+![[Conditional Expectation-1747780427130.png]]
+![[Conditional Expectation-1747780444182.png]]
+![[Conditional Expectation-1747780464052.png]]
 
-
+>[!tip] Claim
+>If $X,Y$ are RVs defined on $\Omega$ and $Y \in L^1$ then $E(Y|X)\in L^1$ and 
+>$$E[E(Y|X)] = E(Y)$$
+##### Proof
+If $X,Y$ are jointly cont. with $f_{XY}$ and if $f_X(x) > 0$ then the proof is the same as the discrete case with the replacements $p\to f$, and $\Sigma \to \int$. 
 
 
 ## Examples
