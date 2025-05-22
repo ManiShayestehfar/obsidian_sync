@@ -98,6 +98,7 @@ $$P(X\leq x | y \leq Y\leq y+\delta) \overset{\delta\to 0}{\longrightarrow} \fra
 >[!tip] Claim
 >If $Y \in L^1$ then for "almost every" $x$ s.t. $f_X(x) > 0$, 
 >$$ \int_{-\infty}^\infty |y|\:f_{Y|X}(y|x)\:dy < \infty$$
+>
 >In particular, for such $X$'s we can define the **conditional expectation** of $Y$ given $X=x$ as 
 >$$E(Y|X=x) =  \int_{-\infty}^\infty y\:f_{Y|X}(y|x)\:dy\quad\in \mathbb{R}$$
 ##### Proof

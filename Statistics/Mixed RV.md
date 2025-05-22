@@ -21,7 +21,20 @@ $X_1,...,X_n \sim F_X$ and define $T = \sum_1^N X_i$. In all such cases $F_{XY} 
 
 $F_{T|N}(t|n) = F_{S_n}(t)$ where $S_n = \sum_1^n X_i$, which is true if we change $T=s$ to $T\leq s$ in the proof in [[Random Sums]].
 
-If $X_i \in L^1$ then $E(T|N=n) = nE(X_i)$ and so $E(T|N) = NE(X_i)$.
+- If $X_i \in L^1$ then $E(T|N=n) = nE(X_i)$ and so $E(T|N) = NE(X_i)$.
+- If also $N \in L^1$, then $T \in L^1$ and 
+	$$\begin{align*}
+E(T) &= E[E(T|N)] \\[4pt]
+ &= E[NE(X_i)]\\[4pt]
+&= E(N)E(X_i)
+\end{align*}$$
+- Similarly $V(Y) = V[E(Y|X)] + E[V(Y|X)]$ only relied on $E[E(Y|X)] = E(Y)$ and $V(Y|X) = E(Y^2|X) - [E(Y|X)]^2$ therefore it extends to any jointly distributed $X,Y$ with $Y\in L^2$.  
+- In particular if $X_i, N \in L^2$, then $T \in L^2$ and 
+$$\begin{align*}
+V(T) &= V[E(T|N)] + E[V(T|N)] \\[4pt]
+&= V[NE(X_i)] + E[N V(X_i)] \\[4pt]
+&= E^2(X_i)V(N) + V(X_i)E(N)
+\end{align*}$$
 
 ## Convolution
 If the ind. RVs $X_i$ have densities $f_i$ then $\sum_{i=1}^n X_i$ has density $((f_1 \star f_2) \star f_3) ... \star f_n = f_1 \:\star\: ... \:\star\: f_n$.   
