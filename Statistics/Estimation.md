@@ -69,7 +69,7 @@ $$\widehat{MSE}(\hat{\mathbf{\Theta}}) = \frac{\bar{\mathbf{x}}(1-\bar{\mathbf{x
 
 ## Consistent Estimator
 
-Recall the [[Convergence in Probability]] ,
+Recall the [[Convergence]] ,
 
 >[!info] Definition
 >An estimator $\hat{\mathbf{\Theta}}=\hat{\mathbf{\Theta}}_n$ is **consistent** if $\hat{\mathbf{\Theta}}_n \underset{n}{\longrightarrow}\theta$ in probability. .i.e.

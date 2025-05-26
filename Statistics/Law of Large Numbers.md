@@ -10,7 +10,7 @@ V\left(\frac{S_n}{n}\right) &= \frac{1}{n^2}V(S_n)=\frac{1}{n^2}np(1-p) =\frac{p
 >$S_n/n \to p = E(S_n/n) = E(X_i)$
 
 
-Using [[Convergence in Probability]], 
+Using [[Convergence]], 
 
 >[!tip] Claim 1
 >The RVs $Y_n := S_n/n$ converge to the constant RV $Y:=E(X_i)=p$ in probability.

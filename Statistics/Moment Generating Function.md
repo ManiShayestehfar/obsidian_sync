@@ -106,4 +106,35 @@ M''(t) &= M(t)
 >$$M_{X+Y} \equiv M_X\cdot M_Y$$
 >That is, $M_{X+Y}(t) < \infty \iff M_X(t)$ and $M_Y(t) < \infty$ and in this case $M_{X+Y}(t)=M_X(t)M_Y(t)$
 ##### Proof
-If $Z,W \in L^1$ are ind. then $E(ZW) = E(Z)E(W)$. The same proof as in Lecture 8 can extend that identity for real, non-negative valued RVs $Z,W$ with $E(Z)E(W) >0$ where the equality also holds between $\infty$'s.
+If $Z,W \in L^1$ are ind. then $E(ZW) = E(Z)E(W)$. The same proof as in Lecture 8 can extend that identity for real, non-negative valued RVs $Z,W$ with $E(Z)E(W) >0$ where the equality also holds between $\infty$'s. Therefore
+$$\begin{align*}
+M_{X+Y} &= E\left[e^{t(X+Y)}\right] \\[4pt]
+&= E\left[e^{tX}e^{tY}\right] \\[4pt]
+&= E[e^{tX}]E\left[e^{tY}\right] \\[4pt]
+&= M_X(t)M_Y(t)
+\end{align*}$$
+By induction, if $X_1,...,X_n$ are ind. RVs then $M_{\sum X_i} = \prod_{i=1}^n M_{X_i}(t)$
+
+
+## Example
+
+### Gamma
+$X\sim \Gamma(\alpha, \lambda)$ is ind. of $Y \sim \Gamma(\beta, \lambda)$ where $\alpha,\beta, \lambda > 0$. For $t < \lambda$,
+$$M_{X+Y} = M_X(t)M_Y(t) = \left(\frac{\lambda}{\lambda -t}\right)^\alpha\left(\frac{\lambda}{\lambda -t}\right)^\beta = \left(\frac{\lambda}{\lambda -t}\right)^{\alpha+\beta}$$
+and for $t \geq \lambda, \quad M_{X+Y}(t) = \infty \cdot \infty = \infty$. 
+$\implies X+Y \sim \Gamma(\alpha+\beta,\lambda)$
+
+![[Moment Generating Function-1748259133082.png|650]]
+
+#### Sub-Example - Standard Normal 
+ $Z \sim N(0,1)$ and $Y = \sigma Z + \mu \sim N(\mu, \sigma^2)$ 
+$$\begin{align*}
+M_Y(t) &= e^{t\mu} M_z(t\sigma) \\[4pt]
+&= e^{t\mu} e^{t^2\sigma^2/2} \\[4pt]
+&= e^{t\mu \:+\: t^2 \sigma^2 /2} \quad \forall t \in \mathbb{R}
+\end{align*}$$
+
+#### Sub-Example - Normal 
+
+![[Moment Generating Function-1748259352855.png|650]]
+
