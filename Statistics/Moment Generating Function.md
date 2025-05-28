@@ -18,7 +18,7 @@ $$M(t) = \sum_{i=1}^{\infty}e^{tx_i}\:p_X(x_{i)}\tag{if finite}$$
 
 ### Poisson
 
-$X \sim \text{Poisson}(\lambda)$ where $\lambda > 0 $.
+$X \sim \text{Poisson}(\lambda)$ where $\lambda > 0$.
 $$\begin{align*}
 M(t) &= \sum_{k=0}^{\infty}e^{tk}\:(e^{-\lambda} \frac{\lambda^k}{k!})\\[4pt]
 &=  e^{-\lambda} \sum_{k=0}^{\infty} \frac{(\lambda e^t)^k}{k!}\\[4pt]
