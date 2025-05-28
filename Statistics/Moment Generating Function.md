@@ -138,3 +138,12 @@ M_Y(t) &= e^{t\mu} M_z(t\sigma) \\[4pt]
 
 ![[Moment Generating Function-1748259352855.png|650]]
 
+
+# Characteristic Function 
+
+There are distribution for which the MGF exists only for $t=0$. i.e. Cauchy distribution
+$$\int_{-\infty}^\infty e^{tx} \frac{1}{\pi} \frac{1}{1+x^2}\:dx = +\infty \quad\forall t\neq 0.$$
+Hence we prefer to work with the **characteristic function (CF)** 
+$$\phi_X(t) := E[e^{itX}] = M_X(it)$$
+where $E[e^{itX}] = E[\cos(tX) + i\sin(tX)]$.
+
