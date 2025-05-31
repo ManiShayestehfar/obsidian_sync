@@ -104,3 +104,37 @@ where the last equality comes from the theorem.
 Suppose $X_i\sim N(\theta,\sigma^2)$ where $\sigma^2$ is unknown but is of no interest (we what to know $\theta$).
 
 Our previous CI when $\sigma^2$ was known need to be tweaked. Let $t_\beta^n$ be the $\beta$-quantile of the [[T-distribution]] with $n$ d.o.f. 
+
+Let $\hat{\sigma}^2 = \frac{1}{n-1} S^2 = \frac{1}{n-1} \sum_1^n (x_i - \bar{x})^2$ and let 
+$$I_\alpha(X_1,...,X_n) = \left[ \bar{X} - t_{1-\alpha/2}^{n-1} \frac{\hat{\sigma}}{\sqrt{n}}\:\:,\:\: \bar{X} + t_{1-\alpha/2}^{n-1} \frac{\hat{\sigma}}{\sqrt{n}}\right]$$
+
+![[Confidence Intervals-1748677742257.png|550]]
+
+>[!tip] Claim
+>$I_\alpha(X_1,...,X_n)$ is a $(1-\alpha)\cdot 100\%$ CI for $\theta_p$
+
+##### Proof
+
+![[Confidence Intervals-1748677813325.png|650]]
+
+
+# How to construct CIs?
+
+Suppose that the dist. of $\hat{\Theta} - \theta$ is known, and in particular, it is *invariant of $\theta$* (usually the case for location parameters, i.e. mean).
+For example, when estimating $\theta$ given a sample from a $N(\theta, \sigma^2)$ where $\sigma^2$ is known,
+$$\hat{\Theta} - \theta = \bar{X} - \theta \sim N(0, \sigma^2/n)$$
+is known.
+
+Let $F = F_{\hat{\Theta} - \theta}$ denote this dist. of $\hat{\Theta}-\theta$, and let $q_\alpha$ be its $\alpha$ quantile (assume for simplicity that $q_\alpha = F^{-1}(\alpha$)). Define 
+$$\begin{align*}
+\theta_L &= \theta_L(x_1,...,x_n) = \hat{\theta} - q_{1-\alpha/2} \\[3pt]
+\theta_R &= \theta_R(x_1,...,x_n) = \hat{\theta} - q_{\alpha/2} = \hat{\theta} + q_{1-\alpha/2} \tag{if dist. is symm. abt. 0}
+\end{align*}$$
+
+>[!tip] Claim
+>$I_\alpha = (\theta_L,\theta_R)$ is a $(1-\alpha)\cdot 100\%$ CI for $\theta$.
+##### Proof
+
+![[Confidence Intervals-1748678787353.png|650]]
+![[Confidence Intervals-1748678810408.png|650]]
+
