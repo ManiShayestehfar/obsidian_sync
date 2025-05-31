@@ -147,3 +147,23 @@ Hence we prefer to work with the **characteristic function (CF)**
 $$\phi_X(t) := E[e^{itX}] = M_X(it)$$
 where $E[e^{itX}] = E[\cos(tX) + i\sin(tX)]$.
 
+- Since $\cos$ and $\sin$ are bounded, the expectations are well-defined $\forall t \in \mathbb{R} \implies$ the characteristic function is defined $\forall t \in \mathbb{R}$.
+- If $X,Y$ are ind. RVs then 
+$$\begin{align*}
+\phi_{X+Y}(t) &= E[e^{it(X+Y)}] \\[4pt]
+&= E[e^{itX}]\:E[e^{itY}] \\[4pt]
+&= \phi_X(t)\:\phi_Y(t)
+\end{align*}$$
+
+- If $E(|X|^k) < \infty$, then $\phi^{(k)}(t) = i^kE[X^k]$ 
+- If $Y = aX + b\quad \forall a,b \in \mathbb{R}$, then 
+	$$\phi_Y(t) = e^{itb}\phi_X(at)$$
+- Similar to the MGF, $X\sim N(\mu,\sigma^2)$ then $Y = aX + b \sim N(a\mu+b, a^2\sigma^2)$
+
+## Example
+### Standard Normal
+$Z \sim N(0,1)$, then 
+$$\phi_Z(t) = M_Z(it) = e^{(it)^2/2} = e^{-t^2/2}$$
+### Normal
+$X \sim N(\mu,\sigma^2)$ then $X = \sigma Z + \mu$ so 
+$$\phi_X(t)= e^{it\mu - \sigma^2 \frac{t^2}{2}}$$
