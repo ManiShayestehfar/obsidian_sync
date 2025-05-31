@@ -100,3 +100,7 @@ where the last equality comes from the theorem.
 
 
 ## Example C for (1)
+
+Suppose $X_i\sim N(\theta,\sigma^2)$ where $\sigma^2$ is unknown but is of no interest (we what to know $\theta$).
+
+Our previous CI when $\sigma^2$ was known need to be tweaked. Let $t_\beta^n$ be the $\beta$-quantile of the [[T-distribution]] with $n$ d.o.f. 
