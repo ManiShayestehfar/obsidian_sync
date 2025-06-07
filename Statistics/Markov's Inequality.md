@@ -1,4 +1,3 @@
-
 # Statement
 
 Let $X$ be a non-negative RV. i.e. $X(\omega) \geq 0$, then
