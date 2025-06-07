@@ -15,4 +15,4 @@
 >Events $A_1,...,A_n \in \mathcal{F}$ are **pairwise independent** if $\forall i\neq j$, $A_i$ and $A_j$ are independent:
 >$$P(A_i\cap A_j) = P(A_i)P(A_j)$$
 
-- Mutual independence $\implies$ Pairwise independence *(NOT vice versa)*
+- Mutual independence $\implies$ Pairwise independence *(NOT vice versa)* 

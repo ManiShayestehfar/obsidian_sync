@@ -57,7 +57,7 @@ $$|A^{c}|= 365\times 364\times ... \times (365 - (n-1)) = \prod_{i=1}^{n}(365 - 
 $$\begin{align*}\implies P(A^{c}) &=  \frac{\prod_{i=1}^{n}(365 - (i-1))}{\prod_{i=1}^{n}365} \\[6pt]
 &= \prod_{i=1}^{n}\left(1-\frac{i-1}{365}\right)
  \end{align*}$$
- For $n=23, P(A^{c})\approx 0.5$. $\implies P(A) = 0.5\quad\square$.
+For $n=23, P(A^{c})\approx 0.5$. $\implies P(A) = 0.5\quad\square$.
 
 #### A slightly different problem
 
