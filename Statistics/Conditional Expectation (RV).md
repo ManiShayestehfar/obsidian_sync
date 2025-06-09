@@ -47,7 +47,7 @@ h(n) &= E(T|N=n)\\[4pt]
 \end{align*}$$
 Therefore,
 $$\begin{align*}
-E(T|N) &= h(n) \\[4pt]
+E(T|N) &= h(N) \\[4pt]
 &= NE(X_i) \tag{this is an RV}
 \end{align*}$$
 $\implies$ if $N \in L^1$, $E[E(T|N)] = E(N)E(X_i)$ 
