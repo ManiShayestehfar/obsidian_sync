@@ -18,16 +18,15 @@
 
 ## Continuous
 
-| Distribution             | PDF $f(x)$                                                                               | Mean $E[X]$                     | Variance $Var(X)$                                            | Parameters                         | Description                                                                             |
-| ------------------------ | ---------------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------ | ---------------------------------- | --------------------------------------------------------------------------------------- |
-| **Exponential**          | $\lambda e^{-\lambda x}$<br>$x \ge 0$                                                    | $\frac{1}{\lambda}$             | $\frac{1}{\lambda^2}$                                        | $\lambda > 0$                      | Models time between events in a Poisson process.                                        |
-| **Gamma**                | $\frac{\lambda^k x^{k-1} e^{-\lambda x}}{\Gamma(k)}$<br>$x > 0$<br>                      | $\frac{k}{\lambda}$             | $\frac{k}{\lambda^2}$                                        | $k > 0$, $\lambda > 0$             | Generalization of exponential; models waiting time for $k$ events in a Poisson process. |
-| **Normal (Gaussian)**    | $\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$<br>$x \in \mathbb{R}$ | $\mu$                           | $\sigma^2$                                                   | $\mu \in \mathbb{R}$, $\sigma > 0$ | Models symmetric data around a mean; central in the Central Limit Theorem.              |
-| **Beta**                 | $\frac{1}{B(\alpha,\beta)} x^{\alpha - 1}(1 - x)^{\beta - 1}$<br>$x \in (0, 1)$          | $\frac{\alpha}{\alpha + \beta}$ | $\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ | $\alpha, \beta > 0$                | Models probabilities and proportions bounded between 0 and 1.                           |
-| **Cauchy**               | $\frac{1}{\pi \gamma [1 + ((x - x_0)/\gamma)^2]}$<br>$x \in \mathbb{R}$                  | undefined                       | undefined                                                    | $x_0 \in \mathbb{R}, \gamma > 0$   | Heavy-tailed distribution; mean and variance do not exist.                              |
-| **Uniform (Continuous)** | $\frac{1}{b - a}$<br>$x \in [a, b]$                                                      | $\frac{a + b}{2}$               | $\frac{(b - a)^2}{12}$                                       | $a < b, \, a, b \in \mathbb{R}$    | Models equal probability over a fixed interval.                                         |
-| **Log-Normal**           | $\frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{(\ln x - \mu)^2}{2\sigma^2}}$<br>$x > 0$       | $e^{\mu + \sigma^2/2}$          | $(e^{\sigma^2} - 1)e^{2\mu + \sigma^2}$                      | $\mu \in \mathbb{R}, \sigma > 0$   | Models multiplicative growth; log of variable is normally distributed.                  |
-
+| Distribution                      | PDF $f(x)$                                                                               | Mean $E[X]$                     | Variance $Var(X)$                                            | Parameters                         | Description                                                                                  |
+| --------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------ | ---------------------------------- | -------------------------------------------------------------------------------------------- |
+| $\text{Exponential}(\lambda)$     | $\lambda e^{-\lambda x}$<br>$x \ge 0$                                                    | $\frac{1}{\lambda}$             | $\frac{1}{\lambda^2}$                                        | $\lambda > 0$                      | Models time between events in a Poisson process.                                             |
+| $\Gamma(\alpha,\lambda)$          | $\frac{\lambda^k x^{\alpha-1} e^{-\lambda x}}{\Gamma(\alpha)}$ <br>$x > 0$<br>           | $\frac{\alpha}{\lambda}$        | $\frac{\alpha}{\lambda^2}$                                   | $\alpha > 0$, $\lambda > 0$        | Generalization of exponential; models waiting time for $\alpha$ events in a Poisson process. |
+| $\mathcal{N}(\mu,\sigma^2)$       | $\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$<br>$x \in \mathbb{R}$ | $\mu$                           | $\sigma^2$                                                   | $\mu \in \mathbb{R}$, $\sigma > 0$ | Models symmetric data around a mean; central in the Central Limit Theorem.                   |
+| $\text{Beta}(\alpha,\beta)$       | $\frac{1}{B(\alpha,\beta)} x^{\alpha - 1}(1 - x)^{\beta - 1}$<br>$x \in (0, 1)$          | $\frac{\alpha}{\alpha + \beta}$ | $\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ | $\alpha, \beta > 0$                | Models probabilities and proportions bounded between 0 and 1.                                |
+| $\text{Cauchy}(x_0,\gamma)$       | $\frac{1}{\pi \gamma [1 + ((x - x_0)/\gamma)^2]}$<br>$x \in \mathbb{R}$                  | undefined                       | undefined                                                    | $x_0 \in \mathbb{R}, \gamma > 0$   | Heavy-tailed distribution; mean and variance do not exist.                                   |
+| $U(a,b)$                          | $\frac{1}{b - a}$<br>$x \in [a, b]$                                                      | $\frac{a + b}{2}$               | $\frac{(b - a)^2}{12}$                                       | $a < b, \, a, b \in \mathbb{R}$    | Models equal probability over a fixed interval.                                              |
+| $\text{LogNormal}(\mu, \sigma^2)$ | $\frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{(\ln x - \mu)^2}{2\sigma^2}}$<br>$x > 0$       | $e^{\mu + \sigma^2/2}$          | $(e^{\sigma^2} - 1)e^{2\mu + \sigma^2}$                      | $\mu \in \mathbb{R}, \sigma > 0$   | Models multiplicative growth; log of variable is normally distributed.                       |
 
 # Distribution of a sum of random variables
 
@@ -85,7 +84,7 @@ This is conditional probability is described by a [[Hypergeometric Random Variab
 > This described by [[Hypergeometric Random Variable]] because the conditional probability is like asking: From $n$ trials, I have had $r$ successes. What is the probability that $k$ of them are $X$-coloured from a total of $m$-many $X$-coloured balls?
 
 - Here for $r$ with $P(Z=r)>0$, we can define **conditional[[Probability Mass Function | pmf]]** of $X$ given $Z=r$ as 
-$$p_{X|Z}(k|r) := P(X=k \:|\: Z=1)$$
+$$p_{X|Z}(k|r) := P(X=k \:|\: Z=r)$$
 
 
 ## Poisson Sum
