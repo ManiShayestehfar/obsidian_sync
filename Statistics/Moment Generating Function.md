@@ -10,9 +10,9 @@ Let $X$ be an RV, then $Y = e^{tX}\geq 0$ so $E(Y)$ is well-defined, albeit it c
 >- Note that $M(0) = E(e^{0\cdot X}) = 1$, so the MGF is always finite for $t=0$. 
 
 - If $X$ is *discrete*, with pmf $\sum_{i=1}^{\infty}p_X(x_{i)}= 1$ then
-$$M(t) = \sum_{i=1}^{\infty}e^{tx_i}\:p_X(x_{i)}\tag{if finite}$$
+$$M(t) = \sum_{i=1}^{\infty}e^{tx_i}\:p_X(x_{i})\tag{if finite}$$
 - If $X$ is *continuous*, with density $f_x$ then 
-	$$M(t) = \int_{\mathbb{R}} e^{tX} \: f_{X(x)\:dx}\tag{if finite}$$
+	$$M(t) = \int_{\mathbb{R}} e^{tx} \: f_{X(x)\:dx}\tag{if finite}$$
 
 ## Examples
 
