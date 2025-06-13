@@ -47,7 +47,7 @@ P_{\theta_p=\theta}(|\hat{\Theta}-\theta| \geq \varepsilon) &\leq \frac{V_{\thet
 >[!info] Definition
 >An interval-valued function 
 >$$I_\alpha^{(n)} : \mathbb{R}^n \to \{[a,b] : a<b\}\quad \alpha \in (0,1)$$
->defined a $100(a-\alpha)\%$ **confidence interval** for $\theta_p$ if $\forall \theta$ and $X_1,...,X_n$ ind. $F_{\theta_p = \theta}$-distributed RVs
+>defined a $100(1-\alpha)\%$ **confidence interval** for $\theta_p$ if $\forall \theta$ and $X_1,...,X_n$ ind. $F_{\theta_p = \theta}$-distributed RVs
 >$$P_{\theta_p=\theta}(\theta\in I^{(n)}_\alpha(X_1,...,X_n)) \geq 1 - \alpha$$
 >Equivalently, $P_{\theta_p=\theta}(\theta\not\in I^{(n)}_\alpha(X_1,...,X_n)) \leq  \alpha$.
 >
