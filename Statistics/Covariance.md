@@ -99,6 +99,6 @@ Notice that $ZW\in L^1$ since they are individually in $L^2$ and hence $\iint_{\
 
 ![[Covariance-1747398028620.png|600]]
 
-$\implies \text{Cov}(Z,W) = E(ZW) - E(z)E(W) = \rho$ 
+$\implies \text{Cov}(Z,W) = E(ZW) - E(Z)E(W) = \rho$ 
 $\implies \rho_{ZW} = \frac{\text{Cov}(Z,W)}{\sigma_Z\sigma_W} = \rho$.
 
