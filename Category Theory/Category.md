@@ -1,3 +1,5 @@
+# Category
+
 > [!def] Categories
 > A **category** $\mathbf{C}$ consists of 
 > - A collection of *objects* $\text{Ob}(\mathbf{C})$;
