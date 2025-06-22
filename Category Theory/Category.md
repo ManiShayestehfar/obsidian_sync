@@ -13,6 +13,31 @@
 
 - The set $\text{End}_\mathbf{C}(X)$ is a monoid. Categories are in some sense monoids that are glued together
 
+# Pair Category
+
+>[!def] Pair Categories
+>For any category $\mathbf{C}$, the **pair category** $\mathbf{C} \times \mathbf{C}$ is the category whose objects and morphisms are pairs of their corresponding types. i.e.
+>$$\text{Ob}(\mathbf{C} \times \mathbf{C}) = \{(X,Y) \:|\: X,Y \in \mathbf{C}\},$$$$\text{Hom}_{\mathbf{C} \times \mathbf{C}}((X,Y), (Z,A)) = \text{Hom}_{\mathbf{C}}(X,Z) \times \text{Hom}_{\mathbf{C}}(Y,A)$$
+>and composition is defined component-wise. Similarly we define $\mathbf{C} \times \mathbf{C} \times ... \times \mathbf{C}$.
+
+# Opposite Category
+
+>[!def] Opposite Categories
+>For any cat $\mathbf{C}$, the **opposite category** $\mathbf{C}^{op}$ is the category with the same objects and morphisms, but reversed composition.
+>
+>We write $f^{op}$ for opposite morphisms.
+
+## Dual/Co statements
+for example
+- $P_\mathbf{C}(X)$ is '' $\forall Y \in \mathbf{C} \:\:\exists! \:\:f:X \to Y \in \mathbf{C}$ ''
+- $P_\mathbf{C^{op}}(X)$ is '' $\forall Y \in \mathbf{C^{op}} \:\:\exists! \:\:f:X \to Y \in \mathbf{C^op}$ ''
+- - $P^{op}_\mathbf{C}(X)$ is '' $\forall Y \in \mathbf{C} \:\:\exists! \:\:f:X \gets Y \in \mathbf{C}$ ''
+
+## Duality Principle
+$$\text{Property $P$ holds $\forall$ categories $\iff$ property $P^{op}$ holds $\forall$ categories}$$
+
+
+
 # Example of Categories
 
 
