@@ -11,7 +11,7 @@
 
 # Some Facts
 
-- The set $\text{End}_\mathbf{C}(X)$ is a monoid. Categories are in some sense monoids that are glued together
+- The $\text{End}_\mathbf{C}(X)$ is a monoid. Categories are in some sense monoids that are glued together
 
 # Pair Category
 
@@ -28,7 +28,8 @@
 >We write $f^{op}$ for opposite morphisms.
 
 ## Dual/Co statements
-for example
+
+For example
 - $P_\mathbf{C}(X)$ is '' $\forall Y \in \mathbf{C} \:\:\exists! \:\:f:X \to Y \in \mathbf{C}$ ''
 - $P_\mathbf{C^{op}}(X)$ is '' $\forall Y \in \mathbf{C^{op}} \:\:\exists! \:\:f:X \to Y \in \mathbf{C^op}$ ''
 - - $P^{op}_\mathbf{C}(X)$ is '' $\forall Y \in \mathbf{C} \:\:\exists! \:\:f:X \gets Y \in \mathbf{C}$ ''
@@ -40,6 +41,12 @@ $$\text{Property $P$ holds $\forall$ categories $\iff$ property $P^{op}$ holds $
 
 # Example of Categories
 
+## Category of Categories
+
+- Objects are categories,
+- Morphisms are functors
+
+![[Screenshot 2025-06-25 at 8.18.33 AM.png|400]]
 
 
 
