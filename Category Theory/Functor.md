@@ -15,6 +15,22 @@ such that
 >[!def] Identity functor
 >$\text{id}_{\mathbf{C}}: \mathbf{C} \to \mathbf{C}$, sends each object and each morphism to themselves.
 
+## $\text{Hom}$ Functor
+
+>[!def] $\text{Hom}$ functors
+>$$\text{Hom}_\mathbf{C}(X,\_): \mathbf{C} \to \textbf{Set},\begin{cases}
+Y \to \text{Hom}_C(X,Y)  \\[4pt]
+f \to (f \circ \_ )
+\end{cases},\quad \text{Hom}_\mathbf{C}(\_,X): \mathbf{C}^{op} \to \textbf{Set},\begin{cases}
+Y \to \text{Hom}_C(Y,X)  \\[4pt]
+f \to (\_ \circ f )
+\end{cases}$$
+
+This is 
+1. Assigning to each object $Y$ an either covariant/contravariant $\text{Hom}(X,Y)$ or vice versa
+2. Assigning to each morphism $f:B \to B'$ a function$$\text{Hom}_\mathbf{C}(A,f): \text{Hom}_\mathbf{C}(A,B) \to \text{Hom}_\mathbf{C}(A,B')$$
+	or again, vice versa.
+
 
 # Lemmas
 
