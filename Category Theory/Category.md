@@ -38,7 +38,6 @@ For example
 $$\text{Property $P$ holds $\forall$ categories $\iff$ property $P^{op}$ holds $\forall$ categories}$$
 
 
-
 # Example of Categories
 
 ## Category of Categories
