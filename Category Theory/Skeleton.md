@@ -1,4 +1,4 @@
-# Definition
+# Skeleton
 
 >[!def] Skeleton
 >Let $\overline{\text{Ob}(\bf C) / \cong}$ be the choice of representatives of $\text{Ob}(\bf C) / \cong$. 
@@ -15,4 +15,9 @@
 # Grothendieck Class
 
 >[!def] 
->Let $K_0(\mathbf{C}) = \overline{\text{Ob} }$
+>Let $K_0(\mathbf{C}) = \overline{\text{Ob}(\mathbf{C}) / \cong}$ and call it the **Grothendieck class of** $\mathbf{C}$.
+> Elements in $K_0(\mathbf{C})$ are Grothendieck classes of $X \in \mathbf{C}$ and are denoted by $[X]$.
+
+## Examples
+
+1. 
