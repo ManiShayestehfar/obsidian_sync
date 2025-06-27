@@ -11,3 +11,8 @@
 
 1. The skeleton of $\bf fdVec_{\mathbb{k}}$ is $\bf Mat_{\mathbb{k}}$, the category of matrices. Then $\bf fdVec_{\mathbb{k}} \cong \bf Mat_{\mathbb{k}}$. $\text{Hom}_{\bf Mat_{\mathbb{k}}}(n,m) = \text{Mat}_{m\times n}(\mathbb{k})$  
 
+
+# Grothendieck Class
+
+>[!def] 
+>Let $K_0(\mathbf{C}) = \overline{\text{Ob} }$
