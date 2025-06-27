@@ -48,6 +48,25 @@ $$\text{Property $P$ holds $\forall$ categories $\iff$ property $P^{op}$ holds $
 ![[Screenshot 2025-06-25 at 8.18.33 AM.png|400]]
 
 
+# Subcategories
+
+>[!def] Subcategory
+>$\bf C$ is called a **subcategory**  of $\bf D$, denoted by $\bf C \subset \bf D$,  if 
+>1. $\text{Ob}(\bf C) \subset \text{Ob}(\bf D)$
+>2. $\text{Hom}_{\bf C}(X,Y) \subset \text{Hom}_{\bf D}(X,Y)$ for all $X,Y \in \bf C$
+>3. $\text{id}_X \in \bf D$ for all $X \in \bf C$
+>  
+>  
+>  - $\bf C$ is *dense* if for all $Y \in \bf D$, there exists $X \in \bf C$ such  that $X \cong Y$
+>  - $\bf C$ is *full* if $\text{Hom}_{\bf C}(X,Y) = \text{Hom}_{\bf D}(X,Y)$ for all $X,Y \in \bf C$ 
+
+
+## Examples
+
+1. $\textbf{fdVec}_\mathbb{k} \subset \textbf{Vec}_\mathbb{k}$.  $\bf fdVec$ is full, but not dense in $\bf Vec$. $\color{red} (\text{WHY IS IT FULL})?$
+ 
+
+
 
 
 
