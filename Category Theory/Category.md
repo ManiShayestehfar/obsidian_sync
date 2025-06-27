@@ -1,4 +1,4 @@
-# Category
+# Definition
 
 > [!def] Categories
 > A **category** $\mathbf{C}$ consists of 
