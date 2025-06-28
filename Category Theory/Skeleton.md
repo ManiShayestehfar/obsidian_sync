@@ -20,4 +20,4 @@
 
 ## Examples
 
-1. 
+1. $K_0(\bf{fdVec_{\mathbb{k}}})\overset{\cong}{\longrightarrow} \mathbb{Z}_{\geq 0}$ as sets, with the map $[\mathbb{k}^n] \to n$ since any $X \in \bf{fdVec_{\mathbb{k}}}$ is isomorphic to $\mathbb{k}^n$ for some $n \in \mathbb{Z}_{\geq 0}$.

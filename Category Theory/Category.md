@@ -27,6 +27,13 @@
 >
 >We write $f^{op}$ for opposite morphisms.
 
+# Equivalent Categories
+>[!def] Equivalent categories
+>Categories $\bf C,D$ are **equivalent**, denoted $\bf C \simeq \bf D$, if:
+>there exists $F:\bf C \to \bf D$ and $G: \bf D \to \bf C$ such that $$FG \cong \text{id}_{\bf{D}} \quad,\quad GF \cong \text{id}_{\bf C}$$ where $\cong$ is from $\text{Hom}(\bf C, \bf D)$   
+
+
+
 ## Dual/Co statements
 
 For example
