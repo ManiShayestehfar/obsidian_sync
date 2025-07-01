@@ -45,6 +45,7 @@ This is
 >
 >If a functor is full + faithful, then we say it is *fully faithful*.
 
+Proof on page 15-16. Come back to it
 
 
 

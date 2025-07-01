@@ -35,6 +35,15 @@
 
 - Any category $\mathbf{C}$ is equivalent to its skeleton but not necessarily isomorphic. For example, $\mathbf{fdVec} \simeq \mathbf{Mat}$ but $\mathbf{fdVec} \not \cong \mathbf{Mat}$.
 
+# Concrete Category
+
+>[!def] Concrete Categories
+>A category $\mathbf{C}$ is **concrete** if it admits a faithful functor, called its **realisation**, $R: \mathbf{C} \to \mathbf{Set}$.
+
+## Examples
+
+- The functor forget, realises $\mathbf{Vec}_{\mathbb{k}}$ as a concrete category.
+
 ## Dual/Co statements
 
 For example
