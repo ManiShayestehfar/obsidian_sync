@@ -7,7 +7,7 @@
 -  A category is *skeletal* if it is isomorphic to its skeleton
 
 
-# Examples
+## Examples
 
 1. The skeleton of $\bf fdVec_{\mathbb{k}}$ is $\bf Mat_{\mathbb{k}}$, the category of matrices. Then $\bf fdVec_{\mathbb{k}} \cong \bf Mat_{\mathbb{k}}$. $\text{Hom}_{\bf Mat_{\mathbb{k}}}(n,m) = \text{Mat}_{m\times n}(\mathbb{k})$  
 
@@ -21,3 +21,12 @@
 ## Examples
 
 1. $K_0(\bf{fdVec_{\mathbb{k}}})\overset{\cong}{\longrightarrow} \mathbb{Z}_{\geq 0}$ as sets, with the map $[\mathbb{k}^n] \to n$ since any $X \in \bf{fdVec_{\mathbb{k}}}$ is isomorphic to $\mathbb{k}^n$ for some $n \in \mathbb{Z}_{\geq 0}$.
+
+
+# Properties
+
+>[!lemma] 
+>Any functor $F \in \mathbf{Hom(C,D)}$ induces a map $$K_0(F) : K_0(\mathbf{C}) \to K_0(\mathbf{D}),\quad [X]\to [F(X)]$$
+>Further, if $F$ is an equivalence, then $K_0(F)$ is an isomorphism.
+
+

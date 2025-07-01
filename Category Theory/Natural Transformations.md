@@ -18,7 +18,7 @@
 $\text{ID}_F: F \to F$ such that $(\text{ID}_F)_X = \text{id}_X$
 
 
-# Lemmas
+# Properties
 
 >[!lemma]
 >If $\alpha,\beta$ are natural transformations, then so is $\beta \alpha$

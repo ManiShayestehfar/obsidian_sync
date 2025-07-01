@@ -32,12 +32,18 @@ This is
 	or again, vice versa.
 
 
-# Lemmas
+# Properties
 
 >[!lemma] 
 >If $F$ and $G$ are functors, then so is $GF$.
 
-
+>[!proposition] 
+>A functor $F:\mathbf{C} \to \mathbf{D}$ is an equivalence if and only if
+>- It is *dense*. i.e. for all $Y \in \mathbf{D}$, there exists $X \in \mathbf{C}$ such that $F(X) \cong Y$;
+>- It is *faithful*. i.e. $\text{Hom}_\mathbf{C}(X,Y) \hookrightarrow \text{Hom}_\mathbf{C}(F(X),F(Y))$ for all $X,Y \in \mathbf{C}$;
+>- It is *full*. i.e. $\text{Hom}_\mathbf{C}(X,Y) \twoheadrightarrow \text{Hom}_\mathbf{C}(F(X),F(Y))$ for all $X,Y \in \mathbf{C}$;
+>
+>If a functor is full + faithful, then we say it is *fully faithful*.
 
 
 

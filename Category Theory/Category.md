@@ -28,11 +28,12 @@
 >We write $f^{op}$ for opposite morphisms.
 
 # Equivalent Categories
+
 >[!def] Equivalent categories
 >Categories $\bf C,D$ are **equivalent**, denoted $\bf C \simeq \bf D$, if:
 >there exists $F:\bf C \to \bf D$ and $G: \bf D \to \bf C$ such that $$FG \cong \text{id}_{\bf{D}} \quad,\quad GF \cong \text{id}_{\bf C}$$ where $\cong$ is from $\text{Hom}(\bf C, \bf D)$   
 
-
+- Any category $\mathbf{C}$ is equivalent to its skeleton but not necessarily isomorphic. For example, $\mathbf{fdVec} \simeq \mathbf{Mat}$ but $\mathbf{fdVec} \not \cong \mathbf{Mat}$.
 
 ## Dual/Co statements
 
@@ -70,7 +71,7 @@ $$\text{Property $P$ holds $\forall$ categories $\iff$ property $P^{op}$ holds $
 
 ## Examples
 
-1. $\textbf{fdVec}_\mathbb{k} \subset \textbf{Vec}_\mathbb{k}$.  $\bf fdVec$ is full, but not dense in $\bf Vec$. $\color{red} (\text{WHY IS IT FULL})?$
+1. $\textbf{fdVec}_\mathbb{k} \subset \textbf{Vec}_\mathbb{k}$.  $\bf fdVec$ is full, but not dense in $\bf Vec$. 
  
 
 
