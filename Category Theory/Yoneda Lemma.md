@@ -3,3 +3,28 @@
 >Moreover, this correspondence is natural in both $F$ and $X$.
 
 
+# Yoneda Embedding 
+
+>[!proposition]
+>![[Yoneda Lemma-1752583206291.png]]
+#### Proof
+By construction of Yoneda functors we see that we have injections 
+$$\begin{align*}
+\mathrm{Hom}_C(X, Y) &\hookrightarrow 
+\mathrm{Hom}_{\mathrm{Hom}(C, \mathbf{Set})}
+\left( \mathrm{Hom}_C(X, -), \mathrm{Hom}_C(Y, -) \right), \\[5pt]
+\mathrm{Hom}_C(X, Y) &\hookrightarrow 
+\mathrm{Hom}_{\mathrm{Hom}(C, \mathbf{Set})}
+\left( \mathrm{Hom}_C(-, X), \mathrm{Hom}_C(-, Y) \right).
+\end{align*}
+
+
+
+$$
+And by Theorem 1 above, every natural transformation between represented functors arises in this way, showing that the maps above are bijections. It also follows by definition that they are fully faithful.
+
+## Example
+
+For the category $\bf{A_3}$, having three objects and three non-identity morphisms arranged as 
+![[Yoneda Lemma-1752584082885.png]]
+
