@@ -44,7 +44,9 @@ This is
 ### Examples
 
 ![[Screenshot 2025-07-17 at 9.34.30 pm.png]]
+![[Screenshot 2025-07-17 at 10.01.09 pm.png]]
 
+![[Screenshot 2025-07-17 at 10.02.12 pm.png]]
 
 # Properties
 
