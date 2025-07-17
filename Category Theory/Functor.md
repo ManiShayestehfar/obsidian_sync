@@ -40,6 +40,11 @@ This is
 >2. For all $X,Y$ there are isomorphism $$\alpha_{X,Y}: \text{Hom}_\mathbf{D}(F(X), Y) \overset{\cong}{\to} \text{Hom}_{\mathbf{D}}(\_, G(\_))$$
 >We say $F$ is the *left adjoint* of $G$, and $G$ the *right adjoint* of $F$.
 
+- If a functor is left/right adjoint, then it is unique up to isomorphisms
+### Examples
+
+![[Screenshot 2025-07-17 at 9.34.30 pm.png]]
+
 
 # Properties
 
