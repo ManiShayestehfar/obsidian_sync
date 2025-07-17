@@ -28,3 +28,6 @@ And by Theorem 1 above, every natural transformation between represented functor
 For the category $\bf{A_3}$, having three objects and three non-identity morphisms arranged as 
 ![[Yoneda Lemma-1752584082885.png]]
 
+The Yoneda functor $Y^{op}$ associates
+![[Yoneda Lemma-1752585192062.png]]
+etc. which identifies $({\mathbf A_3})^{op}$ with the functors of the form $\text{Hom}_{\mathbf{A_3}}(i,\_)$ for $i \in \{1,2,3\}$.

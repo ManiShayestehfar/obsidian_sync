@@ -32,6 +32,15 @@ This is
 	or again, vice versa.
 
 
+## Adjoint Functors
+
+>[!def] Adjoint Functor
+>Two functors $(F,G) = (F:\mathbf{C} \to \mathbf{D}, G:\mathbf{D}\to \mathbf{C})$ form an **adjoint pair** if:
+>1. There exists a natural transformation $\alpha: \text{Hom}_{\mathbf{D}}({F(\_),\_)}\Rightarrow \text{Hom}_\mathbf{C}(\_, G(\_))$.
+>2. For all $X,Y$ there are isomorphism $$\alpha_{X,Y}: \text{Hom}_\mathbf{D}(F(X), Y) \overset{\cong}{\to} \text{Hom}_{\mathbf{D}}(\_, G(\_))$$
+>We say $F$ is the *left adjoint* of $G$, and $G$ the *right adjoint* of $F$.
+
+
 # Properties
 
 >[!lemma] 
@@ -46,6 +55,8 @@ This is
 >If a functor is full + faithful, then we say it is *fully faithful*.
 
 Proof on page 15-16. Come back to it
+
+
 
 
 
