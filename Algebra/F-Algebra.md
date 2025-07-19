@@ -21,3 +21,9 @@
 # Irreducibility
 
 - An $\mathbb{F}$-algebra $A$ is **semisimple** if the [[Representation|regular representation]] of $A$, which is the algebra $A$ considered as an $A$-module, is semisimple.
+
+
+# Schurian $\mathbb{F}$-Algebra
+
+>[!def] 
+>An $\mathbb{F}$-Algebra, $A$, is **Schurian** if $\text{End}_A(D) \cong F$, for all simple $A$-modules $D$. 
