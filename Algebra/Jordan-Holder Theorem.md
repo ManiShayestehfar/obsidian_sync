@@ -4,7 +4,8 @@
 >are two composition series of $V$. Then:
 >1. $r=s$, and 
 >2. For each irreducible $A$-module $D$
->   $$\#\{0 \leq i < r \:|\: V_i /V_{i+1} \cong D\} \:\:=\:\: \#\{0 \leq i < s \:|\: V_i' /V_{i+1}' \cong D\}$$ 
+>   $$\#\{0 \leq i < r \:|\: V_i /V_{i+1} \cong D\} \:\:=\:\: \#\{0 \leq i < s \:|\: V_i' /V_{i+1}' \cong D\}$$
+>   i.e. the *length* of a composition series only depends on $V$ 
 ##### Proof
 We prove by induction on $\dim V$.  If $\dim V = \{0,1\}$ then we are done. Assume we have the composition series
 $$V = V_0 \supset V_1 \supset ... \supset V_r \supset 0 \quad \text{and}\quad V = V_0' \supset V_1' \supset ... \supset V_s' \supset 0.$$
