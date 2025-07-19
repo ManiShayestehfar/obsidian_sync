@@ -1,5 +1,5 @@
 
->[!tip] Maschke's Theorem
+>[!theorem] Maschke's Theorem
 > - $\mathbb{F}$ be a field of characteristic $p$,
 > - $G$ a finite group of order *not* divisible by $p \geq 0$.  
 > - Let $V$ be a $G$-module, and $W$ a $G$-submodule of $V$. 
@@ -15,7 +15,7 @@ We can define a [[vector space]] homomorphism that is a projection map correspon
 $$\pi_G(v) = \frac{1}{|G|}\sum_{x\in G}x\pi(x^{-1}v)$$
 for $v \in V$. $\frac{1}{|G|}$ is well-defined in $\mathbb{F}$ as $p \nmid |G|$.  
 
->[!tip] Sub-claim 1
+>[!claim] Sub-claim 1
 >$\pi_G$ is a $G-$module homomorphism
 ###### Sub-Proof
 1. $\pi_G$ is linear by construction
@@ -23,7 +23,7 @@ for $v \in V$. $\frac{1}{|G|}$ is well-defined in $\mathbb{F}$ as $p \nmid |G|$.
 $$\pi_G(gv) = \frac{1}{|G|}\sum_{x\in G}x\pi(x^{-1}gv) = \frac{1}{|G|}\sum_{y=g^{-1}x\:\in\: G}gy\pi(y^{-1}v) = g\pi_G(v)$$
 	as needed.
 
->[!tip] Sub-claim 2
+>[!claim] Sub-claim 2
 >$\pi_G$ is the identity map on $W$.
 ##### Sub-Proof
 By definition $\text{im }\pi = W$ which is a $G$-module of $V$, so $\text{im }\pi_G$ is contained in $W$. For $w\in W$ and $w' := x^{-1}w\in W$ with $\pi(w') = w'$ for all $w' \in W$,
@@ -32,7 +32,7 @@ Therefore
 $$W = \text{im }\pi_G \cong V / \ker \pi_G$$
 with isomorphism coming from the [[Quotient Module|First Isomorphism Theorem]].  
 
->[!tip] Sub-claim 3
+>[!claim] Sub-claim 3
 >$$V = \text{im } \pi_G \oplus \ker \pi_G$$
 ##### Sub-Proof
 

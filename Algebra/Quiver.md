@@ -1,4 +1,4 @@
-> [!info] Definition
+> [!def] Definition
 > A **Quiver** is an oriented graph $Q$ (assume finite). 
 
 ## Quiver Representation

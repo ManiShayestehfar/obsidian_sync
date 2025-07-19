@@ -1,5 +1,5 @@
 
->[!info] Definition
+>[!def]
 >A **vector space** is a set $V$ together with two operations—**vector addition** and **scalar multiplication**—that satisfy the following axioms. 
 
 Let $F$ be a field. Then $V$ is a vector space over $F$ if the following conditions hold for all vectors $\mathbf{u}, \mathbf{v}, \mathbf{w}$ in $V$ and all scalars $a, b$ in $F$:
@@ -23,7 +23,7 @@ Let $\mathbb{F}$ be a field. Let $V$ and $W$ be  $\mathbb{F}$-vector spaces. The
 - $\varphi(\lambda v) = \lambda \varphi(v)$        for all $\lambda \in \mathbb{F}$ and $v,v'\in V$.
 
 
->[!theorem 1 (The Isomorphism Theorems)]  
+>[!theorem|(The Isomorphism Theorems)]  
 >![[Screenshot 2025-03-06 at 11.41.54 am.png]]
 
 
@@ -31,7 +31,7 @@ Let $\mathbb{F}$ be a field. Let $V$ and $W$ be  $\mathbb{F}$-vector spaces. The
 
 Let $X_1,...,X_n$ be vector spaces
 
->[!info] Definition 
+>[!def] 
 >The **External Direct Sum** of them is the vector space
 >$$X_1\oplus...\oplus X_n = \{(x_1,...,x_n)\:|\: x_1\in X_1,...,x_n\in X_n\}$$
 >where addition and multiplication are defined componentwise

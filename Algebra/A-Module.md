@@ -1,5 +1,5 @@
 
->[!info] Definition
+>[!def] 
 >Let $A$ be an [[F-algebra]]. A (left) **$A$-module** is a $\mathbb{F}$-[[vector space]] $V$ that is equipped with a unitary bilinear $A$-action.  i.e.
 >$$A \times V \to V \quad;\:(a,v) \to av$$
 >such that
@@ -40,7 +40,7 @@ Suppose $V$ is an $A$-module.
 
 ## Some Propositions
 
->[!tip] Propositions
+>[!proposition] 
 >Suppose $V$ is an $A$-module. 
 >
 >1. $V$ is irreducible $\implies \: V \cong A/M$ for some maximal ideal $M$ of $A$
@@ -60,7 +60,7 @@ Moreover since $V$ is irreducible, $\ker \varphi$ is a maximal ideal of $A$ by t
 >The submodules of $A$ are exactly its left [[Ring|ideals]] 
 
 
->[!tip] Lemma
+>[!lemma]
 >$V \subseteq A$.
 >$V$ a submodule of $A \iff$ $V$ is a left-ideal of $A$
 >
@@ -79,6 +79,8 @@ Hence it is an $A$-submodule.
 
 
 
-
-
+>[!corollary]
+>Suppose $A$ is a finite-dim $\mathbb{F}$-algebra. Then, there are only *finitely* many irreducible $A$-modules, up to isomorphism.
+##### Proof 
+If $D$ is an irreducible $A$-module, then from [[Filtration and Composition Series|lemma 4]] $D$ is a composition factor of $A$. As $A$ is finite dimensional, it can only have a finite number of composition factors.        $\square$
 

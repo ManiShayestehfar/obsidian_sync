@@ -1,5 +1,5 @@
 
->[!info] Definition 1.1
+>[!def]
 >Let $R$ be a [[Ring]]. An **R-Module** is an additive abelian [[Group]] $V$ with a ring homomorphism $\Phi: R \to \text{End}(V)$ or $\Phi: R \times V \to V$ such that $\Phi(1_R) = 1_V$ is the identity map on $V$.
 
 $$R\text{-Module is a Vector Space} \iff R\text{   is a field  } \mathbb{F}$$
@@ -45,7 +45,7 @@ For $r \in R$, let $\varphi_{r}= \Phi(r) \in \text{End}(V)$. Then $\varphi_{r}: 
 2. $\varphi_{rs} = \Phi(rs) = \varphi_{r}\circ \varphi_{s}\quad$   for $r,s\in R$ 
 
 
->[!info] Definition
+>[!def]
 > The ring homomorphism $\Phi$ defines an **action** of $R$ upon $V$ given by
 > $$rv = \varphi_{r(v)}\in V$$
 

@@ -1,4 +1,4 @@
->[!info] Definition
+>[!def]
 >A **group** is an ordered pair $(G, \ast)$ where:
 >
 >1. **Closure:** For every $a, b \in G$, the result of the operation $a \ast b$ is also in $G$.

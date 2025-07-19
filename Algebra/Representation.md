@@ -1,5 +1,5 @@
 
->[!info] Definition
+>[!def]
 >A **representation** of an [[Associative Algebra]]  or a **left $A$-module** is a [[vector space]] $V$ equipped with homomorphism $\rho:\: A \to \textrm{End}\: V$.  i.e. a linear map preserving the multiplication and unit.
 
 A **left $A-$module** is a vector space $V$ with *anti*-homomorphism $\rho:A \to \text{End}V$. The two only differ in associativity laws.
@@ -18,7 +18,7 @@ It is called **indecomposable** if it cannot be written as a direct sum of two n
 
 # Regular Representation
 
-> [!info] Definition
+> [!def]
 > The (left) **regular representation** of $G$ is the $\mathbb{F}$-vector space $\mathbb{F}G$ that has as its basis the elements of $G$ and the $G$-action is given by left multiplication. Thus
 > $$\mathbb{F}G = \left\{\sum_{x\in G}\lambda_x x \;|\; \lambda_x \in \mathbb{F} \right\}$$
 > and $g\left(\sum_{x\in G}\lambda_x x \right) = \sum_{x \in G} \lambda_x (gx) = \sum_{y = xg \in G} \lambda_{g^{-1}y}y$ 
@@ -26,7 +26,7 @@ It is called **indecomposable** if it cannot be written as a direct sum of two n
 - Since the elements of $G$ are a basis for $\mathbb{F}G$, then addition and multiplication in $\mathbb{F}G$ are component-wise operations.
 
 
->[!tip] Lemma 1
+>[!lemma]
 >The vector space $\mathbb{F}G$ is a $G$-module.
 #### Proof
 - $\mathbb{F}G$ is a a $\mathbb{F}$-vector space by definition $\checkmark$  
@@ -36,7 +36,7 @@ $$(gh)x = g(hx)$$
 for all $g,h,x \in G$ and therefore associativity is given. $\square$
 
 
->[!tip] Proposition 1
+>[!proposition]
 >With the natural multiplication defined, $\mathbb{F}G$ is an associative ring with $1_G$ as identity. The natural multiplication comes from a natural multiplication in $G$:
 >
 >![[Screenshot 2025-03-13 at 11.41.14 am.png]]

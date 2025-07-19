@@ -1,6 +1,6 @@
 Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 
->[!info] Definition
+>[!def]
 >An **$\mathbb{F}G$-module** or a **representation of $G$**, is an $\mathbb{F}$-[[vector space]] $V$ that comes equipped with a unitary linear $G$-action. i.e. a map $G \times V\to V$ given by $(g,v)\to gv$ such that 
 >
 >**Unital:** $1_G v = v$  for all $v \in V$
@@ -12,7 +12,7 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 	$$ge_j = \sum_{i=1}^ng_{ij}\:e_i$$
 - A matrix **representation** of $G$ is a group homomorphism $\rho: G \to GL_n(\mathbb{F})$, the group of invertible  $n\times n$ matrices with entries in $\mathbb{F}$.
 
->[!tip] Proposition 1
+>[!proposition]
 >Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{f})$ 
 
 ![[Screenshot 2025-03-06 at 12.50.18 pm.png]]
@@ -47,7 +47,7 @@ $$\begin{align*}
 \end{align*}$$
 - **NOTE:** $\text{End}_G(V)$ is a [[Ring|ring]], multiplication given by composition of maps.
 
->[!info] Definition
+>[!def]
 >If $V$ is an $\mathbb{F}$-vector space then a subset $W$ of $V$ is a **submodule** of $G$ if 
 >
 >1. $W$ is a subspace of $V$
@@ -56,7 +56,7 @@ $$\begin{align*}
 >   Every submodule $W$ of a $G-$module is by definition a $G-$module.
 
 
-> [!tip] Lemma 1
+> [!lemma]
 > ![[Pasted image 20250306222032.png]]
 ##### Proof for a)
 1.  Clearly $\ker\varphi \subset V$ 
@@ -68,7 +68,7 @@ $$\begin{align*}
 
 # Irreducible $G$-modules
 
->[!info] Definition
+>[!def]
 >A $G$-module $V$ is **irreducible** if it contains no proper nonzero submodules. i.e its only submodules are $0$ and $V$.
 >
 >Otherwise, $V$ is **reducible**.
@@ -77,10 +77,9 @@ $$\begin{align*}
 
 
 
-
 # FG-Modules vs G-Modules
 
->[!tip] Proposition 2
+>[!proposition|2]
 >Let $G$ be a finite group and $\mathbb{F}$ a field
 >1. Every $G$-module is an $\mathbb{F}G$-module
 >2. Every $\mathbb{F}G$-module is a $G$-module
