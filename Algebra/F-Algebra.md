@@ -27,3 +27,4 @@
 
 >[!def] 
 >An $\mathbb{F}$-Algebra, $A$, is **Schurian** if $\text{End}_A(D) \cong F$, for all simple $A$-modules $D$. 
+
