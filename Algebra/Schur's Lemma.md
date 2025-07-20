@@ -37,3 +37,25 @@ Finally, we need to confirm that this is not just a vector space isomorphism but
 since they both act by scalar multiplication. So the map 
 $$\mathbb{F}\to \text{End}_A(D),\quad \lambda \mapsto \rho_\lambda$$ is an isomorphism of $\mathbb{F}$-algebras.     $\square$
 
+# Some Properties
+
+>[!corollary]
+>Suppose $A$ is a commutative Schurian $\mathbb{F}$-algebra. Then every irreducible $A$-module is one dimensional.
+##### Proof
+Suppose $D$ is an irreducible $A$-module. For each $a \in A$ we define a map $\rho_a: D\to D$ such that $\rho_a(d) = ad$ for all $d \in D$.
+In order for $\rho_a$ to be an $A$-module homomorphism, it must satisfy
+$$\rho_a(bd) = b\rho_a(d),\quad \quad \forall\: b \in A, d \in D$$
+This is shown using associativity and commutativity of $A$:
+$$\rho_a(bd) = a(bd) = (ab)d = (ba)d = b(ad) = b \rho_a(d).$$
+Hence, $\rho_a$ is an $A$-module homomorphism. 
+
+Since $D$ is irreducible and $A$ is Schurian, then by Schur's Lemma: $\text{End}_A(D) \cong \mathbb{F}$. i.e.
+- Every $A$-module endomorphism $\rho_a$ is just scalar multiplication
+- So there exists $\lambda \in \mathbb{F}$ such that:	$$\rho_a(d) = ad$$
+	i.e. $d$ is an eigenvector for *every* $a \in A$.
+
+Since we showed this for every $a$, then *every* vector in $D$ is an eigenvector of *every* $a \in A$.
+So $D$ must be a $1$-dimensional vector space, because otherwise there would be a nontrivial linear combination of eigenvectors with different eigenvalues.   $\square$ 
+
+
+
