@@ -13,3 +13,6 @@ But since both $D,E$ are irreducible, meaning no proper submodule of $D$ exists:
 - $\ker \varphi = 0$ or $D$
 - $\text{im }\varphi = E$ or $0$.
 Since $\varphi \neq 0$, we must have that $\ker \varphi =0$, and $\text{im }\varphi = E$. Meaning that $\varphi$ is an isomorphism and $D \cong E$. Therefore, if $D \neq E$, then any homomorphism $\varphi$ must be $0$. i.e. $\text{Hom}_A(D,E) = 0$.
+
+
+For $D \cong E$, 
