@@ -5,7 +5,7 @@
 >
 >A **finite dimensional $\mathbb{F}$-algebra** is an $\mathbb{F}$-algebra that is finite dimensional as an $\mathbb{F}$-vector space.
 
-# Examples
+## Examples
 
 - $\mathbb{F}G$ is an $\mathbb{F}$-algebra
 - So is $\text{Mat}_n(\mathbb{F})$
@@ -28,3 +28,12 @@
 >[!def] 
 >An $\mathbb{F}$-Algebra, $A$, is **Schurian** if $\text{End}_A(D) \cong F$, for all simple $A$-modules $D$. 
 
+
+# Opposite Algebra
+
+>[!def] 
+>Let $B$ be an $\mathbb{F}$-algebra. The **opposite algebra** of $B$ is the $\mathbb{F}$-algebra $B^{op}$ that is equal to $B$ as an $\mathbb{F}$-vector space but with multiplication $a\cdot b = ab$ where the multiplication on the left-hand is in $B^{op}$ and multiplication on the right-hand side is in $B$.
+
+## Some Properties
+>[!lemma] 
+>Let $A$ be an $\mathbb{F}$-algebra. Then $A \cong \text{End}_A(D)$
