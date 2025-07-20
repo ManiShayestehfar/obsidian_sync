@@ -14,5 +14,26 @@ But since both $D,E$ are irreducible, meaning no proper submodule of $D$ exists:
 - $\text{im }\varphi = E$ or $0$.
 Since $\varphi \neq 0$, we must have that $\ker \varphi =0$, and $\text{im }\varphi = E$. Meaning that $\varphi$ is an isomorphism and $D \cong E$. Therefore, if $D \neq E$, then any homomorphism $\varphi$ must be $0$. i.e. $\text{Hom}_A(D,E) = 0$.
 
+--
 
-For $D \cong E$, 
+For $D \cong E$, $\text{Hom}_A(D,E) \cong \text{End}_A(D)$. We want to show that 
+$$\text{End}_A(D) = \{\rho_\lambda\:|\: \lambda \in \mathbb{F}\} \cong \mathbb{F}$$
+Since $D$ is an $A$-module (and by extension a [[vector space]]), we can find and fix a basis $\{d_1,...,d_n\}$ for it, and let $\varphi \in \text{End}_A(D)$. Then:
+$$\varphi(d_i) = \sum_{j}a_{ij}d_j,\quad\quad a_{ij} \in \mathbb{F}.$$
+So $\varphi$ is represented by some matrix $(a_{ij})$. Since $F$ is algebraically closed, the matrix has at least one eigenvalue $\lambda \in \mathbb{F}$. Let $v_\lambda$ be the corresponding eigenvector with $\varphi(v_\lambda) = \lambda v_\lambda$.
+
+Define the map $\rho_\lambda: D \to D$,  $\rho_\lambda(d) = \lambda d$. Since $\rho_\lambda$ is an $A$-module map (because scalar multiplication commutes with $A$-action), then $\rho_\lambda \in \text{End}_A(D)$.
+
+Now define $\psi := \varphi - \rho_v$ where $\psi \in \text{End}_A(D)$. Then
+$$\psi(v_\lambda) = \varphi(v_\lambda) - \rho_v(v_\lambda) = \varphi(v_\lambda) - \lambda v_\lambda = 0.$$
+Since $v_\lambda \neq 0$, this means that $\ker \psi \neq 0$ and so $\ker \psi = D$. This forces $\psi = 0$ and therefore $\varphi \equiv \rho_v$. 
+Therefore, every $A$-module endomorphism $\varphi$ is a scalar multiplication defined by $\rho_\lambda$. i.e.  $\text{End}_A(D) = \{\rho_\lambda \:|\: \lambda \in \mathbb{F}\} \cong \mathbb{F}$.
+
+--
+
+Finally, we need to confirm that this is not just a vector space isomorphism but also an $\mathbb{F}$-algebra isomorphism. Let $\rho_\lambda,\rho_\mu \in \text{End}_A(D)$. Then:
+- $\rho_\lambda + \rho_\mu = \rho_{\lambda + \mu}$,
+- $\rho_\lambda \circ \rho_\mu = \rho_{\lambda\mu}$
+since they both act by scalar multiplication. So the map 
+$$\mathbb{F}\to \text{End}_A(D),\quad \lambda \mapsto \rho_\lambda$$ is an isomorphism of $\mathbb{F}$-algebras.     $\square$
+
