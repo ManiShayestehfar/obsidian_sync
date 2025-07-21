@@ -37,4 +37,20 @@
 ## Some Properties
 
 >[!lemma] 
->Let $A$ be an $\mathbb{F}$-algebra. Then $A \cong \text{End}_A(D)$
+>Let $A$ be an $\mathbb{F}$-algebra. Then $A \cong \text{End}_A(A)^{op}$.
+>Also if we consider $A$ as a *right* $A$-module then the statement becomes $A \cong \text{End}_A(A)$.
+
+![[F-Algebra-1753017145112.png]]
+
+>[!lemma]
+>Suppose $V \cong U_1 \oplus U_2 \oplus \cdots \oplus U_r$ for some $A$-modules $U_1,...,U_r$. Then
+>$$\text{End}_A(V) = \{(\varphi_{il})\:|\: \varphi_{il} \in \text{Hom}_A(U_i, U_l)\:\:\text{for}\:\: 1\leq i,l\leq r\}$$
+>
+
+
+# Artin-Wedderburn Decomposition
+
+>[!thm]
+>Let $\mathbb{F}$ be a field and suppose that $A$ is a semisimple Schurian $\mathbb{F}$-algebra. Let $d_1,...,d_t$ be the dimensions of the irreducible $A$-modules, counted up to isomorphism. Then 
+>$$A \cong \text{Mat}_{d_1}(\mathbb{F}) \oplus \cdots \oplus \text{Mat}_{d_t}(\mathbb{F})$$ 
+
