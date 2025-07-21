@@ -26,7 +26,7 @@
 # Schurian $\mathbb{F}$-Algebra
 
 >[!def] 
->An $\mathbb{F}$-Algebra, $A$, is **Schurian** if $\text{End}_A(D) \cong F$, for all simple $A$-modules $D$. 
+>An $\mathbb{F}$-Algebra, $A$, is **Schurian** if $\text{End}_A(D) \cong \mathbb{F}$, for all simple $A$-modules $D$. 
 
 
 # Opposite Algebra
