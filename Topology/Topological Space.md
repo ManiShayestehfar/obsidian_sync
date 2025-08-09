@@ -70,3 +70,54 @@ Suppose we have an equivalence relation $\sim$ on $X$ with equivalence class $[x
 
 >[!def]
 >$X \sqcup Y$ the **disjoint union** forms the topology $\tau_{X\sqcup Y} = \{U \sqcup V \:|\: U \in \tau_x, V \in \tau_Y\}$
+
+
+# Cone
+
+>[!def] 
+>The **cone** of $X$ is $CX= (X \times [0,1]) / (X \times \{1\})$
+
+
+# Suspension
+
+>[!def] 
+>$SX = (X \times [-1,1]) / (X\times \{1\}, X \times \{-1\})$
+
+
+# Join
+
+>[!def] 
+>$X * Y$ joins every point of $X$ to every point of $Y$.
+>$X * Y = X \times Y \times [0,1] / \sim$
+>- $(x,y,0) \sim (x,y',0)\quad\quad \forall x\in X, y,y' \in Y$
+>- $(x,y,1) \sim (x',y',1)\quad\quad \forall x,x'\in X, y \in Y$
+>  
+>  We also have associativity: $(X*Y)*Z = X*(Y*Z)$
+
+
+# Wedge Sum
+
+>[!def]
+>Fix $x_0 \in X$, $y_0\in Y$. $X \vee Y = X \sqcup Y / (x_0=y_0)$ 
+
+
+# Direct Product
+
+>[!def] 
+>The **direct product** $\prod_{i \in I} G_i$ is the group with elements $g: I \to \sqcup_{i \in I} G_i$  such that $g(i) \in G_i$ for all $i \in I$, and group operation defined by $(gh)(i) = g(i)h(i)$.
+
+i.e. the multiplication is component-wise
+
+>[!def]
+>The **direct sum** $\bigoplus_{i\in I}G_i$ is defined similarly with the extra requirement that $g(i)=1$ for all but finitely many $i \in I$.
+
+For *finite* $I$, the direct sum and product are equivalent.
+
+
+
+
+
+
+
+
+
