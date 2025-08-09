@@ -54,9 +54,35 @@ Page 3
 ## Maximal Ideal
 
 >[!def]
->An ideal $I \trianglelefteq R$ is **maximal** if 
->1. $I \neq R$
->2. If $J \trianglelefteq R$ such that $I \subseteq J \subseteq R$, then $I=J$ or $R = J$ 
+>An ideal $M \trianglelefteq R$ is **maximal** if 
+>1. $M \neq R$
+>2. If $J \trianglelefteq R$ such that $M \subseteq J \subseteq R$, then $M=J$ or $R = J$ 
 
+## Facts
+ - for $I_1,I_2$ ideals of $R$, $I_1+I_2$ and $I_1 \cap I_2$ are also ideals of $R$. This generalises the finite collection of ideals.
+
+## Prime Ideas
+
+>[!def] 
+>An ideal $P \subset R$ is **prime** of 
+>1. $P \neq R$
+>2. $xy \in P \implies x \in P$ or $y \in P$
 
 # Quotient Rings
+
+>[!def] 
+>$R$ ring, $I \subset R$ an ideal, the **quotient ring** $R/I$ is given by the cosets $\{x+I|x\in R \}$ with operations:
+>- $(x+I)(y+I) = (xy)+I$
+>- $(x+I)+(y+I) = (x+y)+I$
+
+## Quotient Map
+
+>[!def]
+>$\pi : R \to R/I$ a ring homomorphism, $x \mapsto x+I$ is surjective and $\ker \pi  = I$.
+>
+
+# Integral Domain
+
+>[!def] 
+>A non-zero ring without zero-divisors $\neq 0$ is called an **integral domain**.
+

@@ -9,8 +9,15 @@
 >
 >If $n$ does not exist, then the ring/field has characteristic $0$.
 
+# Facts
 
-
+>[!proposition]
+>Let $R$ be a non-zero ring. The following are equivalent:
+>1. $R$ is a field
+>2. The only ideals of $R$ are $(0)$ and $(1)= R$
+>3. Every ring homomorphism is either zero or injective
+##### Proof
+Page 4
 
 
 
