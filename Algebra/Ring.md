@@ -86,3 +86,4 @@ Page 3
 >[!def] 
 >A non-zero ring without zero-divisors $\neq 0$ is called an **integral domain**.
 
+ 
