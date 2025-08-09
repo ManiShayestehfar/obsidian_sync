@@ -10,13 +10,39 @@
 
 --> In a ring, a **multiplicative identity element, and inverse are not required**
 
+### Units 
+
+$R$ has **units** if $\exists \mathbb{1} \in R$  such that $\forall x \in R$, $\mathbb{1}x = x=x\mathbb{1}$.
+
+### Subrings
+
+>[!def] 
+>$S$ \subset $R$ is a subset such that $S$ is a ring with some operation.
+
+### Ring Homomorphism
+
+>[!def] 
+>For rings $R,S$ a map $\varphi: R \to S$ is a **ring homomorphism** if:
+>1. $\varphi(\mathbb{1}_R) = \mathbb{1}_S$ 
+>2. $\varphi(x\pm y) = \varphi(x) \pm \varphi(y)$ 
+>3. $\varphi(xy) = \varphi(x)\varphi(y)$
+
+- $\varphi$ injective $\iff \ker \varphi$
+- $\varphi$ surjective $\iff \text{im }\varphi = S$ 
+
+
 # Ideal
 
 >[!def]
->An **ideal** is a subset $I\subseteq R$ that is a subgroup of the additive group of $R$. It follows the following conditions:
+>An **ideal** is a subset $I\subseteq R$ is a subset such that:
+>1. $(I,+)$ is an additive subgroup
+>2. $x \in R$, $y \in I \implies xy \in I$
 >
->1. $a,b \in I\implies a-b \in I$
->2. $a\in I, r \in R \implies ar, ra \in I$
+
+>[!proposition]
+>For any $\varphi : R \to S$, $\ker \varphi$ is an ideal of $R$.
+##### Proof
+Page 3
 
 ## Principal Ideal
 
@@ -25,7 +51,7 @@
 >$$R_a = (a) = \{ra \:|\: r \in R\} \subseteq R$$
 
 
-## Maximal Idea
+## Maximal Ideal
 
 >[!def]
 >An ideal $I \trianglelefteq R$ is **maximal** if 
@@ -33,8 +59,4 @@
 >2. If $J \trianglelefteq R$ such that $I \subseteq J \subseteq R$, then $I=J$ or $R = J$ 
 
 
-
-
-
-
- 
+# Quotient Rings
