@@ -15,3 +15,33 @@
 	- If $N \trianglelefteq G$ such that $G/N$ is abelian, then $[G,G] \subseteq N$.
 8. None
 9. $S$ finite and $S'$ infinite sets. Let $F,F'$ be free abelian groups on $S,S'$ respectively. Then $F \not \cong F'$.
+
+# Week 2
+
+1. $X,Y$ nonempty T.S, and $A \subseteq X$. $A \times Y$ is a retract of $X \times Y$ $\iff$ $A$ is a retract of $X$
+
+2. $C$ a retract of $B$, $B$ a retract of $A$ $\implies$ $C$ a retract of $A$
+
+3. Any convex subset $X$ of $\mathbb{R}^n$ deformation retracts to a point. Converse is not true.
+
+4. Example of a deformation retraction of $\mathbb{R}^n\backslash\{0\}$ onto $S^{n-1}$. $F:\mathbb{R}^n \times [0,1] \to S^{n-1}$ such that $F(x,t) = (1-t)x + t\frac{x}{\|x\|}$.
+
+5. a. Composition of homotopy equivalences is a homotopy equivalence. So homotopy equivalence is an equivalence relation
+	 b. The relation of homotopy among maps $X \to Y$ is an equivalence relation.
+	 c. A map homotopic to a homotopy equivalence is a homotopy equivalence
+
+6. If $X$ deformation retracts to a point $x \in X$, then for each neighbourhood $U$ of $x$ in $X$, there exists a neighbourhood $V \subseteq U$ of $x$ such that $i:V \hookrightarrow U$ is nullhomotopic.
+	
+	**Tube Lemma:** $X,Y$ T.S. with $Y$ compact and $x_0 \in X$. For any open $W \subseteq X\times Y$ containing $\{x_0\} \times Y$, there exists $V \subseteq X$ such that $x_0 \in V$ and $V \times Y \subset W$.
+
+
+6. $X$ a subspace of $\mathbb{R}^n$ consisting of $[0,1]\times \{0\}$ with all vertical segments $\{r\}\times [0,1-r]$ for $r \in [0,1]$ such that $r\notin \mathbb{Q}$. Then $X$ deformation retracts to any point ONLY on the segment $[0,1] \times \{0\}$, and NO WHERE ELSE.
+
+	 If $Y \subseteq \mathbb{R}^n$ such that $Y = \bigcup_{i=1}^\infty X$, then $Y$ is contractible but does not deformation retract to any point anymore.
+
+7. TBD
+8. TBD
+9. TBD
+10. TBD
+11. TBD
+

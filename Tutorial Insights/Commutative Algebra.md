@@ -54,3 +54,35 @@ Using correspondence thm is useful here
 8. $I_1,I_2 \leq R$, $J_1,J_2 \leq S$ and we have homomorphism $f: R \to S$. Then the properties below hold:
 ![[Commutative Algebra-1755429331874.png|350]]
 
+
+
+# Week 3
+
+1. $M$ an abelian group. $M$ is an $R$-module is equivalent to an abelian ring $M$ with ring homomorphism $\mu: R \to \text{End}(M)$. If $\mu$ is injective, then $M$ is a faithful $R$-module
+
+2. $R$-modules $M,M',N,N'$ with $u \in \text{Hom}(M',M)$, $v\in \text{Hom}(N,N')$, then
+	$$\begin{align*}
+u^* &= \text{Hom}(M,N) \to \text{Hom}(M',N), \:\:\:f \mapsto f \circ u \\
+v^* &= \text{Hom}(M,N) \to \text{Hom}(M,N'), \:\:\:f \mapsto v \circ f
+\end{align*}$$
+	respectively called the pullback and the pushforward.
+
+3. For $R$-module $M$, $\text{Hom}(R,M) \cong M$
+
+4. $M,N$ $R$-modules, then $\text{Ann}(M+N) = \text{Ann}(M) \cap \text{Ann}(N)$
+
+5. $M$ an $R$-modules, $\varphi: R\to S$ a ring homomorphism
+	 **Restriction of Scalars:** Any $S$-module $N$ is an $R$-module via $R \times N \to N$, $(r,n) \mapsto r\cdot n := \varphi(r)n$
+	 $N$ fin. gen. $S$-module, $S$ fin. gen. $R$-modules $\implies$ $N$ fin. gen. $R$-module via restriction of scalars
+
+
+6. $\varphi \in \text{End}(M)$. $M$ is an $R[x]$-module with $p(x) \cdot m := p(\varphi)(m)$
+	 $M$ a fin. gen. $R$-module. Then any surjective module homom. $\varphi: M \to M$ is an isomorphism (i.e. it is injective as well)
+	 
+	 **Counter-Examples:** 
+	 *injective instead of surjective:* $R= \mathbb{Z}$, $M= \mathbb{Z}$ (finitely generated). Define $\varphi: \mathbb{Z} \to \mathbb{Z}, \:\varphi(n) = 2n$. This is injective (kernel is 0), but not surjective since odd integers are not in the image. So $\varphi$ not an isomorphism
+	 
+	 *surjective but $M$ not finitely generated:* $R=\mathbb{Z}$, $M= \mathbb{Q}/\mathbb{Z}$. $M$ is not finitely generated as a $\mathbb{Z}$-module.  $\varphi: \mathbb{Q}/\mathbb{Z} \to \mathbb{Q}/\mathbb{Z}, \:\: \varphi(x+\mathbb{Z}) = 2x + \mathbb{Z}$.  
+	 Surjectivity: $\forall y + \mathbb{Z} \in \mathbb{Q}/\mathbb{Z}$, pick $x=y/2$, then $\varphi(x+\mathbb{Z}) = y + \mathbb{Z}$.
+	 Not injective: $\varphi(1/2 + \mathbb{Z}) = 1 + \mathbb{Z} = 0$.
+	 So $\varphi$ not an isomorphism.
