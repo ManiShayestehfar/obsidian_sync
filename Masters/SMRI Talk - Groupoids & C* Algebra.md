@@ -5,3 +5,25 @@
 > **Link:** https://www.maths.usyd.edu.au/s/scnitm/cmeister-SMRISeminar-Sims
 
 
+**Banach Space:** Complete normed vector space
+
+$C^*$-**algebra:** Set with algebraic operations: 
+1. addition (commutative, associative), 
+2. multiplication (associative)
+3. multiplication by scalars
+4. involution $a^* \mapsto a$ by $(a^*)^* = a$
+
+Another abstract def: A Banach-* algebra where $\|a^*a\| = \|a\|^2$
+
+- when represented on $\mathcal{H}$, they link algebra and geometry
+
+**GNS Thm:** A commutative $C^*$ algebra, $a \mapsto a^*$ is an isomorphism $A \cong C(\hat{A})$  where $\hat{A} = \{?-homms: A\to \mathbb{C}\}$ 
+...
+
+
+**Morita context:** ?
+
+
+**Groupoid:** Small category with inverses (like a grp but mult partially defined) 
+
+**Cartan algebra:** 
