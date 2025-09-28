@@ -46,3 +46,21 @@ Using [[Pasting Lemma]], $H$ is also continuous for $A = I \times [0,1/2], \:\:B
 
 
 # Homotopy Class
+
+>[!def] Homotopy class
+>**Homotopy class** of a path $f:I \to X$, denoted $[f]$, is the equivalence class $f$ w.r.t homotopy $\simeq$
+
+*Associativity of paths:* Path composition is associative. We can prove this by using the **reparametrisation** of a path $f:I \to X$ as a composition of functions $f \circ \varphi: I \to X$ where $\varphi: I \to X$ is continuous with $\varphi(0) = 0$ and $\varphi(1)=1$. i.e $f \circ \varphi = f$. 
+Then for $f,g,h: I \to X$, $(f\circ g)\circ h = f \circ (g \circ h)$, where one is the reparametrisation of the other. 
+
+*Identity:* If $f:I \to X$ is a path from $x_0$ to $x_1$, then let $c_0,c_1: I \to X$ be the constant paths based at $x_0,x_1$. Then $c_0 \circ f \simeq f$, and $c_1 \circ f \simeq f$. 
+
+*Inverses:* $f \circ \bar{f} \simeq c_0$, $\bar{f} \circ f \simeq c_1$. 
+Define $f_t(s) = f((1-t)s)$. Then $f_0(s) = f(s)$ and $f_1(s)=f(0) = c_0(s) \:\forall s \in I$.  Also define $g_t =: \bar{f}_t$ i.e. $g_t(s) = f_t(1-s)$, and $h_t = f_t \circ g_t = f_t \circ \bar{f}_t$. 
+$h_t$ is a homotopy from $f\circ \bar{f}$  to $c_0$.    $\therefore f\circ \bar{f} \simeq c_0$, and similarly for the other case. $\square$
+
+
+
+
+
+
