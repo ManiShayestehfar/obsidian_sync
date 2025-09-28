@@ -59,3 +59,17 @@ $G_1 = \{a^n |a\in \mathbb{Z}\}, G_2 = \{b^n |b\in \mathbb{Z}\}$. Then $G = G_1 
 # Free Group
 
 - Similar universal property except now we have
+```handdrawn-ink
+{
+	"versionAtEmbed": "0.3.4",
+	"filepath": "Ink/Drawing/2025.9.28 - 20.17pm.drawing",
+	"width": 754,
+	"aspectRatio": 4.2204720912338125
+}
+```
+i.e. $\psi = f \circ\varphi$.
+
+1. $f$ is unique up to unique isomorphism
+2. $\ast_{s\in S}$ is free on $S$
+3. Any group $G$ is the homomorphic image of some free group $F$ on some set $S$
+

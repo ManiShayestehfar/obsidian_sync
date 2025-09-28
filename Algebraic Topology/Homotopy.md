@@ -121,3 +121,4 @@ are homotopy equivalent but *not* DR of each other.
 
 $$X \:\:\text{contractible} \iff \text{id}_X\:\:\text{is nullhomotopic} $$
 
+
