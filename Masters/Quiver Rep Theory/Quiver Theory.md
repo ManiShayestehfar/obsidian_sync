@@ -1,12 +1,10 @@
 # Quiver
 
->[!def] Quiver
->![[Quiver-1759149423125.png]]
+![[Quiver-1759149423125.png]]
 
 # Source/Sink/Loop
 
->[!def] source/sink/loop
->![[Quiver-1759149539531.png]]
+![[Quiver-1759149539531.png]]
 
 # Quiver Representation
 
@@ -20,15 +18,13 @@
 
 # Morphism of Representation
 
->[!def] morphism of representations
->![[Quiver-1759149952495.png]]
+![[Quiver-1759149952495.png]]
+
 
 ![[Basic-1759150974357.png]]
 
 # Isomorphic representations
 
->[!def] Isomorphic representations
->![[Quiver-1759150632419.png]]
-
+![[Quiver-1759150632419.png]]
 
 
