@@ -114,6 +114,23 @@ and so $\Phi$ is a homomorphism.
 >[!thm]
 >Every continuous map $f:D^2\to D^2$ has a fixed point. i.e. $\exists x \in D^2$ such that $f(x)=x$.
 ##### Proof
+Suppose $f(x)\neq x$ for all $x \in D^2$.
+Define $r:D^2 \to S^1=\partial D^2$ by intersecting the ray from $f(x)$ to $x$ with the boundary. Then $r$ is continuous, and if $x \in S^1$, then $r(x)=x$. So $r$ is a retraction of $D^2$ onto $S^1$.
+
+![[Fundamental Group-1759585675849.png|200]]
+
+Let $[f_0]$ be a non-trivial element of $\pi_1(S^1,x_0)$, then $f:I \to S^1$ is a loop at $x_0$. Let $c_0$ be the constant map, so $[c_0]$ is the identity of $\pi_1(S^1,x_0)$.
+
+Thinking of $f_0,c_0$ as maps $I \to D^2$, we have $f_0 \simeq c_0$ in $D^2$ by a straight-line homotopy $f_t(x) = (1-t)f_0(s)+tx_0$. Then $r \circ f_t$ is a homotopy in $S^1$ from $r \circ f_0 = f_0$ to $r \circ c_0 = c_0$. Hence $[f_0] = [c_0]$ in $\pi_1(S^1,x_0)$, which is a contradiction since we assumed that $[f_0]$ is non-trivial. $\therefore$ $f$ has a fixed point.  $\square$
 
 
+# Product of fundamental groups
 
+>[!proposition] 
+>If $X,Y$ are path-connected, then $\pi_1(X\times Y) \cong \pi_1(X) \times \pi_1(Y)$
+##### Proof
+$f:I \to X\times Y$ is continuous as $f(s) = (f_X(s), f_Y(s))$. Then the isomorphism is given by $[f] \mapsto ([f_X], [f_Y])$.
+
+## Example
+
+1. Torus $T^2 \cong S^1 \times S^1$ so $\pi_1(T^2) = \mathbb{Z} \times \mathbb{Z} = \mathbb{Z}^2$
