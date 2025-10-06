@@ -71,8 +71,55 @@ $\forall y \in Y$, $\widetilde{F}|_{N_y \times I}$ is unique when restricted fur
 
 >[!cor] 
 >Let $p$ be a covering map. 
->1. **path-lifting property:** For every path $g: I \to X$ and each lift $\tilde{x}_0 \in \widetilde{X}$ of $x_0 = g(0)$, there is a unique path $\widetilde{g}:I \to \widetilde{X}$ that lifts $g$ such that $\widetilde{g}(0)=\tilde{x}_0$.
->2. If $f_t:I \to X$ is a homotopy of paths, then for every lift $\tilde{f}_0$ of $f_0$, there is a unique homotopy of paths $f_t:I\to X$ such that $\widetilde{f}_t$ lifts $f_t$.
+>1. **path-lifting property:** For every path $g: I \to X$ and each lift $\tilde{x}_0 \in \widetilde{X}$ of $x_0 = g(0)$, there is a *unique* path $\widetilde{g}:I \to \widetilde{X}$ that lifts $g$ such that $\widetilde{g}(0)=\tilde{x}_0$.
+>2. If $f_t:I \to X$ is a homotopy of paths, then for every lift $\tilde{f}_0$ of $f_0$, there is a *unique* homotopy of paths $f_t:I\to X$ such that $\widetilde{f}_t$ lifts $f_t$.
+
+##### Proof 
+###### Part 1
+Set $Y = \{y_0\}$. For $t \in I$, define $f_t:Y \to X$, $y_0\mapsto g(t)$. Then $f_t$ is continuous and $F:\{y_0\}\times I \to X$ given by $(y_0,t)\mapsto f_t(y_0)$ is continuous so $F$ is a homotopy. 
+Define $\widetilde{f}_0:\{y_0\}\to X$ by $\widetilde{f}_0(y_0)= x_0$. Then $\widetilde{f}_0$ is a lift of $f_0$. We therefore know that there exists a unique lifted homotopy $\widetilde{f}_t$ such that each $\widetilde{f}_t$ lifts $f_t$.
+
+![[Covering Space-1759747750900.png|250]]
+
+Define $\widetilde{g}:I \to \widetilde{X}$ by $\widetilde{g}(t)=\widetilde{f}_t(y_0)$. Then $\widetilde{g}$ is a path and $\widetilde{g}$ lifts $g$, and $\widetilde{g}(0)=\widetilde{x}_0$, unique by uniqueness of $\widetilde{f}_t$.
+
+###### Part 2
+Same as above but we replace $Y$ with $I$.
 
 
+# Covering Spaces & Fundamental Groups
 
+>[!proposition] 
+>Let $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ be a covering map. Then the induced homomorphism $p_*: \pi_1(\widetilde{X},\widetilde{x}_0) \to \pi_1(X,x_0)$ is *injective*.
+>
+>Also the image $p_*(\pi_1 (\widetilde{X},\widetilde{x}_0)) \trianglelefteq \pi_1 (X,x_0)$ consists of homotopy classes of loops based at $x_0$ in $X$ whose lifts to $\widetilde{X}$ starting at $\widetilde{x}_0$ are loops in $\widetilde{X}$.
+##### Proof
+*injectivity:* Let $[\widetilde{f}_0] \in \ker p_*$ which we want to show is trivial.
+Let $f_0 = p \circ \widetilde{f}_0$. Then $p_*([\widetilde{f}_0]) = [p \circ \widetilde{f}_0] = [f_0]= 1_{\pi_1(X,x_0)}$ where the last equality comes from the kernel assumption.
+
+So we have a homotopy $f_t:I \to X$ from $f_0$ to the constant loop at $x_0$, say $f_1$. By the corollary above (part 2), there exists a unique lift $\widetilde{f}_t$ of $f_t$ such that $f_1$ is the constant loop at $\widetilde{x}_0$. So $\widetilde{f}_0$ is nullhomotopic in $\widetilde{X}$. i.e. $[\widetilde{f}_0] = 1_{\pi_1(\widetilde{X},\widetilde{x}_0)}$. $\therefore\:p_*$ is injective.
+
+<mark style="background: #FF5582A6;">PROOF OF THE REST.</mark>  $\square$ 
+
+
+## Examples
+
+1. $p_3:S^1\to S^1$, $z \mapsto z^3$ induces $(p_3)_*: \mathbb{Z}\to \mathbb{Z}$, $k \mapsto 3k$ so the image is $3\mathbb{Z}\trianglelefteq\mathbb{Z}.$ 
+2. $p:\mathbb{R} \to S^1$, $t \mapsto (\cos 2\pi t, \sin 2\pi t)$, so image of $p_*$ is the trivial subgroup.
+3. $\pi_1(\mathbb{R}P^2) \cong \mathbb{Z}/2\mathbb{Z}$. We know $\pi_1 (T^2)\cong \mathbb{Z}^2$. Any $p: \mathbb{R}P^2 \to T^2$ covering would induce an injective homomorphism, but non exist (same for the other direction), so no coverings here.
+
+
+# Number of Sheets
+
+>[!lemma]
+>If $p$ is a covering and $X$ is *connected*, then the preimage $p^{-1}(x)$ for $x \in X$, has the same cardinality.
+
+>[!def] Number of Sheets 
+>For $X$ connected, and $p:\widetilde{X}\to X$ a cover, the cardinality of $p^{-1}(x)$ for some $x \in X$ is the **number of sheets** of the cover.
+
+## Examples
+
+1. $p_3:S^1 \to S^1$, $z \mapsto z^3$ is 3-sheeted
+2. $p:\mathbb{R}\to S^1$, $t \mapsto (\cos 2\pi t, \sin 2\pi t)$ has infinitely many sheets.
+   
+3. ![[Covering Space-1759749357895.png|350]]
