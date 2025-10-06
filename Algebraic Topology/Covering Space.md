@@ -128,4 +128,18 @@ So we have a homotopy $f_t:I \to X$ from $f_0$ to the constant loop at $x_0$, sa
 ## Propositions
 
 >[!proposition]
->Suppose $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ is a cover, and $X, \widetilde{X}$ are path-connected. Then the $\#$ of sheets of this cover = index of $p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$ in $$
+>Suppose $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ is a cover, and $X, \widetilde{X}$ are path-connected. Then the $\#$ of sheets of this cover = index of $p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$ in $\pi_1(X,x_0)$.
+##### Proof
+For the following proof assume $G = \pi_1(X,x_0)$, and $H = p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$.
+Let $[g]\in G$ with lift $\widetilde{g}:I \to \widetilde{X}$ starting at $\widetilde{x}_0$. Let $[h]\in H$. Then the lift $\widetilde{h}$ of $h$ starting at $\widetilde{x}_0$ is a loop at $\widetilde{x}_0$. So the composition of paths $\widetilde{h} \cdot \widetilde{g}$ in $\widetilde{X}$ ends at the same points as $\widetilde{g}$ does.
+
+![[Screenshot 2025-10-07 at 10.00.15 am.png|400]]
+
+Define $\Phi: Hg \to p^{-1}(x)$ via $H[g] \mapsto \widetilde{g}(1)$. We show that $\Phi$ is bijective. 
+
+*Surjective:* $\widetilde{X}$ path-connected. So can join $\widetilde{x}_0$ to any element of $p^{-1}(x_0)$ via a path $\tilde{g}$. Then $p \circ \widetilde{g}$  is a loop $g$ in $X$ at $x_0$. Then $\Phi(H[g]) = \widetilde{g}(1)$.   $\therefore \Phi$ is surjective. 
+
+*Injective:* Suppose $\Phi(H[g_1]) = \Phi(H[g_2]) \implies \widetilde{g}_1(1) = \widetilde{g}_2(1)$, so $\widetilde{g}_1 \cdot \bar{\tilde{g_2}}$ is a loop in $\widetilde{X}$ based at $\widetilde{x}_0$. 
+Then $g_1 \cdot \bar{g}_2$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \bar{g}_2]$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \bar{g}_2]$ is in the image of $p_*$, i.e. $[g_1 \cdot \bar{g}_2] = [g_1][g_2]^{-1} \in H$ $\implies H[g_1] = H[g_2]$.  $\square$ 
+
+
