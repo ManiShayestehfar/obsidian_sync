@@ -123,3 +123,9 @@ So we have a homotopy $f_t:I \to X$ from $f_0$ to the constant loop at $x_0$, sa
 2. $p:\mathbb{R}\to S^1$, $t \mapsto (\cos 2\pi t, \sin 2\pi t)$ has infinitely many sheets.
    
 3. ![[Covering Space-1759749357895.png|350]]
+
+
+## Propositions
+
+>[!proposition]
+>Suppose $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ is a cover, and $X, \widetilde{X}$ are path-connected. Then the $\#$ of sheets of this cover = index of $p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$ in $$
