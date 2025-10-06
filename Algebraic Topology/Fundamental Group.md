@@ -151,3 +151,4 @@ Choose presentation $G = \langle S_\alpha \:|\: r_\beta\rangle$. Then construct 
 
 ![[Fundamental Group-1759722995154.png|650]]
 
+
