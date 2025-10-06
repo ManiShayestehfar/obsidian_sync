@@ -40,5 +40,11 @@ Let $x_0 \in \cap_\alpha A_\alpha$.
 
 1. Wedge sums: Recall $X \vee Y$ is the quotient of $X \sqcup Y$ where we identify some $x_0\in X$ with some $y_0 \in Y$.
 
+>[!proposition] 
+>$X,Y$ path-connected, $x_0 \in X$ is a DR of some open $U \subseteq X$, and $y_0 \in Y$ is DR of some open $V \subseteq Y$. Then $\pi_1(X \vee Y) = \pi_1(X) \ast \pi_1(Y)$.
+##### Proof
+Define $A_\alpha = X \vee Y$, $A_\beta= U \vee Y$. Then $A_\alpha \cup A_\beta = X \vee Y$. $A_\alpha, A_\beta$ are open in $X \vee Y$, and they are also path-connected.
+Now $A_\alpha \cap A_\beta = U \vee V$ DRs to a point $(x_0=y_0)$. Hence $A_\alpha \cap A_\beta$ is path-connected and $\pi_1(A_\alpha \cap A_\beta) = 1$. Therefore we can use Van Kampen's theorem:
 
-
+1. $\Phi: \pi_1(A_\alpha) \ast \pi_1 (A_\beta) \to \pi_1(X\vee Y)$ is *surjective*.
+2. $\ker \Phi = \langle\langle{i_{\alpha\beta}(w)\:(i_{\beta\alpha}(w))^{-1}\:|\: w \in \overbrace{\pi_1(A_\alpha\cap A_\beta,x_0)}^{=1}}\rangle\rangle$
