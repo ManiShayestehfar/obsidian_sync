@@ -56,7 +56,23 @@ Now define $\widetilde{F}|_{N\times [t_i,t_{i+1}]} = (p|_{U_i})^{-1} \circ F|_{N
 ![[Covering Space-1759739264000.png|400]]After finitely many repetitions, get lift $\widetilde{F}: N \times I\to \widetilde{X}$ for some neighbourhood of $y$.
 
 
-*Uniqueness:* First consider the special case $Y = \{y_0\}$. i.e. $F:\{y_0\}\times I \to X$. Suppressing $Y$ from notation, then $F:I \to X$ is a path in $X$.
+*Uniqueness:* First consider <span style="color:rgb(0, 176, 240)">the special case</span> $Y = \{y_0\}$. i.e. $F:\{y_0\}\times I \to X$. Suppressing $Y$ from notation, then $F:I \to X$ is a path in $X$.
 
 Suppose $\widetilde{F}:I \to \widetilde{X}$, $\widetilde{F}':I \to \widetilde{X}$ are lifts of $F:I \to X$ such that $\widetilde{F}(0) = \widetilde{F}'(0)$. Consider partition $0=t_0<t_1<...<t_m = 1$ such that for all $0\leq i\leq m$, $F([t_i,t_{i+1}])\subseteq U_i$. 
-Assume inductively that $\widetilde{F}=\widetilde{F}'$ on $[0,t_i]$. Since $[t_i,t_{i+1}]$ is connected and $\widetilde{F},\widetilde{F}'$ are continuous and $\widetilde{F}([t_i,t_{i+1}])$ and $\widetilde{F}'([t_i,t_{i+1}])$ are each contained in a single open set from the disjoint union $$
+Assume inductively that $\widetilde{F}=\widetilde{F}'$ on $[0,t_i]$. Since $[t_i,t_{i+1}]$ is connected and $\widetilde{F},\widetilde{F}'$ are continuous and $\widetilde{F}([t_i,t_{i+1}])$ and $\widetilde{F}'([t_i,t_{i+1}])$ are each contained in a single open set from the disjoint union $p^{-1}(U_i)$ (same one for both because $\widetilde{F}(t_i) = \widetilde{F}'(t_i)$). Call this open set $\widetilde{U}_i$.
+
+Now $p$ is injective on $\widetilde{U}_i$ and $p \circ \widetilde{F} = p \circ \widetilde{F}'$ on $I$, so we get $\widetilde{F}=\widetilde{F}'$ on $[t_i,t_{i+1}]$. So if $Y=\{y_0\}$, then for all lifts $\widetilde{f}_0$ of $f_0$ there exists a unique $\widetilde{F}$ for any $F$.
+
+<span style="color:rgb(0, 176, 240)">For general y:</span> 
+$\forall y \in Y$, $\widetilde{F}|_{N_y \times I}$ is unique when restricted further to $\{y\}\times I$. So $\widetilde{F}|_{N_y\times I}$ and $\widetilde{F}'|_{N'_y\times I}$ agree on $(N'_y \cap N_y)\times I$. So we get a unique lift $\widetilde{F}$ to all of $Y \times I$. $\widetilde{F}$ is continuous because it is continuous on each $N_y\times I$ by the [[Pasting Lemma]].  $\square$
+
+
+# Path-lifting Property
+
+>[!cor] 
+>Let $p$ be a covering map. 
+>1. **path-lifting property:** For every path $g: I \to X$ and each lift $\tilde{x}_0 \in \widetilde{X}$ of $x_0 = g(0)$, there is a unique path $\widetilde{g}:I \to \widetilde{X}$ that lifts $g$ such that $\widetilde{g}(0)=\tilde{x}_0$.
+>2. If $f_t:I \to X$ is a homotopy of paths, then for every lift $\tilde{f}_0$ of $f_0$, there is a unique homotopy of paths $f_t:I\to X$ such that $\widetilde{f}_t$ lifts $f_t$.
+
+
+
