@@ -134,3 +134,20 @@ $f:I \to X\times Y$ is continuous as $f(s) = (f_X(s), f_Y(s))$. Then the isomorp
 ## Example
 
 1. Torus $T^2 \cong S^1 \times S^1$ so $\pi_1(T^2) = \mathbb{Z} \times \mathbb{Z} = \mathbb{Z}^2$
+
+
+# Application to CW
+
+>[!proposition]
+>For every group $G$, there is a two-dimensional cell complex $X$ with $\pi_1 (X) \cong G$.
+##### Sketch of proof
+
+Choose presentation $G = \langle S_\alpha \:|\: r_\beta\rangle$. Then construct $X$ with 
+- one vertex $v$
+- for each $S_\alpha$, a loop at $v$
+- for each $r_\beta= S_{\alpha_1}^{\xi_1}S_{\alpha_2}^{\xi_2}...S_{\alpha_n}^{\xi_n}$ ($\xi_i = \pm 1$) attach a $2$-cell $e_\beta$ by sending $\partial e_\beta = S^1$ to the loop at $v$ given by $S_{\alpha_1}^{\xi_1}S_{\alpha_2}^{\xi_2}...S_{\alpha_n}^{\xi_n}$
+
+## Example
+
+![[Fundamental Group-1759722995154.png|650]]
+
