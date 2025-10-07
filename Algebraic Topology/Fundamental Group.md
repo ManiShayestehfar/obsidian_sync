@@ -60,12 +60,6 @@ $\therefore\:\:\beta_h$ is a homomorphism.
 *Bijection:* $\beta_{\bar{h}}:\pi_1(X,x_1)\to \pi_1(X,x_0)$ is  the inverse of $\beta_h$ and so $\beta_h$ is bijective.   $\square$
 
 
-# Simply-Connected
-
->[!def] Simply-Connected
->For $X$ path-connected, $X$ is **simply-connected** if $X$ is path connected and $\pi_1(X)\cong 1$.
-
-
 
 # Fundamental Group of the Circle
 $$\pi_1(S^1) \cong \mathbb{Z}$$

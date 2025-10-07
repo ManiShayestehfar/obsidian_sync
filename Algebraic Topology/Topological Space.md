@@ -114,8 +114,17 @@ i.e. the multiplication is component-wise
 For *finite* $I$, the direct sum and product are equivalent.
 
 
+# Simply-Connected
+
+>[!def] Simply-Connected
+>For $X$ path-connected, $X$ is **simply-connected** if $X$ is path connected and $\pi_1(X)\cong 1$.
 
 
+# Locally Path-Connected
+
+>[!def] 
+>$X$ is **locally path-connected** if for all $x \in X$ and all open neighbourhoods $U$ or $x$, there exists an open neighbourhood $V$ of $x$ with $V \subseteq U$ such that $V$ is path-connected.
+>![[Pasted image 20251007123350.png|300]]
 
 
 
