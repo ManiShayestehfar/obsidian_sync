@@ -53,7 +53,10 @@ We can show that there exists a neighbourhood of $y_0$ in $Y$ and a partition $0
 *Inductive assumption:* Assume we have constructed $\widetilde{F}$ on $N \times [0,t_i]$. Now there exists an open $\widetilde{U}_i \subseteq \widetilde{X}$ such that $p|_{\widetilde{U}_i}$ is a homeomorphism onto $U_i$, and $\widetilde{U}_i$ contains $\widetilde{F}(y_0,t_i)$. We may assume $\widetilde{U}_i$ contains $\widetilde{F}(N \times \{t_i\})$.
 
 Now define $\widetilde{F}|_{N\times [t_i,t_{i+1}]} = (p|_{U_i})^{-1} \circ F|_{N \times [t_i,t_{i+1}]}$. Then TFDC:
-![[Covering Space-1759739264000.png|400]]After finitely many repetitions, get lift $\widetilde{F}: N \times I\to \widetilde{X}$ for some neighbourhood of $y$.
+
+![[Covering Space-1759739264000.png|400]]
+
+After finitely many repetitions, get lift $\widetilde{F}: N \times I\to \widetilde{X}$ for some neighbourhood of $y$.
 
 
 *Uniqueness:* First consider <span style="color:rgb(0, 176, 240)">the special case</span> $Y = \{y_0\}$. i.e. $F:\{y_0\}\times I \to X$. Suppressing $Y$ from notation, then $F:I \to X$ is a path in $X$.
@@ -150,8 +153,43 @@ Then $g_1 \cdot \bar{g}_2$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \b
 > $$\widetilde{f}:(Y,y_0)\to (\widetilde{X},\widetilde{x}_0)\:\:\text{exists}\iff f_*(\pi_1(Y,y_0))\subseteq p_*(\pi_1(\widetilde{X}, \widetilde{x}_0))$$
 ##### Proof
 
- ==DO THE PROOF (SEE HATCHER)==
+ ==DO THE PROOF (SEE HATCHER PROP 1.33)==
 
 
 # Unique Lifting Property
 
+>[!proposition] 
+>$p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ a covering space, and let $f:(Y,y_0)\to (X,x_0)$ be a continuous map with lifts $\widetilde{f}_1, \widetilde{f}_2: (Y,y_0)\to (\widetilde{X}, \widetilde{x}_0)$. 
+>Suppose $Y$ is connected. Then $\widetilde{f}_1(y_0) = \widetilde{f}_2(y_0) \implies \widetilde{f}_1 = \widetilde{f}_2$.
+>
+
+##### Proof
+
+ ==DO THE PROOF (SEE HATCHER PROP 1.34)==
+
+
+# Isomorphism of Covering Spaces
+
+>[!def] 
+>An **isomorphism of covering spaces**, $p_1:\widetilde{X}_1\ \to X, p_2:\widetilde{X}_2 \to X$  is a homomorphism $f:\widetilde{X}_1 \to \widetilde{X}_2$ such that TFDC:
+>
+> ![[Screenshot 2025-10-07 at 2.05.50 pm.png|150]]
+
+## Examples
+
+1. $\widetilde{X}_1 = \widetilde{X}_2 = \mathbb{R}$, $X=S^1$.
+   Then define $p:\mathbb{R} \to S^1$, $q:\mathbb{R} \to S^1$, $f:\mathbb{R} \to S^1$ given by $p(t)= \exp(2\pi i t), q(t)=\exp(it),$ and $f(t) = 2\pi t$ respectively. Then $p,q$ are covers and $f$ is a homeomorphism.
+
+2. Isomorphism of covers gives an equiv. relation on covers of a space $X$. These can be considered as *basepoint-preserving* isomorphisms i.e.
+   ![[Screenshot 2025-10-07 at 2.09.17 pm.png|300]]
+   
+## Propositions
+
+>[!proposition]
+>$X$ is *path-connected* and *locally path-connected*, then two path-connected covering spaces $p_1,p_2$ are isomorphic via an isomorphism $f:\widetilde{X}_1 \to \widetilde{X}_2$ taking a basepoint $\widetilde{x}_1 \in p^{-1}(x_0)$ to a basepoint $\widetilde{x}_2 \in p_2^{-1}(x_0) \iff p_{1*}(\pi_1(\widetilde{X}_1,\widetilde{x}_1)) = p_{2*}(\pi_1(\widetilde{X}_2,\widetilde{x}_2))$
+##### Proof
+###### $(\Rightarrow)$ 
+Assume $f:(\widetilde{X}_1, \widetilde{x}_1) \to (\widetilde{X}_2, \widetilde{x}_2)$ an isomorphism. Since $f$ is a homeomorphism, both $f_*$ and $(f^{-1})_*$ are isomorphisms. Then 
+![[Screenshot 2025-10-07 at 2.21.01 pm.png|270]]
+
+commutes
