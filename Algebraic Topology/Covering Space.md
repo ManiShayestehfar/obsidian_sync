@@ -192,4 +192,97 @@ Then $g_1 \cdot \bar{g}_2$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \b
 Assume $f:(\widetilde{X}_1, \widetilde{x}_1) \to (\widetilde{X}_2, \widetilde{x}_2)$ an isomorphism. Since $f$ is a homeomorphism, both $f_*$ and $(f^{-1})_*$ are isomorphisms. Then 
 ![[Screenshot 2025-10-07 at 2.21.01 pm.png|270]]
 
-commutes
+commutes. i.e. $p_1 = p_2 \circ f$ and $p_2 = p_1 \circ f$.
+
+This implies $(p_1)_* = (p_2)_* \circ f$ and $(p_2)_* = (p_1)_* \circ f$. Hence $(p_1)_*$ and $(p_2)_*$ have the same image in $\pi_1(X,x_0)$.
+
+###### $(\Leftarrow)$ 
+Consider 
+![[Screenshot 2025-10-07 at 2.26.42 pm.png|230]]
+
+By lifting criterion, since $(p_1)_*(\pi_1(\widetilde{X}_1,\widetilde{x}_1))\subseteq (p_2)_*(\pi_1(\widetilde{X}_2,\widetilde{x}_2))$, then there is a lift $\widetilde{p}_1$ of $p_1$ such that $\text{Fig 1.}$ of below commutes.
+
+![[Screenshot 2025-10-07 at 2.37.51 pm.png]]
+
+Similarly for $\widetilde{p}_2$ a lift of $p_2$ $\text{Fig 2.}$ commutes. So we have lifts given by $\text{Fig 3.}$ 
+
+Since $\widetilde{p}_2 \circ \widetilde{p}_1$ fixes $\widetilde{x}_1$, and so does the $\text{id}$, by the unique lifting property, we get $\widetilde{p}_2 \circ \widetilde{p}_1 = \text{id}_{\widetilde{X}_1}.$ Analogously $\widetilde{p}_1 \circ \widetilde{p}_2 = \text{id}_{\widetilde{X}_2}.$ Thus $\widetilde{p}_1,\widetilde{p}_2$ are inverse homomorphisms, so these covers are isomorphic. $\square$
+
+# Covering Space & Subgroups Correspondence
+
+>[!thm]
+>Let $X$ be *path-connected*, l*ocally path-connected*, *semi-locally simply-connected*. 
+>Then there is a bijection $$\begin{Bmatrix}
+> \text{Base-point preserving} \\ \text{isomorphism classes} \\ \text{of path-connected}  \\ \text{covering spaces} 
+>\end{Bmatrix} \longleftrightarrow \begin{Bmatrix} \text{subgroups}  \\ \text{of}\:\: \pi_1(X,x_0) \end{Bmatrix}$$
+>given by $(p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)) \mapsto p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$.
+>If we ignore base points of covers, we get a bijection $$\begin{Bmatrix}
+> \text{Isomom. classes of } \\ \text{path-connected} \\ \text{covering spaces}  
+>\end{Bmatrix} \longleftrightarrow \begin{Bmatrix} \text{Conjugacy classes} \\ \text{of subgroups}  \\ \text{of}\:\: \pi_1(X,x_0) \end{Bmatrix}$$
+>
+
+**Recall:** *Conjugacy classes* of $g \in G$ is the subset $\{hgh^{-1}\:|\: h \in G\}$ of $G$.
+
+
+# Universal Cover
+
+>[!def] 
+>A simply connected covering space of $X$ is a **universal cover**.
+
+## Examples 
+
+1. $p: \mathbb{R} \to S^1$, via $t \mapsto \exp{2\pi i t}$  is a universal cover.
+2. An infinite tree cover of $S^1 \vee S^1$ is a universal cover.
+
+
+## Existence of Universal Cover
+
+>[!thm] 
+>$X$ is *path-connected*, *locally path-connected*, and *semi-locally simply connected*. Then there exists a simply-connected cover $\widetilde{p}: \widetilde{X} \to X$ i.e. a universal cover
+##### Proof
+
+==DO THIS PROOF (pg. 35-37)==
+
+
+
+# Normal/Regular Covering Space
+
+>[!def] 
+>$p:\widetilde{X} \to X$ a covering space is **normal/regular** if $\forall x \in X$, $\forall \tilde{x}_1,\tilde{x}_2 \in p^{-1}(X)$, there exists $\varphi \in \text{Homeo}(\widetilde{X},p)$ such that $\varphi(\tilde{x}_1) = \tilde{x}_2$. 
+>i.e. the group of deck transformations acts *transitively* on each *fibre* of $p$.
+- *transitive:* group action $\rho: G \to \text{Sym}(X)$: $\forall x,y \in X$  $\exists g \in G$ such that $\rho(g)(x)=y$.
+- *fibre:* preimage of a point.
+
+## Examples
+
+1. $p: \mathbb{R} \to S^1$, $t \mapsto (\cos 2\pi t, \sin 2\pi t)$ is normal. If $p_1(t)=p_2(t)$, then $t_1-t_2 \in n\mathbb{Z}$ so $t_1 = t_2 +n = \tau_n(t_2)$ with $\tau_n \in \text{Homeo}(\mathbb{R},p)$.
+
+2. $p: S^1 \to S^1$, $z \mapsto z^3$ is normal
+
+3. ![[Screenshot 2025-10-07 at 3.38.11 pm.png|250]] 
+   example deck transformation: $a'\leftrightarrow a'',\:b'\leftrightarrow b'',\:v'\leftrightarrow v''$. This is a normal cover.
+
+## Non-example
+
+![[Screenshot 2025-10-07 at 3.40.07 pm.png|200]]
+
+
+# Normaliser 
+
+>[!def] 
+>$G$ a group. $H \leq G$. The **normaliser** of $H$ in $G$ is $N_G(H) = \{g \in G \:|\: gHg^{-1} = H\}$  
+
+>[!proposition] 
+>Let $p$ be a covering space with $X,\widetilde{X}$ *path-connected*, and $X$ *locally path-connected*. Let $G = \pi_1(X,x_0)$ and $H = p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$ so $H \leq G$. Then
+>
+>1. $p$ is a normal cover $\iff$ $H$ is a normal subgroup of $G$. 
+> 	  In particular if $\widetilde{X}$ is a universal cover, then $p$ is a normal cover.
+>2. $\text{Homeo}(\widetilde{X},p) \cong N_G(H)/H$
+> 	  in particular if this is a normal cover, then $\text{Homeo}(\widetilde{X},p) \cong G/H = \pi_1(X,x_0)/H$. So if $\widetilde{X}$ is a universal cover, we get $\text{Homeo}(\widetilde{X},p) \cong \text{Homeo}(X,x_0)$.
+> 	  i.e. group of the deck transformations of a universal cover of $X$ is isomorphic to the $\pi_1$ of $X$.
+> 	  
+##### Proof
+
+
+ 
+

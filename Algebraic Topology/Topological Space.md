@@ -128,5 +128,27 @@ For *finite* $I$, the direct sum and product are equivalent.
 
 
 
+# Semi-locally simply-connected
 
+**Recall:** Simply connected $\implies$ path-connected + trivial $\pi_1$ 
+
+>[!def]
+>A space $X$ is **semi-locally simply-connected** if every $x \in X$ has an open neighbourhood $U$ such that the map $\pi_1(U,x) \to \pi_1(X,x)$ induced by $U \hookrightarrow X$ has trivial image. 
+>i.e. every loop in $U$ based at $x$ is nullhomotopic in $X$.
+
+## Examples
+
+$S^1$ 
+
+## Non-examples
+
+Hawaiian earring embedded in $\mathbb{R}^2$ 
+
+## Properties
+
+>[!lemma] 
+>If $X$ has a simply-connected covering space $\widetilde{X}$, then $X$ is semi-locally simply-connected.
+##### Proof
+
+==DO THE PROOF==
 
