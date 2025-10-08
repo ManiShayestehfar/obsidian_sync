@@ -278,11 +278,54 @@ Since $\widetilde{p}_2 \circ \widetilde{p}_1$ fixes $\widetilde{x}_1$, and so do
 >1. $p$ is a normal cover $\iff$ $H$ is a normal subgroup of $G$. 
 > 	  In particular if $\widetilde{X}$ is a universal cover, then $p$ is a normal cover.
 >2. $\text{Homeo}(\widetilde{X},p) \cong N_G(H)/H$
-> 	  in particular if this is a normal cover, then $\text{Homeo}(\widetilde{X},p) \cong G/H = \pi_1(X,x_0)/H$. So if $\widetilde{X}$ is a universal cover, we get $\text{Homeo}(\widetilde{X},p) \cong \text{Homeo}(X,x_0)$.
+> 	  in particular if this is a normal cover, then $\text{Homeo}(\widetilde{X},p) \cong G/H = \pi_1(X,x_0)/H$. So if $\widetilde{X}$ is a universal cover, we get $\text{Homeo}(\widetilde{X},p) \cong \pi_1(X,x_0)$.
 > 	  i.e. group of the deck transformations of a universal cover of $X$ is isomorphic to the $\pi_1$ of $X$.
 > 	  
 ##### Proof
+###### Part 1
+$\widetilde{x}_1,\widetilde{x}_2 \in p^{-1}(x_0)$.
+Changing basepoint of $\pi_1(\widetilde{X})$ from $\widetilde{x}_1$ to $\widetilde{x}_2$ corresponds t o conjugating $H$ by $[\gamma]\in \pi_1 (X,x_0)$ where $\gamma$ lifts to a path $\widetilde{\gamma}$ from $\widetilde{x}_1$ to $\widetilde{x}_2$. So $[\gamma]\in N_G(H) \iff p_*(\pi_1 (\widetilde{X},\widetilde{x}_1)) = p_*(\pi_1 (\widetilde{X},\widetilde{x}_2)) \iff \exists \:\text{lifts}\: \widetilde{f}:(\widetilde{X},\widetilde{x}_1) \to (\widetilde{X},\widetilde{x}_2)$ and $\widetilde{g}:(\widetilde{X},\widetilde{x}_2) \to (\widetilde{X},\widetilde{x}_1)$ such that $p \circ \widetilde{f} = p$ and $p \circ \widetilde{g}=p$ (from lifting criterion).
+i.e. $\widetilde{f},\widetilde{g}$ are deck transformations and since $\widetilde{g}\circ \widetilde{f}$ fixes $\widetilde{x}_1$ and $\widetilde{f} \circ \widetilde{g}$ fixes $\widetilde{x}_2$, then $\widetilde{f},\widetilde{g}$ are inverses.
+
+Thus $[\gamma] \in N_G(H) \iff$ there is a deck transformation sending $\widetilde{x}_1$ to $\widetilde{x}_2$. Thus $H$ is normal in $G \iff$ the cover $p$ is normal.
+
+###### Part 2
+Want to show $\text{Homeo}(\widetilde{X},p) \cong N_G(H)/H$. We show there is a surjective homomorphism $\varphi: N_G(H) \to \text{Homeo}(\widetilde{X},p)$ with $\ker \varphi=H$. Then by 1st isomorphism theorem we have the result.
+
+Define $\varphi$ for $[\gamma] \in N_G(H) \leq \pi_1(X,x_0)$ by $\varphi([\gamma])= \widetilde{f}$  i.e. $\widetilde{f}$ is a deck transformation., taking $\widetilde{\gamma}(0)=\widetilde{x}_1$ to $\widetilde{\gamma}(1) = \widetilde{x}_2$ where $\widetilde{\gamma}$ lifts $\gamma$.
+
+To see $\varphi$ is a homom: Suppose $\varphi([\gamma])=\widetilde{f}$ with $\widetilde{f}(\widetilde{x}_1)= \widetilde{x}_2$, $\varphi([\gamma'])= \widetilde{f}'$ with $\widetilde{f}'(\widetilde{x}_1)=\widetilde{x}_2'$. Both $\gamma,\gamma'$ are loops corresponding to deck transformations taking $\widetilde{x}_1$ to $\widetilde{x}_2$, $\widetilde{x}_1$ to $\widetilde{x}_2'$ respectively.
+
+Then $\gamma\cdot \gamma'$ lifts to the path $\widetilde{\gamma}\cdot (\widetilde{f}\circ \widetilde{\gamma}')$ from $\widetilde{x}_1$ to $\widetilde{f}(\widetilde{x}_2') = \widetilde{f}(\widetilde{f'}(\widetilde{x}_1))$ via $\widetilde{x}_2$.
+Thus $\widetilde{f}\circ \widetilde{f}'$ is the deck transformation corresponding to $[\gamma][\gamma']$, hence $\varphi([\gamma][\gamma'])= \varphi([\gamma\cdot\gamma']) = \widetilde{f}\circ \widetilde{f}' = \varphi([\gamma])\varphi([\gamma'])$. 
+$\therefore \varphi$ is a homomorphism and surjectivity comes from Part 1.
+
+*Kernel:* Suppose $\varphi([\gamma])=\widetilde{f}$ with $\widetilde{f}(\widetilde{x}_1)=\widetilde{x}_2$. If $[\gamma]\in \ker \varphi$, then $\varphi([\gamma])$ is the identity deck transformation, which corresponds to $\widetilde{\gamma}$ a loop in $\widetilde{X}$. i.e. $\widetilde{\gamma}$ such that $[\gamma]=p_*([\widetilde{\gamma}]) \subseteq H$.
 
 
- 
+## Examples
+
+$p: \mathbb{R}\to S^1$. Then $[\gamma]\in \pi_1(S^1,1)$. So $\gamma$ lifts to a path in $\mathbb{R}$ from $\widetilde{x}_1=0$ to $n$, where $[\gamma]$ represents $n \in \mathbb{Z}$. The deck translation corresponding to $[\gamma]$ is the translation $\tau_n$.
+
+
+
+# Group Actions and Covering Spaces
+
+Suppose group $G$ acts on a space $Y$ by homeomorphisms such that 
+$$\begin{equation}
+\forall y \in Y,\:\exists\: U \in \mathcal{N}(y)\: \text{s.t. if}\:\: g_1U \cap g_2U\neq \emptyset\:\:\text{for}\: g_1,g_2\in G \implies g_1=g_2 \tag{*}
+\end{equation}$$
+
+>[!proposition] 
+>If $(\ast)$ holds, then:
+>1. The quotient map $p: Y \to Y/G$ via $y \mapsto G_y=\{g\cdot y \:|\:g \in G\}$ is a normal cover
+>2. If $Y$ is *path-connected*, then $G=\text{Homeo}(Y,p)$
+>3. If $Y$ is *path-connected* and *locally path-connected*, then $G \cong \pi_1 (Y/G)/p_*(\pi_1 (Y))$
+>   In particular, if a group $G$ acts by homeomorphisms and satisfies $(\ast)$, then $G=\text{Homeo}(Y,p)$, and $G \cong \pi_1(Y/G)$. i.e. the deck transformations of $Y$ w.r.t the quotient map, from the fundamental group of the quotient $Y/G$.
+
+## Examples
+
+1. $G=\mathbb{Z}$ acting on $\mathbb{R}$ by translation, $n \mapsto \tau_n$. This action satisfies $(\ast)$, so we get quotient map $\mathbb{R}\to S^1$, $x \mapsto \{x+n\:n \in \mathbb{Z}\}$ which is a normal cover. We have $G = \mathbb{Z}\cong \text{Homeo}(\mathbb{R},p)\cong \pi_1 (S^1)$.
+2. $\mathbb{Z}^2$ acting on $\mathbb{R}^2$ by $(m,n)\cdot (x,y)=(x+m,y+n)$. Quotient space is a torus $T^2$ which satisfies $(\ast)$ so we get $\pi_1 (T^2)\cong \mathbb{Z}^2 \cong \text{Homeo}(\mathbb{R}^2,p)$.
+
 
