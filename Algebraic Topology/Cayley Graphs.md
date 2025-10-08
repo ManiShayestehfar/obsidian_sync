@@ -80,3 +80,21 @@ Let $[f]\in \pi_1(\widetilde{X}_G)$. Homotope $f$ to lie in the 1-skeleton, $\Ga
 >- $X$ has a contractible universal cover
 
 ![[Screenshot 2025-10-09 at 9.05.14 am.png|400]]
+
+
+## Examples
+
+1. $S^1$ is a $K(\mathbb{Z},1)$, $\pi_1(S^1) \cong \mathbb{Z}$ universal cover $\mathbb{R}$ is contractible.
+2. $T^2$ is a $K(\mathbb{Z}^2,1)$, $\pi_1(T^2) \cong \mathbb{Z}^2$ universal cover $\mathbb{R}^2$ is contractible.
+3. $S^1 \vee S^1$ is $K(F(a,b),1)$ with universal cover an infinite tree. $\Gamma(F(a,b), \{a,b\})$ (trees are contractible).
+4. *Non-example:* $\mathbb{R}P^2$ is NOT a $K(\mathbb{Z}/2\mathbb{Z},1)$ as universal cover $S^2$ is NOT contractible
+
+
+## Induced $K(G,1)$ space
+
+>[!thm]
+>Homotopy type of $K(G,1)$ that is a CW-complex is uniquely determined by $G$.
+
+>[!proposition] 
+>$X$ a connected CW-complex and let $Y$ be a $K(G,1)$. Then every homomorphism $\varphi: \pi_1(X,x_0) \to \pi_1(Y,y_0)$ is induced by a continuous map $f:(X,x_0)\to (Y,y_0)$ that is unique up to a homotopy fixing $x_0$.
+##### Proof
