@@ -49,5 +49,33 @@ $\partial_1([v_0,v_1]+[v_1,v_2]-[v_0,v_2]) = [v_1]-[v_0] + [v_2]-[v_1]-[v_2]+[v_
 >
 
 *Proof:*
-Coefficients of $\sigma_\alpha|_{[v_0,...,\hat{v}_i,...,\hat{v_j},...,v_n]}$ is $(-1)^{i}(-1)^{j-1} + (-1)^i(-1)^j = 0$. This holds for all $0 < i < j\leq n$ and $\forall \alpha$. 
+Coefficients of $\sigma_\alpha|_{[v_0,...,\hat{v}_i,...,\hat{v_j},...,v_n]}$ is $(-1)^{i}(-1)^{j-1} + (-1)^i(-1)^j = 0$. This holds for all $0 < i < j\leq n$ and $\forall \alpha$.  $\square$ 
+
+
+
+# Chain Complex
+
+Let $\partial_0:\Delta_0(X) \to 0$ be the zero map. We have a sequence of $\mathbb{Z}$-modules. $$\cdots\:\overset{\partial_{n+2}}{\longrightarrow} \Delta_{n+1} \overset{\partial_{n+1}}{\longrightarrow}\Delta_{n} \overset{\partial_{n}}{\longrightarrow}\Delta_{n-1} \overset{\partial_{n-1}}{\longrightarrow}\cdots \Delta_{1} \overset{\partial_{1}}{\longrightarrow}\Delta_{0} \overset{\partial_{0}}{\longrightarrow}0$$ such that $\partial_n \circ \partial_{n+1} = 0$ for all $n \geq 0$. i.e. $\text{im }\partial_{n+1}\subseteq \ker \partial_n$.
+
+>[!Def] 
+>A **chain complex** is a sequence of $\mathbb{Z}$-modules and homomorphisms
+>$$\cdots\:\overset{\partial_{n+2}}{\longrightarrow} C_{n+1} \overset{\partial_{n+1}}{\longrightarrow}C_{n} \overset{\partial_{n}}{\longrightarrow}C_{n-1} \overset{\partial_{n-1}}{\longrightarrow}\cdots C_{1} \overset{\partial_{1}}{\longrightarrow}C_{0} \overset{\partial_{0}}{\longrightarrow}0$$
+>- For $n \geq 0$, the elements of $\ker \partial_n$ are called **n-cycles** and the elements of $\text{im }\partial_{n+1}\subseteq C_n$ are **n-boundaries**.
+
+
+# $n$-th Simplicial Homology Group
+
+>[!def] 
+>The **n-th simplicial homology group** of a $\Delta$-complex $X$ is $$H_n^\Delta(X) = \ker \partial_n/\text{im }\partial_{n+1} = \text{n-cycles}/\text{n-boundaries}$$
+
+## Examples
+
+![[Simplicial Homology-1760085452835.png]]
+![[Simplicial Homology-1760085683526.png]]
+
+![[Simplicial Homology-1760085706291.png]]
+![[Simplicial Homology-1760085721844.png]]
+![[Simplicial Homology-1760085739497.png]]
+
+
 
