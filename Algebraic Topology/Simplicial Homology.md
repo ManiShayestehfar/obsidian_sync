@@ -49,5 +49,5 @@ $\partial_1([v_0,v_1]+[v_1,v_2]-[v_0,v_2]) = [v_1]-[v_0] + [v_2]-[v_1]-[v_2]+[v_
 >
 
 *Proof:*
-
+Coefficients of $\sigma_\alpha|_{[v_0,...,\hat{v}_i,...,\hat{v_j},...,v_n]}$ is $(-1)^{i}(-1)^{j-1} + (-1)^i(-1)^j = 0$. This holds for all $0 < i < j\leq n$ and $\forall \alpha$. 
 
