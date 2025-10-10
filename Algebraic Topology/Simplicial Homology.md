@@ -20,3 +20,34 @@ Let $X$ be a $\Delta$-complex
 
 - A basis for $\Delta_n(X)$ is set of all open n-simplices, or equivalently, their characteristic maps 
 
+
+# Boundary of an n-Simples
+
+**Notation:** write $[v_0,...,\hat{v}_i,...,v_n]$ for the face obtained by deleting the vertex $v_i$ from the n-simplex
+
+>[!Def] 
+>The **boundary of an n-simplex** $[v_0,...,v_n]$ in $X$ is the $(n-1)$-chain given by $$\partial_n([v_0,...,v_n]) = \sum_{i=0}^n (-1)^i [v_0,...,\hat{v}_i,...,v_n] \in \Delta_{n-1}(X)$$ 
+
+## Examples
+
+![[Simplicial and Delta-Complexes-1760071315731.png|600]]
+
+## Boundary Homomorphism
+
+>[!Def] 
+>For $X$ a $\Delta$-complex, the **boundary homomorphism** $\partial_n:\Delta_n(X) \to \Delta_{n-1}(X)$ is defined on basis elements $\sigma_\alpha$ by $\partial_n \sigma_\alpha = \sum_{i=0}^n (-1)^i \:\sigma_\alpha|_{[v_0,...,\hat{v_i},...,v_n]}$ where $[v_0,...,v_n]=\Delta^n$ is the standard n-simplex.
+>
+### Examples
+
+$\partial_1([v_0,v_1]+[v_1,v_2]-[v_0,v_2]) = [v_1]-[v_0] + [v_2]-[v_1]-[v_2]+[v_0] = 0 = \partial_1\circ \partial_2([v_0,v_1,v_2])$ 
+
+**Takeaway lemma**
+>[!lemma]
+>The composition $\Delta_n(X)\overset{\partial_n}{\longrightarrow}\Delta_n(X) \overset{\partial_{n-1}}{\longrightarrow}\Delta_{n-2}(X)$ is zero.
+>i.e. $\partial_{n-1}\circ \partial_n$ is the zero map.
+>i.e. $\text{im }\partial_n \subseteq \ker \partial_{n-1}$
+>
+
+*Proof:*
+
+
