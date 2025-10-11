@@ -20,7 +20,7 @@ The **SES of chain complexes** is the following diagram where
 
 ## Theorem 1
 
->[!theorem]
+>[!theorem] H 2.16
 >A SES of chain complexes induces a long exact sequence of homology groups
 >
 >![[Exact Sequences-1760165061462.png|550]]
@@ -68,7 +68,7 @@ Now $[a_1+a_2]=[a_1]+[a_2]= \partial([c_1]) + \partial([c_2])$ and therefore $\p
  
 ## Theorem 2
 
->[!theorem]
+>[!theorem] H 2.13
 >Let $(X,A)$ be a [[Topological Space|good pair]], $i:A\to X$ is inclusion, and $j:X \to X/A$ the quotient map. 
 >Then there is a long exact sequence in reduced homology:
 >
