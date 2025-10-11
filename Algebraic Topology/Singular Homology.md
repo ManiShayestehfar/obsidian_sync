@@ -127,6 +127,8 @@ Then $f \circ \sigma$ is continuous, so $f \circ \sigma$ is a singular n-simplex
 
 **Notation:** Write $\varphi$ for $\varphi_n$ and $\partial$ for $\partial_n^X,\partial_n^Y$. Also write $C_*(X),C_*(Y)$ for respective chain complexes $\varphi:C_*(X)\to C_*(Y)$
 
+## Propositions
+
 >[!lemma]
 >If $f:X\to Y$ is continuous, then the induced $f_\#:C_*(X)\to C_*(Y)$ is a chain map.
 ##### Proof
@@ -135,5 +137,62 @@ For $n \geq 1$, let $\sigma:\Delta^n\to X$ be a singular n-simplex. We want to s
 
 We have 
 $$\begin{align*}
-(f_\# \circ \partial_n^X)(\sigma) &= 
+(f_\# \circ \partial_n^X)(\sigma) &= f_\#\left(\sum_{i=0}^{n} (-1)^i \sigma|_{[v_0,...,\hat{v}_i,...,v_n]}\right) \\
+&= \sum_{i=0}^{n} (-1)^i \left(f \circ \sigma|_{[v_0,...,\hat{v}_i,...,v_n]}\right) \\
+&= \partial_n^Y(f \circ \sigma) \\
+&= (\partial_n^Y \circ f_\#)(\sigma)\:\:\:\square
 \end{align*}$$
+
+
+>[!proposition]
+>A chain map $\varphi:C_*(X) \to C_*(Y)$ induces homomorphism $H_n(X) \to H_n(Y)$ for all $n \geq 0$.
+##### Proof
+Let $\alpha \in \ker \partial_n^X\subseteq C_n(X)$. Then $\partial_n^Y(\varphi(\alpha)) = \varphi(\partial_n^X(\alpha)) = \varphi(0) = 0$. So $\varphi(\ker \partial_n^X) \subseteq \ker \partial_n^Y$.
+
+Let $\gamma \in \text{im }\partial_{n+1}^X$, so $\gamma = \partial_{n+1}^X(\beta)$ for some $\beta \in C_{n+1}(X)$.
+Then $\varphi(\gamma) =\varphi(\partial_{n+1}^X(\beta)) = \partial_{n+1}^Y(\varphi(\beta))$, so $\varphi(\text{im }\partial_{n+1}^X) \subseteq \text{im }\partial_{n+1}^Y$.
+
+$\implies$ $\varphi$ induces a homomorphism $H_n(X) = \ker \partial_n^X / \text{im }\partial_{n+1}^X \longrightarrow \ker\partial_n^Y/\text{im }\partial_{n+1}^Y=H_n(Y)$ via $\alpha + \text{im }\partial_{n+1}^X \longmapsto \beta + \text{im }\partial_{n+1}^Y$.   $\square$
+
+
+>[!corollary] 
+>Any continuous map $f:X \to Y$ induces a homomorphism $f_*:H_n(X)\to H_n(Y)$.
+
+>[!lemma] Functorality
+>1. If $f:X\to Y$, $g:Y \to Z$ are continuous, then $(g \circ f)_* = g_* \circ f_*$
+>2. $(\text{id}_X)_* = \text{id}_{H_n(X)}$
+
+>[! corollary] 
+>If $f:X \to Y$ is a homotopy equivalence, then $f_*:H_n(X) \to H_n(Y)$ is an isomorphism
+##### Proof
+Proof follows from functorality of $f$.
+
+>[!corollary] 
+>If $X$ is contractible, then
+>$$H_n(X) = \begin{cases}
+\mathbb{Z} & n = 0  \\
+0 & \text{otherwise}
+\end{cases}$$
+and $\widetilde{H}_n(X) \cong 0$.
+
+## Theorem
+
+>[!theorem]
+>If $f,g:X \to Y$ are homotopic, then they induce the same homomorphisms $f_*=g_*: H_n(X) \to H_n(Y)$.
+##### Proof
+Let $F: X \times I \to Y$ be homotopy from $f$ to $g$. We show that $(g_\#-f_\#)(\ker \partial_n^X)\subseteq\text{im }\partial_{n+1}^Y$.
+To do this, we construct $P: C_{n-1}(X) \to C_n(Y)$ called the **prism operator** such that TFDC:
+
+![[Singular Homology-1760160919680.png|400]]
+i.e. $\partial_{n+1}^Y \circ P + P \circ \partial_n^X = g_\# - f_\#$.
+
+Assuming this, let $\alpha \in \ker \partial_n^X$. Then $g_\#(\alpha) - f_\#(\alpha) = (\partial_{n+1}^Y \circ P)(\alpha) + (P \circ \underbrace{\partial_n^X)(\alpha)}_{=1} = (\partial_{n+1}^Y \circ P)(\alpha)$. 
+So $g_\#(\alpha) - f_\#(\alpha) \in \text{im }\partial_{n+1}^Y$.
+
+Hence $$g_\#(\alpha)+\text{im }\partial_{n+1}^Y = f_\#(\alpha)+\text{im }\partial_{n+1}^Y \:\:\implies\:\: g_\#(\alpha + \text{im }\partial_{n+1}^X) = f_\#(\alpha + \text{im }\partial_{n+1}^X)$$
+and therefore $f_*=g_*$.
+
+To define $P$, we have $\Delta^n\times I \overset{\sigma\times \text{id}}{\longrightarrow} X \times I \overset{F}{\longrightarrow}Y$
+
+>[!claim]
+>We can subdivide $\Delta^n \times I$ into (n+1)-simplices of the for
