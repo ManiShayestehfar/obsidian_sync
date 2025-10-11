@@ -152,3 +152,17 @@ Hawaiian earring embedded in $\mathbb{R}^2$
 
 ==DO THE PROOF==
 
+
+# Good Pair
+
+>[!def]
+>$A \subseteq X$. Say $(X,A)$ is a **good pair** if $A$ is 
+>1. non-empty
+>2. closed
+>3. DR of some open set in $X$
+
+## Examples
+
+1. $X =D^n, \:\: A=\partial D^n = S^{n-1}$
+2. $X$ a CW-complex, $A$ a non-empty subcomplex
+

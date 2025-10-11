@@ -195,4 +195,13 @@ and therefore $f_*=g_*$.
 To define $P$, we have $\Delta^n\times I \overset{\sigma\times \text{id}}{\longrightarrow} X \times I \overset{F}{\longrightarrow}Y$
 
 >[!claim]
->We can subdivide $\Delta^n \times I$ into (n+1)-simplices of the for
+>We can subdivide $\Delta^n \times I$ into (n+1)-simplices of the form $[v_0,...,v_i,w_i,...,w_n]$ where $\Delta^n \times \{0\} = [v_0,...,v_n]$, and $\Delta^n \times \{1\} = [w_0,...,w_n]$. 
+>e.g. for $n=1$, and $2$
+>![[Singular Homology-1760163305553.png|100]]
+
+Now define $P(\sigma) = \sum_{i=0}^{n}(-1)^i (F \circ (\sigma \circ \text{id}_I))|_{[v_0,...,v_i,w_i,...,w_n]}$ from $C_{n-1}(X) \to C_n(Y)$.
+
+- All this carries through for *reduced homologies*. i.e. continuous map $f: X\to Y$ induces a chain map of augmented chain complexes.
+  ![[Singular Homology-1760163951049.png|450]]
+  
+  and homomorphism of reduced homology groups $f_*:\widetilde{H}_n(X)\to \widetilde{H}_n(Y)$. If $f$ is homotopic to $g$, then $f_* =g_*$, and if $f$ is a homotopy equivalence, then $f_*$ is an isomorphism.  $\square$
