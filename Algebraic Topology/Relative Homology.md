@@ -120,4 +120,16 @@ $$\cdots \overset{}{\longrightarrow}H_n(A,\{x_0\}) \overset{}{\longrightarrow}H_
 
 >[!corollary] H Cor 2.24
 >If the CW complex $X = A \cup B$, then 
->$$(X-Z,A-Z)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(X-Z,A-Z)\overset{\cong}{\longrightarrow} H_n(X,A)$$
+>$$(B, A \cap B)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(A,A\cap B)\overset{\cong}{\longrightarrow} H_n(X,A)$$
+##### Proof 
+Need the following claim
+
+>[!Claim] 
+>$(A\cup B)/A \longrightarrow B/(A\cap B)$ is a homomorphism.
+
+By Prop 2.22, 
+- $(X,A)$ induces a quotient map such that $H_n(X,A) \cong H_n(X/A,A/A)$, 
+- $(B,A\cap B)$ induces a quotient map such that $H_n(B,A\cap B) \cong H_n(B/(A\cap B),(A\cap B)/(A\cap B))$
+and by the claim $H_n(X/A,A/A) \cong H_n(B/(A\cap B),(A\cap B)/(A\cap B))$. Note that this works only if $A \cap B \neq \emptyset$. 
+
+If $A \cap B = \emptyset$, then $H_n(B,A \cap B) \cong H_n(B)$, and $H_n(X/A,A/A) \cong H_n(B/(A\cap B), A/A) \cong H_n(B,A/A) \cong H_n(B)$. 
