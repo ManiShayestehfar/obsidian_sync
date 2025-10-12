@@ -73,7 +73,7 @@ Now $[a_1+a_2]=[a_1]+[a_2]= \partial([c_1]) + \partial([c_2])$ and therefore $\p
 >Then there is a long exact sequence in reduced homology:
 >
 >![[Exact Sequences-1760165346117.png|570]]
-
+ 
 ### Related Corollary
 
 >[!Corollary]

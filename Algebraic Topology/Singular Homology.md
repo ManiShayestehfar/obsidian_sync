@@ -177,7 +177,7 @@ and $\widetilde{H}_n(X) \cong 0$.
 
 ## Theorem
 
->[!theorem]
+>[!theorem] H Thm 2.10
 >If $f,g:X \to Y$ are homotopic, then they induce the same homomorphisms $f_*=g_*: H_n(X) \to H_n(Y)$.
 ##### Proof
 Let $F: X \times I \to Y$ be homotopy from $f$ to $g$. We show that $(g_\#-f_\#)(\ker \partial_n^X)\subseteq\text{im }\partial_{n+1}^Y$.
