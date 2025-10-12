@@ -202,6 +202,7 @@ To define $P$, we have $\Delta^n\times I \overset{\sigma\times \text{id}}{\longr
 Now define $P(\sigma) = \sum_{i=0}^{n}(-1)^i (F \circ (\sigma \circ \text{id}_I))|_{[v_0,...,v_i,w_i,...,w_n]}$ from $C_{n-1}(X) \to C_n(Y)$.
 
 - All this carries through for *reduced homologies*. i.e. continuous map $f: X\to Y$ induces a chain map of augmented chain complexes.
+  
   ![[Singular Homology-1760163951049.png|450]]
   
   and homomorphism of reduced homology groups $f_*:\widetilde{H}_n(X)\to \widetilde{H}_n(Y)$. If $f$ is homotopic to $g$, then $f_* =g_*$, and if $f$ is a homotopy equivalence, then $f_*$ is an isomorphism.  $\square$
