@@ -73,7 +73,11 @@ Now $[a_1+a_2]=[a_1]+[a_2]= \partial([c_1]) + \partial([c_2])$ and therefore $\p
 >Then there is a long exact sequence in reduced homology:
 >
 >![[Exact Sequences-1760256745380.png|550]]
- 
+##### Proof
+Using [[Relative Homology|Prop 2.22]], we get an induced isomorphism from the non-reduced chain to the reduced chain. $\square$
+
+
+
 ### Related Corollary
 
 >[!Corollary]

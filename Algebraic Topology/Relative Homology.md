@@ -89,7 +89,7 @@ $\implies$ induces some homomorphism $f_*,g_*$ such that $f_*=g_*$.  $\square$
 >for all $n$.
 ##### Proof
 
-
+TBD
 
 
 # Long Exact Sequence of Triple $(X,A,B)$
@@ -115,6 +115,9 @@ $$\cdots \overset{}{\longrightarrow}H_n(A,\{x_0\}) \overset{}{\longrightarrow}H_
   where here we set $B = X-Z$,  $Z=X-B$. Then $A\cap B = A - Z$ and the condition $\overline{Z}\subseteq \text{int }A$ is equivalent to $X = \text{int }A \cup \text{int }B$. 
 ##### Proof
 
-TBD
 
+### Excision Theorem for CW Complexes
 
+>[!corollary] H Cor 2.24
+>If the CW complex $X = A \cup B$, then 
+>$$(X-Z,A-Z)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(X-Z,A-Z)\overset{\cong}{\longrightarrow} H_n(X,A)$$

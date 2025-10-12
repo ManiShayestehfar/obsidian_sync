@@ -1,0 +1,24 @@
+Here are my currently installed Obsidian community plugins (as of 12/10/2025):
+
+- Advanced Tables
+- Better Math in Callouts & Blockquotes
+- Better Word Count
+- Colored Text
+- Dataview
+- Dynamic Outline
+- Flashcards
+- Git
+- Highlightr
+- Image Converter
+- Ink
+- Latex Suite
+- LaTeX-like Theorem & Equation Referencer
+- MathLinks
+- Periodic Notes
+- Quick Latex
+- Quick Preview
+- Regex Find/Replace
+- Remember cursor position
+- Rollover Daily Todos
+- Templater
+- TikZJax
