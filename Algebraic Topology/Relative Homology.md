@@ -132,4 +132,19 @@ By Prop 2.22,
 - $(B,A\cap B)$ induces a quotient map such that $H_n(B,A\cap B) \cong H_n(B/(A\cap B),(A\cap B)/(A\cap B))$
 and by the claim $H_n(X/A,A/A) \cong H_n(B/(A\cap B),(A\cap B)/(A\cap B))$. Note that this works only if $A \cap B \neq \emptyset$. 
 
-If $A \cap B = \emptyset$, then $H_n(B,A \cap B) \cong H_n(B)$, and $H_n(X/A,A/A) \cong H_n(B/(A\cap B), A/A) \cong H_n(B,A/A) \cong H_n(B)$. 
+If $A \cap B = \emptyset$, then $H_n(B,A \cap B) \cong H_n(B)$, and $$H_n(X/A,A/A) \cong H_n(B/(A\cap B), A/A) \cong H_n(B,A/A) \cong H_n(B).\:\:\:\square$$
+
+## Brouwer 1910 Theorem
+
+>[!theorem] H Thm 2.26
+>$U \subseteq \mathbb{R}^m, V \subseteq \mathbb{R}^n$ non-empty open sets. 
+>$$U,V\:\text{homeomorphic} \iff m=n$$
+>
+##### Proof
+Take $x\in U$, and consider $H_k(U, U -\{x\})$.
+
+>[!Claim] 
+>$$H_k(U,U-\{x\}) \cong H_k(\mathbb{R}^m, \mathbb{R}^{m}-\{x\})$$
+###### Proof
+ By Excision theorem (restatement), $X= \mathbb{R}^m, A = \mathbb{R}^m-\{x\}, B = U$
+$$H_n(U, U \cap (\mathbb{R}^m-\{x\})) \cong H_n(\mathbb{R}^m, \mathbb{R}^m - \{x\})$$
