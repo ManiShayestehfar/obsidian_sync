@@ -72,7 +72,7 @@ Now $[a_1+a_2]=[a_1]+[a_2]= \partial([c_1]) + \partial([c_2])$ and therefore $\p
 >Let $(X,A)$ be a [[Topological Space|good pair]], $i:A\to X$ is inclusion, and $j:X \to X/A$ the quotient map. 
 >Then there is a long exact sequence in reduced homology:
 >
->![[Exact Sequences-1760165346117.png|570]]
+>![[Exact Sequences-1760256745380.png|550]]
  
 ### Related Corollary
 

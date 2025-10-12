@@ -82,6 +82,16 @@ i.e. $\partial_{n+1}^{Y,B}\circ P + P \circ \partial_{n}^{X,A} = g_\# - f_\#$.
 $\implies$ induces some homomorphism $f_*,g_*$ such that $f_*=g_*$.  $\square$
 
 
+## Propositions
+
+>[!proposition] H Prop 2.22
+>Let $(X,A)$ be a good pair. Then the quotient map $$q:(X,A) \to (X/A,A/A) \quad \overset{\text{induces homom.}}{\longrightarrow}\quad q_*:H_n(X,A) \to H_n(X/A,A/A)\cong \widetilde{H}_n(X/A)$$
+>for all $n$.
+##### Proof
+
+
+
+
 # Long Exact Sequence of Triple $(X,A,B)$
 
 Let $B \subseteq A \subseteq X$. This gives the SES: $$0 \overset{}{\longrightarrow}C_n(A,B) \overset{i}{\longrightarrow} C_n(X,B) \overset{j}{\longrightarrow}C_n(X,A) \overset{}{\longrightarrow}0$$
@@ -94,4 +104,17 @@ This gives the long exact sequence $$\cdots \overset{}{\longrightarrow}H_n(A,B) 
 
 Let $B = \{x_0\}$. Then the following sequence is long exact. 
 $$\cdots \overset{}{\longrightarrow}H_n(A,\{x_0\}) \overset{}{\longrightarrow}H_n(X,\{x_0\}) \overset{}{\longrightarrow}H_n(X,A) \overset{}{\longrightarrow}H_{n-1}(A,\{x_0\}) \overset{}{\longrightarrow}\cdots$$ where the chain complex is isomorphic to its reduced kind with $\widetilde{H}$ etc.
+
+
+## Excision Theorem
+
+>[!theorem] H Thm 2.20
+>Given $Z \subseteq A \subseteq X$ such that $\overline{Z}\subseteq \text{int }A$, then $$(X-Z,A-Z)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(X-Z,A-Z)\overset{\cong}{\longrightarrow} H_n(X,A)$$
+>for all $n$.
+- Equivalently, for subspaces $A,B \subseteq X$ such that $X = \text{int }A \cup \text{int }B$, then $$(B, A \cap B)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(A,A\cap B)\overset{\cong}{\longrightarrow} H_n(X,A)$$
+  where here we set $B = X-Z$,  $Z=X-B$. Then $A\cap B = A - Z$ and the condition $\overline{Z}\subseteq \text{int }A$ is equivalent to $X = \text{int }A \cup \text{int }B$. 
+##### Proof
+
+TBD
+
 
