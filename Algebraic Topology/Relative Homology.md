@@ -148,3 +148,32 @@ Take $x\in U$, and consider $H_k(U, U -\{x\})$.
 ###### Proof
  By Excision theorem (restatement), $X= \mathbb{R}^m, A = \mathbb{R}^m-\{x\}, B = U$
 $$H_n(U, U \cap (\mathbb{R}^m-\{x\})) \cong H_n(\mathbb{R}^m, \mathbb{R}^m - \{x\})$$
+but $H_n(U, U \cap (\mathbb{R}^m - \{x\})) \cong H_n(U,U \cap(U - \{x\}))$, and similarly for $V$.
+
+To say $U,V$ are homeomorphic is to say there exists $h:U \to V$ and $h^{-1}:V \to U$.
+
+We have that $H_k(V,V - \{h(x)\}) \cong H_k(\mathbb{R}^m, \mathbb{R}^m - \{h(x)\})$ for all $k$.
+
+>[!Claim]
+>$H_k(\mathbb{R}^m, \mathbb{R}^m - \{h(x)\}) \cong \widetilde{H}_{k-1}(\mathbb{R}^m - \{x\})$ for all $k$.
+###### Proof
+Using the long exact chain $$\cdots \overset{}{\longrightarrow}H_k(\mathbb{R}^m - \{x\}) \overset{}{\longrightarrow}\underbrace{H_k(\mathbb{R}^m)}_{=0} \overset{}{\longrightarrow}H_k(\mathbb{R}^m,\mathbb{R}^m - \{x\}) \overset{}{\longrightarrow}\underbrace{H_{k-1}(\mathbb{R}^m - \{x\})}_{\widetilde{H}_{k-1}(\mathbb{R}^m - \{x\})} \overset{}{\longrightarrow}\cdots$$
+where we recall that $\mathbb{R}^m$ is contractible so $$H_k(\mathbb{R}^m) = H_k(\{point\}) = \begin{cases}
+0 & k > 0  \\
+\mathbb{Z} & k=0
+\end{cases} $$Hence $H_k(U,U-\{x\}) \cong \widetilde{H}_{k-1}(\mathbb{R}^m-\{x\})$, and $H_k(V,V-\{h(x)\}) \cong \widetilde{H}_{k-1}(\mathbb{R}^n - \{h(x)\})$.
+
+Since $\mathbb{R}^m-\{x\}$ DRs to $S^{m-1}$, $$\widetilde{H}_{k-1}(S^{m-1}) = \begin{cases}
+\mathbb{Z} & k=m  \\
+0 & \text{otherwise}
+\end{cases}$$ $$\implies \widetilde{H}_k(U,U-\{x\}) = \begin{cases}
+\mathbb{Z} & k=m  \\
+0 & \text{otherwise}
+\end{cases}$$
+$$\widetilde{H}_k(V,V-\{h(x)\}) = \begin{cases}
+\mathbb{Z} & k=m  \\
+0 & \text{otherwise}
+\end{cases}$$
+Hence $U,V$ are homeomorphic $\implies H_k(U,U-\{x\}) \overset{\cong}{\longrightarrow} H_k(V,V-\{h(x)\})$ for all $k$.
+$\implies m=n$.
+
