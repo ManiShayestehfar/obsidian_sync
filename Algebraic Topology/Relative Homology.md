@@ -14,7 +14,7 @@
 
 - **Note:** $C_n(X)/C_n(A)$ can be viewed as a subgroup of $C_n(X)$ but $\partial(C_n(X)/C_n(A)) \neq C_{n-1}(X)/C_{n-1}(A)$.
 
-## Property
+## Properties
 
 >[!proposition]
 >Given $A \subseteq X$, we have a long exact sequence 
@@ -31,11 +31,16 @@ By [[Exact Sequences|Thm 2.16]], we get that
 is a long exact sequence. But what is $\partial$?
 Consider $\partial:H_n(X,A)\to H_{n-1}(A)$ given as $[a + C_n(A)] \mapsto [\partial_n(a)]$ where $a \in C_n(X)$ and $\partial_n(a) \in C_{n-1}(X)$.  $\square$
 
+>[!proposition]
+>There is a similar long exact sequence for *reduced* homology groups
 
 >[!corollary]
 >If $H_n(X,A)=0$ for all $n$, then $H_n(A)\cong H_n(X)$.
+>- Also $H_n(X,A) \cong \widetilde{H}_n(X,A)$ when $A \neq \emptyset$
 ##### Proof
 $$\cdots \overset{}{\longrightarrow}\underbrace{H_{n+1}(X,A)}_{=0} \overset{}{\longrightarrow}H_n(A) \overset{\cong}{\longrightarrow}H_n(X) \overset{}{\longrightarrow}\underbrace{H_n(X,A)}_{=0}\overset{}{\longrightarrow}H_{n-1}(A)\overset{}{\longrightarrow}\cdots$$where the isomorphism comes from the important case in [[Exact Sequences]]. $\square$
 
+*Example:* $A= \{x_0\}$ for $x_0 \in X$. Then $H_n(X,x_0) \cong \widetilde{H}_n(X)$
+Then $$\cdots \overset{}{\longrightarrow}\underbrace{\widetilde{H}_n(\{x_0\})}_{=0} \overset{}{\longrightarrow}\widetilde{H}_n(X) \overset{}{\longrightarrow}\widetilde{H}_n(X,\{x_0\})\overset{}{\longrightarrow}\underbrace{\widetilde{H}_{n-1}(\{x_0\})}_{=0}\overset{}{\longrightarrow}\cdots$$ is exact. $\implies \widetilde{H}_n(X) \cong \widetilde{H}_n(X,\{x_0\}) \cong H_n(X,\{x_0\})$. $\implies H_n(X,\{x_0\})\cong \widetilde{H}_n(X)$.
 
->[!proposition]
+*Example:* $X = D^n,\: A = \partial D^n \cong S^{n-1}$. Then we need to find $H_n(D^n,\partial D^n)$.
