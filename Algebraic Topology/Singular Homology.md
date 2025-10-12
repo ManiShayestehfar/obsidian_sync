@@ -85,7 +85,7 @@ $$H_n(X) \cong \mathbb{Z}$$ by proposition above. $\square$
 
 
 
-# Reduced Homology
+ # Reduced Homology
 
 ## Augmented Singular Chain Complex
 
