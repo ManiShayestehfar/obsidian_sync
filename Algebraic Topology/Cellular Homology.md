@@ -188,7 +188,7 @@ $X^0$ is a vertex $v$, $X^1 = S_a^1 \vee S_b^1$, and
 ```handdrawn-ink
 {
 	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.10.26 - 14.34pm.drawing",
+	"filepath": "Notes/Ink/Drawing/2025.10.26 - 14.34pm.drawing",
 	"width": 608,
 	"aspectRatio": 3.3933544705352343
 }
@@ -197,6 +197,7 @@ $X^0$ is a vertex $v$, $X^1 = S_a^1 \vee S_b^1$, and
 - $d_0 = 0$
 - $d_1= 0$
 - For $d_2$, consider the diagram
+  ![[Cellular Homology-1761450160626.png|200]]
   
   $\partial D_T^2= S_T^1 \to X^1$ is represented by $b+a+b+(-a)$. Also $X^1 \to S^1_a$ restricts action only to the $a$-part = $a + (-a)$. 
   

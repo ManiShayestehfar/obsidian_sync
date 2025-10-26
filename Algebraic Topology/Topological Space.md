@@ -170,9 +170,9 @@ Hawaiian earring embedded in $\mathbb{R}^2$
 # Fundamental Theorem of Finitely Generated Abelian Groups
 
 >[!theorem]
->Let $G$ be a finitely generated abelian group. Then  $$G \cong \mathbb{Z}^n \oplus \mathbb{Z}/k_1\mathbb{Z} \oplus \cdots \oplus \mathbb{Z}/k_d \mathbb{Z}$$
+>Let $G$ be a finitely generated abelian group. Then  $$G \cong \underbrace{\mathbb{Z}^n }_{\text{free part}}\oplus \underbrace{\mathbb{Z}/k_1\mathbb{Z} \oplus \cdots \oplus \mathbb{Z}/k_d \mathbb{Z}}_{\text{torsion part}}$$
 
-- The **rank** of $G$, $\text{rank } G = n$ 
+- The **rank** of $G$, $\text{rank } G := n$ 
 
 # Euler Characteristic
 
@@ -193,12 +193,17 @@ Hawaiian earring embedded in $\mathbb{R}^2$
 >[!lemma]
 >If $0 \overset{}{\longrightarrow}A \overset{}{\longrightarrow} B \overset{}{\longrightarrow}C$ is short exact, $A,B,C$ is finitely generated abelian groups, then $\text{rank }B = \text{ rank }A + \text{ rank }C$
 ##### Proof of Theorem 2.44
+Let $X = X^k$.
 Consider the sequence
-$$0 \overset{}{\longrightarrow}\overbrace{H_k(X^k,X^{k-1})}^{C_k}\overset{}{\longrightarrow}H_{k-1}(X^{k-1},X^{k-2})\overset{}{\longrightarrow}\cdots \overset{d_1}{\longrightarrow}H_1(X^1,X^0)\overset{d_0}{\longrightarrow}H_0(X^0)\overset{}{\longrightarrow} 0 $$
+$$0 \overset{d_{k+1}}{\longrightarrow}\overbrace{H_k(X^k,X^{k-1})}^{C_k}\overset{d_k}{\longrightarrow}H_{k-1}(X^{k-1},X^{k-2})\overset{d_{k-1}}{\longrightarrow}\cdots \overset{d_1}{\longrightarrow}H_1(X^1,X^0)\overset{d_0}{\longrightarrow}H_0(X^0)\overset{}{\longrightarrow} 0 $$
 We have the short exact sequence  $$0 \overset{}{\longrightarrow}\ker d_n \overset{}{\longrightarrow}C_n \overset{d_n}{\longrightarrow}\text{im }d_n \overset{}{\longrightarrow}0$$ and $$0 \overset{}{\longrightarrow}\text{im }d_{n+1}\overset{}{\longrightarrow}\ker d_n \overset{}{\longrightarrow} \underbrace{\ker d_n/\text{im }d_{n+1}}_{H_n(X)} \overset{}{\longrightarrow}0$$
-By lemma above, $\text{rank }C_n = \text{rank }(\text{im }d_{n+1}) = \text{rank }d_{n+1} + \text{rank }d_{n}$.
-
-$\text{rank }C_n = c_n = \#$ n-cells of $X$. DO THE REST OF THE PROOF
+By lemma above, $\text{rank }C_n = \text{rank }{(\text{im }d_n )} + \text{rank }(\ker d_n)$. But $\text{rank }(\ker d_n) = \text{rank }(H_n(x)) + \text{rank }(\text{im }d_{n+1})$. So 
+$$\begin{align*}
+\sum_{n=0}^k(-1)^n \text{rank }(C_n) &= \text{rank }(\text{im }d_0) + (-1)^k\text{rank }(\text{im }d_{k+1}) + \sum_{n=0}^k(-1)^k \text{rank }(H_n(X))\\[1pt]
+&= \sum_{n=0}^k(-1)^k \text{rank }(H_n(X))
+\end{align*}$$
+By lemma 2.34 (a), $\text{rank }C_n = c_n = \#$ of n-cells of $X$. So
+$$\sum_{n=0}^k(-1)^n \text{rank }(C_n) = \sum_{n=0}^k(-1)^n c_n = \chi (X)$$ $\square$ 
 
 ### Example (Torus)
 
