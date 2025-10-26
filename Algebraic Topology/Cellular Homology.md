@@ -148,12 +148,11 @@ We have two 0-cells $p_0,p_1$, two 1-cells $a,b$, and two 2-cells $U,L$.
 ```handdrawn-ink
 {
 	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.10.21 - 11.17am.drawing",
+	"filepath": "Notes/Ink/Drawing/2025.10.21 - 11.17am.drawing",
 	"width": 536,
 	"aspectRatio": 2.3630922901290754
 }
 ```
-
 
 Then $X^0 = \{p_0,p_1\}$. The cellular chain map is
 $$0 \overset{d_3}{\longrightarrow}\mathbb{Z}^2\overset{d_2}{\longrightarrow}\mathbb{Z}^2\overset{d_1}{\longrightarrow}\mathbb{Z}^2\overset{d_0}{\longrightarrow}0$$ 
@@ -166,7 +165,7 @@ d_1(n_a[a] + n_b[b]) &= n_ad_1([a]) + n_bd_1([b])
 a(t) & t \in [0,1/2]  \\
 b(t) & t \in [1/2,1]
 \end{cases}$$
-This map $X^1 \overset{}{\longrightarrow}S^1$ acts by $a \longmapsto a$ and $b \longmapsto 0$. Then $d_{U_a}: H_1(S_U^1)\to H_1(S_a^1)$ and $d_{U_a}$ is identity map $\implies \deg d_{U_a}= 1$. So $d_2([U]) = [a] + [b]$ and ...
+This map $X^1 \overset{}{\longrightarrow}S^1$ acts by $a \longmapsto a$ and $b \longmapsto 0$. Then $d_{U_a}: H_1(S_U^1)\to H_1(S_a^1)$ and $d_{U_a}$ is identity map $\implies \deg d_{U_a}= 1$. So $d_2([U]) = [a] + [b]$ and $d_2([L]) = [a]+ [b]$
 
 Now $H_0(S^2) = \ker d_0 / \text{im }d_1 = \mathbb{Z}^2/ \text{im }d_1$.
 $d_1((1,0)) = (-1,1)$ and $d_1((0,1)) = (1,-1)$. Hence $\text{im }d_1 = \langle (1,-1)\rangle$. 
@@ -185,11 +184,20 @@ Finally $H_2(S^2) = \ker d_2 / \text{im }d_3 \cong \langle(1,-1)\rangle/0 \cong 
 ![[Notes/Algebraic Topology/IMAGES/image.png|160]]
 This has one 0-cell $v$, two 1-cell $a,b$, and one 2-cell $T$. The chain map is
 $$0 \overset{d_3}{\longrightarrow}\mathbb{Z}\overset{d_2}{\longrightarrow}\mathbb{Z^2}\overset{d_1}{\longrightarrow}\mathbb{Z}\overset{d_0}{\longrightarrow}0$$
-$X^0$ is a vertex $v$, $X^1 = S_a^1 \vee S_b^1$, $X^2 =$ ...
-$$$$
+$X^0$ is a vertex $v$, $X^1 = S_a^1 \vee S_b^1$, and
+```handdrawn-ink
+{
+	"versionAtEmbed": "0.3.4",
+	"filepath": "Ink/Drawing/2025.10.26 - 14.34pm.drawing",
+	"width": 608,
+	"aspectRatio": 3.3933544705352343
+}
+```
+
 - $d_0 = 0$
 - $d_1= 0$
-- $d_2 =$  ENTER DIAGRAM
+- For $d_2$, consider the diagram
+  
   $\partial D_T^2= S_T^1 \to X^1$ is represented by $b+a+b+(-a)$. Also $X^1 \to S^1_a$ restricts action only to the $a$-part = $a + (-a)$. 
   
  $S^1_T \to S^1_a$ is the 0-map hence $H_1(S^1_T) \to H_1(S_a^1)$ has degree $0$ and so $d_{T_a} = 0$. 
