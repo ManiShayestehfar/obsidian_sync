@@ -114,10 +114,14 @@ For $k < n$ by induction: $\widetilde{H}_k(S^n) \cong \widetilde{H}_{0}(S^{n-k})
 Consider $B \overset{}{\longrightarrow} A \oplus C$ via $b \longmapsto (p(b), j(b))$
 ###### b -> c
 Consider $A \oplus C \overset{}{\longrightarrow} B$ via $(a,c) \longmapsto i(a) + s(c)$
-
 ###### b -> a
-
+$p(b) := i^{-1}(b - sj(b))$ well-defined since $i$ is an injection
 ###### a -> b
+$s(c) := j^{-1}(c) - ip(j^{-1}(c))$ which works for all preimages of $c$ under $j$
+###### c -> a
+This is just projection $A \oplus C \to A$
+###### c -> b
+This is just inclusion $B \to A \oplus C$
 
 ## Split
 
@@ -125,7 +129,7 @@ Consider $A \oplus C \overset{}{\longrightarrow} B$ via $(a,c) \longmapsto i(a) 
 >If (a), (b), (c) of the splitting lemma are satisfied, then the SES $0 \overset{}{\longrightarrow}A \overset{i}{\longrightarrow}B \overset{j}{\longrightarrow}C \overset{}{\longrightarrow}  0$ is said to be **split**.
 >
 
-- E.g if $C$ is fre, $s(C_\alpha) = j^{-1}(C_\alpha)$ for $\alpha \in$ generators of $C$. $\implies$ every SES with $C$ splits.
+- E.g if $C$ is free, $s(C_\alpha) = j^{-1}(C_\alpha)$ for $\alpha \in$ generators of $C$. $\implies$ every SES with $C$ splits.
 
 >[!corollary]
 >If every SES ending in $C$ splits, then $C$ is free.
@@ -136,8 +140,10 @@ TODO
 >Any retraction $r:X\to A$ induces $H_n(X) \cong H_n(A) \oplus H_n(X,A)$ 
 ##### Proof
 Consider $0 \overset{}{\longrightarrow}A \overset{i}{\longrightarrow}X \overset{r}{\longrightarrow}A \overset{}{\longrightarrow}  0$. For $r \circ i = \text{id}$. This induces $r_* \circ i_* = \text{id}_*$
-TODO
 
-
-
+$$\cdots \overset{}{\longrightarrow}H_{n+1}(X,A) \overset{\partial = 0}{\longrightarrow} H_n(A) \overset{i_*}{\longrightarrow}H_n(X) \overset{}{\longrightarrow}H_n(X,A)\overset{\partial }{\longrightarrow} H_{n-1}(A)\overset{}{\longrightarrow} \cdots$$
+Since the first $\partial = 0$, then
+$$\cdots \overset{}{\longrightarrow}H_{n}(A) \overset{i_*}{\longrightarrow}H_n(X)\overset{}{\longrightarrow}H_n(X,A)\overset{}{\longrightarrow}0$$
+is exact. $r_* \circ i_* = \text{id}_*= \text{id}$ and so by splitting lemma part (c), $H_n(X) \cong H_n(X,A) \oplus H_n(A)$
+$\square$
 
