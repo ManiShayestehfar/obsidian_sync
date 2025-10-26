@@ -69,7 +69,7 @@ $$X\in L^1 \iff E(X) = E^+ - E^- \in \mathbb{R}\:(\text{finite})$$
 >If $\alpha,\beta \in \mathbb{R}$ and $X\in L^1$ with density $f_X$, then $Y = \alpha X + \beta  \in L^1$ and $E(Y) = \alpha E(X) + \beta$.
 #### Proof
 
-![[image.png]]
+![[Notes/Algebraic Topology/IMAGES/image.png]]
 ![[image-1.png]]
 
 ## $L^k$

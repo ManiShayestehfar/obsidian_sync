@@ -117,6 +117,15 @@ Let $[f_0]$ be a non-trivial element of $\pi_1(S^1,x_0)$, then $f:I \to S^1$ is 
 
 Thinking of $f_0,c_0$ as maps $I \to D^2$, we have $f_0 \simeq c_0$ in $D^2$ by a straight-line homotopy $f_t(x) = (1-t)f_0(s)+tx_0$. Then $r \circ f_t$ is a homotopy in $S^1$ from $r \circ f_0 = f_0$ to $r \circ c_0 = c_0$. Hence $[f_0] = [c_0]$ in $\pi_1(S^1,x_0)$, which is a contradiction since we assumed that $[f_0]$ is non-trivial. $\therefore$ $f$ has a fixed point.  $\square$
 
+##### Homological Proof
+
+**Claim:** $\partial D^n$ is not a retract of $D^n$. 
+Everything in the proof is as above, except we prove the claim homologically.
+
+If there was a retract, then we would have $H_n(D^n) \cong H_n(D^n, \partial D^n) \oplus H_n(\partial D^n)$ 
+which is $0 \cong \mathbb{Z} \oplus \mathbb{Z} \cong  \mathbb{Z}^2 \neq 0$. Hence this retraction does not exist.  $\square$ 
+
+
 
 # Product of fundamental groups
 

@@ -101,3 +101,41 @@ For $k < n$ by induction: $\widetilde{H}_k(S^n) \cong \widetilde{H}_{0}(S^{n-k})
 
 
 
+# Split Exact Sequences
+
+## Splitting Lemma
+
+>[!lemma]
+>Consider an SES $0 \overset{}{\longrightarrow}A \overset{i}{\longrightarrow}B \overset{j}{\longrightarrow}C \overset{}{\longrightarrow}  0$ of abelian groups. Then TFAE:
+>TODO
+##### Proof
+###### a -> c
+
+###### b -> c
+
+###### b -> a
+
+###### a -> b
+
+## Split
+
+>[!def] 
+>If (a), (b), (c) of the splitting lemma are satisfied, then the SES $0 \overset{}{\longrightarrow}A \overset{i}{\longrightarrow}B \overset{j}{\longrightarrow}C \overset{}{\longrightarrow}  0$ is said to be **split**.
+>
+
+- E.g if $C$ is fre, $s(C_\alpha) = j^{-1}(C_\alpha)$ for $\alpha \in$ generators of $C$. $\implies$ every SES with $C$ splits.
+
+>[!corollary]
+>If every SES ending in $C$ splits, then $C$ is free.
+##### Proof
+TODO
+
+>[!Corollary]
+>Any retraction $r:X\to A$ induces $H_n(X) \cong H_n(A) \oplus H_n(X,A)$ 
+##### Proof
+Consider $0 \overset{}{\longrightarrow}A \overset{i}{\longrightarrow}X \overset{r}{\longrightarrow}A \overset{}{\longrightarrow}  0$. For $r \circ i = \text{id}$. This induces $r_* \circ i_* = \text{id}_*$
+TODO
+
+
+
+

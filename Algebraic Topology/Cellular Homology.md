@@ -140,3 +140,66 @@ commuting by the purple/green arrow.
 Also $$\bigoplus_\beta q_{\beta *}: \widetilde{H}_{n-1}(X^{n-1}/X^{n-2}) \overset{\sim}{\longrightarrow} \bigoplus \widetilde{H}_{n-1}(S^{n-1}_\beta)$$and so $$d_n(e_\alpha^n)= (d_n \circ \phi_{\alpha*})([D_\alpha^n]) = \sum_\beta (\Delta_{\alpha\beta*}\circ Q_{\alpha*})([D_\alpha^n]) = \sum_\beta d_{\alpha\beta} \: e_\beta^{n-1}$$
 due to the commutativity of the purple/green lines via the direct sum.
 
+
+# Cellular Homology of $S^2$
+
+We have two 0-cells $p_0,p_1$, two 1-cells $a,b$, and two 2-cells $U,L$.
+
+```handdrawn-ink
+{
+	"versionAtEmbed": "0.3.4",
+	"filepath": "Ink/Drawing/2025.10.21 - 11.17am.drawing",
+	"width": 536,
+	"aspectRatio": 2.3630922901290754
+}
+```
+
+
+Then $X^0 = \{p_0,p_1\}$. The cellular chain map is
+$$0 \overset{d_3}{\longrightarrow}\mathbb{Z}^2\overset{d_2}{\longrightarrow}\mathbb{Z}^2\overset{d_1}{\longrightarrow}\mathbb{Z}^2\overset{d_0}{\longrightarrow}0$$ 
+- $d_0 = 0$, 
+- $d_1= j \circ \partial_1$. Then $d_1([a])= [p_1]-[p_0]$, $d_1([b]) = [p_0] - [p_1]$, and 
+$$\begin{align*}
+d_1(n_a[a] + n_b[b]) &= n_ad_1([a]) + n_bd_1([b])
+\end{align*}$$
+- $\Delta_{U_a}: \partial D^2_U\cong S^1_U \overset{}{\longrightarrow}X^1\overset{}{\longrightarrow}S^1_a$ via $$t \longmapsto \begin{cases}
+a(t) & t \in [0,1/2]  \\
+b(t) & t \in [1/2,1]
+\end{cases}$$
+This map $X^1 \overset{}{\longrightarrow}S^1$ acts by $a \longmapsto a$ and $b \longmapsto 0$. Then $d_{U_a}: H_1(S_U^1)\to H_1(S_a^1)$ and $d_{U_a}$ is identity map $\implies \deg d_{U_a}= 1$. So $d_2([U]) = [a] + [b]$ and ...
+
+Now $H_0(S^2) = \ker d_0 / \text{im }d_1 = \mathbb{Z}^2/ \text{im }d_1$.
+$d_1((1,0)) = (-1,1)$ and $d_1((0,1)) = (1,-1)$. Hence $\text{im }d_1 = \langle (1,-1)\rangle$. 
+Therefore $H_0(S^2) = \mathbb{Z}^2 / \langle (1,-1)\rangle \cong \mathbb{Z}^2/ \mathbb{Z}\cong \mathbb{Z}$.
+
+Now $H_1(S^2) = \ker d_1 /\text{im }d_2$.
+$\ker d_1 = \{(x,y)\: (y-x,x-y)= 0\} = \{(x,x)\} = \langle(1,1)\rangle \cong \mathbb{Z}$. 
+For $\text{im }d_2:$ $d_2((1,0))=(1,1), d_2((0,1))=(1,1)$ so $\text{im }d_2 = \langle(1,1)\rangle$. 
+Hence $H_1(S^2) \cong 0$.
+
+Finally $H_2(S^2) = \ker d_2 / \text{im }d_3 \cong \langle(1,-1)\rangle/0 \cong \mathbb{Z}$.  (Check the image and kernel)
+
+
+# Cellular Homology of the Klein Bottle
+
+![[Notes/Algebraic Topology/IMAGES/image.png|160]]
+This has one 0-cell $v$, two 1-cell $a,b$, and one 2-cell $T$. The chain map is
+$$0 \overset{d_3}{\longrightarrow}\mathbb{Z}\overset{d_2}{\longrightarrow}\mathbb{Z^2}\overset{d_1}{\longrightarrow}\mathbb{Z}\overset{d_0}{\longrightarrow}0$$
+$X^0$ is a vertex $v$, $X^1 = S_a^1 \vee S_b^1$, $X^2 =$ ...
+$$$$
+- $d_0 = 0$
+- $d_1= 0$
+- $d_2 =$  ENTER DIAGRAM
+  $\partial D_T^2= S_T^1 \to X^1$ is represented by $b+a+b+(-a)$. Also $X^1 \to S^1_a$ restricts action only to the $a$-part = $a + (-a)$. 
+  
+ $S^1_T \to S^1_a$ is the 0-map hence $H_1(S^1_T) \to H_1(S_a^1)$ has degree $0$ and so $d_{T_a} = 0$. 
+ $S_T^1 \to S_b^1$ is $b+b=2b$ hence $H_1(S_T^1) \to H_1(S_b^1)$ is multiplication by 2 so $d_{T_b} = 2$. $d_2([T]) = 0[a] + 2[b] = (0,2)$.  
+
+Now $H_0(X) = \ker d_0 / \text{im }d_1 = \mathbb{Z}/0 \cong \mathbb{Z}$.
+Now $H_1(X) = \ker d_1 / \text{im }d_2 = \mathbb{Z^2}/\langle(0,2)\rangle \cong \mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ 
+Now $H_2(X) = \ker d_2/\text{im }d_3 = 0 / \text{im }d_3 \cong 0$ 
+
+
+
+
+
