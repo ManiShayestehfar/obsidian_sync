@@ -17,6 +17,7 @@ $$\begin{align*}
 &= \sum_{i,j} (-1)^j g_i \sigma_i|_{[v_0,...,\hat{v}_j,...,v_n]}
 \end{align*}$$ So $\sigma_i: \Delta_n \to X$ and the boundary map is $G[\Delta^n] \to X$ e.g. $\mathbb{Z}[\Delta^n]\to X$. Because $\partial$ is the same, it holds the same properties. i.e. $\partial^2 = 0$.
 
+
 # Homology groups with coefficients in $G$
 
 >[!def] Homology groups with coefficients in $G$
@@ -38,4 +39,23 @@ G & n = k \\
 0 & \text{otherwise}
 \end{cases}$$
 
-For cellular homology, consider a sequence of $G'$s instead of $\mathbb{Z}$'a 
+
+## Theorems
+
+For cellular homology, consider a sequence of $G'$s instead of $\mathbb{Z}$'s.
+$$\cdots \overset{}{\longrightarrow}G^{\# \text{ n-cells}} \overset{d_n}{\longrightarrow}G^{\# \text{ (n-1)-cells}}\overset{}{\longrightarrow}\cdots$$
+
+>[!theorem]
+>$$H_n^{CW}(X;G) \cong H_n(X;G)$$
+>for all $n$
+
+>[!theorem] Cellular boundary map
+>$$d_n\left(\sum_\alpha g_\alpha e^n_\alpha\right)= \sum_\alpha(\sum_\beta (d_{\alpha\beta}g_{\alpha})e_\beta^{n-1})$$
+>for integers $d_{\alpha\beta}$ which are the degree of the maps $H_*(S^k;G)\overset{}{\longrightarrow}H_*(S^k;G)$
+##### Proof
+
+We need the following lemma for the proof
+
+>[!lemma]
+>If $f: S^k \to S^k$ has degree $m$, then $f_*:H_*(S^k;G)\overset{}{\longrightarrow}f_*:H_*(S^k;G)$ is multiplication by $m$.
+
