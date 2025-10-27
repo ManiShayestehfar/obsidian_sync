@@ -1,3 +1,7 @@
+>[!quote]
+>If simplicial homology is like _cutting up the space into triangles_,  
+then singular homology is like _pressing triangles onto the space to see what fits_.
+
 # n-Simples, n-Chain, boundary homomorphism
 
 >[!def]
@@ -54,7 +58,7 @@ i.e. $\sum_\alpha k_\alpha \sigma_\alpha \in \text{im }\partial_1 \implies \ker 
 
 Now $H_0(X) = \ker \partial_0/\text{im }\partial_1 = C_0(X)/\ker \varepsilon \cong \text{im }\varepsilon \cong \mathbb{Z}$, where the second last $\cong$ is a consequence of the 1st isomorphism theorem. $\square$
 
->[!proposition] 
+>[!Proposition] 
 >$X$ a point. Then $$H_n(X)= \begin{cases}
 \mathbb{Z} & n=0  \\
 0 & n \geq 1
@@ -90,7 +94,7 @@ $$H_n(X) \cong \mathbb{Z}$$ by proposition above. $\square$
 ## Augmented Singular Chain Complex
 
 >[!def] 
->For $X$ non-empty, the **augmented singular chain complex** is  $$\cdots\:\overset{\partial_{n+2}}{\longrightarrow} C_{n+1} \overset{\partial_{n+1}}{\longrightarrow}C_{n} \overset{\partial_{n}}{\longrightarrow}C_{n-1} \overset{\partial_{n-1}}{\longrightarrow}\cdots C_{1} \overset{\partial_{1}}{\longrightarrow}C_{0} \overset{\partial_{0}}{\longrightarrow} \mathbb{Z}{\longrightarrow}0,$$
+>For $X$ non-empty, the **augmented singular chain complex** is  $$\cdots\:\overset{\partial_{n+2}}{\longrightarrow} C_{n+1} \overset{\partial_{n+1}}{\longrightarrow}C_{n} \overset{\partial_{n}}{\longrightarrow}C_{n-1} \overset{\partial_{n-1}}{\longrightarrow}\cdots C_{1} \overset{\partial_{1}}{\longrightarrow}C_{0} \overset{\partial_{0}}{\longrightarrow} \mathbb{Z}\overset{\varepsilon}{\longrightarrow}0,$$
 >where for $n \geq 0$, $C_n(X)$ is the set of singular n-chains for $n \geq 1$, $\partial_n$ is the boundary map, and $\varepsilon:C_0(X) \to \mathbb{Z}$ is given by $\sum_\alpha k_\alpha \sigma_\alpha \mapsto \sum_\alpha k_\alpha$ and is surjective where $\text{im }\partial_1 \subseteq \ker \varepsilon$.
 >
 

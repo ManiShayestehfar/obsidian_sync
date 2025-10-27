@@ -51,7 +51,7 @@ The map $\sigma_\alpha:\Delta^n \to X$ that restricts to a homomorphism from the
 # $\Delta$-Complex
 
 >[!Def] 
->A **$\Delta$-complex** is a space $X$ constructed a follow:
+>A **$\Delta$-complex** is a space $X$ constructed as follow:
 >1. Start with a collection $\{\Delta_\alpha^{n_\alpha}\}$ of disjoint simplices together with collections of faces $\{\mathcal{F}_i\}$ such that all faces in each $\mathcal{F}_i$ have the same dimension.
 >2. From the quotient space of $\sqcup_\alpha \Delta_\alpha^{n_\alpha}$ by identifying all elements of each $\mathcal{F}_i$ to a single simplex via the canonical linear homomorphism.
 
