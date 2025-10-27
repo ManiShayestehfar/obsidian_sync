@@ -58,4 +58,13 @@ We need the following lemma for the proof
 
 >[!lemma]
 >If $f: S^k \to S^k$ has degree $m$, then $f_*:H_*(S^k;G)\overset{}{\longrightarrow}f_*:H_*(S^k;G)$ is multiplication by $m$.
+###### Proof
+![[Homology with Coefficients-1761484395702.png|500]]
+where $Q$ takes $1 \in \mathbb{Z}$ to some $g \in G$. 
+It suffices to show this diagram commutes. We prove this by induction.
+1. Trivially true for $S^0$ where $k=0$
+2. Then use $\widetilde{H}_i(S^i)\cong \widetilde{H}_{i-1}(S^{i-1})$ by example 2.46 with induction.
+$\square$
+
+
 
