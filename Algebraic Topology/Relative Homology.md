@@ -121,7 +121,7 @@ $$\cdots \overset{}{\longrightarrow}H_n(A,\{x_0\}) \overset{}{\longrightarrow}H_
 - Equivalently, for subspaces $A,B \subseteq X$ such that $X = \text{int }A \cup \text{int }B$, then $$(B, A \cap B)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(A,A\cap B)\overset{\cong}{\longrightarrow} H_n(X,A)$$
   where here we set $B = X-Z$,  $Z=X-B$. Then $A\cap B = A - Z$ and the condition $\overline{Z}\subseteq \text{int }A$ is equivalent to $X = \text{int }A \cup \text{int }B$. 
 ##### Proof
-
+TODO
 
 ### Excision Theorem for CW Complexes
 
