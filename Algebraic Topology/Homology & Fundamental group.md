@@ -1,3 +1,5 @@
+# Motivation
+
 Recall that $H_0(X) \cong \mathbb{Z}^{\#\text{ of path-components of }X}$.
 
 For $f:I \to X$, we can view it as 
@@ -5,11 +7,16 @@ For $f:I \to X$, we can view it as
 2. path in $X$
 If $f$ is a loop, $f(0) = f(1)\implies \partial f = f(1)-f(0) = 0\implies f \in \ker \partial$ is a cycle
 
+# Commutator
+
 >[!def] Commutator
 >For a group $G$, the **commutator** of a  group, denoted $[G,G]$ is a subgroup $$[G,G]:= \{g^{-1}h^{-1}gh\:\:\:\: \forall g \in G. h \in G\}$$
 
 >[!Theorem]
 >$[G,G]$ is the smallest normal subgroup $H$ of $G$ such that $G/H$ is abelian.
+
+
+# Abelianisation
 
 >[!def] Abelianisation of $G$
 >The **abelianisation of $G$**, denoted $G^{ab}$ is $G/[G,G]$ 
@@ -18,5 +25,15 @@ If $f$ is a loop, $f(0) = f(1)\implies \partial f = f(1)-f(0) = 0\implies f \in 
 >Any homomorphism $\phi:G \to H$ with $H$ abelian can be factored through $\phi': G^{ab}\to H$.
 
 
+# Homology and $\pi_1$ Equivalence
+
 >[!Theorem] H Theorem 2.A.1
->a. 
+>1. Have a homomorphism $h:\pi_1(X,x_0) \to H_1(X)$
+>2. If $X$ is path-connected, then $h$ induces an isomorphism $h':\pi_1^{ab}(X,x_0)\overset{\sim}{\longrightarrow}H_1(X)$
+
+- We denote $f$ being **homologous** to $g$ (belonging to the same class in $H_1(X)$) by $f \sim g$
+
+>[!lemma]
+If $f,g:I \to X$ are paths such that $f(1) = g(0)$, then $$
+
+
