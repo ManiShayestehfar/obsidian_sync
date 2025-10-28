@@ -68,9 +68,52 @@ $\implies [f-g]+\text{const}\in \text{im }\partial$
 $\implies [f-g]= [\text{const}] \overset{Lemma \:2}{=} [0]$
 $\implies [f] = [g]\implies f \sim g$. $\square$
 
+##### Proof (of Theorem 2.A.1)
+###### 1. 
 Now define $\phi: \pi_1(X,x_0) \to H_1(X)$ via $[f] \longmapsto [[f]]$ which is well-defined from lemma 4 from above: If $[f]= [g]$ then $f \simeq g$ so $[[f]] =[[g]]$.
 $\phi([f][g])= \phi([f\cdot g]) = [[f\cdot g]] \overset{Lemma\:1}{=} [[f]] + [[g]]$
 $\implies \phi$ is a homomorphism
 
 Since $H_1(X)$ is abelian, $\phi$ factors through $\pi_1^{ab}(X,x_0)$ so we get $\phi_*: \pi_1^{ab}(X,x_0) \to H_1(X)$.
 
+###### 2. 
+Want $\psi_* : H_1(X)\to \pi_1^{ab}(X,x_0)$. So define $\psi: C_1(X) \to \pi_1^{ab}(X,x_0)$ via $\sigma \mapsto [\lambda_{\sigma(0)}\cdot \sigma \cdot \lambda^{-1}_{\sigma(1)}]$ where $\lambda_x$ is some path from $x_0$ to $x$. 
+Want to prove that $\psi \circ \phi_* = \text{id}$, and $\phi_* \circ \psi = \text{id}$. 
+
+>[!lemma]
+>For $t \in \text{im }\partial_2$, $\psi(t) = [1]$.
+###### Proof
+Take $\sigma : \Delta^2 \to X$ such that $t=\partial\sigma$. Then 
+$$\begin{align*}
+\psi(\partial \sigma) = \psi(a_1 - (a_2)^{-1} + a_0) 
+&= \psi(a_1)\, \psi(a_0)\, \psi(a_2) \\
+&= [\lambda_{v_1} \cdot a_1 \cdot \lambda_{v_1}^{-1}]
+   [\lambda_{v_0} \cdot a_0 \cdot \lambda_{v_1}^{-1}]
+   \psi(a_2) \\
+&= [\lambda_{v_1} \cdot a_1 \cdot \lambda_{v_2}^{-1} 
+   \cdot \lambda_{v_0} \cdot a_0 \cdot \lambda_{v_1}^{-1} 
+   \cdot (\lambda_{v_0} \cdot a_2^{-1} \cdot \lambda_{v_2})^{-1}] \\
+&= [a_1 \cdot a_0 \cdot a_2] \\
+&= [a_0 \cdot a_1 \cdot a_2] \\
+&= [\text{const}] \\
+&= [1]
+\end{align*}
+$$
+$\square$ 
+ADD THE DIAGRAM
+
+So $\psi:X_1(X) \to \pi_1^{ab}(X,x_0)$. By lemma above, this induces $\psi_*: H_1(X) \to \pi_1^{ab}(X,x_0)$.
+For a loop $f$, $\psi_*(\phi_*([f])) = \psi_*([[f]]) = [\lambda_{f(0)} \cdot f \cdot \lambda_{f(0)}^{-1}] =  [\lambda_{f(1)} \cdot f \cdot \lambda_{f(1)}^{-1}] = [f]$
+$\implies \psi_* \circ \phi_* = \text{id}$. 
+
+For the other implication consider the lemma:
+>[!lemma] 
+>1. If $\sigma: \Delta^1 \to X$, then $\phi_*(\psi_*(\sigma)) = [[\sigma- \lambda_{\partial\sigma}]]$ 
+>2. If $\sigma \in C^1(X)$, then $\phi_*(\psi_*(\sigma)) = [[\sigma- \lambda_{\partial\sigma}]]$ 
+>3. if $\sigma \in \ker \partial_1$, then $\phi_* \circ \psi_*(\sigma)= [[\sigma]]$
+###### Proof
+$\sigma \in H_1(X)$ where $(\sigma\in \ker\partial)$
+$\implies \phi_* \circ \psi_*([[\sigma]]) = [[\sigma]]$ 
+$\implies \phi_* \circ \psi_* = \text{id}$.
+
+$\square$
