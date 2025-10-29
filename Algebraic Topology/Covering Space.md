@@ -211,7 +211,7 @@ Since $\widetilde{p}_2 \circ \widetilde{p}_1$ fixes $\widetilde{x}_1$, and so do
 # Covering Space & Subgroups Correspondence
 
 >[!thm]
->Let $X$ be *path-connected*, l*ocally path-connected*, *semi-locally simply-connected*. 
+>Let $X$ be *path-connected*, *locally path-connected*, *semi-locally simply-connected*. 
 >Then there is a bijection $$\begin{Bmatrix}
 > \text{Base-point preserving} \\ \text{isomorphism classes} \\ \text{of path-connected}  \\ \text{covering spaces} 
 >\end{Bmatrix} \longleftrightarrow \begin{Bmatrix} \text{subgroups}  \\ \text{of}\:\: \pi_1(X,x_0) \end{Bmatrix}$$
