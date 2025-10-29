@@ -25,10 +25,9 @@ Given  $\alpha:A \to B$ a group homom. then we can get $\alpha^*: \text{Hom}(B,G
 ## In Chain Complexes
 
 Now given a chain complex of free abelian groups:
-$$\cdots \overset{}{\longrightarrow}C_n \overset{}{\longrightarrow}C_{n-1} \overset{}{\longrightarrow}C_{n-2}\overset{}{\longrightarrow}\cdots$$
+$$\cdots \overset{}{\longrightarrow}C_n \overset{\partial_n}{\longrightarrow}C_{n-1} \overset{\partial_{n-1}}{\longrightarrow}C_{n-2}\overset{}{\longrightarrow}\cdots$$
 For a fixed abelian group $G$, we get maps 
-$$\cdots \overset{}{\longleftarrow}\text{Hom}(C_n,G) \overset{}{\longleftarrow}\text{Hom}(C_{n-1},G)\overset{}{\longleftarrow}\text{Hom}(C_{n-2},G)\overset{}{\longleftarrow}\cdots$$
-COMPLETE THE MAPS
+$$\cdots \overset{}{\longleftarrow}\text{Hom}(C_n,G) \overset{\partial_n^*= \delta_n}{\longleftarrow}\text{Hom}(C_{n-1},G)\overset{\partial_{n-1}^*=\delta_{n-1}}{\longleftarrow}\text{Hom}(C_{n-2},G)\overset{}{\longleftarrow}\cdots$$
 
 $\delta_n =$ **dual coboundary map**, $\text{Hom}(C_n,G)=$ **dual cochain groups**.
 
@@ -39,6 +38,21 @@ The above is called a **dual chain complex**.
 
 # Cohomology of Spaces
 
-$X =$ space, $G =$ abelian group. $C^(X;G)=$ Singular n-cochain with coefficeints in $G$ = $\text{Hom}(C_n(X), G)$ 
+$X =$ space,
+$G =$ abelian group. 
+$C^n(X;G)=$ Singular n-cochain with coefficients in $G$ = $\text{Hom}(C_n(X), G)$ 
 
-For $\phi \in C^n(X;G)\implies \phi : C_n(X) \to G$ is equivalent to $f(n)$s from n-simplices to $G$. 
+- For $\phi \in C^n(X;G)\implies \phi : C_n(X) \to G$ is equivalent to $f(n)$s from n-simplices to $G$. 
+
+>[!def] Coboundary map
+>$$\delta: C^n(X;G)\to C^{n+1}(X;G)$ via $\phi \to \phi \circ \partial$$
+>i.e. $\delta(\phi(\sigma)) = \sum_{i}(-1)^i \phi(\sigma|_{[v_0,...,\hat{v_i},...,v_n]})$
+
+- $\delta^2 = 0$
+
+>[!def] Singular Cohomology groups with coefficients in $G$
+>$$H^n(X;G):=\ker\delta/\text{im }\delta$$ at $C^n(X;G)$, in the cochain complex
+>$$\cdots \overset{}{\longleftarrow}C^1(X;G)\overset{\delta}{\longleftarrow}C^0(X;G)\overset{\delta}{\longleftarrow}0$$
+>
+
+

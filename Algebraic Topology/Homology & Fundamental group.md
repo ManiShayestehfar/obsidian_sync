@@ -83,6 +83,7 @@ Want to prove that $\psi \circ \phi_* = \text{id}$, and $\phi_* \circ \psi = \te
 >[!lemma]
 >For $t \in \text{im }\partial_2$, $\psi(t) = [1]$.
 ###### Proof
+![[Homology & Fundamental group-1761694428674.png|250]]
 Take $\sigma : \Delta^2 \to X$ such that $t=\partial\sigma$. Then 
 $$\begin{align*}
 \psi(\partial \sigma) = \psi(a_1 - (a_2)^{-1} + a_0) 
@@ -100,7 +101,7 @@ $$\begin{align*}
 \end{align*}
 $$
 $\square$ 
-ADD THE DIAGRAM
+
 
 So $\psi:X_1(X) \to \pi_1^{ab}(X,x_0)$. By lemma above, this induces $\psi_*: H_1(X) \to \pi_1^{ab}(X,x_0)$.
 For a loop $f$, $\psi_*(\phi_*([f])) = \psi_*([[f]]) = [\lambda_{f(0)} \cdot f \cdot \lambda_{f(0)}^{-1}] =  [\lambda_{f(1)} \cdot f \cdot \lambda_{f(1)}^{-1}] = [f]$

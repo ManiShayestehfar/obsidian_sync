@@ -26,7 +26,7 @@
 >[!lemma] H Lemma 3.1
 >Given free resolution $(F,H)$, $(F',H')$
 >1. Every homomorphism $\alpha: H\to H'$ can be extended to a chain map
->   SHOW CHAIN MAP
+>   ![[Free Resolutions and Ext Groups-1761694727384.png|430]]
 >2. Any two such chain maps are homotopic.
 >3. $\text{Ext}_R^n(H;G, F) \cong \text{Ext}_R^n(H';G,F')$
 
@@ -49,6 +49,7 @@
 4. $\text{Ext}(H;\mathbb{Z})\cong T_H$ where $T_H$ is the torsion subgroup of $H$
 
 ## Universal Coefficient Theorem
+
 >[!Theorem] H Theorem 3.2 - Universal Coefficient Theorem
 >Let $C$ be a chain complex of free abelian group with homology $H_n(C)$. 
 >Then, the cohomology groups $H^n(C;G)$ coming from the cochain complex $\text{Hom}(-,G)$ are determined by split exact sequences $$ 0 \overset{}{\longrightarrow}\text{Ext}(H_{n-1}(C);G)\overset{}{\longrightarrow}H^n(C;G) \overset{}{\longrightarrow}\text{Hom}(H_n(C); G)\overset{}{\longrightarrow}0$$
@@ -60,7 +61,7 @@
 >where $T_n \subseteq H_{n-1}(C), T_n\subseteq H_n(C)$
 
 **Naturality:** $\alpha: C \to C'$ chain map, get the following commutative diagram: 
-ADD DIAGRAM
+![[Free Resolutions and Ext Groups-1761695007031.png|600]]
 
 **Note:** The splitting $p$ is not natural as it depends on the choice of $p: C_n \to \ker \partial_n$ 
 
