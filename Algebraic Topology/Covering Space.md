@@ -146,7 +146,8 @@ Define $\Phi: Hg \to p^{-1}(x)$ via $H[g] \mapsto \widetilde{g}(1)$. We show tha
 Then $g_1 \cdot \bar{g}_2$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \bar{g}_2]$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \bar{g}_2]$ is in the image of $p_*$, i.e. $[g_1 \cdot \bar{g}_2] = [g_1][g_2]^{-1} \in H$ $\implies H[g_1] = H[g_2]$.  $\square$ 
 
 
-# Lifting Criterion
+
+]# Lifting Criterion
 
 >[!proposition]
 >Suppose we have a cover $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ and a continuous map $f:(Y,y_0)\to (X,x_0)$. If $Y$ is *path-connected* and *locally path-connected*, then a lift
