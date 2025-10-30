@@ -147,7 +147,7 @@ Then $g_1 \cdot \bar{g}_2$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \b
 
 
 
-]# Lifting Criterion
+# Lifting Criterion
 
 >[!proposition]
 >Suppose we have a cover $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ and a continuous map $f:(Y,y_0)\to (X,x_0)$. If $Y$ is *path-connected* and *locally path-connected*, then a lift
