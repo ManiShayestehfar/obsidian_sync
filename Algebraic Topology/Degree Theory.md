@@ -76,7 +76,7 @@ By lemma, $\deg f = \deg(\text{antipodal map})= (-1)^{n+1}$.  $\square$
 >Any *even* map $f:S^n \to S^n$ must have *even* degree.
 >- If $n$ is even, then $\deg f=0$.
 
->[!Theorem] Barsuk-Ulam Theorem
+>[!Theorem] Borsuk-Ulam Theorem
 >Any *odd* map $f: S^n \to S^n$ must have *odd* degree for all $n$.
 
 
