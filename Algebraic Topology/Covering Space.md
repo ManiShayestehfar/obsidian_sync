@@ -24,6 +24,7 @@ Take $\{U_\alpha\}$ the smallest collection of open arcs in $S^1$ that cover $S^
    ![[Covering Space-1759726810707.png|200]]
 
 
+
 # Lifting Properties
 
 >[!def] Lift
