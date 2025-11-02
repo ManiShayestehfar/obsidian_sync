@@ -1,7 +1,7 @@
 # Definition
 
 >[!def] 
->Let $p: \widetilde{X} \to X$ be a covering space. The **deck transformations** of this cover, $\text{Homeo}(\widetilde{X},p)$, are the homomorphisms $f:\widetilde{X} \to X$ such TFDC
+>Let $p: \widetilde{X} \to X$ be a covering space. The **deck transformations** of this cover, $\text{Homeo}(\widetilde{X},p)$, are the homomorphisms $f:\widetilde{X} \to \widetilde{X}$ such TFDC
 >
 >![[Screenshot 2025-10-07 at 3.18.18 pm.png|160]]
 >i.e. $p \circ f = p$ or i.e. automorphisms of covering spaces
