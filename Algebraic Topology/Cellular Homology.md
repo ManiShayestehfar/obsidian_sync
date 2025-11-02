@@ -10,7 +10,7 @@
 >Let $X$ be a CW-complex.
 >1. $H_n(X^k, X^{k-1}) =0$ for $k \neq n$.
 >   For $k=n$, this is a free abelian group with basis in 1:1 correspondence with the n-cells of $X$.
-> 2. $H_k(X^k)=0$ for $k > n$.
+> 2. $H_k(X^n)=0$ for $k > n$.
 >    If $X$ is finite-dimensional, $H_k(X)=0$ for $k > \dim X?$
 > 3. We have $X^n \hookrightarrow X$, and the induced map $H_k(X^n) \to H_k(X)$.
 >    For $k < n$, the induced map is an isomorphism, and surjective if $k=n$.
