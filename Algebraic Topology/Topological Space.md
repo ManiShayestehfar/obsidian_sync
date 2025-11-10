@@ -10,12 +10,11 @@ Elements of $\tau$: open sets, $V \subseteq X$ is **closed** if $X\backslash V \
 
 ## Subspace Topology
 
-If $(X,\tau_x)$ is a topological space, and $Y \subseteq X$, then the **subspace topology** on $Y$ is $\tau_Y = \{U\cap Y | u \in \tau_x\}$
+If $(X,\tau_x)$ is a topological space, and $Y \subseteq X$, then the **subspace topology** on $Y$ is $\tau_Y = \{U\cap Y \:|\: U \in \tau_x\}$
 
 ## Product Topology
 
-$X \times Y = \{(x,y) | x \in X, y \in Y\}$ has a **product topology** with base $\{U \times V|U \in \tau_x, V \in \tau_y\}$/
-e.g. $\mathbb{R}^2 = \mathbb{R} \times \mathbb{R}$
+$X \times Y = \{(x,y) | x \in X, y \in Y\}$ has a **product topology** with base $\{U \times V|U \in \tau_x, V \in \tau_y\}$ e.g. $\mathbb{R}^2 = \mathbb{R} \times \mathbb{R}$
 
 ## Quotient Topology
 
@@ -49,7 +48,7 @@ Suppose we have an equivalence relation $\sim$ on $X$ with equivalence class $[x
 >[!def]
 >A **path** $p$ in $X$ is a [[Continuity (Top)|continuous]] map $p:[0,1] \to X$
 
->[!thm] 
+>[!def] 
 >$X$ is **path-connected** if $\forall x,y \in X$, there exists a path $p$ in $X$ with $p(0)=x$ and $p(1)=y$.
 
 - Path connected $\implies$ connected
@@ -101,7 +100,7 @@ Suppose we have an equivalence relation $\sim$ on $X$ with equivalence class $[x
 >Fix $x_0 \in X$, $y_0\in Y$. $X \vee Y = X \sqcup Y / (x_0=y_0)$ 
 
 
-# Direct Product
+# Direct Product/Sum
 
 >[!def] 
 >The **direct product** $\prod_{i \in I} G_i$ is the group with elements $g: I \to \sqcup_{i \in I} G_i$  such that $g(i) \in G_i$ for all $i \in I$, and group operation defined by $(gh)(i) = g(i)h(i)$.
@@ -123,9 +122,8 @@ For *finite* $I$, the direct sum and product are equivalent.
 # Locally Path-Connected
 
 >[!def] 
->$X$ is **locally path-connected** if for all $x \in X$ and all open neighbourhoods $U$ or $x$, there exists an open neighbourhood $V$ of $x$ with $V \subseteq U$ such that $V$ is path-connected.
+>$X$ is **locally path-connected** if for all $x \in X$ and all open neighbourhoods $U$ of $x$, there exists an open neighbourhood $V$ of $x$ with $V \subseteq U$ such that $V$ is path-connected.
 >![[Pasted image 20251007123350.png|300]]
-
 
 
 # Semi-locally simply-connected
