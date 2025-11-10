@@ -29,14 +29,6 @@ Let $(X,\tau)$ be a topological space pair, and $A \subseteq X$.
 2. $X = S^1 \times I$, $A = S^1\times \{0\}$, then $f_t(x,s) = (x,(1-t)s)$ is a DR
 3. Mobius strip to its core circle is DR
 4. Disc with two holes
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.27 - 20.32pm.drawing",
-	"width": 420,
-	"aspectRatio": 2.677772426039567
-}
-```
 5. $T^2\backslash\{p\}$ DR on figure 8.
 
 >[!remark] 
@@ -64,48 +56,25 @@ Let $(X,\tau)$ be a topological space pair, and $A \subseteq X$.
 
 1. Suppose we have DR $X \to A \subseteq X$ with $f_t(x):X \to X$. Then $\text{id}_X = f_0$ is homotopic to the retraction $f_1$.
 2. Paths $g,h\in I \to X$
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.27 - 20.47pm.drawing",
-	"width": 706,
-	"aspectRatio": 4.706666666666667
-}
-```
+   ![[Homotopy-1762776560081.png]]
+
 
 >[!def] Homotopy Equivalence
 >map $f:X\to Y$ is a homotopy equivalence if there is a continuous map $g:Y \to X$ such that $g \circ f \simeq \text{id}_X$ and $f \circ g \simeq \text{id}_Y$.
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.27 - 20.52pm.drawing",
-	"width": 768,
-	"aspectRatio": 5.12
-}
-```
+>
+>![[Homotopy-1762776601541.png|400]]
+
 ## Examples
 
 1. A homeomorphism is a homotopy equiv. i.e. $X \cong Y \iff X \simeq Y$
 2. If $X$ DRs to $A \subseteq X$, then $X$ and $A$ are homotopy equivalent
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.27 - 20.56pm (2).drawing",
-	"width": 606,
-	"aspectRatio": 3.282476083643647
-}
-```
+
+   ![[Homotopy-1762776683368.png]]
+
 can see $f_1 \circ i \simeq \text{id}_A$, and check that $i \circ f_1 \simeq \text{id}_X$. Also $f_0 = \text{id}_X$, $f_1(x) = i \circ f(x)$ for all $x \in X$, so the DR $f_t:X \to X$ gives a homotopy from $\text{id}_X$ to $i \circ f_1$
 
-3. Spaces
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.27 - 21.03pm.drawing",
-	"width": 710,
-	"aspectRatio": 4.733333333333333
-}
-```
+4. Spaces
+   ![[Homotopy-1762776699346.png]]
 are homotopy equivalent but *not* DR of each other.
 
 

@@ -15,16 +15,8 @@
 2. $S^1$ is a 1-cell and a 0-cell. $S^2$ is a 0-cell and a 2-cell. 
 		So $S^n = (e^0 \sqcup e^n)/\sim$
 
-3. 
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.27 - 22.16pm.drawing",
-	"width": 854,
-	"aspectRatio": 3.8920802327970874
-}
-```
-Add two discs to $S^n$ to get $S^{n+1}$ , each with boundary attaching to the whole of $S^n$. $S^\infty = \cup_{n=0}^\infty S^n$ by continuing this.
+3. ![[CW Complexes-1762777557432.png]]
+	Add two discs to $S^n$ to get $S^{n+1}$ , each with boundary attaching to the whole of $S^n$. $S^\infty = \cup_{n=0}^\infty S^n$ by continuing this.
 
 4. Real projective space $\mathbb{R}P^n$ for $n \geq 0$ defined as:
 	- Lines through the origin $\mathbb{R}^{n+1}$
@@ -36,7 +28,6 @@ Add two discs to $S^n$ to get $S^{n+1}$ , each with boundary attaching to the wh
 	 Define $\mathbb{R}P^\infty := \cup_{n=0}^\infty \mathbb{R}P^n$. Quotient $S^\infty\to\mathbb{R}P^\infty$ induced by $x \sim -x$. 
 
 5. Real Line: 0-cell $= \mathbb{Z}$, 1-cell $e^1_\alpha$ for $\alpha \in \mathbb{Z}$ with $\varphi_\alpha(0) = \alpha$. $\varphi_\alpha(1) = \alpha+1$
-
 
 
 ## Subcomplex

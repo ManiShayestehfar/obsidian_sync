@@ -1,7 +1,7 @@
 # Free Product
 
 >[!def] Free product
->Let $\{G_i \:|\: i \in I\}$ bet a collection of groups. Let $G$ be a group, and for each $i \in I$, let $\varphi_i: G_i \to G$ be a homomorphism.
+>Let $\{G_i \:|\: i \in I\}$ be a collection of groups. Let $G$ be a group, and for each $i \in I$, let $\varphi_i: G_i \to G$ be a homomorphism.
 >Say $G$ is the **free product** of $G_i$ w.r.t. $\varphi_i$ if for any group $H$ and for any collection of homs. $\psi_i:G_i \to H$, there exists a *unique* homom. $f:G \to H$ such that $\forall i \in I$  TFDC:
 >
 >![[Free Product of Groups-1758979777566.png|200]]
@@ -34,7 +34,7 @@
 
 - Products that follow (1) and (2) are in **reduced form**.
 
->[!claim]
+>[!Claim]
 >The reduced form for a $g \in G$ is unique, i.e. if $g =g_1...g_n=h_1...h_m$ then $m=n$ and $g_i=h_i$
 ##### Proof
 Act $g$ on the empty word $()$, get $(g_1,...,g_n)= (h_1,...,h_m) \implies m=n$, etc. $\square$
@@ -42,7 +42,7 @@ Act $g$ on the empty word $()$, get $(g_1,...,g_n)= (h_1,...,h_m) \implies m=n$,
 **Note:** if $g = g_1...g_n$ is in reduced form, then $g^{-1}=g_n^{-1}...g_1^{-1}$ is reduced.
 If $g'=g_1'...g_m'$ is also reduced, then $gg' = g_1...g_ng_1'...g_m'$ (not necessarily reduced)
 
->[!claim]
+>[!Claim]
 >$G$ (as defined above) is the free product $\ast_{i\in I} G_i$
 ##### Proof
 With respect to the universal property of free objects, $\varphi$ is inclusion for all groups $H$, and for all $\psi_i: G_i \to H$.  
@@ -59,15 +59,8 @@ $G_1 = \{a^n |a\in \mathbb{Z}\}, G_2 = \{b^n |b\in \mathbb{Z}\}$. Then $G = G_1 
 # Free Group
 
 - Similar universal property except now we have
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.28 - 20.17pm.drawing",
-	"width": 754,
-	"aspectRatio": 4.2204720912338125
-}
-```
-i.e. $\psi = f \circ\varphi$.
+  ![[Free Product of Groups-1762778063090.png]]
+  i.e. $\psi = f \circ\varphi$.
 
 1. $f$ is unique up to unique isomorphism
 2. $\ast_{s\in S}$ is free on $S$
