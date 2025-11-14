@@ -20,15 +20,8 @@ f(t) & s > t
 >[!def] Straight-line homotopy (also called linear homotopy
 >from $f_0$ to $f_1$ is $f_t:I \to \mathbb{R}^n$ for all $t \in I$ such that 
 >$$f_t(s) = (1-t)f_0(s) + tf_1(s)$$
-```handdrawn-ink
-{
-	"versionAtEmbed": "0.3.4",
-	"filepath": "Ink/Drawing/2025.9.28 - 20.37pm.drawing",
-	"width": 794,
-	"aspectRatio": 3.862192921626531
-}
-```
 
+![[Screenshot 2025-11-14 at 8.21.44 am.png|350]]
 
 >[!proposition] Prop 1.2 Hatcher
 >$x_0 \in X$. Then the relation of homotopy on the set of all paths from $x_0$ to $x_1$in $X$ is an equivalence relation
@@ -63,4 +56,5 @@ $h_t$ is a homotopy from $f\circ \bar{f}$  to $c_0$.    $\therefore f\circ \bar{
 
 # Based loop
 
->[!def] Given $x_0 \in X$, a **loop based at $x_0$** is a path $f:I \to X$ with $f(0)=f(1)=x_0$. 
+>[!def] 
+>Given $x_0 \in X$, a **loop based at $x_0$** is a path $f:I \to X$ with $f(0)=f(1)=x_0$. 

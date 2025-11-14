@@ -29,7 +29,7 @@ and so $c_0$ is the identity element.
 1. $X = \mathbb{R}^n$, $x_0 \in \mathbb{R}^n$, then $\pi_1(X,x_0) \cong 1$ as every loop in $\mathbb{R}^n$ is straight-line homotopic to the constant path.
 2. Same for any convex subset $C \subseteq \mathbb{R}^n$ with $x_0 \in C$
 3. $\pi_1(S^1,x_0) \cong \mathbb{Z}$ for all $x \in S^1$
-4. $X$ the "figure-8" with $a,b$ loops based at $x_0$, then $\pi_1(X,x_0) = F(a,b)$
+4. $X$ the $S^1 \vee S^1$ with $a,b$ loops based at $x_0$, then $\pi_1(X,x_0) = F(a,b)$
 
 
 # Dependence of Fundamental group on basepoint
@@ -78,15 +78,16 @@ Now if $\tilde{f}_n:I\to \mathbb{R}$ is any path from $0$ to $n$ then $\tilde{f}
 Let $\tau_m: \mathbb{R} \to \mathbb{R}$ be translation by $m$, i.e. $\tau_m(x) = x+m$. Then $\tilde{w}_m \cdot(\tau_m \circ \tilde{w}_n) \simeq \tilde{w}_{m+n}$ is a path from $0$ to $m+n$ in $\mathbb{R}$. Hence,
 $$\begin{align*}
 \Phi(m+n) 
-&= [\, \rho \circ \tilde{\omega}_{m+n} \,] \\
-&= [\, \rho \circ (\tilde{\omega}_m \cdot (\tau_m \circ \tilde{\omega}_n)) \,] \\
-&= [\, (\rho \circ \tilde{\omega}_m) \cdot (\rho \circ \tau_m \circ \tilde{\omega}_n) \,] \\
-&= [\, (\rho \circ \tilde{\omega}_m) \cdot (\rho \circ \tilde{\omega}_n) \,] 
-\quad \text{since } \rho \circ \tau_m = \rho \\
-&= [\, \rho \circ \tilde{\omega}_m \,] [\, \rho \circ \tilde{\omega}_n \,] \\
+&= [\, p \circ \tilde{\omega}_{m+n} \,] \\
+&= [\, p \circ (\tilde{\omega}_m \cdot (\tau_m \circ \tilde{\omega}_n)) \,] \\
+&= [\, (p \circ \tilde{\omega}_m) \cdot (p \circ \tau_m \circ \tilde{\omega}_n) \,] \\
+&= [\, (p \circ \tilde{\omega}_m) \cdot (p \circ \tilde{\omega}_n) \,] 
+\quad \text{since } p \circ \tau_m = p \\
+&= [\, p \circ \tilde{\omega}_m \,] [\, p \circ \tilde{\omega}_n \,] \\
 &= \Phi(m)\,\Phi(n)
 \end{align*}
 $$
+
 and so $\Phi$ is a homomorphism.
 
 *Isomorphism:* 
@@ -124,7 +125,7 @@ Everything in the proof is as above, except we prove the claim homologically.
 
 If there was a retract, then we would have $H_n(D^n) \cong H_n(D^n, \partial D^n) \oplus H_n(\partial D^n)$ 
 which is $0 \cong \mathbb{Z} \oplus \mathbb{Z} \cong  \mathbb{Z}^2 \neq 0$. Hence this retraction does not exist.  $\square$ 
-
+****
 
 
 # Product of fundamental groups
