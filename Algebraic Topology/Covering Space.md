@@ -181,7 +181,7 @@ Then $g_1 \cdot \bar{g}_2$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \b
 ## Examples
 
 1. $\widetilde{X}_1 = \widetilde{X}_2 = \mathbb{R}$, $X=S^1$.
-   Then define $p:\mathbb{R} \to S^1$, $q:\mathbb{R} \to S^1$, $f:\mathbb{R} \to S^1$ given by $p(t)= \exp(2\pi i t), q(t)=\exp(it),$ and $f(t) = 2\pi t$ respectively. Then $p,q$ are covers and $f$ is a homeomorphism.
+   Then define $p:\mathbb{R} \to S^1$, $q:\mathbb{R} \to S^1$, $f:\mathbb{R} \to \mathbb{R}$ given by $p(t)= \exp(2\pi i t), q(t)=\exp(it),$ and $f(t) = 2\pi t$ respectively. Then $p,q$ are covers and $f$ is a homeomorphism.
 
 2. Isomorphism of covers gives an equiv. relation on covers of a space $X$. These can be considered as *basepoint-preserving* isomorphisms i.e.
    ![[Screenshot 2025-10-07 at 2.09.17 pm.png|300]]
