@@ -63,4 +63,5 @@ $h_t$ is a homotopy from $f\circ \bar{f}$  to $c_0$.    $\therefore f\circ \bar{
 
 # Based loop
 
->[!def] Given $x_0 \in X$, a **loop based at $x_0$** is a path $f:I \to X$ with $f(0)=f(1)=x_0$. 
+>[!def] 
+>Given $x_0 \in X$, a **loop based at $x_0$** is a path $f:I \to X$ with $f(0)=f(1)=x_0$. 
