@@ -124,5 +124,5 @@ $$\begin{align*}
 (g \circ  f)_* &= g_* \circ f_* = \varphi^{-1} \circ \varphi = 1_{\pi_1(X,x_0)} \\[2pt]
 (f \circ  g)_* &= f_* \circ g_* = \varphi \circ \varphi^{-1} = 1_{\pi_1(Y,y_0)}
 \end{align*}$$
-By uniqueness in the proposition above, then $g \circ f \simeq \text{id}_X$ and $f \circ g \simeq \text{id}_Y$. There fore $X,Y$ are homotopy equivalences. $\square$
+By uniqueness in the proposition above, then $g \circ f \simeq \text{id}_X$ and $f \circ g \simeq \text{id}_Y$. Therefore $X,Y$ are homotopy equivalences. $\square$
 
