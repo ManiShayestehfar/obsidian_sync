@@ -92,8 +92,8 @@ Let $[f]\in \pi_1(\widetilde{X}_G)$. Homotope $f$ to lie in the 1-skeleton, $\Ga
 
 ## Induced $K(G,1)$ space
 
->[!thm]
->Homotopy type of $K(G,1)$ that is a CW-complex is uniquely determined by $G$.
+>[!Theorem]
+>The Homotopy type of CW-complex $K(G,1)$ is uniquely determined by $G$.
 
 >[!Proposition] 
 >$X$ a connected CW-complex and let $Y$ be a $K(G,1)$. Then every homomorphism $\varphi: \pi_1(X,x_0) \to \pi_1(Y,y_0)$ is induced by a continuous map $f:(X,x_0)\to (Y,y_0)$ that is unique up to a homotopy fixing $x_0$.
