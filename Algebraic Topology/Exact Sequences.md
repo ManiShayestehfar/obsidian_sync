@@ -31,15 +31,15 @@ i_*&: H_n(A) \longrightarrow H_n(B) \\
 j_*&: H_n(B) \longrightarrow H_n(C)
 \end{align*}$$
 Need to define $\partial:H_n(C) \to H_{n-1}(A)$ called the *boundary map*.
-Let $c \in C_n$ be a cycle. i.e. $c \in \ker \partial$. Since $j$ is surjective, $c = j(b)$ for some $b \in B_n$. Since the square
+Let $c \in C_n$ be a cycle. i.e. $c \in \ker \partial_n^C$. Since $j$ is surjective, $c = j(b)$ for some $b \in B_n$. Since the square
  ![[Exact Sequences-1760166799117.png|150]]
  commutes, we have $(j \circ \partial)(b) = (\partial \circ j)(b) = \partial(c) = 0$ so $\partial(b) \in \ker j$.
 
-Now $ker j = \text{im } i$ (by exactness), so $\partial(b)=i(a)$ for some $a \in A_{n-1}$. Also $(i \circ \partial)(a) = (\partial \circ i)(a) = 0$ because 
+Now $\ker j = \text{im } i$ (by exactness), so $\partial(b)=i(a)$ for some $a \in A_{n-1}$. Also $(i \circ \partial)(a) = (\partial \circ i)(a) = 0$ because 
 ![[Exact Sequences-1760167006142.png|180]]
 commutes.
 
-Since $i$ is injective, $i(\partial)=0 \implies \partial(a)=0$ so $a \in \ker \partial$ is a cycle. 
+Since $i$ is injective, $i(\partial(a))=0 \implies \partial(a)=0$ so $a \in \ker \partial$ is a cycle. 
 
 Define $\partial: H_n(C)\to H_{n-1}(A)$ by $[c] \longmapsto [a]$ for $a$ defined from $c \in \ker \partial\subseteq C_n$ as above.
 
