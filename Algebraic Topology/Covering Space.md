@@ -81,7 +81,7 @@ $\forall y \in Y$, $\widetilde{F}|_{N_y \times I}$ is unique when restricted fur
 ##### Proof 
 ###### Part 1
 Set $Y = \{y_0\}$. For $t \in I$, define $f_t:Y \to X$, $y_0\mapsto g(t)$. Then $f_t$ is continuous and $F:\{y_0\}\times I \to X$ given by $(y_0,t)\mapsto f_t(y_0)$ is continuous so $F$ is a homotopy. 
-Define $\widetilde{f}_0:\{y_0\}\to X$ by $\widetilde{f}_0(y_0)= x_0$. Then $\widetilde{f}_0$ is a lift of $f_0$. We therefore know that there exists a unique lifted homotopy $\widetilde{f}_t$ such that each $\widetilde{f}_t$ lifts $f_t$.
+Define $\widetilde{f}_0:\{y_0\}\to \widetilde{X}$ by $\widetilde{f}_0(y_0)= \tilde{x}_0$. Then $\widetilde{f}_0$ is a lift of $f_0$. We therefore know that there exists a unique lifted homotopy $\widetilde{f}_t$ such that each $\widetilde{f}_t$ lifts $f_t$.
 
 ![[Covering Space-1759747750900.png|250]]
 
@@ -132,7 +132,8 @@ So we have a homotopy $f_t:I \to X$ from $f_0$ to the constant loop at $x_0$, sa
 ## Propositions
 
 >[!proposition]
->Suppose $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ is a cover, and $X, \widetilde{X}$ are path-connected. Then the $\#$ of sheets of this cover = index of $p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$ in $\pi_1(X,x_0)$.
+>Suppose $p:(\widetilde{X},\widetilde{x}_0) \to (X,x_0)$ is a cover, and $X, \widetilde{X}$ are path-connected. Then the $\#$ of sheets of this cover = $[\pi_1(X,x_0)\::\:p_*(\pi_1(\widetilde{X},\widetilde{x}_0))]$.
+
 ##### Proof
 For the following proof assume $G = \pi_1(X,x_0)$, and $H = p_*(\pi_1(\widetilde{X},\widetilde{x}_0))$.
 Let $[g]\in G$ with lift $\widetilde{g}:I \to \widetilde{X}$ starting at $\widetilde{x}_0$. Let $[h]\in H$. Then the lift $\widetilde{h}$ of $h$ starting at $\widetilde{x}_0$ is a loop at $\widetilde{x}_0$. So the composition of paths $\widetilde{h} \cdot \widetilde{g}$ in $\widetilde{X}$ ends at the same points as $\widetilde{g}$ does.
@@ -180,7 +181,7 @@ Then $g_1 \cdot \bar{g}_2$ is a loop in $X$ based at $x_0$. Hence $[g_1 \cdot \b
 ## Examples
 
 1. $\widetilde{X}_1 = \widetilde{X}_2 = \mathbb{R}$, $X=S^1$.
-   Then define $p:\mathbb{R} \to S^1$, $q:\mathbb{R} \to S^1$, $f:\mathbb{R} \to S^1$ given by $p(t)= \exp(2\pi i t), q(t)=\exp(it),$ and $f(t) = 2\pi t$ respectively. Then $p,q$ are covers and $f$ is a homeomorphism.
+   Then define $p:\mathbb{R} \to S^1$, $q:\mathbb{R} \to S^1$, $f:\mathbb{R} \to \mathbb{R}$ given by $p(t)= \exp(2\pi i t), q(t)=\exp(it),$ and $f(t) = 2\pi t$ respectively. Then $p,q$ are covers and $f$ is a homeomorphism.
 
 2. Isomorphism of covers gives an equiv. relation on covers of a space $X$. These can be considered as *basepoint-preserving* isomorphisms i.e.
    ![[Screenshot 2025-10-07 at 2.09.17 pm.png|300]]

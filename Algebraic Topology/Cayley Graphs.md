@@ -92,8 +92,8 @@ Let $[f]\in \pi_1(\widetilde{X}_G)$. Homotope $f$ to lie in the 1-skeleton, $\Ga
 
 ## Induced $K(G,1)$ space
 
->[!thm]
->Homotopy type of $K(G,1)$ that is a CW-complex is uniquely determined by $G$.
+>[!Theorem]
+>The Homotopy type of CW-complex $K(G,1)$ is uniquely determined by $G$.
 
 >[!Proposition] 
 >$X$ a connected CW-complex and let $Y$ be a $K(G,1)$. Then every homomorphism $\varphi: \pi_1(X,x_0) \to \pi_1(Y,y_0)$ is induced by a continuous map $f:(X,x_0)\to (Y,y_0)$ that is unique up to a homotopy fixing $x_0$.
@@ -124,5 +124,5 @@ $$\begin{align*}
 (g \circ  f)_* &= g_* \circ f_* = \varphi^{-1} \circ \varphi = 1_{\pi_1(X,x_0)} \\[2pt]
 (f \circ  g)_* &= f_* \circ g_* = \varphi \circ \varphi^{-1} = 1_{\pi_1(Y,y_0)}
 \end{align*}$$
-By uniqueness in the proposition above, then $g \circ f \simeq \text{id}_X$ and $f \circ g \simeq \text{id}_Y$. There fore $X,Y$ are homotopy equivalences. $\square$
+By uniqueness in the proposition above, then $g \circ f \simeq \text{id}_X$ and $f \circ g \simeq \text{id}_Y$. Therefore $X,Y$ are homotopy equivalences. $\square$
 

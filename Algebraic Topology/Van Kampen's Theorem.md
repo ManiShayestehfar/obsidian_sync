@@ -23,7 +23,7 @@ Let $S^{-1}= \{s^{-1} | s \in S\}$ for $S \subseteq G$.
 
 # Van Kampen's Theorem
 
->[!theorem]
+>[!Theorem]
 >Suppose $X = \bigcup_\alpha A_\alpha$, where each $A_\alpha$ is:
 >- open
 >- path-connected,
@@ -32,7 +32,7 @@ Let $S^{-1}= \{s^{-1} | s \in S\}$ for $S \subseteq G$.
 >Let $x_0 \in \cap_\alpha A_\alpha$.
 >1. If each $A_\alpha \cap A_\beta$ is mutually path-connected, then the homomorphism $$\Phi:\ast_\alpha\:\pi_1(A_\alpha,x_0) \to \pi_1(X,x_0)$$
    induced by $j_\alpha$s is *surjective*.
-   2. If also $A_\alpha \cap A_\beta \cap A_\gamma$ is path connected, then $$\ker \Phi = \langle\langle i_{\alpha\beta}(w)\:(i_{\beta\alpha}(w))^{-1}\:|\: w \in \pi_1(A_\alpha\cap A_\beta,x_0)\rangle\rangle$$where $i_{\alpha\beta}: \pi_1(A_\alpha \cap A_\beta,x_0) \to \pi_1(A_\alpha,x_0)$ is the homomorphism induced by inclusion $A_\alpha\cap A_\beta \hookrightarrow A_\alpha$.  i.e. $\Phi (i_{\alpha\beta}(w)) = \Phi(i_{\beta\alpha}(w))$ for $w \in \pi_1(A_\alpha\cap A_\beta,x_0)$.
+   2. If also $A_\alpha \cap A_\beta \cap A_\gamma$ is path connected, then $$\ker \Phi = \langle\langle i_{\alpha\beta}(w)\:(i_{\beta\alpha}(w))^{-1}=1\:|\: w \in \pi_1(A_\alpha\cap A_\beta,x_0)\rangle\rangle$$where $i_{\alpha\beta}: \pi_1(A_\alpha \cap A_\beta,x_0) \to \pi_1(A_\alpha,x_0)$ is the homomorphism induced by inclusion $A_\alpha\cap A_\beta \hookrightarrow A_\alpha$.  i.e. $\Phi (i_{\alpha\beta}(w)) = \Phi(i_{\beta\alpha}(w))$ for $w \in \pi_1(A_\alpha\cap A_\beta,x_0)$.
 
 ##### Proof of Van Kampen
 
@@ -80,5 +80,6 @@ Now $A_\alpha$ DRs to $X$, $A_\beta$ DRs to $Y$, so we get: $\pi_1 (X) \ast \pi_
 
 2.![[Van Kampen's Theorem-1759721053061.png]]
 $X = A_\alpha \cup A_\beta$ and $A_\alpha \cap A_\beta = X \setminus\{a,b\}$ is still path connected and DRs to a point (e.g. $c$). So by Van Kampen's theorem: $\pi_1 (A_\alpha) \ast \pi_1(A_\beta)\cong \mathbb{Z}\ast \mathbb{Z}=F(a,b)$. But $A_\alpha \cap A_\beta\cap A_\gamma = X \setminus\{a,b,c\}$ is *not* path-connected so cannot apply Van Kampen with appropriate cover.
+
 
 
