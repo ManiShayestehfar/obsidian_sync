@@ -188,7 +188,7 @@ To do this, we construct $P: C_{n-1}(X) \to C_n(Y)$ called the **prism operator*
 ![[Singular Homology-1760160919680.png|400]]
 i.e. $\partial_{n+1}^Y \circ P + P \circ \partial_n^X = g_\# - f_\#$.
 
-Assuming this, let $\alpha \in \ker \partial_n^X$. Then $g_\#(\alpha) - f_\#(\alpha) = (\partial_{n+1}^Y \circ P)(\alpha) + (P \circ \underbrace{\partial_n^X)(\alpha)}_{=1} = (\partial_{n+1}^Y \circ P)(\alpha)$. 
+Assuming this, let $\alpha \in \ker \partial_n^X$. Then $g_\#(\alpha) - f_\#(\alpha) = (\partial_{n+1}^Y \circ P)(\alpha) + (P \circ \underbrace{\partial_n^X)(\alpha)}_{=0} = (\partial_{n+1}^Y \circ P)(\alpha)$. 
 So $g_\#(\alpha) - f_\#(\alpha) \in \text{im }\partial_{n+1}^Y$.
 
 Hence $$g_\#(\alpha)+\text{im }\partial_{n+1}^Y = f_\#(\alpha)+\text{im }\partial_{n+1}^Y \:\:\implies\:\: g_\#(\alpha + \text{im }\partial_{n+1}^X) = f_\#(\alpha + \text{im }\partial_{n+1}^X)$$
