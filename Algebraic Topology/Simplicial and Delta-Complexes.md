@@ -15,7 +15,7 @@
 
 # $\Delta^n$ 
 
->[!Def] 
+>[!Definition] 
 >For $n \geq 0$, the standard $n$-simplex $\Delta^n$ is the subset of $\mathbb{R}^{n+1}$ given by 
 >$$\Delta^n = \{(t_0,t_1,...,t_n)\in \mathbb{{R}}^{n+1}\:\:|\:\: \sum_{i=0}^n t_i = 1\:\:\text{and}\:\: t_i \in [0,1] \:\:\forall i\}$$
 
