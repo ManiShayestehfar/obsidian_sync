@@ -118,7 +118,7 @@ $$\cdots \overset{}{\longrightarrow}H_n(A,\{x_0\}) \overset{}{\longrightarrow}H_
 >[!theorem] H Thm 2.20
 >Given $Z \subseteq A \subseteq X$ such that $\overline{Z}\subseteq \text{int }A$, then $$(X-Z,A-Z)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(X-Z,A-Z)\overset{\cong}{\longrightarrow} H_n(X,A)$$
 >for all $n$.
-- Equivalently, for subspaces $A,B \subseteq X$ such that $X = \text{int }A \cup \text{int }B$, then $$(B, A \cap B)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(A,A\cap B)\overset{\cong}{\longrightarrow} H_n(X,A)$$
+- Equivalently, for subspaces $A,B \subseteq X$ such that $X = \text{int }A \cup \text{int }B$, then $$(B, A \cap B)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(B,A\cap B)\overset{\cong}{\longrightarrow} H_n(X,A)$$
   where here we set $B = X-Z$,  $Z=X-B$. Then $A\cap B = A - Z$ and the condition $\overline{Z}\subseteq \text{int }A$ is equivalent to $X = \text{int }A \cup \text{int }B$. 
 ##### Proof
 TODO
@@ -128,7 +128,7 @@ TODO
 
 >[!corollary] H Cor 2.24
 >If the CW complex $X = A \cup B$, then 
->$$(B, A \cap B)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(A,A\cap B)\overset{\cong}{\longrightarrow} H_n(X,A)$$
+>$$(B, A \cap B)\hookrightarrow (X,A)\quad \overset{\text{induces}}{\longrightarrow}\quad H_n(B,A\cap B)\overset{\cong}{\longrightarrow} H_n(X,A)$$
 ##### Proof 
 Need the following claim
 
@@ -163,7 +163,7 @@ To say $U,V$ are homeomorphic is to say there exists $h:U \to V$ and $h^{-1}:V \
 We have that $H_k(V,V - \{h(x)\}) \cong H_k(\mathbb{R}^m, \mathbb{R}^m - \{h(x)\})$ for all $k$.
 
 >[!Claim]
->$H_k(\mathbb{R}^m, \mathbb{R}^m - \{h(x)\}) \cong \widetilde{H}_{k-1}(\mathbb{R}^m - \{x\})$ for all $k$.
+>$H_k(\mathbb{R}^m, \mathbb{R}^m - \{x\}) \cong \widetilde{H}_{k-1}(\mathbb{R}^m - \{x\})$ for all $k$.
 ###### Proof
 Using the long exact chain $$\cdots \overset{}{\longrightarrow}H_k(\mathbb{R}^m - \{x\}) \overset{}{\longrightarrow}\underbrace{H_k(\mathbb{R}^m)}_{=0} \overset{}{\longrightarrow}H_k(\mathbb{R}^m,\mathbb{R}^m - \{x\}) \overset{}{\longrightarrow}\underbrace{H_{k-1}(\mathbb{R}^m - \{x\})}_{\widetilde{H}_{k-1}(\mathbb{R}^m - \{x\})} \overset{}{\longrightarrow}\cdots$$
 where we recall that $\mathbb{R}^m$ is contractible so $$H_k(\mathbb{R}^m) = H_k(\{point\}) = \begin{cases}
