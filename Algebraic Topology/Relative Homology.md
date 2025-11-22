@@ -123,6 +123,7 @@ $$\cdots \overset{}{\longrightarrow}H_n(A,\{x_0\}) \overset{}{\longrightarrow}H_
 ##### Proof
 TODO
 
+
 ### Excision Theorem for CW Complexes
 
 >[!corollary] H Cor 2.24
