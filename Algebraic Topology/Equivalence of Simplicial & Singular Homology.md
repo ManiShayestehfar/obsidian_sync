@@ -59,7 +59,8 @@ Recall $H_n(X,A) = \ker \partial_n / \text{im }\partial_{n+1}$.
 For $n \neq k$, $\ker \partial_n = 0$ since $\Delta_n(X^k,X^{k-1}) = 0$ $\implies H_n^\Delta (X^k,X^{k-1})=0$ for $n \neq k$.
 For $n=k$, $\Delta_n(X^k,X^{k-1})= \{\sum_\alpha n_\alpha e_\alpha^k\}$. $\text{im }\partial_{n+1}=0$  since $\partial_{n+1}(X^k, X^{k-1})=0 \implies H_n^\Delta (X^k,X^{k-1}) = \ker \partial_n = \text{free abelian}$. 
 
-How about $H_n(X^k, X^{k-1})$? Consider the character map for $k$-simplices of $X$: $\sigma: \Delta^k \to X^k.$ 
+How about $H_n(X^k, X^{k-1})$? Consider the character map for $k$-simplices of $X$:
+ $\sigma_\alpha: \Delta^k \to X^k.$ 
 By definition $\sigma_\alpha: (\Delta^k, \partial \Delta^k)\cong (\Delta^k, \Delta^{k-1}) \overset{}{\longrightarrow}(X^k, X^{k-1})$. Then 
 $$\phi: \bigsqcup_\alpha \Delta_\alpha^k / \partial\Delta_\alpha^k \overset{\sim}{\longrightarrow} \sqcup_\alpha \Delta_\alpha^k / \sqcup _\alpha \partial\Delta_\alpha^{k} \overset{\sim}{\longrightarrow} \sqcup_\alpha \Delta_\alpha^k / \sqcup _\alpha \Delta_\alpha^{k-1} \overset{\sim}{\longrightarrow} X^k/X^{k-1}.$$
 This induces 
