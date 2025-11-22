@@ -31,7 +31,7 @@ By [[Exact Sequences|Thm 2.16]], we get that
 is a long exact sequence. But what is $\partial$?
 Consider $\partial:H_n(X,A)\to H_{n-1}(A)$ given as $[a + C_n(A)] \mapsto [\partial_n(a)]$ where $a \in C_n(X)$ and $\partial_n(a) \in C_{n-1}(X)$.  $\square$
 
->[!proposition]
+>[!Proposition]
 >There is a similar long exact sequence for *reduced* homology groups
 
 >[!corollary]
@@ -44,7 +44,7 @@ $$\cdots \overset{}{\longrightarrow}\underbrace{H_{n+1}(X,A)}_{=0} \overset{}{\l
 Then $$\cdots \overset{}{\longrightarrow}\underbrace{\widetilde{H}_n(\{x_0\})}_{=0} \overset{}{\longrightarrow}\widetilde{H}_n(X) \overset{}{\longrightarrow}\widetilde{H}_n(X,\{x_0\})\overset{}{\longrightarrow}\underbrace{\widetilde{H}_{n-1}(\{x_0\})}_{=0}\overset{}{\longrightarrow}\cdots$$ is exact. $\implies \widetilde{H}_n(X) \cong \widetilde{H}_n(X,\{x_0\}) \cong H_n(X,\{x_0\})$. $\implies H_n(X,\{x_0\})\cong \widetilde{H}_n(X)$.
 
 *Example:* $X = D^n,\: A = \partial D^n \cong S^{n-1}$. Then we need to find $H_n(D^n,\partial D^n)$. Then 
-$$\cdots \overset{}{\longrightarrow}\underbrace{H_m(\partial D^n)}_{\widetilde{H}_m(\partial D^n)} \overset{}{\longrightarrow}\underbrace{H_m(D^n)}_{\widetilde{H}_m(D^n) = 0} \overset{}{\longrightarrow}H_m(D,\partial D^n)\overset{}{\longrightarrow}H_{m-1}(\partial D^n)\overset{}{\longrightarrow}\cdots H_0(D^n,\partial D^n)\overset{}{\longrightarrow}0$$
+$$\cdots \overset{}{\longrightarrow}\underbrace{H_m(\partial D^n)}_{\widetilde{H}_m(\partial D^n)} \overset{}{\longrightarrow}\underbrace{H_m(D^n)}_{\widetilde{H}_m(D^n) = 0} \overset{}{\longrightarrow}H_m(D^n,\partial D^n)\overset{}{\longrightarrow}H_{m-1}(\partial D^n)\overset{}{\longrightarrow}\cdots H_0(D^n,\partial D^n)\overset{}{\longrightarrow}0$$
 is exact.
 So we have that $H_m(D^n,\partial D^n) \cong H_{m-1}(\partial D^n) \cong \widetilde{H}_{m-1}(\partial D^n) \cong \widetilde{H}_{m-1}(S^{n-1})$ for $m > 0$.
 Therefore 
