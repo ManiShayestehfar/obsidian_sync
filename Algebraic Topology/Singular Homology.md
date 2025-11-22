@@ -33,7 +33,7 @@ The boundary maps $\partial_n$ preserve the direct sum as $\partial_nC_n(X_\alph
 >[!Proposition]
 >If $X$ is non-empty and path-connected, then $H_0(X)\cong \mathbb{Z}$. 
 >Hence for any space $X= \sqcup_\alpha X_\alpha$ as above, $H_0(X) \cong \oplus_\alpha \:\mathbb{Z}$ with one copy of $\mathbb{Z}$ for each path component of $X$.
-##### **Proof**
+##### Proof
 $H_0(X) = \ker \partial_0/\text{im }\partial_1 = C_1(X)/\text{im }\partial _1$ where we recall that $\partial_0$ is the zero map.
 
 Define $\varepsilon:C_0(X) \to \mathbb{Z}$ by $\sum_\alpha k_\alpha \sigma_\alpha \mapsto \sum_\alpha k_\alpha$ where $\sigma_\alpha:\Delta^0 \to X$. This is a homomorphism and is surjective as $X$ is non-empty. We need to show $\ker \varepsilon = \text{im }\partial_1$.
