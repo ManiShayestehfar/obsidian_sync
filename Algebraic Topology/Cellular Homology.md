@@ -34,6 +34,17 @@ Hence, $H_k(X^n) \cong H_k(X^0) = 0$ if $k > 0$. $\square$
 Suppose $X$ is finite dimensional, then $X = X^n$ for some $n$. Then we have that $H_k(X^n) = 0$ if $k > n = \dim X$. 
 
 ###### 3)
+Since $X$ is finite dimensional, then let $X = X^d$, and consider $k < n \leq d$ (where equality comes from $X^n =X^d$ for $n>d$). Then consider the long exact sequence
+$$\cdots \overset{}{\longrightarrow}H_{k+1}(X^{i},X^{i-1})\overset{\partial_{k+1}}{\longrightarrow}H_k(X^{i-1}) \overset{}{\longrightarrow}H_k(X^{i})\overset{}{\longrightarrow}H_k(X^{i},X^{i-1})\overset{}{\longrightarrow}\cdots \tag{*}$$
+where we know from part (1) that $H_k(X^{i},X^{i-1}) = 0$ for $k \neq i$ and $k \neq i-1$. 
+So starting from $i=n+1$ we get the isomorphism $H_k(X^i) \cong H_k(X^{i+1})$. 
+For $n \leq i \leq d$,
+$$H_k(X^n) \cong H_k(X^{n+1}) \cong \cdots\cong H_k(X^d)$$
+and clearly $H_k(X^n) \cong H_k(X^d)$ for the first part.
+
+For the second part consider, $k=n$ and $i = n+1$. Then $(*)$ becomes
+$$\cdots \overset{}{\longrightarrow}H_{k+1}(X^{i},X^{i-1})\overset{\partial_{k+1}}{\longrightarrow}H_k(X^{i-1}) \overset{}{\longrightarrow}H_k(X^{i})\overset{}{\longrightarrow}0$$
+which implies that $H_k(X^{i-1})\longrightarrow H_k(X^i)$ is surjective and therefore so is $H_k(X^{n-1})\longrightarrow H_k(X^n)\cong \cdots \cong H_k(X^d)$.   $\square$
 
 
 
