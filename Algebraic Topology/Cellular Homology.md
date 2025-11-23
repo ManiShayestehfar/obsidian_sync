@@ -45,7 +45,7 @@ and clearly $H_k(X^n) \cong H_k(X^d)$ for the first part.
 For the second part consider, $k=n$ and $i = n+1$. Then $(*)$ becomes
 $$\cdots \overset{}{\longrightarrow}H_{k+1}(X^{i},X^{i-1})\overset{\partial_{k+1}}{\longrightarrow}H_k(X^{i-1}) \overset{}{\longrightarrow}H_k(X^{i})\overset{}{\longrightarrow}0$$
 which implies that $H_k(X^{i-1})\longrightarrow H_k(X^i)$ is surjective and therefore so is $H_k(X^{n-1})\longrightarrow H_k(X^n)\cong \cdots \cong H_k(X^d)$.   $\square$
-
+ 
 
 
 # Cellular Chain Complex
