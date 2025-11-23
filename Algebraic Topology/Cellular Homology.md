@@ -54,7 +54,7 @@ TODO
 >$X$ a CW-complex, then $$H_n^{CW}(X) \cong H_n(X)$$
 >for all $n$.
 ##### Proof
-1. $H_n(X) \cong H_n(X^{n+1})\cong H_n^\Delta (X^n) / \ker f \cong H_n(X^n)/\text{im }\partial_{n+1}$  where the last equivalence comes from exactness and the fact that $\ker f = \text{im }\partial_{n+1}$.
+1. $H_n(X) \cong H_n(X^{n+1})\cong H_n (X^n) / \ker f \cong H_n(X^n)/\text{im }\partial_{n+1}$  where the last equivalence comes from exactness and the fact that $\ker f = \text{im }\partial_{n+1}$.
 
 2. Injectiveness of $j_n \implies$ Then $\text{im }\partial_{n+1} \cong \text{im }(j_n \circ \partial_{n+1}) = \text{im }(d_{n+1})$
 3. Injectiveness of $j_n \implies$ $H_n(X^n)/ \ker j_n \cong H_n(X_n) \cong \text{im }(j_n) \cong \ker(\partial_n)$  by exactness in the end.
