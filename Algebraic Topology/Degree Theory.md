@@ -44,7 +44,7 @@ Let $d=f(1)$. Then, $f(n) = nf(1) = dn$ for $n >0$, and $f(-n)=nf(-1)=(-d)n$.  $
 >[!proposition]
 >The antipodal map on $S^n$ has $\deg f = (-1)^{n+1}$
 ##### Proof
-**Claim 1:** The antipodal map is $(n+1)$ reflections
+**Claim 1:** The antipodal map is $(n+1)$-reflections
 **Claim 2:** Every reflection has degree $-1$
 
 Make a $\Delta$-complex structure on $S^n$ with $U, L$, gluing to body by identifying the boundary.
