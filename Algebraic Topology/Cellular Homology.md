@@ -34,7 +34,7 @@ Hence, $H_k(X^n) \cong H_k(X^0) = 0$ if $k > 0$. $\square$
 Suppose $X$ is finite dimensional, then $X = X^n$ for some $n$. Then we have that $H_k(X^n) = 0$ if $k > n = \dim X$. 
 
 ###### 3)
-TODO
+
 
 
 # Cellular Chain Complex
