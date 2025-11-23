@@ -141,9 +141,9 @@ TODO
 ##### Proof
 Consider $0 \overset{}{\longrightarrow}A \overset{i}{\longrightarrow}X \overset{r}{\longrightarrow}A \overset{}{\longrightarrow}  0$. For $r \circ i = \text{id}$. This induces $r_* \circ i_* = \text{id}_*$
 
-$$\cdots \overset{}{\longrightarrow}H_{n+1}(X,A) \overset{\partial = 0}{\longrightarrow} H_n(A) \overset{i_*}{\longrightarrow}H_n(X) \overset{}{\longrightarrow}H_n(X,A)\overset{\partial }{\longrightarrow} H_{n-1}(A)\overset{}{\longrightarrow} \cdots$$
-Since the first $\partial = 0$, then
-$$\cdots \overset{}{\longrightarrow}H_{n}(A) \overset{i_*}{\longrightarrow}H_n(X)\overset{}{\longrightarrow}H_n(X,A)\overset{}{\longrightarrow}0$$
-is exact. $r_* \circ i_* = \text{id}_*= \text{id}$ and so by splitting lemma part (c), $H_n(X) \cong H_n(X,A) \oplus H_n(A)$
+$$\cdots \overset{}{\longrightarrow}H_{n+1}(X,A) \overset{\partial = 0}{\longrightarrow} H_n(A) \overset{i_*}{\longrightarrow}H_n(X) \overset{}{\longrightarrow}H_n(X,A)\overset{\partial=0}{\longrightarrow} H_{n-1}(A)\overset{}{\longrightarrow} \cdots$$
+Since $\partial = 0$, then
+$$0 \overset{}{\longrightarrow}H_{n}(A) \overset{i_*}{\longrightarrow}H_n(X)\overset{}{\longrightarrow}H_n(X,A)\overset{}{\longrightarrow}0$$
+is short exact. $r_* \circ i_* = \text{id}_*= \text{id}$ and so by splitting lemma part (c), $H_n(X) \cong H_n(X,A) \oplus H_n(A)$
 $\square$
 
