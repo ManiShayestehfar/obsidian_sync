@@ -194,14 +194,13 @@ Hawaiian earring embedded in $\mathbb{R}^2$
 Let $X = X^k$.
 Consider the sequence
 $$0 \overset{d_{k+1}}{\longrightarrow}\overbrace{H_k(X^k,X^{k-1})}^{C_k}\overset{d_k}{\longrightarrow}H_{k-1}(X^{k-1},X^{k-2})\overset{d_{k-1}}{\longrightarrow}\cdots \overset{d_1}{\longrightarrow}H_1(X^1,X^0)\overset{d_0}{\longrightarrow}H_0(X^0)\overset{}{\longrightarrow} 0 $$
-We have the short exact sequence  $$0 \overset{}{\longrightarrow}\ker d_n \overset{}{\longrightarrow}C_n \overset{d_n}{\longrightarrow}\text{im }d_n \overset{}{\longrightarrow}0$$ and $$0 \overset{}{\longrightarrow}\text{im }d_{n+1}\overset{}{\longrightarrow}\ker d_n \overset{}{\longrightarrow} \underbrace{\ker d_n/\text{im }d_{n+1}}_{H_n(X)} \overset{}{\longrightarrow}0$$
+We have the short exact sequences  $$0 \overset{}{\longrightarrow}\ker d_n \overset{}{\longrightarrow}C_n \overset{d_n}{\longrightarrow}\text{im }d_n \overset{}{\longrightarrow}0$$ and $$0 \overset{}{\longrightarrow}\text{im }d_{n+1}\overset{}{\longrightarrow}\ker d_n \overset{}{\longrightarrow} \underbrace{\ker d_n/\text{im }d_{n+1}}_{H_n(X)} \overset{}{\longrightarrow}0$$
 By lemma above, $\text{rank }C_n = \text{rank }{(\text{im }d_n )} + \text{rank }(\ker d_n)$. But $\text{rank }(\ker d_n) = \text{rank }(H_n(x)) + \text{rank }(\text{im }d_{n+1})$. So 
 $$\begin{align*}
 \sum_{n=0}^k(-1)^n \text{rank }(C_n) &= \text{rank }(\text{im }d_0) + (-1)^k\text{rank }(\text{im }d_{k+1}) + \sum_{n=0}^k(-1)^k \text{rank }(H_n(X))\\[1pt]
 &= \sum_{n=0}^k(-1)^k \text{rank }(H_n(X))
 \end{align*}$$
-By lemma 2.34 (a), $\text{rank }C_n = c_n = \#$ of n-cells of $X$. So
-$$\sum_{n=0}^k(-1)^n \text{rank }(C_n) = \sum_{n=0}^k(-1)^n c_n = \chi (X)$$ $\square$ 
+By lemma 2.34 (a), $\text{rank }C_n = c_n = \#$ of n-cells of $X$. So $$\sum_{n=0}^k(-1)^n \text{rank }(C_n) = \sum_{n=0}^k(-1)^n c_n = \chi (X)$$ $\square$ 
 
 ### Example (Torus)
 

@@ -217,13 +217,13 @@ $X^0$ is a vertex $v$, $X^1 = S_a^1 \vee S_b^1$, and
 - For $d_2$, consider the diagram
   ![[Cellular Homology-1761450160626.png|200]]
   
-  $\partial D_T^2= S_T^1 \to X^1$ is represented by $b+a+b+(-a)$. Also $X^1 \to S^1_a$ restricts action only to the $a$-part = $a + (-a)$. 
+  $\partial D_T^2 \simeq S_T^1 \to X^1$ is represented by $b+a+b+(-a)$. Also $X^1 \to S^1_a$ restricts action only to the $a$-part = $a + (-a)$. 
   
- $S^1_T \to S^1_a$ is the 0-map hence $H_1(S^1_T) \to H_1(S_a^1)$ has degree $0$ and so $d_{T_a} = 0$. 
- $S_T^1 \to S_b^1$ is $b+b=2b$ hence $H_1(S_T^1) \to H_1(S_b^1)$ is multiplication by 2 so $d_{T_b} = 2$. $d_2([T]) = 0[a] + 2[b] = (0,2)$.  
+ $S^1_T \to S^1_a$ is the 0-map hence $H_1(S^1_T) \to H_1(S_a^1)$ has degree $0$ and so $d_{Ta} = 0$. 
+ $S_T^1 \to S_b^1$ is $b+b=2b$ hence $H_1(S_T^1) \to H_1(S_b^1)$ is multiplication by 2 so $d_{Tb} = 2$. $d_2([T]) = 0[a] + 2[b] = (0,2)$.  
 
 Now $H_0(X) = \ker d_0 / \text{im }d_1 = \mathbb{Z}/0 \cong \mathbb{Z}$.
-Now $H_1(X) = \ker d_1 / \text{im }d_2 = \mathbb{Z^2}/\langle(0,2)\rangle \cong \mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ 
+Now $H_1(X) = \ker d_1 / \text{im }d_2 = \mathbb{Z}^2/\langle(0,2)\rangle \cong \mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$ 
 Now $H_2(X) = \ker d_2/\text{im }d_3 = 0 / \text{im }d_3 \cong 0$ 
 
 
