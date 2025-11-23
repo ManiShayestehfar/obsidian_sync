@@ -115,7 +115,7 @@ Then $d_n(e^{n}_\alpha)= \sum_\beta d_{\alpha\beta}e^{n-1}_\beta$, where $d_{\al
 ##### Proof
 **Recap:** Construct the n-skeleton $X^n$ from $X^{n-1}$ inductively via
 $$X^n = (X^{n-1}\sqcup D_\alpha^n)/\sim \:\:\:\cong\:\:\: X^{n-1}\bigsqcup_\alpha e_\alpha^n$$
-where the equivalence relation comes from the attaching map of $e_\alpha^n$ $Q_\alpha:S^{n-1}\to X^{n-1}$ used where $x \sim Q_\alpha(x)$ for all $x \in \partial D^n_\alpha \cong S^{n-1}$.
+where the equivalence relation comes from the attaching map of $e_\alpha^n,$ $\varphi_\alpha:S^{n-1}\to X^{n-1}$ used where $x \sim \varphi_\alpha(x)$ for all $x \in \partial D^n_\alpha \cong S^{n-1}$.
 
 ###### 1.
 Recall that $d_1: H_1(X^1,X^0) \overset{}{\longrightarrow}H_0(X^0) \cong \mathbb{Z}$.
