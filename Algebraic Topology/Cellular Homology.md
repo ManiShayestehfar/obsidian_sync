@@ -167,7 +167,7 @@ d_1(n_a[a] + n_b[b]) &= n_ad_1([a]) + n_bd_1([b])
 a(t) & t \in [0,1/2]  \\
 b(t) & t \in [1/2,1]
 \end{cases}$$
-This map $X^1 \overset{}{\longrightarrow}S^1$ acts by $a \longmapsto a$ and $b \longmapsto 0$. Then $d_{U_a}: H_1(S_U^1)\to H_1(S_a^1)$ and $d_{U_a}$ is identity map $\implies \deg d_{U_a}= 1$. So $d_2([U]) = [a] + [b]$ and $d_2([L]) = [a]+ [b]$
+This map $X^1 \overset{}{\longrightarrow}S^1_a$ acts by $a \longmapsto a$ and $b \longmapsto 0$. Then $d_{U_a}: H_1(S_U^1)\to H_1(S_a^1)$ and $d_{U_a}$ is identity map $\implies \deg d_{U_a}= 1$. So $d_2([U]) = [a] + [b]$ and $d_2([L]) = [a]+ [b]$
 
 Now $H_0(S^2) = \ker d_0 / \text{im }d_1 = \mathbb{Z}^2/ \text{im }d_1$.
 $d_1((1,0)) = (-1,1)$ and $d_1((0,1)) = (1,-1)$. Hence $\text{im }d_1 = \langle (1,-1)\rangle$. 
@@ -176,10 +176,15 @@ Therefore $H_0(S^2) = \mathbb{Z}^2 / \langle (1,-1)\rangle \cong \mathbb{Z}^2/ \
 Now $H_1(S^2) = \ker d_1 /\text{im }d_2$.
 $\ker d_1 = \{(x,y)\: (y-x,x-y)= 0\} = \{(x,x)\} = \langle(1,1)\rangle \cong \mathbb{Z}$. 
 For $\text{im }d_2:$ $d_2((1,0))=(1,1), d_2((0,1))=(1,1)$ so $\text{im }d_2 = \langle(1,1)\rangle$. 
-Hence $H_1(S^2) \cong 0$.
+Hence $H_1(S^2) \cong \mathbb{Z}/\mathbb{Z}\cong 0$.
 
 Finally $H_2(S^2) = \ker d_2 / \text{im }d_3 \cong \langle(1,-1)\rangle/0 \cong \mathbb{Z}$.  (Check the image and kernel)
 
+$$\therefore \:H_k(S^2) = \begin{cases}
+\mathbb{Z}& k = 0  \\
+0 & k=1  \\
+\mathbb{Z} & k=2
+\end{cases}$$
 
 ## Cellular Homology of the Klein Bottle
 
