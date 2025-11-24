@@ -27,10 +27,6 @@ If $f$ is a loop, $f(0) = f(1)\implies \partial f = f(1)-f(0) = 0\implies f \in 
 
 # Homology and $\pi_1$ Equivalence
 
->[!Theorem] H Theorem 2.A.1
->1. Have a homomorphism $h:\pi_1(X,x_0) \to H_1(X)$
->2. If $X$ is path-connected, then $h$ induces an isomorphism $h':\pi_1^{ab}(X,x_0)\overset{\sim}{\longrightarrow}H_1(X)$
-
 - We denote $f$ being **homologous** to $g$ (belonging to the same class in $H_1(X)$) by $f \sim g$
 
 >[!lemma] 
@@ -38,8 +34,6 @@ If $f$ is a loop, $f(0) = f(1)\implies \partial f = f(1)-f(0) = 0\implies f \in 
 >2. $f$ is the constant map $\implies f \sim 0$
 >3. $f: I \to X$ a path. $f + \bar{f}$ is a boundary map $\implies f + \bar{f} \in \text{im }\partial$ 
 >4. $f \simeq g \implies f \sim g$
-
-
 
 ##### Proof
 ###### 1.
@@ -68,7 +62,12 @@ $\implies [f-g]+\text{const}\in \text{im }\partial$
 $\implies [f-g]= [\text{const}] \overset{Lemma \:2}{=} [0]$
 $\implies [f] = [g]\implies f \sim g$. $\square$
 
-##### Proof (of Theorem 2.A.1)
+
+>[!Theorem] H Theorem 2.A.1
+>1. Have a homomorphism $h:\pi_1(X,x_0) \to H_1(X)$
+>2. If $X$ is path-connected, then $h$ induces an isomorphism $h':\pi_1^{ab}(X,x_0)\overset{\sim}{\longrightarrow}H_1(X)$
+
+##### Proof
 ###### 1. 
 Now define $\phi: \pi_1(X,x_0) \to H_1(X)$ via $[f] \longmapsto [[f]]$ which is well-defined from lemma 4 from above: If $[f]= [g]$ then $f \simeq g$ so $[[f]] =[[g]]$.
 $\phi([f][g])= \phi([f\cdot g]) = [[f\cdot g]] \overset{Lemma\:1}{=} [[f]] + [[g]]$
@@ -87,10 +86,10 @@ Want to prove that $\psi \circ \phi_* = \text{id}$, and $\phi_* \circ \psi = \te
 Take $\sigma : \Delta^2 \to X$ such that $t=\partial\sigma$. Then 
 $$\begin{align*}
 \psi(\partial \sigma) = \psi(a_1 - (a_2)^{-1} + a_0) 
-&= \psi(a_1)\, \psi(a_0)\, \psi(a_2) \\
+&= \psi(a_1)\, \psi(a_0)\, \psi(a_2^{-1})^{-1} \\
 &= [\lambda_{v_1} \cdot a_1 \cdot \lambda_{v_1}^{-1}]
    [\lambda_{v_0} \cdot a_0 \cdot \lambda_{v_1}^{-1}]
-   \psi(a_2) \\
+   \psi(a_2^{-1})^{-1} \\
 &= [\lambda_{v_1} \cdot a_1 \cdot \lambda_{v_2}^{-1} 
    \cdot \lambda_{v_0} \cdot a_0 \cdot \lambda_{v_1}^{-1} 
    \cdot (\lambda_{v_0} \cdot a_2^{-1} \cdot \lambda_{v_2})^{-1}] \\
