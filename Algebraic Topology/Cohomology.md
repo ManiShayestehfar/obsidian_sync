@@ -20,7 +20,7 @@ Given  $\alpha:A \to B$ a group homom. then we can get $\alpha^*: \text{Hom}(B,G
 3. $0^* = 0$
 4. $(\alpha\beta)^* = \beta^*\alpha^*$
 5. $A \overset{}{\longrightarrow}B \overset{}{\longrightarrow} C \overset{}{\longrightarrow}0$ exact implies $A^* \overset{}{\longleftarrow}B^* \overset{}{\longleftarrow} C^* \overset{}{\longleftarrow} 0$ is exact
-	Dual of a short exact sequence is not always exact
+	Dual of a short exact sequence is not always short exact
 
 ## In Chain Complexes
 
