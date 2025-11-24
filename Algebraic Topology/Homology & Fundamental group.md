@@ -46,9 +46,17 @@ $\implies f + g - (f \cdot g) \in \text{im }\partial$
 $\implies [f+g] \sim [f\cdot g]$ where $[f+g] = [f]+[g]$  $\square$
 
 ###### 2. 
-TODO
+Consider the 2-simplex $\sigma: \Delta^2 \to X$ given by $f$ on all edges, and $f(0)$ on one 0-simplex.
+![[Homology & Fundamental group-1763943625402.png]]
+Then, $\partial \sigma = f - f + f = f$. Hence we get that $f \in \text{im }\partial$, implying $f$ is the same as $0$ in $H_1(X)$.
+
 ###### 3. 
-TODO
+Consider the 2-simplex $\sigma:\Delta^2\to X$ with 
+- *vertices:* $v_0=v_2=f(0)$, and $v_1=f(1)$, 
+- *edges:* $[v_0,v_1]=f$, $[v_1,v_2]=f^{-1}$, and $[v_0,v_2] = const$
+![[Homology & Fundamental group-1763943858534.png]]
+Then, $\partial \sigma = f-const+ f^{-1}$. Hence $f + f^{-1}+ const \in \text{im }\partial$, implying that $[f + f^{-1}+const]$ is in the 0-class in $H_1(X)$. We have $[f+f^{-1}+const] = [f+f^{-1}] + [const] = [0]$. By part (2), we have $[const]=[0]$, thus $[f+f^{-1}]=[0]$ and thus $f+f^{-1}$ must be a boundary map.
+
 ###### 4.
 ![[Homology & Fundamental group-1761533188425.png|350]]
 
