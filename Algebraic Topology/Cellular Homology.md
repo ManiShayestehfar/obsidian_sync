@@ -18,8 +18,8 @@
 ##### Proof
 ###### 1)
 Let $(X^n,X^{n-1})$ be a good pair. 
-Then $X^n/X^{n-1} \cong \sqcup_\alpha e_\alpha^n$. Therefore 
-$$H_k(X^{n},X^{n-1}) \overset{\text{prop 2.22}}{\cong} H_k(X^n/X^{n-1}) \cong \oplus_\alpha \:H_k(e_\alpha^n) \cong \oplus_\alpha \: \mathbb{Z} \cong \mathbb{Z}^{\#\text{n-cells}}$$
+Then $X^n/X^{n-1} \cong \vee_\alpha S_\alpha^n$. Therefore 
+$$H_k(X^{n},X^{n-1}) \overset{\text{prop 2.22}}{\cong} H_k(X^n/X^{n-1}) \cong \oplus_\alpha \:H_k(S_\alpha^n) \cong \oplus_\alpha \: \mathbb{Z} \cong \mathbb{Z}^{\#\text{n-cells}}$$
 for $k=n$, and $0$ otherwise. $\square$ 
 
 ###### 2) 
