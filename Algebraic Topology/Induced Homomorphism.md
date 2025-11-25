@@ -74,4 +74,4 @@ Let $[g] \in \pi_1(X,x_0)$ so $g$ is a loop based at $x_0$. Then $f_t \circ g$ i
 ##### Proof
 Assingment 1, Q1.
 
-
+ 
