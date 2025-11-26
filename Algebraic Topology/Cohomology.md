@@ -50,6 +50,8 @@ $C^n(X;G)=$ Singular n-cochain with coefficients in $G$ = $\text{Hom}(C_n(X), G)
 
 - $\delta^2 = 0$
 
+# Singular Cohomology
+
 >[!def] Singular Cohomology groups with coefficients in $G$
 >$$H^n(X;G):=\ker\delta_{n+1}/\text{im }\delta_{n}$$ at $C^n(X;G)$, in the cochain complex
 >$$\cdots \overset{}{\longleftarrow}C^1(X;G)\overset{\delta}{\longleftarrow}C^0(X;G)\overset{\delta}{\longleftarrow}0$$
@@ -101,12 +103,9 @@ $i^*: H^n(X,A;G)\overset{\cong}{\longrightarrow} H^n(X-Z,A-Z;G)$  $\forall n$
 # Axioms 
 Let $(X,A)$ be a CW-pair
 
-1. Have a long exact sequence:
-   $$\cdots \overset{}{\longrightarrow}\widetilde{H}^n(X/A)\overset{}{\longrightarrow}\widetilde{H}^n(X)\overset{}{\longrightarrow}\widetilde{H}^n(A)\overset{}{\longrightarrow}\widetilde{H}^{n+1}(X/A)\overset{}{\longrightarrow}\cdots$$
+1. Have a long exact sequence: $$\cdots \overset{}{\longrightarrow}\widetilde{H}^n(X/A)\overset{}{\longrightarrow}\widetilde{H}^n(X)\overset{}{\longrightarrow}\widetilde{H}^n(A)\overset{}{\longrightarrow}\widetilde{H}^{n+1}(X/A)\overset{}{\longrightarrow}\cdots$$
 2. If $X = \bigvee_\alpha X_\alpha$, then
    $\pi_\alpha i_\alpha^*: \widetilde{H}^n(x)\overset{\cong}{\longrightarrow} \prod_\alpha \widetilde{H}^n(X_\alpha)$  $\forall n$
-
-
 
 
 # Simplicial Cohomology Groups
@@ -120,3 +119,38 @@ Then by Corollary 3.4
 $$H^n(X,A;G)\cong H_\Delta^n(X,A;G)\quad \forall n$$
 
 
+# Reduced Cohomology Groups
+
+Look at the augmented chain complex 
+$$\cdots \overset{}{\longrightarrow}C_1(X) \overset{}{\longrightarrow}C_0(X) \overset{\varepsilon}{\longrightarrow} \mathbb{Z}\overset{}{\longrightarrow}0$$
+induces a cochain complex from which we can get $\widetilde{H}^n(X;G)$, giving
+$$\widetilde{H}^n(X;G) \cong H^n(X;G) \quad \forall n >0$$
+and $\widetilde{H}^0(X;G) \cong \text{Hom}(\widetilde{H}_0(X),G)$ = "functions that are constant on path-connected components of $X$ to $G$".
+We have the familiar result
+$$H^0(X;G) \cong \widetilde{H}^0(X;G) \oplus \underbrace{\text{im }\varepsilon^*}_{\cong G}$$
+
+# Relative Cohomology Groups
+
+Recall that for $A \subseteq X$,
+$$0 \overset{}{\longrightarrow}C_n(A) \overset{i}{\longrightarrow}C_n(X) \overset{j}{\longrightarrow} \underbrace{C_n(X,A)}_{\cong C_n(X)/C_n(A)}$$
+For the Cohomology equivalent define
+$$C^n(X,A;G) := \text{Hom}(C_n(X,A), G)$$
+as "functions from singular n-cells in $X$ to $G$ that vanish on simplices in $A$"
+
+Hence we get the chain complex
+$$0 \overset{}{\longleftarrow}C^n(A) \overset{i^*}{\longleftarrow}C^n(X)\overset{j^*}{\longleftarrow}C^n(X,A)\overset{}{\longleftarrow}0$$
+which implies $C^n(X,A;G)$ is a subgroup of $C^n(X;G)$.
+$\delta_n:C^n(X,A;G) \to C^{n+1}(X,A;G)$ which induces $H^n(X,A;G)$ and the long exact sequence
+$$\cdots \overset{}{\longleftarrow}H^{n+1}(X,A;G)\overset{}{\longleftarrow}H^n(A;G)\overset{}{\longleftarrow}H^n(X;G)\overset{}{\longleftarrow}H^n(X,A;G)\overset{}{\longleftarrow}\cdots$$
+and similarly for the reduced versions.
+
+From the Universal Coefficient Theorem we get the following commutative diagram:
+![[Cohomology-1764156596170.png|450]]
+
+
+# Cellular Cohomology
+
+![[Cohomology-1764156772653.png]]
+where $d_n:=\delta_nj_n$ (different from cellular homology)
+
+so $H^n_{CW}:= \ker d_n/\text{im }d_{n-1}$.
