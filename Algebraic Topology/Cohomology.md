@@ -154,3 +154,56 @@ From the Universal Coefficient Theorem we get the following commutative diagram:
 where $d_n:=\delta_nj_n$ (different from cellular homology)
 
 so $H^n_{CW}:= \ker d_n/\text{im }d_{n-1}$.
+
+>[!Theorem] H Theorem 3.5
+>1. $H^n(X;G) \cong H^n_{CW}(X,;G)$   $\forall n$
+>2. Cellular cochain complex $\{H^n(X^n,X^{n-1}),d_n\}$ is isomorphic to the chain complex $\{\text{Hom}(H_n(X^n,X^{n-1}); G), d_n\}$ 
+>3. $H^k(X^k,X^{k-1};G) \cong \text{Hom}(H_k(X^k,X^{k-1});G)$  $\forall k$
+
+
+# Mayer-Vietoris Sequence
+## Absolute Case
+
+$X = \text{int} A \cup \text{int} B$. 
+$$0 \overset{}{\longrightarrow}C^n(A+B;G)\overset{\Psi}{\longrightarrow} C^n(A;G)\oplus C^n(B;G)\overset{\Phi}{\longrightarrow}C^n(A\cap B;G)\overset{}{\longrightarrow}0$$
+is an exact sequence which gives 
+$$\cdots \overset{}{\longrightarrow}H^n(X;G) \overset{\Psi}{\longrightarrow}H^n(A;G)\oplus H^n(B;G)\overset{\Phi}{\longrightarrow}H^n(A\cap B;G)\overset{}{\longrightarrow}H^{n+1}(X;G)\overset{}{\longrightarrow}\cdots$$
+
+## Relative Case
+
+Let $X = \text{int } A \cup \text{int }B$  and $Y = \text{int }C \cup \text{int }D$. 
+Then we have the exact sequence
+$$0 \overset{}{\longrightarrow}C^n(A+B,C+D;G)\overset{\Psi}{\longrightarrow} C^n(A,C;G)\oplus C^n(B,D;G)\overset{\Phi}{\longrightarrow}C^n(A\cap B,C \cap D;G)\overset{}{\longrightarrow}0$$
+which gives 
+$$\cdots \overset{}{\longrightarrow}H^n(X,Y;G) \overset{\Psi}{\longrightarrow}H^n(A,C;G)\oplus H^n(B,D;G)\overset{\Phi}{\longrightarrow}H^n(A\cap B, C \cap D;G)\overset{}{\longrightarrow}\cdots$$
+
+
+# Cohomology Ring
+
+>[!Definition] Cohomology Ring
+>The **cohomology ring** is $H^*(X;R) = \bigoplus_{n \geq 0} H^n(X;R)$.
+>The elements are $\sum_{i\geq 0}^n\alpha_i$ for $\alpha_i \in H^i(X;R)$.
+
+- $\sum_i \alpha_i + \sum_j \beta_j = \sum_k(\alpha_k + \beta_k)$
+- $\sum_i\alpha_i \times \sum_j \beta_j = \sum_k(\sum_{i+j=k} \alpha_i\smile \beta_j)$
+
+>[!Proposition] 
+>$H^*(X;R)$ is a graded ring
+
+
+# Cross Product
+
+>[!Definition] Cross Product
+>The **cross product** or **external cup product** is 
+>$$H^*(X;R)\times H^*(Y;R)\overset{}{\longrightarrow}H^*(X\times Y;R)\quad (a,b)\longmapsto p_1^*(a)\smile p_2^*(b)$$
+>where $p_1^*:H^*(X)\to H^*(X\times Y)$ and $p_2^*$ similarly but for $Y$. 
+>Each $p_i$ are projections coming from $X \times Y$
+>
+
+- This map is generally NOT an isomorphism, but replacing it with a tensor product does work.
+
+>[!Theorem] H Theorem 3.14 Kunneth Formula
+>Let $X,Y$ be CW-complexes. Assume $H^k(Y;R)$ is a finitely generated free $R$-module for all $k$. 
+>Then the (cross) tensor product map $$ H^*(X;R)\otimes H^*(Y;R)\overset{\psi}{\longrightarrow}H^*(X\times Y;R)$$
+>is an isomorphism.
+
