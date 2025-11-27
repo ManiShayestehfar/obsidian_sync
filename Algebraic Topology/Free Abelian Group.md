@@ -29,7 +29,7 @@ In particular, for the finite $S$ with $|S|=n$, the free abelian group on $S$ is
 >i.e. $\exists S,F,\psi,\varphi$ as in the definition of a free abelian group such that $A = f(F)$.
 ##### Proof
 $S \subseteq A$ is a set of generators for $A$. e.g. $S = A$ with inclusion $\psi:S \to A$. Let $F$ be the free abelian group on $S$, say w.r.t. $\varphi:S \to F$. 
-Then by the universal property, there exists a unique homomorphism $f:F \to A$ with $\psi= f \circ \varphi$ so $S = \psi(S) = (f\circ \psi)(S) \subseteq f(F)$.
+Then by the universal property, there exists a unique homomorphism $f:F \to A$ with $\psi= f \circ \varphi$ so $S = \psi(S) = (f\circ \varphi)(S) \subseteq f(F)$.
 Since $f$ is a homomorphism, and $S$ generates $A$, then $S \subseteq f(F) \implies$ $A \subseteq f(F) \implies A = f(F)$. 
 
 
