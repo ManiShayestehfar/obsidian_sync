@@ -91,7 +91,7 @@ $\implies$ induces some homomorphism $f_*,g_*$ such that $f_*=g_*$.  $\square$
 Let $V$ be a neighbourhood of $A$ in $X$, such that it DRs onto $A$. We get the commutative diagram:
 ![[Relative Homology-1760270851216.png]]
 $f_1$ is an isomorphism since in the long exact sequence of the triple $(X,V,A)$, the groups $H_n(V,A)$ are zero for all $n$, because a DR of $V$ onto $A$ gives a homotopy equivalence of pairs $(V,A) \simeq (A,A)$, and $H_n(A,A)=0$. The DR of $V$ onto $A$ induces a DR of $V/A$ onto $A/A$, so the same argument shows that $g_1$ is an isomorphism. 
-$f_1,g_1$ being isomorphisms follow directly from the Excision theorem. $\square$
+$f_2,g_2$ being isomorphisms follow directly from the Excision theorem. $\square$
 
 
 
