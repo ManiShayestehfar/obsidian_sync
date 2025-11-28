@@ -158,7 +158,7 @@ so $H^n_{CW}:= \ker d_n/\text{im }d_{n-1}$.
 >[!Theorem] H Theorem 3.5
 >1. $H^n(X;G) \cong H^n_{CW}(X,;G)$   $\forall n$
 >2. Cellular cochain complex $\{H^n(X^n,X^{n-1}),d_n\}$ is isomorphic to the chain complex $\{\text{Hom}(H_n(X^n,X^{n-1}); G), d_n\}$ 
->3. $H^k(X^k,X^{k-1};G) \cong \text{Hom}(H_k(X^k,X^{k-1});G)$  $\forall k$
+>3. $H^k(X^k,X^{k-1};G) \cong \text{Hom}(H_k(X^k,X^{k-1}),G)$  $\forall k$
 
 
 # Mayer-Vietoris Sequence
