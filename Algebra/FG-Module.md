@@ -30,6 +30,7 @@ $V = \mathbb{F}^n$ with $S_n$-action
 $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatrix}\lambda_{a(1)} \\ \vdots \\ \lambda_{a(n)}\end{pmatrix}$$
 
 ## $G-$Module Homo/Isomorphisms
+
 - Let $V,W$ be $G-$modules.
 
 > [!info] G-Module Homomorphism
@@ -40,6 +41,7 @@ $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatri
 
 
 # Submodules
+
 - Let $V,W$ be $G-$modules, and let
 $$\begin{align*}
 \text{Hom}_G(V,W)&=\{\phi:V\to W\:|\:\phi\:\text{a G-module homomorphism}\} \\[6pt]
