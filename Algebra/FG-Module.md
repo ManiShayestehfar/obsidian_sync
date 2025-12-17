@@ -13,8 +13,8 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 - A matrix **representation** of $G$ is a group homomorphism $\rho: G \to GL_n(\mathbb{F})$, the group of invertible  $n\times n$ matrices with entries in $\mathbb{F}$.
 
 >[!proposition]
->Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{f})$ 
-
+>Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$ 
+ 
 ![[Screenshot 2025-03-06 at 12.50.18 pm.png]]
 
 ## FG-Module Examples
