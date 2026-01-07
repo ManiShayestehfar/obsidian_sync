@@ -26,7 +26,7 @@ Write $x = (x-\varphi^n(y))+\varphi^n(y)$. Then
 Since we showed that $\ker\varphi^n \cap \text{im }\varphi^n= 0$, then $V = \ker\varphi^n \oplus \text{im }\varphi^n$.   $\square$
 
 
-# Lemma
+## Lemma
 
 >[!lemma]
 >Suppose $P$ is an indecomposable $A$-module. Then $\text{End}_A(P)$ is a local ring with a maximal proper ideal
@@ -48,3 +48,50 @@ To show the reverse inclusion, it is enough to show that if $\psi \not\in \mathf
 From before if $\psi \not\in \mathfrak{m}$, then $\psi$ is invertible $\implies$ $\psi$ is not nilpotent. So $\mathfrak{m} = \{\varphi\in \text{End}_A(P)\:|\: \varphi^n=0\quad \exists n>0\} \subseteq \mathfrak{m}$. 
 $\square$
 
+
+# Krull-Schmidt
+
+>[!theorem] Krull-Schmidt Theorem
+>Let $V$ be an $A$-module such that $V \cong M_1 \oplus \cdots \oplus M_r$ and $V \cong N_1 \oplus \cdots \oplus N_s$ where each $M_i,N_j$ are indecomposable. 
+>Then $r=s$, and after relabelling, $M_i \cong N_i$.
+
+##### Proof
+![[Indecomposable Modules-1767786640178.png]]
+$\color{red} \text{REDO THIS PROOF}$
+
+
+# Principal Indecomposable A-modules (PIM)
+
+>[!definition] 
+>The **principal indecomposable** $A$-modules are the indecomposable direct summands $P_1,...,P_t$ of $A$.
+
+
+
+# Idempotents
+
+- An **idempotent** is a nonzero element $e \in A$ such that $e^2=e$
+- Two idempotents $f,g$ are **orthogonal** if $fg=gf=0$
+- An idempotent $e$ is **primitive** if it cannot be written as sum of two orthogonal idempotents
+
+## Example
+
+$A = \text{Mat}_2(\mathbb{F})$. Set $$e = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\quad f=\begin{pmatrix}0 & 0 \\ 0 & 1\end{pmatrix}$$
+Then $e,f$ are orthogonal and $1_A= e+f$. Also $e,f$ are both primitive. 
+
+## Lemma
+
+>[!lemma] Lemma 8C
+>1. Suppose $e$ is an idempotent in $A$. Then $Ae$ is indecomposable $\iff$ $e$ is primitive
+>2. Suppose $P$ is a principal indecomposable $A$-module. Then $P=Ae$ for some primitive idempotent $e$.
+>3. Suppose $e,f$ are orthogonal idempotents. Then $A(e+f)=Ae\oplus Af$
+
+##### Proof
+###### 1. $(\Rightarrow)$
+Assume $e$ is not primitive, then $e = e_1 + e_2$ such that $e_1e_2=e_2e_1=0$. Then for $a \in A$
+1. $ae = a(e_1+e_2)=ae_1+ae_2 \in Ae_1 + Ae_2$.
+   So $A_e \subseteq Ae_1 + Ae_2$. The reverse is clear as $e_1,e_2 \in Ae$. Hence $Ae=Ae_1+Ae_2$.
+2. If $x \in Ae_1\cap Ae_2$, write $x = ae_1=be_2$. But $x = xe_1 = (be_2)e_1=b(e_2e_1)=0$ so $x=0$ and so $Ae_1 \cap Ae_2 = 0$. 
+Thus $Ae = Ae_1 \oplus Ae_2$.  $\square$
+
+$(\Leftarrow)$
+TBD
