@@ -33,3 +33,18 @@ Since we showed that $\ker\varphi^n \cap \text{im }\varphi^n= 0$, then $V = \ker
 >$$\mathfrak{m} = \{\varphi\in \text{End}_A(P)\:|\: \varphi^n=0\quad \exists n>0\}$$
 
 ##### Proof
+Let $\mathfrak{m}$ be a maximal ideal of $\text{End}_A(P)$.
+Let $\psi\not\in \mathfrak{m}$.
+Since $\mathfrak{m}$ is proper, then $1_P=a\psi + \varphi$ for $a \in \text{End}_A(P)$ and $\varphi \in \mathfrak{m}$.
+By Fitting's lemma $\text{End}_A(P) = \text{im }\varphi^n \oplus \ker\varphi^n$ for some $n>0$. Since $P$ is indecomposable by assumption, then $\text{im }\varphi^n=0$ or $\ker \varphi^n=0$. 
+Since $\mathfrak{m}$ is a proper ideal and $\varphi \in \mathfrak{m}$, then $\varphi^n$ cannot be an isomorphism, hence non-injective (it is surjective since $\varphi^n \in \text{End}_A(P)$) so $\ker \varphi^n \neq 0$. Thus $\text{im }\varphi^n=0$. i.e. $\varphi^n = 0$.
+$$(1+\varphi + \cdots +\varphi^{n-1})a\psi = (1+\varphi + \cdots +\varphi^{n-1})(1-\varphi)= 1 - \varphi^n = 1$$
+Thus $\psi$ is invertible and so we have shown that any $\psi \in \text{End}_A(P)\setminus \mathfrak{m}$ is invertible, thus it must generate $\text{End}_A(P)$. 
+This implies that $\mathfrak{m}$ is unique because if $\mathfrak{m}'\neq \mathfrak{m}$ was another maximal ideal, then $\psi \in \mathfrak{m}' \setminus \mathfrak{m}$ would be an element of $\text{End}_A(P) \setminus \mathfrak{m}'$ that was not invertible. A contradiction.
+
+We need to show that $\mathfrak{m} = \{\varphi\in \text{End}_A(P)\:|\: \varphi^n=0\quad \exists n>0\}$.
+By the argument above it is clear that $\mathfrak{m}\subseteq \{\varphi\in \text{End}_A(P)\:|\: \varphi^n=0\quad \exists n>0\}$.
+To show the reverse inclusion, it is enough to show that if $\psi \not\in \mathfrak{m}$, then $\psi^n \neq 0$. 
+From before if $\psi \not\in \mathfrak{m}$, then $\psi$ is invertible $\implies$ $\psi$ is not nilpotent. So $\mathfrak{m} = \{\varphi\in \text{End}_A(P)\:|\: \varphi^n=0\quad \exists n>0\} \subseteq \mathfrak{m}$. 
+$\square$
+
