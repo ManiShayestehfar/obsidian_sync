@@ -86,6 +86,15 @@ Then $e,f$ are orthogonal and $1_A= e+f$. Also $e,f$ are both primitive.
 >3. Suppose $e,f$ are orthogonal idempotents. Then $A(e+f)=Ae\oplus Af$
 
 ##### Proof
+
+###### 3. $(\Rightarrow)$
+$(\subseteq)$
+$a(e+f) = ae+af \in Ae \oplus Af$ where $Ae \cap Af= 0$ since $ef=fe=0$.
+
+$(\supseteq)$
+Take $x \in Ae$ and $y \in Af$. Then $x=ae$ and $y=bf$ for some $a,b \in A$. 
+Then $$x+y = ae+bf =a(e+f) + (b-a)f \in A(e+f)$$
+$\square$
 ###### 1. $(\Rightarrow)$
 Assume $e$ is not primitive, then $e = e_1 + e_2$ such that $e_1e_2=e_2e_1=0$. Then for $a \in A$
 1. $ae = a(e_1+e_2)=ae_1+ae_2 \in Ae_1 + Ae_2$.
@@ -94,4 +103,6 @@ Assume $e$ is not primitive, then $e = e_1 + e_2$ such that $e_1e_2=e_2e_1=0$. T
 Thus $Ae = Ae_1 \oplus Ae_2$.  $\square$
 
 $(\Leftarrow)$
-TBD
+TBD (probably possible to use part 3)
+
+###### 2.
