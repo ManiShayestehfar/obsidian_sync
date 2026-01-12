@@ -29,9 +29,9 @@ Now we are done because $e_i\neq0$ for i since $x=e_ix$. On the other hand, $N$ 
 
 
 
-# Radical Ideal
+# Radical
 
-The **radical ideal** $\text{Rad } A$ of $A$ is its unique maximal nilpotent submodule.
+The **radical** $\text{Rad } A$ of $A$ is its unique maximal nilpotent submodule.
 If $V$ is an $A$-module then the **radical** of $V$ is $\text{Rad }V = (\text{Rad }A)V$.
 
 - Let $V$ be an $A$-module and define $\text{Rad }^kV:= (\text{Rad }A)^k V$. Then $$V = \text{Rad }^0V\supseteq \text{Rad}^1V\subseteq \text{Rad }^2V \cdots \supseteq \text{Rad }^n V \supseteq 0.$$
@@ -58,4 +58,6 @@ Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 >2. Suppose that $P$ and $Q$ are principal indecomposable $A$-modules. Then $P \cong Q \iff P/\text{Rad }P \cong Q/\text{Rad }Q$.
 >3. Suppose $D$ is an irreducible $A$-module. Then $D \cong P/\text{Rad }P$ for some principal indecomposable $A$-module $P$.
 
+##### Proof
 
+1. Recall that if $P$ were a principal indecomposable $A$-module, then $P = Ae$ for some primitive element $e$. 
