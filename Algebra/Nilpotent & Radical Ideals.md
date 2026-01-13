@@ -49,15 +49,23 @@ If $V$ is an $A$-module then the **radical** of $V$ is $\text{Rad }V = (\text{Ra
    For the other direction, $P \cap \text{Rad }P$ is a nilpotent submodule of $P$, and therefore it is contained in $N$. Thus the result.
 
 
-## Theorem
+## Theorems
 
 Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 
->[!theorem] 
+>[!theorem] Theorem 8J
 >1. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad }P$ is the unique maximal proper submodule of $P$. Consequently, $P/\text{Rad }P$ is an irreducible $A$-module.
 >2. Suppose that $P$ and $Q$ are principal indecomposable $A$-modules. Then $P \cong Q \iff P/\text{Rad }P \cong Q/\text{Rad }Q$.
 >3. Suppose $D$ is an irreducible $A$-module. Then $D \cong P/\text{Rad }P$ for some principal indecomposable $A$-module $P$.
 
 ##### Proof
+![[Screenshot 2026-01-13 at 12.01.59 pm.png]]
 
-1. Recall that if $P$ were a principal indecomposable $A$-module, then $P = Ae$ for some primitive element $e$. 
+
+>[!Theorem] Theorem 8K
+>Suppose $A$ is a finite dimensional $\mathbb{F}$-algebra. Then TFAE:
+>1. The algebra $A$ is semisimple
+>2. Every $A$-module is semisimple
+>3. Every (principle) indecomposable $A$-module is irreducible
+>4. $\text{Rad }A=0$
+

@@ -75,8 +75,6 @@ Suppose we have an equivalence relation $\sim$ on $X$ with equivalence class $[x
 
 >[!def] 
 >The **cone** of $X$ is $CX= (X \times [0,1]) / (X \times \{1\})$
-
-
 # Suspension
 
 >[!def] 
