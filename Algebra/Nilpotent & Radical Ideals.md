@@ -69,3 +69,11 @@ Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 >3. Every (principle) indecomposable $A$-module is irreducible
 >4. $\text{Rad }A=0$
 
+##### Proof
+###### 1 -> 2
+Recall that $A$ is semisimple if every $A$-module is semisimple. 
+
+###### 2 -> 3
+An $A$-module that is semisimple and indecomposable is simple e.g. irreducible
+
+
