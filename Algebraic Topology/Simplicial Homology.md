@@ -77,5 +77,3 @@ Let $\partial_0:\Delta_0(X) \to 0$ be the zero map. We have a sequence of $\math
 ![[Simplicial Homology-1760085721844.png]]
 ![[Simplicial Homology-1760085739497.png]]
 
-
-
