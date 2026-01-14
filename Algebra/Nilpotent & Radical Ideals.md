@@ -72,8 +72,34 @@ Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 ##### Proof
 ###### 1 -> 2
 Recall that $A$ is semisimple if every $A$-module is semisimple. 
-
 ###### 2 -> 3
 An $A$-module that is semisimple and indecomposable is simple e.g. irreducible
+###### 3 -> 4
+Let $P$ be some principle indecomposable $A$-module. If $P$ is principle, then by part (1) of the previous theorem, $P/\text{Rad }P$ is irreducible. But since $P$ itself is irreducible then $\text{Rad }P$ must be $0$. Consequently write $A = P_1 \oplus P_2 \oplus ... \oplus P_t$ for indecomposable modules $P_i$. Then $\text{Rad }A = \bigoplus \text{Rad }P_i = 0$. 
+###### 4 -> 1
+Suppose $\text{Rad }A = 0$. Then let $A$ be decomposed into a direct sum of principal indecomposable $A$-modules. i.e. $A = P_1 \oplus P_2 \oplus ... \oplus P_t$. Then $\text{Rad }P_i = (\text{Rad }A)P_i = 0$ for all $i$. Since $\text{Rad }P_i =0$, then $P_i$ must be irreducible by part (1) of previous theorem.  Hence the $A$-modules $P$ are semisimple. Therefore $A$ is semisimple
+$\square$
 
 
+## Corollaries
+
+>[!corollary]
+>TFAE:
+>1. Characteristic of $\mathbb{F}$ does not divide order of $G$
+>2. Every $\mathbb{F}G$-module is completely reducible
+>3. The group algebra is semisimple
+>4. Every indecomposable $\mathbb{F}G$-module is irreducible
+>5. $\text{Rad }\mathbb{F}G = 0$ 
+
+##### Proof
+
+(1) to (2) follows from [[Maschke's Theorem]]. By the last theorem parts (2), (3), (4)
+ are equivalent. Only need to show (5) -> (1).
+
+We prove by contrapositive that if the characteristic of $\mathbb{F}$ does divide $|G|$, then $\text{Rad }\mathbb{F}G \neq 0$. 
+e.g. in $\mathbb{F}$, $|G| = |G|\cdot 1_{\mathbb{F}}=0$.  Let $x_G = \sum_{x\in G} x$. Then $gx_g =x_g$ for all $g \in G$. So $x_G^2 = |G|x_g = 0$ in $\mathbb{F}G$. Hence $\mathbb{F}x_G$ is a nonzero nilpotent ideal of $\mathbb{F}G$, so $\text{Rad }\mathbb{F}G \neq 0$. 
+
+### Proposition
+
+![[Screenshot 2026-01-15 at 12.42.20 am.png]]
+ 
