@@ -144,3 +144,23 @@ which is unique up to isomorphism.
 ![[Part 2-1770529860680.png|600]]
 ![[Part 2-1770534670514.png|400]]
 
+
+# Generalisation of Persistence Modules
+
+- In Category theory language a persistence module is a function $M: (X,\leq) \longrightarrow \textbf{Vec}_k$, where $(X,\leq)$ is a totally ordered set
+	- *why not a poset?* We can actually use a poset lol. E.g. $\mathbb{N} \times \mathbb{N}$ or $\mathbb{R} \times \mathbb{R}$
+
+## PM with Posets
+
+- Functor $F: P \to \textbf{Top}$ (simplicial complexes) such that $x \leq y \implies F_x \leq F_y$. We call this a **filtration**.
+- The $P$-indexed persistence module then is $M: P \to \textbf{Vec}_k$
+
+- Structure Theorem BREAKS!
+### Structure Theorem Replacement
+
+Take $M: P \to \textbf{Vec}_k$. 
+If $M$ is pointwise finite-dimensional, then $$M \cong \bigoplus_{d \in \Omega}M^d$$ where $M^d$ is indecomposable, and the direct sum is unique up to isomorphism.
+  
+
+
+
