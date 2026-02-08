@@ -42,7 +42,7 @@ Direct sum of $(V_\bullet, a_\bullet),(W_\bullet, b_\bullet)$ is $(V_\bullet \op
 
 A persistence module $(I_\bullet, c_\bullet)$ is **indecomposable** if $(I_\bullet, c_\bullet) \cong (V_\bullet, a_\bullet) \oplus (W_\bullet, b_\bullet)$ such that one of the factors is isomorphic to $(I_\bullet, c_\bullet)$ and the other is trivial.
 
-## Proposition
+## Indecomposability of Interval Modules
 
 Let $(I_\bullet, c_\bullet)$, non-zero $\mathbb{N}$-indexed. 
 If there exists two indices, $i \leq j$ and $j \in \mathbb{N}\cup \{\infty\}$ such that
@@ -54,6 +54,14 @@ and $$\text{rank }(c_p: I_p \to I_{p+1}) = \begin{cases}
 1 & i \leq p \leq j  \\[2pt]
 0 & \text{otherwise}
 \end{cases}$$then $(I_\bullet, c_\bullet)$ is indecomposable.
+
+>[!proof] 
+> Recall that if $I_\bullet \cong V_\bullet \oplus W_\bullet$, then $\text{End }I_\bullet$ only contains a non-trivial idempotent $e$. 
+> 
+> Hence we just need to show that $\text{End }I_\bullet$ has only the idempotents $0$ and $\text{id}$.
+
+
+
 
 # Persistent Group
 
@@ -87,7 +95,7 @@ $(FK_i)_{i \in I}$ for $I$ a subset of $\mathbb{Z}$ such that $FK_i = FK_{i-1}\c
 
 # Barcodes
 
-A morphism between persistence modules $(V_\bullet,a_\bullet)$ and $(W_\bullet, b_\bullet)$ is a family of linear maps $\phi_k: V_k\longrightarrow W_k$ such that $bi_\circ \phi_i = \phi_{i+1}\circ a_i$ 
+A morphism between persistence modules $(V_\bullet,a_\bullet)$ and $(W_\bullet, b_\bullet)$ is a family of linear maps $\phi_k: V_k\longrightarrow W_k$ such that $b_i \circ \phi_i = \phi_{i+1}\circ a_i$ 
 
 ![[Screenshot 2026-02-08 at 9.58.42 am.png|600]]
 
