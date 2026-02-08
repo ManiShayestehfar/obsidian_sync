@@ -34,6 +34,26 @@ $$V_0 \overset{a_0}{\longrightarrow}V_1 \overset{a_1}{\longrightarrow}V_2 \overs
 - A persistence module is **finite** if $\dim V_i < \infty$ for all $i$ and $a_i$ are isomorphisms for $i >0$. 
 	-E.g. Persistence module obtained by taking the homology of a filtration for finite simplicial complex
 
+## Direct Sum
+
+Direct sum of $(V_\bullet, a_\bullet),(W_\bullet, b_\bullet)$ is $(V_\bullet \oplus W_\bullet, a_\bullet \oplus b_\bullet)$ 
+
+## Indecomposable
+
+A persistence module $(I_\bullet, c_\bullet)$ is **indecomposable** if $(I_\bullet, c_\bullet) \cong (V_\bullet, a_\bullet) \oplus (W_\bullet, b_\bullet)$ such that one of the factors is isomorphic to $(I_\bullet, c_\bullet)$ and the other is trivial.
+
+## Proposition
+
+Let $(I_\bullet, c_\bullet)$, non-zero $\mathbb{N}$-indexed. 
+If there exists two indices, $i \leq j$ and $j \in \mathbb{N}\cup \{\infty\}$ such that
+$$\dim I_p = \begin{cases}
+1 & i \leq p \leq j \\[3pt]
+0 & \text{otherwise}
+\end{cases}$$
+and $$\text{rank }(c_p: I_p \to I_{p+1}) = \begin{cases}
+1 & i \leq p \leq j  \\[2pt]
+0 & \text{otherwise}
+\end{cases}$$then $(I_\bullet, c_\bullet)$ is indecomposable.
 
 # Persistent Group
 
@@ -49,6 +69,10 @@ Given $(V_\bullet,a_\bullet)$, $v\in V_i$ is
 - **die at filtration index $j \geq i$** if $j$ is the smallest index such that $a_{ij}(v)=0$.
 	- If $a_{ij}(v) \neq0$, then death time of $v$ is $+\infty$. 
 
+### In terms of Simplex Filteration
+
+$[\alpha] \in H_k(FK_i)$ is **born** at index $i$ and **died** at index $j$ if and only if there exists $\sigma_i,\sigma_j$ creating/undoing the homology class of only $[\alpha]$.
+
 ## Persistence Homology from Filtration
 
 $PH_{k}^i(FK)$ consists of homology classes $H_k(F_iK)$ that continue to generate non trivial homology in $H_k(F_jK)$
@@ -59,3 +83,13 @@ $PH_{k}^i(FK)$ consists of homology classes $H_k(F_iK)$ that continue to generat
 # Simplex-wise Filtration
 
 $(FK_i)_{i \in I}$ for $I$ a subset of $\mathbb{Z}$ such that $FK_i = FK_{i-1}\cup \sigma_i$
+
+
+# Barcodes
+
+A morphism between persistence modules $(V_\bullet,a_\bullet)$ and $(W_\bullet, b_\bullet)$ is a family of linear maps $\phi_k: V_k\longrightarrow W_k$ such that $bi_\circ \phi_i = \phi_{i+1}\circ a_i$ 
+
+![[Screenshot 2026-02-08 at 9.58.42 am.png|600]]
+
+- if all $\phi_i$ are isomorphisms then the morphism is an isomorphism of persistence modules.
+	- So $(V_\bullet,a_\bullet) \cong (W_\bullet, b_\bullet)$ form categories.
