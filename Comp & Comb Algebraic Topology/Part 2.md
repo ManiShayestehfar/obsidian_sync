@@ -124,4 +124,18 @@ $$(V_\bullet,a_\bullet) \cong \bigoplus _{i,j} (I_\bullet^{i,j}, c_\bullet^{ij})
 which is unique up to isomorphism.
 
 >[!proof]
+>
+>Let $(V_\bullet,a_\bullet)$ is of finite type. 
+>Then there exists $n>0$ such that $a_i:V_i\to V_{i+1}$ for all $i > n$. Consider $V = \bigoplus_i^nV_i$, and the linear map $t: V \to V$ given by $t(v_0,...,v_n) = (0,a_0(v_0),...,a_{n-1}(v_{n-1}))$.
+>
+>This gives $V$ a structure of a finitely generated $\mathbb{F}[t]$-module.
+>
+>Since $\mathbb{F}$ is a field, then $\mathbb{F}[t]$ is a PID and so we have a structure theorem of finitely generated modules over a PID: $V = \text{Free Part} \oplus \text{Torsion}$
+>
+>The free part is a direct sum of $\mathbb{F}[t]$-modules of the form $(t^i) \mathbb{F}[t]$ for some $i \geq 0$. Each summand is isomorphic to $(I_\bullet^{i,\infty}, c_\bullet^{i\infty})$
+>The torsion part is direct sum of the form $(t^i) \mathbb{F}[t]/ (t^j)$. Each summand is isomorphic to $(I_\bullet^{i,j}, c_\bullet^{ij})$
+>
+>
+>
+
 
