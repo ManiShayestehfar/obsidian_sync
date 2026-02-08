@@ -101,3 +101,27 @@ A morphism between persistence modules $(V_\bullet,a_\bullet)$ and $(W_\bullet, 
 
 - if all $\phi_i$ are isomorphisms then the morphism is an isomorphism of persistence modules.
 	- So $(V_\bullet,a_\bullet) \cong (W_\bullet, b_\bullet)$ form categories.
+
+
+# Interval Module
+
+For all $0 \leq i \leq j \leq \infty$, the $\mathbb{N}$-indexed persistence module $(I_\bullet^{i,j}, c^{ij}_\bullet)$ is given by 
+$$I_p^{i,j} = \begin{cases}
+\mathbb{F} & i \leq p \leq j  \\[3pt]
+0 & \text{otherwise} 
+\end{cases}$$
+$$c_p^{ij} = \begin{cases}
+\text{id}_\mathbb{F} & i \leq p \leq j  \\[3pt]
+0 & \text{otherwise}
+\end{cases}$$
+is called the **interval module**.
+
+
+# Structure Theorem 
+
+$(V_\bullet,a_\bullet)$ a finite-type $\mathbb{N}$-indexed persistence module. There exists a set $Bcd(V_\bullet,a_\bullet)$ of integer pairs $0 \leq i \leq j \leq \infty$ with $(i \neq \infty)$ and $\mu: Bcd(V_\bullet,a_\bullet) \to \mathbb{N}_{>0}$  such that 
+$$(V_\bullet,a_\bullet) \cong \bigoplus _{i,j} (I_\bullet^{i,j}, c_\bullet^{ij})^{\mu(i,j)}$$
+which is unique up to isomorphism.
+
+>[!proof]
+
