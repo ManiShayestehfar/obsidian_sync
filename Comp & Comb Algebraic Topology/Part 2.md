@@ -141,5 +141,6 @@ which is unique up to isomorphism.
 
 ## Example
 
-![[Part 2-1770529860680.png]]
+![[Part 2-1770529860680.png|600]]
+![[Part 2-1770534670514.png|400]]
 
