@@ -161,6 +161,52 @@ which is unique up to isomorphism.
 Take $M: P \to \textbf{Vec}_k$. 
 If $M$ is pointwise finite-dimensional, then $$M \cong \bigoplus_{d \in \Omega}M^d$$ where $M^d$ is indecomposable, and the direct sum is unique up to isomorphism.
   
+### Good Barcode
+
+$B$ is a multiset of subsets of $P$. Then $B$ is a **good barcode** if 
+$$\forall \: x \leq y \in P,\quad \text{rank }(M_x \to M_y) = |\{S \in B \::\: x,y \in S\}|$$
+for vector spaces $M_x,M_y$.
+
+![[Part 2-1770638115265.png|600]]
 
 
+
+# Stability Theorem
+
+"We want the properties of a perturbation of a point cloud to be comparable and similar to the initial point cloud."
+
+![[Part 2-1770638401683.png|400]]
+
+
+## Interleaving Distance
+
+An $\mathbb{R}_+$-Persistence module is $(V_\bullet,a_\bullet)$ where:
+- $V_t$ is a $\mathbb{F}$-vector space $\forall t \in \mathbb{R}_+$
+- $a_{t \leq s}: V_s \to V_t$  whenever $t \leq s$
+	- $a_{t\leq t}$ is the identity + composition is well-defined
+
+As for $\mathbb{N}$-PM, $\mathbb{R}_+$-PM are also functors $(\mathbb{R}_+, <) \to \textbf{Vec}_k$
+
+![[Part 2-1770639029040.png|500]]
+
+The $\mathbb{R}_+$-persistence module $M$ is **tame** if 
+1. $V_t$ is finite-dimensional for all $t\geq 0$
+2. Only finitely many $t \geq 0$ such that $a_{t-\varepsilon\leq t+\varepsilon}$ is NOT an isomorphism
+
+ We can define interval modules 
+ $$I_t^{t_i,t_j} = \begin{cases}
+\mathbb{F} & t_i \leq t \leq t_j  \\
+0 & \text{otherwise}
+\end{cases}$$
+
+
+## Structure Theorem
+
+### $\varepsilon$-interleaving
+
+For every $\varepsilon \geq 0$, an **$\varepsilon$-interleaving** between $(V_\bullet,a_\bullet)$ and $(W_\bullet,a_\bullet)$ consists of two families of maps $\{\phi_t:V_t \to W_{t + \varepsilon}\}$ and $\{\psi_t:W_t \to V_{t+\varepsilon}\}$ such that
+1. $\phi_t \circ a_{s\leq t} = b_{s+\varepsilon,t+\varepsilon}\circ \phi_s$
+2. $\psi_t \circ b_{s\leq t} = a_{s+\varepsilon,t+\varepsilon}\circ \psi_s$
+3. $\psi_{t+\varepsilon} \circ \phi_t = a_{t\leq t+ 2\varepsilon}$
+4. $\phi_{t+\varepsilon} \circ \psi_t = b_{t\leq t+ 2\varepsilon}$
 
