@@ -178,7 +178,7 @@ for vector spaces $M_x,M_y$.
 ![[Part 2-1770638401683.png|400]]
 
 
-## Interleaving Distance
+## $\mathbb{R}_+$- Persistence Module
 
 An $\mathbb{R}_+$-Persistence module is $(V_\bullet,a_\bullet)$ where:
 - $V_t$ is a $\mathbb{F}$-vector space $\forall t \in \mathbb{R}_+$
@@ -193,20 +193,48 @@ The $\mathbb{R}_+$-persistence module $M$ is **tame** if
 1. $V_t$ is finite-dimensional for all $t\geq 0$
 2. Only finitely many $t \geq 0$ such that $a_{t-\varepsilon\leq t+\varepsilon}$ is NOT an isomorphism
 
- We can define interval modules 
+## Interval Modules
+
+ We can define interval modules $(I_\bullet^{t_i,t_j}, c_\bullet^{t_it_j})$ supported on $[t_i,t_j]$ as
  $$I_t^{t_i,t_j} = \begin{cases}
 \mathbb{F} & t_i \leq t \leq t_j  \\
+0 & \text{otherwise}
+\end{cases}\quad\quad \text{and}\quad\quad c_{s\leq t}^{t_it_j} =\begin{cases}
+\text{id}_\mathbb{F} & [s,t] \subseteq [t_i,t_j]  \\
 0 & \text{otherwise}
 \end{cases}$$
 
 
-## Structure Theorem
+## Structure Theorem (for tame $\mathbb{R}_+$- PM)
+
+$$(V_\bullet,a_\bullet) \cong \bigoplus_{[s,t]}(I_\bullet^{s,t}, c_\bullet^{\mu(s,t)})\quad \text{for}\quad [s,t] \in Bar(V_\bullet,a_\bullet)$$
 
 ### $\varepsilon$-interleaving
 
 For every $\varepsilon \geq 0$, an **$\varepsilon$-interleaving** between $(V_\bullet,a_\bullet)$ and $(W_\bullet,a_\bullet)$ consists of two families of maps $\{\phi_t:V_t \to W_{t + \varepsilon}\}$ and $\{\psi_t:W_t \to V_{t+\varepsilon}\}$ such that
 1. $\phi_t \circ a_{s\leq t} = b_{s+\varepsilon,t+\varepsilon}\circ \phi_s$
 2. $\psi_t \circ b_{s\leq t} = a_{s+\varepsilon,t+\varepsilon}\circ \psi_s$
+   
+   ![[Part 2-1770677964059.png|500]]
+
 3. $\psi_{t+\varepsilon} \circ \phi_t = a_{t\leq t+ 2\varepsilon}$
 4. $\phi_{t+\varepsilon} \circ \psi_t = b_{t\leq t+ 2\varepsilon}$
+   
+   ![[Part 2-1770677992150.png|500]]
+
+$$\implies \text{A $0$-interleaving is an isomorphism between $V$ and $W$}$$
+
+### Interleaving Distance
+
+The **interleaving distance** $d_I((V_\bullet,a_\bullet), (W_\bullet,a_\bullet))$ is defined as the $\inf_\varepsilon$ such that there exists a $\varepsilon$-interleaving between $V,W$.
+
+#### Proposition
+
+$P,Q$ point clouds in $\mathbb{R}^n$ and let them be "close", meaning:
+- $\exists\: \bar{q}\in Q$ such that $d(p,\bar{q})\leq \varepsilon$, $\forall p \in P$ 
+- $\exists\: \bar{p} \in P$ such that $d(\bar{p},q)\leq \varepsilon$, $\forall q \in Q$
+
+Then $\forall k\geq0$ the $k$-th persistence homology modules of $VR(P)$ and $VR(Q)$ are $2\varepsilon$-interleaved
+
+>[!proof]
 
