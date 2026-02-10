@@ -237,4 +237,34 @@ $P,Q$ point clouds in $\mathbb{R}^n$ and let them be "close", meaning:
 Then $\forall k\geq0$ the $k$-th persistence homology modules of $VR(P)$ and $VR(Q)$ are $2\varepsilon$-interleaved
 
 >[!proof]
+>By assumption we have $\alpha:P \to Q,\beta:Q\to P$ such that $\|p-\alpha(p)\|\leq \varepsilon \: \forall p \in P$ and $\|q-\beta(q)\|\leq \varepsilon \: \forall q \in Q$ where $\|\cdot\|$ is the Euclidean norm.
+>
+>These induce simplicial maps $\{\alpha_t: VR_t(P) \to VR_{t + 2\varepsilon}(Q)\:|\: t \geq 0\}$ and $\{\beta_t: VR_t(Q) \to VR_{t + 2\varepsilon}(P)\:|\: t \geq 0\}$.
+>Why? If $\|p-p'\|\leq t\implies \|\alpha(p)-\alpha(p')\|\leq t + 2\varepsilon$. Similarly for $\beta$
+>
+>$\alpha_t^*,\beta_t^*$ maps induced in homology define a $2\varepsilon$-interleaving
+>
+>Same holds for other filtrations as well.
 
+
+###  $\varepsilon$-matching
+
+Consider $(V_\bullet,a_\bullet)$ and its barcode $Bar(V_\bullet,a_\bullet)$. This is a multiset of intervals $[s,t]\subseteq \mathbb{R_+} \cup \{\infty\}$.
+
+For $\varepsilon \geq 0$, an **$\varepsilon$-matching** between multisets $B,B'$ of intervals is a bijection $\rho:B_0\to B_0'$  where $B_0\subset B$ and $B_0'\subset B'$ such that
+- Every $[s,t]$ in $(B\setminus B_0)\cup (B'\setminus B_0')$ has length $t-s \leq 2\varepsilon$
+- If $\rho([s,t]) = [s',t'] \implies$ $|s-s'|\leq \varepsilon$ and $|t-t'|\leq \varepsilon$
+
+### Bottleneck Distance
+
+The **Bottleneck distance** $d_B(B,B')$ is the $\inf_\varepsilon$ such that there exists a $\varepsilon$-matching between $B,B'$
+
+#### Theorem
+
+For all $(V_\bullet,a_\bullet), (W_\bullet,b_\bullet)$ tame, then $d_I((V_\bullet,a_\bullet), (W_\bullet,b_\bullet)) = d_B(Bar(V_\bullet,a_\bullet), Bar(W_\bullet,b_\bullet))$
+
+
+ ![[Part 2 (Agnese)-1770681212937.png|600]]
+
+
+![[Part 2 (Agnese)-1770681280927.png|600]]
