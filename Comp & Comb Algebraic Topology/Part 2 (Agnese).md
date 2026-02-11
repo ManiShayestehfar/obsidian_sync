@@ -290,6 +290,12 @@ where $M(D,D')$ is set of matchings, $\Delta$ is the diagonal and the second ter
 
 - A landscape is a degree of functions
 
+-  $\lambda_1,\lambda_2,...:\mathbb{R} \to \mathbb{R}$ are piecewise linear maps with slope $-1,0,1$. Then the **critical points** of $\lambda_k$ are those values where the slope changes
+
+>[!theorem]
+>$$\text{Diagrams} \cong \text{Landscapes}$$
+
+
 ## Example
 
 Given a persistence diagram
@@ -300,3 +306,20 @@ First rotate the diagram
 
 Then $\lambda(k,t)$ is
 ![[Part 2 (Agnese)-1770811902514.png|450]]
+
+
+## Average Landscapes
+$$\bar{\lambda}(k,t) = \frac{1}{n}\sum_{j=1}^n\lambda^{(j)}(k,t)$$
+- The average is NOT necessarily a persistent diagram
+
+
+# PH-Hypergraphs
+
+*Motivation:* How can we systematically compute cycles generating PH classes? 
+*Solutions:* What if we look at a generating cycle for all classes of our persistent diagram and "collate" them into a single structured object?
+
+## Definition
+
+From a point cloud, get its persistence homology and a choice of generating cycle for each class. Then the **PH-hypergraph** consists of
+- Vertices as points in the point clouds
+- For every cycle, you can add a hyperedge containing the vertices forming the cycle
