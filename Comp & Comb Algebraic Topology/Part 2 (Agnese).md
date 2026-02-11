@@ -278,3 +278,25 @@ where $M(D,D')$ is set of matchings, $\Delta$ is the diagonal and the second ter
 
 1. $d_{W,P}$ offers a setting that allows to define "barycentres" of persistence diagrams
 2. The "winning" matching (i.e. the one realising the distance) defines a way of matching the corresponding homology classes.
+
+
+# Persistent Landscapes
+
+1. Given an $\mathbb{R}_+$-indexed persistent module $(V_\bullet,a_\bullet)$, we define $\lambda: \mathbb{N}\times \mathbb{R} \to \mathbb{R}$ by $$ \lambda(k,t) = \sup\left\{h \geq 0 \:|\: \text{rank }(a_{t-h\leq t+h}) \geq k\right\}$$
+2. Equivalently, take the barcode for $(V_\bullet,a_\bullet)$, say $B = \{I_{ij}\}$. Then $$\lambda(k,t) = \sup\{h \geq 0 \:|\: [t-h,t+h]\subseteq I\:\:\text{for at least $k$ distinct intervals}\}$$
+3. Equivalently, consider now a persistence diagram $D= \{(a_i,b_i)\}_{i \in I}$. For $a<b$, $f_{(a,b)}(t) = \max(0, \min(a+t,b-t))$.
+   Then $$\lambda(k,t) = k\max\{f_{(a_i,b_i)}(t)\}_{i \in I}$$
+   where $k\max$ is the $k$-th largest element.
+
+- A landscape is a degree of functions
+
+## Example
+
+Given a persistence diagram
+![[Part 2 (Agnese)-1770811338250.png|250]]
+
+First rotate the diagram
+![[Part 2 (Agnese)-1770811376024.png]]
+
+Then $\lambda(k,t)$ is
+![[Part 2 (Agnese)-1770811902514.png|450]]
