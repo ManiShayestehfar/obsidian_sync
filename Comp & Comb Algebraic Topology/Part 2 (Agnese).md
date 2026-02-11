@@ -264,7 +264,17 @@ The **Bottleneck distance** $d_B(B,B')$ is the $\inf_\varepsilon$ such that ther
 For all $(V_\bullet,a_\bullet), (W_\bullet,b_\bullet)$ tame, then $d_I((V_\bullet,a_\bullet), (W_\bullet,b_\bullet)) = d_B(Bar(V_\bullet,a_\bullet), Bar(W_\bullet,b_\bullet))$
 
 
- ![[Part 2 (Agnese)-1770681212937.png|600]]
+ ![[Part 2 (Agnese)-1770681212937.png|450]]
+ ![[Part 2 (Agnese)-1770681280927.png|450]]
 
 
-![[Part 2 (Agnese)-1770681280927.png|600]]
+### Wasserstein Distance
+
+Let $D,D'$ be persistence diagrams. The **Wasserstein Distance** is defined as
+
+$$d_{W,P}(D,D') = \min_{m \in M(D,D')} \left(\sum_{(a,b)\in m} \|a-b\|_p^p \:+\: \sum \|s - \text{proj}_\Delta(s)\|_p^p\right)^{1/p}$$
+where $M(D,D')$ is set of matchings, $\Delta$ is the diagonal and the second term's sum is taken over all points in both $D,D'$ that are not paired by a matching.
+- So the first sum is over matchings and the second sum is on unmatched points.
+
+1. $d_{W,P}$ offers a setting that allows to define "barycentres" of persistence diagrams
+2. The "winning" matching (i.e. the one realising the distance) defines a way of matching the corresponding homology classes.
