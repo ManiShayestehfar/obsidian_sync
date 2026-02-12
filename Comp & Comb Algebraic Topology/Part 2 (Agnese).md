@@ -322,4 +322,36 @@ $$\bar{\lambda}(k,t) = \frac{1}{n}\sum_{j=1}^n\lambda^{(j)}(k,t)$$
 
 From a point cloud, get its persistence homology and a choice of generating cycle for each class. Then the **PH-hypergraph** consists of
 - Vertices as points in the point clouds
-- For every cycle, you can add a hyperedge containing the vertices forming the cycle
+- For every cycle, you can add a hyper-edge containing the vertices forming the cycle
+
+## Matchings between Cycles
+
+- We can use hypergraphs to output a matching between cycles. These are informed by persistence diagrams and the geometry of cycle representations.
+
+![[Screenshot 2026-02-12 at 11.44.36 am.png|600]]
+![[Screenshot 2026-02-12 at 11.45.13 am.png|550]]
+
+Example
+![[Screenshot 2026-02-12 at 11.46.01 am.png]]
+
+
+
+
+# Optimal Transport
+
+$d_{W,p}$ distances on persistent diagrams are a special case of a more general Wasserstein problem.
+
+Let $(X,d)$ be a measure metric space (Polish), and let $\mu$ be a probability measure on $X$. Then
+$$d_{W,p}(\mu,\mu') = \inf _{\pi \in \Pi(\mu,\mu')}\int_{X\times X} \|x- x'\|_p^p\:d\pi$$
+*Intuition:* The minimum total cost required to move mass distributed as $\mu$ so that it becomes distributed as $\mu'$.
+
+
+# Gromov-Wasserstein Problem
+
+Let $(X,dx),(Y,dy)$ be measure metric spaces (Polish), then
+$$d_{W,p}((X,\mu_x), (Y,\mu_y)) = \inf_{\pi \in \Pi(\mu_x,\mu_y)} \int_{X\times Y}\: \left(\|d_X(x,x') - d_Y(y,y')\|_p^p\right)^{1/p}$$
+- If we have two different graphs $G,G'$, the G-W distance and the corresponding matching provides a way of matching vertices that minimises graph structure distortion.
+
+- We can generalise these to a distance between hypergraphs. The output is a pair of coupled matchings with vertices <-> vertices, and hyperedges <-> hyperedges
+
+
