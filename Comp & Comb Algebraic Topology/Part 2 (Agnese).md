@@ -323,3 +323,7 @@ $$\bar{\lambda}(k,t) = \frac{1}{n}\sum_{j=1}^n\lambda^{(j)}(k,t)$$
 From a point cloud, get its persistence homology and a choice of generating cycle for each class. Then the **PH-hypergraph** consists of
 - Vertices as points in the point clouds
 - For every cycle, you can add a hyperedge containing the vertices forming the cycle
+
+
+# Optimal Transport
+
