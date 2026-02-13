@@ -42,3 +42,44 @@ $X$ a scpx, $\sigma \in X$.
 - The **Link** of $\sigma$ is $\ell k(\sigma) = \{\tau \in X \:|\: \tau \cap \sigma = \varnothing\:,\:\sigma \cup \tau \in X\}$
 - The **Open star** of $\sigma$ is $St(\sigma)= \{\tau \in X \:|\: \sigma \subseteq \tau\}$
 - The **Closed star** of $\sigma$ is $\overline{St}(\sigma) = \{\tau \in X \:|\: \tau \cup \sigma \in X\}$
+	- $\overline{St} = St \cup \ell k$
+
+
+# Homology
+
+Just refer to my notes in [[Simplicial Homology]].
+
+Just remember that $[\partial_k]\in R^{n_{k-1} \times n_k}$
+where $n_k$ is the number of $k$-simplices in the simplicial complex
+
+
+# Subdivisions
+
+**Proposition:** $|X| \cong |Sd(X)| \cong |Stellar(X)|$
+
+*Q:* If $|X| \cong |X'|$, then is there a simplicial map $f:X\to X'$ up to subdivisions?
+*Partial Answer:*
+
+**Theorem (Brouwer):** Let $f:|X| \to |X'|$, then $\exists N \geq 0$ such that $\hat{f}: Sd^N(X) \to X'$ a simplicial map such that $\hat{f}\simeq f$.
+
+
+# Triangulation
+
+A **triangulation** of an $k$-manifold $M^k$ is a homeomorphism $t:|X| \to M$ for some finite scpx $X$.
+- e.g. $D^n \longleftrightarrow|\Delta^n|$ and $S^n \longleftrightarrow |\partial\Delta^{n+1}|$
+
+## Minimal Triangulation
+
+Let $\cal{M}$ be the set of closed oriented connected $k$-manifolds. 
+Then $\mu_k: \mathcal{M} \to \mathbb{N}$ given by $M \longmapsto \text{min \# of k-spx in a triangulation of } M$  
+
+- This allows us to find minimal triangulations
+
+## Euler Characteristic
+
+$X$ a scpx. It's **Euler characteristic** is an invariant $$\chi(X) = \sum_{\sigma \in X}(-1)^{\dim \sigma} = \sum_{i=0}^{\dim X}(-1)^i c_i$$ where $c_i$ is the number of $i$-simplices in $X$.
+
+
+
+# Posets
+
