@@ -131,7 +131,25 @@ $X$ a simplicial complex and $P$ a poset. We say a map $f: X\to P$ is **simplici
 
 Let $f:X \to P$ be simplicial. If all fibers $f^{-1}(P_{\geq x})$ for $x \in P$ are contractible, then $X \simeq P$. i.e. $|X| \simeq |\Delta(P)|$.
 
-## Homology
+## Poset Homology
+
+Let $P$ be a poset that is 
+1. **ranked:** $\exists \ell: P \to \mathbb{N}$ s.t. $x \dot < y \implies \ell(y) = \ell(x)+1$
+2. **thin/square:** between every two $x,y$, there exists strictly $z,z'$ s.t. $x \:\dot >\: z,z'\:\dot >\: y$
+
+Let $A$ be an abelian category. Then choose $F: P \to A$ and define $$C_F^n(P) = \bigoplus_{x\in P, \ell(x)=n} F(x),$$
+and $$d_F^n: C_F^n(P) \longrightarrow C_F^{n-1}(P)\quad,\quad d_F^n = \sum_{x\in P,\ell(x)=n}\:\: \sum_{x'\in P,x \dot < x'} F(x \:\dot <\:x')$$Thus we can define the **poset homology of $P$ with coefficients $F$**:  $H_*(P;F)$
+
+
+### Example
+Let $P = \mathcal{F}(X)$,   $F_{\mathbb{Z}_2}: P \to \mathbb{Z}_2\text{Vect}$ the constant functor such that 
+- $F_{\mathbb{Z}_2}(x) = \mathbb{Z}_2(x)\:\: \forall x \in P$,
+- $F_{\mathbb{Z}_2}(x\to y)= \mathbb{Z}_2 \overset{\cong}{\longrightarrow}\mathbb{Z}_2$
+
+Then $H_*(\mathcal{F}(X); F_{\mathbb{Z}_2}) \cong H_*(X;\mathbb{Z}_2)$
+
+![[Part 1 (Daniele)-1771069682143.png]]
+
 
 
 
@@ -191,6 +209,11 @@ $X$ a top space. A **cover** of $X$ is $\mathcal{U} = \{U_i\}_{i \in I}$ such th
 $\mathcal{U}$ is **good** if it is:
 1. Locally finite
 2. $U_J$ either empty or null-homotopic $\forall J \subseteq I$
+
+### Remark
+
+If $\mathcal{U}$ is good cover of $X$ $\implies H_*(N(\mathcal{U}); F_{\mathbb{Z}_2}) \cong H(X;\mathbb{Z}_2)$ 
+
 
 ### Examples
 
