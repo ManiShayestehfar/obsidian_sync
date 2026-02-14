@@ -53,6 +53,14 @@ $X$ a scpx, $\sigma \in X$.
 
 - **Homotopy Invariant:** $|X| \simeq |X'| \implies H_*(X;R)\cong H_*(X';R)$
 
+#### Theorem
+
+Let $X$ be a simply-connected simplicial complex.  $$\widetilde{H}_*(X;\mathbb{Z})\cong \begin{cases}
+\mathbb{Z}^r & \ast = n  \\
+0 & \text{otherwise}
+\end{cases} $$
+then $X \simeq \bigvee^r S^n$. 
+
 
 
 # Subdivisions
@@ -113,6 +121,20 @@ Face posets of $X$ is "graph representation" of the $(C_*(X), \partial)$ over $\
 - $\partial \longleftrightarrow$ Poset (strict) containments $\dot <$
 This only works for *thin posets*.
 
+### Simplicial Map
+
+$X$ a simplicial complex and $P$ a poset. We say a map $f: X\to P$ is **simplicial** if
+- it sends $[n]$ to elements of $P$ and 
+- simplices in $X$ to chains in $P$: $a_1 \geq a_2\geq a_3 \geq ... \geq a_k$
+
+#### Quillen's Fiber Theorem
+
+Let $f:X \to P$ be simplicial. If all fibers $f^{-1}(P_{\geq x})$ for $x \in P$ are contractible, then $X \simeq P$. i.e. $|X| \simeq |\Delta(P)|$.
+
+## Homology
+
+
+
 # Bordism
 
 Given $X$ a top space, consider $CB_k(X) := \langle k-\dim \text{ submanifolds} \subseteq X\rangle / \sim$  
@@ -137,11 +159,50 @@ A **presentation** for $M$ is a short exact sequence  $$R^s \overset{f}{\longrig
 
 # Fundamental Theorem of Finitely Generated Abelian Groups
 
-$G$ a finitely-generated Abelian group. Then 
-$$G \cong \mathbb{Z}^{n-k}\oplus \bigoplus_{i=1}^k \mathbb{Z}/ q_i\mathbb{Z}$$ where $q_i$s are powers of primes and $\text{rank }G = n-k$
+$G$ a finitely-generated Abelian group. Then $$G \cong \mathbb{Z}^{n-k}\oplus \bigoplus_{i=1}^k \mathbb{Z}/ q_i\mathbb{Z}$$ where $q_i$s are powers of primes and $\text{rank }G = n-k$
 
 Another use case is 
 $$G \cong \mathbb{Z}^{n-k}\oplus \bigoplus _{i=1}^k \mathbb{Z}/\alpha_i\mathbb{Z}$$ where $\alpha_i |\alpha_{i+1}$ are invariant factors.
 
+
+
+# Categories
+
+See either my notes, or CCAT notes pages 19-21
+
+
+# Combinatorial Alexander Duality
+
+$X$ a simplicial complex over $[n]$.
+It's **dual** $X^* =\{s \in \mathcal{P}([n]) \:|\: [n]\setminus s \not \in X\}$. 
+	- $(X^*)^* = X$
+Then $$\widetilde{H}_i(X;\mathbb{Z}_2) \cong \widetilde{H}^{n-i-3}(X^*;\mathbb{Z}_2)$$
+
+
+
+# Cover
+
+$X$ a top space. A **cover** of $X$ is $\mathcal{U} = \{U_i\}_{i \in I}$ such that $U_i$ are open and $X = \bigcup_{i \in I} U_i$
+
+## Good
+
+**Notation:** For $J \subseteq I$, call $U_J := \cap_{ j \in J} U_j$.
+
+$\mathcal{U}$ is **good** if it is:
+1. Locally finite
+2. $U_J$ either empty or null-homotopic $\forall J \subseteq I$
+
+### Examples
+
+![[Part 1 (Daniele)-1771066922141.png]]
+![[Part 1 (Daniele)-1771067032129.png|450]]
+
+## Nerve 
+
+The **nerve** $N(\mathcal{U})$ of the cover $\mathcal{U}$ is the simplicial complex with vertices the $U_i$'s and $k$-simplices the $U_J$ such that $U_J \neq \varnothing$ and $|J| = k+1$
+
+### Nerve Theorem
+
+Let  $\mathcal{U} = \{U_i\}_{i \in I}$ where $|I| < \infty$ be a good cover of $X$. Then $N(\mathcal{U})\simeq X$.
 
 
