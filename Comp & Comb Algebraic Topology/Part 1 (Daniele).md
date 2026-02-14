@@ -47,10 +47,12 @@ $X$ a scpx, $\sigma \in X$.
 
 # Homology
 
-Just refer to my notes in [[Simplicial Homology]].
+- Just refer to my notes in [[Simplicial Homology]].
 
-Just remember that $[\partial_k]\in R^{n_{k-1} \times n_k}$
-where $n_k$ is the number of $k$-simplices in the simplicial complex
+- Just remember that $[\partial_k]\in R^{n_{k-1} \times n_k}$  where $n_k$ is the number of $k$-simplices in the simplicial complex
+
+- **Homotopy Invariant:** $|X| \simeq |X'| \implies H_*(X;R)\cong H_*(X';R)$
+
 
 
 # Subdivisions
@@ -103,4 +105,43 @@ A **Poset** $(P,\leq)$ is a finite set with a relation $\leq$ such that
 $\mathcal{F}:\text{SCPXs}\to \text{Posets}$ with $X \mapsto \mathcal{F}(X)$ where vertices of $\mathcal{F}(X)$ are simplices of $X$ and $\subseteq$ is face inclusion
 
 ![[Part 1 (Daniele)-1771032576597.png]]
+
+#### Remarks
+
+Face posets of $X$ is "graph representation" of the $(C_*(X), \partial)$ over $\mathbb{Z}_2$ where 
+- Simplices $\longleftrightarrow$ elements in $\mathcal{F}(X)$
+- $\partial \longleftrightarrow$ Poset (strict) containments $\dot <$
+This only works for *thin posets*.
+
+# Bordism
+
+Given $X$ a top space, consider $CB_k(X) := \langle k-\dim \text{ submanifolds} \subseteq X\rangle / \sim$  
+where $S_1 \sim S_2 \iff \exists W \subseteq X \times[0,1]$ s.t. $S_1\sqcup S_2 = \partial W$
+
+![[Part 1 (Daniele)-1771036075844.png|400]]
+
+
+
+# Presentation
+
+Let $M$ be a finitely-generated R-module. 
+A **presentation** for $M$ is a short exact sequence  $$R^s \overset{f}{\longrightarrow} R^t \overset{g}{\twoheadrightarrow}M \overset{}{\longrightarrow}0$$
+- $\ker g$ gives relations for $M$
+
+## Examples
+
+![[Part 1 (Daniele)-1771037195191.png]]
+
+- something about Smith Normal Form (See page 16-17 of notes)
+
+
+# Fundamental Theorem of Finitely Generated Abelian Groups
+
+$G$ a finitely-generated Abelian group. Then 
+$$G \cong \mathbb{Z}^{n-k}\oplus \bigoplus_{i=1}^k \mathbb{Z}/ q_i\mathbb{Z}$$ where $q_i$s are powers of primes and $\text{rank }G = n-k$
+
+Another use case is 
+$$G \cong \mathbb{Z}^{n-k}\oplus \bigoplus _{i=1}^k \mathbb{Z}/\alpha_i\mathbb{Z}$$ where $\alpha_i |\alpha_{i+1}$ are invariant factors.
+
+
 
