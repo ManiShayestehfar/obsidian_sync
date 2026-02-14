@@ -83,3 +83,24 @@ $X$ a scpx. It's **Euler characteristic** is an invariant $$\chi(X) = \sum_{\sig
 
 # Posets
 
+A **Poset** $(P,\leq)$ is a finite set with a relation $\leq$ such that 
+1. $\forall x \in P, x \leq x$
+2. $\forall x, y \in P$, $x \geq y$ and $y \geq x \implies x =y$
+3. $\forall x,y,z \in P$, $x\geq y$ and $y \geq z \implies x \geq z$
+
+- Write $x \dot < y$ if $y\geq x$ and $\not \exists z \neq y,x$ such that $y\geq z \geq x$
+	- i.e. nothing in between
+
+## Examples
+
+- $(\mathbb{N},\leq),(\mathbb{N},|)$
+- $S$ a set and $P$ a poset. $\text{Fun}(S,P)$ is a poset with $f \leq g \iff f(x) \leq g(x)\:\:\forall x \in S$
+- Boolean poset $B(n)$ is a poset of subsets of $[n]$ ordered by $\subseteq$
+  ![[Part 1 (Daniele)-1771032448834.png]]
+
+## Face Posets
+
+$\mathcal{F}:\text{SCPXs}\to \text{Posets}$ with $X \mapsto \mathcal{F}(X)$ where vertices of $\mathcal{F}(X)$ are simplices of $X$ and $\subseteq$ is face inclusion
+
+![[Part 1 (Daniele)-1771032576597.png]]
+
