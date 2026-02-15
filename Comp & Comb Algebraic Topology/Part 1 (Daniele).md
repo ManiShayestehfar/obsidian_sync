@@ -229,3 +229,18 @@ The **nerve** $N(\mathcal{U})$ of the cover $\mathcal{U}$ is the simplicial comp
 Let  $\mathcal{U} = \{U_i\}_{i \in I}$ where $|I| < \infty$ be a good cover of $X$. Then $N(\mathcal{U})\simeq X$.
 
 
+
+
+# Filtered Homology
+
+## Definition
+
+$(C,\partial)$ a chain complex. A **filtration** on $C$ is $$\varnothing = F_0C \subseteq F_1C \subseteq F_2C \subseteq ... \subseteq F_mC = C$$
+such that $\partial(F_kC)\subseteq F_kC$.
+
+- For $X$ a scpx, $F_kX$ is a $k$-skeleton of $X$
+
+
+## Filtered Chain Complex
+
+$(C,\partial,F)$ 
