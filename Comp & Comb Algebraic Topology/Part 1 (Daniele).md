@@ -241,6 +241,45 @@ such that $\partial(F_kC)\subseteq F_kC$.
 - For $X$ a scpx, $F_kX$ is a $k$-skeleton of $X$
 
 
-## Filtered Chain Complex
+## Associated Graded Object
 
-$(C,\partial,F)$ 
+Let $(C,\partial,F)$ be a filtered chain complex. Then its **associated graded object** is 
+$$gr(C) = \bigoplus_{d,s\in \mathbb{N}} F_sC_d/F_{s-1}C_d$$with differential $gr(\partial): gr(C) \to gr(C)$ such that $gr(\partial) = \bigoplus_{d,s \in \mathbb{N}} gr(\partial)_{s,d}$ where
+$$gr(\partial)_{s,d}: F_sC_d/F_{s-1}C_d \to F_sC_{d-1}/F_{s-1}C_{d-1}$$
+
+### Example (Bi-colour homology)
+
+$X$ a scpx over $[n]$. Fix $\varepsilon \in \langle0,1\rangle^n$ where $0$ is the white and $1$ are the black vertices.
+Then $\sigma \in X$, then its $\varepsilon$-weight is the number of white vertices. i.e. $$w_\varepsilon(\sigma) = \dim \sigma - \sum_{v_i \in \sigma} \varepsilon_i(v_i)$$![[Part 1 (Daniele)-1771154055691.png|150]]
+
+![[Part 1 (Daniele)-1771154077175.png]]
+
+![[Part 1 (Daniele)-1771154118088.png|580]]
+
+
+
+
+
+# Matchings
+
+$G$ a graph, a **matching** on $G$ is a subset $m \subseteq E(G)$ consisting of disjoint edges.
+
+![[Part 1 (Daniele)-1771154490958.png]]- A set of matchings $M(G)$ is a simplicial complex
+	- vertices: $E(G)$
+	- spxs are matchings
+
+![[Part 1 (Daniele)-1771154580314.png]]
+
+
+## Matchings on Simplicial Complexes
+
+$X$ an scpx, Then $M(X) := M(\mathcal{F}(X))$
+
+For example, 
+![[Part 1 (Daniele)-1771154672392.png]]
+
+- This doesn't work if $X$ is 1-dimensional
+
+
+
+# Partition Function
