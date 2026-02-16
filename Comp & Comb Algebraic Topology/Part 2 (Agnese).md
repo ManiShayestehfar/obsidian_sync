@@ -19,7 +19,7 @@ A set $\{x_0,x_2,...,x_k\}\subset M$ forms a $k$-simplex iff $d(x_i,x_j)\leq \va
 $M$ a finite subset of metric space $(Z,d)$. $C_\varepsilon(M)$ is defined as $\{x_0,...,x_k\}$ form a $k$-simplex iff $\exists z \in Z$ such that $d(z,x_i) \leq \varepsilon$.
 
 i.e. $$C_\varepsilon = \left\{\sigma \subseteq X \:|\: \bigcap_{x\in \sigma} B(x,\varepsilon)\neq \varnothing\right\}$$
-- This just the nerve of $X^\varepsilon$
+- This is just the nerve of $X^\varepsilon$
 
 
 >[!theorem]
