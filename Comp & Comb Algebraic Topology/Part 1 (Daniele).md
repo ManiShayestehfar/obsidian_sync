@@ -40,7 +40,12 @@ If $\phi_0,\phi_1$ are affine embeddings of $X \to \mathbb{R}^N$, then $|X|_{\ph
 $X$ a scpx, $\sigma \in X$. 
 
 - The **Link** of $\sigma$ is $\ell k(\sigma) = \{\tau \in X \:|\: \tau \cap \sigma = \varnothing\:,\:\sigma \cup \tau \in X\}$
+  
+  ![[Part 1 (Daniele)-1771216172151.png|400]]
+
 - The **Open star** of $\sigma$ is $St(\sigma)= \{\tau \in X \:|\: \sigma \subseteq \tau\}$
+  ![[Part 1 (Daniele)-1771216241998.png|400]]
+
 - The **Closed star** of $\sigma$ is $\overline{St}(\sigma) = \{\tau \in X \:|\: \tau \cup \sigma \in X\}$
 	- $\overline{St} = St \cup \ell k$
 
