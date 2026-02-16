@@ -112,7 +112,7 @@ A **Poset** $(P,\leq)$ is a finite set with a relation $\leq$ such that
 
 $\mathcal{F}:\text{SCPXs}\to \text{Posets}$ with $X \mapsto \mathcal{F}(X)$ where vertices of $\mathcal{F}(X)$ are simplices of $X$ and $\subseteq$ is face inclusion
 
-![[Part 1 (Daniele)-1771032576597.png]]
+![[Part 1 (Daniele)-1771032576597.png|600]]
 
 #### Remarks
 
@@ -217,7 +217,7 @@ If $\mathcal{U}$ is good cover of $X$ $\implies H_*(N(\mathcal{U}); F_{\mathbb{Z
 
 ### Examples
 
-![[Part 1 (Daniele)-1771066922141.png]]
+![[Part 1 (Daniele)-1771066922141.png|600]]
 ![[Part 1 (Daniele)-1771067032129.png|450]]
 
 ## Nerve 
@@ -264,7 +264,9 @@ Then $\sigma \in X$, then its $\varepsilon$-weight is the number of white vertic
 
 $G$ a graph, a **matching** on $G$ is a subset $m \subseteq E(G)$ consisting of disjoint edges.
 
-![[Part 1 (Daniele)-1771154490958.png]]- A set of matchings $M(G)$ is a simplicial complex
+![[Part 1 (Daniele)-1771154490958.png|700]]
+
+- A set of matchings $M(G)$ is a simplicial complex
 	- vertices: $E(G)$
 	- spxs are matchings
 
@@ -325,7 +327,8 @@ $X$ a scpx and $m \in M(X)$.
 
 $\mathcal{M}(X) :=$ the set of all discrete Morse matchings on $X$ is a sub-simplicial complex of $M(X)$ and is hence a simplicial complex
 
-![[Part 1 (Daniele)-1771157422733.png]]
+![[Part 1 (Daniele)-1771157422733.png|600]]
+
 
 #### Critical
 
@@ -341,4 +344,4 @@ Fix $m \in \mathcal{M}(X)$.
 - The boundary map is $\partial_m: C_k(X,m) \to C_{k-1}(X,m)$
 	- $\partial_m$ counts the number of $V$-paths (zigzags) between generators $\mod 2$
 
-![[Part 1 (Daniele)-1771157796534.png]]
+![[Part 1 (Daniele)-1771157796534.png|700]]

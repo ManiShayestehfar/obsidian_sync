@@ -108,7 +108,9 @@ For $k < n$ by induction: $\widetilde{H}_k(S^n) \cong \widetilde{H}_{0}(S^{n-k})
 >[!lemma]
 >Consider an SES $0 \overset{}{\longrightarrow}A \overset{i}{\longrightarrow}B \overset{j}{\longrightarrow}C \overset{}{\longrightarrow}  0$ of abelian groups. Then TFAE:
 >
->![[Exact Sequences-1761451777747.png]]
+>![[Exact Sequences-1761451777747.png|100]]
+
+
 ##### Proof
 ###### a -> c
 Consider $B \overset{}{\longrightarrow} A \oplus C$ via $b \longmapsto (p(b), j(b))$
