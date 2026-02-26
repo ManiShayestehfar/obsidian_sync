@@ -16,7 +16,9 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 >Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$. Conversely, if $\rho:G \to GL_{n}(\mathbb{F})$ is a group homomorphism the $V = \mathbb{F}^n$ becomes a $G$-module by defining the action of $g \in G$ on $V$ to be given by matrix multiplication by $\rho(g)$.
  
 ![[Screenshot 2025-03-06 at 12.50.18 pm.png]]
+![[Screenshot 2026-02-26 at 11.41.00 am.png]]
 
+**Remark:** $\text{im } \rho_{V}^{E} = A^{-1}\text{im } \rho_{V}^{F}A$  are conjugate subgroups of $GL_n(\mathbb{F})$
 ## FG-Module Examples
 
 1. $G = GL_n(\mathbb{F}) = \{\text{invertible}\:\: n \times n \:\:\text{matrices made of}\:\: \mathbb{F}\}$ 
