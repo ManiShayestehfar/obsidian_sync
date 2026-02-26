@@ -13,7 +13,7 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 - A matrix **representation** of $G$ is a group homomorphism $\rho: G \to GL_n(\mathbb{F})$, the group of invertible  $n\times n$ matrices with entries in $\mathbb{F}$.
 
 >[!proposition]
->Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$ 
+>Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$. Conversely, if $\rho:G \to GL_{n}(\mathbb{F})$ is a group homomorphism the $V = \mathbb{F}^n$ becomes a $G$-module by defining the action of $g \in G$ on $V$ to be given by matrix multiplication by $\rho(g)$.
  
 ![[Screenshot 2025-03-06 at 12.50.18 pm.png]]
 
