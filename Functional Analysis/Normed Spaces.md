@@ -50,3 +50,23 @@ If $X$ is a vector space on field $\mathbb{K}$, if $\|x_n - x\|_A \to 0$, then d
 
 - Indeed $\|x\|_A \sim \|x\|_B$ is an equivalence relation
 
+## Convergence Coming from One Norm
+
+>[!claim] 
+>Assume $\exists C>0$ such that $\|x\|_A \leq C \|x\|_B$ for all $x \in X$. Then if $x_n \to x$ in $\|\cdot\|_B$, then $x_n \to x$ in $\|\cdot \|_A$ as well.
+##### Proof
+$x_n \to x$ in $\|\cdot\|_B$ means $\|x_n - x\|_B \to 0$. 
+Since $\|x_n-x\|_A \leq C \|x_n-x\|_B \to 0$ and thus $\|x_n - x\|_A \to 0$.
+
+#### The Claim implies:
+
+>[!Theorem]
+>Topologies of $(X,\|\cdot\|_A)$ and $(X, \|\cdot\|_B)$ coincide $\iff$ $\|\cdot\|_A \sim \|\cdot\|_B$.
+##### Proof
+###### $(\Leftarrow)$  
+Follows from the claim
+###### $(\Rightarrow)$
+Assume the norms are not equivalent. Without loss of generality, $\|x\|_A \leq C\|x\|_B$ does not hold. 
+Hence $\forall n\geq 1$, $\exists x_n \in X$ such that $\|x_n\|_A \geq n\|x_n\|_B$ 
+
+
