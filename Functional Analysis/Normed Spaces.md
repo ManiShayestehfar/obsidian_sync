@@ -46,5 +46,7 @@ If $X$ is a vector space on field $\mathbb{K}$, if $\|x_n - x\|_A \to 0$, then d
 - Two topologies induced by $\|\cdot \|_A, \|\cdot\|_B$ coincide.
 
 >[!Definition] Equivalent Norms
->Norms $\|\cdot \|_A,\|\cdot \|_B$ are **equivalent** if $\exists c_1,c_2 >0$ such that $$c_1\|x\|_B \leq \|x\|_A \leq c_2 $$
+>Norms $\|\cdot \|_A,\|\cdot \|_B$ on $X$ are **equivalent** if $\exists c_1,c_2 >0$ such that $$c_1\|x\|_B \leq \|x\|_A \leq c_2\|x\|_B \quad \forall x \in X$$
+
+- Indeed $\|x\|_A \sim \|x\|_B$ is an equivalence relation
 
