@@ -43,6 +43,15 @@ Let $(f_n)\subset (X,\|\cdot\|_\infty)$ be a Cauchy sequence.
 Therefore $\forall \varepsilon >0$  there exists $n_0 \in \mathbb{N}$ such that $\forall n,m \geq n_0$, $|f_n(x) - f_m(x)| = |\|f_n - f_m \| < \varepsilon$.
 If we fix $f(x) \in [a,b]$, $(f_n(x))_{n\geq 1}$ is Cauchy in $\mathbb{K}$ which implies that $\lim_{n \to \infty} f_n(x) = f(x)$. 
 
-We can show this by taking $(f_n) \subset C([a,b])$ 
+We can show this by noting that if $(f_n) \subset C([a,b])$ converges uniformly to $f$, then $f \in C([a,b])$.
+$\forall \varepsilon > 0$, $\exists n_0 \in \mathbb{N}$ such that for $n,m \geq n_0$, $\| f_n - f\|_\infty < \varepsilon$ for all $x \in C([a,b])$. This implies that $$|f_n(x)- f(x)| \leq |f_n(x) - f_m(x)| + |f_m(x)- f_n(x)| < 2\varepsilon$$ as $n \to \infty$, then by lemma $f \in C([a,b])$.   $\square$
+
+###### 2.
+We can rescale and reshape so assume $a=0,b=1$.
+
+Consider 
+
+
+
 
 
