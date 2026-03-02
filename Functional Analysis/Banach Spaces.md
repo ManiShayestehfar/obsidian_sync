@@ -61,7 +61,15 @@ $\|f_m-f_n\|_p \leq \|g_n\|_p$ for $m>n$ where $g_n$ is defined as the graph of 
 So $|f_m(x) - f_n(x)| \leq |g_n(x)| = \left(\int_{1/2}^{1/2+1/n} 1^p\: dx \right)^{1/p} = 1/n^{1/p} \to 0$ as $n \to \infty$. 
 So $(f_n)$ is indeed Cauchy. $\square$
 
+>[!Claim]
+>$(f_n)$ does not have a limit in $C([a,b])$
 
+**Proof:**
+Assume by contradiction that it does have a limit. Then $\|f_n-f\|_p \to 0$ as $n \to \infty$. 
+$$\begin{align*}
+\int_{0}^1|f_n(x) - f(x)|^p\:dx &\geq \int_0^{1/2}|f_n(x)-f(x)|^p\:dx \\
+&= \int_{0}^{1/2}|1 - f_n(x)|\:dx
+\end{align*}$$
 
 
  
