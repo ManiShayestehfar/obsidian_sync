@@ -33,7 +33,18 @@ By [[Main Definitions|Fish's Heine-Borel]], *complete* and *totally bounded* imp
 
 ## Examples
 
-1. $(C([0,1]), \|\cdot\|_\infty) \not \cong (C([0,1]), \|\cdot\|_)$
+1. $(C([0,1]), \|\cdot\|_\infty) \not \cong (C([0,1]), \|\cdot\|_n)$ for $n>1$ since one of the is Banach and the other is not.
+2. $(C([0,1]), \|\cdot\|_1) \not\cong (C([0,1]), \|\cdot\|_2)$
+3. For $1 < p,q < \infty$,  $(\ell^p, \|\cdot\|_p) \cong (\ell^q, \|\cdot\|_q)$ if $\frac{1}{p} + \frac{1}{q} = 1$. 
 
 
+
+
+# Equivalent Norms
+
+If $X$ is a vector space on field $\mathbb{K}$, if $\|x_n - x\|_A \to 0$, then does it imply that $\|x_n-x\|_B \to 0$?
+- Two topologies induced by $\|\cdot \|_A, \|\cdot\|_B$ coincide.
+
+>[!Definition] Equivalent Norms
+>Norms $\|\cdot \|_A,\|\cdot \|_B$ are **equivalent** if $\exists c_1,c_2 >0$ such that $$c_1\|x\|_B \leq \|x\|_A \leq c_2 $$
 
