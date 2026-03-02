@@ -74,8 +74,8 @@ $$\begin{align*}
 So $f(x) = 1$ for $x \in [0,1/2]$. Similarly $f(x)=0$ for $x \in [1/2,1]$. But such $f$ is not continuous. So this is a contradiction. $\square$
 
 
+## Banach $\not \Rightarrow$ Compact
 
- 
-
-
+$\bar{B}(0,1) = \{f \in C([0,1]) \:|\: \|f\|_n < 1\}$ is a Banach space.
+We show that it is NOT compact.
 
