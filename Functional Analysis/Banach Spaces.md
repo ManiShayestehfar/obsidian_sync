@@ -76,6 +76,12 @@ So $f(x) = 1$ for $x \in [0,1/2]$. Similarly $f(x)=0$ for $x \in [1/2,1]$. But s
 
 ## Banach $\not \Rightarrow$ Compact
 
-$\bar{B}(0,1) = \{f \in C([0,1]) \:|\: \|f\|_n < 1\}$ is a Banach space.
+$\bar{B}(0,1) = \{f \in C([0,1]) \:|\: \|f\|_\infty < 1\}$ is a Banach space.
 We show that it is NOT compact.
+
+We show that for the following graph of sequence $(f_n)$ there is not convergent subsequence.
+![[desmos-graph (1).png|400]]
+
+For $m>n$, $\|f_n - f_m\|_\infty \geq |f_n(y_n) - f_m(y_n)| = |1-0| = 1$.
+Hence $f_n$ is not a Cauchy sequence and in a metric space every convergent sequence is indeed Cauchy. Hence there is no convergent subsequence. Therefore $\bar{B}(0,1)$ is not compact.  $\square$
 

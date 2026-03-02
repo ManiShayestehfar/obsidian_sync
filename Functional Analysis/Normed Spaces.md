@@ -22,6 +22,18 @@ By assumption $(Y, \|\cdot \|_2)$ is bounded. $Y \subset B(0,R) = \{x \in \mathb
 By [[Main Definitions|Fish's Heine-Borel]], *complete* and *totally bounded* implies compact in $\mathbb{K}^n$. $\square$
 
 
+# Isometric Isomorphisms
+
+>[!Definition]
+>A map $\varphi: (X, \|\cdot \|_X) \to (Y, \|\cdot\|_Y)$ is an **isomorphic isomorphism** if:
+>1. $\varphi$ is an isomorphism between $X$ and $Y$
+>2. $\varphi$ preserves the norms. i.e. $\|\varphi(x)\|_Y = \|x\|_X$
+
+- If $X \cong Y$, then $X$ is Banach $\iff$ $Y$ is Banach.
+
+## Examples
+
+1. $(C([0,1]))$
 
 
 
