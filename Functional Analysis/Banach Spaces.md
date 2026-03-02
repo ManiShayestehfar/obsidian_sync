@@ -52,6 +52,19 @@ We can rescale and reshape so assume $a=0,b=1$.
 Consider 
 ![[desmos-graph.png|300]]
 
-where $$\|f_n\|_p $$
+where $$\|f_n\|_p = \left(\int_0^1 |f_n(x)|^p\:dx\right)^{1/p} \leq 1$$
+>[!claim]
+$(f_n) \subset (X, \|\cdot\|)$ is Cauchy.
+
+**Proof:** 
+$\|f_m-f_n\|_p \leq \|g_n\|_p$ for $m>n$ where $g_n$ is defined as the graph of $f_m-f_n$.
+So $|f_m(x) - f_n(x)| \leq |g_n(x)| = \left(\int_{1/2}^{1/2+1/n} 1^p\: dx \right)^{1/p} = 1/n^{1/p} \to 0$ as $n \to \infty$. 
+So $(f_n)$ is indeed Cauchy. $\square$
+
+
+
+
+ 
+
 
 
