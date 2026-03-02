@@ -50,8 +50,8 @@ $\forall \varepsilon > 0$, $\exists n_0 \in \mathbb{N}$ such that for $n,m \geq 
 We can rescale and reshape so assume $a=0,b=1$.
 
 Consider 
+![[desmos-graph.png|300]]
 
-
-
+where $$\|f_n\|_p $$
 
 
