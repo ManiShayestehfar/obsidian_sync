@@ -84,5 +84,21 @@ But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are
    $\implies \|x\|_2^2 \leq \|x\|_1^2$. Thus $\|x\|_2 \leq \|x\|_1 \leq \sqrt{n}\|x\|_2$.
 
 1. $\|f\|_1 \not \sim \|f\|_2$ in $C([0,1])$. 
-   But $\int_0^1 |f_n|\:dx \overset{C.S}{\leq} \left($
+   But $\int_0^1 |f_n|\:dx \overset{C.S}{\leq} \left(\int_0^1 |f(x)|^2 \:dx\right) \underbrace{\left(\int_0^1 1^2\:dx\right)}_{=1}$. 
+   Therefore $\|f\|_1 \leq \|f\|_2$. But $\not\exists C >0$ such that $\|f\|_2 \leq C\|f_1\|$.  
+   To prove it, assume it does exist and consider the following graph:
+   
+   ![[desmos-graph (2).png|350]]
+   
+   We are assuming $\forall (f_n) \subset C([0,1])$ such that $\|f_n-f\|_1 \to 0$, $\|f_n-f\|_2 \to 0$. 
+   But in the graph, $\|f_n\|_1 = \frac{1}{\sqrt{n}} \to 0$. $$\|f_n\|_2^2 = \int_0^1 |f_n(x)|^2\:dx = 2 \int_0^{1/n}n\sqrt{n}x\:dx = 2n^3\frac{1}{n^3} = 2 \neq 0$$
 
+## Finite Dimensional Normed Spaces
+
+>[!Theorem]
+>For all *finite* dimensional vector spaces, all norms are equivalent.
+##### Proof
+Let $\dim X =: N$ and fix a basis $\{e_1,...,e_N\}$. Consider $\varphi: X \to \mathbb{K}^n$ given by $\varphi(x) = \varphi\left(\sum x_ie_i\right)= (x_1,...,x_N)$.
+
+
+ 
