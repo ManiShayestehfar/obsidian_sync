@@ -49,7 +49,8 @@ $\forall \varepsilon > 0$, $\exists n_0 \in \mathbb{N}$ such that for $n,m \geq 
 ###### 2.
 We can rescale and reshape so assume $a=0,b=1$.
 
-Consider 
+Consider the graph of $f_n$
+
 ![[desmos-graph.png|300]]
 
 where $$\|f_n\|_p = \left(\int_0^1 |f_n(x)|^p\:dx\right)^{1/p} \leq 1$$
@@ -65,11 +66,13 @@ So $(f_n)$ is indeed Cauchy. $\square$
 >$(f_n)$ does not have a limit in $C([a,b])$
 
 **Proof:**
-Assume by contradiction that it does have a limit. Then $\|f_n-f\|_p \to 0$ as $n \to \infty$. 
+Assume by contradiction that it does have a limit. Then $\|f_n-f\|_p \to 0$ as $n \to \infty$. Then
 $$\begin{align*}
-\int_{0}^1|f_n(x) - f(x)|^p\:dx &\geq \int_0^{1/2}|f_n(x)-f(x)|^p\:dx \\
-&= \int_{0}^{1/2}|1 - f_n(x)|\:dx
+0\longleftarrow \int_{0}^1|f_n(x) - f(x)|^p\:dx &\geq \int_0^{1/2}|f_n(x)-f(x)|^p\:dx \\
+&= \int_{0}^{1/2}|1 - f(x)|^p\:dx
 \end{align*}$$
+So $f(x) = 1$ for $x \in [0,1/2]$. Similarly $f(x)=0$ for $x \in [1/2,1]$. But such $f$ is not continuous. So this is a contradiction. $\square$
+
 
 
  
