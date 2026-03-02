@@ -67,6 +67,22 @@ Since $\|x_n-x\|_A \leq C \|x_n-x\|_B \to 0$ and thus $\|x_n - x\|_A \to 0$.
 Follows from the claim
 ###### $(\Rightarrow)$
 Assume the norms are not equivalent. Without loss of generality, $\|x\|_A \leq C\|x\|_B$ does not hold. 
-Hence $\forall n\geq 1$, $\exists x_n \in X$ such that $\|x_n\|_A \geq n\|x_n\|_B$ 
+Hence $\forall n\geq 1$, $\exists x_n \in X$ such that $\|x_n\|_A \geq n\|x_n\|_B$.
+Since $x_n \neq 0$, then $$\left\|\frac{x_n}{\|x_n\|_A}\right\|_B \leq \frac{1}{n}\implies \frac{\|x_n\|_B}{\|x\|_A} \leq \frac{1}{n} \longrightarrow 0 \quad \text{w.r.t. } \|\cdot\|_B$$
+But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are not the same. $\square$
 
+
+## Examples
+
+1. $\|x\|_1 \sim \|x\|_2$ for $x \in \mathbb{K}^n$. 
+   *Upper Bound:*$$\|x\|_1 = \sum_{i=1}^n |x_i \cdot 1| \:\overset{C.S}{\leq}\: \left(\sum_{i=1}^n x_i^2\right)^{1/2}\left(\sum_{i=1}^n 1^2\right)^{1/2} = \left(\sum_{i=1}^n x_i^2\right)^{1/2}\sqrt{n}$$
+   where we used the Cauchy-Schwartz inequality above. 
+   
+   *Lower Bound:*
+   $\forall i, |x_i| \leq \|x\|_1$. Hence 
+   $$\frac{|x_i|^2}{\|x\|_1^2}\leq\frac{|x_i|}{\|x\|_1} \implies \frac{\sum |x_i|^2}{\|x\|_1}\leq\frac{\sum|x_i|}{\|x\|_1} = \sum \frac{|x_i|}{\|x\|_1} = 1$$
+   $\implies \|x\|_2^2 \leq \|x\|_1^2$. Thus $\|x\|_2 \leq \|x\|_1 \leq \sqrt{n}\|x\|_2$.
+
+1. $\|f\|_1 \not \sim \|f\|_2$ in $C([0,1])$. 
+   But $\int_0^1 |f_n|\:dx \overset{C.S}{\leq} \left($
 
