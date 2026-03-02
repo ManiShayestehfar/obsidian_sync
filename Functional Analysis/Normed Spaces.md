@@ -33,7 +33,7 @@ By [[Main Definitions|Fish's Heine-Borel]], *complete* and *totally bounded* imp
 
 ## Examples
 
-1. $(C([0,1]))$
+1. $(C([0,1]), \|\cdot\|_\infty) \not \cong (C([0,1]), \|\cdot\|_)$
 
 
 
