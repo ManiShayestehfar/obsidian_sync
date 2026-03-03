@@ -22,4 +22,5 @@ Using generalised Heine-Borel Theorem, $\bar{B}$ is bounded and closed and there
 
 Inductively construct finite dimensional subspaces $\{0\} = Y_0\subsetneq Y_1 \subsetneq Y_1 ...$ where $\dim Y_k = k$ and $Y_k$ are closed.
 By Riesz lemma for $\theta = \tfrac{1}{2}$, $\exists x_k \in Y_k$ and $\|x_k\| = 1$ with $\|x_k - y\|\geq \tfrac{1}{2}$ for all $y \in Y_{k-1}$.
-Hence $\|x_m- x_n\| \geq \text{dist}(x_m, Y_{m-1})\geq \tfrac{1}{2}$ for $m > n$ so $$
+Hence $\|x_m- x_n\| \geq \text{dist}(x_m, Y_{m-1})\geq \tfrac{1}{2}$ for $m > n$ so $(x_n)$ is a sequence in $\bar{B}(0,1)$ with no convergent subsequence. $\square$
+
