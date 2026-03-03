@@ -104,5 +104,16 @@ Also define $\|(x_1,...,x_n)\| := \|x\|$.
 It is enough to show on $\mathbb{K}^n$ that all norms are equivalent. *Specifically to $\|x\|_2$*.
 
 **Upper Bound:**
-$$\|(x_1,...,x_n)\| = \|\sum_{i=1}^N \|$$
+$$\|(x_1,...,x_n)\| = \left\|\sum_{i=1}^N x_ie_i \right\| \leq \sum_{i=1}^N |x_i|\|e_i\| \leq M\cdot\|x\|_1\quad,\quad \text{for } M=\max(\|e_1\|,...,\|e_N\|)$$ 
+ **Lower Bound:**
+ Consider this function on $\mathbb{K}^n$: $f(x) := \|x\|$
  
+>[!claim]
+>$f:(\mathbb{K}^N, \|\cdot\|_2) \to (\mathbb{R}, |\cdot|)$ is continuous
+###### Proof
+$$|f(x) - f(y)| = |\|x\| - \|y\|| \overset{Rev\: \Delta-ineq}{\leq} \|x-y\| \leq C\|x-y\|_2$$
+which is Lipschitz continuous and hence $f$ is continuous on $\mathbb{K}^n$.  $\square$
+
+Now consider $S = \{x \in \mathbb{K}^n \:|\: \|x\|_2 = 1\}$. $S$ is clearly closed and bounded hence it is compact by [[Main Definitions|Fish's Heine-Borel Theorem]].
+
+Since $f$ is continuous on $(\mathbb{K}^n, \|\cdot\|_2)$ from the claim above, it attains min/max. 
