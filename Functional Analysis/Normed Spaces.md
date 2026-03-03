@@ -97,6 +97,7 @@ But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are
 
 >[!Theorem]
 >For all *finite* dimensional vector spaces, all norms are equivalent.
+
 ##### Proof
 Let $\dim X =: N$ and fix a basis $\{e_1,...,e_N\}$. Consider $\varphi: X \to \mathbb{K}^n$ given by $\varphi(x) = \varphi\left(\sum x_ie_i\right)= (x_1,...,x_N)$.
 
@@ -119,4 +120,27 @@ Now consider $S = \{x \in \mathbb{K}^n \:|\: \|x\|_2 = 1\}$. $S$ is clearly clos
 Since $f$ is continuous on $(\mathbb{K}^n, \|\cdot\|_2)$ from the claim above, it attains min/max due to Extreme Value Theorem. We only need the minimum though.
 
 So $\exists x_0 \in S$ such that $\forall x \in S$, $f(x_0) = \|x_0\| \leq \|x\| = f(x)$. Note that $C = \|x_0\|>0$ so $x_0 \neq 0$.
-Therefore $\forall x \in S, C\leq \|x\|$ and so $\forall x \in \mathbb{K}^n \setminus \{0\}$, $$C \leq \left\|\frac{x}{\|x\|_2}\right\|_2=1 \implies f(\frac{x}{})$$
+Therefore $\forall x \in S, C\leq \|x\|$ and so $\forall x \in \mathbb{K}^n \setminus \{0\}$, $$C \leq \left\|\frac{x}{\|x\|_2}\right\|_2=1 \implies f(\tfrac{x}{\|x\|_2}) = \frac{\|x\|}{\|x\|_2}\geq C$$
+therefore $C\|x_2\|\leq \|x\|$. 
+Since $\exists c_1,c_2$ such that $c_1\|x\|_2\leq \|x\| \leq c_2\|x\|_2$, then $\|x\|\sim \|x\|_2$. $\square$
+
+
+### Banach-ness of Finite Dimensional Vector Spaces
+
+>[!Corrolary]
+>1. All finite dimensional normed vector spaces are Banach
+>2. Any finite dimensional subspace of a normed space is closed.
+
+- (1) follows simply from above as $(\mathbb{K}^N, \|\cdot\|_2)$ is Banach and from theorem above every norm is equivalent to $\|\cdot\|_2$.
+- (2) Follows from $Y \subset X$ with $\dim Y < \infty$. Then by $(1)$, $Y$ is Banach $\implies Y$ is closed. 
+
+**Remark for (2):**
+Not ALL subspaces of a given space is closed. 
+e.g. $(\ell_F, \|\cdot\|_2) \subset (\ell^2, \|\cdot\|_2)$ where $\ell_F$ is the space of sequence s in $\mathbb{K}$ with finitely many non-zeros is open.
+
+Take $x^{(m)} = (1,1/2,1/3,...,1/m,0,0,...)$. Then each $x^{(m)}\in \ell_F$.
+Let $x := (1,1/2,1/3,1/4,...)$. Then $x \in \ell^2$ since $$\|x\|_2^2 = \sum_{n=1}^\infty \frac{1}{n^2} < \infty$$but $x \not\in \ell_F$ since it has infinitely many nonzero terms.
+So $\|x^{(m)}-x\|_2 \to 0$. Thus $x^{(m)}\to x$ in $\ell^2$ with all $x^{(m)}\in \ell_F$ but the limit $x \not\in \ell_F$.
+Therefore $\ell_F$ is not closed.
+
+
