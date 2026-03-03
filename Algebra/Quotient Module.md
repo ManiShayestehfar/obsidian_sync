@@ -44,5 +44,8 @@ If $W$ is a $G$-submodule of $V$ that contains $U$, then $W/U = \pi(W)$ is a $G$
 Conversely if $\mathcal{W}$ is a $G$-submodule of $V/U$ then $W = \pi^{-1}(\mathcal{W}) = \{v \in V \:| \pi (v) \in \mathcal{W}\}$ 
 is a vector subspace of $V$ (since $\pi$ is linear).
 $U \subseteq W$ because if $u \in U$, then $\pi(u) = u + U = 0_{V/U} \in \mathcal{W}$.
-Moreover, $\$
+Moreover, $W$ is a $G$-submodule because if $g \in G$ and $w \in W$, then $\pi(gw) = g\pi(w) \in \mathcal{W}$ since $\mathcal{W}$ is a $G$-module. 
+$\implies gw \in W \implies W$ is a $G$-submodule of $V$ containing $U$. $\square$
+
+
 
