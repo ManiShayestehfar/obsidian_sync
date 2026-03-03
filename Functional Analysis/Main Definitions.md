@@ -21,3 +21,15 @@ Let $(X,d)$ be a metric space.
 >2. Every sequence in $Y$ has a convergent subsequence (i.e. $Y$ is sequentially compact)
 >3. $Y$ is complete + totally bounded
 
+## Generalised Heine-Borel Theorem
+
+>[!Theorem]
+>If $Y \subset (\mathbb{K}^N, \|\cdot\|)$. $Y$ is compact $\iff$ $Y$ is closed + bounded.
+
+
+
+# Closed Ball
+
+Let $(X,\|\cdot\|)$ be a [[Normed Spaces|normed vector space]] over $\mathbb{K}$. The **Closed ball** is
+$$\bar{B}(0,1) = \{x \in X \:|\: \|x\| < 1\}$$
+
