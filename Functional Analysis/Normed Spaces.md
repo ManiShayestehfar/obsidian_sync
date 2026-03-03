@@ -100,5 +100,9 @@ But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are
 ##### Proof
 Let $\dim X =: N$ and fix a basis $\{e_1,...,e_N\}$. Consider $\varphi: X \to \mathbb{K}^n$ given by $\varphi(x) = \varphi\left(\sum x_ie_i\right)= (x_1,...,x_N)$.
 
+Also define $\|(x_1,...,x_n)\| := \|x\|$. 
+It is enough to show on $\mathbb{K}^n$ that all norms are equivalent. *Specifically to $\|x\|_2$*.
 
+**Upper Bound:**
+$$\|(x_1,...,x_n)\| = \|\sum_{i=1}^N \|$$
  
