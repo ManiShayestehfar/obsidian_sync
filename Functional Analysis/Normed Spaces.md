@@ -116,4 +116,7 @@ which is Lipschitz continuous and hence $f$ is continuous on $\mathbb{K}^n$.  $\
 
 Now consider $S = \{x \in \mathbb{K}^n \:|\: \|x\|_2 = 1\}$. $S$ is clearly closed and bounded hence it is compact by [[Main Definitions|Fish's Heine-Borel Theorem]].
 
-Since $f$ is continuous on $(\mathbb{K}^n, \|\cdot\|_2)$ from the claim above, it attains min/max. 
+Since $f$ is continuous on $(\mathbb{K}^n, \|\cdot\|_2)$ from the claim above, it attains min/max due to Extreme Value Theorem. We only need the minimum though.
+
+So $\exists x_0 \in S$ such that $\forall x \in S$, $f(x_0) = \|x_0\| \leq \|x\| = f(x)$. Note that $C = \|x_0\|>0$ so $x_0 \neq 0$.
+Therefore $\forall x \in S, C\leq \|x\|$ and so $\forall x \in \mathbb{K}^n \setminus \{0\}$, $$C \leq \left\|\frac{x}{\|x\|_2}\right\|_2=1 \implies f(\frac{x}{})$$
