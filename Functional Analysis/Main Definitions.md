@@ -30,6 +30,17 @@ Let $(X,d)$ be a metric space.
 
 # Closed Ball
 
+>[!Definition] Closed Ball
+>
 Let $(X,\|\cdot\|)$ be a [[Normed Spaces|normed vector space]] over $\mathbb{K}$. The **Closed ball** is
 $$\bar{B}(0,1) = \{x \in X \:|\: \|x\| < 1\}$$
+
+# Dense
+
+>[!Definition] Dense
+>$Y\subseteq X$ a metric space is **dense** in $X$ if $\bar{Y} = X$.
+>Equivalently, $\forall x\in X, \exists (y_n) \subset Y$ such that $y_n \to x$.
+
+
+
 
