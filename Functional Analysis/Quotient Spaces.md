@@ -1,7 +1,7 @@
 # Definition 
 
 >[!Definition] Quotient Space
-Let $(X,\|\cdot\|_p)$ be a metric space and $Y \subset X
+Let $(X,\|\cdot\|_p)$ be a metric space and $Y \subset X$
 > $$X/Y := \{x + Y \:|\: x \in X\}$$
 > such that for $\lambda \in \mathbb{K}$ and $x,x' \in X$
 > 1. $\lambda(x+ Y) = (\lambda x) + Y$
