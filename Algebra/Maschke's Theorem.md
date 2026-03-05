@@ -7,7 +7,7 @@
 > Then there exists a $G$-module $U$ of $V$ such that $V = U \oplus W$ as [[FG-Module|G-module]]. 
 > When $U$ exists, it is called the **complement** of $W$ in $V$.
 ##### Proof
-- It should be clear that as a [[vector space]] we can find a subspace $U'$ of $V$ such that $V = U' \oplus W$. The problem is making sure $U'$ is a $G$-module.
+- It should be clear that as a [[vector space]] we can find a subspace $U'$ of $V$ such that $V = U' \oplus W$ by basis extension theorem. The problem is making sure $U'$ is a $G$-module.
 
 We can define a [[vector space]] homomorphism that is a projection map corresponding to the decomposition $V = U' \oplus W$ as $\pi: V \to W$. That is, $\pi(u+w) = w$ for $u \in U'$, $w \in W$. 
 
