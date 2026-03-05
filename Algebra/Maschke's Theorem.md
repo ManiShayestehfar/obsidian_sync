@@ -44,6 +44,7 @@ as $\pi_G(v) \in \text{im }\pi_G = W$ and $\pi_G(w) = w$.
 
 Hence $V = W + \ker \pi_G$. But from the previous proof via the [[Quotient Module|First Isomorphism Theorem]], $\ker \pi_G \cap W = 0$ and so consequently $V = W \oplus \ker \pi_G$. Since $\ker \pi_G$ is a $G$-module this completes the proof.   $\square$ 
 
+
 ## Another Definition
 
 >[!success] Maschke's Theorem in the language of irreducibles
