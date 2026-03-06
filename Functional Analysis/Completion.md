@@ -18,7 +18,7 @@ Up to isometric isomorphism such $(\hat{X}, \|\cdot\|)$ is *unique*.
 # Definition
 
 >[!Definition]
->Let $(X,\|\cdot\|_p)$ be a normed vector space. There is a Banach space $(\hat{X}, \|\cdot\|_1)$ such that $(X, \|\cdot\|)$ is isometrically isomorphic to a *dense* subspace of $(X,\|\cdot\|_1)$. This is called the **completion** of $X$.
+>Let $(X,\|\cdot\|_p)$ be a normed vector space. There is a Banach space $(\hat{X}, \|\cdot\|_1)$ such that $(X, \|\cdot\|)$ is isometrically isomorphic to a *dense* subspace of $(\hat{X},\|\cdot\|_1)$. This is called the **completion** of $X$.
 >
 >Moreover, $(\hat{X}, \|\cdot\|_1)$ is unique up to isometric isomorphism.
 
