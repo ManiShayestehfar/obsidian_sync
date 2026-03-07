@@ -12,6 +12,7 @@ Let $(X,d)$ be a metric space.
 >[!Definition]
 >$Y \subset (X,d)$ is **totally bounded** if $\forall \varepsilon > 0$, there exists a finite collection of $B_\varepsilon$ which covers $Y$.
 
+- In a metric space: totally bounded $\implies$ bounded
 
 # Fish's Heine-Borel Theorem
 
