@@ -49,3 +49,20 @@ $\implies gw \in W \implies W$ is a $G$-submodule of $V$ containing $U$. $\squar
 
 
 
+# Dimension of $V/U$
+
+Let $\{u_1,...,u_m\}$ be a basis of $U$. By the basis extension theorem, $V$ has a basis of the form $\{u_1,...,u_m,v_{m+1},...,v_n\}$ 
+
+>[!Claim] 
+>$V/U$ has basis $\{v_{m+1}+ U,...,v_n + U\}$. 
+>So $\dim V/U = \dim V - \dim U = n-m$
+##### Proof
+$$\begin{align*}
+V/U = \langle v+ U \:|\: v \in V\rangle &= \langle \sum_{i=1}^m\lambda_iu_i + \sum_{i=m+1}^n \mu_iv_i \: + U\rangle \\
+&= \langle \sum_{i=m+1}^n \mu_iv_i \: + U \:|\: \mu_i \in \mathbb{F}\rangle\\
+\end{align*}$$
+So $\{v_{m+1}+U,...,v_n+U\}$ spans $V/U$. Still need to show it is linearly independent.
+If $0 = \sum_{i=m+1}^n \mu_i(v_i + U) = \sum_{i=m+1}^n(\mu_iv_i)+ U$,
+then $\sum \mu_i v_i \in U \implies \mu_i = 0$. Hence the set is a basis for $V/U$.  $\square$
+
+
