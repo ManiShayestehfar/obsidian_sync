@@ -12,9 +12,17 @@ so $\dim W = n-1$
 
 
 >[!Claim]
->IF $\text{char } \mathbb{F} \nmid n$, then $W$ is irreducible and $V = I \oplus W$ as a $G$-module
+>If $\text{char } \mathbb{F} \nmid n$, then $W$ is irreducible and $V = I \oplus W$ as a $G$-module
 ##### Proof
 Notice that $I \subseteq W \iff \text{char }\mathbb{F} \mid n$ so if $\text{char }\mathbb{F} \nmid n$ then $V = I \oplus W$.
-We prove that $W$ is irreducible.
+We assume $\text{char } \mathbb{F} \nmid n$ (hence $I \not \subseteq W$) to prove that $W$ is irreducible.
 
-Let $U$ be a nonzero submodule of $W$. Fix $u = (u_1,...,u_n) \in U$ with $u \neq0$
+Let $U$ be a nonzero submodule of $W$. Fix $u = (u_1,...,u_n) \in U$ with $u \neq0$.
+Since by assumption $I \not\subseteq W$, then there exists $i < j$ with $u_i \neq u_j$ such that 
+$$(i,j)\cdot u = (u_1,...,u_j,...,u_i,...,u_n) \in U$$
+Hence $U - (i,j)\cdot u = (0,...,u_i-u_j,...,u_j-u_i,...,0) = (u_i-u_j)\underbrace{(0,...,1,...,-1,...,0)}_{v} \in U$.
+So $v \in U$.
+Now consider $(a,i)(n,j)v = (0,...,1,...,0,-1) \in U$ where we swap $i,j$ with $a,n$ respectively for $0\leq a\leq n$.
+Then $U\subseteq W$ since it contains the basis vectors of $W$. $\implies U =W$.
+Therefore $W$ is irreducible because every nonzero submodule of $W$ is equal to $W$.  $\square$
+
