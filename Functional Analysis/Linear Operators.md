@@ -78,14 +78,40 @@ so by $(5) \implies (4)$ $\mathcal{I}$ is bounded.
 >Moreover $\mathcal{L}(X,Y)$ is Banach $\iff$ $Y$ is Banach.
 ##### Proof
 ###### $\|T\|$ is a norm
-We only need to check $\Delta$-inequlity. Everything else comes for free.
+We only need to check $\Delta$-inequality. Everything else comes for free.
 Take $S,T \in \mathcal{L}(X,Y)$. $$\begin{align*}
 \|(S+T)x\| = \|Sx+Tx\| &\overset{\Delta-\text{ineq.}}{\leq} \|Sx + Tx\| \\[3pt]
 &\leq \|S\|\|x\| + \|T\|\|x\| \\[3pt]
 &= \underbrace{(\|S\| + \|T\|)}_{=C}\|x\| 
 \end{align*}$$$\therefore S+T \in \mathcal{L}(X,Y)$, and $\|S+T\| \leq \|S\|+\|T\|$ 
 
-###### Second Part
+###### Second Part $(\Longleftarrow)$
+Assume $Y$ is Banach.
+Let $(T_n)_{n\geq 1}$be Cauchy in $\mathcal{L}(X,Y)$. Then for each $x \in X$:
+$$\|T_mx-T_nx\| = \|(T_m-T_n)x\|\leq \|T_m-T_n\|\|x\|$$
+So $(T_nx)_{n\geq1}$ is Cauchy in $Y$ (for some fixed $X$).
+Since $Y$ is complete, there is a limit. Define a function $T:X\to Y$ by $Tx := \lim_{n\to \infty}T_nx$
+
+>[!Claim]
+>$T$ is linear
+
+If $\lambda,\mu \in \mathbb{K}$ and $x,x'\in X$, then $T_n(\lambda x+\mu x') = \lambda T_nx + \mu T_n x'$. But both sides are pointwise convergent so the expression is equal to $T(\lambda x+\mu x') = \lambda Tx + \mu T x'$. $\square$
+
+>[!Claim]
+>$T$ is continuous
+
+$\|Tx\| = \lim_{n\to \infty} \|T_nx\|\leq \|T_n\|\|x\|$. But $(\|T_n\|)_{n\geq 1}$ in $\mathbb{K}$ is Cauchy. so
+$|\|T_m\|-\|T_n\|| \leq \|T_m-T_n\|$ converges and $\exists C>0$ such that $\|T_n\|\leq C$ for all $n$. 
+$\therefore \|Tx\| \leq C\|x\|$ and so $T$ is continuous by the equivalent characterisation of continuity.
+$\square$
+
+>[!Claim]
+>$T_n \to T$ in $\mathcal{L}(X,Y)$
+
+Given $\varepsilon > 0$ there exists $N >0$ such that $\forall m,n \geq N$ 
+$$\|T_nx - T_m x\| \leq \|T_n-T_m\|\|x\| \leq \varepsilon \|x\|$$
+but 
+###### Second Part $(\Longrightarrow)$
 
 
 
@@ -115,4 +141,26 @@ Take $S,T \in \mathcal{L}(X,Y)$. $$\begin{align*}
    So $\|Tx_0\|_1 = \sum_{k=1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6} = \frac{\pi}{\sqrt{6}}\|x_0\|_2$ 
    $\therefore \|T\|=\frac{\pi}{\sqrt{6}}$.
 
-3. 
+3. $T: \ell^2 \to \ell^2$,  $(x_1,x_2,...) \mapsto (x_1+x_2,x_2+x_3,...)$. We want to find $\|T\|$.
+   Note that $T = I + L$ where $I$ is the identity map and $L$ is the left shift operator.
+   Hence $\|T\| = \|I+L\| \leq \|I\| + \|L\| = 2 \implies T \in \mathcal{L}(\ell^2,\ell^2)$. We prove this
+
+>[!Claim]
+>1. $\forall x \in \ell^2:\: \|Tx\|_2\leq 2\|x\|_2 \implies \|T\|\leq2$
+>2. $\|T\|=2$
+##### Proof
+###### Part 1
+We have $$\begin{align*}
+\|Tx\|_2^2 = \sum_{n=1}^\infty |x_k+x_{k+1}|^2 &\leq \sum_{k=1}^\infty (|x_k|^2 + 2|x_k||x_{k+1}| + |x_{k+1}|^2) \\[2pt]
+&\overset{C.S}{\leq} 2\|x\|^2 + 2 \sqrt{\sum_{k=1}^\infty |x_k|^2}\sqrt{\sum_{k=2}^\infty |x_k|^2} \\
+&\leq 4\|x\|_2^2
+\end{align*}$$
+Hence $T$ is continuous with $\|T\|\leq 2$.
+
+###### Part 2
+Let $x^n := (\overbrace{1,1,...,1}^{n},0,0,...)$.
+$\implies \|x^n\|_2^2 = n$.
+$\implies Tx^n = (2,2,...,1,1,0,0,...)$
+$\implies \|Tx^n\|_2^2 = 4(n-1)+1$
+$\implies \frac{\|Tx^n\|_2^2}{\|x^n\|_2^2} = \frac{4(n-1)+1}{n} \longrightarrow 4$ as $n \to \infty$.
+$\therefore \|T\| = 2$      $\square$
