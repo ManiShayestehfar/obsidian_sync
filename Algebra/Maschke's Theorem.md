@@ -50,7 +50,10 @@ Hence $V = W + \ker \pi_G$. But from the previous proof via the [[Quotient Modul
 >[!success] Maschke's Theorem in the language of irreducibles
 >Suppose that $\mathbb{F}$ is a field of characteristic $p$ and that $G$ is a finite group of order not divisible by $p$. 
 >
->Then every $G$-module is [[FG-Module|completely reducible]].
+>Then every $G$-module is [[FG-Module|completely reducible]] (e.g. semisimple).
 
+Let $V$ be a $G$-module. If $V$ is irreducible then there is nothing to prove.
+
+If $V$ is not irreducible then it has a nonzero proper submodule $U$. By Maschke's theorem $V = U \oplus W$ for some $W$. Since $U$ is nonzero and proper then $W$ must have $\dim W>0$.  We can repeat the decomposition until $U$ and $W$ split into irreducible modules.
 
 
