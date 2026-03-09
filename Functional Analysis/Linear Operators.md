@@ -83,4 +83,20 @@ Take $S,T \in \mathcal{L}(X,Y)$. $$\begin{align*}
 \|(S+T)x\| = \|Sx+Tx\| &\overset{\Delta-\text{ineq.}}{\leq} \|Sx + Tx\| \\[3pt]
 &\leq \|S\|\|x\| + \|T\|\|x\| \\[3pt]
 &= \underbrace{(\|S\| + \|T\|)}_{=C}\|x\| 
-\end{align*}$$$\therefore S+T \in \mathcal{L}(X,Y)$, and $\|S+T\| \leq \|S\|+\|T\|$
+\end{align*}$$$\therefore S+T \in \mathcal{L}(X,Y)$, and $\|S+T\| \leq \|S\|+\|T\|$ 
+
+###### Second Part
+
+
+
+## Formula for $\|T\|$
+
+>[!Lemma]
+>$$\|T\| = \sup_{\|x\|\leq 1} \|Tx\| = \sup_{\|x\|=1}\|Tx\| = \sup_{x\neq0} \frac{\|Tx\|}{\|x\|}$$
+
+
+
+## Algorithm for calculating operator norms
+
+1. Use sensible inequalities to find a "$C$" that works in $\|Tx\| \leq C\|x\|$  for all $x \in X so $\|T\|\leq C$
+2. 
