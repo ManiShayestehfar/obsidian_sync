@@ -98,5 +98,21 @@ Take $S,T \in \mathcal{L}(X,Y)$. $$\begin{align*}
 
 ## Algorithm for calculating operator norms
 
-1. Use sensible inequalities to find a "$C$" that works in $\|Tx\| \leq C\|x\|$  for all $x \in X so $\|T\|\leq C$
-2. 
+1. Use sensible inequalities to find a "$C$" that works in $\|Tx\| \leq C\|x\|$  for all $x \in X$ so $\|T\|\leq C$
+2. Now find an $x_0 \in X$ with $x_0\neq 0$ and $\|Tx_0\| = C\|x_0\|$ giving $\|T\|\geq C$ 
+	- There is often no such $x_0$ So we can do the next best thing:
+	  Find $(x_n)_{n\geq 1}$ in $X$ such that $\frac{\|Tx_n\|}{\|x_n\|} \to C$ as $n \to \infty$. Then $\|T\|\geq C$.
+
+## Examples 
+
+1. $L: \ell^1 \to \ell^1$ given by $Lx = (x_2,x_3,x_4,...)$
+   $\|Lx\|_1 = \sum_{k=2}^\infty |x_k| \leq \sum_{k=1}^\infty |x_k| = \|x\|_1$ so $\|L\|\leq 1$.
+   Also $\|L(0,1,0,...)\|_1 = \|(1,0,0,...)\|_1 = 1 =\|(0,1,0,...)\|_1$
+   $\implies \|L\|=1$
+
+2. $T:\ell^2 \to \ell^1$, $Tx(\tfrac{x_1}{1}, \tfrac{x_2}{2},...)$. Using Cauchy-Schwartz we showed $\|Tx\| \leq \tfrac{\pi}{\sqrt{6}} \|x\|_2$ so $\|T\|\leq \tfrac{\pi}{\sqrt{6}}$
+   Take $x_0 = (\tfrac{1}{1}, \tfrac{2}{1}, \tfrac{3}{1},...) \in \ell^2$ 
+   So $\|Tx_0\|_1 = \sum_{k=1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6} = \frac{\pi}{\sqrt{6}}\|x_0\|_2$ 
+   $\therefore \|T\|=\frac{\pi}{\sqrt{6}}$.
+
+3. 
