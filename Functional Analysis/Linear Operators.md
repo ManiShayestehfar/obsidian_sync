@@ -74,8 +74,8 @@ so by $(5) \implies (4)$ $\mathcal{I}$ is bounded.
 # Norm of Linear Operators
 
 >[!Theorem]
->$\mathcal{L}(X,Y)$ is a normed vector space with $$\|T\| = \inf\:\{c>0 \:|\: \|Tx\|_Y \leq c \|x\|_X \:\: \forall x \in X\}$$
->Moreover $\mathcal{L}(X,Y)$ is Banach $\iff$ $Y$ is Banach.
+>$(\mathcal{L}(X,Y), \|\cdot\|)$ is a normed vector space with $$\|T\| = \inf\:\{c>0 \:|\: \|Tx\|_Y \leq c \|x\|_X \:\: \forall x \in X\}$$
+>Moreover if $Y$ is Banach, then $\mathcal{L}(X,Y)$ is Banach too.
 ##### Proof
 ###### $\|T\|$ is a norm
 We only need to check $\Delta$-inequality. Everything else comes for free.
@@ -110,7 +110,9 @@ $\square$
 
 Given $\varepsilon > 0$ there exists $N >0$ such that $\forall m,n \geq N$ 
 $$\|T_nx - T_m x\| \leq \|T_n-T_m\|\|x\| \leq \varepsilon \|x\|$$
-but 
+but $\|T_nx -T_mx\|\to \|T_nx-Tx\|$ in $Y$, so $\|T_n -T\|< \varepsilon$ for all $n \geq N$. 
+$\therefore \|T_n-T\|\to 0$.  $\square$
+
 ###### Second Part $(\Longrightarrow)$
 
 
