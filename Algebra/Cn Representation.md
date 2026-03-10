@@ -8,7 +8,7 @@ Then we have the following subrepresentations:
 
 *Trivial Representation:*
 $$I = \{(\lambda,\lambda,\lambda)\::\:\lambda \in \mathbb{F}\}\leq V$$
-*$\omega$ Representation:*
+*$L_\omega$ Representation:*
 $$W = \{(\lambda,\mu,\nu) \::\: \lambda+\mu+\nu = 0\}$$
 
 **Finding All $C_3$-Representations:**
@@ -20,5 +20,6 @@ For $C_3$: $$X = \begin{pmatrix}0&0&1 \\ 1 & 0 & 0 \\ 0 & 1 & 0\end{pmatrix}$$
 so $X^3=I \implies \det(X-\lambda I)= \lambda^3 +1$.
 
 *Over $\mathbb{R}$:* $I$ is the unique $1$-dimensional subspace
-*Ov*
+*Over $\mathbb{C}$:* $\lambda = 1,\omega,\omega^2$ for $\omega= e^{2\pi i /3}$ so we have three $1$-dimensional subspaces
+$$I = I_{trivial}, \quad \quad L_\omega = \{\lambda (1, \omega^2, \omega)\:|\: \lambda \in \mathbb{C}\},\quad\quad L_\omega = \{\lambda (1, \omega, \omega^2)\:|\:\lambda \in \mathbb{C}\}$$
 $$$$
