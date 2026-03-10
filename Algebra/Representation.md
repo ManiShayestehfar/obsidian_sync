@@ -24,8 +24,8 @@ It is called **indecomposable** if it cannot be written as a direct sum of two n
 > and $g\left(\sum_{x\in G}\lambda_x x \right) = \sum_{x \in G} \lambda_x (gx) = \sum_{y = xg \in G} \lambda_{g^{-1}y}y$ 
 
 - Since the elements of $G$ are a basis for $\mathbb{F}G$, then addition and multiplication in $\mathbb{F}G$ are component-wise operations.
-
-
+- $\text{dim} \mathbb{F}G = |G|$
+ 
 >[!lemma]
 >The vector space $\mathbb{F}G$ is a $G$-module.
 #### Proof
@@ -43,6 +43,8 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 #### Proof
 ![[Screenshot 2025-03-13 at 11.42.54 am.png]]
 
+>[!Proposition]
+>Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-module $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
 
 >[!success] NOTE
 >$\mathbb{F}G$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
