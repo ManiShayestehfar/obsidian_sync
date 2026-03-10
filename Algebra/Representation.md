@@ -35,6 +35,9 @@ It is called **indecomposable** if it cannot be written as a direct sum of two n
 $$(gh)x = g(hx)$$
 for all $g,h,x \in G$ and therefore associativity is given. $\square$
 
+>[!Proposition]
+>Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-module $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
+
 
 >[!proposition]
 >With the natural multiplication defined, $\mathbb{F}G$ is an associative ring with $1_G$ as identity. The natural multiplication comes from a natural multiplication in $G$:
@@ -43,8 +46,6 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 #### Proof
 ![[Screenshot 2025-03-13 at 11.42.54 am.png]]
 
->[!Proposition]
->Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-module $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
 
 >[!success] NOTE
 >$\mathbb{F}G$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
