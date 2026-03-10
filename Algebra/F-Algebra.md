@@ -7,8 +7,10 @@
 
 ## Examples
 
-- $\mathbb{F}G$ is an $\mathbb{F}$-algebra
-- So is $\text{Mat}_n(\mathbb{F})$
+- $\mathbb{F}G$ is an $\mathbb{F}$-algebra.
+	  For $\lambda \in \mathbb{F}$ and $a = \sum_{g \in G} \lambda_g g \in \mathbb{F}G$, then  $\lambda a = \sum_{g\ in G}\lambda \cdot \lambda_g g$ 
+- $\text{Mat}_n(\mathbb{F})$ is an $\mathbb{F}$-algebra
+	  $M,N \in \text{Mat}_n(\mathbb{F})$ where $M+N$ and $\lambda N$ is natural and $MN$ is matrix mult.
 
 # $\mathbb{F}$-Algebra Homomorphism
 

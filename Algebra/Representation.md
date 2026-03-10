@@ -35,9 +35,6 @@ It is called **indecomposable** if it cannot be written as a direct sum of two n
 $$(gh)x = g(hx)$$
 for all $g,h,x \in G$ and therefore associativity is given. $\square$
 
->[!Proposition]
->Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-module $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
-
 
 >[!proposition]
 >With the natural multiplication defined, $\mathbb{F}G$ is an associative ring with $1_G$ as identity. The natural multiplication comes from a natural multiplication in $G$:
@@ -50,4 +47,14 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 >[!success] NOTE
 >$\mathbb{F}G$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
 
+# Maximal submodules of $\mathbb{F}G$
 
+>[!Proposition]
+>Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-module $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
+##### Proof
+Let $0 \neq d \in D$. Define the map $\varphi: \mathbb{F}G \to D,$ by $$\sum_{g \in G} \lambda_g g \mapsto \sum_{g \in G} \lambda_g g\cdot d \in D$$
+>[!Claim]
+>$\varphi$ is a $G$-module homomorphism.
+###### Proof
+- $\varphi$ is linear because $G$ acts linearly on $D$
+- If $x \in G$, then $\varphi(xg) = \varphi(xg\cdot 1_G) = (xg)d = x(gd) = x \varphi(g)$ hence associative
