@@ -43,5 +43,21 @@ We need to construct a $\Theta: \ell^a \to (\ell^p)'$ via $y \mapsto \varphi_y$ 
 
 Consider $\Theta(y,x) := \varphi_y(x)$ and so we can instead consider $\Theta: \ell^q\times \ell^p \to \mathbb{K}$ which is bilinear.
 The best natural choice for $\varphi_y$ is the "dot product": $\varphi_y(x) = \sum_{i=1}^\infty x_iy_i$ 
+###### 1. Well-Defined
+By Holder's inequality: $\sum_{k=1}^\infty |x_ky_k| \leq \|x\|_p\|y\|_q$ so the series converges and so $\Theta$ is well-defined.
 
-###### 
+But $\Theta$ should be continuous as well. Take $\varphi_y \in (\ell^p)'$ for each $y \in \ell^q$. 
+Clearly $\varphi_y \in (\ell^p)^*$, so $|\varphi_y(x)|\leq\|y\|_q\|x\|_p \implies |\varphi_y(x)|\leq \|y\|_q$ so $\Theta$ is continuous.
+
+###### 2. Injective
+If $\Theta(y) = \Theta(y')$ then $\varphi_y(x) = \varphi_{y'}(x)$ for all $x \in \ell^p$.
+But $\sum_{i=1}^\infty y_ix_i = \sum_{i=1}^\infty y_i'x_i \iff \sum_{i=1}^\infty (y_i-y_i')x_i = 0 \iff y_i = y_i' \quad \forall i$ .
+So $y=y'$ and therefore $\Theta$ is injective.
+
+###### 3. Surjective
+We need to prove: $\forall \varphi \in (\ell^p)'$
+
+###### 4. Isometry
+
+###### 5. Linearity
+Obvious since $\varphi_y$ is linear itself.
