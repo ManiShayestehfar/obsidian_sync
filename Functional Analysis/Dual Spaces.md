@@ -100,3 +100,12 @@ Obvious since $\varphi_y$ is linear itself.
 
 $\square$
 
+
+## Examples
+
+1. $(\ell^1)' \simeq \ell^\infty$
+2. $(\ell^\infty)' \not \simeq \ell^1$
+3. $c_0' \simeq \ell^1$
+4. $(L^p([a,b]))' = L^q([a,b])$
+
+
