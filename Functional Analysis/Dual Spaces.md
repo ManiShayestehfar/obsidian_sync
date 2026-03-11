@@ -82,14 +82,21 @@ $$\begin{align*}
 |\varphi(x^{(n)})| &\leq \|\varphi\|\|x^{(n)}\|_p \\
 &= \|\varphi\|\cdot \left(\sum_{k=1}^n \frac{|y_k|^{qp}}{|y_k|^p} \right)^{1/p} 
 \end{align*}$$
-But $1/p + 1/q = 1 \implies pq - p =q $ So
+But $1/p + 1/q = 1 \implies pq - p =q$ So
 $$\sum_{k=1}^n|y_k|^q \leq \|\varphi\|\cdot \left(\sum_{k=1}^n |y_k|^q \right)^{1-1/q} 
 $$
 $$\implies \left(\sum_{k=1}^n |y_k|^q\right)^{1/q} = \|y_0\|_q \leq \|\varphi\|$$
 $\therefore y_0 \in \ell^q$ 
  
 ##### 4. Isometry
-In $(1)$ we showed that $\|\varphi_y\|\leq \|y\|_q$. 
+In $(1)$ we showed that $\|\varphi_y\|\leq \|y\|_q$  $\forall y \in \ell^q$.
+$\implies \|\Theta(y)\| = \|\varphi_y\| \leq \|y\|_q$.
 
+In $(3)$ we showed that for each $\varphi \in (\ell^p)'$, $\|y_0\|_q \leq \|\varphi_{y_0}\|$ where $y_0 = (\varphi(e_k))_{k=1}^\infty \in \ell^q$ and $\varphi = \varphi_{y_0}$. 
+But also by surjectivity, $\|y\|_q \leq \|\varphi_y\|$ for all $y \in \ell^q$. 
+  
 ##### 5. Linearity
 Obvious since $\varphi_y$ is linear itself.
+
+$\square$
+
