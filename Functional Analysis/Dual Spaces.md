@@ -48,7 +48,7 @@ The best natural choice for $\varphi_y$ is the "dot product": $\varphi_y(x) = \s
 By Holder's inequality: $\sum_{k=1}^\infty |x_ky_k| \leq \|x\|_p\|y\|_q$ so the series converges and so $\Theta$ is well-defined.
 
 But $\Theta$ should be continuous as well. Take $\varphi_y \in (\ell^p)'$ for each $y \in \ell^q$. 
-Clearly $\varphi_y \in (\ell^p)^*$, so $|\varphi_y(x)|\leq\|y\|_q\|x\|_p \implies |\varphi_y(x)|\leq \|y\|_q$ so $\Theta$ is continuous.
+Clearly $\varphi_y \in (\ell^p)^*$, so $|\varphi_y(x)|\leq\|y\|_q\|x\|_p \implies \|\varphi_y(x)\|\leq \|y\|_q$ so $\Theta$ is continuous.
 
 ##### 2. Injective
 If $\Theta(y) = \Theta(y')$ then $\varphi_y(x) = \varphi_{y'}(x)$ for all $x \in \ell^p$.
@@ -76,15 +76,20 @@ Let $$x^{(n)}_k := \begin{cases}
 \frac{|y_k|^q}{y_k} & k\leq n \text{ and } y_k\neq0  \\
 0 & k > n \text{ or } y_k = 0
 \end{cases}$$
-Then $\varphi(x^{(n)})$
-
-
-
-
-
-
-
+Then $\varphi(x^{(n)}) = \varphi_{y_0}(x^{(n)}) = \sum_{k=1}^n \frac{|y_k|^q}{y_k}\varphi(e_i) = \sum_{i=1}^n |y_k|^q = \|y_0\|_q^q$. 
+But by definition
+$$\begin{align*}
+|\varphi(x^{(n)})| &\leq \|\varphi\|\|x^{(n)}\|_p \\
+&= \|\varphi\|\cdot \left(\sum_{k=1}^n \frac{|y_k|^{qp}}{|y_k|^p} \right)^{1/p} 
+\end{align*}$$
+But $1/p + 1/q = 1 \implies pq - p =q $ So
+$$\sum_{k=1}^n|y_k|^q \leq \|\varphi\|\cdot \left(\sum_{k=1}^n |y_k|^q \right)^{1-1/q} 
+$$
+$$\implies \left(\sum_{k=1}^n |y_k|^q\right)^{1/q} = \|y_0\|_q \leq \|\varphi\|$$
+$\therefore y_0 \in \ell^q$ 
+ 
 ##### 4. Isometry
+In $(1)$ we showed that $\|\varphi_y\|\leq \|y\|_q$. 
 
 ##### 5. Linearity
 Obvious since $\varphi_y$ is linear itself.
