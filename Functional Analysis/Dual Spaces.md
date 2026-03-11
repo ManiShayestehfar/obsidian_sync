@@ -97,7 +97,6 @@ But also by surjectivity, $\|y\|_q \leq \|\varphi_y\|$ for all $y \in \ell^q$.
   
 ##### 5. Linearity
 Obvious since $\varphi_y$ is linear itself.
-
 $\square$
 
 
