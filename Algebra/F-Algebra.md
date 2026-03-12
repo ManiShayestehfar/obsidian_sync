@@ -1,6 +1,8 @@
 >[!def]
 >A (unital) **$\mathbb{F}$-Algebra** is a [[ring]] $R$ with identity element $1_R$ which is also a $\mathbb{F}$-vector space w.r.t addition in $R$.
 >
+>i.e. a ring with a (central) ring $A$, with homomorphism such that $\lambda (a,b) = (\lambda a)b = a(\lambda b)$ such that $(A,+)$ is an $\mathbb{F}$-vector space.
+>
 >--> An $\mathbb{F}$-algebra is a ring with its *coefficients* in $\mathbb{F}$. 
 >
 >A **finite dimensional $\mathbb{F}$-algebra** is an $\mathbb{F}$-algebra that is finite dimensional as an $\mathbb{F}$-vector space.
@@ -11,6 +13,9 @@
 	  For $\lambda \in \mathbb{F}$ and $a = \sum_{g \in G} \lambda_g g \in \mathbb{F}G$, then  $\lambda a = \sum_{g\ in G}\lambda \cdot \lambda_g g$ 
 - $\text{Mat}_n(\mathbb{F})$ is an $\mathbb{F}$-algebra
 	  $M,N \in \text{Mat}_n(\mathbb{F})$ where $M+N$ and $\lambda N$ is natural and $MN$ is matrix mult.
+- $\text{End}_\mathbb{F}(V)$is also similar to above except here you just fix a basis.
+- $\mathbb{C}$ is a $\mathbb{C}$-algebra where $\mathbb{C} = \mathbb{R} \oplus \mathbb{R}i$ as $\mathbb{R}$-algebras.
+- If $A_1,A_2,...,A_n$ are $\mathbb{F}$-algebras (with ones), then $A = A_1 \oplus ... \oplus A_n$ is an $\mathbb{F}$-algebra. You can check that all necessary criteria hold
 
 # $\mathbb{F}$-Algebra Homomorphism
 

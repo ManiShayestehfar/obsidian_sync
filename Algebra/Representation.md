@@ -50,11 +50,18 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 # Maximal submodules of $\mathbb{F}G$
 
 >[!Proposition]
->Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-module $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
+>Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-submodule $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
 ##### Proof
-Let $0 \neq d \in D$. Define the map $\varphi: \mathbb{F}G \to D,$ by $$\sum_{g \in G} \lambda_g g \mapsto \sum_{g \in G} \lambda_g g\cdot d \in D$$
+Let $0 \neq d \in D$. Define the map $\varphi_d: \mathbb{F}G \to D,$ by $$\sum_{g \in G} \lambda_g g \mapsto \sum_{g \in G} \lambda_g g\cdot d \in D$$
 >[!Claim]
->$\varphi$ is a $G$-module homomorphism.
+>$\varphi_d$ is a $G$-module homomorphism.
 ###### Proof
-- $\varphi$ is linear because $G$ acts linearly on $D$
-- If $x \in G$, then $\varphi(xg) = \varphi(xg\cdot 1_G) = (xg)d = x(gd) = x \varphi(g)$ hence associative
+- $\varphi_d$ is linear because $G$ acts linearly on $D$
+- If $x \in G$, then $\varphi_d(xg) = \varphi_d(xg\cdot 1_G) = (xg)d = x(gd) = x \varphi_d(g)$ hence associative
+Hence $\varphi_d$ is a $G$-module homomorphism. $\square$
+
+By First Isomorphism Theorem, $\mathbb{F}G/\ker \varphi_d \cong \text{im }\varphi_d$.
+$\text{im }\varphi_d$ is either $0$ or $D$ since $D$ is irreducible. Clearly $\text{im }\varphi_D \neq 0$ since $d = \varphi_d(1_G)$ exists and so the image is non-zero.
+
+Set $M = \ker \varphi_d \implies \mathbb{F}G / M \cong D$. 
+By the fourth Isomorphism theorem (correspondence theorem), $\mathbb{F}G/M$ is in corres
