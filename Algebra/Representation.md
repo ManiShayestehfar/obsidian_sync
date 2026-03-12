@@ -64,4 +64,17 @@ By First Isomorphism Theorem, $\mathbb{F}G/\ker \varphi_d \cong \text{im }\varph
 $\text{im }\varphi_d$ is either $0$ or $D$ since $D$ is irreducible. Clearly $\text{im }\varphi_D \neq 0$ since $d = \varphi_d(1_G)$ exists and so the image is non-zero.
 
 Set $M = \ker \varphi_d \implies \mathbb{F}G / M \cong D$. 
-By the fourth Isomorphism theorem (correspondence theorem), $\mathbb{F}G/M$ is in corres
+By the fourth Isomorphism theorem (correspondence theorem), $G$-submodules of $\mathbb{F}G$ such that $M \subseteq W \subseteq \mathbb{F}G$ is in one-to-one correspondence with $G$-submodules of $\text{im }\varphi_d = D$ which are ${0,D}$.
+
+Since $D$ is irreducible, then it must be in correspondence with $\mathbb{F}G/M$ which is irreducible. Hence $M$ is proper maximal.
+
+
+## Another Proposition
+
+>[!Proposition]
+>Suppose $V$ is an $n$-dimensional $G$-module. Then $$\mathbb{F}G^{\oplus n}/M \cong V$$
+>for some $M \subseteq \mathbb{F}G^{\oplus n}$
+##### Proof
+Let $\{v_1,...,v_n\}$ be a basis of $V$. Define a map $\psi: \mathbb{F}G \oplus ... \oplus \mathbb{F}G \to V$ by $(x_1,...,x_n) \mapsto \sum_{i=1}^n x_iv_i$ 
+
+It follows from the pervious proof that $\psi$ is indeed a $G$-module homomorphism.
