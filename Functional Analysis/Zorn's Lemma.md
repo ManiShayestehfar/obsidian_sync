@@ -20,7 +20,11 @@
 >3. Every set can be well-ordered
 
 
+# Applications of Zorn's Lemma
 
+1. Existence of Hamel basis of a vector space
+2. Any topological dynamical system contains a minimal subsystem
+3. 
 
 
 
