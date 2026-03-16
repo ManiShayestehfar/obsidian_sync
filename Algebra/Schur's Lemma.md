@@ -3,7 +3,7 @@
 >$$\text{Hom}_A(D,E) \cong \begin{cases} \mathbb{F} & \text{if}\:\: D \cong E \\[4pt]
 >0 & \text{otherwise}
 \end{cases}$$
-Moreover, $\text{End}_A(D) \cong \mathbb{F}$. In particular, $A$ is a Schurian [[F-Algebra]].
+Moreover, $\text{End}_A(D) \cong \mathbb{F}$. In particular, $A$ is a *Schurian* [[F-Algebra]].
 ##### Proof
 Split the proof into two parts: when $D \not\cong E$, and $D \cong E$.
 
