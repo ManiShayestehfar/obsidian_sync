@@ -19,6 +19,8 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 ![[Screenshot 2026-02-26 at 11.41.00 am.png]]
 
 **Remark:** $\text{im } \rho_{V}^{E} = A^{-1}\text{im } \rho_{V}^{F}A$  are conjugate subgroups of $GL_n(\mathbb{F})$
+
+
 ## FG-Module Examples
 
 1. $G = GL_n(\mathbb{F}) = \{\text{invertible}\:\: n \times n \:\:\text{matrices made of}\:\: \mathbb{F}\}$ 
@@ -30,6 +32,7 @@ If $A = (a_{ij}) \in G$, then $A\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\
 2. $G = S_n = \text{symmetric group of permutation of}\:\:\{1,2,...,n\}$. 
 $V = \mathbb{F}^n$ with $S_n$-action
 $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatrix}\lambda_{a(1)} \\ \vdots \\ \lambda_{a(n)}\end{pmatrix}$$
+
 
 ## $G-$Module Homo/Isomorphisms
 
@@ -81,7 +84,7 @@ $$\begin{align*}
 
 
 
-# FG-Modules vs G-Modules
+# $\mathbb{F}G$-Modules vs $G$-Modules
 
 
 >[!Proposition]
@@ -110,9 +113,19 @@ $\square$
 >2. Every $\mathbb{F}G$-module is a $G$-module
 >3. Let $V$ and $W$ be $G$-modules of $\mathbb{F}G$-modules. Then $V \cong W$ as $G$-modules $\iff\: V \cong W$ as $\mathbb{F}G$-modules.
 
-##### Proof (1 & 2)
+##### Proof 
+###### 1. 
+By Prop above, $V$ is an $\mathbb{F}G$-module if and only if there is an algebra homomorphism $\mathbb{F}G\to \text{Mat}_n(\mathbb{F})$ with $n = \dim V$.
+$\implies$ a group homomorphism $G \to GL_n(\mathbb{F})$, because $1_G = g\cdot g^{-1}$
+$\implies I_n = \Phi(1_{\mathbb{F}G}) = \Phi(g\cdot g^{-1}) = \Phi(g)\Phi(g^{-1})$
+$\implies \Phi(g) \in GL_n(\mathbb{F})$ 
+$\square$
 
-By Prop above, $V$ is an $\mathbb{F}G$-module if and only if there is an algebra homomorphism $A\to \text{Mat}_n(\mathbb{F})$ with $n = \dim V$
-$\implies$ a group homomorphism $$
+###### 2.
+We have $G$-module homomorphism $\varphi(gv) = g\varphi(v)$ since $G$ is a basis of $\mathbb{F}G$.
+Then $V \cong W$ as $G$-modules $\iff V\cong W$ as $\mathbb{F}G$-modules. $\square$
+
+>[!Remark]
+>If $V,W$ are $G$-modules and $\varphi:V \to W$ is a $G$-module homomorphism, then we can consider $\varphi$ as an $\mathbb{F}G$-module homomorphism.
 
 

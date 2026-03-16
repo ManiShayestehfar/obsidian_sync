@@ -13,7 +13,14 @@
 >- $d_1,...,d_t$ be the dimensions of the irreducible $A$-modules, counted up to isomorphism.
 >Then $$A \cong \text{Mat}_{d_1}(\mathbb{F}) \oplus \cdots \oplus \text{Mat}_{d_t}(\mathbb{F})$$ 
 ##### Proof
-[ENTER PROOF]
+ENTER PROOF
+
+## Decomposition of $\mathbb{F}G$
+
+Let $A = \mathbb{F}G$. How do we prove the decomposition?
+##### Proof
+
+
 
 
 >[!corollary] 
