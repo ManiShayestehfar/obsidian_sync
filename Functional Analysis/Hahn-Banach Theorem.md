@@ -23,6 +23,7 @@
 Let $\Theta: X \to X''$ is defined naturally as $$\Theta(x)(\varphi) = \varphi(x) \quad\quad \forall x \in X,\:\varphi \in X'$$
 
 
+
 ## Corollary B
 
 >[!Corollary]
