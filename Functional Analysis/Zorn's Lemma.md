@@ -41,9 +41,7 @@ Then by lemma, it is enough to find a maximal element in $\mathcal{L}$ to prove 
 
 By Zorn's lemma if every chain has an upper bound, then there is a maximal element. 
 
-If we have a chain $C \subseteq (\mathcal{L}, \subseteq)$. Take $U := \bigcup_{c \in C} c\subseteq V$.
-We need to show that if $v_1,...,v_n \in U$, then $\{v_1,...,v_n\}$ are linearly independent.
-Then there exists $c_i \in C$ such that $v_i \leq c_i$. 
+If we have a maximal elements in the chain,  $C \in (\mathcal{L}, \subseteq)$, $C$ is linearly independent. If $C$ does not span $V$, there is $x \in V\setminus \text{Span}(C)$. Then $C \cup \{x\}$ is linearly independent (exercise), contradicting the maximality of $C$.
 
 ## Any topological dynamical system contains a minimal subsystem
 

@@ -73,4 +73,58 @@ We just showed that $\Theta:X \to X''$ is an isometric embedding. Define $\hat{X
 # Hahn-Banach Theorem ($\mathbb{R}$-Version)
 
 >[!Theorem]
->Let $X$ be a vector space over $\mathbb{\R}$. Let $p:X \to \mathbb{R}$ be a sublinear function.
+>Let $X$ be a vector space over $\mathbb{R}$. Let $p:X \to \mathbb{R}$ be a sublinear function.
+>Let $Y \subseteq X$, and suppose $\varphi_0 \in Y^*$ satisfying:
+>$$\varphi_0(y)\leq p(y) \quad\forall y \in Y$$
+>Then $\exists \varphi \in X^*$ such that
+>1. $\varphi\mid_Y = \varphi_0$
+>2. $\varphi(x) \leq p(x)$    $\forall x \in X$.
+
+- Naturally we need to prove this using induction on $\dim Y$.
+
+>[!Lemma]
+>Let $X$ be a vector space over $\mathbb{R}$ and $p:X \to \mathbb{R}$ be sublinear.
+>Suppose $X = Y \oplus \mathbb{R}x_0$ and that $\varphi_0 \in Y^*$ satisfying: $$\varphi_0(y) \leq p(y) \quad \forall y \in Y$$
+>Then there exists $\varphi \in X^*$ such that 
+>1. $\varphi\mid_Y = \varphi_0$
+>2. $\varphi(x) \leq p(x)$  $\forall x \in X$
+##### Proof
+
+We need $\varphi(y + \lambda x_0) = \varphi_0(y) + \lambda c$  where $c = \varphi(x_0)$ is chosen such that
+$$\varphi_0(y) + \lambda c \:\:\leq\:\: p(y+\lambda x_0) \quad\quad \forall y \in Y,\lambda \in \mathbb{R} \tag{$\star$}$$
+Hence we just need to show that $c$ exists.
+
+###### $\lambda > 0$
+Replace $y$ with $\lambda y$. Then 
+$$\begin{align*}
+(\star) &\:\:\iff\:\: \varphi_0(\lambda y) + \lambda c \leq p(\lambda y + \lambda x) \\[4pt]
+&\:\:\iff\:\: \lambda(\varphi_0(y)+ c) \leq \lambda p(y+x_0) \\[4pt]
+&\:\:\iff\:\: c \leq p(y+x_0) - \varphi_0(y)
+\end{align*}$$
+###### $\lambda < 0$
+$$\begin{align*}
+(\star) &\:\:\iff\:\: \varphi_0(\lambda y) + \lambda c \leq p(\lambda y + \lambda x) \\[4pt]
+&\:\:\iff\:\: \lambda(\varphi_0(y)+ c) \leq -\lambda p(-y-x_0) \\[4pt]
+&\:\:\iff\:\: \varphi_0(y)+ c \geq -p(-y-x_0)\\[4pt]
+&\:\:\iff\:\: c \geq -p(-y-x_0) - \varphi_0(y)
+\end{align*}$$
+###### $\lambda = 0$
+Then $(\star)$ is true by the hypothesis.
+
+-> We need to show now that $c \in \mathbb{R}$ with $$-p(-y_1-x_0)-\varphi_0(y_1) \leq c\leq p(y_2+x_0)-\varphi_0(y_2)\quad\quad \forall y_1,y_2\in Y$$
+That is $-p(-y_1-x_0)-\varphi_0(y_1)\leq p(y_2+x_0)- \varphi_0(y_2)$
+$\implies \varphi_0(y_2) - \varphi_0(y_1)\leq p(y_2+x_0) + p(-y-x_0)$
+$\implies \varphi_0(y_2-y_1)\leq p(y_2+x_0)+ p(-y_1-x_0)$. (We need to show this)
+
+But recall that $\varphi_0(y_2-y_1)\leq p(y_2-y_1) = p(y_2+x_0 + (-y-x_0)) \leq p(y_2+x_0) + p(-y_1-x_0)$
+as required. 
+Thus setting $$\begin{align*}
+a &= \sup_{y\in Y} (-p(-y-x_0)- \varphi_0(y))\\[5pt]
+b &= \inf_{y \in Y} (p(y+x_0) - \varphi_0(y))
+\end{align*}$$
+Then $a \leq b$ which we showed before, and choosing any $c \in [a,b]$ will be sufficient. $\square$
+
+
+
+- Now to apply this lemma for induction, we need to apply this step possibly uncountably many times
+  **Solutions:** Transfinite induction, or [[Zorn's Lemma]]
