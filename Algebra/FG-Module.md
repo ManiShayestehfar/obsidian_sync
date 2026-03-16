@@ -83,14 +83,36 @@ $$\begin{align*}
 
 # FG-Modules vs G-Modules
 
+
+>[!Proposition]
+>Let $V$ be an $\mathbb{F}$-vector space. Then $V$ is an $A$-module if and only if there is an algebra homomorphism $\Phi: A \to \text{Mat}_n(\mathbb{F}),\quad a \mapsto \varphi_a$ such that $a \cdot v = \varphi_a(v)$.
+##### Proof
+###### ($\Rightarrow$) 
+Let $v_1,...,v_n$ be basis for $V$. If $V$ is an $A$-module and $a \in A$ we can define a matrix $a \in \text{Mat}_n(\mathbb{F})$ by $$av_j = \sum_{i=1}^n a_{ij}v_i$$
+Define $\Phi: A \to \text{Mat}_n(\mathbb{F})$ by $\Phi(a) = (a_{ij}) = \varphi_a$.
+Then $\Phi$ is linear because $A$ acts linearly on $V$ and $\Phi(ab) = \Phi(a)\Phi(b)$ since $(ab)v = a(bv)$.
+By assumption $1_Av_j = v_j$ and so $\Phi(1_A) = 1_{\text{Mat}_n(\mathbb{F})}$.
+
+###### ($\Leftarrow$)
+Conversely, given an algebra map $\Phi: A \to \text{Mat}_n(\mathbb{F})$, we can define an $A$-action $A\times V \to V$ by $a\cdot v = \Phi(a)v$, where if $\Phi(a)= (a_{ij})$ then this means that $a\cdot v_j = \sum_{i=1}^n a_{ij}v_i$.
+
+Bilinearity comes from the fact that the $A$-action is linear in $A$ because $\Phi$ is an algebra map so $\Phi(\lambda a + \mu b) = \lambda\Phi(a) + \mu \Phi(b)$ and it is linear on $V$ because matrix multiplication is linear.
+
+Unitality comes from that fact that $\Phi(1_A) = 1_\text{Mat}\implies 1_A\cdot v = 1_{\text{Mat}}$ for all $v \in V$.
+
+Associativity: $\Phi(ab) = \Phi(a)\Phi(b)\implies (ab)\cdot v = a\cdot (bv)$
+$\square$
+
+
 >[!proposition|2]
 >Let $G$ be a finite group and $\mathbb{F}$ a field
 >1. Every $G$-module is an $\mathbb{F}G$-module
 >2. Every $\mathbb{F}G$-module is a $G$-module
 >3. Let $V$ and $W$ be $G$-modules of $\mathbb{F}G$-modules. Then $V \cong W$ as $G$-modules $\iff\: V \cong W$ as $\mathbb{F}G$-modules.
 
+##### Proof (1 & 2)
 
-
-
+By Prop above, $V$ is an $\mathbb{F}G$-module if and only if there is an algebra homomorphism $A\to \text{Mat}_n(\mathbb{F})$ with $n = \dim V$
+$\implies$ a group homomorphism $$
 
 
