@@ -55,7 +55,8 @@ This proves that $V$ itself is also semisimple.       $\square$
 # Opposite Algebra
 
 >[!def] 
->Let $B$ be an $\mathbb{F}$-algebra. The **opposite algebra** of $B$ is the $\mathbb{F}$-algebra $B^{op}$ that is equal to $B$ as an $\mathbb{F}$-vector space but with multiplication $a\cdot b = ab$ where the multiplication on the left-hand is in $B^{op}$ and multiplication on the right-hand side is in $B$.
+>Let $B$ be an $\mathbb{F}$-algebra. The **opposite algebra** of $B$ is the $\mathbb{F}$-algebra $B^{op}$ that is equal to $B$ as an $\mathbb{F}$-vector space but with multiplication $a\cdot b = ba$ where the multiplication on the left-hand is in $B^{op}$ and multiplication on the right-hand side is in $B$.
+
 
 ## Some Properties
 
