@@ -44,9 +44,22 @@ Let $C = (\mathcal{L}_\alpha)_{\alpha \geq 1}$ be a chain. So, for $\alpha,\beta
 Since $C$ is a chain, there is $1 \leq k\leq n$ with $L_{\alpha_j}\subseteq L_{\alpha_k}$ for all $j \in\{1,...,n\}$. 
 So $v_1,...,v_n \in L_{\alpha_k}$, since this set is linearly independent, so too is $\mathcal{L}$.
 
-By Zorn's lemma if every chain has an upper bound, then there is a maximal linearly independent set which is the basis, call it $\mathcal{M}$. 
+By Zorn's lemma if every chain has an upper bound, then there is a maximal linearly independent set which is the basis, call it $\mathcal{M}$.     $\square$
 
 ## Any topological dynamical system contains a minimal subsystem
+
+>[!Definition] $G$-dynamical system
+>Let $G$ be a group, $X$ a compact metric space. 
+>We say $(X,G)$ is a **$G$-Dynamical System** if $G$ acts on $X$ via homomorphisms.
+>i.e. there exists homeomorphisms $T_g:X \to X$ such that $\forall g \in G:$
+>1. $T_h \circ T_g = T_{hg}$
+>2. $T_1 = \text{id}$. 
+
+### Examples
+1. $X = S^1, G = \mathbb{Z}$, and $T_1 = R_\alpha$ where $R_\alpha$ is rotation by angle $\alpha \in \mathbb{Z}$. All $T_g$ are determined by $T_1.$ 
+
+### Minimality
+>[!]
 
 ## Proof of Hahn-Banach Theorem
 
