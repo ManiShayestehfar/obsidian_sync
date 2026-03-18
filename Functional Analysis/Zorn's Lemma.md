@@ -57,7 +57,7 @@ By Zorn's lemma if every chain has an upper bound, then there is a maximal linea
 >1. $T_h \circ T_g = T_{hg}$
 >2. $T_1 = \text{id}$. 
 
-- A **subsystem** is any non-empty closed $Z \subset X$ wh
+- A **subsystem** is any non-empty closed $Z \subset X$ which is $G$-invariant.
 #### Examples
 1. $X = S^1, G = \mathbb{Z}$, and $T_1 = R_\alpha$ where $R_\alpha$ is rotation by angle $\alpha \in \mathbb{Z}$. All $T_g$ are determined by $T_1.$ 
 
@@ -73,11 +73,23 @@ By Zorn's lemma if every chain has an upper bound, then there is a maximal linea
 
 ### Proof of Minimality
 
-Zorn's Lemma is equivalent to the following: Given $(\mathcal{P}, \leq)$ a non-empty poset such that any chain $C \leq \mathcal{P}$ has a *lower* bound contains a *minimal* element.
+Zorn's Lemma is equivalent to the following: Given $(\mathcal{P}, \leq)$ a non-empty poset such that any chain $C \subseteq \mathcal{P}$ has a *lower* bound contains a *minimal* element.
 
 >[!Theorem] 
->Any $G$-system $(X,G)$ contains a minimal sub
+>Any $G$-system $(X,G)$ contains a minimal subsystem
+##### Proof
+Define a poset of $G$-subsystems on $(X,G)$ with "$\leq$" which is containment. 
 
+>[!Claim] 
+>Any chain has a lower bound
+
+- If $C \subseteq \mathcal{P}$ is a chain defined as $C := (X_\alpha)_{\alpha \in I}$. 
+  Then define $Z := \bigcap_{\alpha \in I}X_\alpha$, which is closed as an intersection of closed sets, and is non-empty by the Finite Intersectivity Property (FIP), which states:
+	- If $X$ is a compact set then it has a finite intersectivity property. i.e. 
+	  If $(F_\alpha)_{\alpha \in I} \subseteq X$ is a familty of closed subsets such that for any finite subset of indices $J \subseteq I$, $$\bigcap_{\alpha \in J}F_\alpha \neq \varnothing \implies \bigcap_{\alpha \in I}F_\alpha \neq \varnothing$$
+	- The point is that $Z$ is a lower bound which is non-empty. $\square$
+
+Now suppose $G \curvearrowright Z$ i.e. $\forall z \in Z$  
 
 ## Proof of Hahn-Banach Theorem
 
