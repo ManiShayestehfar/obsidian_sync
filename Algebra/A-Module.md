@@ -20,8 +20,8 @@
   $\implies A$ is NOT irreducible as a left $A$-module, since $A \cong \mathbb{F}^n \oplus \cdots \mathbb{F}^{n} \cong (\mathbb{F})^{\oplus n}$ 
   
   *Question:* Is $\mathbb{F}^n$ irreducible as an $A$-module?
-  If $0\neq \begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_n \end{pmatrix} \in \mathbb{F}^n$, then $\lambda_j \neq 0 \implies$ let $E_{ij}$ be the matrix with $1$ in $ij$ position. Then $E_{ij}\begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_j \end{pmatrix} = \begin{pmatrix} 0  \\ \vdots \\ \lambda_j \\ \vdots  \\ 0 \end{pmatrix}$
-  Since $A v_\lambda = \mathbb{F}^n$ then $\mathbb{F}^n$ is irreducible as an $A$-module.
+  If $0\neq \begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_n \end{pmatrix} \in \mathbb{F}^n$, then $\lambda_j \neq 0 \implies$ let $E_{ij}$ be the matrix with $1$ in $ij$ position. Then $E_{ij}v_\lambda = E_{ij}\begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_j \end{pmatrix} = \begin{pmatrix} 0  \\ \vdots \\ \lambda_j \\ \vdots  \\ 0 \end{pmatrix}$
+  Hence all $e_j$ vector are in $Av_\lambda = \mathbb{F}^n$. Hence $\mathbb{F}^n$ is irreducible as an $A$-module.
   
   
   
@@ -94,9 +94,24 @@ Hence it is an $A$-submodule.
  
 
 
-
 >[!corollary]
 >Suppose $A$ is a finite-dim $\mathbb{F}$-algebra. Then, there are only *finitely* many irreducible $A$-modules, up to isomorphism.
 ##### Proof 
 If $D$ is an irreducible $A$-module, then from [[Filtration and Composition Series|lemma 4]] $D$ is a composition factor of $A$. As $A$ is finite dimensional, it can only have a finite number of composition factors.        $\square$
 
+
+# Decomposition of A-modules given A Semisimple
+
+>[!proposition]
+>If $A$ is a semisimple $\mathbb{F}$-algebra, and $V$ is an $A$-module, then $V$ is a semisimple $A$-module. 
+##### Proof
+
+We know $A = D_1 \oplus D_2 \oplus \cdots \oplus D_r$ as a direct some of irreducible submodules. Then
+$$V = AV = \{av \:|\: a \in A, v \in V\} = D_1V + \cdots D_rV$$
+Pick a basis $\{e_1,..,e_n\}$ for $V$, and let $1 \leq a \leq n$ and $1 \leq i \leq r$.
+Then $D_i e_a = \{de_a \:|\: d \in D_i\}$ is a submodule of $V$ as it is a vector subspace of $V$ closed under left multiplication by $A$. 
+If $D_ie_a\neq 0$, then $D_i \cong D_ie_a$ by Schur's lemma as there is an nonzero $A$-homomorphism from $d \mapsto de_a$. Thus $V = D_1 + D_2 + \cdots D_r$.
+
+This is *a priori* not a direct sum, but If $D,D'$ are irreducible submodules of $V$, then either $D = D'$ or $D \cap D' = 0$. Therefore we can indeed write $V = D_1 \oplus D_2 \oplus \cdots \oplus D_r$. $\square$
+
+**Remark:** the proof relies on the fact that we can view $A$ as both an algebra and an $A$-modules.

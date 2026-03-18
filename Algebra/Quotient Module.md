@@ -1,8 +1,8 @@
-If $W$ is a [[FG-Module|submodule]] of $V$, then we can form a **quotient module** 
+If $W$ is a [[G-Modules|submodule]] of $V$, then we can form a **quotient module** 
 $$V/W =\{v+W\:|\:v\in V\}$$
 where $v \sim w \iff w-v \in W$ for any $v,w \in V$. 
 
-- We know that $V/W$ is a [[vector space]], but is also a [[FG-Module|G-Module]].
+- We know that $V/W$ is a [[vector space]], but is also a [[G-Modules|G-Module]].
 
 > [!proposition]
 > ![[Pasted image 20250306225042.png]]

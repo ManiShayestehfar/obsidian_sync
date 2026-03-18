@@ -1,3 +1,5 @@
+# FG-Module and G-Module
+
 Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 
 >[!def]
@@ -12,6 +14,9 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 	$$ge_j = \sum_{i=1}^ng_{ij}\:e_i$$
 - A matrix **representation** of $G$ is a group homomorphism $\rho: G \to GL_n(\mathbb{F})$, the group of invertible  $n\times n$ matrices with entries in $\mathbb{F}$.
 
+
+## Equivalence of Representation and G-Modules
+
 >[!proposition]
 >Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$. Conversely, if $\rho:G \to GL_{n}(\mathbb{F})$ is a group homomorphism the $V = \mathbb{F}^n$ becomes a $G$-module by defining the action of $g \in G$ on $V$ to be given by matrix multiplication by $\rho(g)$.
  
@@ -19,6 +24,7 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 ![[Screenshot 2026-02-26 at 11.41.00 am.png]]
 
 **Remark:** $\text{im } \rho_{V}^{E} = A^{-1}\text{im } \rho_{V}^{F}A$  are conjugate subgroups of $GL_n(\mathbb{F})$
+
 
 
 ## FG-Module Examples
@@ -34,7 +40,8 @@ $V = \mathbb{F}^n$ with $S_n$-action
 $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatrix}\lambda_{a(1)} \\ \vdots \\ \lambda_{a(n)}\end{pmatrix}$$
 
 
-## $G-$Module Homo/Isomorphisms
+
+## G-Module Homomorphism & Isomorphisms
 
 - Let $V,W$ be $G-$modules.
 
@@ -44,6 +51,7 @@ $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatri
 > [!info] G-Module Isomorphism
 > A **$G-$Module Isomorphism** is a bijective $G-$module homomorphism, $\phi : V \to W$ that commutes with the $G-$action. i.e. $\phi(gv) = g\phi(v)$ for all $g\in G$, $v\in V$. We write $V\cong W$. 
 
+---
 
 # Submodules
 
@@ -72,8 +80,8 @@ $$\begin{align*}
 1. $\text{im}\:\phi \subset W$   
 2. Let $w = \varphi(v)$ for $v \in V$ and $w \in W$. And $gw = g\varphi(v) = \varphi(gv) \in \text{im}\: W$ for all $g \in G$ and so $gw \in \text{im }W$.     $\square$ 
 
-
-# Irreducible $G$-modules
+---
+# Irreducible G-modules
 
 >[!def]
 >A $G$-module $V$ is **irreducible** if it contains no proper nonzero submodules. i.e its only submodules are $0$ and $V$.
@@ -82,9 +90,83 @@ $$\begin{align*}
 >
 >A $G$-module $V$ is **completely reducible**, or **semisimple**, if it is isomorphic to a direct sum of irreducible $G$-modules.
 
+## Dimension of Irreducible FG-Modules
+
+>[!corollary] 
+>Suppose $\mathbb{F}G$ is Schurian, where $\mathbb{F}$ is a field of characteristic $p$ such that $p \nmid |G|$. Let $d_1,d_2,...,d_t$ be the dimensions of the irreducible $\mathbb{F}G$-modules, counted up to isomorphism. Then $|G|= d_1^2+\cdots +d_t^2$.
+##### Proof
+
+By [[Maschke's Theorem]] $\mathbb{F}G$ is a semisimple $\mathbb{F}$-algebra. Hence, this follows by taking dimensions on both sides of the Artin-Wedderburn decomposition of $\mathbb{F}G$. 
+
+---
+# Regular Representation
+
+> [!def]
+> The (left) **regular representation** of $G$ is the $\mathbb{F}$-vector space $\mathbb{F}G$ that has as its basis the elements of $G$ and the $G$-action is given by left multiplication. Thus
+> $$\mathbb{F}G = \left\{\sum_{x\in G}\lambda_x x \;|\; \lambda_x \in \mathbb{F} \right\}$$
+> and $g\left(\sum_{x\in G}\lambda_x x \right) = \sum_{x \in G} \lambda_x (gx) = \sum_{y = xg \in G} \lambda_{g^{-1}y}y$ 
+
+- Since the elements of $G$ are a basis for $\mathbb{F}G$, then addition and multiplication in $\mathbb{F}G$ are component-wise operations.
+- $\text{dim} \mathbb{F}G = |G|$
+ 
+>[!lemma]
+>The vector space $\mathbb{F}G$ is a $G$-module.
+#### Proof
+- $\mathbb{F}G$ is a a $\mathbb{F}$-vector space by definition $\checkmark$  
+- Action of $G$ on $\mathbb{F}G$ is linear with $1_G$ as identify $\checkmark$ 
+- Need to check associativity on basis $\{x | x \in G\}$ of $\mathbb{F}G$:
+$$(gh)x = g(hx)$$
+for all $g,h,x \in G$ and therefore associativity is given. $\square$
 
 
-# $\mathbb{F}G$-Modules vs $G$-Modules
+>[!proposition]
+>With the natural multiplication defined, $\mathbb{F}G$ is an associative ring with $1_G$ as identity. The natural multiplication comes from a natural multiplication in $G$:
+>
+>![[Screenshot 2025-03-13 at 11.41.14 am.png]]
+#### Proof
+![[Screenshot 2025-03-13 at 11.42.54 am.png]]
+
+
+>[!success] NOTE
+>$\mathbb{F}G$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
+
+---
+
+# Maximal submodules of $\mathbb{F}G$
+
+>[!Proposition]
+>Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-submodule $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
+##### Proof
+Let $0 \neq d \in D$. Define the map $\varphi_d: \mathbb{F}G \to D,$ by $$\sum_{g \in G} \lambda_g g \mapsto \sum_{g \in G} \lambda_g g\cdot d \in D$$
+>[!Claim]
+>$\varphi_d$ is a $G$-module homomorphism.
+###### Proof
+- $\varphi_d$ is linear because $G$ acts linearly on $D$
+- If $x \in G$, then $\varphi_d(xg) = \varphi_d(xg\cdot 1_G) = (xg)d = x(gd) = x \varphi_d(g)$ hence associative
+Hence $\varphi_d$ is a $G$-module homomorphism. $\square$
+
+By First Isomorphism Theorem, $\mathbb{F}G/\ker \varphi_d \cong \text{im }\varphi_d$.
+$\text{im }\varphi_d$ is either $0$ or $D$ since $D$ is irreducible. Clearly $\text{im }\varphi_D \neq 0$ since $d = \varphi_d(1_G)$ exists and so the image is non-zero.
+
+Set $M = \ker \varphi_d \implies \mathbb{F}G / M \cong D$. 
+By the fourth Isomorphism theorem (correspondence theorem), $G$-submodules of $\mathbb{F}G$ such that $M \subseteq W \subseteq \mathbb{F}G$ is in one-to-one correspondence with $G$-submodules of $\text{im }\varphi_d = D$ which are ${0,D}$.
+
+Since $D$ is irreducible, then it must be in correspondence with $\mathbb{F}G/M$ which is irreducible. Hence $M$ is proper maximal.
+
+
+## Another Proposition
+
+>[!Proposition]
+>Suppose $V$ is an $n$-dimensional $G$-module. Then $$\mathbb{F}G^{\oplus n}/M \cong V$$
+>for some $M \subseteq \mathbb{F}G^{\oplus n}$
+##### Proof
+Let $\{v_1,...,v_n\}$ be a basis of $V$. Define a map $\psi: \mathbb{F}G \oplus ... \oplus \mathbb{F}G \to V$ by $(x_1,...,x_n) \mapsto \sum_{i=1}^n x_iv_i$ 
+
+It follows from the pervious proof that $\psi$ is indeed a $G$-module homomorphism.
+
+---
+
+# FG-Modules vs G-Modules
 
 
 >[!Proposition]
@@ -127,5 +209,6 @@ Then $V \cong W$ as $G$-modules $\iff V\cong W$ as $\mathbb{F}G$-modules. $\squa
 
 >[!Remark]
 >If $V,W$ are $G$-modules and $\varphi:V \to W$ is a $G$-module homomorphism, then we can consider $\varphi$ as an $\mathbb{F}G$-module homomorphism.
+
 
 

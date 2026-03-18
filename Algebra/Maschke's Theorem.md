@@ -4,7 +4,7 @@
 > - $G$ a finite group of order *not* divisible by $p \geq 0$.  
 > - Let $V$ be a $G$-module, and $W$ a $G$-submodule of $V$. 
 > 
-> Then there exists a $G$-module $U$ of $V$ such that $V = U \oplus W$ as [[FG-Module|G-module]]. 
+> Then there exists a $G$-module $U$ of $V$ such that $V = U \oplus W$ as [[G-Modules|G-module]]. 
 > When $U$ exists, it is called the **complement** of $W$ in $V$.
 ##### Proof
 - It should be clear that as a [[vector space]] we can find a subspace $U'$ of $V$ such that $V = U' \oplus W$ by basis extension theorem. The problem is making sure $U'$ is a $G$-module.
@@ -50,7 +50,7 @@ Hence $V = W + \ker \pi_G$. But from the previous proof via the [[Quotient Modul
 >[!success] Maschke's Theorem in the language of irreducibles
 >Suppose that $\mathbb{F}$ is a field of characteristic $p$ and that $G$ is a finite group of order not divisible by $p$. 
 >
->Then every $G$-module is [[FG-Module|completely reducible]] (e.g. semisimple).
+>Then every $G$-module is [[G-Modules|completely reducible]] (e.g. semisimple).
 
 Let $V$ be a $G$-module. If $V$ is irreducible then there is nothing to prove.
 

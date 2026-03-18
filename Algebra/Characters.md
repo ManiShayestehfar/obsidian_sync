@@ -12,5 +12,9 @@
 >5. $\chi_{V \oplus W} = \chi_V + \chi_W$ 
 
 >[!def] Inner product
->![[Screenshot 2025-09-28 at 10.50.10 pm.png]]
+>Let $\langle,\rangle: \mathbb{C}G\times \mathbb{C}G\to \mathbb{C}$ be a bilinear map determined by $$\langle g,h\rangle = \begin{cases}
+1 & g = h^{-1} \\[3pt] 0 & \text{otherwise}
+\end{cases}$$
+Equivalently, $\langle\sum_{g\in G} \lambda_gg, \sum_{h\in G} \mu_h h \rangle = \sum_{g \in G}\lambda_g \mu_{g^{-1}}$
+
 - This is not Hermitian, i.e.e $\langle u,v \rangle \neq \overline{\langle u,v\rangle}$ so this is not really an inner product in the usual sense.
