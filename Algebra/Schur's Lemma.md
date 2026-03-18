@@ -34,8 +34,7 @@ Therefore, every $A$-module endomorphism $\varphi$ is a scalar multiplication de
 Finally, we need to confirm that this is not just a vector space isomorphism but also an $\mathbb{F}$-algebra isomorphism. Let $\rho_\lambda,\rho_\mu \in \text{End}_A(D)$. Then:
 - $\rho_\lambda + \rho_\mu = \rho_{\lambda + \mu}$,
 - $\rho_\lambda \circ \rho_\mu = \rho_{\lambda\mu}$
-since they both act by scalar multiplication. So the map 
-$$\mathbb{F}\to \text{End}_A(D),\quad \lambda \mapsto \rho_\lambda$$ is an isomorphism of $\mathbb{F}$-algebras.     $\square$
+since they both act by scalar multiplication. So the map $$\mathbb{F}\to \text{End}_A(D),\quad \lambda \mapsto \rho_\lambda$$ is an isomorphism of $\mathbb{F}$-algebras.     $\square$
 
 # Some Properties
 

@@ -8,7 +8,8 @@
 >3. **Bilinearity:** $a(\lambda v + \mu w) = \lambda (av) + \mu (aw)$, and $(\lambda a + \mu b)v = \lambda (av) + \mu (bv)$  for all $a,b \in A$, $\lambda_\mu \in \mathbb{F}$, $v,w \in V$. 
 
 # Examples
-- A [[Representation|regular representation]] of $A$. i.e. $A$ an $\mathbb{F}$-algebra, then the right $A$-module with $A$-action as right multiplication.
+- A [[Representation|regular representation]] of $A$. i.e. $A$ an $\mathbb{F}$-algebra, then the right $A$-module with $A$-action as right multiplication. 
+  *Question:* Is $A$ it irreducible
 
 # Submodules
 
