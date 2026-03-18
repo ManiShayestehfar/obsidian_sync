@@ -70,7 +70,7 @@ We just showed that $\Theta:X \to X''$ is an isometric embedding. Define $\hat{X
 2. On $\ell^\infty(\mathbb{R})$, $p(x) = \lim \sup_{n \to \infty} x_n$ is sublinear (not trivial)
 
 
-# Hahn-Banach Theorem ($\mathbb{R}$-Version)
+# Basic Lemma
 
 >[!Theorem]
 >Let $X$ be a vector space over $\mathbb{R}$. Let $p:X \to \mathbb{R}$ be a sublinear function.
@@ -128,3 +128,6 @@ Then $a \leq b$ which we showed before, and choosing any $c \in [a,b]$ will be s
 
 - Now to apply this lemma for induction, we need to apply this step possibly uncountably many times
   **Solutions:** Transfinite induction, or [[Zorn's Lemma]]
+
+
+# Hahn-Banach Theorem ($\mathbb{R}$-Version)

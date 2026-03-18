@@ -89,9 +89,23 @@ Define a poset of $G$-subsystems on $(X,G)$ with "$\leq$" which is containment.
 	  If $(F_\alpha)_{\alpha \in I} \subseteq X$ is a familty of closed subsets such that for any finite subset of indices $J \subseteq I$, $$\bigcap_{\alpha \in J}F_\alpha \neq \varnothing \implies \bigcap_{\alpha \in I}F_\alpha \neq \varnothing$$
 	- The point is that $Z$ is a lower bound which is non-empty. $\square$
 
-Now suppose $G \curvearrowright Z$ i.e. $\forall z \in Z$  
+Now suppose $G \curvearrowright Z$ i.e. $\forall z \in Z: gz \in Z$ and $gZ =Z$. 
+Take $z \in \bigcap_{\alpha \in I} X_\alpha\implies gz \in X_\alpha$ $\forall \alpha \in I$.
+$\implies gz \in Z$ $\implies gZ \subseteq Z$.
+$\therefore Z \subseteq X$ is a $G$-subsystem. $\square$
 
-## Proof of Hahn-Banach Theorem
+
+Finally, by Zorn's lemma, there exists $Z_0 \subseteq X$ (closed, non-empty) $G$-system which is minimal. $\square$
+
+### Why do we care?
+
+>[!Result 1]
+>$(X,G)$ is minimal $\iff$ $\forall x \in X$, $\overline{G\cdot x} = X$
+
+>[!Result 2]
+>If $(X,G)$ is minimal, then $\forall x \in X$ we have
+>$\forall \varepsilon >0,$ $\exists$ infinitely many $g \in G$ such that $d(x,gx) < \varepsilon$.
+
 
 
 
