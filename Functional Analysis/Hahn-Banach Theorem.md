@@ -72,16 +72,6 @@ We just showed that $\Theta:X \to X''$ is an isometric embedding. Define $\hat{X
 
 # Basic Lemma
 
->[!Theorem]
->Let $X$ be a vector space over $\mathbb{R}$. Let $p:X \to \mathbb{R}$ be a sublinear function.
->Let $Y \subseteq X$, and suppose $\varphi_0 \in Y^*$ satisfying:
->$$\varphi_0(y)\leq p(y) \quad\forall y \in Y$$
->Then $\exists \varphi \in X^*$ such that
->1. $\varphi\mid_Y = \varphi_0$
->2. $\varphi(x) \leq p(x)$    $\forall x \in X$.
-
-- Naturally we need to prove this using induction on $\dim Y$.
-
 >[!Lemma]
 >Let $X$ be a vector space over $\mathbb{R}$ and $p:X \to \mathbb{R}$ be sublinear.
 >Suppose $X = Y \oplus \mathbb{R}x_0$ and that $\varphi_0 \in Y^*$ satisfying: $$\varphi_0(y) \leq p(y) \quad \forall y \in Y$$
@@ -131,3 +121,21 @@ Then $a \leq b$ which we showed before, and choosing any $c \in [a,b]$ will be s
 
 
 # Hahn-Banach Theorem ($\mathbb{R}$-Version)
+
+>[!Theorem]
+>Let $X$ be a vector space over $\mathbb{R}$. Let $p:X \to \mathbb{R}$ be a sublinear function.
+>Let $Y \subseteq X$, and suppose $\varphi_0 \in Y^*$ satisfying:
+>$$\varphi_0(y)\leq p(y) \quad\forall y \in Y$$
+>Then $\exists \varphi \in X^*$ such that
+>1. $\varphi\mid_Y = \varphi_0$
+>2. $\varphi(x) \leq p(x)$    $\forall x \in X$.
+
+- Naturally we need to prove this using induction on $\dim Y$.
+##### Proof
+Let $\mathcal{L}=$ { Linear extensions $\varphi:Z\to \mathbb{R}$ of $\varphi_0$ with $Y \subseteq Z \subseteq X$ a subspace, and $\varphi(z) \leq p(z)$ for all $z \in Z$ }. 
+
+Note that $\mathcal{L}\neq \varnothing$ as $\varphi_0 \in \mathcal{L}$. 
+
+Let $\varphi \leq \varphi'$ if $\varphi'$ is an extension of $\varphi$. That is: $\varphi: Z \to \mathbb{R}$, $\varphi':Z' \to \mathbb{R}$, $Z \subseteq Z'$ and $f'\mid_Z = f$. 
+Then $(\mathcal{L}, \leq)$ is a nonempty poset.
+
