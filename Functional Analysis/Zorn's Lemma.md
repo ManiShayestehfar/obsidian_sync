@@ -37,11 +37,14 @@ Let $V$ be a vector space over $\mathbb{K}$. $S \subseteq V$ is called a **Hamel
 
 Let $\mathcal{L}(V) = \{S\subseteq V \:|\: S \text{ is linearly indep.}\}$ 
 Then $(\mathcal{L}, \subseteq)$ is a non-empty poset.
+
 Then by lemma, it is enough to find a maximal element in $\mathcal{L}$ to prove the existence of Hamel Basis.
 
-By Zorn's lemma if every chain has an upper bound, then there is a maximal element. 
+Let $C = (\mathcal{L}_\alpha)_{\alpha \geq 1}$ be a chain. So, for $\alpha,\beta \in A$, either $L_\alpha \subseteq L_\beta$ or $L_\beta \subseteq L_\alpha$. Let $$\mathcal{L} = \bigcup_{\alpha \in A} L_\alpha.$$Clearly this is an upper bound, provided that it really is in $\mathcal{L}$. i.e. provided it is linearly independent if $v_1,...,v_n \in \mathcal{L}$, then there are $\alpha_1,...,\alpha_n \in A$ with $v_j \in L_{\alpha_j}$.
+Since $C$ is a chain, there is $1 \leq k\leq n$ with $L_{\alpha_j}\subseteq L_{\alpha_k}$ for all $j \in\{1,...,n\}$. 
+So $v_1,...,v_n \in L_{\alpha_k}$, since this set is linearly independent, so too is $\mathcal{L}$.
 
-If we have a maximal elements in the chain,  $C \in (\mathcal{L}, \subseteq)$, $C$ is linearly independent. If $C$ does not span $V$, there is $x \in V\setminus \text{Span}(C)$. Then $C \cup \{x\}$ is linearly independent (exercise), contradicting the maximality of $C$.
+By Zorn's lemma if every chain has an upper bound, then there is a maximal linearly independent set which is the basis, call it $\mathcal{M}$. 
 
 ## Any topological dynamical system contains a minimal subsystem
 
