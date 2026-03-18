@@ -9,7 +9,14 @@
 
 # Examples
 - A [[Representation|regular representation]] of $A$. i.e. $A$ an $\mathbb{F}$-algebra, then the right $A$-module with $A$-action as right multiplication. 
-  *Question:* Is $A$ it irreducible
+  *Question:* Is $A$ irreducible as an $A$ module
+  Take $a \in A$, then $a = (a_{ij}) \in \text{Mat}_n(\mathbb{F})$ 
+  $X = (x_{ij})$, then $ax = \sum_{k=1}^n a_{ih}x_{hj}$ (matrix multiplication). Then on the $j$-th column of $X$, we get subspaces of the form $$D_j = \left\{\begin{pmatrix}0 &\cdots & 0&\lambda_{1j} & 0 &\cdots&0  \\ &&& \vdots &&&  \\
+  0 &\cdots & 0&\lambda_{nj} & 0 &\cdots&0 
+  \end{pmatrix} \:\mid\: \lambda_{ij} \in \mathbb{F}\right\} \implies aD_j \subseteq D_j$$
+  Then $A = D_1 \oplus D_2 \oplus \cdots \oplus D_n$.
+  Further $D_j \cong \left(\begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_n \end{pmatrix}\right)$ 
+  
 
 # Submodules
 
