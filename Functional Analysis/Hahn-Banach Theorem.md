@@ -126,12 +126,13 @@ Then $a \leq b$ which we showed before, and choosing any $c \in [a,b]$ will be s
 >Let $X$ be a vector space over $\mathbb{R}$. Let $p:X \to \mathbb{R}$ be a sublinear function.
 >Let $Y \subseteq X$, and suppose $\varphi_0 \in Y^*$ satisfying:
 >$$\varphi_0(y)\leq p(y) \quad\forall y \in Y$$
->Then $\exists \varphi \in X^*$ such that
+>Then $\exists \:\varphi \in X^*$ such that
 >1. $\varphi\mid_Y = \varphi_0$
 >2. $\varphi(x) \leq p(x)$    $\forall x \in X$.
 
 - Naturally we need to prove this using induction on $\dim Y$.
 ##### Proof
+###### 1. Construct Poset $\mathcal{L}$
 Let $\mathcal{L}=$ { Linear extensions $\varphi:Z\to \mathbb{R}$ of $\varphi_0$ with $Y \subseteq Z \subseteq X$ a subspace, and $\varphi(z) \leq p(z)$ for all $z \in Z$ }. 
 
 Note that $\mathcal{L}\neq \varnothing$ as $\varphi_0 \in \mathcal{L}$. 
@@ -139,3 +140,21 @@ Note that $\mathcal{L}\neq \varnothing$ as $\varphi_0 \in \mathcal{L}$.
 Let $\varphi \leq \varphi'$ if $\varphi'$ is an extension of $\varphi$. That is: $\varphi: Z \to \mathbb{R}$, $\varphi':Z' \to \mathbb{R}$, $Z \subseteq Z'$ and $f'\mid_Z = f$. 
 Then $(\mathcal{L}, \leq)$ is a nonempty poset.
 
+###### 2. Chain Definition
+Let $C = (\varphi_\alpha)_{\alpha \in A}$ be a chain in $\mathcal{L}$. Define 
+$$\varphi_C: \underbrace{\bigcup_{\alpha \in A} \text{Domain}(f_\alpha)}_{\text{a subspace because $C$ is a chain}}\longrightarrow \mathbb{R}$$
+by $\varphi_C(x) = \varphi_\alpha(x)$ if $x \in \text{Domain}(\varphi_\alpha)$. 
+
+This definition is unambiguous because:
+If $x \in \text{Domain}(\varphi_\alpha) \cap \text{Domain}(\varphi_\beta)$, then either $\varphi_\alpha \leq \varphi_\beta$ or $\varphi_\beta \leq \varphi_\alpha$ (as $C$ is a chain) and in either case $\varphi_\alpha(x) = \varphi_\beta(x)$.
+Then $\varphi_C$ is an upper bound of $C$, provided it is actually in $\mathcal{L}$. To check:
+if $x \in \text{Domain}(f_C)$, then $x \in \text{Domain}(f_\alpha)$ for some $\alpha \in A$, and so $f_\alpha(x) \leq p(x)$ as $f_\alpha \in \mathcal{L}$. We can check that $f_C$ is linear too.
+
+###### 3. Zorn's Lemma
+Now we can apply Zorn's lemma: so there is a maximal element $\varphi \in \mathcal{L}$.
+
+###### 4. Checking $\varphi$
+We need to check that $\text{Domain}(\varphi) = X$.
+If $x_0 \in X\setminus \text{Domain}(\varphi)$, then by the Basic lemma from above, we can extend $\varphi$ to $\tilde{\varphi}:\text{Domain}(\varphi)\oplus \mathbb{R}x_0\to \mathbb{R}$ with $\tilde{\varphi}(x) \leq p(x)$ for all $x \in \text{Domain}(\tilde{\varphi})$.
+So $\tilde{\varphi}\in \mathcal{L}$, contradicting maximality of $\varphi$. 
+$\square$
