@@ -48,6 +48,8 @@ By Zorn's lemma if every chain has an upper bound, then there is a maximal linea
 
 ## Any topological dynamical system contains a minimal subsystem
 
+### Dynamical System
+
 >[!Definition] $G$-dynamical system
 >Let $G$ be a group, $X$ a compact metric space. 
 >We say $(X,G)$ is a **$G$-Dynamical System** if $G$ acts on $X$ via homomorphisms.
@@ -55,11 +57,27 @@ By Zorn's lemma if every chain has an upper bound, then there is a maximal linea
 >1. $T_h \circ T_g = T_{hg}$
 >2. $T_1 = \text{id}$. 
 
-### Examples
+- A **subsystem** is any non-empty closed $Z \subset X$ wh
+#### Examples
 1. $X = S^1, G = \mathbb{Z}$, and $T_1 = R_\alpha$ where $R_\alpha$ is rotation by angle $\alpha \in \mathbb{Z}$. All $T_g$ are determined by $T_1.$ 
 
 ### Minimality
->[!]
+
+>[!Definition] Minimal dynamical system
+>A dynamical system $(X,G)$ is **minimal** if any closed non-empty $G$-invariant subset $Y \subseteq X$ is only $Y=X$.
+
+- $Y$ is $G$**-invariant** if $\forall g \in G: gY = Y$
+- *Example:* $X=S^1$, $G=\mathbb{Z}$ acts by rotation $R_\alpha$, 
+  $(X,R_\alpha)$ minimal $\iff$ $\alpha \not \in \pi\mathbb{Q}$.
+
+
+### Proof of Minimality
+
+Zorn's Lemma is equivalent to the following: Given $(\mathcal{P}, \leq)$ a non-empty poset such that any chain $C \leq \mathcal{P}$ has a *lower* bound contains a *minimal* element.
+
+>[!Theorem] 
+>Any $G$-system $(X,G)$ contains a minimal sub
+
 
 ## Proof of Hahn-Banach Theorem
 
