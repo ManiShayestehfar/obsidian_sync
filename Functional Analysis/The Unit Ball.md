@@ -1,5 +1,5 @@
 Let $(X,\|\cdot\|)$ be a [[Normed Spaces|normed vector space]] over $\mathbb{K}$.
-Closed ball: $\bar{B}(0,1) = \{x \in X \:|\: \|x\| < 1\}$.
+Closed ball: $\bar{B}(0,1) = \{x \in X \:|\: \|x\| \leq 1\}$.
 
 >[!Theorem]
 >$\dim X < \infty \iff \bar{B}(0,1)$ is compact.
