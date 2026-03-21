@@ -51,7 +51,13 @@ This proves that $V$ itself is also semisimple.       $\square$
 >[!def] 
 >An $\mathbb{F}$-Algebra, $A$, is **Schurian** if $\text{End}_A(D) \cong \mathbb{F}$, for all simple $A$-modules $D$. 
 
+## Examples
 
+1. If $\mathbb{F}$ is algebraically closed, then by Schur's lemma, $\text{End}_A(D) \cong \mathbb{F}$ for $D$ irreducible $A$-modules. This means that every irreducible $A$-module is Schurian, which implies $A$ is Schurian
+2. $\mathbb{F}G$ is Schurian if $\mathbb{F}$ is algebraically closed
+3. For $C_4 =\langle x | x^4=1\rangle$ acting on $V = \mathbb{R}^2$ via $x \mapsto \left[\begin{smallmatrix}0 & 1 \\ -1 & 0\end{smallmatrix}\right]$. $\text{End}_{\mathbb{R}G}(V) \cong \mathbb{C}$ (shown in Tutorial 3) and $V$ is irreducible. Hence $V$ is NOT Schurian
+4. For $G=S_n$ and $\mathbb{F}$ any field, then $\mathbb{F}S_n$ is Schurian (not obvious)
+5. If $p = \text{char } \mathbb{F}$ and $p=0$ or $p \nmid |G|$, then $\mathbb{F}G$ is completely reducible by [[Maschke's Theorem]].
 # Opposite Algebra
 
 >[!def] 
