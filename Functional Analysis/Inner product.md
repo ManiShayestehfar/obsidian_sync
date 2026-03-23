@@ -24,5 +24,9 @@
 # Cauchy-Schwartz Inequality
 
 >[!Theorem] Cauchy-Schwartz Inequality
->Let $X$ be an inner product space. For all $x,y \in X$, $$|\langle x,y \rangle| \leq \|x\|$$
->
+>Let $X$ be an inner product space. For all $x,y \in X$, $$|\langle x,y \rangle| \leq \|x\| \|y\|$$
+##### Proof
+Let $\lambda \in \mathbb{K}$. Then 
+$$\begin{align*}
+\langle x - \lambda y, x - \lambda y\rangle
+\end{align*}$$
