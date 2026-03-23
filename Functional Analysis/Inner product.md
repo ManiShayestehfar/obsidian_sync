@@ -36,4 +36,22 @@ Choose $\lambda = \frac{\langle x,y\rangle}{\|y\|^2}$, assuming $y \neq 0$.
 Then $$0 \leq\|x\|^2 - 2 \frac{|\langle x,y \rangle|^2}{\|y\|^2} +  \frac{|\langle x,y \rangle|^2}{\|y\|^2}$$
 and so $|\langle x,y \rangle| \leq \|x\| \|y\|$.
 
-If $y=0$, then clearly $|\langle x,0\rangle|$
+If $y=0$, then clearly $|\langle x,0\rangle| 0  = \|x\|\|0\|$.   $\square$
+
+
+# Induced Inner Product
+
+>[!Proposition]
+>Let $X$ be a vector space over $\mathbb{K}$ with inner product $\langle-,-\rangle$.
+>Then it induces a norm defined as $\|x\| := \sqrt{\langle x,x\rangle}$.
+>
+##### Proof
+1. Clearly $\|x\| \geq 0$
+2. $\|\lambda x\|= \sqrt{\langle\lambda x,\lambda x \rangle}= \lambda \sqrt{\langle x,x\rangle} = \lambda \|x\|$ 
+3. Triangle inequality: Using Cauchy-Schwartz, $|\langle x,y \rangle|\leq \|x\| \|y\|$ with equality if $\text{Span}(x,y) = 1$
+   Then $$\begin{align*}
+\|x+y\|^2 = \langle x+y , x+y \rangle &= \langle x,x \rangle + 2\Re \langle x,y \rangle + \langle y,y \rangle \\[3pt]
+&\leq \|x\|^2 + 2\|x\|\|y\| + \|y\|^2 \\[3pt]
+&\leq \|x\|^2 + \|y\|^2
+\end{align*}$$
+$\square$
