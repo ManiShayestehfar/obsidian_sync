@@ -12,11 +12,22 @@
 
 ### Non-Examples
 1. $\ell^p$ for $p\neq 2$
+   For $p = \infty$, take $x = (1,0,0,...)$, $y=(1,1,0,0,...)$
+   $5= 4+1 = \|x+y\|^2_\infty + \|x-y\|^2_\infty \neq 2(\|x\|^2_\infty + \|y\|^2_\infty) = 4$ 
 2. $L^p([a,b])$ for $p\neq 2$
-3. 
+3. $(C([a,b]), \|\cdot\|_\infty)$ 
+
+
 
 # Parallelogram Identity
 
 >[!Definition] 
 >In an inner product space $$\|x+y\|^2 + \|x-y\|^2 = 2(\|x\|^2 + \|y\|^2)\qquad \forall x,y \in X$$
+
+
+# Banach Space Criteria
+
+>[!Theorem]
+>A Banach space $(X, \|\cdot\|)$ is a Hilbert space $\iff$ the Parallelogram identity holds
+
 

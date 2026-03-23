@@ -21,9 +21,9 @@
 4. $L^2([a,b])$ with $\langle f,g \rangle = \int_a^b f(x) \overline{g(x)}\:dx$
 
 
-# Cauchy-Schwartz Inequality
+# Cauchy-Schwarz Inequality
 
->[!Theorem] Cauchy-Schwartz Inequality
+>[!Theorem] Cauchy-Schwarz Inequality
 >Let $X$ be an inner product space. For all $x,y \in X$, $$|\langle x,y \rangle| \leq \|x\| \|y\|$$
 ##### Proof
 Let $\lambda \in \mathbb{K}$. Then 
