@@ -76,4 +76,28 @@ but every point on $M$ attains this distance and so $P_M$ is not unique.
 - We are required to prove that each $x \in \mathcal{H}$ can be written in exactly one way as $x = m + m'$.
 
 ###### Uniqueness
-If $x = m_1 + m_1'=m_2 + m_2'$, then $M \ni$     
+If $x = m_1 + m_1'=m_2 + m_2'$, then $M \ni m_1-m_2 = (x-m_1^\perp) - (x-m_2^\perp) = m_2^\perp - m_1^\perp \in M^\perp$ .
+So $\|m_1-m_2\|^2 = \langle \underbrace{m_1-m_2}_{\in M}, \underbrace{m_1-m_2}_{\in M'} \rangle = 0$ and so $m_1=m_2$ and $m_1^\perp = m_2^\perp$.
+
+###### Existence
+$$x = \underbrace{P_Mx}_{\in M} + (\underbrace{x- P_Mx}_{\in M^\perp})$$
+
+![[Screenshot 2026-03-23 at 4.04.59 pm.png|200]]
+So we only need to prove that $x - P_Mx \in M^\perp$.
+
+Let $m \in M$. Need to show $\langle x-P_Mx,m \rangle=0$.
+If $m =0$ we are done. So assume $m \neq 0$. By rescaling assume $\|m\|=1$.
+$$\begin{align*}
+x-P_Mx &= x - (\overbrace{P_Mx + \langle x- P_Mx,m\rangle}^{m_1:=}m ) + \langle x- P_Mx,m\rangle m \\[3pt]
+&= x-m_1 + \langle x-P_M x\rangle m 
+\end{align*}$$
+Consider 
+$$\begin{align*}
+\langle x-m_1, m \rangle &= \langle x,m \rangle - \langle P_Mx + \langle x- P_Mx,m\rangle m,m \rangle \\[3pt]
+&= \langle x,m \rangle - \langle P_M x,m \rangle - \langle x - P_M x,m \rangle \underbrace{\langle m,m \rangle}_{=1} \\[3pt]
+&= \langle x,m \rangle - \langle P_M x,m \rangle - \langle x,m \rangle + \langle P_m x, m \rangle \\
+&= 0
+\end{align*}$$
+Hence $x-m_1 \perp m$.
+By Pythagoras, $$\|x-P_M x\|^2 = \|x-m_1\|^2 + \| \langle x-P_Mx,m \rangle m\|^2$$
+But considering that $\| \langle x-P_Mx,m \rangle m\|^2 = \| \langle x-P_Mx,m \rangle m\|^2$
