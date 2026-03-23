@@ -29,5 +29,11 @@
 Let $\lambda \in \mathbb{K}$. Then 
 $$\begin{align*}
 0 \leq \langle x - \lambda y, x - \lambda y\rangle &= \langle x,x\rangle - \overline{\lambda}\:\langle x,y \rangle - \lambda \langle y,x \rangle + |\lambda|^2 \langle y,y \rangle \\[3pt]
-&= \|x\|^2 - \overline{\lambda}\:\langle x,y \rangle - \lambda \langle y,x \rangle
+&= \|x\|^2 - \overline{\lambda}\:\langle x,y \rangle - \lambda \overline{\langle x,y \rangle} + |\lambda|^2 \|y\|^2 \\[3pt]
+&= \|x\|^2 - 2\: \Re{(\lambda\overline{\langle x,y \rangle})} +|\lambda|^2 \|y\|^2
 \end{align*}$$
+Choose $\lambda = \frac{\langle x,y\rangle}{\|y\|^2}$, assuming $y \neq 0$.
+Then $$0 \leq\|x\|^2 - 2 \frac{|\langle x,y \rangle|^2}{\|y\|^2} +  \frac{|\langle x,y \rangle|^2}{\|y\|^2}$$
+and so $|\langle x,y \rangle| \leq \|x\| \|y\|$.
+
+If $y=0$, then clearly $|\langle x,0\rangle|$
