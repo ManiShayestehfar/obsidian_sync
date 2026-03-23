@@ -28,5 +28,6 @@
 ##### Proof
 Let $\lambda \in \mathbb{K}$. Then 
 $$\begin{align*}
-\langle x - \lambda y, x - \lambda y\rangle
+0 \leq \langle x - \lambda y, x - \lambda y\rangle &= \langle x,x\rangle - \overline{\lambda}\:\langle x,y \rangle - \lambda \langle y,x \rangle + |\lambda|^2 \langle y,y \rangle \\[3pt]
+&= \|x\|^2 - \overline{\lambda}\:\langle x,y \rangle - \lambda \langle y,x \rangle
 \end{align*}$$
