@@ -7,7 +7,7 @@
 >1. $\bar{\varphi}\mid_{Y} = \text{id}$
 >2. $\|\bar{\varphi}\| = \|\varphi\|$
 
-# Corollary
+# Corollaries
 ## Corollary A
 
 >[!Corollary]
