@@ -99,5 +99,14 @@ $$\begin{align*}
 &= 0
 \end{align*}$$
 Hence $x-m_1 \perp m$.
-By Pythagoras, $$\|x-P_M x\|^2 = \|x-m_1\|^2 + \| \langle x-P_Mx,m \rangle m\|^2$$
-But considering that $\| \langle x-P_Mx,m \rangle m\|^2 = \| \langle x-P_Mx,m \rangle m\|^2$
+By Pythagoras, $$\begin{align*}
+\|x-P_M x\|^2 &= \|x-m_1\|^2 + \| \langle x-P_Mx,m \rangle m\|^2 \\[4pt]
+&\geq \|x - P_Mx\|^2 + |\langle x-P_Mx,m \rangle |^2
+\end{align*}
+$$
+where we get the last line by considering that:
+- $\| \langle x-P_Mx,m \rangle m\|^2 =  |\langle x-P_Mx,m \rangle |^2 \|m\|^2 = |\langle x-P_Mx,m \rangle |^2$,
+- $\|x-m_1\|^2 = \|x - P_Mx\|^2 + |\langle x-P_Mx,m \rangle |^2 \|m\|^2 \geq \|x - P_Mx\|^2$ 
+
+Hence $\langle x-P_Mx,m \rangle = 0$ as required. $\square$
+
