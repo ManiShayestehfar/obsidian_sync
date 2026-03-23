@@ -31,8 +31,24 @@ Let $d = \text{dist}(x,M)$.
 For $k\geq 1$, choose $m_k \in M$ with $d^2 \leq \|x-m_k\|^2 \leq d^2 + \frac{1}{k}$.
 For $k,l \geq 1$, we have$$\begin{align*}
 \|m_k - m_l\|^2 &= \|(m_k-x)- (m_l-x)\|^2 \\[3pt]
-\overset{P.I}{=} 2\|m\|
+&\overset{P.I}{=} 2\|m_k-x\|^2 + 2\|m_l - x\|^2 - \|m_k-x+m_l-x\|^2 \\[3pt]
+&= 2\|m_k-x\|^2 + 2\|m_l - x\|^2 - 4 \left\|\frac{m_k+m_l}{2}-x\right\|
 \end{align*}$$
+Since $\frac{m_k + m_l}{2}\in M$ (by convexity), we have $$\begin{align*}
+\|m_k - m_l\|^2 &\leq 2\|m_k-x\|^2 + 2\|m_l - 4d^2\\[3pt]
+&\leq 2\left(d^2 + \frac{1}{k}\right) + 2\left(d^2 + \frac{1}{l}\right)  - 4 d^2 \\[3pt]
+&= 2 \left(\frac{1}{k} + \frac{1}{l}\right)
+\end{align*}$$
+Thus, $(m_k)_{k\geq 1}$ is Cauchy. So $(m_k)$ converges in $\mathcal{H}$ (as it is complete).
+Define $\|x- P_Mx\| = \lim_{k \to \infty} \|x - m_k\|= d$.
+If $m \in M$ satisfies $\|x-m\|=d$, then 
+$$\begin{align*}
+\|P_Mx - m\|^2 &= \|(P_Mx -x) - (m-x)\|^2 \\[3pt]
+&\overset{P.I}{=} 2\|P_Mx - x\|^2 + 2\|m - x\|^2 - \|P_Mx -x + m-x\|^2 \\[3pt]
+&= 2d^2 + 2d^2 - 4 \left\|\underbrace{\frac{P_Mx + m}{2}}_{\in M} - x\right\| \\[3pt]
+&\leq 2d^2 +2d^2 - 4d^2 = 0
+\end{align*}$$
+Therefore, $P_Mx = m$ and we have uniqueness. $\square$.
 
 ### Non-example
 ![[Screenshot 2026-03-23 at 2.15.23 pm.png|300]]
@@ -41,3 +57,23 @@ $M = \{(t,1-t)\:|\: t \in [0,1]\}$ (convex + closed).
 Let $x = (0,0)$. Then $$\|x-m\|_1 = \|(t,1-t)\|_1 = |t|+|1-t|= 1\qquad \forall m \in M$$
 but every point on $M$ attains this distance and so $P_M$ is not unique.
 
+
+## Orthogonal Complement
+
+>[!Definition]
+>Let $M \subset \mathcal{H}$, then the **orthogonal complement** of $M$ is $$M^{\perp} = \{x \in \mathcal{H} \:|\: \langle x,m \rangle = 0\quad \forall m \in M\}$$
+
+- $M^\perp \subseteq \mathcal{H}$ is closed
+
+
+## Orthogonal Decomposition
+
+>[!Theorem]
+>Let $M \subseteq \mathcal{H}$ be a *closed* subspace of a Hilbert space $\mathcal{H}$. Then $$\mathcal{H}= M \oplus M^{\perp}$$
+##### Proof
+
+- It is easy to check that $\mathcal{M}^\perp$ is a subspace
+- We are required to prove that each $x \in \mathcal{H}$ can be written in exactly one way as $x = m + m'$.
+
+###### Uniqueness
+If $x = m_1 + m_1'=m_2 + m_2'$, then $M \ni$     
