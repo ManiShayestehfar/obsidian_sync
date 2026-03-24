@@ -55,3 +55,18 @@ If $D=E,E'$, since the diagram is symmetric, the composition factor appear once 
 
 Hence not matter how you choose the composition series, the simple factors (with multiplicity) are the same. $\square$ 
 
+![[Screenshot 2026-03-24 at 4.52.51 pm.png]]
+
+
+# Corollaries
+
+>[!Corollary]
+>Let $A$ be a finite-dimensional $\mathbb{F}$-algebra. Then $A$ has *at most* $\dim A$ pairwise non-isomorphic irreducible $A$-modules.
+>- Think of $A$ as an $A$-module here
+##### Proof
+Let $E$ be an irreducible $A$-module.
+Then by the 4th isomorphism theorem, $E \cong A/M$ as $A$-modules for some maximal proper $A$-submodule $M$.
+Let $M = M_1 \supset M_2 \supset \cdots \supset M_n \supset 0$ be a composition series of $M$.
+$\implies A = A_0 \supset M \supset M_2 \supset \cdots \supset M_n \supset 0$ is a composition series of $A.
+$\implies [A:E]>0$. That is, $E$ is a composition factor of $A.
+As every irreducible module 
