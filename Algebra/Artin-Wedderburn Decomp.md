@@ -62,9 +62,20 @@ NEED TO PROVE
 ### $S_3$
 Let $G=S_3$ and let $\text{char } \mathbb{F}=0$, or $\text{char }\mathbb{F} > 3$.
 
+| Irreps              | Name         | Action                                                                                       | Dimension |
+| ------------------- | ------------ | -------------------------------------------------------------------------------------------- | --------- |
+| $\bf{1}$            | Trivial Rep  | $g \mapsto 1$                                                                                | 1         |
+| $\xi_{\text{sign}}$ | Sign Rep     | $g \mapsto \text{sgn}(g)$                                                                    | 1         |
+| $W$                 | Standard Rep | $\left\{ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}\: : \: x_1 + x_2 + x_3 = 0\right\}$ | 2         |
+$\implies \# S_3 = 6 = |G| = 1^2 + 1^2 + 2^2$ 
 
-| Irreps | Name | Action | Dimensio |
-| ------ | ---- | ------ | -------- |
-|        |      |        |          |
+### $S_4$
+Let $G=S_4$ and let $\text{char } \mathbb{F}=0$, or $\text{char }\mathbb{F} > 4$.
 
- 
+| Irreps                             | Name                | Action                                                                                                   | Dimension |
+| ---------------------------------- | ------------------- | -------------------------------------------------------------------------------------------------------- | --------- |
+| $\bf{1}$                           | Trivial Rep         | $g \mapsto 1$                                                                                            | 1         |
+| $\xi_{\text{sign}}$                | Sign Rep            | $g \mapsto \text{sgn}(g)$                                                                                | 1         |
+| $W$                                | Standard Rep        | $\left\{ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4\end{pmatrix}\: : \: x_1 + x_2 + x_3 + x_4 = 0\right\}$ | 3         |
+| $W' = \xi_{\text{sign}} \otimes W$ | Signed Standard Rep |                                                                                                          | 2         |
+|                                    |                     |                                                                                                          |           |
