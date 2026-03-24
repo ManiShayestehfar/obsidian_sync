@@ -69,4 +69,8 @@ Then by the 4th isomorphism theorem, $E \cong A/M$ as $A$-modules for some maxim
 Let $M = M_1 \supset M_2 \supset \cdots \supset M_n \supset 0$ be a composition series of $M$.
 $\implies A = A_0 \supset M \supset M_2 \supset \cdots \supset M_n \supset 0$ is a composition series of $A.
 $\implies [A:E]>0$. That is, $E$ is a composition factor of $A.
-As every irreducible module 
+As every irreducible module is a composition factor of $A$, there are only finitely many.
+- Irreducible by Jordan-Holder $\implies$ finitely many irreducibles
+
+The maximum number of irreducibles (up to isomorphism) is the length of a composition series as $\dim M_i/M_{i+1} \geq 1$ and $\dim A = \sum_{n=0}^n \dim M_i / M_{i+1}$, it follows that $k \leq \dim A$.
+Hence there are at most $\dim A different irreducible $A$-modules.
