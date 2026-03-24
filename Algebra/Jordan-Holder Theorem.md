@@ -55,4 +55,3 @@ If $D=E,E'$, since the diagram is symmetric, the composition factor appear once 
 
 Hence not matter how you choose the composition series, the simple factors (with multiplicity) are the same. $\square$ 
 
-
