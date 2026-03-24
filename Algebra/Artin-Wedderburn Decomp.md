@@ -49,3 +49,22 @@ Hence the map $\varphi\mapsto (\varphi_{rs})$ is an algebra isomorphism.
 Thus
  $$\text{End}_A(X_1\oplus \cdots \oplus X_n) = \{(\varphi_{rs})\:|\: \varphi_{rs} \in \text{Hom}_A(X_s, X_r)\:\:\text{for}\:\: 1\leq r,s\leq n\}$$ as $\mathbb{F}$-algebra. $\square$
 
+
+# Corollaries
+
+>[!Corollary] 
+>Suppose $A$ is completely reducible $\mathbb{F}$-algebra with irreducible $\mathbb{F}$-algebra $D_1,...,D_t$. Then $$\dim A \geq \sum_{i=1}^t (\dim D_i)^2$$
+>with equality $\iff A$ is Schurian.
+##### Proof
+NEED TO PROVE
+
+## Examples
+### $S_3$
+Let $G=S_3$ and let $\text{char } \mathbb{F}=0$, or $\text{char }\mathbb{F} > 3$.
+
+
+| Irreps | Name | Action | Dimensio |
+| ------ | ---- | ------ | -------- |
+|        |      |        |          |
+
+ 
