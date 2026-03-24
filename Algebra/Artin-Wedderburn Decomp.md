@@ -103,4 +103,9 @@ $$\sum_{i=0}^{n-1} (\dim D_i)^2 = \sum_{i=0}^{n-1}1^2 = n = \# C_n$$
 ##### Proof
 Let $G$ be an Abelian group, i.e $gh = hg$ for all $g,h \in G$, and $V$ an irreducible $\mathbb{C}G$-module. 
 Then for all $v \in V$, $(gh) \cdot v = (hg) \cdot v = h\cdot(gv)$. 
-i.e. each $g \in G$ defines an 
+i.e. each $g \in G$ defines a $\mathbb{C}G$-module endomorphism of $V$.
+But by Schur's lemma, since $V$ is irreducible, then $\text{End}_G(V) \cong \mathbb{F}$. 
+So for all $g \in G$ and $\lambda \in \mathbb{C}$: $gv = \lambda v$   $\forall v \in V$.
+This means that $\dim V= 1$. $\square$
+
+
