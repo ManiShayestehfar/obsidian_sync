@@ -77,5 +77,28 @@ Let $G=S_4$ and let $\text{char } \mathbb{F}=0$, or $\text{char }\mathbb{F} > 4$
 | $\bf{1}$                           | Trivial Rep         | $g \mapsto 1$                                                                                            | 1         |
 | $\xi_{\text{sign}}$                | Sign Rep            | $g \mapsto \text{sgn}(g)$                                                                                | 1         |
 | $W$                                | Standard Rep        | $\left\{ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4\end{pmatrix}\: : \: x_1 + x_2 + x_3 + x_4 = 0\right\}$ | 3         |
-| $W' = \xi_{\text{sign}} \otimes W$ | Signed Standard Rep |                                                                                                          | 2         |
-|                                    |                     |                                                                                                          |           |
+| $W' = \xi_{\text{sign}} \otimes W$ | Signed Standard Rep | $g \mapsto \text{sgn}(g)\rho_{\text{std}}(g)$                                                            | 3         |
+| ...                                | ...                 | ...                                                                                                      | 2         |
+Notice that for the last subrep, we could either have 2 x 1-dim or 1 x 2-dim irresp.
+But $1$-dim reps are group homomorphisms $G \overset{\varphi}{\longrightarrow} F^{\times}$. We know
+- $\ker \varphi \trianglelefteq G$ is a normal subgroup, and
+- $S_4$ has only $2$ x $1$-dim irreps as its only normal subgroups are $S_4$ and $A_3$.
+Therefore the dimension of the left over irrep must be $2$
+
+
+### $C_n$
+
+Let $G = C_4 = \langle x | x^n =1 \rangle$ and let $\mathbb{F} = \mathbb{C}$.
+
+Let $\zeta = e^{2\pi i/n} \in \mathbb{C}$.
+By tutorial 4, $G$ has $n$ x $1$-dim reps: $x \mapsto \zeta^k$ for $k=0,1,...,n-1$.
+$\implies D_i = \mathbb{C}v_k$ where $v_k = \prod_{i\neq k} (x-\zeta^i)$
+Hence
+$$\sum_{i=0}^{n-1} (\dim D_i)^2 = \sum_{i=0}^{n-1}1^2 = n = \# C_n$$
+
+## Abelian Groups
+
+>[!Corollary]
+>If $G$ is an abelian group, then every irreducible $\mathbb{C}G$-modules are $1$-dimensional
+#####
+NEED TO PROVE
