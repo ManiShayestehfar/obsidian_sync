@@ -1,10 +1,9 @@
 # Decomposable vs Indecomposable
 
 >[!def]
->An [[A-Module|$A$-module]] $V$ is
+>An $A$-module $V$ is
 >- **decomposable:** there exists $U \subset V$  such that $V = U \oplus W$
 >- **indecomposable:** not decomposable
-
 
 # Fitting's Lemma
 
@@ -68,10 +67,12 @@ $\color{red} \text{REDO THIS PROOF}$
 
 
 # Idempotents
+>[!Definition]
+>- An **idempotent** is a nonzero element $e \in A$ such that $e^2=e$
+>- Two idempotents $f,g$ are **orthogonal** if $fg=gf=0$
+>- An idempotent $e$ is **primitive** if it cannot be written as sum of two orthogonal idempotents
 
-- An **idempotent** is a nonzero element $e \in A$ such that $e^2=e$
-- Two idempotents $f,g$ are **orthogonal** if $fg=gf=0$
-- An idempotent $e$ is **primitive** if it cannot be written as sum of two orthogonal idempotents
+
 
 ## Example
 
