@@ -27,7 +27,7 @@ $$\begin{align*}
 E = V/V_1 = (V_1 + V_1')/V_1 &\cong V_1'/(V_1 \cap V_1') \\[4pt]
 E' = V/V_1' = (V_1+V_1')/V_1' &\cong V_1/(V_1\cap V_1')
 \end{align*}$$
-So both $E,E'$ are isomorphic to the quotients above the intersection $V_1 \cap V_1'$, and again by Theorem 4, $V_1\cap V_1'$ is a maximal submodule of $V_1$ and $V_1'$.  
+So both $E,E'$ are isomorphic to $V/V_1$ and $V/V_1'$ respectively (which are irreducible), and again by the 4th Isomorphism Theorem, $V_1\cap V_1'$ is a maximal submodule of $V_1$ and $V_1'$.  
 
 The composition factors of $V$, $E$, are given by the following diagram:
 
@@ -40,7 +40,7 @@ So now we just need to understand the composition factors below the diamond.
 Choose a composition factor for $V_1\cap V_1' = W_2 \supset W_3 \supset ... \supset W_t \supset 0$. Extending upwards gives
 $$\begin{align*}
 V_1 &\supset W_2 \supset ... \supset 0 \\
-V_1' &\supset W_3 \supset ... \supset 0
+V_1' &\supset W_2 \supset ... \supset 0
 \end{align*}$$
 So both $V_1,V_1'$ have composition series of length $t+1$ and their composition factors include $E' = V/V_1'$ and $E = V/V_1$, as well as the $t$ factors from the shared submodule $V_1 \cap V_1'$. 
 
