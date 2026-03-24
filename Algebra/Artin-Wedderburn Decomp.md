@@ -101,4 +101,6 @@ $$\sum_{i=0}^{n-1} (\dim D_i)^2 = \sum_{i=0}^{n-1}1^2 = n = \# C_n$$
 >[!Corollary]
 >If $G$ is an abelian group, then every irreducible $\mathbb{C}G$-modules are $1$-dimensional
 ##### Proof
-NEED TO PROVE
+Let $G$ be an Abelian group, i.e $gh = hg$ for all $g,h \in G$, and $V$ an irreducible $\mathbb{C}G$-module. 
+Then for all $v \in V$, $(gh) \cdot v = (hg) \cdot v = h\cdot(gv)$. 
+i.e. each $g \in G$ defines an 
