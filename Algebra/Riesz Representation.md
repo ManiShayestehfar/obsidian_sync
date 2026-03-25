@@ -11,11 +11,13 @@ so $\varphi_y \in \mathcal{H}$ with $\|\varphi_y\| \leq \|y\|$. But also $\varph
 
 >[!Theorem]
 >$\mathcal{H}$ a Hilbert space. The map $\Theta:\mathcal{H} \to \mathcal{H}'$ given by $y \mapsto \varphi(y) := \langle x,y\rangle$ is
->1. isometric
+>1. Isometric
 >2. Conjugate linear
 >3. Bijective
 >   
 >In particular, $\mathcal{H}' = \{\varphi_y \:|\: y \in \mathcal{H}'\}$
 ##### Proof
 ###### Conjugate-Linearity
-This follows from 
+This follows from conjugate linearity of inner product w.r.t the second input $\langle x,-\rangle$.
+###### Isometry
+$|\varphi_y(y)| = $
