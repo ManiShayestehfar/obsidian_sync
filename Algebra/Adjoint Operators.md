@@ -20,7 +20,7 @@ Then $\varphi_1(x) + \varphi_2(x) = \langle Tx, y_1 + y_2 \rangle_2 = \langle x,
 $\implies T^*(y_1 +y_2) = T^* y_1 + T^* y_2$.  $\therefore$ linear
 
 ###### Uniqueness of $T^*$
-If $\exists T^*, W^*$ satisfying $\langle Ax, y \rangle_2 = \langle x, A_y \rangle_1$ for $A = T^*, W^*$,
+If $\exists T^*, W^*$ satisfying $\langle Ax, y \rangle_2 = \langle x, A^*y \rangle_1$ for $A = T^*, W^*$,
 Suppose $\exists y \in \mathcal{H}_2$ such that $T^* y \neq W^* y$.
 Then $\forall x \in H_1$: $\langle x, T^* y \rangle_1 = \langle x, W^* y \rangle_1$.  By Isometry in Riesz's Theorem, $T^* = W^*$ which is a contradiction. Hence $T^*$ must be unique.
 
