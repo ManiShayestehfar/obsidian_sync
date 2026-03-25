@@ -35,5 +35,7 @@ Now for each $x \in \mathcal{H}$, consider $x - \frac{\varphi(x)}{\varphi(z)}z \
 $$\begin{align*}
 0 &= \left \langle x - \frac{\varphi(x)}{\varphi(z)}z, z \right \rangle \\
 &= \langle x,z \rangle - \frac{\varphi(x)}{\varphi(z)} \|z\|^2 \\
-\implies \varphi(x) &= \frac{\varphi(z)}{\|z\|^2}\langle x,z \rangle = \left \langle \right 
+\implies \varphi(x) &= \frac{\varphi(z)}{\|z\|^2}\langle x,z \rangle = \left \langle x, \underbrace{\frac{\overline{\varphi}(z)}{\|z\|^2}z}_{=: y} \right \rangle
 \end{align*}$$
+and thus $\varphi = \varphi_y$. $\square$
+
