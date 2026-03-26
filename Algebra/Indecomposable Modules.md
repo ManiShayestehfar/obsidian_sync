@@ -2,7 +2,7 @@
 
 >[!def]
 >An $A$-module $V$ is
->- **decomposable:** there exists $U \subset V$  such that $V = U \oplus W$
+>- **decomposable:** there exists $U,W \subset V$  such that $V = U \oplus W$
 >- **indecomposable:** not decomposable
 
 ## Examples
@@ -88,6 +88,14 @@ Then $e,f$ are orthogonal and $1_A= e+f$. Also $e,f$ are both primitive.
 
 ## Lemma
 
+>[!Lemma]
+>Every $A$-module is a direct sum of indecomposable modules
+##### Proof
+Let $V$ be an $A$-module. If $V$ is indecomposable then we are done. Otherwise $V = X \oplus Y$ for some $X,Y$ proper submodules.
+Then $\dim X , \dim Y \leq \dim V$. By repeating this argument, we can write $X$ and $Y$ as direct sums of indecomposables.
+Hence $V$ is a direct sum of indecomposables.  $\square$
+
+
 >[!lemma] Lemma 8C
 >1. Suppose $e$ is an idempotent in $A$. Then $Ae$ is indecomposable $\iff$ $e$ is primitive
 >2. Suppose $P$ is a principal indecomposable $A$-module. Then $P=Ae$ for some primitive idempotent $e$.
@@ -114,4 +122,5 @@ $(\Leftarrow)$
 TBD (probably possible to use part 3)
 
 ###### 2.
+
 
