@@ -111,15 +111,8 @@ $(\supseteq)$
 Take $x \in Ae$ and $y \in Af$. Then $x=ae$ and $y=bf$ for some $a,b \in A$. 
 Then $$x+y = ae+bf =a(e+f) + (b-a)f \in A(e+f)$$
 $\square$
-###### 1. $(\Rightarrow)$
-Assume $e$ is not primitive, then $e = e_1 + e_2$ such that $e_1e_2=e_2e_1=0$. Then for $a \in A$
-1. $ae = a(e_1+e_2)=ae_1+ae_2 \in Ae_1 + Ae_2$.
-   So $A_e \subseteq Ae_1 + Ae_2$. The reverse is clear as $e_1,e_2 \in Ae$. Hence $Ae=Ae_1+Ae_2$.
-2. If $x \in Ae_1\cap Ae_2$, write $x = ae_1=be_2$. But $x = xe_1 = (be_2)e_1=b(e_2e_1)=0$ so $x=0$ and so $Ae_1 \cap Ae_2 = 0$. 
-Thus $Ae = Ae_1 \oplus Ae_2$.  $\square$
-
-$(\Leftarrow)$
-TBD (probably possible to use part 3)
+###### 1. 
+Suppose $V$ is an indecomposable summand of $A$. i.e. $A = V \oplus X$ for some $A$-submodule $X$.
 
 ###### 2.
 
