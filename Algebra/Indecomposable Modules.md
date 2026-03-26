@@ -113,6 +113,22 @@ Then $$x+y = ae+bf =a(e+f) + (b-a)f \in A(e+f)$$
 $\square$
 ###### 1. 
 Suppose $V$ is an indecomposable summand of $A$. i.e. $A = V \oplus X$ for some $A$-submodule $X$.
+$\implies 1_A = e_v + e_x$ for unique $e_v \in V$, $e_x \in X$.
+
+>[!Claim] 
+>$V = Ae_v$ and $e_v$ and $e_x$ are orthogonal idempotents. 
+
+-  If $v \in V$, then $v = v\cdot 1_A = ve_v + ve_x$.
+  $\implies \underbrace{v - ve_v}_{\in V} = \underbrace{v e_x}_{\in X} \in V \cap X = 0$ 
+  $\implies v = v e_v$ and $ve_x = 0$
+  $\implies V \subseteq Ae_v \subseteq V \implies V = Ae_v$
+  
+  Also $e_v = e_v^2 \implies e_v$ is an idempotent (note that $e_v \neq 0$ since $0 \neq V = Ae_v$) and $e_ve_x = 0$.  
+  By symmetry if $x\in X$ then $x = xe_x$ and $xe_v = 0$ 
+  $\implies e_x = e_x^2$ and $e_xe_v = 0$. 
+
+Finally, if $e_v$ is *not* primitive, then $e_v = f +g$ for orthogonal idempotents $f,g$.
+$\implies V = Ae_v = Af \oplus Ag$
 
 ###### 2.
 
