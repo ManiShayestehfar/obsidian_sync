@@ -86,4 +86,12 @@ Page 3
 >[!def] 
 >A non-zero ring without zero-divisors $\neq 0$ is called an **integral domain**.
 
- 
+
+# Local Rings
+
+>[!Def] Local Rings
+>A **local ring** is a ring $R$ that has a *unique* maximal proper ideal
+
+## Examples
+$R = \mathbb{F} \implies$ only ideals are $0,\mathbb{F} \implies$ local
+

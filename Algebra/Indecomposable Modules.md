@@ -36,7 +36,7 @@ Since we showed that $\ker\varphi^n \cap \text{im }\varphi^n= 0$, then $V = \ker
 ## Lemma
 
 >[!lemma]
->Suppose $P$ is an indecomposable $A$-module. Then $\text{End}_A(P)$ is a local ring with a maximal proper ideal
+>Suppose $P$ is an indecomposable $A$-module. Then $\text{End}_A(P)$ is a [[Ring|local ring]] with a maximal proper ideal
 >$$\mathfrak{m} = \{\varphi\in \text{End}_A(P)\:|\: \varphi^n=0\quad \exists n>0\}$$
 
 ##### Proof
@@ -128,8 +128,13 @@ $\implies 1_A = e_v + e_x$ for unique $e_v \in V$, $e_x \in X$.
   $\implies e_x = e_x^2$ and $e_xe_v = 0$. 
 
 Finally, if $e_v$ is *not* primitive, then $e_v = f +g$ for orthogonal idempotents $f,g$.
-$\implies V = Ae_v = Af \oplus Ag$
+$\implies V = Ae_v = Af \oplus Ag$  (by part (3))
+This contradicts $V$ being indecomposable so $e_v$ is primitive
+$\square$
+
+>[!success] Moral
+>Indecomposable summands of $A$     $\equiv$     Primtive idempotents in $A$
+
 
 ###### 2.
-
-
+NEED TO PROVE
