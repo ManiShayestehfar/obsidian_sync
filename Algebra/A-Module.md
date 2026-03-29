@@ -4,7 +4,7 @@
 >$$A \times V \to V \quad;\:(a,v) \to av$$
 >such that
 >1. **Unital:** $1_A v = v$ for all $v \in V$
->2. **Associativity:** $(ab)v = a(bv)$ for all $a,b \in G$ and $v \in V$
+>2. **Associativity:** $(ab)v = a(bv)$ for all $a,b \in A$ and $v \in V$
 >3. **Bilinearity:** $a(\lambda v + \mu w) = \lambda (av) + \mu (aw)$, and $(\lambda a + \mu b)v = \lambda (av) + \mu (bv)$  for all $a,b \in A$, $\lambda_\mu \in \mathbb{F}$, $v,w \in V$. 
 
 # Examples
