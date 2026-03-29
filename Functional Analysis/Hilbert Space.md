@@ -68,3 +68,22 @@ for all $e,e' \in S$.
 # General Fourier Series
 Fourier series can be generalised to arbitrary Hilbert spaces with arbitrary Hilbert bases.
 
+## Finite Dimensional $\mathcal{H}$
+
+Let $S = \{e_1,...,e_n\}$ be a Hilbert basis of $\mathcal{H}$. 
+
+>[!Theorem]
+>For $x \in \mathcal{H}$,
+>1. **Fourier Series:** $x = \sum_{j=1}^n \langle x,e_j \rangle e_j$ 
+>2. **Parseval's Identity:** $\|x\|^2 = \sum_{j=1}^n |\langle x,e_j \rangle |^2$ 
+>If $S' \subseteq S$ and $M = \text{Span}(S')$, then
+>3. **Projection Formula:** $P_M x = \sum_{e \in S'} \langle x,e \rangle e$
+>4. **Bessel's Inequality:** $\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \rangle|^2$
+##### Proofs
+###### Fourier Series
+Let $x \in \mathcal{H}$. Since $S$ is a basis, there exist unique $\alpha_1,...,\alpha_n \in \mathbb{K}$ such that $x = \sum_{j=1}^n \alpha_j e_j$.
+Fix $k \in \{1,...,n\}$. Taking inner products with $e_k$, we get $$\langle x, e_k \rangle = \sum_{j=1}^n \alpha_j \langle e_j, e_k \rangle = \alpha_k$$
+Now substituting this back to the basis expansion of $x$ gives $$x = \sum_{j=1}^n \langle x, e_j \rangle e_j\qquad \square$$
+###### Parseval's Identity
+
+Using the Fourier series, write $$\|x\|^2 = \langle x,x \rangle = \left \langle \sum_{j=1}^n \langle x,e_j \rangle e_j\:,\: \sum_{}\langle x,e_j \rangle e_j \right \rangle$$
