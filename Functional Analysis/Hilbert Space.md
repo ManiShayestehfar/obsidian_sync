@@ -86,4 +86,12 @@ Fix $k \in \{1,...,n\}$. Taking inner products with $e_k$, we get $$\langle x, e
 Now substituting this back to the basis expansion of $x$ gives $$x = \sum_{j=1}^n \langle x, e_j \rangle e_j\qquad \square$$
 ###### Parseval's Identity
 
-Using the Fourier series, write $$\|x\|^2 = \langle x,x \rangle = \left \langle \sum_{j=1}^n \langle x,e_j \rangle e_j\:,\: \sum_{}\langle x,e_j \rangle e_j \right \rangle$$
+Using the Fourier series, write $$\begin{align*}
+\|x\|^2 = \langle x,x \rangle = \left \langle \sum_{j=1}^n \langle x,e_j \rangle e_j\:,\: \sum_{j=1}^n\langle x,e_j \rangle e_j \right \rangle &= \sum_{j=1}^n \sum_{k=1}^n \langle x,e_j \rangle \overline{\langle x,e_k \rangle} \langle e_j, e_k \rangle \\[3pt]
+&=  \sum_{j=1}^n \langle x, e_j \rangle \overline{\langle x, e_j \rangle} \\
+&= \sum_{j=1}^n |\langle x,e_j \rangle|^2  \qquad \square
+\end{align*}$$
+###### Projection Formula
+
+Let $m := \sum_{e \in S'} \langle x,e \rangle e$ 
+###### Bessel's Inequality
