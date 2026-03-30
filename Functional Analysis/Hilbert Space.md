@@ -163,7 +163,22 @@ $$\sum_{j=1}^N |\langle x,e_j \rangle|^2 \leq \|x\|^2 \qquad \forall N \geq 1$$
 and use monotone convergence. $\square$
 
 ### Projection Formula
+
 >[!Theorem] 
 >Let $S \subseteq \mathcal{H}$ be orthonormal. let $M = \overline{\text{Span}(S)}$. Then
 >$$P_Mx = \sum_{e \in S} \langle x,e \rangle e$$
->where the countable sum can be taken in any order.
+>where the *countable* sum can be taken in any order.
+##### Proof
+Same proof as before, except for countable sum instead of finite.
+
+### Fourier + Parseval
+
+> [!Theorem] 
+> Let $S$ be orthonormal in $\mathcal{H}$. The following are equivalent:
+> 1. $S$ is complete (i.e. a Hilbert basis)
+> 2. $x = \sum_{e \in S} \langle x,e \rangle e \qquad \forall x \in \mathcal{H}\:\:\text{ (Fourier Series) }$
+> 3. $\|x\|^2 = \sum_{e \in S} | \langle x,e \rangle|^2 \qquad \forall x \in \mathcal{H} \:\: \text{ (Parseval's Identity) }$
+>    
+> In (2,3), the countable sum can be taken in any order.
+##### Proof
+###### 
