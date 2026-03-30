@@ -1,4 +1,3 @@
-
 # Nilpotent Ideal
 
 An ideal $I$ of $A$ is **nilpotent** if $I\neq0$ and $I^n=0$ for some $n>0$.

@@ -43,8 +43,8 @@ Since we showed that $\ker\varphi^n \cap \text{im }\varphi^n= 0$, then $V = \ker
 Let $\mathfrak{m}$ be a maximal ideal of $\text{End}_A(P)$.
 Let $\psi\not\in \mathfrak{m}$.
 Since $\mathfrak{m}$ is proper, then $1_P=a\psi + \varphi$ for $a \in \text{End}_A(P)$ and $\varphi \in \mathfrak{m}$.
-By Fitting's lemma $\text{End}_A(P) = \text{im }\varphi^n \oplus \ker\varphi^n$ for some $n>0$. Since $P$ is indecomposable by assumption, then $\text{im }\varphi^n=0$ or $\ker \varphi^n=0$. 
-Since $\mathfrak{m}$ is a proper ideal and $\varphi \in \mathfrak{m}$, then $\varphi^n$ cannot be an isomorphism, hence non-injective (it is surjective since $\varphi^n \in \text{End}_A(P)$) so $\ker \varphi^n \neq 0$. Thus $\text{im }\varphi^n=0$. i.e. $\varphi^n = 0$.
+By Fitting's lemma $P = \text{im }\varphi^n \oplus \ker\varphi^n$ for some $n>0$. Since $P$ is indecomposable by assumption, then $\text{im }\varphi^n=0$ or $\ker \varphi^n=0$. 
+Since $\mathfrak{m}$ is a proper ideal and $\varphi \in \mathfrak{m}$, then $\varphi^n$ cannot be an isomorphism, hence non-injective (it is surjective since $\varphi^n \in \text{End}_A(P)$) so $\text{im } \varphi^n = 0$. Thus $\text{im }\varphi^n=0$. i.e. $\varphi^n = 0$.
 $$(1+\varphi + \cdots +\varphi^{n-1})a\psi = (1+\varphi + \cdots +\varphi^{n-1})(1-\varphi)= 1 - \varphi^n = 1$$
 Thus $\psi$ is invertible and so we have shown that any $\psi \in \text{End}_A(P)\setminus \mathfrak{m}$ is invertible, thus it must generate $\text{End}_A(P)$. 
 This implies that $\mathfrak{m}$ is unique because if $\mathfrak{m}'\neq \mathfrak{m}$ was another maximal ideal, then $\psi \in \mathfrak{m}' \setminus \mathfrak{m}$ would be an element of $\text{End}_A(P) \setminus \mathfrak{m}'$ that was not invertible. A contradiction.
