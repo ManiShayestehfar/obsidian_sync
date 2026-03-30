@@ -111,8 +111,29 @@ by Parseval's identity. Therefore $$\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \r
 
 *Issue:* $S$ may be uncountable
 
+### Lemma 1
+
 >[!Lemma] Lemma 1
 >Let $\mathcal{H}$ be a Hilbert space. 
 >1. If $x_n \to x$ in $\mathcal{H}$, then $\langle x,y \rangle = \lim_{n \to \infty} \langle x_n, y \rangle \qquad \forall y \in \mathcal{H}$ 
 >2. If $(x_n)$ is such that $s = \sum_{n=1}^\infty x_n$ converges in $\mathcal{H}$, then $\langle s,y \rangle = \sum_{n=1}^\infty \langle x_n, y \rangle \qquad \forall y \in \mathcal{H}$
 >3. If $\{e_n \: |\: n \geq 1\}$ is orthonormal, then $$\sum_{n=1}^\infty \alpha_ne_n \text{ converges in } \mathcal{H} \iff \sum_{n=1}^\infty |\alpha_n|^2 \text{ converges in } \mathbb{R}$$
+>   moreover if $\sum|\alpha_n|^2$ converges, then $\left\| \sum_{n=1}^\infty \alpha_n e_n \right\|^2 = \sum_{n=1}^\infty |\alpha_n|^2$
+##### Proofs
+NEED TO PROVE
+
+### Lemma 2
+
+>[!Lemma] Lemma 2
+> If $\{e_1,...,e_n \}$ is orthonormal, then $$\sum_{j=1}^n |\langle x, e_j \rangle|^2 \leq \|x\|^2 \qquad x \in \mathcal{H}$$
+##### Proof
+Let $y = \sum_{j=1}^n \langle x,e_j \rangle e_j$. By Pythagoras', $\|y\|^2 = \sum_{j=1}^n |\langle x,e_j \rangle|^2$. 
+But then $$\begin{align*}
+\langle x-y,y \rangle &= \langle x,y \rangle - \langle y,y\rangle \\
+&= \left\langle x, \sum_{j=1}^n \langle x,e_j\rangle e_j \right\rangle - \|y\|^2 \\
+&= \sum_{j=1}^n \overline{\langle x,e_j \rangle} \langle x,e_j \rangle - \|y\|^2 \\
+&= \|y\|^2 - \|y\|^2 = 0
+\end{align*}$$
+Hence $\|x\|^2 = \|y\|^2 + \|x-y\|^2 \geq \|y\|^2$ by Pythagoras' theorem. $\square$
+
+
