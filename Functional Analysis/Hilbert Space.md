@@ -93,5 +93,13 @@ Using the Fourier series, write $$\begin{align*}
 \end{align*}$$
 ###### Projection Formula
 
-Let $m := \sum_{e \in S'} \langle x,e \rangle e$ 
+Let $m := \sum_{e \in S'} \langle x,e \rangle e \in M$ since $m$ is a finite linear combination of vectors in $S$'.
+We show that $x-m \in M^\perp$. Since $S'$ spans $M$, it is enough to show $$\langle x-m , e_0 \rangle=0\quad\forall e_0 \in S'.$$
+Fix $e_0 \in S'$. Then $$\langle x-m, e_0 \rangle = \left \langle x- \sum_{e \in S'} \langle x, e \rangle e, e_0 \right \rangle = \langle x, e_0 \rangle - \sum_{e \in S'} \langle x,e \rangle \langle e, e_0 \rangle.$$
+Because $S' \subseteq S$ and $S$ is orthonormal, $\langle e,e_0 \rangle = 1 \iff e = e_0$. Then $$\langle x-m, e_0 \rangle= \langle x,e_0\rangle - \langle x,e_0 \rangle = 0.$$
+So $x-m$ is orthogonal to every vector in $S'$, hence $x-m \in M^\perp$, and so by the defining property of $P_M x$, the projection formula holds. $\square$  
+
 ###### Bessel's Inequality
+
+By the Projection formula, $m := P_Mx = \sum_{e \in S'} \langle x,e \rangle e$.
+Since $x-m \in M^\perp$ and $m \in M$, we have $x = \underbrace{m} + (x-m)$
