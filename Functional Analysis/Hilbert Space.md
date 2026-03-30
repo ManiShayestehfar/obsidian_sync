@@ -179,6 +179,23 @@ Same proof as before, except for countable sum instead of finite.
 > 2. $x = \sum_{e \in S} \langle x,e \rangle e \qquad \forall x \in \mathcal{H}\:\:\text{ (Fourier Series) }$
 > 3. $\|x\|^2 = \sum_{e \in S} | \langle x,e \rangle|^2 \qquad \forall x \in \mathcal{H} \:\: \text{ (Parseval's Identity) }$
 >    
-> In (2,3), the countable sum can be taken in any order.
+> In (2,3), the *countable* sum can be taken in any order.
 ##### Proof
-###### 
+###### 1 -> 2
+Since $S$ is complete, $M = \overline{\text{Span}(S)}= \mathcal{H}$, so $P_Mx =x$ for all $x \in \mathcal{H}$.
+and so $x = \sum_{e \in S} \langle x,e \rangle e$ by the projection formula.
+
+###### 2 -> 3 
+Directly just Lemma 1 (??)
+
+###### 3 -> 1
+Suppose $\|x\|^2 = \sum_{e \in S} |\langle x,e\rangle|^2$ for all $x \in \mathcal{H}$. Let $M = \overline{\text{Span}(S)}$. 
+Let $z \in M^\perp$. Then $z = 0 + z \in M \oplus M^\perp$, hence $P_M z = 0$.
+Thus
+$$\begin{align*}
+0 = \|P_Mz\|^2 &= \|\sum_{e \in S} \langle z,e \rangle e\|^2 \tag{Projection formula} \\
+&= \sum_{e \in S} |\langle z,e \rangle|^2 \\[2pt]
+&= \|z\|^2 \tag{Parseval's Identity}
+\end{align*}$$
+$\square$
+
