@@ -17,7 +17,7 @@
   \end{pmatrix} \:\mid\: \lambda_{ij} \in \mathbb{F}\right\} \implies aD_j \subseteq D_j$$
   Then $A = D_1 \oplus D_2 \oplus \cdots \oplus D_n$.
   Further $D_j \cong \left\{\begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_n \end{pmatrix}\: :\: \lambda_i \in \mathbb{F}\right\}$ which means that $A$ acts via matrix multiplication onto the column space $\mathbb{F}^n$. 
-  $\implies A$ is NOT irreducible as a left $A$-module, since $A \cong \mathbb{F}^n \oplus \cdots \mathbb{F}^{n} \cong (\mathbb{F})^{\oplus n}$ 
+  $\implies A$ is NOT irreducible as a left $A$-module, since $A \cong \mathbb{F}^n \oplus \cdots \oplus \mathbb{F}^{n} \cong (\mathbb{F})^{\oplus n}$ 
   
   *Question:* Is $\mathbb{F}^n$ irreducible as an $A$-module?
   If $0\neq \begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_n \end{pmatrix} \in \mathbb{F}^n$, then $\lambda_j \neq 0 \implies$ let $E_{ij}$ be the matrix with $1$ in $ij$ position. Then $E_{ij}v_\lambda = E_{ij}\begin{pmatrix}\lambda_1  \\ \vdots \\ \lambda_j \end{pmatrix} = \begin{pmatrix} 0  \\ \vdots \\ \lambda_j \\ \vdots  \\ 0 \end{pmatrix}$
