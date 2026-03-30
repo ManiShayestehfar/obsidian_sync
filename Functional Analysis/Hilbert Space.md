@@ -104,14 +104,16 @@ So $x-m$ is orthogonal to every vector in $S'$, hence $x-m \in M^\perp$, and so 
 By the Projection formula, $m := P_Mx = \sum_{e \in S'} \langle x,e \rangle e$.
 Since $x-m \in M^\perp$ and $m \in M$, we have $x = \underbrace{m}_{M} + \underbrace{(x-m)}_{M^\perp}$ .
 Then by Pythagoras' Theorem, $\|x\|^2 = \|m\|^2 + \|x-m\|^2 \geq \|m\|^2$.
-Now since vectors in $S'$ are orthonormal, $$\|m\|^2 = \left\| \sum_{e \in S'} \langle x,e \rangle e \right\| = \sum_{e \in S'} |\langle x,e \rangle|^2$$
-by Parseval's identity. Therefore $$\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \rangle|^2\qquad \square$$
+Now since vectors in $S'$ are orthonormal, 
+$$\|m\|^2 = \left\| \sum_{e \in S'} \langle x,e \rangle e \right\| = \sum_{e \in S'} |\langle x,e \rangle|^2$$
+by Parseval's identity. Therefore 
+$$\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \rangle|^2\qquad \square$$
 
 ## General Hilbert Spaces
 
 *Issue:* $S$ may be uncountable
 
-### Lemma 1
+### Lemmas & Corollaries
 
 >[!Lemma] Lemma 1
 >Let $\mathcal{H}$ be a Hilbert space. 
@@ -122,13 +124,13 @@ by Parseval's identity. Therefore $$\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \r
 ##### Proofs
 NEED TO PROVE
 
-### Lemma 2
 
 >[!Lemma] Lemma 2
 > If $\{e_1,...,e_n \}$ is orthonormal, then $$\sum_{j=1}^n |\langle x, e_j \rangle|^2 \leq \|x\|^2 \qquad x \in \mathcal{H}$$
 ##### Proof
 Let $y = \sum_{j=1}^n \langle x,e_j \rangle e_j$. By Pythagoras', $\|y\|^2 = \sum_{j=1}^n |\langle x,e_j \rangle|^2$. 
-But then $$\begin{align*}
+But then 
+$$\begin{align*}
 \langle x-y,y \rangle &= \langle x,y \rangle - \langle y,y\rangle \\
 &= \left\langle x, \sum_{j=1}^n \langle x,e_j\rangle e_j \right\rangle - \|y\|^2 \\
 &= \sum_{j=1}^n \overline{\langle x,e_j \rangle} \langle x,e_j \rangle - \|y\|^2 \\
@@ -137,3 +139,31 @@ But then $$\begin{align*}
 Hence $\|x\|^2 = \|y\|^2 + \|x-y\|^2 \geq \|y\|^2$ by Pythagoras' theorem. $\square$
 
 
+>[!Corollary] Corollary 1
+>If $S \subseteq \mathcal{H}$ is orthonormal, then for each $x \in \mathcal{H}$, the set $\{e \in S \:|\: \langle x,e \rangle\neq 0\}$ is countable.
+##### Proof
+Let $k \geq 1$. If $e_1,...,e_N \in S$ with $|\langle x,e_j \rangle| > \frac{1}{k}$ for $j =1,...,N$, then $|\langle kx, e_j \rangle|>1$ and so by Lemma 2: 
+$$N < \sum_{j=1}^N |\langle kx, e_j \rangle|^2 \leq \|kx\|^2$$
+and so $N < k^2 \|x\|^2$. Thus the set $\{e \in S \: | \: |\langle x,e \rangle|> \frac{1}{k} \}$ is *finite* for each fixed $x$, and each $k \geq 1$.
+So 
+$$\{e \in S \:|\:  \langle x,e \rangle \neq 0\} = \bigcup_{k\geq 1} \{e \in S \:|\: |\langle x,e \rangle|>\frac{1}{k}\}$$
+is a countable union of finite sets, and hence is countable. $\square$
+
+
+### Bessel's Inequality
+
+>[!Theorem]
+>If $S \subseteq \mathcal{H}$ is orthonormal, then 
+>$$\sum_{e\in S} |\langle x,e\rangle|^2 \leq \|x\|^2.$$
+>This is a *countable* sum of nonnegative terms, and so can be taken in any order.
+##### Proof
+By Corollary 1, we enumerate $\{e \in S \: |\: \langle x,e \rangle \neq 0\} = \{e_1,e_2,...\}$
+and by Lemma 2, 
+$$\sum_{j=1}^N |\langle x,e_j \rangle|^2 \leq \|x\|^2 \qquad \forall N \geq 1$$
+and use monotone convergence. $\square$
+
+### Projection Formula
+>[!Theorem] 
+>Let $S \subseteq \mathcal{H}$ be orthonormal. let $M = \overline{\text{Span}(S)}$. Then
+>$$P_Mx = \sum_{e \in S} \langle x,e \rangle e$$
+>where the countable sum can be taken in any order.
