@@ -68,7 +68,7 @@ for all $e,e' \in S$.
 # General Fourier Series
 Fourier series can be generalised to arbitrary Hilbert spaces with arbitrary Hilbert bases.
 
-## Finite Dimensional $\mathcal{H}$
+## Finite Dimensional Hilbert Spaces
 
 Let $S = \{e_1,...,e_n\}$ be a Hilbert basis of $\mathcal{H}$. 
 
@@ -102,4 +102,17 @@ So $x-m$ is orthogonal to every vector in $S'$, hence $x-m \in M^\perp$, and so 
 ###### Bessel's Inequality
 
 By the Projection formula, $m := P_Mx = \sum_{e \in S'} \langle x,e \rangle e$.
-Since $x-m \in M^\perp$ and $m \in M$, we have $x = \underbrace{m} + (x-m)$
+Since $x-m \in M^\perp$ and $m \in M$, we have $x = \underbrace{m}_{M} + \underbrace{(x-m)}_{M^\perp}$ .
+Then by Pythagoras' Theorem, $\|x\|^2 = \|m\|^2 + \|x-m\|^2 \geq \|m\|^2$.
+Now since vectors in $S'$ are orthonormal, $$\|m\|^2 = \left\| \sum_{e \in S'} \langle x,e \rangle e \right\| = \sum_{e \in S'} |\langle x,e \rangle|^2$$
+by Parseval's identity. Therefore $$\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \rangle|^2\qquad \square$$
+
+## General Hilbert Spaces
+
+*Issue:* $S$ may be uncountable
+
+>[!Lemma] Lemma 1
+>Let $\mathcal{H}$ be a Hilbert space. 
+>1. If $x_n \to x$ in $\mathcal{H}$, then $\langle x,y \rangle = \lim_{n \to \infty} \langle x_n, y \rangle \qquad \forall y \in \mathcal{H}$ 
+>2. If $(x_n)$ is such that $s = \sum_{n=1}^\infty x_n$ converges in $\mathcal{H}$, then $\langle s,y \rangle = \sum_{n=1}^\infty \langle x_n, y \rangle \qquad \forall y \in \mathcal{H}$
+>3. If $\{e_n \: |\: n \geq 1\}$ is orthonormal, then $$\sum_{n=1}^\infty \alpha_ne_n \text{ converges in } \mathcal{H} \iff \sum_{n=1}^\infty |\alpha_n|^2 \text{ converges in } \mathbb{R}$$
