@@ -20,10 +20,10 @@ Set $e_0:=e$ and $e_{i+1}:=3e_i^2-2e_i^3$.
 ###### Proof
 To prove this, we use induction on $i$. 
 - If $i=0$ then $e_0=e$, $e_0-e_0^2\in N$, and $x=e_ix=e_i^2x=\cdots$ so the claim is true.
-- By induction assume the claim for $e_i$. Therefore $e_{i+1}x=(3e_i^2-2e_i^3)x=x$ and ![[Ring-1767874849382.png]]
+- By induction assume the claim for $e_i$. Therefore $e_{i+1}x=(3e_i^2-2e_i^3)x= (3-2)x$ and ![[Ring-1767874849382.png]]
   where the last line follows by induction since $e_i-e_i^2 \in N^{2i}$. This completes the proof of claim. $\square$
 
-Now we are done because $e_i\neq0$ for i since $x=e_ix$. On the other hand, $N$ is nilpotent, so $N^k=0$ for some $k>0$. In particular $N^{2^i}=0$ for $i >0$ so $e_i-e_i^2=0$ for $i >0$. That is, $e_i=e_i^2$ is an idempotent (and $e_i=e_{i+1}$) as soon as $N^{2^i}=0$.  $\square$
+Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nilpotent, so $N^k=0$ for some $k>0$. In particular $N^{2^i}=0$ for $i >0$ so $e_i-e_i^2=0$ for $i >0$. That is, $e_i=e_i^2$ is an idempotent (and $e_i=e_{i+1}$) as soon as $N^{2^i}=0$.  $\square$
 
 ## Properties
 
