@@ -22,19 +22,23 @@ Now we are done because $e_i\neq0$ for i since $x=e_ix$. On the other hand, $N$ 
 
 ## Properties
 
-1. If $I,J$ are nilpotent, then so is $I + J$.
-2. Every submodule of $A$ contains a unique maximal nilpotent ideal
-  *proof:* Take $N$ and $N'$ to be two maximal nilpotent ideals of a submodule $V$ of $A$. Then by result (1) above, $N + N'$ is also a nilpotent ideal of $V$. Hence $N = N + N' = N'$ by maximality.
+>[!Proposition]
+>1. If $I,J$ are nilpotent, then so is $I + J$.
+>2. Every submodule of $A$ contains a unique maximal nilpotent ideal
+##### Proof
+1. NEED TO PROVE 
+2. Take $N$ and $N'$ to be two maximal nilpotent ideals of a submodule $V$ of $A$. Then by result (1) above, $N + N'$ is also a nilpotent ideal of $V$. Hence $N = N + N' = N'$ by maximality.
 
 
 
 # Radical
 
-The **radical** $\text{Rad } A$ of $A$ is its unique maximal nilpotent submodule.
-If $V$ is an $A$-module then the **radical** of $V$ is $\text{Rad }V = (\text{Rad }A)V$.
-
-- Let $V$ be an $A$-module and define $\text{Rad }^kV:= (\text{Rad }A)^k V$. Then $$V = \text{Rad }^0V\supseteq \text{Rad}^1V\subseteq \text{Rad }^2V \cdots \supseteq \text{Rad }^n V \supseteq 0.$$
+>[!Definition]
+>The **radical** $\text{Rad } A$ of $A$ is its unique maximal nilpotent ideal.
+> If $V$ is an $A$-module then the **radical** of $V$ is $\text{Rad }V = (\text{Rad }A)V$.
+> - Let $V$ be an $A$-module and define $\text{Rad }^kV:= (\text{Rad }A)^k V$. Then $$V = \text{Rad }^0V\supseteq \text{Rad}^1V\subseteq \text{Rad }^2V \cdots \supseteq \text{Rad }^n V \supseteq 0.$$
   because $(\text{Rad }A)^n= 0$ for some $n >0$ since $\text{Rad }AS$ is a nilpotent ideal. 
+
 
 
 ## Lemma
