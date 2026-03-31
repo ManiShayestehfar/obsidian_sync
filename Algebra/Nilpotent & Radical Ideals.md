@@ -5,18 +5,23 @@ An ideal $I$ of $A$ is **nilpotent** if $I\neq0$ and $I^n=0$ for some $n>0$.
 >[!proposition]
 >Suppose $I$ is a submodule of $A$ such that $I^n\neq0$. Then $I$ contains an idempotent.
 ##### Proof
-Let $J$ be the smallest/minimal non-nilpotent ideal contained in $I$ (so every ideal of $J$ is nilpotent). Let $K$ be a minimal ideal of $J$ such that $JK\neq0$. $K$ exists because $J^2 \neq 0$ since $J$ is not nilpotent.
+Let $J$ be the smallest/minimal non-nilpotent ideal contained in $I$ (so every ideal of $J$ is nilpotent).
+Let $K$ be a minimal ideal of $J$ such that $JK\neq0$. $K$ exists because $J^2 \neq 0$ since $J$ is not nilpotent.
+
 Let $x \in K$ such that $Jx\neq0$, Then $K=Jx$ by minimality of $K$. Hence there exists an element $e \in J$ such that $x = ex$. Consequently $x = ex=e^2x=\cdots$. In particular $e$ is nonzero.
 
-If $e^2 = e$ then $e$ is idempotent and we are done. Otherwise, let $N = \{a\in J\:|\: ax=0\}$. Then $e - e^2 \in N$, so $N$ is a nonzero ideal of $J$. Also $N \neq J$ since $e \not\in N$. However, $J$ is a minimal non-nilpotent ideal, so $N$ must be nilpotent.
+If $e^2 = e$ then $e$ is idempotent and we are done. 
+Otherwise, let $N = \text{Ann}_A(x) = \{a\in J\:|\: ax=0\}$. Then $e - e^2 \in N$, so $N$ is a nonzero ideal of $J$. Also $N \neq J$ since $e \not\in N$. However, $J$ is a minimal non-nilpotent ideal, so $N$ must be nilpotent.
 
-Set $e_0=e$ and $e_{i+1}=3e_i^2-2e_i^2$.
-**Claim:** If $i\geq 0$, then $e_i-e_i^2\in N^{2^i}$ and $x = e_ix=e_i^2x=\cdots$
+Set $e_0:=e$ and $e_{i+1}:=3e_i^2-2e_i^3$.
 
+>[!Claim]
+>If $i\geq 0$, then $e_i-e_i^2\in N^{2^i}$ and $x = e_ix=e_i^2x=\cdots$
+###### Proof
 To prove this, we use induction on $i$. 
 - If $i=0$ then $e_0=e$, $e_0-e_0^2\in N$, and $x=e_ix=e_i^2x=\cdots$ so the claim is true.
-- By induction assume the claim for $e_i$. Therefore $e_{i+1}x=(3e_i^2-2e_i^2)x=x$ and ![[Ring-1767874849382.png]]
-  where the last line follows by induction since $e_i-e_i^2 \in N^{2i}$. This completes the proof of claim.
+- By induction assume the claim for $e_i$. Therefore $e_{i+1}x=(3e_i^2-2e_i^3)x=x$ and ![[Ring-1767874849382.png]]
+  where the last line follows by induction since $e_i-e_i^2 \in N^{2i}$. This completes the proof of claim. $\square$
 
 Now we are done because $e_i\neq0$ for i since $x=e_ix$. On the other hand, $N$ is nilpotent, so $N^k=0$ for some $k>0$. In particular $N^{2^i}=0$ for $i >0$ so $e_i-e_i^2=0$ for $i >0$. That is, $e_i=e_i^2$ is an idempotent (and $e_i=e_{i+1}$) as soon as $N^{2^i}=0$.  $\square$
 
@@ -37,8 +42,7 @@ Now we are done because $e_i\neq0$ for i since $x=e_ix$. On the other hand, $N$ 
 >The **radical** $\text{Rad } A$ of $A$ is its unique maximal nilpotent ideal.
 > If $V$ is an $A$-module then the **radical** of $V$ is $\text{Rad }V = (\text{Rad }A)V$.
 > - Let $V$ be an $A$-module and define $\text{Rad }^kV:= (\text{Rad }A)^k V$. Then $$V = \text{Rad }^0V\supseteq \text{Rad}^1V\subseteq \text{Rad }^2V \cdots \supseteq \text{Rad }^n V \supseteq 0.$$
-  because $(\text{Rad }A)^n= 0$ for some $n >0$ since $\text{Rad }AS$ is a nilpotent ideal. 
-
+  because $(\text{Rad }A)^n= 0$ for some $n >0$ since $\text{Rad }A$ is a nilpotent ideal. 
 
 
 ## Lemma
