@@ -214,13 +214,27 @@ $\square$
 \mathbb{Q}^N & \mathbb{K} = \mathbb{R}  \\[2pt]
 \mathbb{Q} + i \mathbb{Q} & \mathbb{K} = \mathbb{C}
 \end{cases}$$
-2. $\ell^2(\mathbb{K})$ is separable. Take $\{e_n\}_{n \in \mathbb{N}}$ to be the standard orthonormal basis in $\ell^2$. Then every $x \in \ell^2$ is the limir of 
+2. $\ell^2(\mathbb{K})$ is separable. Take $\{e_n\}_{n \in \mathbb{N}}$ to be the standard orthonormal basis in $\ell^2$. Then every $x \in \ell^2$ is the limit of its finite partial sums $x^{(N)} = \sum_{n=1}^N x_n e_n$. Hence the set we need is 
+   $$S = \left\{\sum_{n=1}^N x_ne_n \::\:N \in \mathbb{N},\: x_n \in \mathbb{Q}, \mathbb{Q} + i \mathbb{Q}\right\}$$
+   $S$ is countable, and it is also dense since we can truncate any $x$ to finitely many coordinates and approximate those coordinates with rationals.
+
 *Non-example:* $(\ell^\infty, \|\cdot\|_\infty)$ is a non-separable Banach space.
 It is sufficient to find $S \subseteq X$ such that:
-3. $|S| > |N|$
-4. $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
+4. $|S| > |N|$
+5. $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
 
 In the case for $\ell^\infty$, take $S = \{x_A \:|\: A \subseteq \mathbb{N}\}\subseteq \ell^\infty$ 
 $\implies |S| = |2^\mathbb{N}| = |\mathbb{R}|$.
 
 Claim: For any $A,B \subseteq \mathbb{N}$ and $A \neq B$, $\|x_A - x_B\|_\infty = 1$
+
+
+## Separability and Hilbert Basis
+
+>[!Theorem]
+>Let $\mathcal{H}$ be a Hilbert space over $\mathbb{K}$. Then 
+>$$\mathcal{H} \text{ is separable } \iff \mathcal{H}\:\: \substack{\large\text{contains at most countable} \\ \large \text{complete orthonormal set} \\ \large\text{(i.e. Hilbert basis)}} $$
+>Moreover if $\mathcal{H}$ is separable, then $H$ is isometrically isomorphick to $\ell^2(\mathbb{K})$
+>
+
+
