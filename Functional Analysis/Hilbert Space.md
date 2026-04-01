@@ -254,4 +254,13 @@ Then define $\Theta: \mathcal{H} \to \ell^2$ via $x \longmapsto (\langle x,e_1 \
 Now we check all necessary properties for $\Theta$:
 
 **Well-definedness:** By Parseval's identity,
-$\sum_{i=1}^\infty |\langle x,e_i \rangle|^2 = \|x\|^2$
+$$\sum_{i=1}^\infty |\langle x,e_i \rangle|^2 = \|x\|^2< \infty$$
+so $\Theta(x) \in \ell^2$.
+
+**Linearity:** $\langle -,- \rangle$ is linear in first variable.
+
+**Isometry:** $\|\Theta(x)\|_2^2 = \sum_{j=1}^\infty |\langle x,e_j \rangle|^2 = \|x\|^2$. 
+
+**Injectivity:** $\Theta(x) = 0 \implies 0 = \|\Theta(x) \| = \|x\| \implies x=0$
+
+**Surjectivity:** If $y = (y_1,y_2,...) \in \ell^2$, then define 
