@@ -247,4 +247,11 @@ Suppose $\mathcal{H}$ is separable. Let $\mathcal{B}$ be the orthonormal set. Th
 So from general principles, since $\mathcal{H}$ is separable, then $|\mathcal{B}| < |\mathbb{N}|$ .
 
 ###### Moreover statement
-Assume 
+We showed before that $\ell^2(\mathbb{K})$ (also $L^2([a,b])$ by Stone-Weierstrass) has a countable Hilbert basis.
+So these spaces are separable.
+Now let $\mathcal{H}$ be a separable Hilbert space over $\mathbb{K}$. By above, there is a countable Hilbert basis $S = \{e_n\}_{n\geq1}$.
+Then define $\Theta: \mathcal{H} \to \ell^2$ via $x \longmapsto (\langle x,e_1 \rangle, \langle x,e_2 \rangle,...)$. i.e. $x$ maps to sequence of coefficients in its Fourier series.
+Now we check all necessary properties for $\Theta$:
+
+**Well-definedness:** By Parseval's identity,
+$\sum_{i=1}^\infty |\langle x,e_i \rangle|^2 = \|x\|^2$
