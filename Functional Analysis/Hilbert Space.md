@@ -234,7 +234,7 @@ Claim: For any $A,B \subseteq \mathbb{N}$ and $A \neq B$, $\|x_A - x_B\|_\infty 
 >[!Theorem]
 >Let $\mathcal{H}$ be a Hilbert space over $\mathbb{K}$. Then 
 >$$\mathcal{H} \text{ is separable } \iff \mathcal{H}\:\: \substack{\large\text{contains at most countable} \\ \large \text{complete orthonormal set} \\ \large\text{(i.e. Hilbert basis)}} $$
->Moreover if $\mathcal{H}$ is separable, then $H$ is isometrically isomorphick to $\ell^2(\mathbb{K})$
+>Moreover if $\mathcal{H}$ is separable, then $H$ is isometrically isomorphic to $\ell^2(\mathbb{K})$
 >
 
 
