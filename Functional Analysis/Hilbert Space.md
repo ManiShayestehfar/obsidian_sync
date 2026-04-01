@@ -206,6 +206,10 @@ $\square$
 
 >[!Definition]
 >Let $(X,d)$ be a metric space. Then $X$ is **separable** $X$ contains at most countable subsets $S \subseteq X$ such that $\overline{S}= X$.
+### General Principles
+To show $S$ satisfies the separability condition, it is sufficient to find that:
+- $|S| > |N|$, and
+-  $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
 
 ## Examples
 
@@ -219,10 +223,6 @@ $\square$
    $S$ is countable, and it is also dense since we can truncate any $x$ to finitely many coordinates and approximate those coordinates with rationals.
 
 *Non-example:* $(\ell^\infty, \|\cdot\|_\infty)$ is a non-separable Banach space.
-It is sufficient to find $S \subseteq X$ such that:
-4. $|S| > |N|$
-5. $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
-
 In the case for $\ell^\infty$, take $S = \{x_A \:|\: A \subseteq \mathbb{N}\}\subseteq \ell^\infty$ 
 $\implies |S| = |2^\mathbb{N}| = |\mathbb{R}|$.
 
@@ -243,5 +243,8 @@ $$x = \sum_{i=1}^\infty \langle x,e_i \rangle e_i \qquad \text{ and }\qquad \sum
 Hence we can set $S = \text{Span}_{\mathbb{Q} + i \mathbb{Q}}(\mathcal{B})$ which is dense in $\mathcal{H}$. Clearly $|S| = |\mathbb{N}|$.
 Therefore $\mathcal{H}$ is separable.
 ###### $(\Rightarrow)$
-Suppose $\mathcal{H}$ is separable. Let $\mathcal{B}$ be the orthonormal set. Then if $x,x' \in \mathcal{B}$ ($x\neq x'$), then $\|x-x'\|^2 = \|x\|^2 + \|x'\|^2= 2$
+Suppose $\mathcal{H}$ is separable. Let $\mathcal{B}$ be the orthonormal set. Then if $x,x' \in \mathcal{B}$ ($x\neq x'$), then $\|x-x'\|^2 = \|x\|^2 + \|x'\|^2= 2 \implies d(x,x') = \sqrt{2}$.
+So from general principles, since $\mathcal{H}$ is separable, then $|\mathcal{B}| < |\mathbb{N}|$ .
+
 ###### Moreover statement
+Assume 
