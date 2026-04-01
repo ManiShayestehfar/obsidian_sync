@@ -214,7 +214,13 @@ $\square$
 \mathbb{Q}^N & \mathbb{K} = \mathbb{R}  \\[2pt]
 \mathbb{Q} + i \mathbb{Q} & \mathbb{K} = \mathbb{C}
 \end{cases}$$
-
+2. $\ell^2(\mathbb{K})$ is separable. Take $\{e_n\}_{n \in \mathbb{N}}$ to be the standard orthonormal basis in $\ell^2$. Then every $x \in \ell^2$ is the limir of 
 *Non-example:* $(\ell^\infty, \|\cdot\|_\infty)$ is a non-separable Banach space.
 It is sufficient to find $S \subseteq X$ such that:
-1. $|$
+3. $|S| > |N|$
+4. $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
+
+In the case for $\ell^\infty$, take $S = \{x_A \:|\: A \subseteq \mathbb{N}\}\subseteq \ell^\infty$ 
+$\implies |S| = |2^\mathbb{N}| = |\mathbb{R}|$.
+
+Claim: For any $A,B \subseteq \mathbb{N}$ and $A \neq B$, $\|x_A - x_B\|_\infty = 1$
