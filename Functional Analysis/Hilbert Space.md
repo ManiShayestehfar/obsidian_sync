@@ -236,5 +236,12 @@ Claim: For any $A,B \subseteq \mathbb{N}$ and $A \neq B$, $\|x_A - x_B\|_\infty 
 >$$\mathcal{H} \text{ is separable } \iff \mathcal{H}\:\: \substack{\large\text{contains at most countable} \\ \large \text{complete orthonormal set} \\ \large\text{(i.e. Hilbert basis)}} $$
 >Moreover if $\mathcal{H}$ is separable, then $H$ is isometrically isomorphic to $\ell^2(\mathbb{K})$
 >
-
-
+##### Proof
+###### $(\Leftarrow)$ 
+If $\mathcal{B} = \{e_1,...,e_n,...\}\subset \mathcal{H}$, then using Fourier series, $\forall x \in \mathcal{H}$:
+$$x = \sum_{i=1}^\infty \langle x,e_i \rangle e_i \qquad \text{ and }\qquad \sum_{i=1}^\infty |\langle x, e_i \rangle|^2 = \|x\|^2 < \infty$$
+Hence we can set $S = \text{Span}_{\mathbb{Q} + i \mathbb{Q}}(\mathcal{B})$ which is dense in $\mathcal{H}$. Clearly $|S| = |\mathbb{N}|$.
+Therefore $\mathcal{H}$ is separable.
+###### $(\Rightarrow)$
+Suppose $\mathcal{H}$ is separable. Let $\mathcal{B}$ be the orthonormal set. Then if $x,x' \in \mathcal{B}$ ($x\neq x'$), then $\|x-x'\|^2 = \|x\|^2 + \|x'\|^2= 2$
+###### Moreover statement
