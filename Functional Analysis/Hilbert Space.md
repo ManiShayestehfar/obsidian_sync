@@ -199,3 +199,22 @@ $$\begin{align*}
 \end{align*}$$
 $\square$
 
+
+# Separability
+
+## Definition
+
+>[!Definition]
+>Let $(X,d)$ be a metric space. Then $X$ is **separable** $X$ contains at most countable subsets $S \subseteq X$ such that $\overline{S}= X$.
+
+## Examples
+
+1. $(\mathbb{K}^N, \|\cdot\|)$ is separable if 
+   $$S = \begin{cases}
+\mathbb{Q}^N & \mathbb{K} = \mathbb{R}  \\[2pt]
+\mathbb{Q} + i \mathbb{Q} & \mathbb{K} = \mathbb{C}
+\end{cases}$$
+
+*Non-example:* $(\ell^\infty, \|\cdot\|_\infty)$ is a non-separable Banach space.
+It is sufficient to find $S \subseteq X$ such that:
+1. $|$
