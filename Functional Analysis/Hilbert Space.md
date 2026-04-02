@@ -263,4 +263,16 @@ so $\Theta(x) \in \ell^2$.
 
 **Injectivity:** $\Theta(x) = 0 \implies 0 = \|\Theta(x) \| = \|x\| \implies x=0$
 
-**Surjectivity:** If $y = (y_1,y_2,...) \in \ell^2$, then define 
+**Surjectivity:** If $y = (y_1,y_2,...) \in \ell^2$, then define $x := \sum_{j=1}^\infty y_j e_j \in \mathcal{H}$
+(by Lemma 1 above, since $\sum_{j=1}^\infty |y_j|^2  < \infty \iff \sum_{y_j e_j}$ converges in $\mathcal{H}$).
+Then $\Theta(x) = y$ by construction. $\square$
+
+### Example of Non-Separable Hilbert Space
+$$\mathcal{H} = \{f: [a,b]\to \mathbb{K} \: |\: \text{finite support }f\}$$
+where $\text{supp}(f) = \{x \in [a,b] \:|\: f(x) \neq 0\}$.
+Then with inner product $\langle f,g \rangle_\mathcal{H} = \sum_{x \in [a,b]} f(x) \overline{g(x)}$.
+We can show that indeed $\mathcal{H}$ is an inner product vector space that is complete.
+
+Let $S \subseteq \mathcal{H}$ be $S = \{\delta_x \:|\: x \in [a,b]\}$ orthonormal system (Hamel basis).
+Then $|S| = |[a,b]| = \aleph > \aleph_0 = |\mathbb{N}|$. Thus from general principle, $\mathcal{H}$ is non-separable. 
+
