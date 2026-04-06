@@ -1,7 +1,7 @@
 # Motivation
 
 >[!example]
->$(C([a,b]), \|\cdot\|_\infty)$ and $(C([a,b]), \|\cdot\|_\infty)_p$  for $1\leq p < \infty$ are not the same
+>$(C([a,b]), \|\cdot\|_\infty)$ and $(C([a,b]), \|\cdot\|_p)$  for $1\leq p < \infty$ are not the same
 ##### Proof
 Need to show there exists $(f_n) \in C([0,1])$ such that:
 1. $f_n \to 0$ with $\|\cdot\|_1$
@@ -24,7 +24,7 @@ But $\|f_n-0 \|_\infty = \|f_n\|_\infty = 1 \neq 0$
 
 1. $(\mathbb{K}, \|\cdot\|)$ is complete $\implies$ It is Banach
 2. $(\ell^p, \|\cdot\|_p)$ is Banach
-3. $(C, \|\cdot \|_p)$ is Banach for $C = \{(x_n) \in \ell \:|\: \lim_{n\to \infty} x_n \text{ exists}\}$
+3. $(c, \|\cdot \|_p)$ is Banach for $c = \{(x_n) \in \ell \:|\: \lim_{n\to \infty} x_n \text{ exists}\}$
 4. *Non-example:* (Polynomials on $[a,b]$, $\|\cdot\|_\infty$) is NOT complete and hence not Banach
 
 
@@ -40,7 +40,7 @@ But $\|f_n-0 \|_\infty = \|f_n\|_\infty = 1 \neq 0$
 ##### Proof
 ###### 1.
 Let $(f_n)\subset (X,\|\cdot\|_\infty)$ be a Cauchy sequence. 
-Therefore $\forall \varepsilon >0$  there exists $n_0 \in \mathbb{N}$ such that $\forall n,m \geq n_0$, $|f_n(x) - f_m(x)| = |\|f_n - f_m \| < \varepsilon$.
+Therefore $\forall \varepsilon >0$  there exists $n_0 \in \mathbb{N}$ such that $\forall n,m \geq n_0$, $|f_n(x) - f_m(x)| \leq \|f_n - f_m \|_\infty < \varepsilon$.
 If we fix $f(x) \in [a,b]$, $(f_n(x))_{n\geq 1}$ is Cauchy in $\mathbb{K}$ which implies that $\lim_{n \to \infty} f_n(x) = f(x)$. 
 
 We can show this by noting that if $(f_n) \subset C([a,b])$ converges uniformly to $f$, then $f \in C([a,b])$.
@@ -55,7 +55,7 @@ Consider the graph of $f_n$
 
 where $$\|f_n\|_p = \left(\int_0^1 |f_n(x)|^p\:dx\right)^{1/p} \leq 1$$
 >[!claim]
-$(f_n) \subset (X, \|\cdot\|)$ is Cauchy.
+$(f_n) \subset (X, \|\cdot\|_p)$ is Cauchy.
 
 **Proof:** 
 $\|f_m-f_n\|_p \leq \|g_n\|_p$ for $m>n$ where $g_n$ is defined as the graph of $f_m-f_n$.
