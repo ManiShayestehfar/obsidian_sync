@@ -39,12 +39,13 @@ But $\|f_n-0 \|_\infty = \|f_n\|_\infty = 1 \neq 0$
 
 ##### Proof
 ###### 1.
-Let $(f_n)\subset (X,\|\cdot\|_\infty)$ be a Cauchy sequence. i.e. $\forall \varepsilon >0$  there exists $n_0 \in \mathbb{N}$ such that $\forall n,m \geq n_0$, $|f_n(x) - f_m(x)| \leq \|f_n - f_m \|_\infty < \varepsilon$.
+By the Cauchy property of $(f_n)$, we showed that $\|f_n-f_m\| < \varepsilon$. Fix $x \in [a,b]$. Since $|f_n(x)-f_m(x)|< \varepsilon$, then taking $m \to \infty$ (which we can do since the absolute value is continuous), then $|f_n(x) - f(x)| \leq \varepsilon$. Since the choice of $x$ was arbitrary, then $\|f_n-f\|\leq \varepsilon$. Thus $f_n \to f$ uniformly on $[a,b]$.
 
-If we fix $x \in [a,b]$, $(f_n(x))_{n\geq 1}$ is Cauchy in $\mathbb{K}$ which implies that $\lim_{n \to \infty} f_n(x) =: f(x)$. 
+Now fix $x_0 \in [a,b]$ and let $\varepsilon >0$. Choose $n$ large enough such that $\|f_n - f\|< \varepsilon/3$. Since $f_n$ is continuous at $x_0$, then we can choose $\delta >0$ such that $|x-x_0|<\delta \implies |f(x) - f(x_0)|< \varepsilon/3$. Hence
+$$|f(x) - f(x_0)|\leq |f(x) - f_n(x)| + |f_n(x) - f_n(x_0)| + |f_n(x_0) - f(x_0)| \leq \varepsilon$$
+The first and last term follow from uniform convergence, and the middle term as per above.
+So $f$ is continuous at $x_0$, and since $x_0$ was arbitrary, then $f \in C[a,b]$.  $\square$
 
-We can show this by noting that if $(f_n) \subset C([a,b])$ converges uniformly to $f$, then $f \in C([a,b])$.
-$\forall \varepsilon > 0$, $\exists n_0 \in \mathbb{N}$ such that for $n,m \geq n_0$, $|f_n - f_m| \leq \| f_n - f\|_\infty < \varepsilon$ for all $x \in C([a,b])$. This implies that $$|f_n(x)- f(x)| \leq |f_n(x) - f_m(x)| + |f_m(x)- f_n(x)| < 2\varepsilon$$ as $n \to \infty$, then by lemma $f \in C([a,b])$.   $\square$
 
 ###### 2.
 We can rescale and reshape so assume $a=0,b=1$.
