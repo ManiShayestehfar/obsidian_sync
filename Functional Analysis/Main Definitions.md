@@ -45,5 +45,7 @@ $$\bar{B}(0,1) = \{x \in X \:|\: \|x\| \leq 1\}$$
 >Equivalently, $\forall x\in X, \exists (y_n) \subset Y$ such that $y_n \to x$.
 
 
+# Cauchy-Schwarz in R^n
 
-
+I keep forgetting this so here it is:
+$$\left(\sum_{i=1}^n u_iv_i\right)^2 \leq \left(\sum_{i=1}^n u_i^2\right) \left(\sum_{i=1}^n v_i^2\right)$$
