@@ -91,7 +91,7 @@ But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are
    ![[desmos-graph (2).png|350]]
    
    We are assuming $\forall (f_n) \subset C([0,1])$ such that $\|f_n-f\|_1 \to 0$, $\|f_n-f\|_2 \to 0$. 
-   But in the graph, $\|f_n\|_1 = \frac{1}{\sqrt{n}} \to 0$. $$\|f_n\|_2^2 = \int_0^1 |f_n(x)|^2\:dx = 2 \int_0^{1/n}n\sqrt{n}x\:dx = 2n^3\frac{1}{n^3} = 2 \neq 0$$
+   But in the graph, $\|f_n\|_1 = \frac{1}{\sqrt{n}} \to 0$. $$\|f_n\|_2^2 = \int_0^1 |f_n(x)|^2\:dx = 2 \int_0^{1/n}n\sqrt{n}x\:dx = \frac{2}{3}n^3\frac{1}{n^3} = \frac{2}{3} \neq 0$$
 
 ## Finite Dimensional Normed Spaces
 
@@ -121,7 +121,7 @@ Since $f$ is continuous on $(\mathbb{K}^n, \|\cdot\|_2)$ from the claim above, i
 
 So $\exists x_0 \in S$ such that $\forall x \in S$, $f(x_0) = \|x_0\| \leq \|x\| = f(x)$. Note that $C = \|x_0\|>0$ so $x_0 \neq 0$.
 Therefore $\forall x \in S, C\leq \|x\|$ and so $\forall x \in \mathbb{K}^n \setminus \{0\}$, $$C \leq \left\|\frac{x}{\|x\|_2}\right\|_2=1 \implies f(\tfrac{x}{\|x\|_2}) = \frac{\|x\|}{\|x\|_2}\geq C$$
-therefore $C\|x_2\|\leq \|x\|$. 
+therefore $C\|x\|_2\leq \|x\|$. 
 Since $\exists c_1,c_2$ such that $c_1\|x\|_2\leq \|x\| \leq c_2\|x\|_2$, then $\|x\|\sim \|x\|_2$. $\square$
 
 
@@ -136,7 +136,7 @@ Since $\exists c_1,c_2$ such that $c_1\|x\|_2\leq \|x\| \leq c_2\|x\|_2$, then $
 
 **Remark for (2):**
 Not ALL subspaces of a given space is closed. 
-e.g. $(\ell_F, \|\cdot\|_2) \subset (\ell^2, \|\cdot\|_2)$ where $\ell_F$ is the space of sequence s in $\mathbb{K}$ with finitely many non-zeros is open.
+e.g. $(\ell_F, \|\cdot\|_2) \subset (\ell^2, \|\cdot\|_2)$ where $\ell_F$ is the space of sequences in $\mathbb{K}$ with finitely many non-zeros is open.
 
 Take $x^{(m)} = (1,1/2,1/3,...,1/m,0,0,...)$. Then each $x^{(m)}\in \ell_F$.
 Let $x := (1,1/2,1/3,1/4,...)$. Then $x \in \ell^2$ since $$\|x\|_2^2 = \sum_{n=1}^\infty \frac{1}{n^2} < \infty$$but $x \not\in \ell_F$ since it has infinitely many nonzero terms.
