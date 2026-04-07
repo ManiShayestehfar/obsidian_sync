@@ -1,7 +1,7 @@
 # Definition
 
 >[!Def] 
->Let $X,Y$ be Normed Vector spaces over $\mathbb{K}$. Then $T: X \to Y$ is a **linear operator** (aka a vector space homomorphism) such that
+>Let $X,Y$ be Normed Vector spaces over $\mathbb{K}$. Then $T: X \to Y$ is a **linear operator** (a.k.a a vector space homomorphism) such that
 >1. $T(x+y) = T(x) + T(y)$ $\forall x,y \in X$
 >2. $T(\lambda x) = \lambda T(x)$  $\forall \lambda \in \mathbb{K}$
 
