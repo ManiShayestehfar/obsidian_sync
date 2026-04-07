@@ -18,9 +18,11 @@ Up to isometric isomorphism such $(\hat{X}, \|\cdot\|)$ is *unique*.
 # Definition
 
 >[!Definition]
->Let $(X,\|\cdot\|_p)$ be a normed vector space. There is a Banach space $(\hat{X}, \|\cdot\|_1)$ such that $(X, \|\cdot\|)$ is isometrically isomorphic to a *dense* subspace of $(\hat{X},\|\cdot\|_1)$. This is called the **completion** of $X$.
->
->Moreover, $(\hat{X}, \|\cdot\|_1)$ is unique up to isometric isomorphism.
+>Let $(X,\|\cdot\|)$ be a normed vector space. 
+>Then there exists a [[Banach Spaces|Banach Space]] $(\widehat{X},\|\cdot\|)$ and an isometric linear embedding 
+>$$T: X \to \widehat{X}$$
+>such that $\overline{T(X)}=\widehat{X}$. The space $\widehat{X}$ is called the **completion** of $X$. 
+>Moreover, $(\widehat{X},\|\cdot\|)$ is unique up to isometric isomorphism.
 
 ## Examples
 
