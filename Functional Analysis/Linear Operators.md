@@ -58,12 +58,12 @@ $\square$
 
 ## Boundedness of operators (for previous examples)
 
-2. $\mathcal{D}: (\mathcal{P}([0,1]), \|\cdot\|_\infty) \to (\mathcal{P}([0,1]), \|\cdot\|_\infty)$
+1. $\mathcal{D}: (\mathcal{P}([0,1]), \|\cdot\|_\infty) \to (\mathcal{P}([0,1]), \|\cdot\|_\infty)$
    Take $p_n = x^n \implies \mathcal{D}p_n = nx^{n-1}$ 
    So $\|p_n\|_\infty =1$ but $\|\mathcal{D}p_b\|_\infty = n = n\|p_n\|_\infty$ so no inequality of form $\|\mathcal{D}p_n\|_\infty < C\|p_n\|_\infty$ 
    $\therefore$ NOT bounded
 
-3. $\mathcal{I}: (C([a,b]), \|\cdot\|_\infty) \to (C([a,b]), \|\cdot\|_\infty)$ such that $(\mathcal{I}f)(x) = \int_a^x f(t)\:dt$ 
+2. $\mathcal{I}: (C([a,b]), \|\cdot\|_\infty) \to (C([a,b]), \|\cdot\|_\infty)$ such that $(\mathcal{I}f)(x) = \int_a^x f(t)\:dt$ 
    $$\begin{align*}
 \|\mathcal{I}f\|_\infty = \sup_{x \in [a,b]}\left|\int_a^x f(t)\:dt\right| \overset{\Delta-\text{ineq.}}{\leq} &\sup_{x \in [a,b]} \int_a^x|f(t)|\:dt \\[2pt]
 &\leq \int_a^b |f(t)|\:dt \\[2pt]
@@ -86,7 +86,7 @@ Take $S,T \in \mathcal{L}(X,Y)$. $$\begin{align*}
 &= \underbrace{(\|S\| + \|T\|)}_{=C}\|x\| 
 \end{align*}$$$\therefore S+T \in \mathcal{L}(X,Y)$, and $\|S+T\| \leq \|S\|+\|T\|$ 
 
-###### Second Part $(\Longleftarrow)$
+###### Second Part $(\Longrightarrow)$
 Assume $Y$ is Banach.
 Let $(T_n)_{n\geq 1}$be Cauchy in $\mathcal{L}(X,Y)$. Then for each $x \in X$:
 $$\|T_mx-T_nx\| = \|(T_m-T_n)x\|\leq \|T_m-T_n\|\|x\|$$
@@ -113,8 +113,6 @@ Given $\varepsilon > 0$ there exists $N >0$ such that $\forall m,n \geq N$
 $$\|T_nx - T_m x\| \leq \|T_n-T_m\|\|x\| \leq \varepsilon \|x\|$$
 but $\|T_nx -T_mx\|\to \|T_nx-Tx\|$ in $Y$, so $\|T_n -T\|< \varepsilon$ for all $n \geq N$. 
 $\therefore \|T_n-T\|\to 0$.  $\square$
-
-###### Second Part $(\Longrightarrow)$
 
 
 
