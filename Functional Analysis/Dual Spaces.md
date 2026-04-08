@@ -26,10 +26,12 @@ So $X' \simeq X^*$.
 >[!Remark] 
 >If $\dim X = \infty$, then $X' \subsetneq X^*$
 
-As an example, take $(C([0,1]), \|\cdot\|_1)$ which is NOT Banach and consider $\varphi \in X^*$ given by $\varphi(f) = f(1)$.
+As an example, take $(C([0,1]), \|\cdot\|_1)$ which is NOT Banach and consider $\varphi \in X^*$ given by $\varphi(f) = f(1)$ (clearly linear).
+
 Let $f_n := nx^{n-1}$. Then $\|f\|_1 = \int_0^1 |f_n(x)|\:dx = \int_0^1 nx^{n-1}\:dx = 1$. 
-But $\varphi(f_n) = f_n(1) = n$. 
-Hence $|\varphi(f_n)| \geq n \cdot \|f_n\|_1 \implies \varphi \not\in X'$.   $\square$
+But $\varphi(f_n) = f_n(1) = n$. So $|\varphi(f_n)| = n$.
+
+Hence $|\varphi(f_n)| = n \leq C \cdot \|f_n\|_1$ does not hold for all $C>0$. Therefore $\varphi \not\in X'$. $\square$
 
 
 # Isometric Isomorphism of $\ell^p$ Spaces and Duals
@@ -40,11 +42,11 @@ Hence $|\varphi(f_n)| \geq n \cdot \|f_n\|_1 \implies \varphi \not\in X'$.   $\s
 
 #### Proof
 
-We need to construct a $\Theta: \ell^a \to (\ell^p)'$ via $y \mapsto \varphi_y$ where $\varphi_y: \ell^p \to \mathbb{K}$ and show that $\Theta$ is an isometric isomorphism.
+We need to construct a $\Theta: \ell^q \to (\ell^p)'$ via $y \mapsto \varphi_y$ where $\varphi_y: \ell^p \to \mathbb{K}$ and show that $\Theta$ is an isometric isomorphism.
 
 Consider $\Theta(y,x) := \varphi_y(x)$ and so we can instead consider $\Theta: \ell^q\times \ell^p \to \mathbb{K}$ which is bilinear.
 The best natural choice for $\varphi_y$ is the "dot product": $\varphi_y(x) = \sum_{i=1}^\infty x_iy_i$ 
-##### 1. Well-Defined
+##### 1. Well-Defined & Continuous
 By Holder's inequality: $\sum_{k=1}^\infty |x_ky_k| \leq \|x\|_p\|y\|_q$ so the series converges and so $\Theta$ is well-defined.
 
 But $\Theta$ should be continuous as well. Take $\varphi_y \in (\ell^p)'$ for each $y \in \ell^q$. 
