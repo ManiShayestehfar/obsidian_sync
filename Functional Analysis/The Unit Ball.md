@@ -17,6 +17,7 @@ Using generalised Heine-Borel Theorem, $\bar{B}$ is bounded and closed and there
 
 >[!Claim]
 >Riesz's lemma implies: 
+>
 >If $\dim X = \infty$ then $\exists$ a sequence $(x_n)\subset \bar{B}(0,1)$ with no convergent subsequence
 >-> By Fish's Heine-Borel theorem $\implies$ $\bar{B}(0,1)$ is not compact
 

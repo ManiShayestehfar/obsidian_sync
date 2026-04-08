@@ -1,7 +1,7 @@
 # Definition
 
 >[!Def] 
->Let $X,Y$ be Normed Vector spaces over $\mathbb{K}$. Then $T: X \to Y$ is a **linear operator** (aka a vector space homomorphism) such that
+>Let $X,Y$ be Normed Vector spaces over $\mathbb{K}$. Then $T: X \to Y$ is a **linear operator** (a.k.a a vector space homomorphism) such that
 >1. $T(x+y) = T(x) + T(y)$ $\forall x,y \in X$
 >2. $T(\lambda x) = \lambda T(x)$  $\forall \lambda \in \mathbb{K}$
 
@@ -36,9 +36,10 @@ e.g. if $x_n \to A$ (in $X$), then $Tx \to Ta$ (in $Y$)
 >5. $\exists C>0$ such that $\|Tx\|_Y \leq C\|x\|_X$ for all $x \in X$.
 ##### Proof
 ###### 1 -> 2
-Let $\varepsilon >0$ be given. There is $\delta>0$ so that $\|x-0\|_X = \|x\| <\delta \implies \|Tx-T0\| = \|Tx\| <\varepsilon$ 
+Let $\varepsilon >0$ be given. There is $\delta>0$ so that $\|h-0\|_X = \|h\| <\delta \implies \|Th-T0\| = \|Th\| <\varepsilon$  for all $h \in X$.
 
-So $\forall a \in X$, $\|x-a\|<\delta \implies \|T(x-a)\| < \varepsilon \implies \|Tx-Ta\|<\varepsilon$ 
+Now let $h := x-y$
+So $\forall x,y \in X$, $\|x-y\|<\delta \implies \|T(x-y)\| < \varepsilon \implies \|Tx-Ty\|<\varepsilon$ 
 So $T$ is uniformly continuous. 
 ###### 2 -> 3
 Obvious
@@ -48,7 +49,7 @@ Hence for any $M>0$, if $\|x\|<M \implies \|x\| < (\frac{M}{\delta})\delta$ .
 Hence $\|\tfrac{\delta}{M}x\|< \delta \implies \|T(\tfrac{\delta}{M}x)\|< \varepsilon \implies \tfrac{\delta}{M}\|Tx\| < \varepsilon \implies \|Tx\| < \frac{M}{\delta}\varepsilon =: M'$ 
 ###### 4 -> 5
 Assume $\exists C>0$ such that if $\|x\|<1\implies \|Tx\| \leq C$.
-Hence for any $x \in X$ we hve $\tfrac{x}{\|x\|}=1\implies \|T(\tfrac{x}{\|x\|})\| <= C\implies \|Tx\| \leq C\|x\|$  
+Hence for any $x \in X$ we have $\tfrac{x}{\|x\|}=1\implies \|T(\tfrac{x}{\|x\|})\| \leq C\implies \|Tx\| \leq C\|x\|$  
 
 ###### 5 -> 1
 If $\|Tx\| <c\|x\| \leq c\delta =: \varepsilon$ provided that $\|x\|<\delta$.
@@ -57,12 +58,12 @@ $\square$
 
 ## Boundedness of operators (for previous examples)
 
-2. $\mathcal{D}: (\mathcal{P}([0,1]), \|\cdot\|_\infty) \to (\mathcal{P}([0,1]), \|\cdot\|_\infty)$
+1. $\mathcal{D}: (\mathcal{P}([0,1]), \|\cdot\|_\infty) \to (\mathcal{P}([0,1]), \|\cdot\|_\infty)$
    Take $p_n = x^n \implies \mathcal{D}p_n = nx^{n-1}$ 
    So $\|p_n\|_\infty =1$ but $\|\mathcal{D}p_b\|_\infty = n = n\|p_n\|_\infty$ so no inequality of form $\|\mathcal{D}p_n\|_\infty < C\|p_n\|_\infty$ 
    $\therefore$ NOT bounded
 
-3. $\mathcal{I}: (C([a,b]), \|\cdot\|_\infty) \to (C([a,b]), \|\cdot\|_\infty)$ such that $(\mathcal{I}f)(x) = \int_a^x f(t)\:dt$ 
+2. $\mathcal{I}: (C([a,b]), \|\cdot\|_\infty) \to (C([a,b]), \|\cdot\|_\infty)$ such that $(\mathcal{I}f)(x) = \int_a^x f(t)\:dt$ 
    $$\begin{align*}
 \|\mathcal{I}f\|_\infty = \sup_{x \in [a,b]}\left|\int_a^x f(t)\:dt\right| \overset{\Delta-\text{ineq.}}{\leq} &\sup_{x \in [a,b]} \int_a^x|f(t)|\:dt \\[2pt]
 &\leq \int_a^b |f(t)|\:dt \\[2pt]
@@ -85,7 +86,7 @@ Take $S,T \in \mathcal{L}(X,Y)$. $$\begin{align*}
 &= \underbrace{(\|S\| + \|T\|)}_{=C}\|x\| 
 \end{align*}$$$\therefore S+T \in \mathcal{L}(X,Y)$, and $\|S+T\| \leq \|S\|+\|T\|$ 
 
-###### Second Part $(\Longleftarrow)$
+###### Second Part $(\Longrightarrow)$
 Assume $Y$ is Banach.
 Let $(T_n)_{n\geq 1}$be Cauchy in $\mathcal{L}(X,Y)$. Then for each $x \in X$:
 $$\|T_mx-T_nx\| = \|(T_m-T_n)x\|\leq \|T_m-T_n\|\|x\|$$
@@ -113,8 +114,6 @@ $$\|T_nx - T_m x\| \leq \|T_n-T_m\|\|x\| \leq \varepsilon \|x\|$$
 but $\|T_nx -T_mx\|\to \|T_nx-Tx\|$ in $Y$, so $\|T_n -T\|< \varepsilon$ for all $n \geq N$. 
 $\therefore \|T_n-T\|\to 0$.  $\square$
 
-###### Second Part $(\Longrightarrow)$
-
 
 
 ## Formula for $\|T\|$
@@ -135,7 +134,7 @@ $\therefore \|T_n-T\|\to 0$.  $\square$
 
 1. $L: \ell^1 \to \ell^1$ given by $Lx = (x_2,x_3,x_4,...)$
    $\|Lx\|_1 = \sum_{k=2}^\infty |x_k| \leq \sum_{k=1}^\infty |x_k| = \|x\|_1$ so $\|L\|\leq 1$.
-   Also $\|L(0,1,0,...)\|_1 = \|(1,0,0,...)\|_1 = 1 =\|(0,1,0,...)\|_1$
+   Also $\|L(0,1,0,...)\|_1 = \|(1,0,0,...)\|_1 = 1 =\|(0,1,0,...)\|_1$. So $\|L\| \geq 1$.
    $\implies \|L\|=1$
 
 2. $T:\ell^2 \to \ell^1$, $Tx(\tfrac{x_1}{1}, \tfrac{x_2}{2},...)$. Using Cauchy-Schwartz we showed $\|Tx\| \leq \tfrac{\pi}{\sqrt{6}} \|x\|_2$ so $\|T\|\leq \tfrac{\pi}{\sqrt{6}}$

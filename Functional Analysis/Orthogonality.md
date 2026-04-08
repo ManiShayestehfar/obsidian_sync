@@ -24,7 +24,7 @@
 ## Existence and Uniqueness of Projector
 
 >[!Theorem]
->Let $(\mathcal{H}, \langle-,-\rangle)$ be a Hilbert space, and let $M\subseteq X$ (closed + convex).
+>Let $(\mathcal{H}, \langle-,-\rangle)$ be a Hilbert space, and let $M\subseteq X$ (*closed* + *convex*).
 >Let $x \in \mathcal{H}$. Then $\exists ! \:P_Mx \in M$ such that $$\|x - P_Mx\| = \text{dist}(x,M) = \inf_{m \in M} \|x-m\|$$
 ##### Proof
 Let $d = \text{dist}(x,M)$.

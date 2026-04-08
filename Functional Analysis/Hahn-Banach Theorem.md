@@ -38,7 +38,7 @@ So $\ker \Theta = \{0\}$. Hence $\Theta$ is injective.  $\square$
 >[!Result]
 >Every normed vector space has a completion
 
-We just showed that $\Theta:X \to X''$ is an isometric embedding. Define $\hat{X} := \overline{\Theta(x)} \subseteq X''$. Since $X''$ is complete and $\hat{X}$ is closed by definition, then $\hat{X}$ is complete as well. $\square$
+We just showed that $\Theta:X \to X''$ is an isometric embedding. Define $\hat{X} := \overline{\Theta(x)} \subseteq X''$. Since $X''$ is complete (since $\mathbb{K}$ is complete) and $\hat{X}$ is closed by definition, then $\hat{X}$ is complete as well. $\square$
 
 ## Corollary B
 
