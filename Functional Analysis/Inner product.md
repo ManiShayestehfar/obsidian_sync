@@ -11,7 +11,7 @@
 &= \overline{\lambda}\:\overline{\langle x,z \rangle  } + \overline{\mu}\:\overline{\langle y,z \rangle  } \\
 &= \overline{\lambda}\:{\langle x,z \rangle  } + \overline{\mu}\:{\langle y,z \rangle  }
 \end{align*}$$
-	so $\langle -,-\rangle$ is *conjugate linear* in  second variable. So $\langle-,- \rangle$ is sesquilinear
+	so $\langle -,-\rangle$ is *conjugate linear* in second variable. So $\langle-,- \rangle$ is sesquilinear
 
 ## Examples 
 

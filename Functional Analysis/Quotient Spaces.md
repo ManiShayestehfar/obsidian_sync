@@ -10,7 +10,7 @@ Let $(X,\|\cdot\|_p)$ be a metric space and $Y \subset X$
 ## Normed Space of a Quotient Space
 
 >[!Theorem]
->If $Y$ is closed, then $X/Y$ is a normed vector space with $\|x+Y\| = \inf_{y \in Y}\|x-Y\|_p$.
+>If $Y$ is closed, then $X/Y$ is a normed vector space with $\|x+Y\| = \inf_{y \in Y}\|x-y\|_p$.
 >Moreover, if $X$ is Banach $\implies Y$ is Banach.
 
 
