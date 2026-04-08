@@ -134,7 +134,7 @@ $\therefore \|T_n-T\|\to 0$.  $\square$
 
 1. $L: \ell^1 \to \ell^1$ given by $Lx = (x_2,x_3,x_4,...)$
    $\|Lx\|_1 = \sum_{k=2}^\infty |x_k| \leq \sum_{k=1}^\infty |x_k| = \|x\|_1$ so $\|L\|\leq 1$.
-   Also $\|L(0,1,0,...)\|_1 = \|(1,0,0,...)\|_1 = 1 =\|(0,1,0,...)\|_1$
+   Also $\|L(0,1,0,...)\|_1 = \|(1,0,0,...)\|_1 = 1 =\|(0,1,0,...)\|_1$. So $\|L\| \geq 1$.
    $\implies \|L\|=1$
 
 2. $T:\ell^2 \to \ell^1$, $Tx(\tfrac{x_1}{1}, \tfrac{x_2}{2},...)$. Using Cauchy-Schwartz we showed $\|Tx\| \leq \tfrac{\pi}{\sqrt{6}} \|x\|_2$ so $\|T\|\leq \tfrac{\pi}{\sqrt{6}}$
