@@ -38,13 +38,15 @@ $$
   - $\mu \prec \lambda$ if connected
   - $\mu \subset \lambda$ if there exists a path
 
+![[Okounkov–Vershik (1996) - A New Approach to Representation Theory of Symmetric Groups-1775646036301.png|500]]
+
 ---
 
 ## 3.2 Multiplicity-Free Property
 
 For $G(n) = S(n)$:
 $$
-\dim \operatorname{Hom}_{S(n-1)}(V^\mu, V^\lambda) \in \{0,1\}
+\dim \operatorname{Hom}_{S(n-1)}(V^\mu, V^\lambda) = k \in \{0,1\}
 $$
 
 ---
