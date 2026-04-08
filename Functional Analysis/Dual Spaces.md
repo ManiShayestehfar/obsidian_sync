@@ -5,6 +5,7 @@
 >$X' := \mathcal{L}(X, \mathbb{K})$, also
 >$X^* := \text{Hom}(X, \mathbb{K})$
 
+- $X^*$ is always complete. Even if $X$ is not.   
 ## Example
 
 >[!Example]
