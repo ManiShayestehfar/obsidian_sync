@@ -36,9 +36,10 @@ e.g. if $x_n \to A$ (in $X$), then $Tx \to Ta$ (in $Y$)
 >5. $\exists C>0$ such that $\|Tx\|_Y \leq C\|x\|_X$ for all $x \in X$.
 ##### Proof
 ###### 1 -> 2
-Let $\varepsilon >0$ be given. There is $\delta>0$ so that $\|x-0\|_X = \|x\| <\delta \implies \|Tx-T0\| = \|Tx\| <\varepsilon$ 
+Let $\varepsilon >0$ be given. There is $\delta>0$ so that $\|h-0\|_X = \|h\| <\delta \implies \|Th-T0\| = \|Th\| <\varepsilon$  for all $h \in X$.
 
-So $\forall a \in X$, $\|x-a\|<\delta \implies \|T(x-a)\| < \varepsilon \implies \|Tx-Ta\|<\varepsilon$ 
+Now let $h := x-y$
+So $\forall x,y \in X$, $\|x-y\|<\delta \implies \|T(x-y)\| < \varepsilon \implies \|Tx-Ty\|<\varepsilon$ 
 So $T$ is uniformly continuous. 
 ###### 2 -> 3
 Obvious
