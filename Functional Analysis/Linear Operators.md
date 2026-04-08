@@ -49,7 +49,7 @@ Hence for any $M>0$, if $\|x\|<M \implies \|x\| < (\frac{M}{\delta})\delta$ .
 Hence $\|\tfrac{\delta}{M}x\|< \delta \implies \|T(\tfrac{\delta}{M}x)\|< \varepsilon \implies \tfrac{\delta}{M}\|Tx\| < \varepsilon \implies \|Tx\| < \frac{M}{\delta}\varepsilon =: M'$ 
 ###### 4 -> 5
 Assume $\exists C>0$ such that if $\|x\|<1\implies \|Tx\| \leq C$.
-Hence for any $x \in X$ we hve $\tfrac{x}{\|x\|}=1\implies \|T(\tfrac{x}{\|x\|})\| <= C\implies \|Tx\| \leq C\|x\|$  
+Hence for any $x \in X$ we have $\tfrac{x}{\|x\|}=1\implies \|T(\tfrac{x}{\|x\|})\| \leq C\implies \|Tx\| \leq C\|x\|$  
 
 ###### 5 -> 1
 If $\|Tx\| <c\|x\| \leq c\delta =: \varepsilon$ provided that $\|x\|<\delta$.
