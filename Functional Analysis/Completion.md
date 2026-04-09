@@ -26,7 +26,7 @@ Up to isometric isomorphism such $(\hat{X}, \|\cdot\|)$ is *unique*.
 
 ## Examples
 
-Let $1 < p \leq \infty$, then $\widehat{(\ell_F, \|\cdot\|_p)} = (\ell^p, \|\cdot\|_p)$ where we recall that $\ell_F$ was the set of sequences with finite support
+Let $1 < p < \infty$, then $\widehat{(\ell_F, \|\cdot\|_p)} = (\ell^p, \|\cdot\|_p)$ where we recall that $\ell_F$ was the set of sequences with finite support
 
 ##### Proof
 Take $\varphi: (\ell_F, \|\cdot\|_p) \to (\ell^p, \|\cdot\|_p)$ given by the identity map.
