@@ -27,6 +27,7 @@
 >Let $(\mathcal{H}, \langle-,-\rangle)$ be a Hilbert space, and let $M\subseteq X$ (*closed* + *convex*).
 >Let $x \in \mathcal{H}$. Then $\exists ! \:P_Mx \in M$ such that $$\|x - P_Mx\| = \text{dist}(x,M) = \inf_{m \in M} \|x-m\|$$
 ##### Proof
+###### Existence
 Let $d = \text{dist}(x,M)$.
 For $k\geq 1$, choose $m_k \in M$ with $d^2 \leq \|x-m_k\|^2 \leq d^2 + \frac{1}{k}$.
 For $k,l \geq 1$, we have$$\begin{align*}
@@ -40,6 +41,8 @@ Since $\frac{m_k + m_l}{2}\in M$ (by convexity), we have $$\begin{align*}
 &= 2 \left(\frac{1}{k} + \frac{1}{l}\right)
 \end{align*}$$
 Thus, $(m_k)_{k\geq 1}$ is Cauchy. So $(m_k)$ converges in $\mathcal{H}$ (as it is complete).
+
+###### Uniqueness
 Define $\|x- P_Mx\| = \lim_{k \to \infty} \|x - m_k\|= d$.
 If $m \in M$ satisfies $\|x-m\|=d$, then 
 $$\begin{align*}
