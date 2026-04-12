@@ -145,9 +145,8 @@ Hence $\|x\|^2 = \|y\|^2 + \|x-y\|^2 \geq \|y\|^2$ by Pythagoras' theorem. $\squ
 ##### Proof
 Let $k \geq 1$. If $e_1,...,e_N \in S$ with $|\langle x,e_j \rangle| > \frac{1}{k}$ for $j =1,...,N$, then $|\langle kx, e_j \rangle|>1$ and so by Lemma 2: 
 $$N < \sum_{j=1}^N |\langle kx, e_j \rangle|^2 \leq \|kx\|^2$$
-and so $N < k^2 \|x\|^2$. Thus the set $\{e \in S \: | \: |\langle x,e \rangle|> \frac{1}{k} \}$ is *finite* for each fixed $x$, and each $k \geq 1$.
-So 
-$$\{e \in S \:|\:  \langle x,e \rangle \neq 0\} = \bigcup_{k\geq 1} \{e \in S \:|\: |\langle x,e \rangle|>\frac{1}{k}\}$$
+and so $N < k^2 \|x\|^2$. Thus the set $\{e \in S \: | \: |\langle x,e \rangle|> \frac{1}{k} \}$ is *finite* for each fixed $x$, and each $k \geq 1$. So 
+$$\{e \in S \:|\:  \langle x,e \rangle \neq 0\} = \bigcup_{k\geq 1} \{e \in S \:|\: |\langle x,e \rangle|>\tfrac{1}{k}\}$$
 is a countable union of finite sets, and hence is countable. $\square$
 
 
