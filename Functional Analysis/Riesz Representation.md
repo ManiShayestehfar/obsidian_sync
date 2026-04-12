@@ -9,7 +9,7 @@ $$|\varphi_y(x)| = |\langle x,y \rangle | \overset{C.S}{\leq} \|x\|\|y\|$$
 so $\varphi_y \in \mathcal{H}$ with $\|\varphi_y\| \leq \|y\|$. But also $\varphi_y(y) = \langle y,y \rangle = \|y\|\|y\|$. So $\|\varphi_y\| = \|y\|$. $\square$
 
 
->[!Theorem]
+>[!Theorem] Riesz Representation
 >$\mathcal{H}$ a Hilbert space. The map $\Theta:\mathcal{H} \to \mathcal{H}'$ given by $y \mapsto \varphi(y) := \langle x,y\rangle$ is
 >1. Isometric
 >2. Conjugate linear
@@ -29,7 +29,7 @@ If $\varphi \equiv 0$, then for $y=0$, $\varphi_y(x) = 0 = \varphi(x)$.
 Assume $\varphi \not\equiv 0$. Then $\exists z \in \mathcal{H}$ such that $\varphi (z) \neq 0$. 
 Let $M = \ker \varphi \leq \mathcal{H}$ which is closed, since $\varphi$ is continuous and $\ker \varphi = \varphi^{-1}(\{0\})$. i.e. preimage of a closed set.
 If $M \subset \mathcal{H}$ is a proper closed subspace, then $M^\perp \neq \{0\}$.
-Let $0 \neq z \in M^{\perp} \implies \varphi(z) \neq 0$ since $z \not\in \mathcal{M} = \ker \varphi$.
+Let $0 \neq z \in M^{\perp} \implies \varphi(z) \neq 0$ since $z \not\in M = \ker \varphi$.
 
 Now for each $x \in \mathcal{H}$, consider $x - \frac{\varphi(x)}{\varphi(z)}z \in \ker \varphi = M$. Hence 
 $$\begin{align*}

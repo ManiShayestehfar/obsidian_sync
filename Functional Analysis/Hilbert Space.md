@@ -208,7 +208,7 @@ $\square$
 >Let $(X,d)$ be a metric space. Then $X$ is **separable** $X$ contains at most countable subsets $S \subseteq X$ such that $\overline{S}= X$.
 ### General Principles
 To show $S$ satisfies the separability condition, it is sufficient to find that:
-- $|S| > |N|$, and
+- $|S| > |\mathbb{N}|$, and
 -  $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
 
 ## Examples
@@ -234,7 +234,7 @@ Claim: For any $A,B \subseteq \mathbb{N}$ and $A \neq B$, $\|x_A - x_B\|_\infty 
 >[!Theorem]
 >Let $\mathcal{H}$ be a Hilbert space over $\mathbb{K}$. Then 
 >$$\mathcal{H} \text{ is separable } \iff \mathcal{H}\:\: \substack{\large\text{contains at most countable} \\ \large \text{complete orthonormal set} \\ \large\text{(i.e. Hilbert basis)}} $$
->Moreover if $\mathcal{H}$ is separable, then $H$ is isometrically isomorphic to $\ell^2(\mathbb{K})$
+>Moreover if $\mathcal{H}$ is separable, then $\mathcal{H}$ is isometrically isomorphic to $\ell^2(\mathbb{K})$
 >
 ##### Proof
 ###### $(\Leftarrow)$ 
@@ -243,7 +243,7 @@ $$x = \sum_{i=1}^\infty \langle x,e_i \rangle e_i \qquad \text{ and }\qquad \sum
 Hence we can set $S = \text{Span}_{\mathbb{Q} + i \mathbb{Q}}(\mathcal{B})$ which is dense in $\mathcal{H}$. Clearly $|S| = |\mathbb{N}|$.
 Therefore $\mathcal{H}$ is separable.
 ###### $(\Rightarrow)$
-Suppose $\mathcal{H}$ is separable. Let $\mathcal{B}$ be the orthonormal set. Then if $x,x' \in \mathcal{B}$ ($x\neq x'$), then $\|x-x'\|^2 = \|x\|^2 + \|x'\|^2= 2 \implies d(x,x') = \sqrt{2}$.
+Suppose $\mathcal{H}$ is separable. Let $\mathcal{B}$ be the orthonormal set. Then if $x,x' \in \mathcal{B}$ where $x\neq x'$, then $\|x-x'\|^2 = \|x\|^2 + \|x'\|^2= 2 \implies d(x,x') = \sqrt{2}$.
 So from general principles, since $\mathcal{H}$ is separable, then $|\mathcal{B}| < |\mathbb{N}|$ .
 
 ###### Moreover statement
