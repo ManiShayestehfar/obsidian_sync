@@ -52,8 +52,10 @@ Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nil
 >2. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad } P = P \cap \text{Rad }A \subsetneq P$ is the maximal nilpotent submodule of $P$, which is a proper ideal of $P$.
 ##### Proof
 1. TBD
-2. From Property (2) above, $P$ has a unique maximal nilpotent submodule $N$. Certainly $N \subseteq P \cap \text{Rad }P$. 
-   For the other direction, $P \cap \text{Rad }P$ is a nilpotent submodule of $P$, and therefore it is contained in $N$. Thus the result.
+2. From Property (2) above, $P$ has a unique maximal nilpotent submodule $N$. Certainly $N \subseteq P \cap \text{Rad }A$. 
+   For the other direction, $P \cap \text{Rad }A$ is a nilpotent submodule of $P$, and therefore it is contained in $N$. Thus the result.
+   (See lecture notes for a different proof).
+
 
 
 ## Theorems
