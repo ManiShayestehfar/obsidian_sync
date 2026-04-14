@@ -40,7 +40,7 @@ Then $(\mathcal{L}, \subseteq)$ is a non-empty poset.
 
 Then by lemma, it is enough to find a maximal element in $\mathcal{L}$ to prove the existence of Hamel Basis.
 
-Let $C = (\mathcal{L}_\alpha)_{\alpha \geq 1}$ be a chain. So, for $\alpha,\beta \in A$, either $L_\alpha \subseteq L_\beta$ or $L_\beta \subseteq L_\alpha$. Let $$L = \bigcup_{\alpha \in A} L_\alpha.$$Clearly this is an upper bound, provided that it really is in $\mathcal{L}$. i.e. provided it is linearly independent if $v_1,...,v_n \in \mathcal{L}$, then there are $\alpha_1,...,\alpha_n \in A$ with $v_j \in L_{\alpha_j}$.
+Let $C = (L_\alpha)_{\alpha \in A}$ be a chain. So, for $\alpha,\beta \in A$, either $L_\alpha \subseteq L_\beta$ or $L_\beta \subseteq L_\alpha$. Let $$L = \bigcup_{\alpha \in A} L_\alpha.$$Clearly this is an upper bound, provided that it really is in $\mathcal{L}$. i.e. provided it is linearly independent if $v_1,...,v_n \in \mathcal{L}$, then there are $\alpha_1,...,\alpha_n \in A$ with $v_j \in L_{\alpha_j}$.
 Since $C$ is a chain, there is $1 \leq k\leq n$ with $L_{\alpha_j}\subseteq L_{\alpha_k}$ for all $j \in\{1,...,n\}$. 
 So $v_1,...,v_n \in L_{\alpha_k}$, since this set is linearly independent, so too is $\mathcal{L}$.
 
@@ -73,7 +73,7 @@ By Zorn's lemma if every chain has an upper bound, then there is a maximal linea
 
 ### Proof of Minimality
 
-Zorn's Lemma is equivalent to the following: Given $(\mathcal{P}, \leq)$ a non-empty poset such that any chain $C \subseteq \mathcal{P}$ has a *lower* bound contains a *minimal* element.
+Zorn's Lemma is equivalent to the following: Given $(\mathcal{P}, \leq)$ a non-empty poset such that any chain $C \subseteq \mathcal{P}$ has a *lower* bound, contains a *minimal* element.
 
 >[!Theorem] 
 >Any $G$-system $(X,G)$ contains a minimal subsystem
