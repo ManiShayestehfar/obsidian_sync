@@ -12,7 +12,8 @@
 >If $\dim X < \infty$, then $X^* = X'$.
 ##### Proof
 Take $\varphi \in X^*$. Let $e_1,e_2,...,e_n$ be a basis for $X$. Then $\varphi\left(\sum_{i=1}^n x_ie_i\right)= \sum_{i=1}^nx_i \varphi(e_i)$
-We know that $$\|\varphi(x)\| = \left|\sum_{i=1}^n x\varphi(e_i)\right|\leq \sum_{i=1}^n|x_i|\cdot \underbrace{\max_{1\leq i\leq n} |\varphi(e_i)|}_{=:M} = M \sum_{i=1}^n|x_i| \leq MC\|x\|$$
+We know that 
+$$\|\varphi(x)\| = \left|\sum_{i=1}^n x\varphi(e_i)\right|\leq \sum_{i=1}^n|x_i|\cdot \underbrace{\max_{1\leq i\leq n} |\varphi(e_i)|}_{=:M} = M \sum_{i=1}^n|x_i| \leq MC\|x\|$$
 by equivalence of norms on $\mathbb{K}^n$ since $\left\|\sum_{i=1}^n x_ie_i\right\| := \sum_{i=1}^n|x_i|$ is a norm on $X$.  
 $\therefore \varphi \in X'$.
 
