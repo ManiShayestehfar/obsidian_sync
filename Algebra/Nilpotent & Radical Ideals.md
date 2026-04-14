@@ -93,7 +93,7 @@ $\square$
 ## Corollaries
 
 >[!corollary]
->TFAE:
+>The following are equivalent:
 >1. Characteristic of $\mathbb{F}$ does not divide order of $G$
 >2. Every $\mathbb{F}G$-module is completely reducible
 >3. The group algebra is semisimple
@@ -111,4 +111,4 @@ e.g. in $\mathbb{F}$, $|G| = |G|\cdot 1_{\mathbb{F}}=0$.  Let $x_G = \sum_{x\in 
 ### Proposition
 
 ![[Screenshot 2026-01-15 at 12.42.20 am.png]]
- 
+##### Proof
