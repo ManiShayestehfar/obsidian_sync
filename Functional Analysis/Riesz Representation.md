@@ -27,7 +27,7 @@ Follows from the fact that the map is an isometry.
 Let $\varphi \in \mathcal{H}'$
 If $\varphi \equiv 0$, then for $y=0$, $\varphi_y(x) = 0 = \varphi(x)$.
 Assume $\varphi \not\equiv 0$. Then $\exists z \in \mathcal{H}$ such that $\varphi (z) \neq 0$. 
-Let $M = \ker \varphi \leq \mathcal{H}$ which is closed, since $\varphi$ is continuous and $\ker \varphi = \varphi^{-1}(\{0\})$. i.e. preimage of a closed set.
+Let $M = \ker \varphi \subseteq \mathcal{H}$ which is closed, since $\varphi$ is continuous and $\ker \varphi = \varphi^{-1}(\{0\})$. i.e. preimage of a closed set.
 If $M \subset \mathcal{H}$ is a proper closed subspace, then $M^\perp \neq \{0\}$.
 Let $0 \neq z \in M^{\perp} \implies \varphi(z) \neq 0$ since $z \not\in M = \ker \varphi$.
 
