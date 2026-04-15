@@ -86,7 +86,7 @@ Define a poset of $G$-subsystems on $(X,G)$ with "$\leq$" which is containment.
 - If $C \subseteq \mathcal{P}$ is a chain defined as $C := (X_\alpha)_{\alpha \in I}$. 
   Then define $Z := \bigcap_{\alpha \in I}X_\alpha$, which is closed as an intersection of closed sets, and is non-empty by the Finite Intersectivity Property (FIP), which states:
 	- If $X$ is a compact set then it has a finite intersectivity property. i.e. 
-	  If $(F_\alpha)_{\alpha \in I} \subseteq X$ is a familty of closed subsets such that for any finite subset of indices $J \subseteq I$, $$\bigcap_{\alpha \in J}F_\alpha \neq \varnothing \implies \bigcap_{\alpha \in I}F_\alpha \neq \varnothing$$
+	  If $(F_\alpha)_{\alpha \in I} \subseteq X$ is a family of closed subsets such that for any finite subset of indices $J \subseteq I$, $$\bigcap_{\alpha \in J}F_\alpha \neq \varnothing \implies \bigcap_{\alpha \in I}F_\alpha \neq \varnothing$$
 	- The point is that $Z$ is a lower bound which is non-empty. $\square$
 
 Now suppose $G \curvearrowright Z$ i.e. $\forall z \in Z: gz \in Z$ and $gZ =Z$. 
