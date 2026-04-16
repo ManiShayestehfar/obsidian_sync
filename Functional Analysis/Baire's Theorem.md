@@ -15,4 +15,17 @@ That is, $\exists x \in Y$ with $x \in U_n$ for all $n \geq 1$.
 - Inductively, there is a sequence $0 < \epsilon_2 < \frac{1}{n}$ and $x_n \in X$ with $$\overline{B}(x_n,\epsilon_n) \subseteq B(x_{n-1}, \epsilon_{n-1})\cap U_n.$$
 - Since $x_n \in B(x_m,\epsilon_m)$ for all $n>m$, the sequence $(x_n)_{n\geq1}$ is Cauchy. So $x_n \to x$ in $X$ (since $X$ is complete).
 
-- For all $m$, $x \in \overline{B}(x)$
+- For all $m$, $x \in \overline{B}(x_m,\epsilon_m)$. So $x \in \overline{B}(x_{m+1}, \epsilon_{m+1}) \subseteq B(x_m,\epsilon_m)$.
+  Hence $x \in U_m$ and $x \in \overline{B}(x_1,\epsilon_1)\subseteq Y$ (so $x \in U \cap Y$).
+$\square$
+
+## Main Application
+
+>[!Corollary]
+>Let $X$ be a compact metric space.
+>Suppose $C_1,C_2,...$ are closed and
+>$$X = \bigcup_{n=1}^\infty C_n \tag{countable union}$$
+>Then $\text{int}(C_n)\neq \varnothing$ for some $n$.
+
+
+
