@@ -164,5 +164,22 @@ Now we apply Stone-Weierstrass and so we are done. $\square$
 ## Trigonometric Polynomial
 
 >[!Definition]
->A trigonometric polynomial
+>A **trigonometric polynomial** is an expression
+>$$\sum_{n \in \mathbb{Z}} c_ne^{int}\quad c_n \in \mathbb{C}\:\:\text{(finitely many nonzero)}$$
 
+>[!Corollary]
+>The space of all trigonometric polynomials is dense in 
+>$$C_{2\pi}([0,2\pi])= \{f \in C[0,2\pi]\:|\: f(0) = f(2\pi)\}$$
+>w.r.t $\|\cdot\|_\infty$.
+##### Proof
+$C(\mathbb{T}) \simeq C_{2\pi}([0,2\pi])$ (isometrically isomorphic) via $f \mapsto \widetilde{f}$, where $\widetilde{f}(t) = f(e^{it})$ for $t \in [0,2\pi]$.
+The image of $\mathbb{C}[s,s^{-1}]$ under this map is the space of trigonometric polynomials, and we can apply the previous corollary. $\square$
+
+## Completion of $L^2_\mathbb{C}$
+
+>[!Corollary]
+>The orthonormal system
+>$$S = \left\{ \frac{1}{\sqrt{2\pi}}e^{int} \:|\: n \in \mathbb{Z}\right\}$$
+>is complete in $L_\mathbb{C}^2([0,2\pi])$.
+##### Proof
+$\text{Span}(S) = \{\text{trigonometric functions}\}$ clearly.
