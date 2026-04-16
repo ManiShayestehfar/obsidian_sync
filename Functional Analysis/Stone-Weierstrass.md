@@ -71,4 +71,3 @@ We can use $\max(f,g) = \frac{f+g + (f-g)}{2}$ and $\min(f,g) = \frac{f+g - (f-g
 > 
 
 
-
