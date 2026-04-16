@@ -182,4 +182,21 @@ The image of $\mathbb{C}[s,s^{-1}]$ under this map is the space of trigonometric
 >$$S = \left\{ \frac{1}{\sqrt{2\pi}}e^{int} \:|\: n \in \mathbb{Z}\right\}$$
 >is complete in $L_\mathbb{C}^2([0,2\pi])$.
 ##### Proof
-$\text{Span}(S) = \{\text{trigonometric functions}\}$ clearly.
+$\text{Span}(S) = \{\text{trigonometric functions}\}$ clearly, which we showed to be dense in $C_{2\pi}([0,2\pi])$ w.r.t. $\|\cdot\|_\infty$.
+
+Note that $(C_{2\pi}([0,2\pi]), \|\cdot\|_2)$ is dense in $L_\mathbb{C}^2([0,2\pi])$ essentially by definition of $L^2$.
+Hence $\text{Span}(S)$ is also dense in $L_\mathbb{C}^2([0,2\pi])$, because:
+- Let $\varepsilon >0$, and $f \in L_\mathbb{C}^2([0,2\pi])$ 
+- There is $g \in C_{2\pi}([0,2\pi])$ with $\|f-g\|_2 < \frac{\varepsilon}{2}$
+- There is $p \in \text{Span}(S)$ with $\|g-p\|_\infty < \frac{\varepsilon}{2\sqrt{2\pi}}$ 
+Since $\|g-p\|_2 = \sqrt{\int_0^{2\pi} |g(x) - p(x)|^2 \:dx} \leq \sqrt{2\pi}\|g-p\|_\infty$, we have
+$$\begin{align*}
+\|f-p\|_2 &\leq \|f-g\|_2 + \|g-p\|_2 \\[3pt]
+&\leq \|f-g\|_2 + \sqrt{2\pi}\|g-p\|_\infty \\[3pt]
+&< \tfrac{\varepsilon}{2} + \tfrac{\varepsilon}{2} = \varepsilon
+\end{align*}$$
+$\square$ 
+
+>[!Remark]
+>Trigonometric polynomials are *NOT* dense in $C([0,2\pi])$ because all trigonometric functions have $p(0) = p(2\pi)$.
+
