@@ -81,7 +81,11 @@ Then $p_{xy}(x) = f(x)$ and $p_{xy}(y) = f(y)$.  $\square$
 >[!Lemma] Lemma 2
 >Let $x \in X$ be fixed. Then there is $p_x \in \mathcal{A}$ with
 >1. $p_x(x) = f(x)$,
->2. $p_x(z) \leq f(z) + \epsilon \qquad \forall z \in X$             
-
+>2. $p_x(z) \leq f(z) + \epsilon \qquad \forall z \in X$
+>   
+>![[Screenshot 2026-04-16 at 4.05.15 pm.png|400]]
+##### Proof
+For each $y \in X$, let $\mathcal{O}_y = \{z \in X \:|\: p_{xy}(z) < f(z) + \epsilon\}$ with $p_{xy}$ from the previous lemma.
+Then $\mathcal{O}_y$ is open (for if $z \in \mathcal{O}_y$, then for all $z'$ sufficiently close to $z$ we have $p_{xy}(z') < f(z') + \epsilon$)
 
 
