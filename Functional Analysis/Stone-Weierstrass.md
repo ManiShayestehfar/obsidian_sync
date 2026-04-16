@@ -11,3 +11,28 @@
 
 - This implies that $\overline{\mathcal{P}[a,b]} = C[a,b]$ (w.r.t $\|\cdot\|_\infty$)
 
+
+# Stone-Weierstrass
+
+>[!Theorem]
+>Let $X$ be a compact, Hausdorff normed vector space and let $\mathcal{A}$ be a subalgebra of $C(X)$. 
+>If:
+>1. $\mathcal{A}$ is unital
+>2. $f \in \mathcal{A} \implies f^* \in \mathcal{A}$ where $f^*(x) = \overline{f(x)}$
+>3. $\mathcal{A}$ is separating points of $X$
+>Then, $\overline{\mathcal{A}} = C(X)$ (w.r.t $\|\cdot\|_\infty$)
+
+>[!Remark]
+>The general Weierstrass theorem holds:
+>1. $1 \in \mathcal{P}[a,b]$
+>2. If $p(x) = \sum_{i=0}^n a_ix^i$, then $p^*(x) = \sum_{i=0}^n \overline{a_i}x^i \in \mathcal{P}[a,b]$ 
+>3. If $x \neq y$, then $p(x) = x$ has $p(x) \neq p(y)$
+
+## Absolute Value 
+
+>[!Lemma]
+>$f(t) = |t|$ can be uniformly approximated by $\mathcal{P}[-1,1]$.
+##### Proof
+$|t| = \sqrt{1 + (t^2-1)} = \sum_{n=0}^\infty \binom{1/2}{n}(t^2-1)^n$   if $|t^2-1|\leq 1$.
+So for $t \in [-\sqrt{2}, \sqrt{2}]$, define $P_N(t)$
+

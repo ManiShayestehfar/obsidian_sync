@@ -49,3 +49,20 @@ $$\bar{B}(0,1) = \{x \in X \:|\: \|x\| \leq 1\}$$
 
 I keep forgetting this so here it is:
 $$\left(\sum_{i=1}^n u_iv_i\right)^2 \leq \left(\sum_{i=1}^n u_i^2\right) \left(\sum_{i=1}^n v_i^2\right)$$
+
+# Unital Associative Algebra
+
+$C(X)= \{f: X \to \mathbb{K} \:\text{ continuous }\}$ is normed with $\|\cdot\|_\infty$, where
+- $(fg)(x) = f(x)g(x)$ $\forall x \in X$, then $fg \in C(X)$
+- $1(x) = 1$
+- $f(\lambda g) = \lambda (fg)$  $\forall \lambda \in \mathbb{K}$
+
+Then $C(X)$ **unital associative commutative ring** (which is also a vector space, thus an **algebra**)
+
+
+# Separating Points
+
+>[!Definition]
+>$\mathcal{A}\subseteq C(X)$ is called **separating points** of $X$ if 
+>$\forall x,y \in X$ ($x\neq y$), $\exists f \in \mathcal{A}: f(x) \neq f(y)$.
+
