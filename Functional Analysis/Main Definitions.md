@@ -59,6 +59,20 @@ $C(X)= \{f: X \to \mathbb{K} \:\text{ continuous }\}$ is normed with $\|\cdot\|_
 
 Then $C(X)$ **unital associative commutative ring** (which is also a vector space, thus an **algebra**)
 
+## Closure of Subalgebra
+
+>[!Claim]
+Let $A \subseteq C(X)$ be a subalgebra. Then $\overline{A}$ is still an algebra.
+##### Proof
+Of course here we are taking the closure with respect to the same topology/norm as $C(X)$.
+Take $f,g \in \overline{A}$. Then by definition of closure, there exist sequences $(f_n),(g_n) \subseteq A$ such that $f_n \to f$ and $g_n \to g$.
+Since $A$ is a subalgebra, for every $n$: $f_n + g_n \in A$, $\lambda f_n \in A$, and $f_ng_n \in A$.
+Then by continuity of algebra operations:
+- $f_n + g_n \to f+g \in \overline{A}$
+- $\lambda f_n \to \lambda f \in \overline{A}$
+- $f_ng_n \to fg \in \overline{A}$
+Hence $\overline{A}$ is again a subalgebra.
+If $A$ is unital, then $1 \in A \subseteq \overline{A}$, so $\overline{A}$ is also unital.      $\square$
 
 # Separating Points
 

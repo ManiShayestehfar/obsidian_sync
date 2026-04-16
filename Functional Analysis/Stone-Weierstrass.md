@@ -34,5 +34,8 @@
 >$f(t) = |t|$ can be uniformly approximated by $\mathcal{P}[-1,1]$.
 ##### Proof
 $|t| = \sqrt{1 + (t^2-1)} = \sum_{n=0}^\infty \binom{1/2}{n}(t^2-1)^n$   if $|t^2-1|\leq 1$.
-So for $t \in [-\sqrt{2}, \sqrt{2}]$, define $P_N(t)$
+So for $t \in [-\sqrt{2}, \sqrt{2}]$, define $P_N(t) := \sum_{n=0}^N \binom{1/2}{n}(t^2-1)^n$ which is a polynomial.
+Then $||t|-p_N(t)| = \left|\sum_{n=N+1}^\infty \binom{1/2}{n} (t^2-1)^n\right| \leq \sum_{n=N+1}^{\infty} \left|\binom{1/2}{n}\right| \longrightarrow 0$ as $N \to \infty$.
+
+Thus $\||\cdot| - p_N\|_\infty \to 0$ as $N \to \infty$.  $\square$
 
