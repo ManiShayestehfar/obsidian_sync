@@ -86,6 +86,11 @@ Then $p_{xy}(x) = f(x)$ and $p_{xy}(y) = f(y)$.  $\square$
 >![[Screenshot 2026-04-16 at 4.05.15 pm.png|400]]
 ##### Proof
 For each $y \in X$, let $\mathcal{O}_y = \{z \in X \:|\: p_{xy}(z) < f(z) + \epsilon\}$ with $p_{xy}$ from the previous lemma.
-Then $\mathcal{O}_y$ is open (for if $z \in \mathcal{O}_y$, then for all $z'$ sufficiently close to $z$ we have $p_{xy}(z') < f(z') + \epsilon$)
+Then $\mathcal{O}_y$ is open (for if $z \in \mathcal{O}_y$, then for all $z'$ sufficiently close to $z$ we have $p_{xy}(z') < f(z') + \epsilon$, by continuity of $p_{xy}$ and $f$).
 
+Note that $y \in \mathcal{O}_y$ (as $p_{xy}(y) = f(y)$), so $X = \bigcup_{y \in X} \mathcal{O}_y$.
+Since $X$ is compact, there is a finite subcover: $X = \bigcup_{i=1}^m \mathcal{O}_{y_i}$ for some $\{y_1,...,y_m\} \subseteq X$.
+With $p_{xy_i}$ from Lemma 1, let $p_x = \min(p_{xy_1},...,p_{xy_m})\in \overline{\mathcal{A}}= \mathcal{A}$ (previous lemma, and using the fact that $\mathcal{A}$ is closed).
+
+Since $p_{xy}(x) = f(x)$ for all $y \in $ 
 

@@ -1,7 +1,7 @@
 >[!def]
 >A (unital) **$\mathbb{F}$-Algebra** is a [[ring]] $R$ with identity element $1_R$ which is also a $\mathbb{F}$-vector space w.r.t addition in $R$.
 >
->i.e. a ring with a (central) ring $A$, with homomorphism such that $\lambda (a,b) = (\lambda a)b = a(\lambda b)$ such that $(A,+)$ is an $\mathbb{F}$-vector space.
+>i.e. a ring with a (central) ring $A$, with homomorphism such that $\lambda (ab) = (\lambda a)b = a(\lambda b)$ such that $(A,+)$ is an $\mathbb{F}$-vector space.
 >
 >--> An $\mathbb{F}$-algebra is a ring with its *coefficients* in $\mathbb{F}$. 
 >
