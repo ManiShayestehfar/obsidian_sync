@@ -71,4 +71,17 @@ We can use $\max(f,g) = \frac{f+g + (f-g)}{2}$ and $\min(f,g) = \frac{f+g - (f-g
 > 
 ![[Screenshot 2026-04-16 at 3.39.58 pm.png|300]]
 ##### Proof
-If $x=y$, take $p_{xy}(z)= f(x)$
+If $x=y$, take $p_{xy}(z)= f(x)1(z) \in \mathcal{A}$ (as $\mathcal{A}$ is unital). So suppose $x\neq y$.
+Since $\mathcal{A}$ separates points, there is $h \in \mathcal{A}$ with $h(x) \neq h(y)$. 
+Let $p_{xy} = ah + b1 \in \mathcal{A}$. We can write
+$$\begin{pmatrix}h(x) & 1 \\ h(y) & 1\end{pmatrix} \binom{a}{b} = \binom{f(x)}{f(y)}$$
+which has a unique solution as $\det\begin{pmatrix}h(x) & 1 \\ h(y) & 1\end{pmatrix} = h(x) - h(y) \neq 0$.
+Then $p_{xy}(x) = f(x)$ and $p_{xy}(y) = f(y)$.  $\square$
+
+>[!Lemma] Lemma 2
+>Let $x \in X$ be fixed. Then there is $p_x \in \mathcal{A}$ with
+>1. $p_x(x) = f(x)$,
+>2. $p_x(z) \leq f(z) + \epsilon \qquad \forall z \in X$             
+
+
+
