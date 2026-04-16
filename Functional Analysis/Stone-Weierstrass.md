@@ -61,6 +61,7 @@ We can use $\max(f,g) = \frac{f+g + (f-g)}{2}$ and $\min(f,g) = \frac{f+g - (f-g
 
 
 ## Proof of Stone-Weierstrass Theorem
+### The Real Case: $C_\mathbb{R}(X)$
 
 - We first consider $\mathbb{K} = \mathbb{R}$. Let $f \in C_\mathbb{R}(X)$ and let $\varepsilon > 0$.
 - We want to find $p \in \mathcal{A}$ such that $|f(z) - p(z)| < \varepsilon$     $\forall z \in X$.
@@ -101,4 +102,18 @@ where $(\ast_1)$ comes from the definition of $p_x$, and $(\ast_2)$ since $z \in
 >There is $p \in \mathcal{A}$ with
 >$$|f_x(z) - p(z)|\leq \epsilon\qquad \forall z \in X$$![[Screenshot 2026-04-16 at 8.03.46 pm.png|300]]
 ##### Proof
-For each $x \in X$, let $U_x = \{z\in X \:|\: p_x(z) > f(z) - \epsilon\}$.
+For each $x \in X$, let $U_x = \{z\in X \:|\: p_x(z) > f(z) - \epsilon\}$, where $p_x$ is as per Lemma 2.
+As before, $U_x$ is an open set. Since $x \in U_x$ (as $p_x(x) = f(x)$), we have
+$$X = \bigcup_{x \in X} U_x = \bigcup_{j=1}^n U_{x_j}$$
+for some $\{x_1,...,x_n\}\subseteq X$. 
+Let $P = \max(p_{x_1},...,p_{x_n})$. If $z \in X$, then $p(z) = p_{x_i}(z)$ for some $i$. So
+$$p(z) = p_{x_i}(z) \leq f(z) + \epsilon,$$
+and since $z \in U_{x_j}$ for some $j$,
+$$p(z)\geq p_{x_j}(z) > f(z)-\epsilon.$$
+Again the first $\geq$ comes from the definition of $p$, and the second $>$ comes from the fact that $z \in U_{x_j}$.  $\square$
+
+This finishes the proof of Stone-Weierstrass Theorem in the case of $C_{\mathbb{R}}(X)$.
+
+### The Complex Case: $C_\mathbb{C}(X)$
+
+Let $\mathcal{A}_\mathbb{R} = \{p \in \mathcal{A}\}$
