@@ -62,6 +62,13 @@ We can use $\max(f,g) = \frac{f+g + (f-g)}{2}$ and $\min(f,g) = \frac{f+g - (f-g
 
 ## Proof of Stone-Weierstrass Theorem
 
-We first consider $\mathbb{K} = \mathbb{R}$. Let $f \in C_\mathbb{R}(X)$ and let $\varepsilon > 0$.
-We want to find $p \in \mathcal{A}$ such that $|f(z) - p(z)| < \varepsilon$     $\forall z \in X$.
+- We first consider $\mathbb{K} = \mathbb{R}$. Let $f \in C_\mathbb{R}(X)$ and let $\varepsilon > 0$.
+- We want to find $p \in \mathcal{A}$ such that $|f(z) - p(z)| < \varepsilon$     $\forall z \in X$.
+- Assume $\mathcal{A}$ is closed. If not, Call $\mathcal{A} = \overline{\mathcal{A}}$ which is still a subalgebra.
+
+>[!Lemma] Lemma 1
+> Let $x,y \in X$ be fixed. Then there is $p_{xy} \in \mathcal{A}$ such that $p_{xy}(x) = f(x)$ and $p_{xy}(y)= f(y)$.
+> 
+
+
 
