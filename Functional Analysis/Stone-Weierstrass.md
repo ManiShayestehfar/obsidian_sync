@@ -92,5 +92,13 @@ Note that $y \in \mathcal{O}_y$ (as $p_{xy}(y) = f(y)$), so $X = \bigcup_{y \in 
 Since $X$ is compact, there is a finite subcover: $X = \bigcup_{i=1}^m \mathcal{O}_{y_i}$ for some $\{y_1,...,y_m\} \subseteq X$.
 With $p_{xy_i}$ from Lemma 1, let $p_x = \min(p_{xy_1},...,p_{xy_m})\in \overline{\mathcal{A}}= \mathcal{A}$ (previous lemma, and using the fact that $\mathcal{A}$ is closed).
 
-Since $p_{xy}(x) = f(x)$ for all $y$, we have $p_x(x) = f(x)$. If $z \in X$, then $z \in \mathcal{O}_{y_i}$ for some $1 \leq i \leq m$, so 
+Since $p_{xy}(x) = f(x)$ for all $y$, we have $p_x(x) = f(x)$. 
+If $z \in X$, then $z \in \mathcal{O}_{y_i}$ for some $1 \leq i \leq m$, so
+$$p_x(z) \overset{(\ast_1)}{\leq} p_{xy_i}(z) \overset{(\ast_2)}{<} f(z) + \epsilon$$
+where $(\ast_1)$ comes from the definition of $p_x$, and $(\ast_2)$ since $z \in \mathcal{O}_{y_i}$. $\square$
 
+>[!Lemma] Lemma 3
+>There is $p \in \mathcal{A}$ with
+>$$|f_x(z) - p(z)|\leq \epsilon\qquad \forall z \in X$$![[Screenshot 2026-04-16 at 8.03.46 pm.png|300]]
+##### Proof
+For each $x \in X$, let $U_x = \{z\in X \:|\: p_x(z) > f(z) - \epsilon\}$.
