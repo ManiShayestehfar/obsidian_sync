@@ -116,4 +116,23 @@ This finishes the proof of Stone-Weierstrass Theorem in the case of $C_{\mathbb{
 
 ### The Complex Case: $C_\mathbb{C}(X)$
 
-Let $\mathcal{A}_\mathbb{R} = \{p \in \mathcal{A}\}$
+Let $\mathcal{A}_\mathbb{R} = \{p \in \mathcal{A} \:|\: p \text{ real valued }\} \subseteq C_\mathbb{C}(X)$ be a subalgebra. Since $1 \in \mathcal{A}_\mathbb{R}$, then $\mathcal{A}_\mathbb{R}$ is unital.
+
+>[!Claim]
+>$\mathcal{A}_\mathbb{R}$ separates points.
+>i.e. For $x \neq y$, then there is $p \in \mathcal{A}_\mathbb{R}$ with $p(x) \neq p(y)$.
+
+Write $p = u + iv$. We have either $u(x) \neq u(y)$ or $v(x) \neq v(y)$.
+Since $u = \frac{p + p^*}{2} \in \mathcal{A}_\mathbb{R}$ and $v = \frac{p - p^*}{2i} \in \mathcal{A}_\mathbb{R}$, we have $u,v \in \mathcal{A}_\mathbb{R}$, so $\mathcal{A}_\mathbb{R}$ separates points.
+So $\overline{\mathcal{A}_\mathbb{R}} = C_\mathbb{R}(X)$ (By Lemmas 1-3).
+
+Let $f \in C_\mathbb{C}(X)$ and $\epsilon >0$. Write $f = u + iv$. Since $\overline{\mathcal{A}_\mathbb{R}} = C_\mathbb{R}(X)$, then there is $u_1,v_1 \in \mathcal{A}_\mathbb{R}$ with $\|u - u_1 \|_\infty < \frac{\epsilon}{2}$ and $\|v - v_1\|_\infty < \frac{\epsilon}{2}$.
+Let $p = u_1 + iv_1 \in \mathcal{A}$. Then
+$$\|f-p\|_\infty \leq \|u-u_1\|_\infty + \|v-v_1\|_\infty < \epsilon.$$
+This completes the proof.   $\square$
+
+
+# Applications
+
+>[!Corollary]
+>$\overline{\mathcal{P}[a,b]} = C$
