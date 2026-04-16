@@ -69,5 +69,6 @@ We can use $\max(f,g) = \frac{f+g + (f-g)}{2}$ and $\min(f,g) = \frac{f+g - (f-g
 >[!Lemma] Lemma 1
 > Let $x,y \in X$ be fixed. Then there is $p_{xy} \in \mathcal{A}$ such that $p_{xy}(x) = f(x)$ and $p_{xy}(y)= f(y)$.
 > 
-
-
+![[Screenshot 2026-04-16 at 3.39.58 pm.png|300]]
+##### Proof
+If $x=y$, take $p_{xy}(z)= f(x)$
