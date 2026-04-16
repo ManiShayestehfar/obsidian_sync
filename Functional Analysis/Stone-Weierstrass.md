@@ -39,3 +39,29 @@ Then $||t|-p_N(t)| = \left|\sum_{n=N+1}^\infty \binom{1/2}{n} (t^2-1)^n\right| \
 
 Thus $\||\cdot| - p_N\|_\infty \to 0$ as $N \to \infty$.  $\square$
 
+
+>[!Lemma]
+>Let $\mathcal{A}$ be a unital subalgebra of $C_\mathbb{R}(X)$.
+>Let $f,f_1,...,f_n \in \mathcal{A}$. Then:
+>1. $|f| \in \overline{\mathcal{A}}$,
+>2. $\min(f_1,...,f_n), \max(f_1,...,f_n \in \overline{\mathcal{A}})$.
+##### Proof
+###### 1)
+Replace $f$ with $\frac{f}{\|f\|}$ so assume $\|f\|_\infty =1$. 
+By the previous lemma, for $n \geq 1$, there exists a polynomial $p_N:[-1,1]\to \mathbb{R}$ such that $||t| - p_N| < \frac{1}{n}$ for all $t \in [-1,1]$.
+
+Since $|f(x)|\leq \|f\|_\infty = 1$, then we are guaranteed that $p_N(f(x))$ has valid input.
+Then $|f(x) - p_N(f(x))| < \frac{1}{n}\qquad \forall n \geq 1, x \in X$.
+$\implies \||f| - p_N(f)\|_\infty < \frac{1}{n}$.
+But $p_N(f) = \sum_{i=0}^n \alpha_i f^i$ and so $p_n(f) \in \mathcal{A}$ (a *unital* subalgebra). 
+Hence $|f| \in \overline{\mathcal{A}}$. $\square$
+
+###### 2)
+We can use $\max(f,g) = \frac{f+g + (f-g)}{2}$ and $\min(f,g) = \frac{f+g - (f-g)}{2}$ and induction (also using part $(a)$). $\square$
+
+
+## Proof of Stone-Weierstrass Theorem
+
+We first consider $\mathbb{K} = \mathbb{R}$. Let $f \in C_\mathbb{R}(X)$ and let $\varepsilon > 0$.
+We want to find $p \in \mathcal{A}$ such that $|f(z) - p(z)| < \varepsilon$     $\forall z \in X$.
+
