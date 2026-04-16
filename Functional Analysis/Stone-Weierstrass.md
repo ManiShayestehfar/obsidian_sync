@@ -134,5 +134,35 @@ This completes the proof.   $\square$
 
 # Applications
 
+## Density of Bounded Polynomials
+
 >[!Corollary]
->$\overline{\mathcal{P}[a,b]} = C$
+>$\overline{\mathcal{P}[a,b]} = C[a,b]$ (w.r.t $\|\cdot\|_\infty$)
+##### Proof
+$\mathcal{P}[a,b]$ satisfies the three axioms of Stone-Weierstrass. $\square$
+
+## Separability of $C[a,b]$
+
+>[!Corollary]
+>$(C[a,b], \|\cdot\|_\infty)$ is separable
+##### Proof
+The set 
+$$P_\mathbb{Q}([a,b]) = \left\{\text{polys } p:[a,b] \to \mathbb{K} \text{ with } (\mathbb{Q} + i\mathbb{Q})\text{-coefficients }\right\}$$
+is countable and dense.  $\square$
+
+
+>[!Corollary]
+Let $\mathbb{T}= \{s \in \mathbb{C} \:|\: |s|=1 \}$.
+Then $\overline{\mathcal{A}} :=\overline{\mathbb{C}[s,s^{-1}]} = \mathbb{C}(\mathbb{T})$.
+##### Proof
+$\mathcal{A}$ is a subalgebra, with
+1. $1 \in \mathcal{A}$
+2. $p \in \mathcal{A} \implies p(s,s^{-1})\in \mathcal{A}$  (as $\bar{s} = s^{-1}$)
+3. $p(s,s^{-1})=s$ separates points of $\mathbb{T}$.
+Now we apply Stone-Weierstrass and so we are done. $\square$
+
+## Trigonometric Polynomial
+
+>[!Definition]
+>A trigonometric polynomial
+
