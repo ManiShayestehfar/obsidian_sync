@@ -92,5 +92,5 @@ Note that $y \in \mathcal{O}_y$ (as $p_{xy}(y) = f(y)$), so $X = \bigcup_{y \in 
 Since $X$ is compact, there is a finite subcover: $X = \bigcup_{i=1}^m \mathcal{O}_{y_i}$ for some $\{y_1,...,y_m\} \subseteq X$.
 With $p_{xy_i}$ from Lemma 1, let $p_x = \min(p_{xy_1},...,p_{xy_m})\in \overline{\mathcal{A}}= \mathcal{A}$ (previous lemma, and using the fact that $\mathcal{A}$ is closed).
 
-Since $p_{xy}(x) = f(x)$ for all $y \in $ 
+Since $p_{xy}(x) = f(x)$ for all $y$, we have $p_x(x) = f(x)$. If $z \in X$, then $z \in \mathcal{O}_{y_i}$ for some $1 \leq i \leq m$, so 
 
