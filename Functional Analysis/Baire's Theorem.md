@@ -70,3 +70,9 @@ Clear
 If $Y \neq X$, pick $x_0 \in X\setminus Y$.
 For each $y \in Y$ and $r >0$, we have 
 $$y + r \frac{x_0}{2\|x_0\|} \in B(y,r) \setminus Y$$
+(if it where in $Y$, then $x_0 \in Y$ as vector space)
+So $B(y,r) \not\subset Y$, so $\text{int}(Y) = \varnothing$. $\square$
+
+#### Example
+
+$\mathcal{P}([0,1])$ is not complete with respect to *any* norm, because $\{1,t,t^2,t^3,...\}$ is a countable Hamel basis.
