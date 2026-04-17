@@ -15,7 +15,7 @@ so $\varphi_y \in \mathcal{H}$ with $\|\varphi_y\| \leq \|y\|$. But also $\varph
 >2. Conjugate linear
 >3. Bijective
 >   
->In particular, $\mathcal{H}' = \{\varphi_y \:|\: y \in \mathcal{H}'\}$
+>In particular, $\mathcal{H}' = \{\varphi_y \:|\: y \in \mathcal{H}\}$
 ##### Proof
 ###### Conjugate-Linearity
 This follows from conjugate linearity of inner product w.r.t the second input $\langle x,-\rangle$.
