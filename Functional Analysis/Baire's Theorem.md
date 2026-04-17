@@ -55,4 +55,18 @@ so $\text{int}(\{x\}) \neq \varnothing$ for some $x$, which is a contradiction $
 >[!Corollary]
 >Every Hamel basis of an infinite dimensional Banach space is uncountable.
 ##### Proof
-Suppose 
+Suppose $B = (x_n)_{n\geq1}$ is countable Hamel basis of $X$. Let $X_n = \text{Span}\{x_1,...,x_n\}$.
+The subspaces are closed (being finite dimensional). Since $B$ is a Hamel basis,
+$$X = \bigcup_{n=1}^\infty X_n$$
+So $\text{int}(X_n) \neq \varnothing$ for some $n \geq 1$ for some $n \geq 1$ which is a contradiction as $X_n \neq X$. $\square$
+
+>[!Lemma]
+>Let $X$ be normed vector space. Let $Y\subseteq X$ be a subspace. Then 
+>$$\text{int}(Y) \neq \varnothing \iff Y = X$$
+##### Proof
+###### $(\Leftarrow)$ 
+Clear
+###### $(\Rightarrow)$
+If $Y \neq X$, pick $x_0 \in X\setminus Y$.
+For each $y \in Y$ and $r >0$, we have 
+$$y + r \frac{x_0}{2\|x_0\|} \in B(y,r) \setminus Y$$
