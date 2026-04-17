@@ -21,12 +21,38 @@ $\square$
 
 ## Main Application
 
+### Corollary
+
 >[!Corollary]
 >Let $X$ be a compact metric space.
 >Suppose $C_1,C_2,...$ are closed and
 >$$X = \bigcup_{n=1}^\infty C_n \tag{countable union}$$
 >Then $\text{int}(C_n)\neq \varnothing$ for some $n$.
 ##### Proof
-If $\text{int}(C_n) = \varnothing$ for all $n \geq 1$, then $U_n = X \setminus C_n$ is
+>[!Claim]
+>If $\text{int}(C_n) = \varnothing$ for all $n \geq 1$, then $U_n = X \setminus C_n$ is open and dense.
+###### Proof
+- Let $Y$ be open. We need $Y \cap U_n \neq \varnothing$. 
+- If $Y \cap U_n = \varnothing$, then $Y \subseteq C_n$ so $\text{int}(C_n) \neq \varnothing$. $\square$
+
+So $\bigcap_{n=1}^\infty U_n$ is dense (by Baire). In particular it is non-empty, so
+$$X = \bigcup_{n=1}^\infty C_n = \bigcup_{n=1}^\infty (X \setminus U_n) = X \setminus \left(\bigcap_{n=1}^\infty U_n\right)\neq X$$
+a contradiction. $\square$
 
 
+### Uncountability of $[0,1]$
+
+>[!Corollary]
+>$[0,1]$ is uncountable
+##### Proof
+$X = [0,1]$ is a complete metric space.
+If $X$ is countable, then 
+$$X = \bigcup_{x \in [0,1]} \{x\} \tag{countable union}$$
+so $\text{int}(\{x\}) \neq \varnothing$ for some $x$, which is a contradiction $\square$
+
+### Uncountability of Infinite-dim Hamel Basis
+
+>[!Corollary]
+>Every Hamel basis of an infinite dimensional Banach space is uncountable.
+##### Proof
+Suppose 
