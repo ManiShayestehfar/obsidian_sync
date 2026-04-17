@@ -31,8 +31,11 @@ Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nil
 >1. If $I,J$ are nilpotent, then so is $I + J$.
 >2. Every submodule of $A$ contains a unique maximal nilpotent ideal
 ##### Proof
-1. NEED TO PROVE 
-2. Take $N$ and $N'$ to be two maximal nilpotent ideals of a submodule $V$ of $A$. Then by result (1) above, $N + N'$ is also a nilpotent ideal of $V$. Hence $N = N + N' = N'$ by maximality.
+1. Suppose $I,J$ are nilpotent. Then there exists $m,n>0$ such that for $x \in I$ and $y \in J$, $x^n = 0$ and $y^m = 0$. Then for $x+y \in I +J$, consider 
+   $$(x+y)^{m+n+1} = \sum_{k=0}^{m+n+1}\binom{m+n+1}{k}x^{k}y^{m+n+1-k} = 0$$
+   since if $k \geq n$, then $x^n =0$, and if $k \geq m+n+1-k \geq m$, so $y^{m+n+1-k}=0$. Hence $I+J$ is nilpotent.
+   
+2. Take $N$ and $N'$ to be two maximal nilpotent ideals of a submodule $V$ of $A$. Then by result (1) above, $N + N'$ is also a nilpotent ideal of $V$. Hence $N = N + N' = N'$ by maximality. $\square$
 
 
 
