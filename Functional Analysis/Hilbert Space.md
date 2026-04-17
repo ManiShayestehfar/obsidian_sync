@@ -75,10 +75,10 @@ Let $S = \{e_1,...,e_n\}$ be a Hilbert basis of $\mathcal{H}$.
 >[!Theorem]
 >For $x \in \mathcal{H}$,
 >1. **Fourier Series:** $x = \sum_{j=1}^n \langle x,e_j \rangle e_j$ 
->2. **Parseval's Identity:** $\|x\|^2 = \sum_{j=1}^n |\langle x,e_j \rangle |^2$ 
+>2. **Parseval's Identity:** = $\sum_{j=1}^n |\langle x,e_j \rangle |^2 = \|x\|^2$ 
 >If $S' \subseteq S$ and $M = \text{Span}(S')$, then
 >3. **Projection Formula:** $P_M x = \sum_{e \in S'} \langle x,e \rangle e$
->4. **Bessel's Inequality:** $\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \rangle|^2$
+>4. **Bessel's Inequality:** $\sum_{e \in S'} |\langle x,e \rangle|^2 \leq \|x\|^2$
 ##### Proofs
 ###### Fourier Series
 Let $x \in \mathcal{H}$. Since $S$ is a basis, there exist unique $\alpha_1,...,\alpha_n \in \mathbb{K}$ such that $x = \sum_{j=1}^n \alpha_j e_j$.

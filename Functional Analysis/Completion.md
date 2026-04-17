@@ -26,7 +26,7 @@ Up to isometric isomorphism such $(\hat{X}, \|\cdot\|)$ is *unique*.
 
 ## Examples
 
-Let $1 < p < \infty$, then $\widehat{(\ell_F, \|\cdot\|_p)} = (\ell^p, \|\cdot\|_p)$ where we recall that $\ell_F$ was the set of sequences with finite support
+Let $1 < p < \infty$, then $\widehat{(\ell_F, \|\cdot\|_p)} = (\ell^p, \|\cdot\|_p)$ where we recall that $\ell_F$ was the set of sequences with finite support.
 
 ##### Proof
 Take $\varphi: (\ell_F, \|\cdot\|_p) \to (\ell^p, \|\cdot\|_p)$ given by the identity map.
@@ -35,7 +35,7 @@ This is clearly an isometric embedding since the norms are the same.
 We need to prove $\bar{\ell_F} = \ell^p$.
 Take any $x := (x_1,x_2,...,x_n,...) \in \ell^p$, and $y_n = (x_1,x_2,...,x_n,0,0,...) \in \ell_F$ 
 
-clearly $\|x-y\|_p^p = \sum_{k=n+1}^\infty |x_k| \to 0$ as $n \to \infty$. So $y_n \to x \in \ell^p$.
+clearly $\|x-y\|_p^p = \sum_{k=n+1}^\infty |x_k|^p \to 0$ as $n \to \infty$. So $y_n \to x \in \ell^p$.
 $\therefore \bar{\ell_F} = \ell^p$ 
 
 **Question:** How about the completion of $(\ell_F, \|\cdot\|_\infty)$? Is it $\ell^\infty$?
