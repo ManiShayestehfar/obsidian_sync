@@ -26,6 +26,7 @@ $\square$
 >Suppose $C_1,C_2,...$ are closed and
 >$$X = \bigcup_{n=1}^\infty C_n \tag{countable union}$$
 >Then $\text{int}(C_n)\neq \varnothing$ for some $n$.
-
+##### Proof
+If $\text{int}(C_n) = \varnothing$ for all $n \geq 1$, then $U_n = X \setminus C_n$ is
 
 
