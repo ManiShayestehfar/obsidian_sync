@@ -61,9 +61,22 @@ Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nil
    Then $N \subseteq V \cap \text{Rad} A$ as $\text{Rad}A$ is the unique maximal ideal of $A$. On the other hand, $V \cap \text{Rad} A$ is nilpotent, so $V \cap \text{Rad}A\subseteq N$. Hence $N = V \cap \text{Rad }A$.
    Note that: $(V \cap \text{Rad }A)^n \subseteq (\text{Rad }A)^n \implies (V \cap \text{Rad }A)^n = 0$. Hence $V \cap \text{Rad }A$ is indeed nilpotent.
    
-3. Write $P = Ae$ for a primitive idempotent $e$. Then $e \not\in \text{Rad }P$ because $e^2 = e \neq 0$. So $\text{Rad } P \neq P$.
+3. Write $P = Ae$ for a primitive idempotent $e\in A$. Then $e \not\in \text{Rad }P$ because $e^2 = e \neq 0$. So $\text{Rad } P \neq P$.
+   
+   **First equality:**
    By part (2), $P \cap \text{Rad }A$ is the maximal nilpotent submodule of $P$. So $\text{Rad }P \subseteq P \cap \text{Rad }A$.
-   Now $A = Ae \oplus A(1_A- e)\implies \text{Rad }P = $
+   Now $A = Ae \oplus A(1_A- e)\implies \text{Rad }A = \text{Rad }Ae \oplus \text{Rad }A(1_A-e)$ where the direct sum remains.
+   If $x \in P \cap \text{Rad }A$, then $x=xe$ (since $x \in P=Ae$, then $x =ae$, $xe =x$).
+   Hence $x \in (\text{Rad }A)e\implies (\text{Rad }A)e \subseteq P \cap \text{Rad }A$.
+   
+   **Second equality:**
+   $(\text{Rad }A)e$ is a nilpotent ideal in $P$, because 
+$$\begin{align*}
+[(\text{Rad }A)e]^n &= (\text{Rad }A)e \cdot (\text{Rad }A)e \cdots (\text{Rad }A)e \\[2pt]
+&\subseteq (\text{Rad }A)\cdot (\text{Rad }A) \cdots (\text{Rad }A)e  \\[2pt]
+&\subseteq (\text{Rad }A)^ne   
+\end{align*}$$
+
 
 
 ## Theorems
