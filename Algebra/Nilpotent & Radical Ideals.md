@@ -99,10 +99,145 @@ Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 >3. $D$ an irreducible $A$-module. Then $D \cong P/\text{Rad }P$ for some PIM $P$ of $A$.
 ##### Proof
 ###### 1)
+Since $P$ is a principal indecomposable module, Lemma 8C gives us a primitive idempotent $e \in A$ such that $P = Ae$.
 
+Let $M$ be an arbitrary proper submodule of $P$. We aim to show that $M$ is nilpotent. Once this is established, every proper submodule of $P$ is contained in $\operatorname{Rad} P$ (the maximal nilpotent submodule), making $\operatorname{Rad} P$ the unique maximal proper submodule.
+
+**Case 1: $M$ is nilpotent.** Then $M \subseteq \operatorname{Rad} P$ by definition, and we are done.
+**Case 2: $M$ is not nilpotent.** By Proposition 8E, $M$ contains an idempotent $f$. We shall derive a contradiction.
+
+Set $Q = Af$. Since $f \in M \subseteq P$ and $f \neq 0$, the submodule $Q$ is a nonzero submodule of $P$. Note that $e$ is a right identity on $P$ (since $P = Ae$) and $f$ is a right identity on $Q$ (since $Q = Af$).
+
+We claim that the elements $ef$ and $e - ef$ are both nonzero:
+- If $ef = 0$, then $Q = Qe = Q(ef) = 0$, contradicting $Q \neq 0$.
+- If $e - ef = 0$, then $e = ef$, so $P = Ae = Aef \subseteq Af = Q$. This forces $Q = P$, contradicting the assumption that $M$ (and hence $Q \subseteq M$) is a proper submodule of $P$.
+
+Next, we verify that $e - ef$ is idempotent:
+$$
+
+(e - ef)^2 = e^2 - eef - efe + efef = e - ef - ef + ef^2 = e - ef,
+
+$$
+using $e^2 = e$, $f^2 = f$, and $fe = f$ (since $f \in P = Ae$ implies $fe = f$).
+Similarly, $ef$ is idempotent:
+$$
+
+(ef)^2 = efef = ef^2 = ef.
+
+$$
+Moreover, $ef$ and $e - ef$ are orthogonal:
+$$
+
+(ef)(e - ef) = efe - efef = ef - ef = 0, \qquad (e - ef)(ef) = ef - efef = ef - ef = 0.
+
+$$
+Since $e = (e - ef) + ef$ is a sum of two nonzero orthogonal idempotents, $e$ is not primitive. This contradicts our assumption, so Case 2 cannot occur.
+
+Therefore every proper submodule of $P$ is nilpotent, hence contained in $\operatorname{Rad} P$. It follows that $\operatorname{Rad} P$ is the unique maximal proper submodule, and $P / \operatorname{Rad} P$ is irreducible. $\square$
 ###### 2)
+Write $D_P = P / \operatorname{Rad} P$ and $D_Q = Q / \operatorname{Rad} Q$ for the irreducible tops.
+
+**Forward direction:**
+Suppose $\varphi : P \to Q$ is an $A$-module isomorphism. Let $\pi_Q : Q \to D_Q$ denote the natural projection. The composition $\pi_Q \circ \varphi : P \longrightarrow D_Q$ is a surjective $A$-module homomorphism. By the First Isomorphism Theorem,
+$$
+
+P / \ker(\pi_Q \circ \varphi) \cong \operatorname{im}(\pi_Q \circ \varphi) = D_Q.
+
+$$
+Since $D_Q$ is irreducible, $\ker(\pi_Q \circ \varphi)$ is a maximal proper submodule of $P$. By part (a), $P$ has a unique maximal proper submodule, so $\ker(\pi_Q \circ \varphi) = \operatorname{Rad} P$. Therefore $D_P = P / \operatorname{Rad} P \cong D_Q$.
+
+**Converse direction:**
+Suppose $\varphi : P / \operatorname{Rad} P \to Q / \operatorname{Rad} Q$ is an $A$-module isomorphism. Write $P = Ae$ for a primitive idempotent $e \in A$, and let $q$ be any element of $Q$ satisfying
+$$
+
+\varphi(e + \operatorname{Rad} P) = q + \operatorname{Rad} Q.
+
+$$
+
+*Step 1: The isomorphism $\varphi$ is determined by $q$.* For any $x \in P$, we have $x = xe$ (since $e$ is a right identity on $P = Ae$), so
+$$
+
+\varphi(x + \operatorname{Rad} P) = x\varphi(e + \operatorname{Rad} P) = x(q + \operatorname{Rad} Q) = xq + \operatorname{Rad} Q.
+
+$$
+In particular, $\varphi(e + \operatorname{Rad} P) = eq + \operatorname{Rad} Q$.
+
+*Step 2: Lift to a module homomorphism $\tilde{\varphi} : P \to Q$.* Define
+$$
+
+\tilde{\varphi}(x) = xeq, \qquad x \in P.
+
+$$
+This is $\mathbb{F}$-linear by definition, and $\operatorname{im} \tilde{\varphi} \subseteq Q$. For any $a \in A$ and $x \in P$,
+$$
+
+\tilde{\varphi}(ax) = (ax)eq = a(xeq) = a\tilde{\varphi}(x),
+
+$$
+so $\tilde{\varphi}$ is an $A$-module homomorphism.
+
+
+*Step 3: Construct the reverse lift.* Let $\psi = \varphi^{-1} : Q / \operatorname{Rad} Q \to P / \operatorname{Rad} P$, and write $Q = Af$ for a primitive idempotent $f$. By the same reasoning as above, there exists $p \in P$ such that
+$$
+
+\psi(f + \operatorname{Rad} Q) = p + \operatorname{Rad} P,
+
+$$
+and we define the $A$-module homomorphism $\tilde{\psi} : Q \to P$ by
+$$
+
+\tilde{\psi}(y) = yfp, \qquad y \in Q.
+
+$$
+
+*Step 4: Show the compositions are invertible.* The maps $\tilde{\psi}\tilde{\varphi} \in \operatorname{End}_A(P)$ and $\tilde{\varphi}\tilde{\psi} \in \operatorname{End}_A(Q)$ are each either nilpotent or invertible, by Lemma 7C (since $P$ and $Q$ are indecomposable).
+We compute:
+$$
+
+\tilde{\psi}\tilde{\varphi}(e) = \tilde{\psi}(eq) = eqfp, \qquad \tilde{\varphi}\tilde{\psi}(f) = \tilde{\varphi}(fp) = fpeq.
+
+$$
+Hence $(\tilde{\psi}\tilde{\varphi})^n(e) = (eqfp)^n$ and $(\tilde{\varphi}\tilde{\psi})^n(f) = (fpeq)^n$, so $\tilde{\psi}\tilde{\varphi}$ is nilpotent if and only if $eqfp$ is nilpotent, and $\tilde{\varphi}\tilde{\psi}$ is nilpotent if and only if $fpeq$ is nilpotent.
+
+Now examine what $\psi \circ \varphi$ and $\varphi \circ \psi$ do:
+$$
+\begin{align*}
+(\psi \circ \varphi)(e + \operatorname{Rad} P) &= \psi(eq + \operatorname{Rad} Q) = eq\psi(f + \operatorname{Rad} Q) = eqfp + \operatorname{Rad} P, \\
+
+(\varphi \circ \psi)(f + \operatorname{Rad} Q) &= \varphi(fp + \operatorname{Rad} P) = fp\varphi(e + \operatorname{Rad} P) = fpeq + \operatorname{Rad} Q.
+
+\end{align*}
+$$
+Since $\varphi$ and $\psi$ are mutually inverse isomorphisms, $\psi \circ \varphi = \operatorname{id}$ and $\varphi \circ \psi = \operatorname{id}$. In particular, $eqfp + \operatorname{Rad} P = e + \operatorname{Rad} P$ and $fpeq + \operatorname{Rad} Q = f + \operatorname{Rad} Q$, so $eqfp \equiv e \pmod{\operatorname{Rad} P}$ and $fpeq \equiv f \pmod{\operatorname{Rad} Q}$. These elements are therefore not nilpotent (since $e$ and $f$ are idempotent, hence non-nilpotent, and an element congruent to a non-nilpotent element modulo the radical is itself non-nilpotent).
+
+It follows that $\tilde{\psi}\tilde{\varphi}$ and $\tilde{\varphi}\tilde{\psi}$ are both invertible (by the nilpotent-or-invertible dichotomy). In particular, $\tilde{\varphi}$ is both injective and surjective, so $\tilde{\varphi} : P \xrightarrow{\sim} Q$ is an isomorphism, giving $P \cong Q$. $\square$
 
 ###### 3)
+Let $D$ be an irreducible $A$-module, and write
+$$
+
+A = P_1 \oplus P_2 \oplus \cdots \oplus P_t
+
+$$
+as a decomposition of the regular module $A$ into principal indecomposable submodules (which exists by the Krull–Schmidt theorem).
+
+By Proposition 4K(a), $D \cong A / M$ for some maximal submodule $M$ of $A$. Since $M$ is maximal, $A = M + P_i$ for at least one index $i$ (otherwise $P_i \subseteq M$ for all $i$, forcing $A = M$, a contradiction). Choose such an $i$ with $P_i \not\subseteq M$.
+
+By the Second Isomorphism Theorem,
+$$
+
+D \cong A / M = (M + P_i) / M \cong P_i / (P_i \cap M).
+
+$$
+Now $P_i / (P_i \cap M)$ is a quotient of $P_i$ that is isomorphic to the irreducible module $D$, so $P_i \cap M$ is a maximal submodule of $P_i$. By the Fourth Isomorphism Theorem (Theorem 4I(d)), this means $P_i \cap M$ is a maximal proper submodule of $P_i$.
+
+By part (a), $P_i$ has a unique maximal proper submodule, namely $\operatorname{Rad} P_i$. Therefore $P_i \cap M = \operatorname{Rad} P_i$, and
+$$
+
+D \cong P_i / \operatorname{Rad} P_i,
+
+$$
+as required. $\square$
 
 
 

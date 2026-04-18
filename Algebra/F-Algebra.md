@@ -1,11 +1,26 @@
->[!def]
->A (unital) **$\mathbb{F}$-Algebra** is a [[ring]] $R$ with identity element $1_R$ which is also a $\mathbb{F}$-vector space w.r.t addition in $R$.
->
->i.e. a ring with a (central) ring $A$, with homomorphism such that $\lambda (ab) = (\lambda a)b = a(\lambda b)$ such that $(A,+)$ is an $\mathbb{F}$-vector space.
->
->--> An $\mathbb{F}$-algebra is a ring with its *coefficients* in $\mathbb{F}$. 
->
->A **finite dimensional $\mathbb{F}$-algebra** is an $\mathbb{F}$-algebra that is finite dimensional as an $\mathbb{F}$-vector space.
+# Definitions
+
+> [!def] Unital $\mathbb{F}$-Algebra
+> Let $\mathbb{F}$ be a field. A **unital $\mathbb{F}$-algebra** is a tuple $(A, +, \cdot, \star)$ where:
+> 
+> - $(A, +, \cdot)$ is a **unital ring** with additive identity $0_A$ and multiplicative identity $1_A$, and
+> - $(A, +, \star)$ is an **$\mathbb{F}$-vector space** with respect to the same addition $+$,
+> 
+> such that the scalar multiplication $\star : \mathbb{F} \times A \to A$ is **compatible** with the ring multiplication in the sense that:
+> $$\lambda \star (a \cdot b) = (\lambda \star a) \cdot b = a \cdot (\lambda \star b) \qquad \forall\, \lambda \in \mathbb{F},\ \forall\, a, b \in A.$$
+
+> [!def] Equivalent Formulation
+> Equivalently, $A$ is a unital $\mathbb{F}$-algebra if and only if there exists a **unital ring homomorphism**
+> $$\varphi : \mathbb{F} \longrightarrow Z(A),$$
+> where $Z(A) := \{ z \in A : za = az\ \forall\, a \in A \}$ is the **centre** of $A$, such that scalar multiplication is recovered by:
+> $$\lambda \star a := \varphi(\lambda) \cdot a \qquad \forall\, \lambda \in \mathbb{F},\ \forall\, a \in A.$$
+
+> [!def] Finite-Dimensional $\mathbb{F}$-Algebra
+> A unital $\mathbb{F}$-algebra $A$ is **finite-dimensional** if $A$, regarded as an $\mathbb{F}$-vector space, satisfies:
+> $$\dim_{\mathbb{F}}(A) < \infty.$$
+> That is, there exists a finite basis $\{e_1, \ldots, e_n\} \subset A$ such that every $a \in A$ has a unique representation
+> $$a = \sum_{i=1}^{n} \alpha_i\, e_i, \qquad \alpha_i \in \mathbb{F}.$$
+> The integer $n = \dim_{\mathbb{F}}(A)$ is called the **dimension** of the algebra.
 
 ## Examples
 
@@ -27,7 +42,11 @@
 
 # Irreducibility
 
-- An $\mathbb{F}$-algebra $A$ is **semisimple** if the [[Representation|regular representation]] of $A$, which is the algebra $A$ considered as an $A$-module, is semisimple.
+>[!Definition]
+>- An $\mathbb{F}$-algebra $A$ is **semisimple** if the [[Representation|regular representation]] of $A$, which is the algebra $A$ considered as an $A$-module, is semisimple.
+> 	 - Equivalently, $A$ is **semisimple** if $\text{Rad }A=0$
+> - An $\mathbb{F}$-algebra $A$ is **completely reducible** if it is a direct sum of irreducible $A$-modules
+
 
 >[!proposition]
 >Suppose $A$ is a semisimple $\mathbb{F}$-algebra and let $V$ be an $A$-module. Then $V$ is semisimple.

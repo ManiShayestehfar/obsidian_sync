@@ -50,8 +50,13 @@ Suppose $V$ is an $A$-module.
 
 # Irreducibility
 
-- An $A$-module $V$ is **irreducible** (or **simple**) if $V$ contains no nonzero proper submodules.
-- It is **completely reducible**, or **semi-simple** if it is a direct sum of irreducible $A$-modules.
+>[!Definition]
+>- An $A$-module $V$ is **irreducible** (or **simple**) if $V$ contains no nonzero proper submodules.
+>- It is **completely reducible**, or **semisimple** if it is a direct sum of irreducible $A$-modules.
+>	- Equivalently, $V$ is **semisimple** if $\text{Rad }V=0$.
+
+
+
 
 
 ## Some Propositions
