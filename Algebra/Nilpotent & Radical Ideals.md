@@ -97,9 +97,13 @@ Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 > 	  - Consequently, $P/\text{Rad }P$ is an irreducible $A$-module.
 >2. $P,Q$ are PIMS of $A$. Then $P \cong Q \iff P/\text{Rad }P \cong Q/\text{Rad }Q$.
 >3. $D$ an irreducible $A$-module. Then $D \cong P/\text{Rad }P$ for some PIM $P$ of $A$.
-
 ##### Proof
-![[Screenshot 2026-01-13 at 12.01.59 pm.png]]
+###### 1)
+
+###### 2)
+
+###### 3)
+
 
 
 >[!Theorem] Theorem 8K
