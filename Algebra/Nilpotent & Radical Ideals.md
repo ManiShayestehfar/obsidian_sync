@@ -55,38 +55,48 @@ Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nil
 >2. Let $V$ be an $A$-module in $A$. Then $V \cap \text{Rad} A$ is the maximal nilpotent $A$-submodule of $V$
 >3. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad } P = P \cap \text{Rad }A = (\text{Rad }A)e$ is the maximal nilpotent submodule of $P$, which is a proper ideal of $P$.
 ##### Proof
-1. TBD
+###### 1)
+Tutorials
+
+###### 2) 
+Recall that every $A$-submodule contains a maximal nilpotent submodule, say $N$.
+Then $N \subseteq V \cap \text{Rad} A$ as $\text{Rad}A$ is the unique maximal ideal of $A$. On the other hand, $V \cap \text{Rad} A$ is nilpotent, so $V \cap \text{Rad}A\subseteq N$. Hence $N = V \cap \text{Rad }A$.
+Note that: $(V \cap \text{Rad }A)^n \subseteq (\text{Rad }A)^n \implies (V \cap \text{Rad }A)^n = 0$. Hence $V \cap \text{Rad }A$ is indeed nilpotent.
+###### 3)
+Write $P = Ae$ for a primitive idempotent $e\in A$. Then $e \not\in \text{Rad }P$ because $e^2 = e \neq 0$. So $\text{Rad } P \neq P$.
    
-2. Recall that every $A$-submodule contains a maximal nilpotent submodule, say $N$.
-   Then $N \subseteq V \cap \text{Rad} A$ as $\text{Rad}A$ is the unique maximal ideal of $A$. On the other hand, $V \cap \text{Rad} A$ is nilpotent, so $V \cap \text{Rad}A\subseteq N$. Hence $N = V \cap \text{Rad }A$.
-   Note that: $(V \cap \text{Rad }A)^n \subseteq (\text{Rad }A)^n \implies (V \cap \text{Rad }A)^n = 0$. Hence $V \cap \text{Rad }A$ is indeed nilpotent.
-   
-3. Write $P = Ae$ for a primitive idempotent $e\in A$. Then $e \not\in \text{Rad }P$ because $e^2 = e \neq 0$. So $\text{Rad } P \neq P$.
-   
-   **First equality:**
-   By part (2), $P \cap \text{Rad }A$ is the maximal nilpotent submodule of $P$. So $\text{Rad }P \subseteq P \cap \text{Rad }A$.
-   Now $A = Ae \oplus A(1_A- e)\implies \text{Rad }A = \text{Rad }Ae \oplus \text{Rad }A(1_A-e)$ where the direct sum remains.
-   If $x \in P \cap \text{Rad }A$, then $x=xe$ (since $x \in P=Ae$, then $x =ae$, $xe =x$).
-   Hence $x \in (\text{Rad }A)e\implies (\text{Rad }A)e \subseteq P \cap \text{Rad }A$.
-   
-   **Second equality:**
-   $(\text{Rad }A)e$ is a nilpotent ideal in $P$, because 
+**First equality:**
+By part (2), $P \cap \text{Rad }A$ is the maximal nilpotent submodule of $P$. So $\text{Rad }P \subseteq P \cap \text{Rad }A$.
+Now $A = Ae \oplus A(1_A- e)\implies \text{Rad }A = \text{Rad }Ae \oplus \text{Rad }A(1_A-e)$ where the direct sum remains.
+If $x \in P \cap \text{Rad }A$, then $x=xe$ (since $x \in P=Ae$, then $x =ae$, $xe =x$).
+Hence $x \in (\text{Rad }A)e\implies (\text{Rad }A)e \subseteq P \cap \text{Rad }A$.
+
+**Second equality:**
+$(\text{Rad }A)e$ is a nilpotent ideal in $P$, because 
 $$\begin{align*}
 [(\text{Rad }A)e]^n &= (\text{Rad }A)e \cdot (\text{Rad }A)e \cdots (\text{Rad }A)e \\[2pt]
 &\subseteq (\text{Rad }A)\cdot (\text{Rad }A) \cdots (\text{Rad }A)e  \\[2pt]
 &\subseteq (\text{Rad }A)^ne   
 \end{align*}$$
+Then $(\text{Rad }A)e$ is nilpotent for some $n>0$ because $\text{Rad }A$ is nilpotent.
+By part (2), $\text{Rad }P \subseteq P \cap \text{Rad }A$, so $(\text{Rad }A)e = P \cap \text{Rad }A$.
+
+**Third equality:**
+$\text{Rad }P = (\text{Rad }A)P = (\text{Rad }A)Ae \subseteq (\text{Rad }A)e$ since $\text{Rad }A$ is a two-sided ideal.
+Hence $(\text{Rad }A)e = \text{Rad }P$. $\square$
 
 
 
-## Theorems
+## Isomorphism bet ween PIMs and Irreducible Modules
+$$\left\{\text{PIMs of A}\right\} \overset{\cong}{\longrightarrow} \left\{\text{Irreducible }A\text{-modules}\right\};\qquad P \longmapsto D_p := P/\text{Rad }P$$
 
 Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 
 >[!theorem] Theorem 8J
->1. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad }P$ is the unique maximal proper submodule of $P$. Consequently, $P/\text{Rad }P$ is an irreducible $A$-module.
->2. Suppose that $P$ and $Q$ are principal indecomposable $A$-modules. Then $P \cong Q \iff P/\text{Rad }P \cong Q/\text{Rad }Q$.
->3. Suppose $D$ is an irreducible $A$-module. Then $D \cong P/\text{Rad }P$ for some principal indecomposable $A$-module $P$.
+>1. $P$ a PIM of $A$. Then $\text{Rad }P$ is the unique maximal proper submodule of $P$. 
+> 	  - Consequently, $P/\text{Rad }P$ is an irreducible $A$-module.
+>2. $P,Q$ are PIMS of $A$. Then $P \cong Q \iff P/\text{Rad }P \cong Q/\text{Rad }Q$.
+>3. $D$ an irreducible $A$-module. Then $D \cong P/\text{Rad }P$ for some PIM $P$ of $A$.
 
 ##### Proof
 ![[Screenshot 2026-01-13 at 12.01.59 pm.png]]
