@@ -146,5 +146,6 @@ $\square$
 >Let $V$ be an $A$-module such that $V \cong M_1 \oplus \cdots \oplus M_r$ and $V \cong N_1 \oplus \cdots \oplus N_s$ where each $M_i,N_j$ are indecomposable. 
 >Then $r=s$, and after relabelling, $M_i \cong N_i$.
 ##### Proof
-![[Indecomposable Modules-1767786640178.png]]
-$\color{red} \text{REDO THIS PROOF}$
+We argue by induction on $r$. Define the maps $\mu_r,\nu_i \in \text{End}_A(V)$ to be $A$-module endomorphisms given as
+$$\mu_r: V \twoheadrightarrow M_r \hookrightarrow V \qquad ,\qquad \nu_i: V \twoheadrightarrow N_i \hookrightarrow V  $$
+Then $1_V = \nu_1+\cdots +\nu_s$ so $\mu_r = \mu_r(\nu_1+\cdots+\nu_r)$
