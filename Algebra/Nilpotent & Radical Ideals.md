@@ -48,17 +48,22 @@ Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nil
   because $(\text{Rad }A)^n= 0$ for some $n >0$ since $\text{Rad }A$ is a nilpotent ideal. 
 
 
-## Lemma
+## Radicals of PIMs
 
 >[!lemma] 
 >1. The radical $\text{Rad }A$ of $A$ is a two-sided ideal
->2. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad } P = P \cap \text{Rad }A \subsetneq P$ is the maximal nilpotent submodule of $P$, which is a proper ideal of $P$.
+>2. Let $V$ be an $A$-module in $A$. Then $V \cap \text{Rad} A$ is the maximal nilpotent $A$-submodule of $V$
+>3. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad } P = P \cap \text{Rad }A = (\text{Rad }A)e$ is the maximal nilpotent submodule of $P$, which is a proper ideal of $P$.
 ##### Proof
 1. TBD
-2. From Property (2) above, $P$ has a unique maximal nilpotent submodule $N$. Certainly $N \subseteq P \cap \text{Rad }A$. 
-   For the other direction, $P \cap \text{Rad }A$ is a nilpotent submodule of $P$, and therefore it is contained in $N$. Thus the result.
-   (See lecture notes for a different proof).
-
+   
+2. Recall that every $A$-submodule contains a maximal nilpotent submodule, say $N$.
+   Then $N \subseteq V \cap \text{Rad} A$ as $\text{Rad}A$ is the unique maximal ideal of $A$. On the other hand, $V \cap \text{Rad} A$ is nilpotent, so $V \cap \text{Rad}A\subseteq N$. Hence $N = V \cap \text{Rad }A$.
+   Note that: $(V \cap \text{Rad }A)^n \subseteq (\text{Rad }A)^n \implies (V \cap \text{Rad }A)^n = 0$. Hence $V \cap \text{Rad }A$ is indeed nilpotent.
+   
+3. Write $P = Ae$ for a primitive idempotent $e$. Then $e \not\in \text{Rad }P$ because $e^2 = e \neq 0$. So $\text{Rad } P \neq P$.
+   By part (2), $P \cap \text{Rad }A$ is the maximal nilpotent submodule of $P$. So $\text{Rad }P \subseteq P \cap \text{Rad }A$.
+   Now $A = Ae \oplus A(1_A- e)\implies \text{Rad }P = $
 
 
 ## Theorems

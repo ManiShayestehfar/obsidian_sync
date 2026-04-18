@@ -119,7 +119,7 @@ Since we showed that $\ker\varphi^n \cap \text{im }\varphi^n= 0$, then $V = \ker
 
 ## Lemma
 
->[!lemma]
+>[!lemma] Lemma 7C
 >Suppose $P$ is an indecomposable $A$-module. Then $\text{End}_A(P)$ is a [[Ring|local ring]] with a maximal proper ideal
 >$$\mathfrak{m} = \{\varphi\in \text{End}_A(P)\:|\: \varphi^n=0\quad \exists n>0\}$$
 
@@ -148,4 +148,29 @@ $\square$
 ##### Proof
 We argue by induction on $r$. Define the maps $\mu_r,\nu_i \in \text{End}_A(V)$ to be $A$-module endomorphisms given as
 $$\mu_r: V \twoheadrightarrow M_r \hookrightarrow V \qquad ,\qquad \nu_i: V \twoheadrightarrow N_i \hookrightarrow V  $$
-Then $1_V = \nu_1+\cdots +\nu_s$ so $\mu_r = \mu_r(\nu_1+\cdots+\nu_r)$
+Then $1_V = \nu_1+\cdots +\nu_s$ so $\mu_r = \mu_r(\nu_1+\cdots+\nu_r)$. 
+By restriction consider $\mu_r\nu_j$ as an endomorphism of $M_r$. Since $\mu_r$ restricts to the identity map on $M_r$, then at least one of $\mu_r\nu_j$ must be an isomorphism by Lemma 7C.
+WLOG assume $\mu_r \nu_s$ is that isomorphism. Hence we have the map
+$$M_r \overset{\nu_s}{\longrightarrow}N_s \overset{\mu_r}{\longrightarrow} M_r.$$
+By construction, $\mu_r\nu_s$ restricts to an isomorphism from $M_r$ to itself.
+Similarly $\nu_s \mu_r \in \text{End}_A(N_s)$. If $\nu_s\mu_r$ was not at isomorphism, it would be nilpotent by Fitting's lemma (since $N_s$ is indecomposable, if $\nu_s\mu_r$ is not an isomorphism, then $\text{im }((\nu_s\mu_r)^n)=0$)
+But $(\nu_s\mu_r)^n = 0\implies (\mu_r\nu_s)^{n+1} = \mu_r(\nu_s\mu_r)^n\nu_s=0$, which is a contradiction since we established that $\mu_r\nu_s$ is an isomorphism. Therefore, $\nu_s\mu_r$ is an isomorphism as well.
+Thus both $\nu_s,\mu_r$ are isomorphisms so that $M_r \cong N_s$.
+
+Now consider the $A$-module: $(N_1 \oplus \cdots \oplus N_{s-1}) + M_r$.
+This may seem like a proper submodule of $V$. But 
+$$(N_1 \oplus \cdots \oplus N_{s-1}) \cap M_r = \{m \in M_r \:|\: \nu_s(m) =0\}=0$$
+1. First equality comes from the fact that an element $m \in M_r$ is in the direct sum of $N_i$ if $\nu_s(m)=0$.
+2. Second equality holds since we established that $\nu_s$ is an isomorphism from $M_r$ to $N_s$, so $\ker \nu_s = 0$. 
+Since $\dim M_r = \dim N_s$, counting dimensions shows that $V = N_1 \oplus \cdots \oplus N_{s-1} \oplus M_r$. 
+Finally we use the second isomorphism to show:
+$$M_1 \oplus \cdots M_{r-1} \cong V/M_r \cong \frac{N_1 \oplus \cdots \oplus N_{s-1} \oplus M_r}{M_r} \cong N_1 \oplus \cdots \oplus N_{s-1}.$$
+The theorem now follows by induction on $s$. $\square$
+
+## Corollaries
+
+>[!Corollary]
+>Suppose $V \oplus X \cong W \oplus X$ for $A$-modules $V,W,X$. Then $V \cong W$.
+- The proof is a direct and easy application of Krull-Schmidt: Decompose into direct sum of indecomposables, by Krull-Schmidt we can cancel the $X$-terms and the $V$ and $W$ indecomposables are isomorphic up to relabelling.
+
+
