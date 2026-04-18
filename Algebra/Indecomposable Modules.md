@@ -13,6 +13,90 @@
 V = I \oplus W & \text{char} \mathbb{F} \nmid n  \\[3pt]
 V \text{ is indecomp. } & \text{char} \mid n \end{cases}$$
 
+# Principal Indecomposable A-modules (PIM)
+
+>[!definition] 
+>The **principal indecomposable** $A$-modules are the indecomposable direct summands $P_1,...,P_t$ of $A$.
+
+# Idempotents
+
+>[!Definition]
+>- An **idempotent** is a nonzero element $e \in A$ such that $e^2=e$
+>- Two idempotents $f,g$ are **orthogonal** if $fg=gf=0$
+>- An idempotent $e$ is **primitive** if it cannot be written as sum of two orthogonal idempotents
+
+## Example
+
+$A = \text{Mat}_2(\mathbb{F})$. Set $$e = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\quad f=\begin{pmatrix}0 & 0 \\ 0 & 1\end{pmatrix}$$
+Then $e,f$ are orthogonal and $1_A= e+f$. Also $e,f$ are both primitive. 
+
+## Lemma
+
+>[!Lemma]
+>Every $A$-module is a direct sum of indecomposable modules
+##### Proof
+Let $V$ be an $A$-module. If $V$ is indecomposable then we are done. Otherwise $V = X \oplus Y$ for some $X,Y$ proper submodules.
+Then $\dim X , \dim Y \leq \dim V$. By repeating this argument, we can write $X$ and $Y$ as direct sums of indecomposables.
+Hence $V$ is a direct sum of indecomposables.  $\square$
+
+
+>[!lemma] Lemma 8C
+>1. Suppose $e$ is an idempotent in $A$. Then $Ae$ is indecomposable $\iff$ $e$ is primitive
+>2. Suppose $P$ is a principal indecomposable $A$-module. Then $P=Ae$ for some primitive idempotent $e$.
+>3. Suppose $e,f$ are orthogonal idempotents. Then $A(e+f)=Ae\oplus Af$
+
+##### Proof
+
+###### 3. $(\Rightarrow)$
+$(\subseteq)$
+$a(e+f) = ae+af \in Ae \oplus Af$ where $Ae \cap Af= 0$ since $ef=fe=0$.
+
+$(\supseteq)$
+Take $x \in Ae$ and $y \in Af$. Then $x=ae$ and $y=bf$ for some $a,b \in A$. 
+Then 
+$$x+y = ae+bf =a(e+f) + (b-a)f \in A(e+f)$$
+$\square$
+###### 1. 
+Suppose $V$ is an indecomposable summand of $A$. i.e. $A = V \oplus X$ for some $A$-submodule $X$.
+$\implies 1_A = e_v + e_x$ for unique $e_v \in V$, $e_x \in X$.
+
+>[!Claim] 
+>$V = Ae_v$ and $e_v$ and $e_x$ are orthogonal idempotents. 
+
+-  If $v \in V$, then $v = v\cdot 1_A = ve_v + ve_x$.
+  $\implies \underbrace{v - ve_v}_{\in V} = \underbrace{v e_x}_{\in X} \in V \cap X = 0$ 
+  $\implies v = v e_v$ and $ve_x = 0$
+  $\implies V \subseteq Ae_v \subseteq V \implies V = Ae_v$
+  
+  Also $e_v = e_v^2 \implies e_v$ is an idempotent (note that $e_v \neq 0$ since $0 \neq V = Ae_v$) and $e_ve_x = 0$.  
+  By symmetry if $x\in X$ then $x = xe_x$ and $xe_v = 0$ 
+  $\implies e_x = e_x^2$ and $e_xe_v = 0$. 
+
+Finally, if $e_v$ is *not* primitive, then $e_v = f +g$ for orthogonal idempotents $f,g$.
+$\implies V = Ae_v = Af \oplus Ag$  (by part (3))
+This contradicts $V$ being indecomposable so $e_v$ is primitive
+$\square$
+
+>[!success] Moral
+>Indecomposable summands of $A$     $\equiv$     Primtive idempotents in $A$
+
+
+###### 2.
+For $P$ a PIM, write $A \cong P \oplus Q$ for some $A$-module $Q$.
+Now define the projection map: $\pi: A \to P$ and let $e:= \pi(1_A)\in A$.
+
+For any $a \in A$, $\pi(a) = \pi(a\cdot1_A) = a \cdot\pi(1_A)= ae$,
+so every element of $P = \text{im }P$ is of the form $ae$. Thus $P = Ae$.
+
+**Idempotence:** 
+$$e^2 = \pi(1_A)\pi(1_A) = \pi(1_A \cdot 1_A) = \pi(1_A) = e$$
+**Primitivity:**
+Suppose $e = e_1+e_2$ where $e_1,e_2$ are orthogonal idempotents.
+Then by part (3) of Lemma 8C, $Ae = Ae_1 \oplus Ae_2$.
+This would decompose $P$, contradicting the assumption that $P$ is a PIM.
+Hence $e$ must me primitive. $\square$
+
+
 # Fitting's Lemma
 
 >[!lemma] Fitting's Lemma
@@ -61,80 +145,6 @@ $\square$
 >[!theorem] Krull-Schmidt Theorem
 >Let $V$ be an $A$-module such that $V \cong M_1 \oplus \cdots \oplus M_r$ and $V \cong N_1 \oplus \cdots \oplus N_s$ where each $M_i,N_j$ are indecomposable. 
 >Then $r=s$, and after relabelling, $M_i \cong N_i$.
-
 ##### Proof
 ![[Indecomposable Modules-1767786640178.png]]
 $\color{red} \text{REDO THIS PROOF}$
-
-
-# Principal Indecomposable A-modules (PIM)
-
->[!definition] 
->The **principal indecomposable** $A$-modules are the indecomposable direct summands $P_1,...,P_t$ of $A$.
-
-
-
-# Idempotents
-
->[!Definition]
->- An **idempotent** is a nonzero element $e \in A$ such that $e^2=e$
->- Two idempotents $f,g$ are **orthogonal** if $fg=gf=0$
->- An idempotent $e$ is **primitive** if it cannot be written as sum of two orthogonal idempotents
-
-## Example
-
-$A = \text{Mat}_2(\mathbb{F})$. Set $$e = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\quad f=\begin{pmatrix}0 & 0 \\ 0 & 1\end{pmatrix}$$
-Then $e,f$ are orthogonal and $1_A= e+f$. Also $e,f$ are both primitive. 
-
-## Lemma
-
->[!Lemma]
->Every $A$-module is a direct sum of indecomposable modules
-##### Proof
-Let $V$ be an $A$-module. If $V$ is indecomposable then we are done. Otherwise $V = X \oplus Y$ for some $X,Y$ proper submodules.
-Then $\dim X , \dim Y \leq \dim V$. By repeating this argument, we can write $X$ and $Y$ as direct sums of indecomposables.
-Hence $V$ is a direct sum of indecomposables.  $\square$
-
-
->[!lemma] Lemma 8C
->1. Suppose $e$ is an idempotent in $A$. Then $Ae$ is indecomposable $\iff$ $e$ is primitive
->2. Suppose $P$ is a principal indecomposable $A$-module. Then $P=Ae$ for some primitive idempotent $e$.
->3. Suppose $e,f$ are orthogonal idempotents. Then $A(e+f)=Ae\oplus Af$
-
-##### Proof
-
-###### 3. $(\Rightarrow)$
-$(\subseteq)$
-$a(e+f) = ae+af \in Ae \oplus Af$ where $Ae \cap Af= 0$ since $ef=fe=0$.
-
-$(\supseteq)$
-Take $x \in Ae$ and $y \in Af$. Then $x=ae$ and $y=bf$ for some $a,b \in A$. 
-Then $$x+y = ae+bf =a(e+f) + (b-a)f \in A(e+f)$$
-$\square$
-###### 1. 
-Suppose $V$ is an indecomposable summand of $A$. i.e. $A = V \oplus X$ for some $A$-submodule $X$.
-$\implies 1_A = e_v + e_x$ for unique $e_v \in V$, $e_x \in X$.
-
->[!Claim] 
->$V = Ae_v$ and $e_v$ and $e_x$ are orthogonal idempotents. 
-
--  If $v \in V$, then $v = v\cdot 1_A = ve_v + ve_x$.
-  $\implies \underbrace{v - ve_v}_{\in V} = \underbrace{v e_x}_{\in X} \in V \cap X = 0$ 
-  $\implies v = v e_v$ and $ve_x = 0$
-  $\implies V \subseteq Ae_v \subseteq V \implies V = Ae_v$
-  
-  Also $e_v = e_v^2 \implies e_v$ is an idempotent (note that $e_v \neq 0$ since $0 \neq V = Ae_v$) and $e_ve_x = 0$.  
-  By symmetry if $x\in X$ then $x = xe_x$ and $xe_v = 0$ 
-  $\implies e_x = e_x^2$ and $e_xe_v = 0$. 
-
-Finally, if $e_v$ is *not* primitive, then $e_v = f +g$ for orthogonal idempotents $f,g$.
-$\implies V = Ae_v = Af \oplus Ag$  (by part (3))
-This contradicts $V$ being indecomposable so $e_v$ is primitive
-$\square$
-
->[!success] Moral
->Indecomposable summands of $A$     $\equiv$     Primtive idempotents in $A$
-
-
-###### 2.
-NEED TO PROVE
