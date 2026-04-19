@@ -50,7 +50,7 @@ Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nil
 
 ## Radicals of PIMs
 
->[!lemma] 
+>[!lemma] Lemma 8I
 >1. The radical $\text{Rad }A$ of $A$ is a two-sided ideal
 >2. Let $V$ be an $A$-module in $A$. Then $V \cap \text{Rad} A$ is the maximal nilpotent $A$-submodule of $V$
 >3. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad } P = P \cap \text{Rad }A = (\text{Rad }A)e$ is the maximal nilpotent submodule of $P$, which is a proper ideal of $P$.
@@ -273,12 +273,12 @@ Let $I \subseteq \{1,..,z\}$ be minimal such that $V = \sum_{i \in I}D_i$.
 **Claim:** $V = \bigoplus_{i \in I} D_i$.
 If this was not true, there exists $j \in I$ such that $0 \neq d \in D_j \cap \sum_{i \in I \setminus \{j\}} D_i = 0$.
 Then $D_j= Ad$ since $D_j$ is irreducible. So 
-$$D_j \subseteq Ad \subseteq \sum_{ i \in I \setminus \{j\}} AD_j = \sum_{\substack{i \in I \\ i \neq j}} D_i$$
+$$D_j \subseteq Ad \subseteq \sum_{ i \in I \setminus \{j\}} AD_i = \sum_{\substack{i \in I \\ i \neq j}} D_i$$
 Contradicting the minimality of $I$.
 Hence $V = \bigoplus_{i \in I} D_i$. 
 
 ###### 7 -> 1
-If every $A$-module is completely irreducible, then in particular, every PIM is completely reducible. Hence every PIM is irreducible.
+If every $A$-module is completely reducible, then in particular, every PIM is completely reducible. Hence every PIM is irreducible.
 By $(7) \Rightarrow (3)$, $\text{Rad }P=0$.
 Write $A = P_1 \oplus \cdots \oplus P_z$ for $P_i$ indecomposable. 
 $\implies \text{Rad }A = (\text{Rad }P_1)\oplus \cdots \oplus (\text{Rad }P_z) = 0$.
@@ -301,11 +301,65 @@ $\square$
 
 (1) to (2) follows from [[Maschke's Theorem]]. By the last theorem parts (2), (3), (4)
  are equivalent. Only need to show (5) -> (1).
-
+###### 5 -> 1
 We prove by contrapositive that if the characteristic of $\mathbb{F}$ does divide $|G|$, then $\text{Rad }\mathbb{F}G \neq 0$. 
-e.g. in $\mathbb{F}$, $|G| = |G|\cdot 1_{\mathbb{F}}=0$.  Let $x_G = \sum_{x\in G} x$. Then $gx_g =x_g$ for all $g \in G$. So $x_G^2 = |G|x_g = 0$ in $\mathbb{F}G$. Hence $\mathbb{F}x_G$ is a nonzero nilpotent ideal of $\mathbb{F}G$, so $\text{Rad }\mathbb{F}G \neq 0$. 
 
-### Proposition
+In particular in $\mathbb{F}$, $|G| = |G|\cdot 1_{\mathbb{F}}=0$.  Let $x_G = \sum_{x\in G} x$. Then $gx_G =x_G$ for all $g \in G$. So $x_G^2 = |G|x_G = 0$ in $\mathbb{F}G$. Hence $\mathbb{F}x_G$ is a nonzero nilpotent ideal of $\mathbb{F}G$, so $\text{Rad }\mathbb{F}G \neq 0$. 
+$\square$
 
-![[Screenshot 2026-01-15 at 12.42.20 am.png]]
+
+## Quotienting By Radicals
+
+By Artin-Wedderburn theorem we know that 
+$$A \cong \bigoplus_{D \in \text{Irr}(A)} P^{\oplus a_D}$$
+for some $a_D >0$.
+
+Let $R = \text{Rad }A$ and $\overline{A}=A/R = A/\text{Rad }A$.
+
+>[!Proposition]
+>$\overline{A}$ is an $\mathbb{F}$-algebra
 ##### Proof
+By construction $\overline{A}$ is an $\mathbb{F}$-vector space with 
+- $(a+R)+(b+R) = (a+b)+R$
+- $(a+R)(b+R) = ab + R$
+- $\lambda(a+R) = \lambda a+ R$   
+for all $a,b \in A$ and $\lambda \in \mathbb{F}$.
+We need to check that $\overline{A}$ is a ring. Since $A$ is a ring, we just need to make sure multiplication is well-defined. Suppose $a + R = a'+R \iff a-a' \in R$ and $b + R = b' + R \iff b-b' \in R$.
+Now $ab = a(b-b')+ab'=a(b-b') + (a-a')b' + a'b' = a'b'$.  Since the first two terms are in $R$ (and because $R$ is a two-sided ideal). 
+Then $ab + R = a'b' + R$.
+Hence $\overline{A}$ is an $\mathbb{F}$-algebra. $\square$
+
+
+### Theorems
+
+>[!Theorem]
+>1. $\text{Irr}(\overline{A}) = \text{Irr}(A)$
+>	- In particular, every irreducible $\overline{A}$-module is an irreducible $A$-module (and vice-versa)
+>2. If $A \cong \bigoplus_{D \in \text{Irr}(A)} P_D^{\oplus a_D}$, then $\overline{A}\bigoplus_{D \in \text{Irr}(\overline{A})} D^{\oplus a_D}$
+> 	- i.e. $[A :P_D] = [\overline{A}:D]$
+>3. $\overline{A}$ is semisimple
+>4. $A$ is Schurian $\iff$ $\overline{A}$ is Schurian
+>5. $$\dim A \leq \sum_{D \in \text{Irr}(A)}(\dim P_d)(\dim D)\qquad,\qquad \dim \overline{A} \leq \sum_{D \in \text{Irr}(\overline{A})} (\dim D)^2$$
+>   with equality $\iff A$ is Schurian.
+##### Proof
+###### 1. 
+Let $D':=(\text{Rad }A)D$. Since $D$ is irreducible, then $D' =0$. 
+Hence there is a well-defined action of $\overline{A}$ on $D_i$ given by: 
+$$(a+\text{Rad }A)d = ad\qquad \forall d \in D_i, a\in A.$$
+If $d$ is a nonzero element of $D_i$, then $D_i = Ad$ since $D_i$ is irreducible as an $A$-module. Hence $D_i = \overline{A}d$ is also an irreducible $\overline{A}$-module.
+
+For the reverse inclusion, for each $i$, consider $\pi_i:A \to P_i$ the projection map and define $\pi:\overline{A}\to D_1 \oplus \cdots \oplus D_t$ by $\pi(a+\text{Rad }A) = (\pi_1(a)+\text{Rad }P_1,...,\pi_t(a)+\text{Rad }P_t)$  for all $a \in A$.
+
+*Well-definedness:* If $a + \text{Rad }A = a' + \text{Rad }A$, then $a-a' \in \text{Rad }A$ so $\pi_i(a-a') \in \text{Rad }P_i$ since $\text{Rad }P_i = P_i \cap \text{Rad }A$ (by Lemma 8I-3). So $\pi_i(a) + \text{Rad }A = \pi_i(a') + \text{Rad }A$, for all $i$.
+
+*Homomorphism:*  Each $\pi_i$ is an $A$-module homomorphism, and so $\pi$ is an $\overline{A}$-module homomorphism.
+
+
+
+###### 2.
+
+###### 3.
+
+###### 4.
+
+###### 5.

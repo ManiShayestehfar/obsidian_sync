@@ -13,7 +13,14 @@ Recall:   $\text{End}_A(V) = \{T:V\to V \:|\: T \text{ is } \mathbb{F}\text{-lin
 >- $d_1,...,d_t$ be the dimensions of the irreducible $A$-modules, counted up to isomorphism.
 >Then $$A \cong \text{Mat}_{d_1}(\mathbb{F}) \oplus \cdots \oplus \text{Mat}_{d_t}(\mathbb{F})$$ 
 ##### Proof
-ENTER PROOF
+Assignment 1
+
+## Equivalent Formulation
+
+>[!Theorem]
+>Suppose $\text{Rad }A =0$. Then 
+>$$A \cong \bigoplus_{D \in \text{Irr}(A)} \text{Mat}_{a_D}(\mathcal{O}_D)$$
+>where $\mathcal{O}_D = \text{End}_A(D)^{op}$, and $a_D = \frac{\dim D}{\dim \mathcal{O}_D}$
 
 ## Decomposition of $\mathbb{F}G$
 
@@ -53,10 +60,10 @@ Thus
 # Corollaries
 
 >[!Corollary] 
->Suppose $A$ is completely reducible $\mathbb{F}$-algebra with irreducible $\mathbb{F}$-algebra $D_1,...,D_t$. Then $$\dim A \geq \sum_{i=1}^t (\dim D_i)^2$$
+>Suppose $A$ is completely reducible $\mathbb{F}$-algebra with irreducible $\mathbb{F}$-algebra $D_1,...,D_t$. Then $$\dim A \leq \sum_{i=1}^t (\dim D_i)^2$$
 >with equality $\iff A$ is Schurian.
 ##### Proof
-NEED TO PROVE
+Assignment 1
 
 ## Examples
 ### $S_3$
