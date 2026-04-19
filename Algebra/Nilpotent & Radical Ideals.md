@@ -243,21 +243,30 @@ as required. $\square$
 
 >[!Theorem] Theorem 8K
 >Suppose $A$ is a finite dimensional $\mathbb{F}$-algebra. Then TFAE:
->1. The algebra $A$ is semisimple
->2. Every $A$-module is semisimple
->3. Every (principle) indecomposable $A$-module is irreducible
->4. $\text{Rad }A=0$
+>1. The algebra $A$ is semisimple $\iff \text{Rad }A=0$
+>2. Every $A$-module $V$ is semisimple $\iff \text{Rad }V = 0$
+>3. Every PIM is irreducible
+>4. $A$ is completely reducible $\iff$ direct sum of irreducibles
+>5. $A$ is a sum of irreducible $A$-modules (not necessarily direct)
+>6. Every $A$-module is a sum of irreducibles
+>7. Every  $A$-module is completely reducible (direct sum of irreducibles)
 
 ##### Proof
 ###### 1 -> 2
-Recall that $A$ is semisimple if every $A$-module is semisimple. 
+Obvious as $\text{Rad }A=0 \implies \text{Rad }V = (\text{Rad }A)V=0$
 ###### 2 -> 3
-An $A$-module that is semisimple and indecomposable is simple e.g. irreducible
+$P$ a PIM. By (2), $\text{Rad }P =0 \implies P/\text{Rad }P\cong P$. So $P$ is irreducible.
 ###### 3 -> 4
-Let $P$ be some principle indecomposable $A$-module. If $P$ is principle, then by part (1) of the previous theorem, $P/\text{Rad }P$ is irreducible. But since $P$ itself is irreducible then $\text{Rad }P$ must be $0$. Consequently write $A = P_1 \oplus P_2 \oplus ... \oplus P_t$ for indecomposable modules $P_i$. Then $\text{Rad }A = \bigoplus \text{Rad }P_i = 0$. 
-###### 4 -> 1
-Suppose $\text{Rad }A = 0$. Then let $A$ be decomposed into a direct sum of principal indecomposable $A$-modules. i.e. $A = P_1 \oplus P_2 \oplus ... \oplus P_t$. Then $\text{Rad }P_i = (\text{Rad }A)P_i = 0$ for all $i$. Since $\text{Rad }P_i =0$, then $P_i$ must be irreducible by part (1) of previous theorem.  Hence the $A$-modules $P$ are semisimple. Therefore $A$ is semisimple
-$\square$
+Write $A=P_1,...,P_z$ (each a PIM). By (3), each $P_i$ is irreducible, and so $A$ is completely reducible.
+###### 4 -> 5
+Every direct sum is a sum
+###### 5 -> 6
+Write $A = D_1+\cdots + D_z$ (each irreducible $A$-modules). Let $V$ be any $A$-module.
+Then $\Theta: A^{\oplus n} \to V$ is an isomorphism for $n \geq 1$.
+Then $V = \sum_{\substack{1 \leq i \leq n \\ 1 \leq j \leq z}} \text{im }\Theta(D_{ij})$.
+So $A^{\oplus n} = D_{11}+ \cdots  + D_{1z} + \cdots D_{n1} + \cdots D_{nz}$.
+By Schur's lemma, $\Theta|_{D_{ij}}=0$ or $\cong D_{ij}$. Thus $V$ is a sum of irreducible modules.
+
 
 
 ## Corollaries
