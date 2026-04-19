@@ -335,7 +335,7 @@ Hence $\overline{A}$ is an $\mathbb{F}$-algebra. $\square$
 >[!Theorem]
 >1. $\text{Irr}(\overline{A}) = \text{Irr}(A)$
 >	- In particular, every irreducible $\overline{A}$-module is an irreducible $A$-module (and vice-versa)
->2. If $A \cong \bigoplus_{D \in \text{Irr}(A)} P_D^{\oplus a_D}$, then $\overline{A}\bigoplus_{D \in \text{Irr}(\overline{A})} D^{\oplus a_D}$
+>2. If $A \cong \bigoplus_{D \in \text{Irr}(A)} P_D^{\oplus a_D}$, then $\overline{A}\cong\bigoplus_{D \in \text{Irr}(\overline{A})} D^{\oplus a_D}$
 > 	- i.e. $[A :P_D] = [\overline{A}:D]$
 >3. $\overline{A}$ is semisimple
 >4. $A$ is Schurian $\iff$ $\overline{A}$ is Schurian
@@ -348,18 +348,26 @@ Hence there is a well-defined action of $\overline{A}$ on $D_i$ given by:
 $$(a+\text{Rad }A)d = ad\qquad \forall d \in D_i, a\in A.$$
 If $d$ is a nonzero element of $D_i$, then $D_i = Ad$ since $D_i$ is irreducible as an $A$-module. Hence $D_i = \overline{A}d$ is also an irreducible $\overline{A}$-module.
 
-For the reverse inclusion, for each $i$, consider $\pi_i:A \to P_i$ the projection map and define $\pi:\overline{A}\to D_1 \oplus \cdots \oplus D_t$ by $\pi(a+\text{Rad }A) = (\pi_1(a)+\text{Rad }P_1,...,\pi_t(a)+\text{Rad }P_t)$  for all $a \in A$.
+For the converse, notice that if $V$ is an $\overline{A}$-module, then $A$ acts on $V$ via:
+$$a \cdot v = (a+R)v$$
+using the fact that there is an algebra surjection $A \to \overline{A}$ given by $a \mapsto a+R$.
+If $V$ is an irreducible $\overline{A}$-module, it is automatically irreducible as an $A$-module.
+Hence $\text{Irr}(A) = \text{Irr}(\overline{A})$. $\square$
+
+###### 2.
+For each $i$, consider $\pi_i:A \to P_i$ the projection map and define $\pi:\overline{A}\to D_1 \oplus \cdots \oplus D_t$ by $\pi(a+\text{Rad }A) = (\pi_1(a)+\text{Rad }P_1,...,\pi_t(a)+\text{Rad }P_t)$  for all $a \in A$.
 
 *Well-definedness:* If $a + \text{Rad }A = a' + \text{Rad }A$, then $a-a' \in \text{Rad }A$ so $\pi_i(a-a') \in \text{Rad }P_i$ since $\text{Rad }P_i = P_i \cap \text{Rad }A$ (by Lemma 8I-3). So $\pi_i(a) + \text{Rad }A = \pi_i(a') + \text{Rad }A$, for all $i$.
 
 *Homomorphism:*  Each $\pi_i$ is an $A$-module homomorphism, and so $\pi$ is an $\overline{A}$-module homomorphism.
 
-
-
-###### 2.
-
+*Isomorphism:* Notice that if $a \in A$, then $\pi(a + \text{Rad }A)=0 \iff \pi_i(a) \in \text{Rad }P_i$ for all $i$.
+Recall that $Rad A = \text{Rad }P_1 +\cdots + \text{Rad }P_t$. Therefore $\pi_i(a) \in \text{Rad }P_i$ for all $i$ if and only if $a \in \text{Rad }A$. Hence $\pi$ is injective.
+Since $\pi_i(P_i)=D_i$, the map $\pi$ is surjective.
+So $\pi$ is an isomorphism.
 ###### 3.
-
+Using part (2), $\overline{A} = D_1 \oplus \cdots \oplus D_z$ is completely reducible (or semisimple).
 ###### 4.
-
+This follows because if $D$ is a simple $A$-module, then $\text{End}_A(D)\cong \text{End}_{\overline{A}}(D)$ as $\mathbb{F}$-algebras, since the action of $\overline{A}$ on $D$ is given by the action of $A$.
 ###### 5.
+NEED TO PROVE
