@@ -266,6 +266,24 @@ Then $\Theta: A^{\oplus n} \to V$ is an isomorphism for $n \geq 1$.
 Then $V = \sum_{\substack{1 \leq i \leq n \\ 1 \leq j \leq z}} \text{im }\Theta(D_{ij})$.
 So $A^{\oplus n} = D_{11}+ \cdots  + D_{1z} + \cdots D_{n1} + \cdots D_{nz}$.
 By Schur's lemma, $\Theta|_{D_{ij}}=0$ or $\cong D_{ij}$. Thus $V$ is a sum of irreducible modules.
+###### 6 -> 7
+Suppose $V$ is an $A$-module and $V=D_1+\cdots+D_z$ (each irreducible modules).
+Let $I \subseteq \{1,..,z\}$ be minimal such that $V = \sum_{i \in I}D_i$.
+
+**Claim:** $V = \bigoplus_{i \in I} D_i$.
+If this was not true, there exists $j \in I$ such that $0 \neq d \in D_j \cap \sum_{i \in I \setminus \{j\}} D_i = 0$.
+Then $D_j= Ad$ since $D_j$ is irreducible. So 
+$$D_j \subseteq Ad \subseteq \sum_{ i \in I \setminus \{j\}} AD_j = \sum_{\substack{i \in I \\ i \neq j}} D_i$$
+Contradicting the minimality of $I$.
+Hence $V = \bigoplus_{i \in I} D_i$. 
+
+###### 7 -> 1
+If every $A$-module is completely irreducible, then in particular, every PIM is completely reducible. Hence every PIM is irreducible.
+By $(7) \Rightarrow (3)$, $\text{Rad }P=0$.
+Write $A = P_1 \oplus \cdots \oplus P_z$ for $P_i$ indecomposable. 
+$\implies \text{Rad }A = (\text{Rad }P_1)\oplus \cdots \oplus (\text{Rad }P_z) = 0$.
+That is, $A$ is semisimple. 
+$\square$
 
 
 
