@@ -23,3 +23,42 @@ A **Normal Subgroup** $H \leq G$ is defined if $gH = Hg$ for all $g \in G$. We w
 ### Simple Group
 
 A group $G$ is **simple** if it has no proper normal subgroups
+
+
+# Conjugacy
+
+## Conjugate Group Elements
+
+>[!Def]
+>Two elements $x,y \in G$ are **conjugate** if $x = gyg^{-1}$ for some $g \in G$.
+
+- Conjugacy is an equivalence relation, written as $x \sim y$.
+
+## Conjugacy Class
+
+>[!Def]
+>If $x \in G$, then $\mathscr{C}_x = \{gxg^{-1} \:|\: g \in G\} = \{y \in G \:|\: x \sim y\}$ is the **conjugacy class** of $x \in G$.
+>
+
+So
+$$G = \bigsqcup_{\substack{x \text{ conj.} \\ \text{class reps}}} \mathscr{C}_g \tag{Disjoint union}$$
+where $x \sim y \iff \mathscr{C}_x = \mathscr{C}_y$.
+
+### Examples
+
+1. $G$ any group. Then $\mathscr{C}_{1_G} = \{g \cdot 1_G\cdot g^{-1}\:|\: g \in G\} = \{1_G\}$
+2. $G$ any abelian group, and $x \in G$, then $\{gxg^{-1}\:|\: g \in G\} = \{x\}$
+3. $G=S_3$, then the conjugacy classes are 
+$$\{1\}, \{(12),(13),(23)\}, \{(123),(321)\}$$
+	- *Note:* $\text{Irr}(\mathbb{C}S_3)=\{1_G,\varepsilon_g, W \cong \mathbb{F}_3\}$
+
+### Notation
+
+For $x\in G$, $\overline{x}= \sum_{y \in \mathscr{C}_x}y = \sum_{x \sim y}y = \left(\sum_{g \in G} gxg^{-1}\right)$ where the last sum is unnecessarily huge
+
+### Propositions
+
+>[!Proposition]
+>Let $\mathscr{C}_1,...,\mathscr{C}_{x_t}$ be conjugacy classes of $G$.
+>Then $\{\overline{x_i}\:|\: 1 \leq i \leq t\}$ is a basis for $Z(\mathbb{F}G)$
+
