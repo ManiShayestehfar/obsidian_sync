@@ -16,4 +16,5 @@ $$L^p([a,b]) = \left\{\begin{gather} \text{Lebesgue} \\ \text{Measureable} \\ f:
 >[!Theorem] Fisher-Riesz Theorem
 >$(L^p, \|\cdot\|_p)$ is the completion of $(C([a,b]), \|\cdot\|_p)$
 
-*Remark:* As expected, $(L^p, \|\cdot\|_\infty)$ is NOT the completion of $C([a,b]), \|\cdot\|_\infty)$.
+>[!warning] Remark
+As expected, $(L^p, \|\cdot\|_\infty)$ is NOT the completion of $C([a,b]), \|\cdot\|_\infty)$.
