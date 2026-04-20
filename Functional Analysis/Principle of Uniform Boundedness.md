@@ -60,6 +60,33 @@ So $T_n \in \mathcal{L}(\ell_F,\ell_F)$. The pointwise limit is $Tx = (x_1,2x_2,
 This is *NOT* continuous as $\|Te_n\|_2 = n \|e_n\|_2 \to \infty$.
 
 
-
 # Application
 ## Pointwise Non-Convergence of Fourier Series
+
+#### Motivation
+
+Recall the Fourier series of $f \in L_\mathbb{C}^2 ([0,2\pi])$ with respect to Hilbert basis $S = \{e_n(t) \:|\: n\in \mathbb{Z}\}$ where $e_n(t) = \frac{1}{\sqrt{2\pi}}e^{int}$, is 
+$$f= \sum_{n \in \mathbb{Z}} \langle f,e_n \rangle e_n,$$
+where $\langle f, e_n \rangle = \frac{1}{\sqrt{\pi}} \int_0^{2\pi} f(t) e^{-int}\:dt$.
+
+This is only an $L^2$-equality. It was conjectured that
+$$f \in C_{2\pi}([0,2\pi]) \qquad \implies \qquad f(t)= \sum_{n \in \mathbb{Z}} \langle f,e_n \rangle e_n(t)\:\: \forall t \in [0,2\pi].$$
+This is **FALSE**! We can prove this using PUB.
+
+#### Proof of non-convergence of Fourier Series
+>[!Theorem]
+>Let $a \in [0,2\pi]$. There exists $f \in C_{2\pi}([0,2\pi])$ where *no* Fourier series converges at $t=a$
+##### Proof
+Let $X = C_{2\pi}([0,2\pi])$. Then $X$ is a closed subspace of $C([a,b])$ and thus $X$ is Banach with $\|\cdot\|_\infty$.
+If $f \in X$, let 
+$$f_n= \sum_{|k|\leq n} \langle f,e_k \rangle e_k. \tag{$n \in \mathbb{N}$}$$
+For each $n \in \mathbb{N}$, define $T_n: X \to \mathbb{C}$ by:
+$$T_nf = f_n(a)\qquad \forall f \in X.$$
+>[!Claim]
+>$T_n$ is continuous
+###### Proof
+$$\begin{align*}
+f_n &= \sum_{|k|\leq n} \langle f, e_k \rangle e_k(a) \\
+&= \sum_{|k|\leq n} \left(\frac{1}{2\pi} \int_0^{2\pi} f(t) e^{-ikt} \:dt\right) e^{ika} \\
+&= 
+\end{align*}$$
