@@ -29,4 +29,22 @@ Let $U \subseteq X$ be open. Then by OMT $(T^{-1})^{-1}(U) = T(U)$ is open, so $
 #### Example
 Completeness of both $X,Y$ is important.
 Take $T: \ell_F \to \ell_F$ given by $Tx = (x_1/1,x_2/2,x_3/3,...)$ is continuous and bijective.
-Yet $T^{-1}x = (x_1,2x_2,3x_3,...)$
+Yet $T^{-1}x = (x_1,2x_2,3x_3,...)$ is not continuous since $\|T^{-1}e_n\| = n\|e_n\| \to \infty$.
+
+*What if we replaced $\ell_F$ with $\ell^\infty$?*
+Then $T: \ell^\infty \to \ell^\infty$ still still makes sense (i.e. it is continuous and injective).
+However, it fails to be surjective, because if $x \in \ell^\infty$, then $Tx = (x_1/1,x_2/2,...) \in c_0$.
+
+
+>[!Corollary]
+>Let $X,Y$ be Banach. If $T \in \mathcal{L}(X,Y)$ is bijective, then there are constants, $c,C>0$ such that 
+>$$c\|x\| \leq \|Tx\| \leq C\|x\| \qquad \forall x \in X$$
+##### Proof
+NEED TO PROVE
+
+>[!Corollary]
+>Let $(X, \|\cdot\|)$ and $(X, \|\cdot\|')$ be Banach.
+>If $\|x\| \leq C \|x\|'$ for all $x \in X$, then $\|\cdot\|$ and $\|\cdot\|'$ are equivalent.
+
+##### Proof
+NEED TO PROVE
