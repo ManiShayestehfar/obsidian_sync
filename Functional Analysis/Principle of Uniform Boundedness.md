@@ -21,7 +21,7 @@ $$\begin{align*}
 $\implies$ $\|T_\alpha z\|\leq 2m/r$ for all $\alpha \in A$ and all $\|z\| \leq 1$.
 $\implies \|T_\alpha x\|\leq 2m/r \:\|x\|$ for all $\alpha \in A$, and all $x \in X$.  
 $\implies \|T_\alpha\| \leq 2m/r$.
-Thus $\sup_{\alpha \in A} \|T_\alpha\| < \infty$.  
+Thus $\sup_{\alpha \in A} \|T_\alpha\| < \infty$.  $\square$
 
 
 # Corollaries
@@ -60,3 +60,6 @@ So $T_n \in \mathcal{L}(\ell_F,\ell_F)$. The pointwise limit is $Tx = (x_1,2x_2,
 This is *NOT* continuous as $\|Te_n\|_2 = n \|e_n\|_2 \to \infty$.
 
 
+
+# Application
+## Pointwise Non-Convergence of Fourier Series
