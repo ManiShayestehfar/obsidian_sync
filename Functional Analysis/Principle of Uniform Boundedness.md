@@ -5,6 +5,23 @@
 >[!Theorem]
 >Let $X$ be Banach and $Y$ a normed vector space. Let $T_\alpha \in \mathcal{L}(X,Y)$ for $\alpha \in A$. Then
 >$$\sup_{\alpha \in A}\|T_\alpha x\| < \infty \:\:\ \forall x\in X \qquad\implies \qquad \sup_{\alpha \in A} \|T_\alpha\| < \infty$$
+##### Proof
+Let $X_n = \{x \in X \:|\: \|T_\alpha x\|\leq n\:\forall \alpha \in A\}$. 
+These sets are closed (by continuity of $T_\alpha$), and $X = \bigcup_{n=1}^\infty X_n$ (by the hypothesis).
+
+By Baire's Theorem (corollary on closed sets), there is $m \geq 1$ with $\text{int}(X_m) \neq \varnothing$.
+So $x \in \text{int}(X_m)$ and $r >0$ with $B(x_0,r)\subseteq \text{int}(X_m)$.
+If $\|z\|\leq 1$, then $x_0 + rz \in \overline{B(x_0,r)}\subseteq X_m$ ($X_m$ is closed.)
+Hence, for all $\alpha \in A$,
+$$\begin{align*}
+\|T_\alpha(rz)\| &= \|T_\alpha(x_0+rz)- T_\alpha x_0\| \\
+&\leq \|T_\alpha(x_0+rz)\| + \|T_\alpha x_0\|\\
+&\leq m+m = 2m.
+\end{align*}$$
+$\implies$ $\|T_\alpha z\|\leq 2m/r$ for all $\alpha \in A$ and all $\|z\| \leq 1$.
+$\implies \|T_\alpha x\|\leq 2m/r \:\|x\|$ for all $\alpha \in A$, and all $x \in X$.  
+$\implies \|T_\alpha\| \leq 2m/r$.
+Thus $\sup_{\alpha \in A} \|T_\alpha\| < \infty$.  
 
 
 # Corollaries
@@ -38,4 +55,8 @@ So the pointwise limit is $T=0$ (the zero operator), and $\|T_n-T\| = \|T\|=1 \n
 ##### Proof
 Take $\ell_F \subseteq \ell^2$ and let 
 $$T_nx = (x_1,2x_2,3x_3,...,nx_n,0,0,0,...)$$
-Then $\|T_nx\|_2^2 = \sum_{k=1}^n k^2|x_k|^2 \leq$ 
+Then $\|T_nx\|_2^2 = \sum_{k=1}^n k^2|x_k|^2 \leq n^2 \sum_{k=1}^n |x_k|^2 = n^2 \|x\|_2^2$  for all $x \in \ell_F$.
+So $T_n \in \mathcal{L}(\ell_F,\ell_F)$. The pointwise limit is $Tx = (x_1,2x_2,3x_3,...)$.
+This is *NOT* continuous as $\|Te_n\|_2 = n \|e_n\|_2 \to \infty$.
+
+
