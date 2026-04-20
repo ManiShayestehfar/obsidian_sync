@@ -83,10 +83,29 @@ $$f_n= \sum_{|k|\leq n} \langle f,e_k \rangle e_k. \tag{$n \in \mathbb{N}$}$$
 For each $n \in \mathbb{N}$, define $T_n: X \to \mathbb{C}$ by:
 $$T_nf = f_n(a)\qquad \forall f \in X.$$
 >[!Claim]
->$T_n$ is continuous
+>$T_n$ is continuous, and 
+>$$\|T_n\| = \frac{1}{2\pi} \int_0^{2\pi} |D_n(t)|\:dt$$
 ###### Proof
 $$\begin{align*}
-f_n &= \sum_{|k|\leq n} \langle f, e_k \rangle e_k(a) \\
+f_n(a) &= \sum_{|k|\leq n} \langle f, e_k \rangle e_k(a) \\
 &= \sum_{|k|\leq n} \left(\frac{1}{2\pi} \int_0^{2\pi} f(t) e^{-ikt} \:dt\right) e^{ika} \\
-&= 
+&= \frac{1}{2\pi} \int_0^{2\pi} f(t) \left(\sum_{|k|\leq n} e^{ik(a-t)}\right) \:dt \\
+&= \frac{1}{2\pi} \int_0^{2\pi} f(t) D_n(a-t)\:dt \\
+&= \frac{1}{2\pi} \int_0^{2\pi} f(a-t) D_n(t)\:dt \tag{by periodicity}
 \end{align*}$$
+where $D_n(t) := \sum_{|k| \leq n} e^{ikt} = \frac{\sin(n+\tfrac{1}{2})t}{\sin \tfrac{t}{2}}$ is the **Dirichlet kernel**.
+Now 
+$$\begin{align*}
+|T_nf| &= |f_n(a)| \\[2pt]
+&= \frac{1}{2\pi} \left|\int_0^{2\pi} f(a-t) D_n(t) \: dt\right| \\
+&\leq \left(\frac{1}{2\pi} \int_0^{2\pi} |D_n(t)| \: dt\right)\: \|f\|_\infty\\
+\end{align*}$$
+So $T_n$ is continuous and $\|T_n\|\leq \frac{1}{2\pi} \int_0^{2\pi} |D_n(t)| \: dt$. $\square$
+
+Now define the step function
+$$s(t) = \begin{cases}
+1 & D_n(t) \geq 0  \\
+-1 & D_n(t) \leq 0
+\end{cases}$$
+Recall by the [[Lebesgue Spaces|Fisher-Risz Theorem]], that $C([a,b])$ is dense in $L^1$ w.r.t $\|\cdot\|_1$. So the step function can be uniformly approximated in $L^1$-
+
