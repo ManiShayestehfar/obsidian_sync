@@ -100,12 +100,35 @@ $$\begin{align*}
 &= \frac{1}{2\pi} \left|\int_0^{2\pi} f(a-t) D_n(t) \: dt\right| \\
 &\leq \left(\frac{1}{2\pi} \int_0^{2\pi} |D_n(t)| \: dt\right)\: \|f\|_\infty\\
 \end{align*}$$
-So $T_n$ is continuous and $\|T_n\|\leq \frac{1}{2\pi} \int_0^{2\pi} |D_n(t)| \: dt$. $\square$
+So $T_n$ is continuous and $\|T_n\|\leq \frac{1}{2\pi} \int_0^{2\pi} |D_n(t)| \: dt$. 
 
 Now define the step function
 $$s(t) = \begin{cases}
 1 & D_n(t) \geq 0  \\
 -1 & D_n(t) \leq 0
 \end{cases}$$
-Recall by the [[Lebesgue Spaces|Fisher-Risz Theorem]], that $C([a,b])$ is dense in $L^1$ w.r.t $\|\cdot\|_1$. So the step function can be uniformly approximated in $L^1$-
+Recall by the [[Lebesgue Spaces|Fisher-Risz Theorem]], that $C([a,b])$ is dense in $L^1$ w.r.t $\|\cdot\|_1$. So the step function can be uniformly approximated in $L^1$-norm by continuous functions.
+Thus give $\varepsilon >0$, there exists $g \in C_{2\pi}([2,\pi])$ with $\|g\|_\infty =1$  and 
+$$\left|\frac{1}{2\pi} \int_0^{2\pi} (g(a-t)- s(t))\: D_n(t)\:dt\right| < \varepsilon$$
+So 
+$$\left| T_n g - \frac{1}{2\pi} \int_0^{2\pi} |D_n(t)|\: dt\right| < \varepsilon \tag{by definition of $s(t)$}$$
+Hence $\|T_n\| = \frac{1}{2\pi} \int_0^{2\pi} |D_n(t)|\:dt$.     $\square$
 
+
+>[!Claim]
+>$\|T_n\| \to \infty$ as $n \to \infty$.
+###### Proof
+$$\begin{align*}
+\|T_n\|
+&= \frac{1}{2\pi} \int_{0}^{2\pi} \left| \frac{\sin\big((n+\tfrac{1}{2})t\big)}{\sin \tfrac{t}{2}} \right| \, dt \\
+&= \frac{1}{\pi} \int_{0}^{\pi} \left| \frac{\sin\big((n+\tfrac{1}{2})t\big)}{\sin \tfrac{t}{2}} \right| \, dt \\
+&\ge \frac{2}{\pi} \int_{0}^{\pi} \frac{\left|\sin\big((n+\tfrac{1}{2})t\big)\right|}{t} \, dt \tag{$\sin \tfrac{t}{2} \le \tfrac{t}{2}$} \\
+&= \frac{2}{\pi} \int_{0}^{(n+\tfrac{1}{2})\pi} \frac{|\sin t|}{t} \, dt 
+ \tag{change of variables} \\
+&\ge \frac{2}{\pi} \int_{0}^{n\pi} \frac{|\sin t|}{t} \, dt \\
+&= \frac{2}{\pi} \sum_{k=1}^{n} \int_{(k-1)\pi}^{k\pi} \frac{|\sin t|}{t} \, dt \\
+&\ge \frac{2}{\pi} \sum_{k=1}^{n} \frac{1}{k\pi} \int_{(k-1)\pi}^{k\pi} |\sin t| \, dt \\
+&= \frac{4}{\pi^2} \sum_{k=1}^{n} \frac{1}{k}
+\;\longrightarrow\; \infty.
+\end{align*}$$
+And thus the Theorem holds.  $\square$
