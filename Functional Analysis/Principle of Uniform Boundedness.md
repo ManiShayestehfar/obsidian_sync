@@ -63,7 +63,7 @@ This is *NOT* continuous as $\|Te_n\|_2 = n \|e_n\|_2 \to \infty$.
 # Application
 ## Pointwise Non-Convergence of Fourier Series
 
-#### Motivation
+### Motivation
 
 Recall the Fourier series of $f \in L_\mathbb{C}^2 ([0,2\pi])$ with respect to Hilbert basis $S = \{e_n(t) \:|\: n\in \mathbb{Z}\}$ where $e_n(t) = \frac{1}{\sqrt{2\pi}}e^{int}$, is 
 $$f= \sum_{n \in \mathbb{Z}} \langle f,e_n \rangle e_n,$$
@@ -73,7 +73,10 @@ This is only an $L^2$-equality. It was conjectured that
 $$f \in C_{2\pi}([0,2\pi]) \qquad \implies \qquad f(t)= \sum_{n \in \mathbb{Z}} \langle f,e_n \rangle e_n(t)\:\: \forall t \in [0,2\pi].$$
 This is **FALSE**! We can prove this using PUB.
 
-#### Proof of non-convergence of Fourier Series
+
+
+### Proof of non-convergence of Fourier Series
+
 >[!Theorem]
 >Let $a \in [0,2\pi]$. There exists $f \in C_{2\pi}([0,2\pi])$ where *no* Fourier series converges at $t=a$
 ##### Proof
@@ -132,3 +135,13 @@ $$\begin{align*}
 \;\longrightarrow\; \infty.
 \end{align*}$$
 And thus the Theorem holds.  $\square$
+
+### Convergence for Differentiable functions
+
+>[!Theorem] Dirichlet
+>If $f \in C_{2\pi}([0,2\pi])$ is differentiable with continuous derivative, then
+>$$f(t) = \sum_{n \in \mathbb{Z}} \langle f ,e_n \rangle e_n(t) \qquad \forall t \in [0,2\pi]$$
+
+>[!Theorem] (Carelson,1966)
+>If $f \in L^2([0,2\pi])$ then the Fourier series of $f$ converges to $f(t)$ *almost everywhere*.
+
