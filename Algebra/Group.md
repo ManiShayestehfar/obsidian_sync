@@ -15,7 +15,6 @@
    
 - If the operation $\ast$ is **commutative** (i.e., $a \ast b = b \ast a$ for all $a, b \in G$), then the group is called an **abelian group**.
 
-
 ## Normal Subgroup
 
 A **Normal Subgroup** $H \leq G$ is defined if $gH = Hg$ for all $g \in G$. We write $H \trianglelefteq G$.  
@@ -23,6 +22,19 @@ A **Normal Subgroup** $H \leq G$ is defined if $gH = Hg$ for all $g \in G$. We w
 ### Simple Group
 
 A group $G$ is **simple** if it has no proper normal subgroups
+
+# Order
+
+>[!Definition]
+>For $g \in G$, the **order** of $g$, 
+>$$|g|:= \min\{m \geq 0 \:|\: g^m = 1_G\}$$
+
+## Lagrange's Theorem
+
+>[!Theorem]
+> Let $G$ be a finite group and suppose $H$ is a subgroup of $G$. Then $|H| \:|\: |G|$.
+> 
+
 
 
 # Conjugacy
