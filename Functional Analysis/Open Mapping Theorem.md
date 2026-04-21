@@ -12,8 +12,11 @@
 
 # Open Mapping Theorem
 
->[!Theorem]
+>[!Theorem] Banach-Schauder Theorem
 >Let $X,Y$ be Banach. If $T \in \mathcal{L}(X,Y)$ is *surjective*, then $T$ is *open*.
+##### Proof
+
+
 
 ## Corollaries
 ### Bounded Inverse Theorem
