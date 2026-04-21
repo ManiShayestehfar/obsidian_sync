@@ -73,4 +73,14 @@ $$\mathbb{1}_j: \mathbb{F}G \to \mathbb{F}, \qquad \mathbb{1}_j(g) = \begin{case
 Then $\mathbb{1}_j(gh-hg) = \mathbb{1}_j(gh) - \mathbb{1}_j(h^{-1}(hg)h) = \mathbb{1}_j(gh) - \mathbb{1}_j(gh) = 0$ since $\mathbb{1}_j$ is constant on conjugacy classes.
 Hence $\mathbb{1}_j(a) = 0$ for all $a \in T$. So we have a well-defined map $\overline{\mathbb{1}_j}: \mathbb{F}G/T \to \mathbb{F}$ given by $\overline{\mathbb{1}_j}(x+T) = \mathbb{1}_j(x)$.
 Consequently,
-$$0 = \overline{1}_j\left( \sum_{i=1}^t \lambda_i ()\right)$$
+$$0 = \overline{\mathbb{1}}_j\left( \sum_{i=1}^t \lambda_i (x_i +T)\right) = \sum_{i=1}^t\lambda_i \overline{\mathbb{1}}_j(x_i+T) = \lambda_j.$$
+That is, $\lambda_j =0$ for all $j$. Hence $\{x_1+T ,...,x_t+T\}$ is linearly independent.
+Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
+
+>[!Lemma]
+>1. If $a,b \in A$, then $(a+b)^p = a^p + b^p \:(\text{mod } T)$.
+>2. If $T^{[p]}  \{a^p \:|\: a \in T\}$. Then $T^{[p]} \subseteq T$
+>3. Let $T_p := \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \:\: \exists\: n \geq0\}$. Then $T_p = S$.
+##### Proof
+
+
