@@ -9,14 +9,44 @@
 1. $\sin: \mathbb{R} \to \mathbb{R}$ is *NOT* open. e.e.g $\sin(-10,10) = [-1,1]$ (closed)
 2. $f(x) = x$ is open for $f: \mathbb{R} \to \mathbb{R}$.
 
-
+---
 # Open Mapping Theorem
 
 >[!Theorem] Banach-Schauder Theorem
 >Let $X,Y$ be Banach. If $T \in \mathcal{L}(X,Y)$ is *surjective*, then $T$ is *open*.
 ##### Proof
 
+>[!Lemma] Lemma 1
+>Let $T\in \mathcal{L}(X,Y)$. $X,Y$ Banach.
+>The following are equivalent:
+>1. $T$ is open
+>2. $\exists r >0$ such that $B(0,r)\subset T(\overline{B(0,1)})$.
+>3. $\exists r >0$ such that $B(0,r) \subset \overline{T(\overline{B(0,1)})}$
+###### Proof
+NEED TO PROVE
 
+>[!Lemma] Lemma 2
+>Let $S \subseteq V$ (a normed vector space) be *convex* and *symmetric* ($x \in S \implies -x \in S$). Then
+>1. If $\text{int}(S) \neq \varnothing \implies 0 \in \text{int}(S)$
+>2. $\overline{S}$ is also convex and symmetric.
+###### Proof
+**1.** If $x \in \text{int}(S)$, then $\exists \epsilon>0$ such that $B(x,\epsilon) \subseteq S$.
+Then for all $y \in Y$ with $\|y\| < \epsilon$, we have $x\pm y \in S$.
+Since $S$ is symmetric, then $-(x\pm y)\in S$. $\implies x+y,-x+y \in S$.
+Since $S$ is convex, take $\lambda =1/2$: $1/2(x+y) + 1/2(-x+y) = y \in S$.
+So $\forall \|y\| < \epsilon$, $B(0,\epsilon)\subseteq S$.
+
+**2.** is obvious $\square$
+
+If $Y$ is a normed space, for all $n \geq 1$ we can define the map $S_n y := ny$  where $S_n:Y \to Y$ is a *homeomorphism* (check).
+$\implies \forall$ closed set $A \subseteq Y$ we have $\overline{S_n(A)} = S_n(A)$ (since the image of a homeomorphism is closed, since the preimage is closed).
+
+Since $T$ is surjective, we have $Y = \bigcup_{n=1}^$
+
+
+
+
+---
 
 ## Corollaries
 ### Bounded Inverse Theorem
