@@ -39,16 +39,3 @@ Let $X_1,...,X_n$ be vector spaces
 $$X_1+\cdots +X_n \cong X_1 \oplus \cdots \oplus X_n \iff x'\in X_1+\cdots+X_n, \:\:x' = \sum_{i=1}^nx_i\:\:\text{for}\: x_i \in X_i$$
 - In this case $X_1+\dots+X_n$ is the **internal direct sum** of $X_1,\dots X_n$
 
-
-# Commutator Subspace
-
->[!Def]
->Let $A$ be an $\mathbb{F}$-algebra. The **commutator subspace** of $A$ is the vector subspace $[A,A]$ spanned by all elements of the form $[a,b] = ab-ba$, for $a,b \in A$.
-
-- $[A,A]$ is NOT usually a subalgebra or even a ring.
-
-## Lemma
-
->[!Lemma]
->1. Let $A_1,...,A_n$ be $\mathbb{F}$-algebra. Then 
->   $$[A_1 \oplus ]$$
