@@ -64,12 +64,13 @@ As $\{x \:|\: x \in G\}$ is a basis of $\mathbb{F}G$, this implies $\sum_{i=1}^t
 
 ###### 3.
 Suppose $a = \sum_{x\in G}\lambda_x x \in Z(G)$. 
-Then $ga=ag$ for $g \in G$. So $\sum_{x \in G} \lambda_xgx = \sum_{\lambda_x}xg$.
-Comparing the coefficients of $gy \in G$ sides:
-$\lambda_y = \lambda_{g^{-1}yx}$ since $xg=gy \implies x = gyg^{-1}$. So
+Then $ga=ag$ for $g \in G$. So $\sum_{x \in G} \lambda_xgx = \sum_{x \in G} \lambda_x xg$. So
+$$\sum_{x \in G} \lambda_xx = \sum_{x\in G} \lambda_x g^{-1} xg.$$
+Comparing the coefficients of $gy \in G$ on both sides:
+$\lambda_y = \lambda_{g^{-1}yg}$ since $xg=gy \implies y = g^{-1}xg$. So
 $$a = \sum_{i=1}^t \lambda_{x_i}\overline{x_i} \in \text{Span}\{\overline{x_i}\}$$
 $\square$
 
 >[!Corollary]
 >If $\text{char }\mathbb{F} \nmid |G|$, then $\#\text{Irr}(\mathbb{F}G) \leq \#\text{ Conjg. Classes}$.
->
+
