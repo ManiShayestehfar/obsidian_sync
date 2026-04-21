@@ -20,10 +20,19 @@
 >Let $T\in \mathcal{L}(X,Y)$. $X,Y$ Banach.
 >The following are equivalent:
 >1. $T$ is open
->2. $\exists r >0$ such that $B(0,r)\subset T(\overline{B(0,1)})$.
->3. $\exists r >0$ such that $B(0,r) \subset \overline{T(\overline{B(0,1)})}$
+>2. $\exists r >0$ such that $B_Y(0,r)\subset T(\overline{B(0,1)})$.
+>3. $\exists r >0$ such that $B_Y(0,r) \subset \overline{T(\overline{B(0,1)})}$
 ###### Proof
-NEED TO PROVE
+**1 -> 2:**  $0 \in T(B(0,1))$ since $T(0) = 0$. So $\exists r >0$ such that $B_Y(0,r) \subseteq T(\overline{B(0,1)})$.
+
+**2 -> 3:** Clearly $T(\overline{B(0,1)})$ is inside its closure.
+
+**3 -> 1:** Let $U \subseteq X$ be open, and take $x \in U$.
+We need to show $\exists r >0$ such that $\forall y \in B(Tx,r): \: y \in T(U)$. 
+
+Let $y = Tx + rz$ for $z \in B_Y(0,1)$.
+But $rz = y - Tx$. So there exists 
+
 
 >[!Lemma] Lemma 2
 >Let $S \subseteq V$ (a normed vector space) be *convex* and *symmetric* ($x \in S \implies -x \in S$). Then
@@ -41,10 +50,15 @@ So $\forall \|y\| < \epsilon$, $B(0,\epsilon)\subseteq S$.
 If $Y$ is a normed space, for all $n \geq 1$ we can define the map $S_n y := ny$  where $S_n:Y \to Y$ is a *homeomorphism* (check).
 $\implies \forall$ closed set $A \subseteq Y$ we have $\overline{S_n(A)} = S_n(A)$ (since the image of a homeomorphism is closed, since the preimage is closed).
 
-Since $T$ is surjective, we have $Y = \bigcup_{n=1}^$
+Since $T$ is surjective, we have $Y = \bigcup_{n=1}^\infty \overline{T(n \overline{B(0,1)})}$.
+By Baire's Theorem: $\exists n \geq 1$ such that $\text{int}(\overline{T(n\cdot \overline{B(0,1)})})\neq \varnothing$.
+Since $T$ is linear, $T(n \cdot \overline{B(0,1)}) = n\cdot T(\overline{B(0,1)})$.
+Hence $\text{int}(n \cdot\overline{T(\overline{B(0,1)})})\neq \varnothing\ \implies \text{int}(\overline{T(\overline{B(0,1)})})\neq \varnothing$
 
+Applying Lemma 2(b) twice, and the fact that $T(S)$ is convex, symmetric provided that $S$ is convex and symmetric.
 
-
+By Lemma 2(a), $\exists r>0$ such that $B(0,r) \subset \overline{T(\overline{B(0,1)})}$.
+Now by Lemma 1(c), $T$ is open. $\square$
 
 ---
 
