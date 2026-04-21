@@ -30,10 +30,26 @@
 **3 -> 1:** Let $U \subseteq X$ be open, and take $x \in U$.
 We need to show $\exists r >0$ such that $\forall y \in B(Tx,r): \: y \in T(U)$. 
 
-Let $y = Tx + rz$ for $z \in B_Y(0,1)$.
-But $rz = y - Tx$. So there exists 
+Since $U$ is open, $\exists \epsilon>0$ such that $x+ \epsilon \cdot \overline{B(0,1)}\subseteq U$.
+$\implies T(x+ \epsilon \cdot \overline{B(0,1)})\subseteq T(U)$.
+But by linearity of $T$, $\implies T(x+ \epsilon \cdot \overline{B(0,1)}) = T(x) + \epsilon \cdot T(\overline{B(0,1)}) \subseteq T(U)$. 
+Using the assumption, $Tx + \epsilon \cdot B_Y(0,r) \subseteq T(U)$.
+Therefore, $Tx + \epsilon\cdot r B_Y(0,1)\subseteq T(U)\implies B(Tx, \epsilon r) \subseteq T(U)$.
 
+**3 -> 1:** Assume $\exists r > 0$ such that $B_Y(0,r) \subseteq \overline{T(\overline{B(0,1)})}$.
+We need to show $\exists \epsilon >0$ such that $B_Y(0,\epsilon) \subset  \overline{T(\overline{B(0,1)})}$.
 
+*Claim:* $\epsilon = r/2$ works.
+Let $y \in B_Y(0,r/2)$. $\implies 2y \in B_Y(0,r)$.
+By the assumption, $\exists x_1 \in \overline{B_X(0,1)}$ (i.e.e $\|x_1\|\leq 1$) such that $\|2y - Tx_1\|_Y < r/2$. 
+Call $y_1 := 2y-Tx_1$. Then $\|y_1\|\in B_Y(0,r/2)$.
+$\implies \exists x_2 \in \overline{B_X(0,1)}$ (i.e. $\|x_2\| \leq 1$) such that $\|ty_1- Tx_2\| < r/2$.
+
+Doing this procedure $n$-times, we get:
+$\|2^ny - 2^{n-1}Tx_1 - 2^{n-2}Tx_2 - ... - Tx_n\| < r/2$ (where $\|x_j\| \leq 1$)
+Then 
+$$\left\| y - \sum_{k=1}^n \frac{1}{2^k} Tx_k\right\| < \frac{r}{2^{n+1}}.$$
+ 
 >[!Lemma] Lemma 2
 >Let $S \subseteq V$ (a normed vector space) be *convex* and *symmetric* ($x \in S \implies -x \in S$). Then
 >1. If $\text{int}(S) \neq \varnothing \implies 0 \in \text{int}(S)$
