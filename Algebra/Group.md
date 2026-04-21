@@ -29,6 +29,8 @@ A group $G$ is **simple** if it has no proper normal subgroups
 >For $g \in G$, the **order** of $g$, 
 >$$|g|:= \min\{m \geq 0 \:|\: g^m = 1_G\}$$
 
+- For $x \sim y$  $(y = gxg^{-1}) \implies |x|=|y|$.
+
 ## Lagrange's Theorem
 
 >[!Theorem]
