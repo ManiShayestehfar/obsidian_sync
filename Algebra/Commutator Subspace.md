@@ -7,7 +7,7 @@
 
 ## Lemma
 
->[!Lemma]
+>[!Lemma] Lemma 10J
 >1. Let $A_1,...,A_n$ be $\mathbb{F}$-algebra. Then 
 >   $$[A_1 \oplus \cdots \oplus A_n, A_1 \oplus \cdots \oplus A_n] = [A_1,A_1]\oplus \cdots \oplus [A_n,A_n].$$
 >2. $A = \text{Mat}_d(\mathbb{F})$, then $[A,A]= \{a \in A \:|\: \text{tr}(a) = 0\} = \text{SL}(\mathbb{F})$ and $\dim A / [A,A] = 1$.
@@ -16,6 +16,22 @@
 >   Consequently, $\dim A / [A,A] \geq 1$.
 ##### Proof
 Tutorial 8
+
+## Corollary
+
+>[!Corollary]
+>If $A$ is semisimple, then 
+>$$\# \text{Irr}(A) \leq \dim A /[A,A]$$
+>with equality if $A$ is Schurian.
+##### Proof
+Let $\mathcal{O}_i = \text{End}_A D_i$ for $1 \leq i \leq t$.  By Artin-Wedderburn Theorem
+$$A/[A,A] = \left(\bigoplus_{i=1}^t \text{Mat}_{d_i}(\mathcal{O}_i^{op})\right)/[A,A]$$
+where $d_i = \frac{\dim D_i}{\dim \mathcal{O}_i}$.
+Also
+$$
+[A,A] = \left[\bigoplus_D \text{Mat}_{a_D}(\mathcal{O}_D)\:,\:\bigoplus_D \text{Mat}_{a_D}(\mathcal{O}_D) \right] = \bigoplus_{i=1}^t \left[\text{Mat}_{a_D}(\mathcal{O}_D)\:,\:\text{Mat}_{a_D}(\mathcal{O}_D) \right].
+$$
+Hence by Lemma 10J(b), $\dim A/[A/A] \geq t = \text{Irr}(A)$.
 
 
 
