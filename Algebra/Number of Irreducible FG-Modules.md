@@ -50,10 +50,27 @@ Fix a choice $\{x_1,...,x_t\}$ of conjugacy class representatives such that $\{x
 
 >[!Success] Goal
 >$\{x_1+S,...,x_s + S\}$ is a basis of $\mathbb{F}G/S$.
->i.e. $p \mid |x_i|$
+>i.e. $p \mid |x_i| \iff s < i \leq t$
 
 >[!Lemma]
 >$\{x_1+T,...,x_t+ T\}$ is a basis of $\mathbb{F}G/T$
 ##### Proof
-The elements of $G$ give a basis for $\mathbb{F}G$
+###### Spanning 
+The elements of $G$ give a basis for $\mathbb{F}G$, so $\{g +T \:|\: g \in G\}$ spans $\mathbb{F}G/T$.
+If $x \sim y$, then $y = gxg^{-1}$ for some $g \in G$.
+So 
+$$y + T \quad=\quad gxg^{-1}+T \quad=\quad x+ \underbrace{(gxg^{-1} - g^{-1}gx)}_{\in T} + T \quad = \quad x+T$$
+So $\{x_1+T,...,x_t+T\}$ spans $\mathbb{F}G/T$.
 
+###### Linear Independence
+Suppose 
+$$\sum_{i=1}^t \lambda_i(x_i+T) = 0$$
+in $\mathbb{F}G/T$ for some $\lambda_i\in \mathbb{F}$. Let $\mathscr{C}_j$ be the conjugacy class of $x_j$, for $1 \leq j \leq t$. Define the linear indicator map:
+$$\mathbb{1}_j: \mathbb{F}G \to \mathbb{F}, \qquad \mathbb{1}_j(g) = \begin{cases}
+1 & g \in \mathscr{C}_j  \\
+0 & \text{otherweise}
+\end{cases}$$
+Then $\mathbb{1}_j(gh-hg) = \mathbb{1}_j(gh) - \mathbb{1}_j(h^{-1}(hg)h) = \mathbb{1}_j(gh) - \mathbb{1}_j(gh) = 0$ since $\mathbb{1}_j$ is constant on conjugacy classes.
+Hence $\mathbb{1}_j(a) = 0$ for all $a \in T$. So we have a well-defined map $\overline{\mathbb{1}_j}: \mathbb{F}G/T \to \mathbb{F}$ given by $\overline{\mathbb{1}_j}(x+T) = \mathbb{1}_j(x)$.
+Consequently,
+$$0 = \overline{1}_j\left( \sum_{i=1}^t \lambda_i ()\right)$$
