@@ -15,6 +15,11 @@ Fix prime $p >0$.
 >$$\# \text{Irr}(\mathbb{F}G) \:\leq\: \# p'\text{-conjugacy classes}$$
 >with equality of $\mathbb{F}G$ is Schurian.
 ##### Proof
+NEED TO PROVE
+
+
+# Strategy To find $\# \text{Irr}$
+
 $\mathbb{F}G$ is not necessarily semisimple. In turn, we can consider $\overline{\mathbb{F}G} = \mathbb{F}G/ \text{Rad}\mathbb{F}G$.
 But $\text{Rad}\overline{\mathbb{F}G} = 0$ so $\overline{\mathbb{F}G}$ is semisimple. 
 
