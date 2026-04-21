@@ -14,6 +14,7 @@ Fix prime $p >0$.
 >Let $\mathbb{F}$ be a field of characteristic $p \geq 0$. Then 
 >$$\# \text{Irr}(\mathbb{F}G) \:\leq\: \# p'\text{-conjugacy classes}$$
 >with equality of $\mathbb{F}G$ is Schurian.
-
+##### Proof
+NEED TO PROVE
 
 
