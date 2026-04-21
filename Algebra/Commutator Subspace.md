@@ -29,9 +29,17 @@ $$A/[A,A] = \left(\bigoplus_{i=1}^t \text{Mat}_{d_i}(\mathcal{O}_i^{op})\right)/
 where $d_i = \frac{\dim D_i}{\dim \mathcal{O}_i}$.
 Also
 $$
-[A,A] = \left[\bigoplus_D \text{Mat}_{a_D}(\mathcal{O}_D)\:,\:\bigoplus_D \text{Mat}_{a_D}(\mathcal{O}_D) \right] = \bigoplus_{i=1}^t \left[\text{Mat}_{a_D}(\mathcal{O}_D)\:,\:\text{Mat}_{a_D}(\mathcal{O}_D) \right].
+[A,A] = \left[\bigoplus_{i=1}^t \text{Mat}_{d_i}(\mathcal{O}_{i})\:,\:\bigoplus_{i=1}^t \text{Mat}_{d_i}(\mathcal{O}_i) \right] = \bigoplus_{i=1}^t \left[\text{Mat}_{d_i}(\mathcal{O}_i)\:,\:\text{Mat}_{d_{i}}(\mathcal{O}_i) \right].
 $$
-Hence by Lemma 10J(b), $\dim A/[A/A] \geq t = \text{Irr}(A)$.
+Hence by Lemma 10J(c), $\dim A/[A,A] = \sum_{i=1}^t \dim \mathcal{O}_i \geq t = \text{Irr}(A)$. $\square$
+
+>[!Warning] Remark
+>To do the quotienting correctly we need to consider the following:
+>Suppose $V = V_1 \oplus \cdots \oplus V_t$ and $W = W_1 \oplus \cdots \oplus W_t$, where $W_i \subseteq V_i$ (subspaces). Using the third isomorphism theorem for the third equality,
+>$$V/W = (V_1\oplus \cdots V_t)/W = \sum_{i=1}^t (V_i+W)/W \cong \sum_{i=1}^t V_i/(V_i\cap W) = \bigoplus_{i=1}^t V_i/W_i$$
+
+
+
 
 
 
