@@ -17,7 +17,7 @@
 ##### Proof
 
 >[!Lemma] Lemma 1
->Let $T\in \mathcal{L}(X,Y)$. $X,Y$ Banach.
+>Let $T\in \mathcal{L}(X,Y)$. $X$ is Banach, and $Y$ is a normed space.
 >The following are equivalent:
 >1. $T$ is open
 >2. $\exists r >0$ such that $B_Y(0,r)\subset T(\overline{B(0,1)})$.
@@ -36,8 +36,8 @@ But by linearity of $T$, $\implies T(x+ \epsilon \cdot \overline{B(0,1)}) = T(x)
 Using the assumption, $Tx + \epsilon \cdot B_Y(0,r) \subseteq T(U)$.
 Therefore, $Tx + \epsilon\cdot r B_Y(0,1)\subseteq T(U)\implies B(Tx, \epsilon r) \subseteq T(U)$.
 
-**3 -> 1:** Assume $\exists r > 0$ such that $B_Y(0,r) \subseteq \overline{T(\overline{B(0,1)})}$.
-We need to show $\exists \epsilon >0$ such that $B_Y(0,\epsilon) \subset  \overline{T(\overline{B(0,1)})}$.
+**3 -> 2:** Assume $\exists r > 0$ such that $B_Y(0,r) \subseteq \overline{T(\overline{B(0,1)})}$.
+We need to show $\exists \epsilon >0$ such that $B_Y(0,\epsilon) \subset  T(\overline{B(0,1)})$.
 
 *Claim:* $\epsilon = r/2$ works.
 Let $y \in B_Y(0,r/2)$. $\implies 2y \in B_Y(0,r)$.
@@ -48,7 +48,16 @@ $\implies \exists x_2 \in \overline{B_X(0,1)}$ (i.e. $\|x_2\| \leq 1$) such that
 Doing this procedure $n$-times, we get:
 $\|2^ny - 2^{n-1}Tx_1 - 2^{n-2}Tx_2 - ... - Tx_n\| < r/2$ (where $\|x_j\| \leq 1$)
 Then 
-$$\left\| y - \sum_{k=1}^n \frac{1}{2^k} Tx_k\right\| < \frac{r}{2^{n+1}}.$$
+$$\left\| y - \sum_{k=1}^n \frac{1}{2^k} Tx_k\right\| < \frac{r}{2^{n+1}}. \tag{$\ast$}$$
+Then let $x := \sum_{k=1}^\infty \frac{1}{2^k} x_k$. which is absolutely summable. Assuming $X$ is Banach,
+ then $x$ is well-defined.
+Moreover,
+$$\|x\| \leq \sum_{k=1}^\infty \frac{\|x_k\|}{2^k} \leq 1$$
+Thus $x \in \overline{B_X(0,1)}$. 
+By continuity of $T$, $Tx = \sum_{k=1}^\infty \frac{1}{2^k} Tx_k$.
+
+Using $(\ast)$, $\|y - Tx\| < \frac{r}{2^{n+1}}$, then $y = Tx$.
+$\implies y \in T(\overline{B(0,1)}) \implies B_Y(0,r/2) \subset T(\overline{B(0,1)})$.
  
 >[!Lemma] Lemma 2
 >Let $S \subseteq V$ (a normed vector space) be *convex* and *symmetric* ($x \in S \implies -x \in S$). Then
