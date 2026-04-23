@@ -41,7 +41,7 @@ We need to show $\exists \epsilon >0$ such that $B_Y(0,\epsilon) \subset  T(\ove
 
 *Claim:* $\epsilon = r/2$ works.
 Let $y \in B_Y(0,r/2)$. $\implies 2y \in B_Y(0,r)$.
-By the assumption, $\exists x_1 \in \overline{B_X(0,1)}$ (i.e.e $\|x_1\|\leq 1$) such that $\|2y - Tx_1\|_Y < r/2$. 
+By the assumption, $\exists x_1 \in \overline{B_X(0,1)}$ (i.e. $\|x_1\|\leq 1$) such that $\|2y - Tx_1\|_Y < r/2$. 
 Call $y_1 := 2y-Tx_1$. Then $\|y_1\|\in B_Y(0,r/2)$.
 $\implies \exists x_2 \in \overline{B_X(0,1)}$ (i.e. $\|x_2\| \leq 1$) such that $\|ty_1- Tx_2\| < r/2$.
 

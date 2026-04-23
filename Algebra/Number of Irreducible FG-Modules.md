@@ -164,4 +164,13 @@ Hence $g^{p^m}=(xy)^{p^m}= x^{p^m}y^{p^m}= x^{p^m}$ precisely because $|y|=p^m$.
 Then $(g-x)^{p^m}=g^{p^m} -x^{p^m} \:\:(\text{mod }T)=0\:\:(\text{mod }T)$. Hence $(g-x)^{p^m}\in T$, which means $g-x \in T_p = S$. i.e. $g + S = x+ S$ and so $\{x_1+S,...,x_s+S\}$ spans $\mathbb{F}G/S$.
 
 ###### Linear Independence
-Suppose $\sum_{i=1}^s \lambda_i$
+Suppose $\sum_{i=1}^s \lambda_i(x_i+S)= 0$.
+$\sum_{i=1}^s\lambda_i x_i \in S= 0 \implies \sum_{i=1}^s \lambda_i x_i \in S \implies \left(\sum_{i=1}^s \lambda_i x_i\right)^{p^n} \in T$, for some $n \gg 0$.
+
+Hence, $\sum_{i=1}^s \lambda_i^{p^n} x_i^{p^n} \in T$.
+Since $\{x_1+T,...,x_t+T\}$ is a basis of $\mathbb{F}G/T$, the only way that some $\lambda_i \neq 0$ is if $x_i^{p^n} \sim y_j^{p^n}$ for $i \neq j$.
+Write $|G| = qp^N$ with $p \nmid q$.
+Without loss of generality assume $n \geq N$.
+Then $\gcd(q,p^n)=1$, so $1 = aq +bp^N$ for $a,b \in \mathbb{Z}$.
+Therefore, $x_i = x_i^1 = x_i^{aq+bp^N} = (x_i^q)^{a}(x_i^{p^N})^b = (x_i^{p^N})^b$. We have $(x_i^q)^a=1$ by Lagrange's theorem since $x^$ 
+
