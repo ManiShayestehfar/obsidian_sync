@@ -119,5 +119,14 @@ Suppose $\mathbb{F} = \overline{\mathbb{F}}$ is algebraically closed and let $\l
 Consider the Jordan canonical form of $M$ and consider $M^k$ for $k >0$:
 
 ![[Screenshot 2026-04-23 at 3.27.46 pm.png|600]]
-Then, since $\overline{F}$ is a field of characteristic $p >0$,
+Then, since $\overline{\mathbb{F}}$ is a field of characteristic $p >0$,
 $$\text{tr}(M^{p^n}) = \sum_{i=1}^d \lambda_i^{p^n} = \left(\sum_{i=1}^d \lambda_i\right)^{p^n} = (\text{tr}(M))^{p^n}.$$
+So $\text{tr}(M^{p^n})= \text{tr}(M)^{p^n}$.
+
+>[!Remark] Remark
+>If $\mathbb{F}$ is *not* algebraically closed then tis identity still holds because we can embed $\mathbb{F}$ into its algebraic closure.
+
+If $\text{tr}(M)^{p^n}=0$, then $\text{tr}(M) = 0$, so $M^{p^n} \in [\text{Mat}_d(\mathbb{F}),\text{Mat}_d(\mathbb{F})]$ only if $M \in [\text{Mat}_d(\mathbb{F}),\text{Mat}_d(\mathbb{F})]$.
+Under Artin-Wedderburn isomorphism, the element $a + R$ can be written as a linear combination of such matrices, so $a + R \in [\overline{\mathbb{F}G},\overline{\mathbb{F}G}]$ since $(a+R)^{p^n} \in [\overline{\mathbb{F}G},\overline{\mathbb{F}G}]$.
+That is, $a+ R \in (T+R)/R$, so that $a \in T+R = S$.
+Hence $T_p \subseteq S$, which completes the proof. $\square$ 
