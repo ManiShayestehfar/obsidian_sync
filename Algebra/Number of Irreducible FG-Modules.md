@@ -25,6 +25,8 @@ But $\text{Rad}\overline{\mathbb{F}G} = 0$ so $\overline{\mathbb{F}G}$ is semisi
 >[!failure] Notation
 >$$R = \text{Rad }A\qquad,\qquad T = [A,A] \qquad,\qquad S = R+T \qquad,\qquad \overline{A} = A/R = A/\text{Rad }A$$
 
+## Upper bound
+
 >[!Proposition]
 >Let $A$ be a finite dimensional $\mathbb{F}$-algebra. Then
 >$$\# \text{Irr}(A) \leq \dim A/S$$
@@ -46,6 +48,8 @@ Hence $\# \text{Irr}(A) \leq \dim A/S$.  $\square$
 **Now specialise to:** $A = \mathbb{F}G$.
 
 Fix a choice $\{x_1,...,x_t\}$ of conjugacy class representatives such that $\{x_1,...,x_s\}$ is the set of $p'$-conjugacy reps.
+
+## Finding Basis
 
 >[!Success] Goal
 >$\{x_1+S,...,x_s + S\}$ is a basis of $\mathbb{F}G/S$.
@@ -124,9 +128,13 @@ $$\text{tr}(M^{p^n}) = \sum_{i=1}^d \lambda_i^{p^n} = \left(\sum_{i=1}^d \lambda
 So $\text{tr}(M^{p^n})= \text{tr}(M)^{p^n}$.
 
 >[!Remark] Remark
->If $\mathbb{F}$ is *not* algebraically closed then tis identity still holds because we can embed $\mathbb{F}$ into its algebraic closure.
+>If $\mathbb{F}$ is *not* algebraically closed then this identity still holds because we can embed $\mathbb{F}$ into its algebraic closure.
 
 If $\text{tr}(M)^{p^n}=0$, then $\text{tr}(M) = 0$, so $M^{p^n} \in [\text{Mat}_d(\mathbb{F}),\text{Mat}_d(\mathbb{F})]$ only if $M \in [\text{Mat}_d(\mathbb{F}),\text{Mat}_d(\mathbb{F})]$.
 Under Artin-Wedderburn isomorphism, the element $a + R$ can be written as a linear combination of such matrices, so $a + R \in [\overline{\mathbb{F}G},\overline{\mathbb{F}G}]$ since $(a+R)^{p^n} \in [\overline{\mathbb{F}G},\overline{\mathbb{F}G}]$.
 That is, $a+ R \in (T+R)/R$, so that $a \in T+R = S$.
 Hence $T_p \subseteq S$, which completes the proof. $\square$ 
+
+>[!Lemma]
+>1. If $x \sim y$, then $x^k\sim y^k$ for $k \in \mathbb{Z}$
+>2. If $g \in G$, then there exists $x,y \in G$ such that $g = xy=yx$ such that 
