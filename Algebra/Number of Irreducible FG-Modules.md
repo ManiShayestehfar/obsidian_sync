@@ -90,6 +90,7 @@ Hence, $(a+b)^p \equiv a^p + b^p \: (\text{mod }T)$ as claimed.
 
 
 
+
 ###### 3.
 **Forward inclusion:**
 Suppose $a \in \mathbb{F}G$, with $a^{p^n}\in T$ for $n \geq 0$.
