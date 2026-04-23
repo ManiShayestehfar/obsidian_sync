@@ -172,5 +172,12 @@ Since $\{x_1+T,...,x_t+T\}$ is a basis of $\mathbb{F}G/T$, the only way that som
 Write $|G| = qp^N$ with $p \nmid q$.
 Without loss of generality assume $n \geq N$.
 Then $\gcd(q,p^n)=1$, so $1 = aq +bp^N$ for $a,b \in \mathbb{Z}$.
-Therefore, $x_i = x_i^1 = x_i^{aq+bp^N} = (x_i^q)^{a}(x_i^{p^N})^b = (x_i^{p^N})^b$. We have $(x_i^q)^a=1$ by Lagrange's theorem since $x^$ 
+Therefore, $x_i = x_i^1 = x_i^{aq+bp^N} = (x_i^q)^{a}(x_i^{p^N})^b = (x_i^{p^N})^b$. We have $(x_i^q)^a=1$ by Lagrange's theorem since $x^{|G|}=1$. 
+
+Therefore $x_i^{p^n} \sim x_j^{p^n} \implies (x_i^{p^n})^b \sim (x_j^{p^n})^b \implies x_i \sim x_j \implies i =j$.
+Hence $\{x_1^{p^n},...,x_s^{p^n}\}$ are in distinct conjugacy classes.
+As $\sum_{i=1}^s \lambda_i^{p^n}(x_i^{p^n}+S)=0$, then $\lambda_i^{p^n}=0$ for all $i$, which implies $\lambda_i = 0$ for all $1 \leq i \leq s$.
+
+Thus $\{x_1+S,...,x_s+S\}$ is a basis for $\mathbb{F}G/S$, and we are done! $\square$
+
 
