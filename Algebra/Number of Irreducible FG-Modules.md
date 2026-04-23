@@ -82,8 +82,13 @@ Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 >3. Let $T_p := \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \:\: \exists\: n \geq0\}$. Then $T_p = S$.
 ##### Proof
 ###### 1.
-By defin
+By definition $(a+b)^p$ is a sum of $2^p$ terms of the form $a_1a_2...a_p$ where each $a_i \in \{a,b\}$. Now $a_2...a_pa_1 \equiv a_2...a_pa_1 + a_1(a_2...a_p) - (a_2...a_p)a_1 = a_1a_2...a_p (\text{mod }T)$. Extending the argument shows
+$$a_1a_2...a_p + a_2a_3...a_pa_1 + \cdots + a_pa_1...a_{p-1} \equiv p(a_1a_2...a_p)\: (\text{mod }T).$$
+This accounts for all other terms $a_1...a_p$ in $(a+b)^p$ for which all the cyclic permutations of $a_1...a_p$ are distinct as words in $a$ and $b$. All terms except $a^p$ and $b^p$.
+Hence, $(a+b)^p \equiv a^p + b^p \: (\text{mod }T)$ as claimed.
 ###### 2.
+
+
 
 ###### 3.
 **Forward inclusion:**
