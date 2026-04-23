@@ -87,11 +87,20 @@ $$a_1a_2...a_p + a_2a_3...a_pa_1 + \cdots + a_pa_1...a_{p-1} \equiv p(a_1a_2...a
 This accounts for all other terms $a_1...a_p$ in $(a+b)^p$ for which all the cyclic permutations of $a_1...a_p$ are distinct as words in $a$ and $b$. All terms except $a^p$ and $b^p$.
 Hence, $(a+b)^p \equiv a^p + b^p \: (\text{mod }T)$ as claimed.
 ###### 2.
-
-
-
+By part (1), it is enough to show $(ab-ba)^p \in T$,  for  $a,b \in \mathbb{F}G$, since these elements span $T$.
+By part (1) again if $a,b \in \mathbb{F}G$, then
+$$(ab-ba)^p \equiv (ab)^p + (-ba)^p= (ab)^p-(ba)^p = a(ba...) - (ba...)a \equiv 0\:\: (\text{mod }T)$$
+where the second equality follows because $p>0$ (and $-1=1$ in characteristic $2$).
+Hence $(ab-ba)^p \in T$. As $T$ is spanned by these elements, the proof is complete.
 
 ###### 3.
+**Reverse inclusion:**
+By part (2), $T_p = \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \text{ for }n \gg 0\}$.
+Therefore if $a,b \in T_p$, then $a^{p^n},b^{p^n} \in T$ for $n \gg 0$. 
+Hence, using part (1)
+$$(a+b)^{p^n} \equiv (a^p + b^p)^{p^{n-1}} \equiv \cdots \equiv a^{p^n} + b^{p^n} \equiv 0 \:\: (\text{mod }T)$$
+
+
 **Forward inclusion:**
 Suppose $a \in \mathbb{F}G$, with $a^{p^n}\in T$ for $n \geq 0$.
 Then $(a+R)^{p^n} = a^{p^n}+R \in (T+R)/R = S/R = [\overline{\mathbb{F}G},\overline{\mathbb{F}G}]$.
