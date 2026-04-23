@@ -82,7 +82,7 @@ Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 >3. Let $T_p := \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \:\: \exists\: n \geq0\}$. Then $T_p = S$.
 ##### Proof
 ###### 1.
-By definition $(a+b)^p$ is a sum of $2^p$ terms of the form $a_1a_2...a_p$ where each $a_i \in \{a,b\}$. Now $a_2...a_pa_1 \equiv a_2...a_pa_1 + a_1(a_2...a_p) - (a_2...a_p)a_1 = a_1a_2...a_p (\text{mod }T)$. Extending the argument shows
+By definition $(a+b)^p$ is a sum of $2^p$ terms of the form $a_1a_2...a_p$ where each $a_i \in \{a,b\}$. Now $a_2...a_pa_1 \equiv a_2...a_pa_1 + a_1(a_2...a_p) - (a_2...a_p)a_1 = a_1a_2...a_p\:\: (\text{mod }T)$. Extending the argument shows
 $$a_1a_2...a_p + a_2a_3...a_pa_1 + \cdots + a_pa_1...a_{p-1} \equiv p(a_1a_2...a_p)\: (\text{mod }T).$$
 This accounts for all other terms $a_1...a_p$ in $(a+b)^p$ for which all the cyclic permutations of $a_1...a_p$ are distinct as words in $a$ and $b$. All terms except $a^p$ and $b^p$.
 Hence, $(a+b)^p \equiv a^p + b^p \: (\text{mod }T)$ as claimed.
@@ -105,10 +105,19 @@ Therefore, $S = R+T \subseteq T_p$ since $T_p$ is closed under addition.
 
 **Forward inclusion:**
 Suppose $a \in \mathbb{F}G$, with $a^{p^n}\in T$ for $n \geq 0$.
-Then $(a+R)^{p^n} = a^{p^n}+R \in (T+R)/R = S/R = [\overline{\mathbb{F}G},\overline{\mathbb{F}G}]$.
-Now $\overline{\mathbb{F}G} = \overline{\mathbb{F}G}/\text{Rad} \overline{\mathbb{F}G}$ is semisimple, so by [[Artin-Wedderburn Decomp|Artin-Wedderburn]], 
-$$\overline{\mathbb{F}G} \cong \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \text{Mat}_{D}(\mathcal{O}_D)$$
-where $\mathcal{O}_D = \text{End}_{\overline{\mathbb{F}G}}(D)$ is commutative, and $a_D$ as defined before.
+Then 
+$$(a+R)^{p^n} = a^{p^n}+R \in (T+R)/R = S/R = [\overline{\mathbb{F}G},\overline{\mathbb{F}G}].$$
+where the last equality comes from the fact that $S/R = [\overline{A},\overline{A}]$.
+
+Now $\overline{\mathbb{F}G} = \mathbb{F}G/\text{Rad} \mathbb{F}G$ is semisimple, so by [[Artin-Wedderburn Decomp|Artin-Wedderburn]], 
+$$\overline{\mathbb{F}G} \cong \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \text{Mat}_{d}(\mathcal{O}_D)$$
+where $\mathcal{O}_D = \text{End}_{\mathbb{F}G}(D)$ is commutative, and $a_D$ as defined before.
 Also 
-$$[\overline{\mathbb{F}G},\overline{\mathbb{F}G}] = \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \mathfrak{sl}_{D}(\mathcal{O}_D),$$
-where $\mathfrak{sl}_D(\mathcal{O}_D) = \{X \in \text{Mat}_{D}(\mathcal{O}_D) \:|\: \text{tr}(X) = 0\}$.
+$$[\overline{\mathbb{F}G},\overline{\mathbb{F}G}] = \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \mathfrak{sl}_{d}(\mathcal{O}_D),$$
+where $\mathfrak{sl}_D(\mathcal{O}_D) = \{X \in \text{Mat}_{d}(\mathcal{O}_D) \:|\: \text{tr}(X) = 0\}$.
+Suppose $\mathbb{F} = \overline{\mathbb{F}}$ is algebraically closed and let $\lambda_1,...,\lambda_d$ be eigenvalues of a matrix $M \in \text{Mat}_d(\overline{\mathbb{F}})$. 
+Consider the Jordan canonical form of $M$ and consider $M^k$ for $k >0$:
+
+![[Screenshot 2026-04-23 at 3.27.46 pm.png|600]]
+Then, since $\overline{F}$ is a field of characteristic $p >0$,
+$$\text{tr}(M^{p^n}) = \sum_{i=1}^d \lambda_i^{p^n} = \left(\sum_{i=1}^d \lambda_i\right)^{p^n} = (\text{tr}(M))^{p^n}.$$
