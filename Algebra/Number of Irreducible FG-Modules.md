@@ -81,11 +81,8 @@ Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 >2. If $T^{[p]} = \{a^p \:|\: a \in T\}$. Then $T^{[p]} \subseteq T$
 >3. Let $T_p := \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \:\: \exists\: n \geq0\}$. Then $T_p = S$.
 ##### Proof
-NEED TO PROVE
-
-
 ###### 1.
-
+By defin
 ###### 2.
 
 ###### 3.
