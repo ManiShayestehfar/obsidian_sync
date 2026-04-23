@@ -94,12 +94,14 @@ where the second equality follows because $p>0$ (and $-1=1$ in characteristic $2
 Hence $(ab-ba)^p \in T$. As $T$ is spanned by these elements, the proof is complete.
 
 ###### 3.
-**Reverse inclusion:**
+**Reverse inclusion $(S \subseteq T_p)$:**
 By part (2), $T_p = \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \text{ for }n \gg 0\}$.
 Therefore if $a,b \in T_p$, then $a^{p^n},b^{p^n} \in T$ for $n \gg 0$. 
 Hence, using part (1)
-$$(a+b)^{p^n} \equiv (a^p + b^p)^{p^{n-1}} \equiv \cdots \equiv a^{p^n} + b^{p^n} \equiv 0 \:\: (\text{mod }T)$$
-
+$$(a+b)^{p^n} \equiv (a^p + b^p)^{p^{n-1}} \equiv \cdots \equiv a^{p^n} + b^{p^n} \equiv 0 \:\: (\text{mod }T).$$
+Hence, $a+n \in T_p$ by part (2). In particular, $T_p$ is a vector space.
+Now $T \subseteq T_p$ by definition, and $R = \text{Rad}\mathbb{F}G \subseteq T_p$ since $R$ is nilpotent.
+Therefore, $S = R+T \subseteq T_p$ since $T_p$ is closed under addition.
 
 **Forward inclusion:**
 Suppose $a \in \mathbb{F}G$, with $a^{p^n}\in T$ for $n \geq 0$.
