@@ -95,7 +95,6 @@ Then $(a+R)^{p^n} = a^{p^n}+R \in (T+R)/R = S/R = [\overline{\mathbb{F}G},\overl
 Now $\overline{\mathbb{F}G} = \overline{\mathbb{F}G}/\text{Rad} \overline{\mathbb{F}G}$ is semisimple, so by [[Artin-Wedderburn Decomp|Artin-Wedderburn]], 
 $$\overline{\mathbb{F}G} \cong \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \text{Mat}_{D}(\mathcal{O}_D)$$
 where $\mathcal{O}_D = \text{End}_{\overline{\mathbb{F}G}}(D)$ is commutative, and $a_D$ as defined before.
-
 Also 
 $$[\overline{\mathbb{F}G},\overline{\mathbb{F}G}] = \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \mathfrak{sl}_{D}(\mathcal{O}_D),$$
 where $\mathfrak{sl}_D(\mathcal{O}_D) = \{X \in \text{Mat}_{D}(\mathcal{O}_D) \:|\: \text{tr}(X) = 0\}$.
