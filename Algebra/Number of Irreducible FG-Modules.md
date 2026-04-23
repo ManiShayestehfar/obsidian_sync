@@ -15,8 +15,7 @@ Fix prime $p >0$.
 >$$\# \text{Irr}(\mathbb{F}G) \:\leq\: \# p'\text{-conjugacy classes}$$
 >with equality of $\mathbb{F}G$ is Schurian.
 ##### Proof
-NEED TO PROVE
-
+We aim to show this in the proof below.
 
 # Strategy To find $\# \text{Irr}(A)$
 
@@ -44,7 +43,7 @@ by the second isomorphism theorem.
 Hence $\# \text{Irr}(A) \leq \dim A/S$.  $\square$
 
 
-Now specialise to: $A = \mathbb{F}G$.
+**Now specialise to:** $A = \mathbb{F}G$.
 
 Fix a choice $\{x_1,...,x_t\}$ of conjugacy class representatives such that $\{x_1,...,x_s\}$ is the set of $p'$-conjugacy reps.
 
@@ -79,8 +78,24 @@ Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 
 >[!Lemma]
 >1. If $a,b \in A$, then $(a+b)^p = a^p + b^p \:(\text{mod } T)$.
->2. If $T^{[p]}  \{a^p \:|\: a \in T\}$. Then $T^{[p]} \subseteq T$
+>2. If $T^{[p]} = \{a^p \:|\: a \in T\}$. Then $T^{[p]} \subseteq T$
 >3. Let $T_p := \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \:\: \exists\: n \geq0\}$. Then $T_p = S$.
 ##### Proof
+NEED TO PROVE
 
 
+###### 1.
+
+###### 2.
+
+###### 3.
+**Forward inclusion:**
+Suppose $a \in \mathbb{F}G$, with $a^{p^n}\in T$ for $n \geq 0$.
+Then $(a+R)^{p^n} = a^{p^n}+R \in (T+R)/R = S/R = [\overline{\mathbb{F}G},\overline{\mathbb{F}G}]$.
+Now $\overline{\mathbb{F}G} = \overline{\mathbb{F}G}/\text{Rad} \overline{\mathbb{F}G}$ is semisimple, so by [[Artin-Wedderburn Decomp|Artin-Wedderburn]], 
+$$\overline{\mathbb{F}G} \cong \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \text{Mat}_{D}(\mathcal{O}_D)$$
+where $\mathcal{O}_D = \text{End}_{\overline{\mathbb{F}G}}(D)$ is commutative, and $a_D$ as defined before.
+
+Also 
+$$[\overline{\mathbb{F}G},\overline{\mathbb{F}G}] = \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \mathfrak{sl}_{D}(\mathcal{O}_D),$$
+where $\mathfrak{sl}_D(\mathcal{O}_D) = \{X \in \text{Mat}_{D}(\mathcal{O}_D) \:|\: \text{tr}(X) = 0\}$.
