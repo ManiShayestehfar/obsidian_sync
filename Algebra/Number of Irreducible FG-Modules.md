@@ -80,6 +80,9 @@ $$0 = \overline{\mathbb{1}}_j\left( \sum_{i=1}^t \lambda_i (x_i +T)\right) = \su
 That is, $\lambda_j =0$ for all $j$. Hence $\{x_1+T ,...,x_t+T\}$ is linearly independent.
 Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 
+
+## Necessary Lemmas
+
 >[!Lemma]
 >1. If $a,b \in A$, then $(a+b)^p = a^p + b^p \:(\text{mod } T)$.
 >2. If $T^{[p]} = \{a^p \:|\: a \in T\}$. Then $T^{[p]} \subseteq T$
@@ -135,6 +138,30 @@ Under Artin-Wedderburn isomorphism, the element $a + R$ can be written as a line
 That is, $a+ R \in (T+R)/R$, so that $a \in T+R = S$.
 Hence $T_p \subseteq S$, which completes the proof. $\square$ 
 
+
 >[!Lemma]
 >1. If $x \sim y$, then $x^k\sim y^k$ for $k \in \mathbb{Z}$
->2. If $g \in G$, then there exists $x,y \in G$ such that $g = xy=yx$ such that 
+>2. If $g \in G$, then there exists $x,y \in G$ such that $g = xy=yx$ such that $p \nmid |x|$ and $|y| = p^m$ for some $m \geq 0$.
+##### Proof 
+NEED TO PROVE (pretty easy)
+
+## Proving the Goal
+
+>[!Theorem]
+>Let $G$ be a finite group. Then 
+>$$\# \text{Irr}(\mathbb{F}G) \leq \# \:p'\text{-conjugacy classes of } G,$$
+>with equality if $\mathbb{F}G$ is Schurian.
+##### Proof
+Since $\# \text{Irr}(\mathbb{F}G) \leq \dim \mathbb{F}G/S$ (with equality of $\mathbb{F}G$ is Schurian), it is enough to prove $\{x_1+S,...,x_s+S\}$ is a basis for $\mathbb{F}G/S$.
+
+Recall $\{x_1,...,x_s\}\subseteq \{x_1,...,x_t\}$ which is a set of conjugacy class reps for $\mathbb{F}G$.
+We saw that $\{x_1+T,...,x_t+T\}$ is a basis for $\mathbb{F}G/T$.
+Since $T \subseteq S = R+T$, $\{x_1+S,...,x_t+S\}$ spans $\mathbb{F}G/T$.
+
+###### Spanning Set
+Now if $g \in G$, then by the lemma above, $g = xy=yx$ where $p \nmid |x|$ and $|y| = p^m$.
+Hence $g^{p^m}=(xy)^{p^m}= x^{p^m}y^{p^m}= x^{p^m}$ precisely because $|y|=p^m$.
+Then $(g-x)^{p^m}=g^{p^m} -x^{p^m} \:\:(\text{mod }T)=0\:\:(\text{mod }T)$. Hence $(g-x)^{p^m}\in T$, which means $g-x \in T_p = S$. i.e. $g + S = x+ S$ and so $\{x_1+S,...,x_s+S\}$ spans $\mathbb{F}G/S$.
+
+###### Linear Independence
+Suppose $\sum_{i=1}^s \lambda_i$
