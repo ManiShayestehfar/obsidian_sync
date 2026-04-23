@@ -145,7 +145,7 @@ Hence $T_p \subseteq S$, which completes the proof. $\square$
 ##### Proof 
 NEED TO PROVE (pretty easy)
 
-## Proving the Goal
+## Proving Brauer's Theorem
 
 >[!Theorem]
 >Let $G$ be a finite group. Then 
