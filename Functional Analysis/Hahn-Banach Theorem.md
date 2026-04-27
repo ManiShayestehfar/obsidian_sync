@@ -44,7 +44,7 @@ We just showed that $\Theta:X \to X''$ is an isometric embedding. Define $\hat{X
 
 >[!Corollary]
 >Let $X$ be a normed vector space, and $Y \subsetneq X$ a subspace. If $\varphi \in Y'$, then there exists $\tilde{\varphi} \in X'$ such that
->1. $\tilde{\varphi}\mid_Y = \text{id}$
+>1. $\tilde{\varphi}\mid_Y = \varphi$
 >2. $\|\tilde{\varphi}\|_{X'} = \|\varphi\|_{Y'}$
 
 ## Corollary C
