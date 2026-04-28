@@ -44,7 +44,7 @@ Thus $\||\cdot| - p_N\|_\infty \to 0$ as $N \to \infty$.  $\square$
 >Let $\mathcal{A}$ be a unital subalgebra of $C_\mathbb{R}(X)$.
 >Let $f,f_1,...,f_n \in \mathcal{A}$. Then:
 >1. $|f| \in \overline{\mathcal{A}}$,
->2. $\min(f_1,...,f_n), \max(f_1,...,f_n \in \overline{\mathcal{A}})$.
+>2. $\min(f_1,...,f_n), \max(f_1,...,f_n) \in \overline{\mathcal{A}}$.
 ##### Proof
 ###### 1)
 Replace $f$ with $\frac{f}{\|f\|}$ so assume $\|f\|_\infty =1$. 
