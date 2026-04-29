@@ -151,6 +151,66 @@ But $(1,\lambda,\lambda^2,...) \not\in\ell^2$,so $x_1=0$. But then $x=0$ so $\la
 >Let $X$ be Banach over $\mathbb{C}$. Let $T \in \mathcal{L}(X,X)$. Then
 >$$\sigma(p(T))= p(\sigma(T)) = \{ p(\lambda) \:|\: \lambda \in \sigma(T)\}$$
 >for all polynomials $p(t) \in \mathbb{C}[t]$.
+##### Proof
+If $p(t) =\text{constant}$, then $\sigma(p(T)) = \sigma(cI)= \{c\}$, and $p(\sigma(T))= \{c \in \mathbb{C}\:|\: \lambda \in \sigma(T)\} = \{c\}$ as $\sigma(T)\neq\varnothing$.
 
+Suppose $p(t)$ is not constant. Let $\mu \in \mathbb{C}$. By the fundamental theorem of algebra
+$$\mu - p(t)= \alpha(t-\lambda_1)^{m_1}(t-\lambda_2)^{m_2}\cdots(t-\lambda_n)^{m_n}$$
+where $\lambda_i \in \mathbb{C}$ are the distinct roots of $\mu - p(t)$ and so $\mu = p(\lambda_i)$ for some $i$.
+Since $\psi:\mathbb{C}[t]\to \mathcal{L}(X,X)$ given by $t \mapsto T$ is an algebra homomorphism, we have
+$$\mu I-p(T)= \alpha(T-\lambda_1I)^{m_1}\cdots(T-\lambda_n I)^{m_n}$$
+**Note:** If $T_1,...,T_n \in \mathcal{L}(X,X)$ pairwise commute, then $T_1...T_n$ is invertible $\iff$ each $T_i$ is invertible.
+
+Hence, $\mu \in \sigma(p(T)) \iff \mu I - p(T)$ is not invertible $\iff$ $T-\lambda_iI$ is not invertible for some $i$ $\iff$ $\lambda_i \in \sigma(T)$ $\iff$ $\mu=p(\lambda_i)\in p(\sigma(T))$.  $\square$
 
 ## Example
+
+Consider $Tx := (I-L+L^2)x = (x_1-x_2+x_3,x_2-x_3+x_4,...)$
+We saw above that $\sigma(L) = \overline{D(0,1)}$. So by the spectral mapping theorem,
+$$\sigma(T) = \{1-\lambda  +\lambda^2 \in \mathbb{C} \:|\: |\lambda|\leq1 \}$$
+
+
+# Spectral Radius
+
+>[!Definition]
+>Let $X$ be Banach over $\mathbb{C}$. The **spectral radius** of $T \in \mathcal{L}(X,X)$ is 
+>$$r(T)=\sup_{\lambda \in \sigma(T)} |\lambda|$$
+>Importantly, $r(T) \leq \|T\|$
+##### Explanation of inequality
+
+$\sigma(T) \subseteq \{\lambda \in \mathbb{C} \:|\: |\lambda| \leq \|T\|\}$.
+Strict inequality may hold. e.g. $T:\mathbb{C}^2 \to \mathbb{C}^2$ with $\|\cdot\|_2$ with
+$$Tx = \begin{pmatrix}0 & 1 \\ 0 & 0\end{pmatrix}\binom{x_1}{x_2}.$$
+Then $\det(\lambda I -T)= \det \left(\begin{smallmatrix} \lambda & 1 \\ 0 & \lambda \end{smallmatrix} \right) = \lambda^2=0$. 
+So $\sigma(T) = \{0\}$, so $r(T)=0$, yet
+$$\|T\|= \sup_{x_1^2+x_2^2=1}\|Tx\|_2 = \sup_{x_1^2+x_2^2+1}\sqrt{|x_2|^2}= 1.$$
+
+## Example
+
+We want to find $r(T)$ for $T:\ell^2\to \ell^2$ with $T(x)=(x_1-x_2+x_3,x_2-x_3+x_4,...)$.
+We already saw before that $\sigma(T) = \{1 - \lambda + \lambda^2 \:|\: |\lambda|\leq 1\}$.
+So $r(T) \leq 3$. 
+Since $1-(-1)+(-1)^2=3$, then $r(T)=3$.
+
+
+## Gelfand's Theorem
+
+>[!Theorem]
+>Let $X$ be Banach over $\mathbb{C}$. Let $T \in \mathcal{L}(X,X)$. Then 
+>$$r(T) \leq \|T^n\|^{1/n}\qquad \forall n \geq1$$
+>and 
+>$$r(T) = \lim_{n\to\infty} \|T^n\|^{1/n}.$$
+##### Proof
+### Proposition
+
+>[!Proposition]
+>Let $H$ be a Hilbert space over $\mathbb{C}$ and $T \in \mathcal{L}(H,H)$.
+>If $T$ is self-adjoint (i.e. $T^*=T$ or *Hermitian*), then $\|T\|=r(T)$
+##### Proof
+Recall that $\|T^*T\|= \|T\|^2$. Hence $\|T^2\|=\|T\|^2$. So $\|T^{2^n}\|= \|T\|^{2^n}$.
+By Gelfand's Theorem
+$$\begin{align*}
+r(T) &= \lim_{n\to\infty} \|T^n\|^{1/n}\\
+&= \lim_{n\to\infty} \|T^{2^n}\|^{1/2^n}\\
+&= \|T\|   \qquad\square
+\end{align*}$$
