@@ -45,7 +45,6 @@ $$\mathbf{g} = \begin{pmatrix}
 \end{pmatrix}$$
 So $\text{tr}(\mathbf{g}) = \text{tr}(\mathbf{g}^V) + \text{tr}(\mathbf{g}^W)= \chi_V + \chi_W$.
 ###### 6.
-
 Week 9 Tutorial
 
 
@@ -54,11 +53,23 @@ Week 9 Tutorial
 # Examples
 
 ## Trivial 
+
 If $V = I_G=$ trivial representation of $\mathbb{C}G$, then $\chi_{I_G}(g)=1$
 
 ## Symmetric Group
 
+### Fixed Points
 
+$\mathbb{C}G$ acts on $V=\mathbb{C}^n$ as $ge_i = e_{g(i)}$. i.e. $g(\lambda_1, ..., \lambda _n) = (\lambda_{g^{-1}(1)},...,\lambda_{g^{-1}(n)})$.
+
+>[!Claim]
+>$\chi_V(g) = \#\text{Fix}(\mathbf{g})$
+>where $\#\text{Fix}(\mathbf{g}) = \{1 \leq i \leq n \:|\: g(i) = i\}$
+
+- This is clear since w.r.t. the standard basis $\{e_1,...,e_n\}$, the only entries on the diagonal of $\mathbf{g}$ gives the fixed points.
+
+### Standard Character
+$$V \supseteq W = \left\{\right\}$$
 
 
 
