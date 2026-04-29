@@ -67,12 +67,64 @@ so $S$ is the inverse of $\lambda I - T$   $\square$
 
 ##### 2.
 Since we showed boundedness in part (3), we just need to show $\sigma(L)$ is closed.
+The function $f: \mathbb{C}\to \mathcal{L}(X,X)$ given by $\lambda \mapsto \lambda I -T$ is continuous and 
+$$\sigma(T) = f^{-1}(\mathcal{L}(X,X)\setminus GL(X))$$
+where $\mathcal{L}(X,X)\setminus GL(X)$ is a closed set due to the proposition for [[General Linear Group]].
+So $\sigma(T)$ is closed. $\square$
+
 ##### 1.
 
+>[!Definition]
+>The **resolvent set** of $T\in\mathcal{L}(X,X)$ is 
+>$$\rho(T) = \mathbb{C}\setminus \sigma(T).$$
+>Let $R_T: \rho(T) \to \mathcal{L}(X,X)$ given by $\lambda \mapsto (\lambda I - T)^{-1}$ be the **resolvent operator**
+
+>[!Lemma]
+>Let $\varphi\in \mathcal{L}(X,X)'$ and let $f_\varphi= \varphi \circ R_T: \rho(T) \to \mathbb{C}$.
+>Then $f_\varphi$ is analytic on the open set $\rho(T)$.
+###### Proof
+If $\lambda,\lambda_0 \in \rho(T)$ then 
+$$\begin{align*}
+\frac{f_\varphi(\lambda) - f_\varphi(\lambda_0)}{\lambda - \lambda_0} &= \frac{\varphi(R_T(\lambda)) - \varphi(R_T(\lambda_0))}{\lambda - \lambda_0} \\[3pt]
+&= \varphi \left(\frac{R_T(\lambda) - R_T(\lambda_0)}{\lambda - \lambda_0}\right) \\[3pt]
+&= \varphi \left(\frac{(\lambda I -T)^{-1}-(\lambda_0I-T)^{-1}}{\lambda - \lambda_0}\right) \\[3pt]
+&= \varphi \left(\frac{(\lambda_0 I -T)^{-1}(\lambda_0 I - T - \lambda I + T)(\lambda I-T)^{-1}}{\lambda - \lambda_0}\right) \\[3pt]
+&= -\varphi((\lambda I -T)^{-1}(\lambda_0I-T)^{-1})
+\end{align*}$$
+Since $\varphi$ is continuous, and $T \mapsto T^{-1}$ is continuous (by proposition in [[General Linear Group]]), we have
+$$\lim_{\lambda \to \lambda_0} \frac{f_\varphi(\lambda) - f_\varphi(\lambda_0)}{\lambda - \lambda_0} = - \varphi((\lambda_0I-T)^{-2})$$
+$\square$
+
+>[!Corollary]
+>Let $X \neq \{0\}$ be Banach over $\mathbb{C}$, and $T \in \mathcal{L}(X,X)$. Then $\sigma(T)\neq \varnothing$.
+>
+###### Proof
+Suppose $\sigma(T)=\varnothing$. So $\rho(T)=\mathbb{C}$.
+Thus $f_\varphi:\mathbb{C} \to \mathbb{C}$ is analytic on all of $\mathbb{C}$ for all $\varphi \in \mathcal{L}(X,X)'$.
+
+We claim that $f_\varphi$ is also bounded.
+Since $f_\varphi$ is analytic, it is continuous, and so there is $M>0$ with 
+$$|f_\varphi(\lambda)| \leq M \qquad \text{whenever }\: |\lambda|\leq \|T\|.$$
+If $|\lambda| > \|T\|$, then 
+$$\begin{align*}
+|f_\varphi(\lambda)| &= |\varphi((\lambda I-T)^{-1})| \\
+&= \left|\varphi\left(\sum_{k=0}^\infty \frac{1}{\lambda^{k+1}}T^k\right)\right| \\
+&\leq \|\varphi\|\: \sum_{k=0}^\infty \frac{\|T\|^k}{|\lambda|^{k+1}} \\
+&= \frac{\|\varphi\|}{|\lambda|-\|T\|} \longrightarrow 0 \qquad\text{as }|\lambda| \to \infty
+\end{align*}$$
+So $f_\varphi$ is bounded on $\mathbb{C}$, and hence it is constant by *Liouville's Theorem*.
+
+>[!Theorem] Liouville's Theorem
+>If $f:\mathbb{C}\to \mathbb{C}$ is bounded and analytic on all of $\mathbb{C}$, then $f$ is constant.
+
+Since $|f_\varphi(\lambda)|\to 0$ as $|\lambda|\to \infty$, we have $f_\varphi \equiv 0$. But this is true for *all* $\varphi \in \mathcal{L}(X,X)$'.
+
+By Hahn-Banach, $R_T(\lambda)=0$ for all $\lambda \in \mathbb{C}$.
+So $(\lambda I -T)^{-1}=0$ which is a contradiction, as $0 \in \mathcal{L}(X,X)$ is not invertible. $\square$
 
 
 
-
+---
 ### Example
 
 Let $L:\ell^2 \to \ell^2$ be the left shift operator: $Lx = (x_2,x_3,...)$.
@@ -91,3 +143,14 @@ $\vdots$
 $\implies x = x_1(1,\lambda,\lambda^2,...)$
 But $(1,\lambda,\lambda^2,...) \not\in\ell^2$,so $x_1=0$. But then $x=0$ so $\lambda I-L$ is injective (but not surjective).
 
+
+
+# Spectral Mapping Theorem
+
+>[!Theorem]
+>Let $X$ be Banach over $\mathbb{C}$. Let $T \in \mathcal{L}(X,X)$. Then
+>$$\sigma(p(T))= p(\sigma(T)) = \{ p(\lambda) \:|\: \lambda \in \sigma(T)\}$$
+>for all polynomials $p(t) \in \mathbb{C}[t]$.
+
+
+## Example
