@@ -69,7 +69,19 @@ $\mathbb{C}G$ acts on $V=\mathbb{C}^n$ as $ge_i = e_{g(i)}$. i.e. $g(\lambda_1, 
 - This is clear since w.r.t. the standard basis $\{e_1,...,e_n\}$, the only entries on the diagonal of $\mathbf{g}$ gives the fixed points.
 
 ### Standard Character
-$$V \supseteq W = \left\{\right\}$$
+$$V \supseteq W = \left\{(\lambda_1,...,\lambda_n) \:|\: \sum_{i=1}^n \lambda_i =0\right\}$$
+Since $V = W \oplus I$, then $\chi_W = \chi_V - \chi_I$.
+i.e. $\chi_W(g) = \#\text{Fix}(\mathbf{g}) - 1$ 
+
+### $S_3$ Character Table
+
+|                 | $\{1\}$ | $\{i,j\}$ | $\{i,j,k\}$ |
+| --------------- | ------- | --------- | ----------- |
+| $\text{triv}$   | 1       | 1         | 1           |
+| $\text{std}= W$ |         |           |             |
+| $\text{sgn}$    | 1       | -1        | 1           |
+
+
 
 
 
