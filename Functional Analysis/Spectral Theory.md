@@ -201,6 +201,34 @@ Since $1-(-1)+(-1)^2=3$, then $r(T)=3$.
 >and 
 >$$r(T) = \lim_{n\to\infty} \|T^n\|^{1/n}.$$
 ##### Proof
+By spectral mapping theorem
+$$\sigma(T^n)= \{\lambda^n \in \mathbb{C} \:|\: \lambda \in \sigma(T)\}$$
+Hence $r(T^n) = r(T)^n$ for all $n \geq 1$.
+So $r(T)= r(T^n)^{1/n} \leq \|T^n\|^{1/n}$.
+Thus $r(T) \leq \liminf_{n\to \infty} \|T^n\|^{1/n}$. 
+
+We will now prove that $\limsup_{n\to\infty} \|T^n\|^{1/n}\leq r(T)$, which completes the proof.
+Let $\varphi \in \mathcal{L}(X,X)'$ and $f_\varphi:\rho(T) \to \mathbb{C}$ with $f_\varphi(\lambda) = \varphi((\lambda I - T)^{-1})$.
+We previously proved that $f_\varphi$ is analytic on the open set $\rho(T)$, and in particular on the set $\{\lambda \in \mathbb{C} \:|\: |\lambda|> r(T)\}$ by definition of $r(T)$.
+If $|\lambda|> \|T\|$, then from before
+$$f_\varphi(\lambda) = \sum_{k=0}^\infty \frac{1}{\lambda^{k+1}}\varphi(T^{k}) \tag{$\ast$}$$
+![[Spectral Theory-1777457984783.png]]
+Hence by analytic construction $(\ast)$ holds for all $|\lambda|> r(T)$.
+In particular,
+$$\lim_{n\to\infty} \frac{1}{|\lambda|^{n+1}}|\varphi(T^n)|=0 \qquad \forall \varphi \in \mathcal{L}(X,X), \:\:\forall|\lambda|> r(T)$$
+So $\exists M_{\varphi,\lambda}>0$ such that 
+$$\frac{1}{|\lambda|^{n+1}}|\varphi(T^n)| < M_{\varphi,\lambda}$$
+So $|\varphi(\frac{T^n}{\lambda^{n+1}})| < M_{\varphi,\lambda}$.
+So $\left\{\frac{1}{\lambda^{n+1}}T^n \:|\:  n\geq 1\right\}$ is weakly bounded in $\mathcal{L}(X,X)$. So by Principle of Uniform Boundedness and Hahn-Banach theorem, the set is bounded in norm.
+So $\exists M_\lambda >0$ such that 
+$$\left\|\frac{1}{\lambda^{n+1}}T^n\right\| < M_\lambda \qquad \forall n \geq1$$
+So $\|T^n\|^{1/n}\leq |\lambda|\:(|\lambda|M_\lambda)^{1/n}$, and 
+$$\limsup_{n\to \infty} \|T^n\|^{1/n}\leq |\lambda| \qquad \forall |\lambda|> r(T)$$
+So 
+$$\limsup_{n\to\infty} \|T^n\|^{1/n} \leq r(T) \qquad\square$$
+
+
+
 ### Proposition
 
 >[!Proposition]
