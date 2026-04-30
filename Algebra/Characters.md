@@ -73,12 +73,27 @@ $$V \supseteq W = \left\{(\lambda_1,...,\lambda_n) \:|\: \sum_{i=1}^n \lambda_i 
 Since $V = W \oplus I$, then $\chi_W = \chi_V - \chi_I$.
 i.e. $\chi_W(g) = \#\text{Fix}(\mathbf{g}) - 1$ 
 
+
+
+# Character Table
+
+>[!Definition]
+>An **irreducible character** is the character of an irreducible representation
+
+>[!Definition]
+>The **character table** of $G$ is the square matrix with
+>- rows indexed with $\chi_1,...,\chi_t$
+>- columns indexed by conjugacy classes $C_1,...,C_t$
+>- $(i,j)$-th entry is $\chi_i(C_j) = \chi_i(x_j)$ for $x_j \in C_j$
+
+## Examples
+
 ### $S_3$ Character Table
 
 |                 | $\{1\}$ | $\{i,j\}$ | $\{i,j,k\}$ |
 | --------------- | ------- | --------- | ----------- |
 | $\text{triv}$   | 1       | 1         | 1           |
-| $\text{std}= W$ |         |           |             |
+| $\text{std}= W$ | 2       | 0         | -1          |
 | $\text{sgn}$    | 1       | -1        | 1           |
 
 
@@ -99,3 +114,22 @@ i.e. $\chi_W(g) = \#\text{Fix}(\mathbf{g}) - 1$
 Equivalently, $\langle\sum_{g\in G} \lambda_gg, \sum_{h\in G} \mu_h h \rangle = \sum_{g \in G}\lambda_g \mu_{g^{-1}}$
 
 - This is not Hermitian, i.e. $\langle u,v \rangle \neq \overline{\langle u,v\rangle}$ so this is not really an inner product in the usual sense.
+
+>[!Lemma]
+>If $a,b,c \in \mathbb{C}G$, then $\langle-,-\rangle$ is
+>1. **Symmetric:** $\langle a,b \rangle = \langle b, a \rangle$
+>2. **Associative:** $\langle ab, c \rangle = \langle a , bc \rangle$
+>3. **Non-degenerate:** If $\langle a,x \rangle=0\:\: \forall x \in \mathbb{C}G$, then $a = 0$ 
+>
+##### Proof
+For Symmetry and Associativity it is enough to verify it on the basis (due to bilinearity).
+If $g,h,k \in G$, then
+- $\langle g,h \rangle = \delta_{gh^{-1}}= \delta_{hg^{-1}} = \langle h, g \rangle$
+- $\langle gh, k \rangle = \delta_{(gh)k^{-1}} = \delta_{g(hk)^{-1}} = \langle g, hk \rangle$ ??
+- 
+
+>[!Proposition]
+>Let $d_V = \sum_{g \in G}\chi_V(g^{-1})g \in \mathbb{C}G$. Then
+>1. If $a \in \mathbb{C}G$, then $\chi_V(a) = \langle d_V, a \rangle$ 
+>2. $d_V \in Z(\mathbb{C}G)$ 
+##### Proof
