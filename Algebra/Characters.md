@@ -159,4 +159,6 @@ $$\begin{align*}
 &= \langle ad_V, x \rangle
 \end{align*}$$
 So $\langle d_V a - a d_V, x \rangle = 0$ for all $x \in \mathbb{C}G$.
-$\implies d_Va$
+$\implies d_V a - a d_V = 0$ by non-degeneracy.
+$\implies d_V a = a d_V \implies d_V \in Z(\mathbb{C}G)$.  $\square$
+
