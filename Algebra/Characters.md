@@ -129,10 +129,34 @@ If $g,h,k \in G$, then
   since $gh = k^{-1} \iff g = k^{-1}h^{-1} = (hk)^{-1}$
 
 Finally suppose $0 \neq a \in \mathbb{C}G$.
-Write $a = \sum_{}$
+Write $a = \sum_{g \in G} \lambda_g g$  for $\lambda_g \in \mathbb{C}$.
+Since $a \neq 0$, $\lambda_g \neq 0$ for some $g$. Thus $\langle a, g^{-1} \rangle = \lambda_g  \neq 0$.
+Hence $\langle -,- \rangle$ is non-degenerate.  $\square$
 
 >[!Proposition]
 >Let $d_V = \sum_{g \in G}\chi_V(g^{-1})g \in \mathbb{C}G$. Then
 >1. If $a \in \mathbb{C}G$, then $\chi_V(a) = \langle d_V, a \rangle$ 
 >2. $d_V \in Z(\mathbb{C}G)$ 
 ##### Proof
+###### 1.
+It is enough to show $\chi_V(x)= \langle d_V, x \rangle$ for $x \in G$.
+By definition,
+$$\begin{align*}
+\langle d_V,x \rangle &= \left\langle \sum_{g \in G} \chi_V(g^{-1}g), x \right \rangle \\[3pt]
+&= \sum_{g \in G} \chi_V(g^{-1})\: \langle g,x \rangle \\
+&= \chi_V(x)
+\end{align*}$$
+###### 2.
+We want $d_V \in Z(\mathbb{C}G) \iff d_Va =ad_V\qquad \forall a \in \mathbb{C}G$. 
+Let $x \in \mathbb{C}G$. Then
+$$\begin{align*}
+\langle d_Va, x \rangle &= \langle d_V,ax \rangle \\
+&= \chi_V(ax) \\
+&= \chi_V(xa) \\
+&= \langle d_V, xa \rangle \\
+&= \langle xa, d_V \rangle \\
+&= \langle x, ad_V \rangle \\
+&= \langle ad_V, x \rangle
+\end{align*}$$
+So $\langle d_V a - a d_V, x \rangle = 0$ for all $x \in \mathbb{C}G$.
+$\implies d_Va$
