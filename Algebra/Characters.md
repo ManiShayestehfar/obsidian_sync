@@ -99,11 +99,6 @@ i.e. $\chi_W(g) = \#\text{Fix}(\mathbf{g}) - 1$
 
 
 
-
-
-
-
-
 --- 
 # Inner Product
 
@@ -161,4 +156,8 @@ $$\begin{align*}
 So $\langle d_V a - a d_V, x \rangle = 0$ for all $x \in \mathbb{C}G$.
 $\implies d_V a - a d_V = 0$ by non-degeneracy.
 $\implies d_V a = a d_V \implies d_V \in Z(\mathbb{C}G)$.  $\square$
+
+---
+
+# Character of Regular Representation
 
