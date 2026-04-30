@@ -126,7 +126,10 @@ For Symmetry and Associativity it is enough to verify it on the basis (due to bi
 If $g,h,k \in G$, then
 - $\langle g,h \rangle = \delta_{gh^{-1}}= \delta_{hg^{-1}} = \langle h, g \rangle$
 - $\langle gh, k \rangle = \delta_{(gh)k^{-1}} = \delta_{g(hk)^{-1}} = \langle g, hk \rangle$ ??
-- 
+  since $gh = k^{-1} \iff g = k^{-1}h^{-1} = (hk)^{-1}$
+
+Finally suppose $0 \neq a \in \mathbb{C}G$.
+Write $a = \sum_{}$
 
 >[!Proposition]
 >Let $d_V = \sum_{g \in G}\chi_V(g^{-1})g \in \mathbb{C}G$. Then
