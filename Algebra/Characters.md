@@ -273,4 +273,11 @@ $$\langle\chi, \psi \rangle = \frac{1}{|G|} \langle d_\chi, d_\psi \rangle.$$
 >$$\langle \chi_i, \chi_j \rangle = \delta_{ij}$$
 ##### Proof
 By definition 
+$$\langle\chi_i, \chi_j \rangle = \frac{1}{|G|}\sum_{g \in G} \chi_i(g^{-1})\chi_j(g) = \frac{1}{|G|}\chi_i\left(\sum_{g \in G} \chi_i(g^{-1})g\right) = \frac{1}{|G|}\chi_j(d_i)$$
+Recall that $e_i = \frac{\chi_i(1)}{|G|}d_i$, then
+$$\frac{1}{|G|}\chi_j(d_i) = \frac{1}{|G|} \cdot \frac{|G|}{\chi_i(1)}\chi_j(e_i) = \begin{cases}
+1 & i = j  \\
+0 & i \neq j
+\end{cases} = \delta_{ij}$$
+since $e_i$ acts on $D_i$ as identity and as the zero map on $D_j \subseteq B_j$. $\square$
 
