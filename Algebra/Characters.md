@@ -189,6 +189,18 @@ $$\begin{align*}
 \end{align*}$$
 
 Recall:
-$D_1,...,D_t$ irreducible $\mathbb{C}G$-modules, with $\chi_1,...,\chi_t$ where $\chi_i = \chi_{D_i}$.
-$\mathbb{C}G= B_1 \oplus \cdots \oplus B_t$ where $B_i$ is the $D_i$-th isotopic factor of $\mathbb{C}G$.
+- $D_1,...,D_t$ irreducible $\mathbb{C}G$-modules, with $\chi_1,...,\chi_t$ where $\chi_i = \chi_{D_i}$.
+  $\mathbb{C}G= B_1 \oplus \cdots \oplus B_t$ where $B_i$ is the $D_i$-th isotopic factor of $\mathbb{C}G$.
+- $1_G = e_1+\cdots+e_t$ for unique $e_i \in B_i$ $\implies r_ir_j = \delta_{ij} e_i$
+- $e_i \in Z(B_i) = \mathbb{C}\cdot e_i$
+- $B_i \cong \text{Mat}_{\chi_i(1)}(\mathbb{C})$ where $\chi_i(1) = \dim D_i$
 
+
+
+# Central Idempotents from Characters
+
+>[!Theorem]
+>Suppose $1 \leq i \leq t$, then
+>$$e_i = \frac{\chi_i(1)}{|G|} d_i = \frac{\chi_i(1)}{|G|}\sum_{g \in G}\chi_i(g^{-1})g$$
+##### Proof
+If 
