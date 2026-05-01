@@ -203,4 +203,9 @@ Recall:
 >Suppose $1 \leq i \leq t$, then
 >$$e_i = \frac{\chi_i(1)}{|G|} d_i = \frac{\chi_i(1)}{|G|}\sum_{g \in G}\chi_i(g^{-1})g$$
 ##### Proof
-If 
+If $x \in \mathbb{C}G$, then $x = 1_G x = (e_1 + \cdots + e_t)x= e_1x+e_2x +\cdots +e_t x$.
+By definition, if $1 \leq j \leq t$ then $e_j x \in B_j$ since $B_j$ is a two-sided ideal.
+
+Now $D_i$ is isomorphic to a summand of $B_i$. If $e_j x \in B_j$, then $e_jx D_i = 0$ if $j \neq i$, because $e_jx D_i \subseteq B_j\cdot B_i\subseteq B_j \cap B_i = 0$. 
+$\implies \chi_i(e_jx) = 0$.
+Hence, if $j \neq i$ and $$
