@@ -137,7 +137,7 @@ Hence $\langle -,- \rangle$ is non-degenerate.  $\square$
 It is enough to show $\chi_V(x)= \langle d_V, x \rangle$ for $x \in G$.
 By definition,
 $$\begin{align*}
-\langle d_V,x \rangle &= \left\langle \sum_{g \in G} \chi_V(g^{-1}g), x \right \rangle \\[3pt]
+\langle d_V,x \rangle &= \left\langle \sum_{g \in G} \chi_V(g^{-1})g, x \right \rangle \\[3pt]
 &= \sum_{g \in G} \chi_V(g^{-1})\: \langle g,x \rangle \\
 &= \chi_V(x)
 \end{align*}$$
@@ -156,6 +156,19 @@ $$\begin{align*}
 So $\langle d_V a - a d_V, x \rangle = 0$ for all $x \in \mathbb{C}G$.
 $\implies d_V a - a d_V = 0$ by non-degeneracy.
 $\implies d_V a = a d_V \implies d_V \in Z(\mathbb{C}G)$.  $\square$
+
+
+## Character Inner Product
+
+>[!Definition]
+>Let $\chi$ and $\psi$ be characters of two $\mathbb{C}G$-modules. Then
+>$$\begin{align*}
+\langle \chi , \psi \rangle &= \frac{1}{|G|} \sum_{g \in G} \chi(g^{-1})\psi(g) \in \mathbb{C} \\[3pt]
+&= \frac{1}{|G|} \sum_{g \in G} \chi(g)\psi(g^{-1})
+\end{align*}$$
+
+- $x \sim y \implies \chi(x) = \chi(y)$
+- Also $y = gxg^{-1} \iff y^{-1} = (gxg^{-1})^{-1} = gx^{-1}g^{-1}$. So $y^{-1}\sim x^{-1}$.
 
 ---
 
@@ -220,4 +233,7 @@ Thus
 $$d_i = \frac{|G|}{\chi_i(1)}e_i \iff e_i = \frac{\chi_i(1)}{|G|}d_i\qquad \square$$
 
 >[!Corollary] 
->$\mathbb{C}G = \bigoplus_{i=1}$
+>$\mathbb{C}G = \bigoplus_{i=1}\bigoplus_{j=1}^{\chi_i(1)} D_{ij}$  with $D_{ij}\cong D_i$. Then
+>$1_G = e_1 + \cdots + e_t = \sum_{i=1}^t\sum_{j=1}^{\chi_i(1)} e_{ij}$. Importantly
+>$$e_i = \sum_{j=1}^{\chi_i(1)} e_{ij}$$
+>where the left hand side is a *unique* central primitive idempotent, but $e_{ij}$ is a *non-unique* primitive idempotent (not central).
