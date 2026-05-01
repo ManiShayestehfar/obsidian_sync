@@ -171,5 +171,16 @@ $\rho = \chi_{\mathbb{C}G}$ is the character of the regular representation of $\
 \end{cases}$$
 Consequently $d_{rho} = d_{\mathbb{C}G}= |G|1_G$.
 Moreover, if $V$ is any $\mathbb{C}G$-module, then $\rho(d) = |G|\chi_V(1)=|G|\dim V$.
-
-
+##### Proof
+The elements $\{x \:|\: x \in G\}$ gives a basis for $\mathbb{C}G$. If $g \in G$, then $gx=x \iff g = 1_G$.
+So 
+$$\rho(g) = \begin{cases}
+|G| & g = 1_G  \\
+0 & g \neq 1_G
+\end{cases}$$
+By definition, $d_\rho = \sum_{g \in G} \rho(g^{-1})g = |G|1_G$.
+Finally, if $V$ is a $\mathbb{C}G$-module, then
+$$\begin{align*}
+\rho(d_V) = \langle d_\rho, d_V \rangle &= \langle |G|\cdot 1_G, d_V \rangle \\
+&= 
+\end{align*}$$
