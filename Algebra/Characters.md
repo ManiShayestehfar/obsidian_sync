@@ -167,7 +167,7 @@ $\rho = \chi_{\mathbb{C}G}$ is the character of the regular representation of $\
 |G| & g = 1_G  \\
 0 & \text{otherwise}
 \end{cases}$$
-Consequently $d_{rho} = d_{\mathbb{C}G}= |G|1_G$.
+Consequently $d_{\rho} = d_{\mathbb{C}G}= |G|1_G$.
 Moreover, if $V$ is any $\mathbb{C}G$-module, then $\rho(d) = |G|\chi_V(1)=|G|\dim V$.
 ##### Proof
 The elements $\{x \:|\: x \in G\}$ gives a basis for $\mathbb{C}G$. If $g \in G$, then $gx=x \iff g = 1_G$.
@@ -238,3 +238,39 @@ $$d_i = \frac{|G|}{\chi_i(1)}e_i \iff e_i = \frac{\chi_i(1)}{|G|}d_i\qquad \squa
 - $x \sim y \implies \chi(x) = \chi(y)$
 - Also $y = gxg^{-1} \iff y^{-1} = (gxg^{-1})^{-1} = gx^{-1}g^{-1}$. So $y^{-1}\sim x^{-1}$.
   So $\chi(g^{-1})\psi(g)$ is **conjugacy class invariant**
+
+## In terms of Conjugacy Classes
+
+>[!Corollary]
+>If $C_1,...,C_t$ are conjugacy classes of $G$, and we fix $x_i \in C_i$ for $1 \leq i \leq t$, then
+>$$\langle\chi, \psi \rangle = \frac{1}{|G|}\sum_{g \in G} \chi(g^{-1})\psi(g) = \frac{1}{|G|}\sum_{i=1}^t |C_i| \chi(x_i^{-1})\psi(x_i)$$
+
+### Properties
+
+- Since character is linear, $\langle -,- \rangle$ is a bilinear function
+- $\langle \chi, \psi \rangle = \langle \psi, \chi \rangle$ 
+
+#### Character Inner product in terms of $d$
+An important but trivial observation:
+
+$$\begin{align*}
+\langle \chi, \psi \rangle &= \frac{1}{|G|}\sum_{g \in G} \chi(g^{-1})\psi(g) \\
+&= \frac{1}{|G|}\psi\left(\sum_{g \in G}\chi(g^{-1})g\right) \tag{by linearity of $\psi$} \\
+&= \frac{1}{|G|}\psi(d_\chi) 
+\end{align*}$$
+But 
+$$\langle d_\chi, d_\psi\rangle = \left \langle\sum_{g \in G}\chi(g^{-1})g,\: \sum_{h \in G}\psi(h^{-1})h\right \rangle = \sum_{g,h \in G} \chi(g^{-1})\psi(h^{-1}) \langle g,h \rangle = \sum_{g\in G} \chi(g^{-1})\psi(g) = |G|\langle\chi ,\psi \rangle $$
+where the second-last equality holds since $\langle g , h \rangle = 1 \iff h = g^{-1}$ and $0$ otherwise.
+Thus
+$$\langle\chi, \psi \rangle = \frac{1}{|G|} \langle d_\chi, d_\psi \rangle.$$
+- Importantly, the left-hand-side is a *character bilinear form*, whereas the right-hand-side is a *$\mathbb{C}G$ bilinear form*.
+
+
+# Row Orthogonality
+
+>[!Theorem]
+>Suppose $1 \leq i,j \leq t$. Then 
+>$$\langle \chi_i, \chi_j \rangle = \delta_{ij}$$
+##### Proof
+By definition 
+
