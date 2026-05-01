@@ -7,7 +7,7 @@
 
 - $\chi_V$ extends linearly to a function $\chi_V: \mathbb{C}G \to \mathbb{C}$.
 
-# Properties
+## Properties
 
 >[!proposition]
 >Let $V,W$ be $\mathbb{C}G$-modules and $\chi_V,\chi_W$ their characters. Then
@@ -87,7 +87,6 @@ i.e. $\chi_W(g) = \#\text{Fix}(\mathbf{g}) - 1$
 >- $(i,j)$-th entry is $\chi_i(C_j) = \chi_i(x_j)$ for $x_j \in C_j$
 
 ## Examples
-
 ### $S_3$ Character Table
 
 |                 | $\{1\}$ | $\{i,j\}$ | $\{i,j,k\}$ |
@@ -95,9 +94,6 @@ i.e. $\chi_W(g) = \#\text{Fix}(\mathbf{g}) - 1$
 | $\text{triv}$   | 1       | 1         | 1           |
 | $\text{std}= W$ | 2       | 0         | -1          |
 | $\text{sgn}$    | 1       | -1        | 1           |
-
-
-
 
 --- 
 # Inner Product
@@ -158,17 +154,6 @@ $\implies d_V a - a d_V = 0$ by non-degeneracy.
 $\implies d_V a = a d_V \implies d_V \in Z(\mathbb{C}G)$.  $\square$
 
 
-## Character Inner Product
-
->[!Definition]
->Let $\chi$ and $\psi$ be characters of two $\mathbb{C}G$-modules. Then
->$$\begin{align*}
-\langle \chi , \psi \rangle &= \frac{1}{|G|} \sum_{g \in G} \chi(g^{-1})\psi(g) \in \mathbb{C} \\[3pt]
-&= \frac{1}{|G|} \sum_{g \in G} \chi(g)\psi(g^{-1})
-\end{align*}$$
-
-- $x \sim y \implies \chi(x) = \chi(y)$
-- Also $y = gxg^{-1} \iff y^{-1} = (gxg^{-1})^{-1} = gx^{-1}g^{-1}$. So $y^{-1}\sim x^{-1}$.
 
 ---
 
@@ -237,3 +222,19 @@ $$d_i = \frac{|G|}{\chi_i(1)}e_i \iff e_i = \frac{\chi_i(1)}{|G|}d_i\qquad \squa
 >$1_G = e_1 + \cdots + e_t = \sum_{i=1}^t\sum_{j=1}^{\chi_i(1)} e_{ij}$. Importantly
 >$$e_i = \sum_{j=1}^{\chi_i(1)} e_{ij}$$
 >where the left hand side is a *unique* central primitive idempotent, but $e_{ij}$ is a *non-unique* primitive idempotent (not central).
+
+---
+
+
+# Character Inner Product
+
+>[!Definition]
+>Let $\chi$ and $\psi$ be characters of two $\mathbb{C}G$-modules. Then
+>$$\begin{align*}
+\langle \chi , \psi \rangle &= \frac{1}{|G|} \sum_{g \in G} \chi(g^{-1})\psi(g) \in \mathbb{C} \\[3pt]
+&= \frac{1}{|G|} \sum_{g \in G} \chi(g)\psi(g^{-1})
+\end{align*}$$
+
+- $x \sim y \implies \chi(x) = \chi(y)$
+- Also $y = gxg^{-1} \iff y^{-1} = (gxg^{-1})^{-1} = gx^{-1}g^{-1}$. So $y^{-1}\sim x^{-1}$.
+  So $\chi(g^{-1})\psi(g)$ is **conjugacy class invariant**
