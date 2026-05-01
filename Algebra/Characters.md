@@ -208,4 +208,16 @@ By definition, if $1 \leq j \leq t$ then $e_j x \in B_j$ since $B_j$ is a two-si
 
 Now $D_i$ is isomorphic to a summand of $B_i$. If $e_j x \in B_j$, then $e_jx D_i = 0$ if $j \neq i$, because $e_jx D_i \subseteq B_j\cdot B_i\subseteq B_j \cap B_i = 0$. 
 $\implies \chi_i(e_jx) = 0$.
-Hence, if $j \neq i$ and $$
+Hence, if $j \neq i$ and $x \in \mathbb{C}G$, then $\langle d_ie_j, x \rangle = \langle d_i, e_j x \rangle = \chi_i(e_jx)=0$.
+By non-degeneracy of the bilinear form, $d_ie_j =0$. So $d_i = d_ie_1 + \cdots + d_ie_t = d_ie_i \in Z(B_i) = \mathbb{C}e_i$.
+i.e. $d_i = \lambda e_i$ for some $\lambda \in \mathbb{C}$.
+
+Now, by the lemma above, 
+$$|G|\chi_i(1) = \rho(d_i) = \rho(\lambda e_i) = \lambda \rho(e_i) = \lambda \dim B_i = \lambda \chi_i(1)^2.$$
+Since $\mathbb{C}G = B_1 \oplus \cdots \oplus B_t$, $e_i$ acts as the identity on $B_i$ while acting as zero on $B_j$ for $j \neq i$.
+Hence $\lambda = |G|/\chi_i(1)$.
+Thus 
+$$d_i = \frac{|G|}{\chi_i(1)}e_i \iff e_i = \frac{\chi_i(1)}{|G|}d_i\qquad \square$$
+
+>[!Corollary] 
+>$\mathbb{C}G = \bigoplus_{i=1}$
