@@ -161,3 +161,15 @@ $\implies d_V a = a d_V \implies d_V \in Z(\mathbb{C}G)$.  $\square$
 
 # Character of Regular Representation
 
+$\rho = \chi_{\mathbb{C}G}$ is the character of the regular representation of $\mathbb{C}G$.
+
+>[!Lemma]
+>If $g \in G$, then 
+>$$\rho(g) = \begin{cases}
+|G| & g = 1_G  \\
+0 & \text{otherwise}
+\end{cases}$$
+Consequently $d_{rho} = d_{\mathbb{C}G}= |G|1_G$.
+Moreover, if $V$ is any $\mathbb{C}G$-module, then $\rho(d) = |G|\chi_V(1)=|G|\dim V$.
+
+
