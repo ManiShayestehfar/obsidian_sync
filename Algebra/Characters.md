@@ -182,5 +182,8 @@ By definition, $d_\rho = \sum_{g \in G} \rho(g^{-1})g = |G|1_G$.
 Finally, if $V$ is a $\mathbb{C}G$-module, then
 $$\begin{align*}
 \rho(d_V) = \langle d_\rho, d_V \rangle &= \langle |G|\cdot 1_G, d_V \rangle \\
-&= 
+&= |G|\langle1_G, d_V \rangle \\
+&= |G| \langle d_V, 1_G \rangle \\
+&= |G| \chi_V(1_G) \\
+&= |G| \dim V \qquad \square
 \end{align*}$$
