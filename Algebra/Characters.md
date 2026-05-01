@@ -187,3 +187,8 @@ $$\begin{align*}
 &= |G| \chi_V(1_G) \\
 &= |G| \dim V \qquad \square
 \end{align*}$$
+
+Recall:
+$D_1,...,D_t$ irreducible $\mathbb{C}G$-modules, with $\chi_1,...,\chi_t$ where $\chi_i = \chi_{D_i}$.
+$\mathbb{C}G= B_1 \oplus \cdots \oplus B_t$ where $B_i$ is the $D_i$-th isotopic factor of $\mathbb{C}G$.
+
