@@ -242,3 +242,16 @@ r(T) &= \lim_{n\to\infty} \|T^n\|^{1/n}\\
 &= \lim_{n\to\infty} \|T^{2^n}\|^{1/2^n}\\
 &= \|T\|   \qquad\square
 \end{align*}$$
+
+
+# Point, Continuous, Residual Spectrum
+
+$$\begin{align*}
+\sigma_p(T) &= \{\lambda \in \mathbb{C} \:|\: \lambda I - T \text{ not injective}\} \\ &= \{\text{eigenvalues of }T\}\tag{Point Spectrum} \\[10pt]
+\sigma_c(T) &= \left\{\lambda \in \mathbb{C} \:\:\middle|\:\: \substack{\large\lambda I -T \text{ injective} \\[5pt] \large \lambda I-T \text{ NOT surjective} \\[5pt] \large \overline{\text{im }(\lambda I -T)} = X} \right\} \tag{Continuous Spectrum} \\[10pt]
+
+\sigma_r(T) &= \left\{\lambda \in \mathbb{C} \:\middle| \substack{\large\lambda I-T \text{ NOT injective} \\[5pt]\large \lambda I -T \text{ surjective} \\[5pt]\large \overline{\text{im }(\lambda I -T)} \neq X}  \:\right\} \tag{Residual Spectrum}
+\end{align*} $$
+So by definition
+$$\sigma(T) = \sigma_p(T) \sqcup \sigma_c(T) \sqcup \sigma_r(T)$$
+## The Necessity for Distinction
