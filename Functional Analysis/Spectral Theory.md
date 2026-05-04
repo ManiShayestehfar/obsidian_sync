@@ -255,3 +255,134 @@ $$\begin{align*}
 So by definition
 $$\sigma(T) = \sigma_p(T) \sqcup \sigma_c(T) \sqcup \sigma_r(T)$$
 ## The Necessity for Distinction
+
+1. If $\lambda \in \sigma_c(T)\cup\sigma_r(T)$, we can define an inverse to the operator $\lambda I-T:X \to Z$ where $Z =\text{im }(\lambda I-T)$. However, $\lambda I -T$ is not invertible.
+
+2. If $\lambda \in \sigma_c(T)$ then the domain of the inverse to $\lambda I -T$ is dense in $X$.
+
+3. If $\lambda \in \sigma_p(T)$ there is no notion of inverse
+
+4. If $\dim(X) < \infty$, then $\sigma(T)=\sigma_p(T)$, and $\sigma_c(T)=\sigma_r(T) = \varnothing$.
+
+## Examples: Left and Right Shift
+
+>[!Proposition]
+>If $1 \leq p < \infty$, then $L:\ell_\mathbb{C}^p \to \ell_\mathbb{C}^p$ has 
+>$$\begin{align*}
+\sigma_p(L)&= \{\lambda \in \mathbb{C}\:|\: |\lambda|<1\} \\[4pt]
+\sigma_c(L) &= \{\lambda \in \mathbb{C} \:|\: |\lambda|=1\} \\[4pt]
+\sigma_r(L) &= \varnothing
+\end{align*}$$
+##### Proof
+Since $\|L\|=1$, then $\sigma(L) \subseteq \{\lambda \in \mathbb{C} \:|\: |\lambda|\leq 1\}$.
+###### Point Spectrum
+$$\begin{align*}
+\lambda \in \sigma_p(L)
+&\Longleftrightarrow \exists \text{ non-zero } x \in \ell^p \text{ with } Lx = \lambda x \\[3pt]
+&\Longleftrightarrow (x_2, x_3, \ldots) = (\lambda x_1, \lambda x_2, \ldots), \quad x \neq 0 \\[3pt]
+&\Longleftrightarrow x_2 = \lambda x_1,\quad x_3 = \lambda x_2,\quad \ldots \\[3pt]
+&\Longleftrightarrow x = x_1(1,\lambda,\lambda^2,\ldots) \in \ell^p, \quad x_1 \neq 0 \\[3pt]
+&\Longleftrightarrow |\lambda| < 1.
+\end{align*}$$
+So $\sigma_p(L)$ is as claimed and by compactness of $\sigma(L)$ we have 
+$$\sigma(L) = \{\lambda \in \mathbb{C} \:|\: |\lambda|\leq 1\}$$
+So $\sigma_c(L) \cup \sigma_r(L) = \{\lambda \in \mathbb{C}\:|\: |\lambda|=1\}$.
+
+###### The Rest
+Let $|\lambda|=1$. 
+
+>[!Claim]
+>$$\overline{\text{im }(L-\lambda I)} = \ell^p$$
+
+It is enough to show the image contains $\ell_F$ since $\overline{\ell_F}= \ell^p$ (for $p\neq \infty$).
+So let $y = (y_1,y_2,...,y_N,0,0,...)\in \ell_F \subseteq\ell^p$.
+We need $x \in \ell^p$ with: $(\lambda I - L)x = y$.
+i.e. $(\lambda x_1-x_2 , \lambda x_2-x_3,...)=(y_1,y_2,...)$.
+Let $x = (x_1,x_2,...,x_N,0,0,...)$.
+Then
+$$\begin{bmatrix}  
+\lambda & -1 & 0 & 0 & \cdots & 0 \\  
+0 & \lambda & -1 & 0 &\cdots & 0 \\  
+\vdots & & \ddots & \ddots & \vdots & 0 \\  
+0 & \cdots & \cdots & & \lambda & -1 \\  
+0 & \cdots & \cdots & &0 & \lambda  
+\end{bmatrix}  
+\begin{bmatrix}  
+x_1 \\  
+\vdots \\  
+\vdots \\  
+\vdots \\  
+x_N  
+\end{bmatrix}  
+=  
+\begin{bmatrix}  
+y_1 \\  
+\vdots \\  
+\vdots \\  
+\vdots \\  
+y_N  
+\end{bmatrix}.$$
+And since the coefficient matrix has determinant $\lambda^n\neq0$, we can solve for $x \neq 0$. $\square$
+
+>[!Proposition]
+>If $1 < p < \infty$, then $R:\ell_\mathbb{C}^p \to \ell_\mathbb{C}^p$ has
+>$$\begin{align*}
+\sigma_p(L)&= \varnothing \\[4pt]
+\sigma_c(L) &= \{\lambda \in \mathbb{C} \:|\: |\lambda|=1\} \\[4pt]
+\sigma_r(L) &= \{\lambda \in \mathbb{C} \:|\: |\lambda|<1\}
+\end{align*}$$
+##### Proof
+Since $\|R\|=1$, we have $\sigma(R) \subseteq \{\lambda \in \mathbb{C} \:|\: |\lambda|\leq 1\}$.
+
+###### Point Spectrum
+$$\begin{align*}  
+\lambda \in \sigma_p(R)  
+&\Longleftrightarrow \exists x \neq 0 \text{ with } Rx = \lambda x \\[3pt]  
+&\Longleftrightarrow (0,x_1,x_2,\ldots) = (\lambda x_1,\lambda x_2,\ldots) \\[3pt]  
+&\Longleftrightarrow \lambda x_1 = 0,\quad \lambda x_2 = x_1,\quad \lambda x_3 = x_2,\quad \ldots  
+\end{align*}$$
+- If $\lambda \neq 0$, then $x=0$. 
+- If $\lambda =0$, then $x=0$.
+So $\sigma_p(R)=\varnothing$ so $\sigma(R)=\sigma_c(R) \cup \sigma_r(R)$.
+
+###### The Rest
+
+>[!Exercise]
+>Let $X$ be a normed vector space, and $Y \subseteq X$ a subspace. Then 
+>$$\overline{Y}=X \iff \{\varphi\in X' \:|\: \varphi(y)=0 \:\:\:\forall y \in Y\}= \{0\}$$
+
+Recall that $\ell^q \cong (\ell^p)'$ when $\frac{1}{p}+\frac{1}{q}=1$ given by the maps $y \mapsto \varphi_y$,
+where $\varphi_y(x) = \sum_{n=1}^\infty x_ny_n$.
+So 
+$$\begin{align*}
+\lambda \in \sigma_r(R)
+&\Longleftrightarrow \operatorname{im}(\lambda I - R) \text{ is not dense}
+\qquad \left(\text{already saw } \sigma_p = \varnothing\right) \\[0.5em]
+&\Longleftrightarrow \text{there is nonzero } y \in \ell^q
+\text{ with } \varphi_y(x)=0
+\quad \forall x \in \operatorname{im}(\lambda I - R) \\[0.5em]
+&\Longleftrightarrow \exists y \in \ell^q \setminus \{0\}
+\text{ with }
+\varphi_y\bigl((\lambda I - R)e_i\bigr)=0
+\quad \forall i \geq 1
+\qquad \left(\operatorname{span}\{e_i\}\text{ dense in }\ell^p\right).
+\end{align*}$$
+where $\varphi_y(0,\ldots,\lambda,-1,0,\ldots)=0   \quad \Longleftrightarrow \quad   \lambda y_i - y_{i+1}=0.$ Then
+$$\begin{align*}
+&\Longleftrightarrow \exists y \in \ell^q \setminus \{0\}
+\text{ with }
+\lambda y_i - y_{i+1}=0
+\quad \forall i \\[0.5em]
+&\Longleftrightarrow \exists y \in \ell^q \setminus \{0\}
+\text{ with }
+Ly = \lambda y \\[0.5em]
+&\Longleftrightarrow \lambda \in \sigma_p(L),
+\qquad \left(L:\ell^q \to \ell^q\right) \\[0.5em]
+&\Longleftrightarrow |\lambda| < 1,
+\qquad \text{by the previous proposition.}
+\end{align*}$$
+Hence $\sigma_r(R) = \{\lambda \in \mathbb{C} \:|\: |\lambda|<1\}$.
+Since $\sigma(R)$ is closed, we have $\sigma(R)=\{\lambda \in \mathbb{C} \:|\: |\lambda|\leq 1\}$. Hence
+$$\sigma_c(R)=\{\lambda \in \mathbb{C} \:|\: |\lambda|=1\}.$$
+$\square$
+
