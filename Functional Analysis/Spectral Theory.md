@@ -7,7 +7,7 @@ Spectral theory generalises this.
 # Spectrum
 
 >[!Definition]
->$X$ a normed vector space. The **spectrum** of $T \in \mathcal{L}(X)$ is 
+>$X$ a normed vector space. The **spectrum** of $T \in \mathcal{L}(X,X)$ is 
 >$$\sigma(T) = \{\lambda \in \mathbb{K} \:|\: \lambda I  - T \text{ not invertible }\}$$
 
 ## Observations
@@ -30,7 +30,7 @@ Spectral theory generalises this.
 >[!Definition]
 >$\lambda \in \mathbb{K}$ is an **eigenvalue** of $T \in \mathcal{L}(X,X)$ if $\lambda I -T$ is not injective. (i.e. $\ker (\lambda I -T)\neq \{0\}$)
 >
->Then any *nonzero* $x \in \ker(\lambda I -T)$ is called a $\lambda$-eigenvector.
+>Then any *nonzero* $x \in \ker(\lambda I -T)$ is called a **$\lambda$-eigenvector**.
 >So $Tx=\lambda x$ where $x\neq0$.
 
 
