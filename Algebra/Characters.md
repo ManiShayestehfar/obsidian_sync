@@ -281,3 +281,22 @@ $$\frac{1}{|G|}\chi_j(d_i) = \frac{1}{|G|} \cdot \frac{|G|}{\chi_i(1)}\chi_j(e_i
 \end{cases} = \delta_{ij}$$
 since $e_i$ acts on $D_i$ as identity and as the zero map on $D_j \subseteq B_j$. $\square$
 
+
+## Applications
+
+>[!Corollary]
+>$D_1,...,D_t$ are irreducible $\mathbb{C}G$-modules.
+>1. Then $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle} \iff \chi_V = \sum_{i=1}^t \langle \chi_V,\chi_i\rangle \chi_i$ 
+>2. If $V,W$ are $\mathbb{C}G$-modules then $V\cong W \iff \chi_V = \chi_W$
+>3. If $V$ is a $\mathbb{C}G$-module, then $V$ is irreducible $\iff \langle \chi_V ,\chi_V \rangle = 1$.
+##### Proof
+###### 1.
+Since $\mathbb{C}G$ is complete reducible, $V \cong \bigoplus_{i=1}^t D_i^{\oplus a_i}$ for some $a_i \geq 0$ where each $D_i$ is irreducible and has character $\chi_i$.
+$\implies \chi_V = \sum_{i=1}^t a_i\chi_i$.
+
+Since characters are additive for direct sums,
+$$\langle \chi_V, \chi_i \rangle = \left \langle \sum_{i=1}^t a_i\chi_i\:,\: \chi_i \right \rangle = \sum_{i=1}^t a_i \langle \chi_i, \chi_i \rangle = a_i.$$So $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$ and $\chi_V= \sum_{i=1}^t \langle \chi_V, \chi_i \rangle \chi_i$.
+
+###### 2.
+Write $V = \bigoplus_{i=1}^t D_i$
+
