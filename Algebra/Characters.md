@@ -318,3 +318,13 @@ if and only if $V \cong D_i$ is irreducible. $\square$
 \begin{pmatrix}\lambda_{g,1} & 0 & \cdots & 0 \\0 & \lambda_{g,2} & \cdots & 0 \\\vdots & \vdots & \ddots & \vdots \\0 & 0 & \cdots & \lambda_{g,n}\end{pmatrix}
 $$
 ##### Proof
+Let $\{v_1,...,v_n\}$ be any basis of $V$ and define $\mathbf{g}= (g_{ij})\in \text{Mat}_n(\mathbb{C})$ by $gv_j = \sum_{i=1}^n g_{ij}v_i$.
+As $\mathbb{C}$ is algebraically closed, let $I$ be the Jordan canonical form of $\mathbf{g}$ 
+$$J = \begin{pmatrix}
+\lambda & * & 0 & \cdots & 0 \\
+0 & \lambda & * & \cdots & 0 \\
+\vdots & \vdots & \ddots & \ddots & \vdots \\
+0 & 0 & \cdots & \lambda & * \\
+0 & 0 & \cdots & 0 & \lambda
+\end{pmatrix}$$
+
