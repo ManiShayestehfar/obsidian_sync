@@ -126,3 +126,18 @@ $$\begin{align*}
 \end{align*}$$
 so $\|T-T_n\|\leq \frac{1}{n+1} \to 0$ so $T_n \to T$. $\square$
 
+
+# Hilbert-Schmidt Operators
+
+>[!Proposition]
+>Let $k  \in L^2([a,b]\times[a,b])$. The **Hilbert-Schmidt operator** given by $T: [a,b] \to [a,b]$ given by
+>$$Tf(x) = \int_a^b K(x,y)f(y)\:dy$$
+>is compact.
+##### Proof
+First note
+$$\begin{align*}
+\|Tf\|_2^2 &= \int_a^b |Tf(x)|^2\: dx \\
+&= \int_a^b \left|\int_a^b K(x,y)f(y)\: dy \right|^2\:dx \\
+&\overset{C.S}{\leq} \int_a^b \left(\int_a^b |K(x,y)|^2\: dy \right) \left(\int_a^b |f(y)|^2 \: dy\right)\:dx \\
+&= \left(\int_a^b \int_a^b |K(x,y)|^2\: dy\:dx\right)\|f\|_2^2
+\end{align*}$$

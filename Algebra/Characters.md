@@ -358,8 +358,16 @@ Since $|\lambda_{g,i}|=1$, then $\chi_V(g^{-1})= \sum_{i=1}^n \overline{\lambda_
 >
 
 ### Corollary
+
 >[!Corollary]
->Let $g \in G$
+>Let $g \in G$. Then $g \sim g^{-1}$ if and only if $\chi(g) \in \mathbb{R}$ for all irreducible characters $\chi$.
+##### Proof
+We saw that $\chi(g^{-1}) = \overline{\chi(g)}$. If $\chi(g) \in \mathbb{R}$ then $\chi(g^{-1})=\chi(g)$, which implies $g \sim g^{-1}$.
+
+Conversely if $g \sim g^{-1}$, then $\chi(g) = \chi(g^{-1}) = \overline{\chi(g)}$. 
+So $\chi(g) \in \mathbb{R}$. $\square$
+
+
 
 # Column Orthogonality
 
