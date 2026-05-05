@@ -57,7 +57,7 @@ $\square$
 >Let $X,Y$ be normed spaces. 
 >If $T_1,T_2 \in \mathcal{L}(X,Y)$ are compact, and $\lambda,\mu \in \mathbb{K}$, then $\lambda T_1+\mu T_2$ is compact.
 >
-i.e. $\mathcal{K}(X,Y) =\{T\in \mathcal{L}(X,Y) \:|\: T \text{ is compact }\}$ is a normed space.
+i.e. $\mathcal{K}(X,Y) :=\{T\in \mathcal{L}(X,Y) \:|\: T \text{ is compact }\}$ is a normed space.
 ##### Proof
 Using previous characterisation, let $(x_n)$ be a bounded sequence in $X$.
 Since $T_1$ is compact, $(T_1x_n)$ has a convergent subsequence $(T_1x_n')$ where $(x_n')$ is a subsequence of $(x_n)$.
@@ -139,5 +139,24 @@ $$\begin{align*}
 \|Tf\|_2^2 &= \int_a^b |Tf(x)|^2\: dx \\
 &= \int_a^b \left|\int_a^b K(x,y)f(y)\: dy \right|^2\:dx \\
 &\overset{C.S}{\leq} \int_a^b \left(\int_a^b |K(x,y)|^2\: dy \right) \left(\int_a^b |f(y)|^2 \: dy\right)\:dx \\
-&= \left(\int_a^b \int_a^b |K(x,y)|^2\: dy\:dx\right)\|f\|_2^2
+&= \left(\int_a^b \int_a^b |K(x,y)|^2\: dy\:dx\right)\|f\|_2^2 \\
+&= \|K\|^2 \|f\|_2^2
 \end{align*}$$
+So $T \in \mathcal{L}([a,b], [a,b])$, and $\|T\| \leq \|K\|_2$.
+
+Using the step function, there are $\alpha_i,\beta_j \in L^2([a,b])$ such that
+$$K_n(x,y) = \sum_{i=1}^n \sum_{j=1}^n \alpha_i(x) \alpha_j(y)$$
+with $\|K-K_n\|_2 \to 0$. 
+Then define 
+$$T_nf(x) = \int_a^b K_n(x,y) f(y)\:dy.$$
+We have 
+$$T_nf(x)= \sum_{i=1}^n \left(\int_a^b \sum_{j=1}^n \beta_j(y)\:f(y)\:dy\right) \alpha_j(x),$$
+and so $T_nf \in \text{span}\{\alpha_1,...,\alpha_n\}$ and we have $T_n$ is finite rank, hence $T_n$ is compact since $\|T-T_n \| \leq \|K-K_n\|$ means that $T_n \to T$. So by the identification of compact operators, $T$ is compact.  $\square$
+
+
+# Further on $\mathcal{K}(X,Y)$
+
+>[!Proposition]
+>Let $X,Y,Z$ be normed vector spaces.
+>1. $T \in \mathcal{K}(X,Y)$, $S \in \mathcal{L}(X,Y) \implies ST \in \mathcal{K}(X,Z)$.
+>2. $T \in \mathcal{L}(X,Y), S \in \mathcal{K}(X,Y) \implies ST \in \mathcal{K}(X,Z)$.
