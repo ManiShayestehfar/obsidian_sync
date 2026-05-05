@@ -311,6 +311,10 @@ $$\begin{align*}
 Now $\langle\chi_V, \chi_i \rangle \in \mathbb{N}$. Hence $\langle\chi_V, \chi_V \rangle \geq 1$.  with equality if and only if $\langle \chi_V, \chi_i \rangle = \delta_{ij}$ for some $j$.
 if and only if $V \cong D_i$ is irreducible. $\square$
 
->[!]Proposition
+>[!Proposition]
 >Let $V$ be a $\mathbb{C}G$-module and $g \in G$ and $g \in G$.
->Then $g$ acts 
+>Then $g$ acts diagonalisably on $V$. That is, there is a basis $\{v_{g,1},...,v_{g,n}\}$ of $V$ and scalars $\lambda_{g,i}\in \mathbb{C}$ such that $gv_{g,i}= \lambda_{g,i}v_{g,i}$ $\iff$ w.r.t this basis $g$ acts as 
+>$$
+\begin{pmatrix}\lambda_{g,1} & 0 & \cdots & 0 \\0 & \lambda_{g,2} & \cdots & 0 \\\vdots & \vdots & \ddots & \vdots \\0 & 0 & \cdots & \lambda_{g,n}\end{pmatrix}
+$$
+##### Proof
