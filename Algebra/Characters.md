@@ -298,5 +298,19 @@ Since characters are additive for direct sums,
 $$\langle \chi_V, \chi_i \rangle = \left \langle \sum_{i=1}^t a_i\chi_i\:,\: \chi_i \right \rangle = \sum_{i=1}^t a_i \langle \chi_i, \chi_i \rangle = a_i.$$So $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$ and $\chi_V= \sum_{i=1}^t \langle \chi_V, \chi_i \rangle \chi_i$.
 
 ###### 2.
-Write $V = \bigoplus_{i=1}^t D_i$
+Write $V = \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$, and $W = \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_W, \chi_i \rangle}$
+Then $V \cong W \iff \langle\chi_V, \chi_i \rangle = \langle \chi_W, \chi_i \rangle$ for $1\leq i \leq t$.
+$\iff \chi_V = \chi_W$.
 
+###### 3.
+$$\begin{align*}
+\langle \chi_V, \chi_V \rangle &= \left\langle \sum_{i=1}^t \langle \chi_V,\chi_i \rangle \chi_i \:,\: \sum_{j=1}^t \langle \chi_V,\chi_j \rangle \chi_j \right\rangle \\
+&= \sum_{i,j=1}^t \langle\chi_V,\chi_i \rangle \langle\chi_V, \chi_j \rangle \langle\chi_i,\chi_j \rangle \\
+&= \sum_{i=1}^t \langle \chi_V,\chi_i \rangle^2 
+\end{align*}$$
+Now $\langle\chi_V, \chi_i \rangle \in \mathbb{N}$. Hence $\langle\chi_V, \chi_V \rangle \geq 1$.  with equality if and only if $\langle \chi_V, \chi_i \rangle = \delta_{ij}$ for some $j$.
+if and only if $V \cong D_i$ is irreducible. $\square$
+
+>[!]Proposition
+>Let $V$ be a $\mathbb{C}G$-module and $g \in G$ and $g \in G$.
+>Then $g$ acts 
