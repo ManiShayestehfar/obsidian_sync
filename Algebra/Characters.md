@@ -342,4 +342,13 @@ $\implies \mathbf{g}$ is diagonalisable. $\square$
 ## Complex Conjugate of Character
 
 >[!Corollary]
+>Let $V$ be a $\mathbb{C}G$ and $g \in G$. Then
+>$$\chi_V(g^{-1})=\overline{\chi_V(g)}$$
+##### Proof
+By the previous proposition $g$ acts diagonalisably on $V$, there exists a basis $\{v_{g,1},...,v_{g,n}\}$ such $gv_{g,i} = \lambda_{g,i}v_{g,i}$ for some $\lambda_{g,i}\in \mathbb{C}$. 
+Moreover, if $m=|g|$, then $\lambda_{g,i}^m=1 \implies \lambda_{g,i}$ are $m$-th roots of unity.
+So $|\lambda_{g,i}|=1$.
+
+Now $gv_{g,i}= \lambda_{g,i}v_{g,i}$. So $g^{-1}v_{g,i}= \frac{1}{\lambda_{g,i}}= \overline{\lambda_{g,i}}v_{g,i}$.
+Since $|\lambda_{g,i}|=1$, then $\chi_V(g^{-1})= \sum_{i=1}^n \overline{\lambda_{g,i}}$ 
 
