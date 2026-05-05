@@ -46,3 +46,21 @@ By part (2), if $\varphi \in \mathcal{C}(G)$, then $\varphi = \sum_{i=1}^t \lamb
 Using Row Orthogonality, $\lambda_i = \langle \varphi, \chi_i \rangle$. 
 $\square$
 
+>[!Lemma]
+>Let $C_k$ be a conjugacy class of $G$. Then 
+>$$1_{C_k} = \frac{|C_k|}{|G|}= \sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
+##### Proof
+By part (3) of the last proposition. $1_{C_k}= \sum_{i=1}^t \langle 1_{C_k}, \chi_i \rangle \chi_i$.
+So we need to compute
+$$\begin{align*}
+\langle 1_{C_k}, \chi_i \rangle &= \frac{1}{|G|} \sum_{g \in G} 1_{C_k}(g^{-1})\chi_i(g) \\
+&= \frac{1}{|G|}\ \sum_{g \in G} 1_{C_k}(g)\chi_i(g^{-1}) \\
+&= \frac{1}{|G|} \sum_{g \in C_k} \overline{\chi_i(g)} \\
+&= \frac{1}{|G|} |C_k|\: \overline{\chi_i(C_k)}
+\end{align*}$$
+Hence 
+$$1_{C_k} = \frac{|C_k|}{|G|} \sum_{i=1}^t \overline{\chi_i(C_k)} \chi_i.$$
+$\square$
+
+
+
