@@ -174,3 +174,10 @@ $\square$
 >[!Corollary]
 >Let $X$ be a normed space. Then $\mathcal{K}(X) := \mathcal{K}(X,X)$ is a two-sided ideal of the algebra $\mathcal{L}(X)$.
 
+>[!Proposition]
+>Let $X$ be Banach over $\mathbb{C}$. If $\dim X = \infty$, then $0 \in \sigma(T)$ for all $T \in \mathcal{K}(X)$.
+##### Proof
+If $0 \not \in \sigma(T)$, then $T$ is invertible. By the bounded inverse theorem, $T^{-1}$ is continuous.
+So $T^{-1}T =I$ is compact. But the identity map is not compact so $0 \in \sigma(T)$. $\square$
+
+
