@@ -282,7 +282,7 @@ $$\frac{1}{|G|}\chi_j(d_i) = \frac{1}{|G|} \cdot \frac{|G|}{\chi_i(1)}\chi_j(e_i
 since $e_i$ acts on $D_i$ as identity and as the zero map on $D_j \subseteq B_j$. $\square$
 
 
-## Applications
+# Applications
 
 >[!Corollary]
 >$D_1,...,D_t$ are irreducible $\mathbb{C}G$-modules.
@@ -319,12 +319,27 @@ if and only if $V \cong D_i$ is irreducible. $\square$
 $$
 ##### Proof
 Let $\{v_1,...,v_n\}$ be any basis of $V$ and define $\mathbf{g}= (g_{ij})\in \text{Mat}_n(\mathbb{C})$ by $gv_j = \sum_{i=1}^n g_{ij}v_i$.
-As $\mathbb{C}$ is algebraically closed, let $I$ be the Jordan canonical form of $\mathbf{g}$ 
+As $\mathbb{C}$ is algebraically closed, let $J$ be the Jordan canonical form of $\mathbf{g}$ 
 $$J = \begin{pmatrix}
 \lambda & * & 0 & \cdots & 0 \\
 0 & \lambda & * & \cdots & 0 \\
 \vdots & \vdots & \ddots & \ddots & \vdots \\
 0 & 0 & \cdots & \lambda & * \\
 0 & 0 & \cdots & 0 & \lambda
-\end{pmatrix}$$
+\end{pmatrix}.$$
+for some $\lambda_{g,i}\in \mathbb{C}$. Then $\mathbf{g} = AJA^{-1}$ for some $A$.
+Let $m = |g|$, the order of $g$.
+Then $g^m = 1\implies \mathbf{g}^m=I_n \implies J^m = I_n \implies \lambda_{g,i}^m =1$ for $1 \leq i \leq n$.
+The *minimal polynomial* of $\mathbf{g}$ divides $X^m-1$.
+The roots of $X^m-1$ are the $m$-th roots of unity (explicitly, $\zeta = \exp(2\pi i /m) \implies X^m-1 = \prod_{k=1}^m(X-\zeta^k)$)
+Then the roots of $X^m-1$ are distinct.
+
+Minimal polynomial of $\mathbf{g}$ is of the form $M_g(X) = \prod_{k \in I \subseteq \{1,...,m\}} (X - \zeta^kI_n)$.
+So $M_\mathbf{g}(J) = \prod_{k \in I}(J - \zeta^kI_n) = 0 \implies$ each Jordan block of $J$ has size $1$.
+$\implies \mathbf{g}$ is diagonalisable. $\square$
+
+
+## Complex Conjugate of Character
+
+>[!Corollary]
 
