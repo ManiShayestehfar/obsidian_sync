@@ -350,5 +350,10 @@ Moreover, if $m=|g|$, then $\lambda_{g,i}^m=1 \implies \lambda_{g,i}$ are $m$-th
 So $|\lambda_{g,i}|=1$.
 
 Now $gv_{g,i}= \lambda_{g,i}v_{g,i}$. So $g^{-1}v_{g,i}= \frac{1}{\lambda_{g,i}}= \overline{\lambda_{g,i}}v_{g,i}$.
-Since $|\lambda_{g,i}|=1$, then $\chi_V(g^{-1})= \sum_{i=1}^n \overline{\lambda_{g,i}}$ 
+Since $|\lambda_{g,i}|=1$, then $\chi_V(g^{-1})= \sum_{i=1}^n \overline{\lambda_{g,i}} = \overline{\sum_{i=1}^n \lambda_{g,i}} = \chi_V(g)$.     $\square$  
+
+>[!Remark]
+>In fact, there exists a $\mathbb{C}G$-module $\overline{V}$ such that $\chi_{\overline{V}}= \overline{\chi_V(g)}$. 
+>The moral is, if $\chi$ is a character, then so is $\overline{\chi}$.
+>
 
