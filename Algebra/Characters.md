@@ -357,3 +357,33 @@ Since $|\lambda_{g,i}|=1$, then $\chi_V(g^{-1})= \sum_{i=1}^n \overline{\lambda_
 >The moral is, if $\chi$ is a character, then so is $\overline{\chi}$.
 >
 
+### Corollary
+>[!Corollary]
+>Let $g \in G$
+
+# Column Orthogonality
+
+>[!Theorem]
+>Suppose $1 \leq i,j \leq t$. Then
+$$\frac{1}{|G|} \sum_{k=1}^t |C_i| \:\overline{\chi_k(C_i)}\chi_k(C_i)= \delta_{ij}$$
+##### Proof
+$$\delta_{ij} = 1_{C_i}(C_j) = \frac{|C_k|}{|G|}= \sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
+
+## Corollary
+
+>[!Corollary]
+>The following are equivalent:
+>1. $g \sim h \qquad \forall g,h \in G$
+>2. $\chi(g) = \chi(h)$ for all characters $\chi$
+>3. $\chi_i(g)=\chi_i(h)$ for $1 \le i \leq t$
+>4. $1_G(g) = 1_G(h)$ for $1 \leq i \leq t$
+##### Proof
+###### 1 -> 2
+Characteristics are class functions 
+###### 2 -> 3
+Trivial
+###### 3 -> 4
+$\{\chi_i\}$ are a basis of $\mathcal{C}(G)$
+###### 4 -> 1
+Obvious by definition
+
