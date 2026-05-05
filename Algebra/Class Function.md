@@ -28,4 +28,21 @@ We can extend $\langle -,- \rangle$ to $\mathcal{C}(G)$ by setting $\langle \psi
 >1. $\{1_C \:|\: C \text{ a conjugacy class of } G\}$ is a basis of $\mathcal{C}(G)$.
 >2. $\{\chi_1,...,\chi_t\}$ is a basis of $\mathcal{C}(G)$.
 >3. If $\varphi \in \mathcal{C}(G)$, then $\varphi = \sum_{i=1}^t \langle \varphi, \chi_i \rangle \chi_i$
-#
+##### Proof
+###### 1.
+Basically the definition of $\mathcal{C}(G)$.
+If $\varphi \in \mathcal{C}(G)$, then $\varphi = \sum_C \varphi(C) 1_C$. $\implies \{1_C\}$ spans $\mathcal{C}(G)$.
+Moreover $\sum_{C} \lambda_C 1_C = 0$. If $x_C \in C$, then $\lambda_C = 0$. 
+So $\{1_C\}$ are linearly independent.
+
+###### 2.
+As $\# \text{Irr}(\mathbb{C}G)= \# \{\text{conjugacy classes}\} = \dim \mathbb{C}(G)$.
+To prove $\{\chi_1,...,\chi_t\}$ is a basis of $\mathcal{C}(G)$, it is enough to show they are linearly independent.
+Suppose $\sum_{i=1}^t \lambda_i \chi_i = 0$. For any $j$, $\left \langle \sum_{i=1}^t \lambda_i \chi_i, \chi_j \right\rangle =  0$.
+But also $\left \langle \sum_{i=1}^t \lambda_i \chi_i, \chi_j \right\rangle = \sum_{i=1}^t \lambda_i \langle \chi_i,\chi_j \rangle = \lambda_j$
+Thus $\lambda_1,...,\lambda_t=0 \implies \{\chi_1,...,\chi_t\}$ is a basis.
+###### 3.
+By part (2), if $\varphi \in \mathcal{C}(G)$, then $\varphi = \sum_{i=1}^t \lambda_i \chi_i$.
+Using Row Orthogonality, $\lambda_i = \langle \varphi, \chi_i \rangle$. 
+$\square$
+
