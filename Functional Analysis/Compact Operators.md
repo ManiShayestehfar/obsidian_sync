@@ -206,6 +206,30 @@ Obvious from before
 >[!Claim]
 >$Y := \text{im }T$ is separable
 
-To show this, notice that $\mathcal{H} = \bigcup_{n=0}^\infty B()$ 
+To show this, notice that $\mathcal{H} = \bigcup_{n=0}^\infty B(0,n)$. So $Y = \bigcup_{n=1}^\infty T(B(0,n))$.
+Each $\overline{T(B(0,n))}$ is compact and hence separable since compact metric spaces are separable.
+So $Y$ is a countable union of separable things, and so is separable.
+Subsequently, $\overline{Y}$ is a separable Hilbert space. (End of claim proof)
+
+
+
+Let $S=\{e_n \::\: n \geq 1\}$ be a Hilbert basis (countable).
+Let $P_n$ be the projection of $\mathcal{H}$ onto $M_n = \text{span}\{e_1,...,e_n\}$.
+
+>[!Claim]
+>$P_n T \to T$ as $n \to \infty$. 
+
+Note that $P_nT$ is finite rank with $\text{im }P_nT = M_n$.
+Let $\epsilon >0$. Since $\overline{T(\overline{B(0,1)})}$ is compact, it is totally bounded. Hence there exists a finite points $z_1,...,z_N \in \overline{T(\overline{B(0,1)})}$ with sets $B(z_j,\epsilon/3) \subseteq \overline{T(\overline{B(0,1)})}$ covering it.
+If $x \in \overline{B(0,1)}$ , then $Tx \in B(z_j, \epsilon/3)$ for some $j$. So
+$$\begin{align*}
+\|P_nTx - Tx\| &\leq \|P_nTx - P_n z_j\| + \|P_nz_j - z_j\| + \|z_j - Tx\| \\[4pt]
+&\leq \|P_n\|\|Tx - z_j\| + \|P_nz_j - z_j\| + \|z_j - Tx\| \tag{$\|P_n\|=1$}\\[4pt]
+&= 2\|Tx-z_j\| + \|P_nz_j - z_j\|.
+\end{align*}$$
+Since $z_j \in \overline{Y}$, then $P_n z_j \to z_j$, so there is $n_0>0$ with $\|P_n z_j-z_j\|<\epsilon/3$ for all $j$ and all $n > n_0$.
+Since $Tx \in B(z_j, \epsilon/3)$, $\|P_nTx - Tx\| \leq 2 \epsilon/3 + \epsilon/3 < \epsilon$.
+So $P_nT \to T$ as required. $\square$
+ 
 
 
