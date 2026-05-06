@@ -158,12 +158,12 @@ and so $T_nf \in \text{span}\{\alpha_1,...,\alpha_n\}$ and we have $T_n$ is fini
 
 >[!Proposition]
 >Let $X,Y,Z$ be normed vector spaces.
->1. $T \in \mathcal{K}(X,Y)$, $S \in \mathcal{L}(X,Y) \implies ST \in \mathcal{K}(X,Z)$.
->2. $T \in \mathcal{L}(X,Y), S \in \mathcal{K}(X,Y) \implies ST \in \mathcal{K}(X,Z)$.
+>1. $T \in \mathcal{K}(X,Y)$, $S \in \mathcal{L}(Y,Z) \implies ST \in \mathcal{K}(X,Z)$.
+>2. $T \in \mathcal{L}(X,Y), S \in \mathcal{K}(Y,Z) \implies ST \in \mathcal{K}(X,Z)$.
 ##### Proof
 ###### 1. 
 Let $(x_n)$ be bounded in $X$. 
-Then $(Tx_n)$ has a convergent subsequence $(Tx_{n_k})$ such that $Tx_{n_k}$ converges in $Z$ as $S$ is continuous, so $ST$ is compact.
+Then $(Tx_n)$ has a convergent subsequence $(Tx_{n_k})$ such that $S(Tx_{n_k})$ converges in $Z$ as $S$ is continuous, so $ST$ is compact.
 ###### 2.
 Let $B \subseteq X$ be bounded. Since $T$ is continuous (hence bounded), $T(B) \subseteq Y$ is bounded. 
 Hence $S(T(B))$ is relatively compact (as $S$ is compact). So $ST$ is compact.
