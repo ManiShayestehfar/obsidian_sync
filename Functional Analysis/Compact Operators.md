@@ -181,3 +181,31 @@ If $0 \not \in \sigma(T)$, then $T$ is invertible. By the bounded inverse theore
 So $T^{-1}T =I$ is compact. But the identity map is not compact so $0 \in \sigma(T)$. $\square$
 
 
+>[!warning] Remark
+>For $T \in \mathcal{K}(X)$ with $\dim X = \infty$, it is possible for $0$ to be in *any part* of the spectrum.
+
+For example, 
+1. $T: \ell^2 \to \ell^2$, $Tx = (x_1/1,x_2/2,x_3/3,...)$, then $0 \in \sigma_c(T)$.
+2. $T: \ell^2 \to \ell^2$, $Tx = (0, x_2/2,x_3/3,...)$, then $0 \in \sigma_p(T)$.
+3. $T: \ell^2 \to \ell^2$, $Tx = (0, x_1/1, x_2/2,...)$, then $0 \in \sigma_r(T)$.
+
+>[!Warning] Remark
+>Note that neither $R: \ell^2 \to \ell^2$ or $L: \ell^2 \to \ell^2$ are compact as $I = LR$ which is not compact for in $\ell^2$.
+
+
+# Approximation Property
+
+>[!Proposition]
+>Let $\mathcal{H}$ be a Hilbert space. Then 
+>$$T \in \mathcal{L}(\mathcal{H}) \text{ is compact} \iff T \text{ is a limit of finite rank operators}$$
+##### Proof
+###### $(\Leftarrow)$
+Obvious from before
+###### $(\Rightarrow)$
+
+>[!Claim]
+>$Y := \text{im }T$ is separable
+
+To show this, notice that $\mathcal{H} = \bigcup_{n=0}^\infty B()$ 
+
+
