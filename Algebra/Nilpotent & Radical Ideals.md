@@ -95,7 +95,7 @@ Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
 >[!theorem] Theorem 8J
 >1. $P$ a PIM of $A$. Then $\text{Rad }P$ is the unique maximal proper submodule of $P$. 
 > 	  - Consequently, $P/\text{Rad }P$ is an irreducible $A$-module.
->2. $P,Q$ are PIMS of $A$. Then $P \cong Q \iff P/\text{Rad }P \cong Q/\text{Rad }Q$.
+>2. $P,Q$ are PIMs of $A$. Then $P \cong Q \iff P/\text{Rad }P \cong Q/\text{Rad }Q$.
 >3. $D$ an irreducible $A$-module. Then $D \cong P/\text{Rad }P$ for some PIM $P$ of $A$.
 ##### Proof
 ###### 1)
