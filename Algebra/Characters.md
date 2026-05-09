@@ -48,8 +48,6 @@ So $\text{tr}(\mathbf{g}) = \text{tr}(\mathbf{g}^V) + \text{tr}(\mathbf{g}^W)= \
 Week 9 Tutorial
 
 
-
-
 # Examples
 
 ## Trivial 
@@ -74,7 +72,7 @@ Since $V = W \oplus I$, then $\chi_W = \chi_V - \chi_I$.
 i.e. $\chi_W(g) = \#\text{Fix}(\mathbf{g}) - 1$ 
 
 
-
+---
 # Character Table
 
 >[!Definition]
@@ -194,7 +192,7 @@ Recall:
 - $B_i \cong \text{Mat}_{\chi_i(1)}(\mathbb{C})$ where $\chi_i(1) = \dim D_i$
 
 
-
+---
 # Central Idempotents from Characters
 
 >[!Theorem]
@@ -281,7 +279,7 @@ $$\frac{1}{|G|}\chi_j(d_i) = \frac{1}{|G|} \cdot \frac{|G|}{\chi_i(1)}\chi_j(e_i
 \end{cases} = \delta_{ij}$$
 since $e_i$ acts on $D_i$ as identity and as the zero map on $D_j \subseteq B_j$. $\square$
 
-
+---
 # Applications
 
 >[!Corollary]
@@ -367,7 +365,7 @@ We saw that $\chi(g^{-1}) = \overline{\chi(g)}$. If $\chi(g) \in \mathbb{R}$ the
 Conversely if $g \sim g^{-1}$, then $\chi(g) = \chi(g^{-1}) = \overline{\chi(g)}$. 
 So $\chi(g) \in \mathbb{R}$. $\square$
 
-
+---
 
 # Column Orthogonality
 
@@ -394,4 +392,107 @@ Trivial
 $\{\chi_i\}$ are a basis of $\mathcal{C}(G)$
 ###### 4 -> 1
 Obvious by definition
+
+---
+# Application to Normal Subgroups of G
+
+
+>[!Definition]
+>Let $\chi$ be a character. The **kernel** of $\chi$ is $\ker \chi = \{g \in G \:|\: \chi(g) = \chi(1_G)\}$.
+
+- By definition, $\ker \chi$ is a union of conjugacy classes (because it is a normal subgroup).
+
+>[!Proposition]
+>Let $\chi = \chi_V$ be the character of the $\mathbb{C}G$-module $V$. Then
+>1. $\ker(\chi) = \{g \in G \:|\: g \cdot v = v \:\: \forall v \in V\}$
+>2. $\ker \chi$ is a normal subgroup of $G$
+##### Proof
+###### 1.
+Recall that for $g \in G$ there exists a basis $\{v_1,...,v_n\}$ of $V$, and scalars $\lambda_1,...,\lambda_n \in \mathbb{C}$ such that $gv_i = \lambda_iv_i$.
+Assume $g \in \ker\chi$. Then $n= \chi(1_G)= \chi(g)= \sum_{i=1}^n \lambda_i$. 
+Moreover, $\lambda_1,...,\lambda_n$ are $m$-th roots of unity (for $|g|=m$). So $|\lambda_i|=1$. So
+$$|n| = |\chi(g)| = \left| \sum_{i=1}^n \lambda_i \right| \leq \sum_{i=1}^n|\lambda_i|$$
+Equality occurs only when all $\lambda_i$ are collinear on the complex plane. This forces $\lambda_i=1$ for all $i$.
+So $g \cdot v_i = v_i$, and $\ker \chi = \{g \in G \:|\: gv =v \:\: \forall v \in V\}$.
+
+Conversely if $g$ acts as $1_G$, then $\chi(g)=\chi(1_G)\implies g \in \ker \chi$, by definition.
+Hence $\ker \chi = \{g \in G \:|\: gv =v \:\: \forall v \in V\}$ so $\ker \chi$ is a subgroup of $G$ since if $g,h \in \ker \chi$, then
+$(gh^{-1})v = g(h^{-1}v)= gv=v \implies gh^{-1} \in \ker \chi$.
+Thus by the subgroup criterion, $\ker \chi$ is a subgroup. $\square$
+
+###### 2.
+ We know $H \leq G$, $H$ is a union of conjugacy classes as $\chi \in \mathcal{C}(G) \implies \ker \chi$ is normal. $\square$
+
+
+## Understanding Normal Subgroups of G
+
+Suppose we have irreducible characters $\chi_1,...,\chi_t$. Also $\ker \chi_1,...,\ker \chi_t$ are normal subgroups.
+If $I \subseteq \{1,...,t\}$, let
+$$N_I = \bigcap_{i \in I} \ker \chi_i$$
+which is also a normal subgroup.
+
+>[!Theorem]
+>A subgroup $N$ of $G$ is normal $\iff N=N_I$ for some $I \subseteq \{1,...,t\}$
+
+>[!Warning] Remark
+>1. There are at most $2^t$ normal subgroups of $G$
+>2. If $I,J \subseteq \{1,...,t\}$ we can have $N_I = N_J$.
+
+>[!Facts]
+>1. Let $N$ be a normal subgroup of $G$. Then $G/N = \{gN \:|\: g \in G\}$ is a quotient group
+>2. If $\psi \in \text{Irr}(G/N)$, define the **lift** $\psi^G: G \to \mathbb{C}$ by $\psi^G(g)=\psi(gN)$ for $g \in G$. Then:
+> 	  - $\psi^G$ is a character of $G$.
+> 	  - $\psi \in \text{Irr}(G/N) \iff \psi^G \in \text{Irr}(G)$
+>3. If $\chi$ is a character of $G$ such that $N \subseteq \ker \chi$, then define $\chi_{G/N}:G/N \to \mathbb{C}$ by $\chi_{G/N}(gN)= \chi(g)$. Then
+> 	  - $\chi_{G/N}$ is a character of $G/N$.
+> 	  - $\chi \in \text{Irr}(G) \iff \chi_{G/N} \in \text{Irr}(G/N)$
+
+- $\psi \sim \psi^G \implies N \subseteq \ker \psi^G \implies (\psi^G)_{G/N}=\psi$. 
+
+##### Proof
+Week 10 Tutorial
+
+##### Proof of Theorem
+If $I \subseteq \{1,...,t\}$, then $N_I$ is normal. 
+
+For the converse, suppose that $N \trianglelefteq G$.
+Let $\text{Irr}(G/N) = \{\psi_1,...,\psi_s\}$. Hence $\psi_1^G,...,\psi_s^G \in \text{Irr}(G)$.
+Let $I$ be defined such that $\{x_i \:|\: i \in I\} = \{\psi_1^G,...,\psi_s^G\}$.
+If $n \in N$, then for $1 \leq j \leq s$, $\psi_j^G(n) = \psi_j(nN)= \psi_j(1_G N)= \psi_j^G(1_G).$ So $N \subseteq N_I$.
+
+Conversely suppose $x \in N_I$. Then for $1 \leq j \leq s$, $\psi_j(xN)= \psi_j(1_G\cdot N) \implies xN \sim 1_G  N$ in $G/N$.
+
+Since characters determine conjugacy classes ($\mathcal{C}(G/N)$ has a basis of $1$'s for conjugacy classes), then $xN = 1_GN \implies x \in N$. so we are done. $\square$
+
+
+### Simple Groups
+
+>[!Corollary]
+>A group $G$ is simple $\iff$ $1_G \neq g \in G$, then $\chi(g)=\chi(1_G)$ for all characters $\chi$.
+
+#### Example
+Let $G= S_3$. Then $N_{\{1\}}=G$ and $N_{\{2\}} = \{1_G\}$, and $N_{\{3\}}=\{1,(123),(132)\}= A_3$.
+These are the only normal subgroups.
+The character table matches the corollary above.
+
+
+|          | $(1)$ | $(i j)$ | $(ijk)$ |
+| -------- | ----- | ------- | ------- |
+| $\chi_1$ | 1     | 1       | 1       |
+| $\chi_2$ | 2     | 0       | -1      |
+| $\chi_3$ | 1     | -1      | 1       |
+
+# Linear Characters
+
+>[!Definition]
+>A character if **linear** if $\chi(1_G)=1$.
+
+- If $\chi$ is linear, and $\chi=\chi_V$, then $\dim V=1=\chi(1_G)$. So $\chi$ is an irreducible character and $V$ is an irreducible module
+
+- If $0 \neq v \in V$, and $g \in G$, then: $g\cdot v= \chi(g)v$ since $\chi(g)v = \text{tr}(g)$
+
+>[!Claim]
+>$\chi:G \to \mathbb{C}^\times$ is a group homomorphism
+##### Proof
+$(gh)\cdot v = g (h \cdot v)$. But $\chi(gh)v = \chi(g)\chi(h)v$. So $\chi$ is a group homomorphism. $\square$
 

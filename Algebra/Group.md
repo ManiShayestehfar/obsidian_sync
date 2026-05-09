@@ -1,3 +1,5 @@
+# Definition
+
 >[!def]
 >A **group** is an ordered pair $(G, \ast)$ where:
 >
@@ -14,6 +16,13 @@
    $$
    
 - If the operation $\ast$ is **commutative** (i.e., $a \ast b = b \ast a$ for all $a, b \in G$), then the group is called an **abelian group**.
+
+# Subgroups
+
+## Subgroup Criterion
+
+>[!Lemma]
+>Let $H\subseteq G$ (non-empty). Then $H \leq G$ if and only if $ab^{-1}\in H$ for all $a,b \in H$. 
 
 ## Normal Subgroup
 
@@ -57,6 +66,12 @@ A group $G$ is **simple** if it has no proper normal subgroups
 So
 $$G = \bigsqcup_{\substack{x \text{ conj.} \\ \text{class reps}}} \mathscr{C}_g \tag{Disjoint union}$$
 where $x \sim y \iff \mathscr{C}_x = \mathscr{C}_y$.
+
+>[!Lemma]
+>Let $H$ be a subgroup of $G$. $H$ is normal $\iff$ $H$ is a union of conjugacy classes
+##### Proof
+$H$ is normal $\iff gHg^{-1}=H \forall g \in G \iff gHg^{-1} \in H \iff$ $H$ is a union of conjugacy classes $\square$
+
 
 ### Examples
 
