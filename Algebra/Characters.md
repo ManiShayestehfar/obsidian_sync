@@ -250,7 +250,7 @@ $$d_i = \frac{|G|}{\chi_i(1)}e_i \iff e_i = \frac{\chi_i(1)}{|G|}d_i\qquad \squa
 - Since character is linear, $\langle -,- \rangle$ is a bilinear function
 - $\langle \chi, \psi \rangle = \langle \psi, \chi \rangle$ 
 
-#### Character Inner product in terms of $d$
+## In terms of $d$
 An important but trivial observation:
 
 $$\begin{align*}
