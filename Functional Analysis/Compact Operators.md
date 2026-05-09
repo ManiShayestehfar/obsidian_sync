@@ -57,7 +57,7 @@ $\square$
 >Let $X,Y$ be normed spaces. 
 >If $T_1,T_2 \in \mathcal{L}(X,Y)$ are compact, and $\lambda,\mu \in \mathbb{K}$, then $\lambda T_1+\mu T_2$ is compact.
 >
-i.e. $\mathcal{K}(X,Y) =\{T\in \mathcal{L}(X,Y) \:|\: T \text{ is compact }\}$ is a normed space.
+i.e. $\mathcal{K}(X,Y) :=\{T\in \mathcal{L}(X,Y) \:|\: T \text{ is compact }\}$ is a normed space.
 ##### Proof
 Using previous characterisation, let $(x_n)$ be a bounded sequence in $X$.
 Since $T_1$ is compact, $(T_1x_n)$ has a convergent subsequence $(T_1x_n')$ where $(x_n')$ is a subsequence of $(x_n)$.
@@ -125,4 +125,111 @@ $$\begin{align*}
 &\le \frac{1}{n+1} \|x\|_1.
 \end{align*}$$
 so $\|T-T_n\|\leq \frac{1}{n+1} \to 0$ so $T_n \to T$. $\square$
+
+
+# Hilbert-Schmidt Operators
+
+>[!Proposition]
+>Let $k  \in L^2([a,b]\times[a,b])$. The **Hilbert-Schmidt operator** given by $T: [a,b] \to [a,b]$ given by
+>$$Tf(x) = \int_a^b K(x,y)f(y)\:dy$$
+>is compact.
+##### Proof
+First note
+$$\begin{align*}
+\|Tf\|_2^2 &= \int_a^b |Tf(x)|^2\: dx \\
+&= \int_a^b \left|\int_a^b K(x,y)f(y)\: dy \right|^2\:dx \\
+&\overset{C.S}{\leq} \int_a^b \left(\int_a^b |K(x,y)|^2\: dy \right) \left(\int_a^b |f(y)|^2 \: dy\right)\:dx \\
+&= \left(\int_a^b \int_a^b |K(x,y)|^2\: dy\:dx\right)\|f\|_2^2 \\
+&= \|K\|^2 \|f\|_2^2
+\end{align*}$$
+So $T \in \mathcal{L}([a,b], [a,b])$, and $\|T\| \leq \|K\|_2$.
+
+Using the step function, there are $\alpha_i,\beta_j \in L^2([a,b])$ such that
+$$K_n(x,y) = \sum_{i=1}^n \sum_{j=1}^n \alpha_i(x) \alpha_j(y)$$
+with $\|K-K_n\|_2 \to 0$. 
+Then define 
+$$T_nf(x) = \int_a^b K_n(x,y) f(y)\:dy.$$
+We have 
+$$T_nf(x)= \sum_{i=1}^n \left(\int_a^b \sum_{j=1}^n \beta_j(y)\:f(y)\:dy\right) \alpha_j(x),$$
+and so $T_nf \in \text{span}\{\alpha_1,...,\alpha_n\}$ and we have $T_n$ is finite rank, hence $T_n$ is compact since $\|T-T_n \| \leq \|K-K_n\|$ means that $T_n \to T$. So by the identification of compact operators, $T$ is compact.  $\square$
+
+
+# Further on $\mathcal{K}(X,Y)$
+
+>[!Proposition]
+>Let $X,Y,Z$ be normed vector spaces.
+>1. $T \in \mathcal{K}(X,Y)$, $S \in \mathcal{L}(Y,Z) \implies ST \in \mathcal{K}(X,Z)$.
+>2. $T \in \mathcal{L}(X,Y), S \in \mathcal{K}(Y,Z) \implies ST \in \mathcal{K}(X,Z)$.
+##### Proof
+###### 1. 
+Let $(x_n)$ be bounded in $X$. 
+Then $(Tx_n)$ has a convergent subsequence $(Tx_{n_k})$ such that $S(Tx_{n_k})$ converges in $Z$ as $S$ is continuous, so $ST$ is compact.
+###### 2.
+Let $B \subseteq X$ be bounded. Since $T$ is continuous (hence bounded), $T(B) \subseteq Y$ is bounded. 
+Hence $S(T(B))$ is relatively compact (as $S$ is compact). So $ST$ is compact.
+$\square$
+
+## Applications
+
+>[!Corollary]
+>Let $X$ be a normed space. Then $\mathcal{K}(X) := \mathcal{K}(X,X)$ is a two-sided ideal of the algebra $\mathcal{L}(X)$.
+
+>[!Proposition]
+>Let $X$ be Banach over $\mathbb{C}$. If $\dim X = \infty$, then $0 \in \sigma(T)$ for all $T \in \mathcal{K}(X)$.
+##### Proof
+If $0 \not \in \sigma(T)$, then $T$ is invertible. By the bounded inverse theorem, $T^{-1}$ is continuous.
+So $T^{-1}T =I$ is compact. But the identity map is not compact so $0 \in \sigma(T)$. $\square$
+
+
+>[!warning] Remark
+>For $T \in \mathcal{K}(X)$ with $\dim X = \infty$, it is possible for $0$ to be in *any part* of the spectrum.
+
+For example, 
+1. $T: \ell^2 \to \ell^2$, $Tx = (x_1/1,x_2/2,x_3/3,...)$, then $0 \in \sigma_c(T)$.
+2. $T: \ell^2 \to \ell^2$, $Tx = (0, x_2/2,x_3/3,...)$, then $0 \in \sigma_p(T)$.
+3. $T: \ell^2 \to \ell^2$, $Tx = (0, x_1/1, x_2/2,...)$, then $0 \in \sigma_r(T)$.
+
+>[!Warning] Remark
+>Note that neither $R: \ell^2 \to \ell^2$ or $L: \ell^2 \to \ell^2$ are compact as $I = LR$ which is not compact for in $\ell^2$.
+
+
+# Approximation Property
+
+>[!Proposition]
+>Let $\mathcal{H}$ be a Hilbert space. Then 
+>$$T \in \mathcal{L}(\mathcal{H}) \text{ is compact} \iff T \text{ is a limit of finite rank operators}$$
+##### Proof
+###### $(\Leftarrow)$
+Obvious from before
+###### $(\Rightarrow)$
+
+>[!Claim]
+>$Y := \text{im }T$ is separable
+
+To show this, notice that $\mathcal{H} = \bigcup_{n=0}^\infty B(0,n)$. So $Y = \bigcup_{n=1}^\infty T(B(0,n))$.
+Each $\overline{T(B(0,n))}$ is compact and hence separable since compact metric spaces are separable.
+So $Y$ is a countable union of separable things, and so is separable.
+Subsequently, $\overline{Y}$ is a separable Hilbert space. (End of claim proof)
+
+
+
+Let $S=\{e_n \::\: n \geq 1\}$ be a Hilbert basis (countable).
+Let $P_n$ be the projection of $\mathcal{H}$ onto $M_n = \text{span}\{e_1,...,e_n\}$.
+
+>[!Claim]
+>$P_n T \to T$ as $n \to \infty$. 
+
+Note that $P_nT$ is finite rank with $\text{im }P_nT = M_n$.
+Let $\epsilon >0$. Since $\overline{T(\overline{B(0,1)})}$ is compact, it is totally bounded. Hence there exists a finite points $z_1,...,z_N \in \overline{T(\overline{B(0,1)})}$ with sets $B(z_j,\epsilon/3) \subseteq \overline{T(\overline{B(0,1)})}$ covering it.
+If $x \in \overline{B(0,1)}$ , then $Tx \in B(z_j, \epsilon/3)$ for some $j$. So
+$$\begin{align*}
+\|P_nTx - Tx\| &\leq \|P_nTx - P_n z_j\| + \|P_nz_j - z_j\| + \|z_j - Tx\| \\[4pt]
+&\leq \|P_n\|\|Tx - z_j\| + \|P_nz_j - z_j\| + \|z_j - Tx\| \tag{$\|P_n\|=1$}\\[4pt]
+&= 2\|Tx-z_j\| + \|P_nz_j - z_j\|.
+\end{align*}$$
+Since $z_j \in \overline{Y}$, then $P_n z_j \to z_j$, so there is $n_0>0$ with $\|P_n z_j-z_j\|<\epsilon/3$ for all $j$ and all $n > n_0$.
+Since $Tx \in B(z_j, \epsilon/3)$, $\|P_nTx - Tx\| \leq 2 \epsilon/3 + \epsilon/3 < \epsilon$.
+So $P_nT \to T$ as required. $\square$
+ 
+
 

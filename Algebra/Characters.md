@@ -281,3 +281,117 @@ $$\frac{1}{|G|}\chi_j(d_i) = \frac{1}{|G|} \cdot \frac{|G|}{\chi_i(1)}\chi_j(e_i
 \end{cases} = \delta_{ij}$$
 since $e_i$ acts on $D_i$ as identity and as the zero map on $D_j \subseteq B_j$. $\square$
 
+
+# Applications
+
+>[!Corollary]
+>$D_1,...,D_t$ are irreducible $\mathbb{C}G$-modules.
+>1. Then $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle} \iff \chi_V = \sum_{i=1}^t \langle \chi_V,\chi_i\rangle \chi_i$ 
+>2. If $V,W$ are $\mathbb{C}G$-modules then $V\cong W \iff \chi_V = \chi_W$
+>3. If $V$ is a $\mathbb{C}G$-module, then $V$ is irreducible $\iff \langle \chi_V ,\chi_V \rangle = 1$.
+##### Proof
+###### 1.
+Since $\mathbb{C}G$ is complete reducible, $V \cong \bigoplus_{i=1}^t D_i^{\oplus a_i}$ for some $a_i \geq 0$ where each $D_i$ is irreducible and has character $\chi_i$.
+$\implies \chi_V = \sum_{i=1}^t a_i\chi_i$.
+
+Since characters are additive for direct sums,
+$$\langle \chi_V, \chi_i \rangle = \left \langle \sum_{i=1}^t a_i\chi_i\:,\: \chi_i \right \rangle = \sum_{i=1}^t a_i \langle \chi_i, \chi_i \rangle = a_i.$$So $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$ and $\chi_V= \sum_{i=1}^t \langle \chi_V, \chi_i \rangle \chi_i$.
+
+###### 2.
+Write $V = \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$, and $W = \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_W, \chi_i \rangle}$
+Then $V \cong W \iff \langle\chi_V, \chi_i \rangle = \langle \chi_W, \chi_i \rangle$ for $1\leq i \leq t$.
+$\iff \chi_V = \chi_W$.
+
+###### 3.
+$$\begin{align*}
+\langle \chi_V, \chi_V \rangle &= \left\langle \sum_{i=1}^t \langle \chi_V,\chi_i \rangle \chi_i \:,\: \sum_{j=1}^t \langle \chi_V,\chi_j \rangle \chi_j \right\rangle \\
+&= \sum_{i,j=1}^t \langle\chi_V,\chi_i \rangle \langle\chi_V, \chi_j \rangle \langle\chi_i,\chi_j \rangle \\
+&= \sum_{i=1}^t \langle \chi_V,\chi_i \rangle^2 
+\end{align*}$$
+Now $\langle\chi_V, \chi_i \rangle \in \mathbb{N}$. Hence $\langle\chi_V, \chi_V \rangle \geq 1$.  with equality if and only if $\langle \chi_V, \chi_i \rangle = \delta_{ij}$ for some $j$.
+if and only if $V \cong D_i$ is irreducible. $\square$
+
+>[!Proposition]
+>Let $V$ be a $\mathbb{C}G$-module and $g \in G$ and $g \in G$.
+>Then $g$ acts diagonalisably on $V$. That is, there is a basis $\{v_{g,1},...,v_{g,n}\}$ of $V$ and scalars $\lambda_{g,i}\in \mathbb{C}$ such that $gv_{g,i}= \lambda_{g,i}v_{g,i}$ $\iff$ w.r.t this basis $g$ acts as 
+>$$
+\begin{pmatrix}\lambda_{g,1} & 0 & \cdots & 0 \\0 & \lambda_{g,2} & \cdots & 0 \\\vdots & \vdots & \ddots & \vdots \\0 & 0 & \cdots & \lambda_{g,n}\end{pmatrix}
+$$
+##### Proof
+Let $\{v_1,...,v_n\}$ be any basis of $V$ and define $\mathbf{g}= (g_{ij})\in \text{Mat}_n(\mathbb{C})$ by $gv_j = \sum_{i=1}^n g_{ij}v_i$.
+As $\mathbb{C}$ is algebraically closed, let $J$ be the Jordan canonical form of $\mathbf{g}$ 
+$$J = \begin{pmatrix}
+\lambda & * & 0 & \cdots & 0 \\
+0 & \lambda & * & \cdots & 0 \\
+\vdots & \vdots & \ddots & \ddots & \vdots \\
+0 & 0 & \cdots & \lambda & * \\
+0 & 0 & \cdots & 0 & \lambda
+\end{pmatrix}.$$
+for some $\lambda_{g,i}\in \mathbb{C}$. Then $\mathbf{g} = AJA^{-1}$ for some $A$.
+Let $m = |g|$, the order of $g$.
+Then $g^m = 1\implies \mathbf{g}^m=I_n \implies J^m = I_n \implies \lambda_{g,i}^m =1$ for $1 \leq i \leq n$.
+The *minimal polynomial* of $\mathbf{g}$ divides $X^m-1$.
+The roots of $X^m-1$ are the $m$-th roots of unity (explicitly, $\zeta = \exp(2\pi i /m) \implies X^m-1 = \prod_{k=1}^m(X-\zeta^k)$)
+Then the roots of $X^m-1$ are distinct.
+
+Minimal polynomial of $\mathbf{g}$ is of the form $M_g(X) = \prod_{k \in I \subseteq \{1,...,m\}} (X - \zeta^kI_n)$.
+So $M_\mathbf{g}(J) = \prod_{k \in I}(J - \zeta^kI_n) = 0 \implies$ each Jordan block of $J$ has size $1$.
+$\implies \mathbf{g}$ is diagonalisable. $\square$
+
+
+## Complex Conjugate of Character
+
+>[!Corollary]
+>Let $V$ be a $\mathbb{C}G$ and $g \in G$. Then
+>$$\chi_V(g^{-1})=\overline{\chi_V(g)}$$
+##### Proof
+By the previous proposition $g$ acts diagonalisably on $V$, there exists a basis $\{v_{g,1},...,v_{g,n}\}$ such $gv_{g,i} = \lambda_{g,i}v_{g,i}$ for some $\lambda_{g,i}\in \mathbb{C}$. 
+Moreover, if $m=|g|$, then $\lambda_{g,i}^m=1 \implies \lambda_{g,i}$ are $m$-th roots of unity.
+So $|\lambda_{g,i}|=1$.
+
+Now $gv_{g,i}= \lambda_{g,i}v_{g,i}$. So $g^{-1}v_{g,i}= \frac{1}{\lambda_{g,i}}= \overline{\lambda_{g,i}}v_{g,i}$.
+Since $|\lambda_{g,i}|=1$, then $\chi_V(g^{-1})= \sum_{i=1}^n \overline{\lambda_{g,i}} = \overline{\sum_{i=1}^n \lambda_{g,i}} = \chi_V(g)$.     $\square$  
+
+>[!Remark]
+>In fact, there exists a $\mathbb{C}G$-module $\overline{V}$ such that $\chi_{\overline{V}}= \overline{\chi_V(g)}$. 
+>The moral is, if $\chi$ is a character, then so is $\overline{\chi}$.
+>
+
+### Corollary
+
+>[!Corollary]
+>Let $g \in G$. Then $g \sim g^{-1}$ if and only if $\chi(g) \in \mathbb{R}$ for all irreducible characters $\chi$.
+##### Proof
+We saw that $\chi(g^{-1}) = \overline{\chi(g)}$. If $\chi(g) \in \mathbb{R}$ then $\chi(g^{-1})=\chi(g)$, which implies $g \sim g^{-1}$.
+
+Conversely if $g \sim g^{-1}$, then $\chi(g) = \chi(g^{-1}) = \overline{\chi(g)}$. 
+So $\chi(g) \in \mathbb{R}$. $\square$
+
+
+
+# Column Orthogonality
+
+>[!Theorem]
+>Suppose $1 \leq i,j \leq t$. Then
+$$\frac{1}{|G|} \sum_{k=1}^t |C_i| \:\overline{\chi_k(C_i)}\chi_k(C_i)= \delta_{ij}$$
+##### Proof
+$$\delta_{ij} = 1_{C_i}(C_j) = \frac{|C_k|}{|G|}= \sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
+
+## Corollary
+
+>[!Corollary]
+>The following are equivalent:
+>1. $g \sim h \qquad \forall g,h \in G$
+>2. $\chi(g) = \chi(h)$ for all characters $\chi$
+>3. $\chi_i(g)=\chi_i(h)$ for $1 \le i \leq t$
+>4. $1_G(g) = 1_G(h)$ for $1 \leq i \leq t$
+##### Proof
+###### 1 -> 2
+Characteristics are class functions 
+###### 2 -> 3
+Trivial
+###### 3 -> 4
+$\{\chi_i\}$ are a basis of $\mathcal{C}(G)$
+###### 4 -> 1
+Obvious by definition
+
