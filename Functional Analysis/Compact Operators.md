@@ -233,3 +233,22 @@ So $P_nT \to T$ as required. $\square$
  
 
 
+# Compact Operators on Banach Spaces 
+
+##  Theorem
+
+>[!Theorem]
+>Let $X$ be infinite dimensional [[Banach Spaces|Banach space]] over $\mathbb{C}$, and $T \in \mathcal{L}(X)$ be compact. Then
+>1. $0 \in \sigma(T)$
+>2. $\sigma(T) \setminus \{0\} = \sigma_p \setminus \{0\}$
+>3. $\sigma_p(T)$ is either finite (possibly empty) or is a countable sequence of complex numbers converging to zero
+>4. If $\lambda \in \sigma(T) \setminus \{0\}$, then the eigenspace $\ker (\lambda I - T)$ is finite dimensional.
+##### Proof
+###### 1.
+If $0 \not \in \sigma(T)$, then $T$ is invertible. By the bounded inverse theorem, $T^{-1}$ is continuous.
+So $T^{-1}T =I$ is compact. But the identity map is not compact so $0 \in \sigma(T)$. 
+
+###### 3. 
+We can show that for each $N > 0$:    $\# \{\lambda \in \sigma_p(T) \:|\: |\lambda |\geq N \} < \infty$.
+Suppose there is $N >0$ such that the number is infinite. So there are distinct eigenvalues $\lambda_1,\lambda_2$
+
