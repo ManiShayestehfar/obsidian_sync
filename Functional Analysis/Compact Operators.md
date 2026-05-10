@@ -243,12 +243,30 @@ So $P_nT \to T$ as required. $\square$
 >2. $\sigma(T) \setminus \{0\} = \sigma_p \setminus \{0\}$
 >3. $\sigma_p(T)$ is either finite (possibly empty) or is a countable sequence of complex numbers converging to zero
 >4. If $\lambda \in \sigma(T) \setminus \{0\}$, then the eigenspace $\ker (\lambda I - T)$ is finite dimensional.
-##### Proof
-###### 1.
+#### Proof
+##### 1.
 If $0 \not \in \sigma(T)$, then $T$ is invertible. By the bounded inverse theorem, $T^{-1}$ is continuous.
 So $T^{-1}T =I$ is compact. But the identity map is not compact so $0 \in \sigma(T)$. 
 
-###### 3. 
+##### 3. 
 We can show that for each $N > 0$:    $\# \{\lambda \in \sigma_p(T) \:|\: |\lambda |\geq N \} < \infty$.
-Suppose there is $N >0$ such that the number is infinite. So there are distinct eigenvalues $\lambda_1,\lambda_2$
+Suppose there is $N >0$ such that the number is infinite. So there are distinct eigenvalues $\lambda_1,\lambda_2,...$ of $T$ for which $|\lambda_j| \geq N$. 
+Choose nonzero $\lambda_n$-eigenvectors $x_n$ such that $Tx_n = \lambda_n x_n$.
+Let $X_n = \text{span}\{x_1,...,x_n\}$. Since $\{x_1,...,x_n\}$ is linearly independent we have 
+$$X_1 \subsetneq X_2 \subsetneq X_3 \subsetneq \cdots$$
+Since each $X_n$ is finite-dimensional, they are closed. So by [[The Unit Ball| Riesz's Lemma]], there is $x_n' \in X_n$ such that $\|x_n'\|=1$ with $\|x_n'-x\| \geq \frac{1}{2}$ for all $x \in X_{n-1}$.
+Thus $(x_n')_{n\geq1}$ is a bounded sequence.
 
+>[!Claim] 
+>$(Tx_n')_{n\geq 1}$ has no convergent subsequence, hence $T$ is not compact.
+>
+###### Proof
+$Tx_n' \in X_n$ since $x_n' = \sum_{k=1}^n a_k x_k$. So 
+$$Tx_n' = \sum_{k=1}^n a_k Tx_k = \sum_{k=1}^n \lambda_k a_k x_k \in X_n.$$
+Also $\lambda_n x_n' - Tx_n' = \sum_{k=1}^{n-1} a_k(\lambda_n - \lambda_k)x_k \in X_{n-1}$.
+So if $m > n$, then we have 
+$$\begin{align*}
+\|Tx_m' - Tx_n'\| &= \| \lambda_m x_m' - (\underbrace{\lambda_mx_m' - Tx_m'}_{\in X_{m-1}}) + \underbrace{Tx_n'}_{\in X_n \subseteq X_{m-1}}\| \\
+&= |\lambda_m| \|x_m' - \frac{1}{\lambda_m} \underbrace{((\lambda_mx_m' - Tx_m') + Tx_n')}_{\in X_{m-1}}\| \\
+&\geq \frac{1}{2}|\lambda_m| \geq \frac{1}{2}N
+\end{align*}$$
