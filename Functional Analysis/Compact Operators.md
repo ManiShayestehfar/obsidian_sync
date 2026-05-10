@@ -240,7 +240,7 @@ So $P_nT \to T$ as required. $\square$
 >[!Theorem]
 >Let $X$ be infinite dimensional [[Banach Spaces|Banach space]] over $\mathbb{C}$, and $T \in \mathcal{L}(X)$ be compact. Then
 >1. $0 \in \sigma(T)$
->2. $\sigma(T) \setminus \{0\} = \sigma_p \setminus \{0\}$
+>2. $\sigma(T) \setminus \{0\} = \sigma_p(T) \setminus \{0\}$
 >3. $\sigma_p(T)$ is either finite (possibly empty) or is a countable sequence of complex numbers converging to zero
 >4. If $\lambda \in \sigma(T) \setminus \{0\}$, then the eigenspace $\ker (\lambda I - T)$ is finite dimensional.
 #### Proof
@@ -267,6 +267,37 @@ Also $\lambda_n x_n' - Tx_n' = \sum_{k=1}^{n-1} a_k(\lambda_n - \lambda_k)x_k \i
 So if $m > n$, then we have 
 $$\begin{align*}
 \|Tx_m' - Tx_n'\| &= \| \lambda_m x_m' - (\underbrace{\lambda_mx_m' - Tx_m'}_{\in X_{m-1}}) + \underbrace{Tx_n'}_{\in X_n \subseteq X_{m-1}}\| \\
-&= |\lambda_m| \|x_m' - \frac{1}{\lambda_m} \underbrace{((\lambda_mx_m' - Tx_m') + Tx_n')}_{\in X_{m-1}}\| \\
+&= |\lambda_m| \left\|x_m' - \frac{1}{\lambda_m} \underbrace{((\lambda_mx_m' - Tx_m') + Tx_n')}_{\in X_{m-1}}\right\| \\
 &\geq \frac{1}{2}|\lambda_m| \geq \frac{1}{2}N
 \end{align*}$$
+So there is no convergent subsequence $\square$
+
+Thus we must have that $\# \{\lambda \in \sigma_p(T) \:|\: |\lambda |\geq N \} < \infty$.
+
+##### 4. 
+Let $\lambda \in \sigma_p(T)\setminus \{0\}$. Let $K : = \ker(\lambda I -T) \subseteq X$ which is a *closed subspace*. Therefore $K$ is a Banach space.
+The closed unit ball in $K$ is:
+$$\begin{align*}
+\{x \in K \:|\: \|x\| \leq 1\} &= \{x \in K \:|\: Tx = \lambda x, \|x\|\leq 1\} \\
+&= \{\lambda^{-1}Tx \:|\: \|x\| \leq 1 \} \\
+&\subseteq \lambda^{-1} \overline{T(\overline{B}(0,1))}.
+\end{align*}$$
+which is compact since $T$ is compact. So $\dim K < \infty$ (its closed unit ball is compact).
+
+##### 2. 
+We need to show that if $\lambda \neq 0$, then $\lambda I -T$ is injective $\iff$ $\lambda I -T$ is surjective.
+
+>[!Lemma]
+>$X$ a Banach space, and $T \in \mathcal{L}(X)$ compact.  If $\lambda \neq 0$, then $\text{im }(\lambda I -T)$ is closed.
+###### Proof
+PROOF
+
+
+If $\lambda \in \sigma(T) \setminus \{0\}$ is not an eigenvalue, then $\lambda I -T$ is injective but not surjective.
+Let $Y_n = \text{im }(\lambda I -T)^n$. 
+Since $\lambda I - T$ is injective, we have 
+$$Y_1 \supsetneq Y_2 \supsetneq Y_3 \supsetneq \cdots$$
+and by the lemma, each $Y_n$ is closed.
+Using Riesz's lemma, pick $y_n \in Y_n$ with $\|y_n\|=1$ and $\|y_n-y\|\geq \frac{1}{2}$ for all $y \in Y_{n+1}$.
+
+>[Claim]
