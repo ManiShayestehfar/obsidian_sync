@@ -297,4 +297,31 @@ Then $|S| = |[a,b]| = \aleph > \aleph_0 = |\mathbb{N}|$. Thus from general princ
 ##### Proof
 NEED TO PROVE
 
-## Spectral Theorem
+## Spectral Theorem (compact + normal operators)
+
+>[!Theorem]
+>Let $\mathcal{H}$ be over $\mathbb{C}$ and $T \in \mathcal{L}(\mathcal{H})$ be *compact* and *normal*.
+>Then $\mathcal{H}$ has an orthonormal basis consisting of eigenvectors of $T$. Thus
+>$$\mathcal{H} = \overline{\bigoplus_{\lambda \in \sigma_p(T)} V(\lambda)}$$
+>where $V(\lambda) := \ker(\lambda I -T)$. 
+>Moreover, if $\lambda \neq 0$, then $V(\lambda)$ is finite-dimensional.
+
+>[!Lemma]
+>Let $\mathcal{H}$ be over $\mathbb{C}$, and $T \in \mathcal{L}(X)$ be normal. Then
+>1. $V(\lambda) \perp V(\mu)$ if $\lambda \neq \mu$
+>2. Each $V(\lambda)$ is $T$ and $T^*$ invariant
+##### Proof
+
+>[!Claim]
+>$$Tx = \lambda x \iff T^*x = \overline{\lambda}x$$
+###### Proof
+Suppose $Tx = \lambda x$. Then $Ax := (T - \lambda  I)x=0$. $A$ is normal since $(T-\lambda I)^* = T^* - \overline{\lambda}I$, and normality is preserved by subtracting scalar multiples of the identity.
+For any normal operator $A$, $\|A\|=\|A^*\|$.
+Since $Ax= 0$, then $0 = \|Ax\| = \|A^*\| \implies A^*x=0$. That is $(T-\lambda I)^*x=0 \implies T^*x = \overline{\lambda} x$.
+The reverse direction holds similarly since $T^*$ is also normal. $\square$
+
+
+Then $(1),(2)$ follow easily. E.g. For $(2)$:
+If $x \in V(\lambda)$, then $Tx =\lambda x \implies Tx \in V(\lambda)$,
+and $T^*x=\overline{\lambda}x \implies T^*x \in V(\lambda)$. 
+$\square$
