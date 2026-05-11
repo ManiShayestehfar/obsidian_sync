@@ -290,14 +290,40 @@ We need to show that if $\lambda \neq 0$, then $\lambda I -T$ is injective $\iff
 >[!Lemma]
 >$X$ a Banach space, and $T \in \mathcal{L}(X)$ compact.  If $\lambda \neq 0$, then $\text{im }(\lambda I -T)$ is closed.
 ###### Proof
-PROOF
+Suppose $(\lambda I - T)x_n \to y$. We need to show that $y \in \text{im }(\lambda I-T)$.
+Let $K = \ker \lambda I -T$. For $x \in X$ let $\text{dist}(x,K):= \inf_{z \in K} \|x-z\|$.
+By definition of infimum, there is $(z_n) \subseteq K$ with $\|x_n - z_n\| \leq 2\: \text{dist}(x_n, K)$
 
 
-If $\lambda \in \sigma(T) \setminus \{0\}$ is not an eigenvalue, then $\lambda I -T$ is injective but not surjective.
+
+
+
+
+
+
+
+
+
+
+
+
+
+If $\lambda \in \sigma(T) \setminus \{0\}$ is not an eigenvalue, then $\lambda I -T$ is injective but *not* surjective.
 Let $Y_n = \text{im }(\lambda I -T)^n$. 
 Since $\lambda I - T$ is injective, we have 
 $$Y_1 \supsetneq Y_2 \supsetneq Y_3 \supsetneq \cdots$$
 and by the lemma, each $Y_n$ is closed.
 Using Riesz's lemma, pick $y_n \in Y_n$ with $\|y_n\|=1$ and $\|y_n-y\|\geq \frac{1}{2}$ for all $y \in Y_{n+1}$.
 
->[Claim]
+>[Claim] 
+>$(Ty_n)_{n\geq 1}$ has no convergent subsequence, and hence $T$ is not compact.
+###### Proof
+For $m >n$ 
+$$\begin{align*}
+\|Ty_n - Ty_m\| &= \|\underbrace{(\lambda I - T)y_n - (\lambda I -T)y_m +\lambda y_m}_{\in Y_{n+1}} - \lambda y_n\| \\
+&= |\lambda| \|y_n - (\text{something in } Y_{n+1})\| \\
+&\geq \frac{|\lambda|}{2}
+\end{align*}$$
+So there is no convergent subsequence. $\square$
+
+Thus since $T$ is not compact otherwise, we need $\lambda I -T$ to be injective and surjective. $\square$
