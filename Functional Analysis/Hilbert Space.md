@@ -328,4 +328,26 @@ $\square$
 
 ##### Proof of Spectral Theorem:
 
-Let $M = \overline{\bigoplus_{\lambda \in \sigma_p(T)} V(\lambda)}$
+Let $M = \overline{\bigoplus_{\lambda \in \sigma_p(T)} V(\lambda)}$. So $\mathcal{H} = M \oplus M^{\perp}$. 
+
+>[!Claim]
+>$$M^\perp = \{0\}$$
+###### Proof
+Suppose otherwise.
+Let $\widetilde{T}:M^\perp \to \mathcal{H}$ with $\widetilde{T} = T\mid_{M^\perp}$ .
+Then $\widetilde{T}: M^\perp \to M^\perp$ because if $m \in M$, then $\langle \widetilde{T}x, m \rangle = \langle x, T^* m \rangle = 0$ for all $x \in M^\perp$.
+as $T^*m \in M$ by the lemma above.
+
+Moreover, $\widetilde{T}: M^\perp \to M^\perp$ is:
+- *normal* (because $T$ is normal), and 
+- *compact* (if $(x_n)_{n\geq 1}$ is bounded in $M^\perp$, then $(\widetilde{T}x_n) = (Tx_n)$ has a convergent subsequence, and the limit is in $M^\perp$ as $M^\perp$ is closed).
+
+**Case 1:** If $\sigma(\widetilde{T}) = \{0\}$, then $\|\widetilde{T}\|= r(\widetilde{T}) = 0$ (as $\widetilde{T}$ is normal) so $\widetilde{T}=0$.
+So each $x \in M^\perp \setminus \{0\}$ is a $0$-eigenvector of $T$ and so $M^\perp \subseteq V(0) \subseteq M$, which is a contradiction.
+
+**Case 2:** If $\sigma(\widetilde{T})=\{0\}$, choose $\lambda \in \sigma(\widetilde{T}) \setminus \{0\}$.
+By the spectral theorem $\lambda \in \sigma_p(\widetilde{T})$, so there is $x \in M^\perp \setminus \{0\}$ with $\widetilde{T}x = \lambda x$ so $Tx = \lambda x$.
+Hence $x \in M^\perp \cap V(\lambda)$ contradicting that $M \cap M^\perp = \{0\}$.  $\square$
+
+
+So $M = \mathcal{H}$. Hence the theorem holds. $\square$
