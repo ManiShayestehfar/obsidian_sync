@@ -288,3 +288,13 @@ Then $|S| = |[a,b]| = \aleph > \aleph_0 = |\mathbb{N}|$. Thus from general princ
 
 - Hermitian $\implies$ Normal   (not the other way around)
 	- counter-example: $\mathcal{H}=\mathbb{C}^2$. Then $T = \left[\begin{smallmatrix} 0 & -1 \\ 1 & 0\end{smallmatrix}\right]$ is normal but not self-adjoint.
+
+## Propositions
+
+>[!Proposition]
+>1. If $T$ is normal and $\mathcal{H}$ is over $\mathbb{C}$ $\implies \|T\| = r(T)$.
+>2. If $T$ is Hermitian $\implies \sigma(T) \subseteq \mathbb{R}$.
+##### Proof
+NEED TO PROVE
+
+## Spectral Theorem

@@ -309,15 +309,28 @@ So $\lambda v_{n_k} = (\lambda I - T)v_{n_k} + Tv_{n_k}\to 0 +w$. Thus $v_{n_k} 
 Note that $v \in K$, because $w = \lambda v \longleftarrow Tv_{n_k} \longrightarrow Tv$. Hence $Tv = \lambda v$. So $v \in K$.
 
 Let $u_{n_k} = z_{n_k} + \|x_{n_k} - z_{n_k}\|v \in K$ from above. Then
+$$\begin{align*}
+\text{dist}(x_{n_k}, K) &\leq \|x_{n_k} - u_{n_k}\| \\[2pt]
+&= \|x_{n_k} - z_{n_k} - \|x_{n_k} - z_{n_k}\|v \| \\[2pt]
+&= \|\|x_{n_k}- z_{n_k}\|v_{n_k} - \|x_{n_k} - z_{n_k}\|v\| \tag{by def. of $v_n$}\\[2pt]
+&= \|x_{n_k}-z_{n_k}\| \|v_{n_k}-v\|\\[3pt]
+&\leq 2\text{dist}(x_{n_k},K) \|v_{n_k}-v\|
+\end{align*}$$
+since $n < \|x_n-z_n\| \leq 2 \text{dist}(x_n,K)$.
+$\text{dist}(x_{n_k},K)\neq 0$, hence dividing gives $\|v_{n_k}-v\|\geq \frac{1}{2}$, contradicting $v_{n_k} \to v$. $\square$
 
 
-
-
-
-
-
-
-
+So we showed that there is a subsequence $(x_{n_k} - z_{n_k})_{k \geq 1}$ for which $T(x_{n_k}-z_{n_k})$ converges. Then
+$$\begin{align*}
+\lambda(x_{n_k}-z_{n_k}) &= (\lambda I -T)(x_{n_k}-z_{n_k}) + T(x_{n_k}-z_{n_k}) \\
+&= \underbrace{(\lambda I-T) x_{n_k}}_{\text{converges to $y$ by assumption}} \:+\: \underbrace{T(x_{n_k}-z_{n_k})}_{\text{converges}} \\
+\to \lambda x
+\end{align*}$$
+So $x_{n_k} - z_{n_k} \to x$. Then 
+$$y \longleftarrow (\lambda I -T)x_{n_k} = (\lambda I -T)(x_{n_k}-z_{n_k}) \overset{\text{continuity}}{\longrightarrow} (\lambda I-T)x$$
+So $y = (\lambda I - T)x$, so $y \in \text{im }(\lambda I -T)$ as required 
+$\square$
+(END OF PROOF OF LEMMA)
 
 
 
@@ -328,7 +341,7 @@ $$Y_1 \supsetneq Y_2 \supsetneq Y_3 \supsetneq \cdots$$
 and by the lemma, each $Y_n$ is closed.
 Using Riesz's lemma, pick $y_n \in Y_n$ with $\|y_n\|=1$ and $\|y_n-y\|\geq \frac{1}{2}$ for all $y \in Y_{n+1}$.
 
->[Claim] 
+>[!Claim] 
 >$(Ty_n)_{n\geq 1}$ has no convergent subsequence, and hence $T$ is not compact.
 ###### Proof
 For $m >n$ 
