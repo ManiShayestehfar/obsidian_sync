@@ -325,3 +325,7 @@ Then $(1),(2)$ follow easily. E.g. For $(2)$:
 If $x \in V(\lambda)$, then $Tx =\lambda x \implies Tx \in V(\lambda)$,
 and $T^*x=\overline{\lambda}x \implies T^*x \in V(\lambda)$. 
 $\square$
+
+##### Proof of Spectral Theorem:
+
+Let $M = \overline{\bigoplus_{\lambda \in \sigma_p(T)} V(\lambda)}$
