@@ -292,9 +292,13 @@ We need to show that if $\lambda \neq 0$, then $\lambda I -T$ is injective $\iff
 ###### Proof
 Suppose $(\lambda I - T)x_n \to y$. We need to show that $y \in \text{im }(\lambda I-T)$.
 Let $K = \ker \lambda I -T$. For $x \in X$ let $\text{dist}(x,K):= \inf_{z \in K} \|x-z\|$.
-By definition of infimum, there is $(z_n) \subseteq K$ with $\|x_n - z_n\| \leq 2\: \text{dist}(x_n, K)$
+By definition of infimum, there is $(z_n) \subseteq K$ with $\|x_n - z_n\| \leq 2\: \text{dist}(x_n, K)$.
 
-
+>[!Claim]
+>$(x_n-z_n)_{n\geq1}$ is a bounded sequence.
+###### Proof
+Suppose it is not bounded. Then we can assume that $\|x_n-z_n\| > n$ for all $n \geq 1$. 
+...
 
 
 

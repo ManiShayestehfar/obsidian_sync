@@ -276,3 +276,15 @@ We can show that indeed $\mathcal{H}$ is an inner product vector space that is c
 Let $S \subseteq \mathcal{H}$ be $S = \{\delta_x \:|\: x \in [a,b]\}$ orthonormal system (Hamel basis).
 Then $|S| = |[a,b]| = \aleph > \aleph_0 = |\mathbb{N}|$. Thus from general principle, $\mathcal{H}$ is non-separable. 
 
+
+
+
+# Hermitian and Normal Operators 
+
+>[!Definition]
+>$\mathcal{H}$ a Hilbert space. An operator $T \in \mathcal{L}(\mathcal{H})$ is 
+>1. **Hermitian** or **Self-adjoint** if $T^*=T$
+>2. **Normal** if $T^*T = TT^*$
+
+- Hermitian $\implies$ Normal   (not the other way around)
+	- counter-example: $\mathcal{H}=\mathbb{C}^2$. Then $T = \left[\begin{smallmatrix} 0 & -1 \\ 1 & 0\end{smallmatrix}\right]$ is normal but not self-adjoint.
