@@ -298,7 +298,7 @@ By definition of infimum, there is $(z_n) \subseteq K$ with $\|x_n - z_n\| \leq 
 >$(x_n-z_n)_{n\geq1}$ is a bounded sequence.
 ###### Proof
 Suppose it is not bounded. Then we can assume that $\|x_n-z_n\| > n$ for all $n \geq 1$. 
-...
+
 
 
 
