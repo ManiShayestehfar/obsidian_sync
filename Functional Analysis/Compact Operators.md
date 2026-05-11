@@ -298,8 +298,17 @@ By definition of infimum, there is $(z_n) \subseteq K$ with $\|x_n - z_n\| \leq 
 >$(x_n-z_n)_{n\geq1}$ is a bounded sequence.
 ###### Proof
 Suppose it is not bounded. Then we can assume that $\|x_n-z_n\| > n$ for all $n \geq 1$. 
+Let $v_n = \frac{x_n-z_n}{\|x_n-z_n\|}$.
 
+We will show that $(v_n)_{n\geq1}$ has convergent subsequence $v_{n_k}\to v$.
+To see this, since $(v_n)_{n\geq1}$ is bounded and $T$ is compact, there is $(v_{n_k})_{k\geq1}$ so that $Tv_{n_k} \to w$. Then
+$$(\lambda I-T)v_{n_k} = \frac{(\lambda I -T)(x_{n_k}-z_{n_k})}{\| x_{n_k} - z_{n_k}\|} \tag{$z_{n_k} \in K$} \longrightarrow 0$$
+since the denominator $\to \infty$. 
+So $\lambda v_{n_k} = (\lambda I - T)v_{n_k} + Tv_{n_k}\to 0 +w$. Thus $v_{n_k} \to v := \frac{1}{\lambda}w$  $(\lambda \neq 0)$.
 
+Note that $v \in K$, because $w = \lambda v \longleftarrow Tv_{n_k} \longrightarrow Tv$. Hence $Tv = \lambda v$. So $v \in K$.
+
+Let $u_{n_k} = z_{n_k} + \|x_{n_k} - z_{n_k}\|v \in K$ from above. Then
 
 
 
