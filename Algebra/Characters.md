@@ -516,3 +516,15 @@ $(gh)\cdot v = g (h \cdot v)$. But $\chi(gh)v = \chi(g)\chi(h)v$. So $\chi$ is a
 >Then $\{\psi_1^G,...,\psi_s^G\}$ are the linear characters of $G$.
 >In particular, $G$ has $[G:G']=|G/G'|$ linear characters.
 ##### Proof
+
+>[!Claim]
+>All irreducible characters of $G/G'$ are one-dimensional
+###### Proof
+By Artin-Wedderburn 
+$$\mathbb{C} G/G' \cong \bigoplus_{i=1}^t \text{Mat}_{a_1}(\mathbb{C})$$
+where $\# \text{Irr}\mathbb{C}G/G' =$ number of conjugacy classes. But $G/G'$ is abelian, so the number of conjugacy classes is $|G/G'|$. So every irreducible $\mathbb{C}G/G'$ module is one-dimensional. $\square$
+
+Hence $\psi_i$ are linear characters of $G$ for $1 \leq i \leq s$, and so by extension so is the lift $\psi^G$.
+
+
+Conversely
