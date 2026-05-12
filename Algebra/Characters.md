@@ -468,7 +468,16 @@ Since characters determine conjugacy classes ($\mathcal{C}(G/N)$ has a basis of 
 ### Simple Groups
 
 >[!Corollary]
->A group $G$ is simple $\iff$ $1_G \neq g \in G$, then $\chi(g)=\chi(1_G)$ for all characters $\chi$.
+>A group $G$ is simple $\iff$ $\ker \chi = \{1_G\}$ for all irreducible $\chi \neq \chi_\text{triv}$
+##### Proof
+Notice that $\ker \chi_\text{triv}= G$
+So $G$ is simple $\iff$ it has no proper non-trivial normal subgroups $\iff  \ker \chi_i \neq \{1_G\}$ got some $\chi_i \neq \chi_\text{triv}$.
+
+If $\ker \chi_i = G$, then $\chi_i(g) = \chi_i(1_G)$ for all $g \in G$. Thus $\chi_i = m \chi_\text{triv}$.
+But $\langle m \chi_\text{triv} , m\chi_\text{triv} \rangle = m^2$ so $m \chi_i$ is irreducible if and only if $m=1$.
+Thus $G$ is simple if and only of $\ker \chi_i = \{1_G\}$ and $\chi_i \neq \chi_\text{triv}$. $\square$
+
+
 
 #### Example
 Let $G= S_3$. Then $N_{\{1\}}=G$ and $N_{\{2\}} = \{1_G\}$, and $N_{\{3\}}=\{1,(123),(132)\}= A_3$.
@@ -482,6 +491,7 @@ The character table matches the corollary above.
 | $\chi_2$ | 2     | 0       | -1      |
 | $\chi_3$ | 1     | -1      | 1       |
 
+---
 # Linear Characters
 
 >[!Definition]
