@@ -73,4 +73,6 @@ $$\chi(1) = \frac{\chi(1)}{|G|} \sum_{k=1}^t |C_k| \overline{\chi(C_k)}\:\chi(C_
  $$\frac{|G|}{\chi(1)} = \sum_{k=1}^t \frac{|C_k| \chi(C_k) \: }{\chi(1)}\overline{\chi(C_k)}.$$
  $\frac{|C_k| \chi(C_k) \: }{\chi(1)} = \lambda_c \in \mathbb{A}$ using the lemma above, and $\overline{\chi(C_k)} \in \mathbb{A}$ as it is the conjugate of an irreducible character. So the whole summand is in $\mathbb{A}$. But clearly $|G|/\chi(1) \in \mathbb{Q}$. So the right-hand-side is in $\mathbb{A} \cap \mathbb{Q} = \mathbb{Z}$ from the lemma in step (2).
 
-Hence $|G|/$
+Hence $|G|/\chi(1) \in \mathbb{Z}$, so $\chi(1) = \dim D_i \mid |G|$. 
+$\square$
+
