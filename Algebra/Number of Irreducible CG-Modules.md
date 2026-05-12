@@ -30,7 +30,7 @@
 ###### 1.
 If $M \in \text{Mat}_n(\mathbb{Z})$, and if $\lambda$ is an eigenvalue of $M$, then $c_M(\lambda)=0$ where $c_N(x) = \det(xI_n-M) = x^n + ... \in \mathbb{Z}[x]$. Thus $\lambda \in \mathbb{A}$.
 
-Conversely suppose we have monic $p(x) \in \mathbb{Z}[x]$.
+Conversely suppose we have monic $p(x) \in \mathbb{Z}[x]$ such that 
 The **companion** matrix of $p(x)$ is
 $$\begin{pmatrix}-1 & \cdots & \cdots & -p_0 \\TBD \end{pmatrix}$$
 

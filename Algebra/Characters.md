@@ -520,11 +520,18 @@ $(gh)\cdot v = g (h \cdot v)$. But $\chi(gh)v = \chi(g)\chi(h)v$. So $\chi$ is a
 >[!Claim]
 >All irreducible characters of $G/G'$ are one-dimensional
 ###### Proof
+**Forward:**
 By Artin-Wedderburn 
 $$\mathbb{C} G/G' \cong \bigoplus_{i=1}^t \text{Mat}_{a_1}(\mathbb{C})$$
 where $\# \text{Irr}\mathbb{C}G/G' =$ number of conjugacy classes. But $G/G'$ is abelian, so the number of conjugacy classes is $|G/G'|$. So every irreducible $\mathbb{C}G/G'$ module is one-dimensional. $\square$
 
 Hence $\psi_i$ are linear characters of $G$ for $1 \leq i \leq s$, and so by extension so is the lift $\psi^G$.
 
-
-Conversely
+**Reverse:**
+Conversely suppose $\chi$ is a linear character of $G$ (i.e. $\chi$ is irreducible). Since $\chi$ is linear, it is also a group homomorphism. Therefore $N = \ker \chi$ is a normal subgroup of $G$. However if $g,h \in G$, then
+$$\chi(g^{-1}h^{-1}gh) = \chi(g)^{-1}\chi(h)^{-1}\chi(g)\chi(h)=1,$$
+where the last equality follows because $\mathbb{C}^\times$ is an abelian group.
+Hence $G'$ is a subgroup of $N$, which implies that $\chi_{G/G'}$ is an irreducible character of $G/G'$.
+That is, $\chi_{G/G'} = \psi_j$ for some $j$.
+Equivalently, $\chi=\psi_j^G$ (tracing through the definition $\psi_j^G(g) = \chi_{G/G'}(gG')= \chi(g)$ for all $g \in G$).
+So the result follows. $\square$
