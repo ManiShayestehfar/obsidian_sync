@@ -355,4 +355,12 @@ So $M = \mathcal{H}$. Hence the theorem holds. $\square$
 
 ### Applications
 
-- The spectral theorem
+- The moral spectral theorem on Hilbert spaces is that compact operators are "diagonalisable".
+
+>[!Corollary]
+>Let $\mathcal{H}$ be Hilbert over $\mathbb{C}$ nad let $T \in \mathcal{L}(\mathcal{H})$ be *compact* and *normal*.
+>There exists a (possibly finite) sequence$(\lambda_n)_{n \in I}$ in $\mathbb{C}\setminus \{0\}$ where $I \subseteq N$, and an orthonormal system $(e_n)_{n \in I}$ such that:
+>1. $|\lambda_1|\geq |\lambda_2|\geq ... > 0$ 
+>2. $\lim_{n \to \infty} \lambda_n=0$ (if $I = \mathbb{N}$)
+>3. $Te_n = \lambda_n e_n$ $\forall n \in I$
+>4. For all $x \in H:$ $Tx = \sum_{n \in I}\lambda_n \langle x, e_n \rangle e_n$ 
