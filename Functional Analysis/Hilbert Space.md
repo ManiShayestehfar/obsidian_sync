@@ -351,3 +351,8 @@ Hence $x \in M^\perp \cap V(\lambda)$ contradicting that $M \cap M^\perp = \{0\}
 
 
 So $M = \mathcal{H}$. Hence the theorem holds. $\square$
+
+
+### Applications
+
+- The spectral theorem
