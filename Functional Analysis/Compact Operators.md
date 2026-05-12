@@ -20,7 +20,9 @@ So $T \in \mathcal{L}(X,Y)$ with $\|T\|\leq M$. $\square$
 >Let $X,Y$ be normed spaces and $T \in \mathcal{L}(X,Y)$. Then
 >$$T \text{ is compact } \iff T(\overline{B(0,1)}) \text{ is relatively compact}$$
 ##### Proof
-NEED TO PROVE
+Forward direction is trivial since $\overline{B}$ is bounded.
+
+Assume 
 
 >[!Proposition]
 >Let $X$ be a normed space. 
