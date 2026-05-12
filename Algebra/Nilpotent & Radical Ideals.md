@@ -1,11 +1,13 @@
 # Nilpotent Ideal
 
 An ideal $I$ of $A$ is **nilpotent** if $I\neq0$ and $I^n=0$ for some $n>0$.
+Notice that $I^n = \langle x_1,...,x_n \:|\: x_i \in I \rangle \subseteq I$. Hence we have a weakly decreasing chain
+$I = I_0 \supseteq I_1 \supseteq I_2 \supseteq \cdots \supseteq I_n$ which stabilises since $I$ is finite-dimensional. 
 
 >[!proposition]
 >Suppose $I$ is a submodule of $A$ such that $I^n\neq0$. Then $I$ contains an idempotent.
 ##### Proof
-Let $J$ be the smallest/minimal non-nilpotent ideal contained in $I$ (so every ideal of $J$ is nilpotent).
+Let $J$ be the smallest/minimal *non-nilpotent* ideal contained in $I$ (so every ideal of $J$ is nilpotent).
 Let $K$ be a minimal ideal of $J$ such that $JK\neq0$. $K$ exists because $J^2 \neq 0$ since $J$ is not nilpotent.
 
 Let $x \in K$ such that $Jx\neq0$, Then $K=Jx$ by minimality of $K$. Hence there exists an element $e \in J$ such that $x = ex$. Consequently $x = ex=e^2x=\cdots$. In particular $e$ is nonzero.
