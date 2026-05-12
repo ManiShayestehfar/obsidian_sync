@@ -492,6 +492,8 @@ The character table matches the corollary above.
 | $\chi_3$ | 1     | -1      | 1       |
 
 ---
+
+
 # Linear Characters
 
 >[!Definition]
@@ -506,3 +508,11 @@ The character table matches the corollary above.
 ##### Proof
 $(gh)\cdot v = g (h \cdot v)$. But $\chi(gh)v = \chi(g)\chi(h)v$. So $\chi$ is a group homomorphism. $\square$
 
+
+## Lift as Linear Character
+
+>[!Theorem]
+>Let $\{\psi_1,...,\psi_s\}$ be the irreducible characters of $G/G'$.
+>Then $\{\psi_1^G,...,\psi_s^G\}$ are the linear characters of $G$.
+>In particular, $G$ has $[G:G']=|G/G'|$ linear characters.
+##### Proof
