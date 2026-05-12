@@ -109,5 +109,33 @@ Hence $a/b = \pm a \in \mathbb{Z}$. Therefore $\mathbb{A} \cap \mathbb{Q} \subse
 
 >[!Lemma]
 >Let $\chi = \chi_i$ be the irreducible character of $D= D_i$. Let $C$ be a conjugacy class of $G$. Then
->$$\frac{|C|\chi(C)}{\chi(1)} \in \mathbb{A}$.$ 
+>$$\frac{|C|\chi(C)}{\chi(1)} \in \mathbb{A}.$$
+>
+##### Proof
+Let $z_c = \sum_{x \in C}x \in  Z(\mathbb{C}G)$.
+Notice, if $g \in G$, then $g$ acts on $\mathbb{C}G$ with respect to the basis $\{x \:|\: x\in G\}$ by permutation matrix. i.e. matrix with nonzero entries in each row and column and that entry is $1$.
+So $g$ acts by a matrix in $\text{Mat}_{|G|}(\mathbb{Z})$.
 
+So $Z_c$ acts on $\mathbb{C}G$ via a matrix in $\text{Mat}_{|G|}(\mathbb{Z})$. Thus eigenvalues of $z_c$ on $\mathbb{C}G$ are in $\mathbb{A}$.
+Now $\mathbb{C}G \cong \bigoplus_{j=1}^i D_j^{\oplus \dim D_j}$ by the Artin-Wedderburn theorem.
+Hence the eigenvalues of $z_c$ on each $D_j$ are in $\mathbb{A}$.
+
+Notice that we can define a linear map $\Theta_c: D_j \to D_j$ by $\Theta_c(x) = z_cx$ for $x \in D_j$.
+In fact, $\Theta_c$ is a $\mathbb{C}G$-module homomorphism because if $g \in G$, then $\Theta_c(gx) =z_c(gx)=g(z_cx)=g\Theta_c(x)$ since $z_c \in Z(\mathbb{C}G)$.
+Hence by Schur's lemma $\Theta_c(x) = \lambda_c x$ for some $\lambda_c \in \mathbb{C}$. Thus $\lambda_c \in \mathbb{A}$.
+
+Taking characters: 
+$\chi(z_c) = \text{tr}(\lambda_c I_{|G|}) = \lambda_c \chi(1).$
+But also $\chi(z_c) = \chi\left(\sum_{x \in C}x\right)= \sum_{x \in C}\chi(x) = |C|\chi(C)$.
+Thus 
+$$\lambda c = \frac{|C| \chi(C)}{\chi(1)} \in \mathbb{A}.$$
+$\square$
+
+>[!Theorem]
+>Let $D = D_i$ be an irreducible $\mathbb{C}G$-module. Then $\dim D \mid |G|$.
+##### Proof
+Recall that the primitive central idempotent for $D = D_i$ is
+$$e_i = \frac{\chi(1)}{|G|} d_{\chi_i}=\frac{\chi(1)}{|G|}\sum_{g \in G} \chi(g^{-1})g.$$
+Apply $\chi = \chi_i$ to both sides:
+$$\chi(e_i) = \frac{\chi(1)}{|G|} \sum_{g \in G} \chi(g^{-1})\chi(g)$$
+ 
