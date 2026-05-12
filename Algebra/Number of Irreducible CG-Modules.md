@@ -79,7 +79,7 @@ $$\lambda^{n} + q_{n-1}\lambda^{n-1}+\cdots + q_1\lambda + q_0=0$$
 WLOG assume $q_0 \neq 0$ Then divide by $\lambda^n$:
 $$1 + q_{n-1}\lambda^{-1} + \cdots q_1\lambda^{1-n} + q_0 \lambda^{-n}=0$$
 Dividing by $q_0$:
-TBD
+$$\lambda^{-n}+ \frac{q_1}{q_0}\lambda^{1-n}+\cdots+\frac{q_{n-1}}{q_0}\lambda^{}$$
 
 ### Corollaries
 
@@ -138,4 +138,8 @@ Recall that the primitive central idempotent for $D = D_i$ is
 $$e_i = \frac{\chi(1)}{|G|} d_{\chi_i}=\frac{\chi(1)}{|G|}\sum_{g \in G} \chi(g^{-1})g.$$
 Apply $\chi = \chi_i$ to both sides:
 $$\chi(e_i) = \frac{\chi(1)}{|G|} \sum_{g \in G} \chi(g^{-1})\chi(g)$$
- 
+$\chi(e_i) = \chi(1)$ since $e_i$ is the identity on $D_i$. Then
+$$\chi(1) = \frac{\chi(1)}{|G|} \sum_{k=1}^t |C_k| \overline{\chi(C_k)}\:\chi(C_k)$$
+ So rearranging and dividing by $\chi(1)$ gives
+ $$\frac{|G|}{\chi(1)} = \sum_{k=1}^t \frac{|C_k| \chi(C_k) \: }{\chi(1)}\overline{\chi(C_k)}.$$
+ $\frac{|C_k| \chi(C_k) \: }{\chi(1)} = \lambda_c \in \mathbb{A}$ using the lemma above, and $\overline{\chi(C_k)} \in \mathbb{A}$. So the whole summand is in $$
