@@ -395,7 +395,9 @@ where $T^*g (x) = \int_x^1 g(t)\:dt$. The reparametrisation in $(\ast)$ comes fr
 
 Solve $T*T f = \lambda f$. That is
 $$\int_x^1 \int_0^t f(s) \:ds\:dt = \lambda f(x) \tag{$\ast$}$$
-For now if we assume $f$ is continuous, then $(\ast)$ implies $f$ is twice differentiable, and 
+For now if we assume $f$ is continuous, then $(\ast)$ implies $f$ is twice differentiable. $\color{red} \text{(see W11 lecture 2 for proof)}$.
+
+Then
 $(\ast) \implies -\int_0^x f(s) \:ds = \lambda f'(x) \:\:(\text{by FTC})\implies -f(x) = \lambda f''(x) \:\:(\text{by FTC again})$.
 
 So $f(x) = A \cos\frac{x}{\sqrt{\lambda}} + B \sin \frac{x}{\sqrt{\lambda}}$ for some $A,B$.
@@ -427,12 +429,18 @@ $$\begin{align*}
  \right].
 \end{align*}$$
 So $B = 0$ and $\cos\frac{1}{\sqrt{\lambda}}=0$, so $\lambda = \lambda_n = \frac{1}{(n+\frac{1}{2})^2\pi^2}$.
+
+### Finding Hilbert Basis of Eigenfunctions
+
 So $f_n(x) = A \cos \left[(n+\frac{1}{2} \pi x)\right]$. Normalising gives:
 $$e_n(x) = \sqrt{2}\cos\left(\left(n + \frac{1}{2}\right) \pi x\right), \qquad n \in \mathbb{N}.$$
 **Summary:**
 We have eigenvalues $\lambda_n = \frac{1}{(n+\frac{1}{2})^2\pi^2}$, and eigenfunctions $e_n(x)$ which forms a corresponding basis for $\mathcal{H}$. Also 
 $$T^*Tf = \sum_{n \in \mathbb{N}} \frac{1}{(n+\frac{1}{2})^2\pi^2} \:\langle f,e_n \rangle e_n$$
 in $L_\mathbb{C}^2([0,1])$.
+
+### Finding the norm $\|T\|$
+
 Finally we have 
 $$\begin{align*}
 \|T\|^2 = \|T^*T\| &= r(T^*T) \tag{by Prop, $T$ is normal} \\[4pt]
