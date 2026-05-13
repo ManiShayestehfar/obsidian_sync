@@ -297,7 +297,7 @@ Then $|S| = |[a,b]| = \aleph > \aleph_0 = |\mathbb{N}|$. Thus from general princ
 ##### Proof
 NEED TO PROVE
 
-## Spectral Theorem (compact + normal operators)
+# Spectral Theorem (compact + normal operators)
 
 >[!Theorem]
 >Let $\mathcal{H}$ be over $\mathbb{C}$ and $T \in \mathcal{L}(\mathcal{H})$ be *compact* and *normal*.
@@ -353,7 +353,7 @@ Hence $x \in M^\perp \cap V(\lambda)$ contradicting that $M \cap M^\perp = \{0\}
 So $M = \mathcal{H}$. Hence the theorem holds. $\square$
 
 
-### Applications
+## Applications
 
 - The moral spectral theorem on Hilbert spaces is that compact operators are "diagonalisable".
 
@@ -372,4 +372,28 @@ $$M = \overline{\bigoplus_{ \lambda \in \sigma_p(T)\setminus \{0\}} V(\lambda)}.
 So $M^\perp = \overline{V(0)}$ by the spectral theorem.
 For $x \in \mathcal{H}$ write $x = x_1 + x_2 \in M \oplus M^{\perp}$. Since $(e_n)_{n \in I}$ are a Hilbert basis of $M$ (by construction), we have
 $$x_1 = \sum_{n \in I} \langle x,e_n \rangle e_n,$$
-and since $T$ is continuous, $Tx = Tx_1 + Tx_2 = \sum_{n \in I} \langle x, e_n \r. ngleT$.
+and since $T$ is continuous, $Tx = Tx_1 + Tx_2 = \sum_{n \in I} \langle x, e_n \rangle Te_n + 0 = \sum_{n \in I} \lambda_n \langle x, e_n \rangle e_n$ as required.
+$\square$
+
+## Examples
+
+Consider the Hilbert-Schmidt operation: $T: L_\mathbb{C}^2 ([0,1])\to  L_\mathbb{C}^2 ([0,1])$ with $(Tf)(x) = \int_0^x f(t)\:dt$.
+We have already seen that $T$ is compact. Thus the operator $T^*T \in \mathcal{L}(L_\mathbb{C}^2([0,1]))$ is compact and normal (as it is self-adjoint).
+
+### Formula for $T^*$ and $T^*T$
+$$\begin{align*}
+\langle Tf, g \rangle &= \int_0^1 Tf(x) \overline{g(x)}\:dx \\[2pt]
+&= \int_0^1 \int_0^x f(t) \overline{g(x)}\:dt\:dx \\[2pt]
+&= \int_0^1 \int_t^1 f(t)\overline{g(x)}\:dx\:dt \tag{$\ast$} \\[2pt]
+&= \int_0^1 f(t) \: \overline{\int_t^1 g(x)\:dx}\:dt \\[2pt]
+&= \langle f, T^* g \rangle
+\end{align*}$$
+where $T^*g (x) = \int_x^1 g(t)\:dt$. The reparametrisation in $(\ast)$ comes from letting $x = t$ using
+![[Screenshot 2026-05-13 at 10.19.15 am.png|250]]
+
+### Finding $\sigma_p(T^*T)$
+
+Solve $T*T f = \lambda f$. That is
+$$\int_x^1 \int_0^t f(s) \:ds\:dt = \lambda f(x) \tag{$\ast$}$$
+For now if we assume $f$ is continuous, then $(\ast)$ implies $f$ is twice differentiable, and 
+$(\ast) \implies -\int_0^x f(s) \:ds = \lambda f'(x) \implies$
