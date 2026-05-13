@@ -396,4 +396,49 @@ where $T^*g (x) = \int_x^1 g(t)\:dt$. The reparametrisation in $(\ast)$ comes fr
 Solve $T*T f = \lambda f$. That is
 $$\int_x^1 \int_0^t f(s) \:ds\:dt = \lambda f(x) \tag{$\ast$}$$
 For now if we assume $f$ is continuous, then $(\ast)$ implies $f$ is twice differentiable, and 
-$(\ast) \implies -\int_0^x f(s) \:ds = \lambda f'(x) \implies$
+$(\ast) \implies -\int_0^x f(s) \:ds = \lambda f'(x) \:\:(\text{by FTC})\implies -f(x) = \lambda f''(x) \:\:(\text{by FTC again})$.
+
+So $f(x) = A \cos\frac{x}{\sqrt{\lambda}} + B \sin \frac{x}{\sqrt{\lambda}}$ for some $A,B$.
+Plugging back into $(\ast)$:
+$$\begin{align*}
+\int_x^1 \int_0^t f(s)\,ds\,dt
+&= \int_x^1 \left[ A\sqrt{\lambda}\sin\frac{s}{\sqrt{\lambda}}
+    - B\sqrt{\lambda}\cos\frac{s}{\sqrt{\lambda}} \right]_0^t dt \\[6pt]
+&= \int_x^1 \left[
+    A\sqrt{\lambda}\sin\frac{t}{\sqrt{\lambda}}
+    - B\sqrt{\lambda}\cos\frac{t}{\sqrt{\lambda}}
+    + B\sqrt{\lambda}
+\right] dt \\[6pt]
+&= \left[
+    -A\lambda\cos\frac{t}{\sqrt{\lambda}}
+    - B\lambda\sin\frac{t}{\sqrt{\lambda}}
+    + B t\sqrt{\lambda}
+\right]_x^1 \\[6pt]
+&= A\lambda\cos\frac{x}{\sqrt{\lambda}}
+ + B\lambda\sin\frac{x}{\sqrt{\lambda}}
+ - Bx\sqrt{\lambda} \\[4pt]
+&\qquad
+ - A\lambda\cos\frac{1}{\sqrt{\lambda}}
+ - B\lambda\sin\frac{1}{\sqrt{\lambda}} \\[6pt]
+&= \lambda f(x)
+ = \lambda\left[
+    A\cos\frac{x}{\sqrt{\lambda}}
+    + B\sin\frac{x}{\sqrt{\lambda}}
+ \right].
+\end{align*}$$
+So $B = 0$ and $\cos\frac{1}{\sqrt{\lambda}}=0$, so $\lambda = \lambda_n = \frac{1}{(n+\frac{1}{2})^2\pi^2}$.
+So $f_n(x) = A \cos \left[(n+\frac{1}{2} \pi x)\right]$. Normalising gives:
+$$e_n(x) = \sqrt{2}\cos\left(\left(n + \frac{1}{2}\right) \pi x\right), \qquad n \in \mathbb{N}.$$
+**Summary:**
+We have eigenvalues $\lambda_n = \frac{1}{(n+\frac{1}{2})^2\pi^2}$, and eigenfunctions $e_n(x)$ which forms a corresponding basis for $\mathcal{H}$. Also 
+$$T^*Tf = \sum_{n \in \mathbb{N}} \frac{1}{(n+\frac{1}{2})^2\pi^2} \:\langle f,e_n \rangle e_n$$
+in $L_\mathbb{C}^2([0,1])$.
+Finally we have 
+$$\begin{align*}
+\|T\|^2 = \|T^*T\| &= r(T^*T) \tag{by Prop, $T$ is normal} \\[4pt]
+&= \sup_{\lambda \in \sigma(T^*T)} |\lambda| \\[4pt]
+&= \sup_{\lambda \in \sigma_p(T^*T)} |\lambda| \tag{$T^*T$ is compact} \\[4pt]
+&= \sup_{n \in \mathbb{N}} \frac{1}{(n+\frac{1}{2})^2\pi^2} \\
+&= \frac{4}{\pi^2}.
+\end{align*}$$
+So $\|T\| = \frac{2}{\pi}$.
