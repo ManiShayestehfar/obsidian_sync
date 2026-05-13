@@ -364,3 +364,12 @@ So $M = \mathcal{H}$. Hence the theorem holds. $\square$
 >2. $\lim_{n \to \infty} \lambda_n=0$ (if $I = \mathbb{N}$)
 >3. $Te_n = \lambda_n e_n$ $\forall n \in I$
 >4. For all $x \in H:$ $Tx = \sum_{n \in I}\lambda_n \langle x, e_n \rangle e_n$ 
+##### Proof
+Since $\sigma_p(T)$ is countable (or finite) and $\dim V(\lambda)< \infty$ for $\lambda \neq 0$, we can arrange the nonzero eigenvalues as $|\lambda_1|\geq |\lambda_2| \geq \cdots > 0$, with multiplicity (so $\lambda$ occurs $\dim V(\lambda)$ times).
+For each $V(\lambda)$, $\lambda \in \sigma_p(T) \setminus \{0\}$, choose an orthonormal system $(e_n)_{n \in I}$ so that $Te_n = \lambda e_n$.
+Let 
+$$M = \overline{\bigoplus_{ \lambda \in \sigma_p(T)\setminus \{0\}} V(\lambda)}.$$
+So $M^\perp = \overline{V(0)}$ by the spectral theorem.
+For $x \in \mathcal{H}$ write $x = x_1 + x_2 \in M \oplus M^{\perp}$. Since $(e_n)_{n \in I}$ are a Hilbert basis of $M$ (by construction), we have
+$$x_1 = \sum_{n \in I} \langle x,e_n \rangle e_n,$$
+and since $T$ is continuous, $Tx = Tx_1 + Tx_2 = \sum_{n \in I} \langle x, e_n \r. ngleT$.
