@@ -95,10 +95,46 @@ Define $S^\perp = \{m \in M \:|\: \beta(s,m) = 0 \:\:\:\forall s \in S\}$.
 >[!Proposition]
 >Let $S$ be a submodule of $M$.
 >1. $S^\perp$ is an $\mathbb{F}G$-module
->2. $\dim S^\perp = \dim M = \dim S$
+>2. $\dim S^\perp = \dim M - \dim S$
 >3. $(S^\perp)^\perp = S$
 >4. If $X,Y$ are submodules of $M$, then $(X+Y)^\perp = X^\perp \cap Y^\perp$
 >5. If $X \subseteq Y$ are submodules, then $Y^\perp \subseteq X^\perp$.
 ##### Proof
 ###### 1.
-Since $\beta$ is linear in the second input, then $S^\perp$ is a vector space if: $m \in S^\perp$ and $g \in G$, then for $s \in S$
+Since $\beta$ is linear in the second input, then $S^\perp$ is a vector space if: $m \in S^\perp$ and $g \in G$, then for $s \in S$, $\beta(x,gm) = \beta(g^{-1}s,m)=0$ since $g^{-1}s \in S \implies gm \in S^\perp \implies S^\perp$ is an $\mathbb{F}G$-modules.
+
+###### 2.
+Let $\{v_1,...,v_m\}$ is a basis of $M$ such that $\{v_1,...,v_s\}$ is a basis of $S$. 
+Then $m \in S^\perp \iff \beta(x,m) = 0$ for all $x \in S$ $\iff \beta(v_i,m)=0$ for $1 \leq i\leq s$.
+Set $\phi_i = \beta(b_i,-) \in M^*$ for $1 \leq i \leq m$, then $\{\phi_1,...,\phi_n\}$ is a basis of $M^*$ by the proposition before.
+$x \in S^\perp \iff x \in \ker \phi_i$ for $1 \leq i \leq s$.
+Hence $\{\Theta^{-1}(\phi_{s+1}),...,\Theta^{-1}(\phi_m)\}$ is a basis of $S^\perp$.
+Thus $\dim S^\perp = m-s = \dim M - \dim S$ $\square$
+
+###### 3.
+Want $(S^\perp)^\perp = S$.
+By definition, $(S^\perp)^\perp = \{m \in M \:|\: \beta(x,m) = 0 \:\:\forall x \in S^\perp\}$.
+If $x \in S^\perp$, then $\beta(s,x)=0$ for all $s \in S$.
+But since $\beta(x,s)=0$ for all $s \in S$ (since $\beta$ is SNAF), then $S \subseteq (S^\perp)^\perp$.
+
+But $\dim(S^\perp)^\perp = \dim M - \dim S^\perp = \dim M - (\dim M - \dim S) = \dim S$. 
+So $(S^\perp)^\perp = S$. $\square$
+
+###### 4.
+$(X+Y)^\perp = \{m \in M \:|\: \beta(a,m) = 0 \:\: a \in X+Y\} = \{m \in M \:|\: \beta(x+y,m) = 0 \:\: x \in X,y \in Y\}$
+$= \{m \in M \:|\: \beta(x,m) = 0,\:\: \eta(y,m)=0 \:\: x \in X,y \in Y\} = X^\perp \cap Y^\perp$. $\square$
+
+###### 5.
+$Y^\perp = \{m \in M \:|\: \beta(y,m) =0 \:\forall y \in Y\}\subseteq X^\perp$ since $X \subseteq Y$.  $\square$
+
+
+
+>[!Proposition]
+>Suppose $U \subseteq S \subseteq M \cong M^*$ (self-dual). Then 
+>$$S/U \cong (U^\perp/S^\perp)^*$$
+##### Proof
+Define a map $\Theta:S \to (U^\perp/S^\perp)^*$ by $\Theta(x) = \theta_x: U^\perp/S^\perp \to \mathbb{F}$ where $\theta_x(u+S^\perp) = \beta(x,u)$ for all $u \in U^\perp$.
+
+>[!Claim]
+>$\Theta$ is a $\mathbb{F}G$-module.
+
