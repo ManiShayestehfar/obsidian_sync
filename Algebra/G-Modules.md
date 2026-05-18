@@ -165,9 +165,8 @@ It follows from the pervious proof that $\psi$ is indeed a $G$-module homomorphi
 
 # FG-Modules vs G-Modules
 
-
->[!Proposition]
->Let $V$ be an $\mathbb{F}$-vector space. Then $V$ is an $A$-module if and only if there is an algebra homomorphism $\Phi: A \to \text{Mat}_n(\mathbb{F}),\quad a \mapsto \varphi_a$ such that $a \cdot v = \varphi_a(v)$.
+>[!Proposition] 
+>Let $V$ be an $\mathbb{F}$-vector space. Then $V$ is an $A$-module if and only if there is an algebra homomorphism $\Phi: A \to \text{End}_\mathbb{F}(V),\quad a \mapsto \varphi_a$ such that $a \cdot v = \varphi_a(v)$.
 ##### Proof
 ###### ($\Rightarrow$) 
 Let $v_1,...,v_n$ be basis for $V$. If $V$ is an $A$-module and $a \in A$ we can define a matrix $a \in \text{Mat}_n(\mathbb{F})$ by $$av_j = \sum_{i=1}^n a_{ij}v_i$$
@@ -186,7 +185,7 @@ Associativity: $\Phi(ab) = \Phi(a)\Phi(b)\implies (ab)\cdot v = a\cdot (bv)$
 $\square$
 
 
->[!proposition|2]
+>[!proposition]  
 >Let $G$ be a finite group and $\mathbb{F}$ a field
 >1. Every $G$-module is an $\mathbb{F}G$-module
 >2. Every $\mathbb{F}G$-module is a $G$-module
@@ -194,18 +193,38 @@ $\square$
 
 ##### Proof 
 ###### 1. 
-By Prop above, $V$ is an $\mathbb{F}G$-module if and only if there is an algebra homomorphism $\mathbb{F}G\to \text{Mat}_n(\mathbb{F})$ with $n = \dim V$.
-$\implies$ a group homomorphism $G \to GL_n(\mathbb{F})$, because $1_G = g\cdot g^{-1}$
-$\implies I_n = \Phi(1_{\mathbb{F}G}) = \Phi(g\cdot g^{-1}) = \Phi(g)\Phi(g^{-1})$
-$\implies \Phi(g) \in GL_n(\mathbb{F})$ 
-$\square$
+Let $V$ be a $G$-module. By the proposition above, $V$ is an $\mathbb{F}G$-module if and only if there is an algebra homomorphism $\Phi: \mathbb{F}G\to \text{End}_n(\mathbb{F})$.
+Define $\Phi\left(\sum_{g \in G}\lambda_gg\right) = \sum_{g \in G} \lambda_g \rho(g)$  where $\rho:G \to GL(V)$ given by $\rho(g)(v)=g\cdot v$ is a group homomorphism and has a matrix action form.
+ 
+- $\Phi$ is linear by definition 
+- Let $x = \sum_{g \in G} \lambda_g g$ and $y = \sum_{h \in G} \mu_hh$, then 
+  $$\Phi(xy) = \sum_{g,h \in G} \lambda_g\mu_h \rho(gh) = \sum_{g,h \in G} \lambda_g\mu_h \rho(g)\rho(h) = \left(\sum_{g\in G} \lambda_g \rho(g)\right)\left(\sum_{h \in G} \mu_h \rho(h)\right) = \Phi(x)\Phi(y).$$
+- Also $\Phi(1_{\mathbb{F}G}) = \Phi(e)=\rho(e)=\text{id}_V$
+Thus $\Phi$ is an $\mathbb{F}$-algebra homomorphism. By Proposition 13, this makes $V$ an $\mathbb{F}G$-module.
 
 ###### 2.
-We have $G$-module homomorphism $\varphi(gv) = g\varphi(v)$ since $G$ is a basis of $\mathbb{F}G$.
-Then $V \cong W$ as $G$-modules $\iff V\cong W$ as $\mathbb{F}G$-modules. $\square$
+Let $V$ be an $\mathbb{F}G$-module. By Proposition 13, this is equivalent to an algebra homomorphism $\Phi:\mathbb{F}G \to \text{End}_\mathbb{F}(V)$ such that $x \cdot v = \Phi(x)(b)$.
 
->[!Remark]
->If $V,W$ are $G$-modules and $\varphi:V \to W$ is a $G$-module homomorphism, then we can consider $\varphi$ as an $\mathbb{F}G$-module homomorphism.
+We want to define a $G$-action on $V$.
+Since every $g \in G$ is an element of $\mathbb{F}G$, then define $g \cdot v := \Phi(g)(v)$.
+-  $e \cdot v = \Phi(e)(v) = \text{id}_V(v)=v$ since $e = 1_{\mathbb{F}G}$ and $\Phi$ is unital
+- $(gh)\cdot v = \Phi(gh)(v)=\Phi(g)\Phi(h)(v) = \Phi(g)(h\cdot v)=g\cdot(h \cdot v)$ because $\Phi$ is an algebra homomorphism.
+Hence the action defines a $G$-module structure on $V$.
 
+###### 3. $(\Rightarrow)$
+Suppose $V \cong W$ as $G$-modules.
+Then there exists an $\mathbb{F}$-linear bijection: $T:V \to W$ such that $T(g\cdot v)=g\cdot T(v)$.
+We need to show $T$ is an $\mathbb{F}G$-module isomorphism.
 
+Take $x = \sum_{g \in G}\lambda_gg \in \mathbb{F}G$.
+Then $T(x\cdot v)=T\left(\sum_{g \in G} \lambda_gg \cdot v\right) = \sum_{g \in G} \lambda_g T(g \cdot v)$ since $T$ is $\mathbb{F}$-linear.
+Since $T$ is a $G$-module homomorphism, then $T(g\cdot v)g \cdot T(v)$. Hence $T(x\cdot v) = x \cdot T(v)$.
+So $T$ respects the $\mathbb{F}G$-action, hence it is an $\mathbb{F}g$-module isomorphism.
+
+###### 3. $(\Leftarrow)$
+Suppose $V \cong W$ as $\mathbb{F}G$-modules.
+Then there exists an $\mathbb{F}$-linear bijection: $T:V \to W$ such that $T(x\cdot v)=x \cdot T(v)$ this time with $x \in \mathbb{F}G$ instead.
+In particular every $g \in G$ is an element of $\mathbb{F}G$. So taking $x=g$ retrieves the $G$-modules action 
+$T(g\cdot v)=g \cdot T(v)$.
+$\square$
 
