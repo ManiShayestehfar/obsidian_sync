@@ -18,7 +18,7 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 ## Equivalence of Representation and G-Modules
 
 >[!proposition]
->Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$. Conversely, if $\rho:G \to GL_{n}(\mathbb{F})$ is a group homomorphism the $V = \mathbb{F}^n$ becomes a $G$-module by defining the action of $g \in G$ on $V$ to be given by matrix multiplication by $\rho(g)$.
+>Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$. Conversely, if $\rho:G \to GL_{n}(\mathbb{F})$ is a group homomorphism then $V = \mathbb{F}^n$ becomes a $G$-module by defining the action of $g \in G$ on $V$ to be given by matrix multiplication by $\rho(g)$.
  
 ![[Screenshot 2025-03-06 at 12.50.18 pm.png]]
 ![[Screenshot 2026-02-26 at 11.41.00 am.png]]
@@ -35,10 +35,8 @@ $$V = \mathbb{F}^n = \left\{\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{
 $$
 If $A = (a_{ij}) \in G$, then $A\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix}$ is given by matrix multiplication
 
-2. $G = S_n = \text{symmetric group of permutation of}\:\:\{1,2,...,n\}$. 
-$V = \mathbb{F}^n$ with $S_n$-action
+2. $G = S_n$.  $V = \mathbb{F}^n$ with $S_n$-action
 $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatrix}\lambda_{a(1)} \\ \vdots \\ \lambda_{a(n)}\end{pmatrix}$$
-
 
 
 ## G-Module Homomorphism & Isomorphisms
@@ -46,10 +44,10 @@ $$a\begin{pmatrix}\lambda_1 \\ \vdots \\ \lambda_n\end{pmatrix} := \begin{pmatri
 - Let $V,W$ be $G-$modules.
 
 > [!info] G-Module Homomorphism
-> A **$G-$Module Homomorphism** is a linear transf. $\phi : V \to W$ that commutes with the $G-$action. i.e. $\phi(gv) = g\phi(v)$ for all $g\in G$, $v\in V$.
+> A **$G-$Module Homomorphism** is a linear transf. $\phi : V \to W$ that commutes with the $G-$action. i.e. $\phi(g\cdot v) = g\cdot \phi(v)$ for all $g\in G$, $v\in V$.
 
 > [!info] G-Module Isomorphism
-> A **$G-$Module Isomorphism** is a bijective $G-$module homomorphism, $\phi : V \to W$ that commutes with the $G-$action. i.e. $\phi(gv) = g\phi(v)$ for all $g\in G$, $v\in V$. We write $V\cong W$. 
+> A **$G-$Module Isomorphism** is a bijective $G-$module homomorphism, $\phi : V \to W$ that commutes with the $G-$action. i.e. $\phi(g\cdot v) = g\cdot \phi(v)$ for all $g\in G$, $v\in V$. We write $V\cong W$. 
 
 ---
 
@@ -66,17 +64,19 @@ $$\begin{align*}
 >If $V$ is an $\mathbb{F}$-vector space then a subset $W$ of $V$ is a **submodule** of $G$ if 
 >
 >1. $W$ is a subspace of $V$
->2. $gw \in W$ for all $w \in W$ and all $g \in G$
+>2. $g\cdot w \in W$ for all $w \in W$ and all $g \in G$
 >   
 >   Every submodule $W$ of a $G-$module is by definition a $G-$module.
 
-
-> [!lemma]
-> ![[Pasted image 20250306222032.png]]
-##### Proof for a)
+>[!Lemma]
+>Suppose $\varphi:V \to W$ is a $G$-module homomorphism. Then
+>1. $\ker \varphi = \{v \in V \:|\: \varphi(v)=0\}$ is a $G$-submodule of $V$
+>2. $\text{im }\varphi = \{\varphi(v) \:|\: v \in V\}$ is a $G$-submodule of $W$
+##### Proof
+###### 1.
 1.  Clearly $\ker\varphi \subset V$ 
 2. Let $g \in G$. $\varphi(vg) = g\varphi(v) = g\cdot 0 = 0$ and so $vg \in \ker \varphi$, where the choice of $v$ and $g$ were arbitrary.    $\square$ 
-##### Proof for b)
+###### 2.
 1. $\text{im}\:\phi \subset W$   
 2. Let $w = \varphi(v)$ for $v \in V$ and $w \in W$. And $gw = g\varphi(v) = \varphi(gv) \in \text{im}\: W$ for all $g \in G$ and so $gw \in \text{im }W$.     $\square$ 
 
@@ -84,11 +84,8 @@ $$\begin{align*}
 # Irreducible G-modules
 
 >[!def]
->A $G$-module $V$ is **irreducible** if it contains no proper nonzero submodules. i.e its only submodules are $0$ and $V$.
->
->Otherwise, $V$ is **reducible**.
->
->A $G$-module $V$ is **completely reducible**, or **semisimple**, if it is isomorphic to a direct sum of irreducible $G$-modules.
+>- A $G$-module $V$ is **irreducible** if it contains no proper nonzero submodules. i.e its only submodules are $0$ and $V$. Otherwise, $V$ is **reducible**.
+>- A $G$-module $V$ is **completely reducible**, or **semisimple**, if it is isomorphic to a direct sum of irreducible $G$-modules.
 
 ## Dimension of Irreducible FG-Modules
 
@@ -135,7 +132,7 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 # Maximal submodules of $\mathbb{F}G$
 
 >[!Proposition]
->Let $D$ be an irreducible $G$-module. Then there exists a maximal proper $G$-submodule $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
+>Let $D$ be an irreducible $\mathbb{F}G$-module. Then there exists a maximal proper $G$-submodule $M$ of $\mathbb{F}G$ such that $D \cong \mathbb{F}G/M$ as $G$-modules.
 ##### Proof
 Let $0 \neq d \in D$. Define the map $\varphi_d: \mathbb{F}G \to D,$ by $$\sum_{g \in G} \lambda_g g \mapsto \sum_{g \in G} \lambda_g g\cdot d \in D$$
 >[!Claim]
