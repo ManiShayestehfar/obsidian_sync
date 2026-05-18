@@ -33,7 +33,7 @@ By [[Main Definitions|Fish's Heine-Borel]], *complete* and *totally bounded* imp
 
 ## Examples
 
-1. $(C([0,1]), \|\cdot\|_\infty) \not \cong (C([0,1]), \|\cdot\|_n)$ for $n>1$ since one of the is Banach and the other is not.
+1. $(C([0,1]), \|\cdot\|_\infty) \not \cong (C([0,1]), \|\cdot\|_n)$ for $n>1$ since one of them is Banach and the other is not.
 2. $(C([0,1]), \|\cdot\|_1) \not\cong (C([0,1]), \|\cdot\|_2)$
 3. For $1 < p,q < \infty$,  $(\ell^p, \|\cdot\|_p) \cong (\ell^q, \|\cdot\|_q)$ if $\frac{1}{p} + \frac{1}{q} = 1$. 
 
@@ -66,6 +66,7 @@ Since $\|x_n-x\|_A \leq C \|x_n-x\|_B \to 0$ and thus $\|x_n - x\|_A \to 0$.
 ###### $(\Leftarrow)$  
 Follows from the claim
 ###### $(\Rightarrow)$
+**Proof by contrapositive:**
 Assume the norms are not equivalent. Without loss of generality, $\|x\|_A \leq C\|x\|_B$ does not hold. 
 Hence $\forall n\geq 1$, $\exists x_n \in X$ such that $\|x_n\|_A \geq n\|x_n\|_B$.
 Since $x_n \neq 0$, then $$\left\|\frac{x_n}{\|x_n\|_A}\right\|_B \leq \frac{1}{n}\implies \frac{\|x_n\|_B}{\|x\|_A} \leq \frac{1}{n} \longrightarrow 0 \quad \text{w.r.t. } \|\cdot\|_B$$
@@ -73,8 +74,8 @@ But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are
 
 
 ## Examples
-
-1. $\|x\|_1 \sim \|x\|_2$ for $x \in \mathbb{K}^n$. 
+### Equivalent norms on $\mathbb{K}^n$
+$\|x\|_1 \sim \|x\|_2$ for $x \in \mathbb{K}^n$. 
    *Upper Bound:*$$\|x\|_1 = \sum_{i=1}^n |x_i \cdot 1| \:\overset{C.S}{\leq}\: \left(\sum_{i=1}^n x_i^2\right)^{1/2}\left(\sum_{i=1}^n 1^2\right)^{1/2} = \left(\sum_{i=1}^n x_i^2\right)^{1/2}\sqrt{n}$$
    where we used the Cauchy-Schwartz inequality above. 
    
@@ -83,46 +84,83 @@ But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are
    $$\frac{|x_i|^2}{\|x\|_1^2}\leq\frac{|x_i|}{\|x\|_1} \implies \frac{\sum |x_i|^2}{\|x\|_1^2}\leq\frac{\sum|x_i|}{\|x\|_1} = \sum \frac{|x_i|}{\|x\|_1} = 1$$
    $\implies \|x\|_2^2 \leq \|x\|_1^2$. Thus $\|x\|_2 \leq \|x\|_1 \leq \sqrt{n}\|x\|_2$.
 
-2. $\|f\|_1 \not \sim \|f\|_2$ in $C([0,1])$. 
-   But $\int_0^1 |f_n|\:dx \overset{C.S}{\leq} \left(\int_0^1 |f(x)|^2 \:dx\right) \underbrace{\left(\int_0^1 1^2\:dx\right)}_{=1}$. 
-   Therefore $\|f\|_1 \leq \|f\|_2$. But $\not\exists C >0$ such that $\|f\|_2 \leq C\|f\|_1$.  
-   To prove it, assume it does exist and consider the following graph:
+### Equivalent norms on $C([0,1])$
+
+$\|f\|_1 \not \sim \|f\|_2$ in $C([0,1])$. 
+But $\int_0^1 |f_n|\:dx \overset{C.S}{\leq} \left(\int_0^1 |f(x)|^2 \:dx\right) \underbrace{\left(\int_0^1 1^2\:dx\right)}_{=1}$. 
+Therefore $\|f\|_1 \leq \|f\|_2$. But $\not\exists C >0$ such that $\|f\|_2 \leq C\|f\|_1$.  
+To prove it, assume it does exist and consider the following graph:
    
    ![[desmos-graph (2).png|350]]
    
-   We are assuming $\forall (f_n) \subset C([0,1])$ such that $\|f_n-f\|_1 \to 0$, $\|f_n-f\|_2 \to 0$. 
-   But in the graph, $\|f_n\|_1 = \frac{1}{\sqrt{n}} \to 0$. $$\|f_n\|_2^2 = \int_0^1 |f_n(x)|^2\:dx = 2 \int_0^{1/n}n\sqrt{n}x\:dx = \frac{2}{3}n^3\frac{1}{n^3} = \frac{2}{3} \neq 0$$
+We are assuming $\forall (f_n) \subset C([0,1])$ such that $\|f_n-f\|_1 \to 0$, $\|f_n-f\|_2 \to 0$. 
+But in the graph, $\|f_n\|_1 = \frac{1}{\sqrt{n}} \to 0$. $$\|f_n\|_2^2 = \int_0^1 |f_n(x)|^2\:dx = 2 \int_0^{1/n}n\sqrt{n}x\:dx = \frac{2}{3}n^3\frac{1}{n^3} = \frac{2}{3} \neq 0$$
+
+
+
 
 ## Finite Dimensional Normed Spaces
 
 >[!Theorem]
->For all *finite* dimensional vector spaces, all norms are equivalent.
-
+>Let $X$ be a finite-dimensional vector space over $\mathbb K$. Then any two norms on $X$ are equivalent.
 ##### Proof
-Let $\dim X =: N$ and fix a basis $\{e_1,...,e_N\}$. Consider $\varphi: X \to \mathbb{K}^n$ given by $\varphi(x) = \varphi\left(\sum x_ie_i\right)= (x_1,...,x_N)$.
 
-Also define $\|(x_1,...,x_n)\| := \|x\|$. 
-It is enough to show on $\mathbb{K}^n$ that all norms are equivalent. *Specifically to $\|x\|_2$*.
+Let $\dim X=N$, and fix a basis $\{e_1,\dots,e_N\}$ of $X$.
+It is enough to show that every norm on $X$ is equivalent to the Euclidean norm induced by this basis. Indeed, if two norms are both equivalent to the same norm, then they are equivalent to each other.
 
-**Upper Bound:**
-$$\|(x_1,...,x_n)\| = \left\|\sum_{i=1}^N x_ie_i \right\| \leq \sum_{i=1}^N |x_i|\|e_i\| \leq M\cdot\|x\|_1\quad,\quad \text{for } M=\max(\|e_1\|,...,\|e_N\|)$$ 
- **Lower Bound:**
- Consider this function on $\mathbb{K}^n$: $f(x) := \|x\|$
- 
+Let $\|\cdot\|$ be an arbitrary norm on $X$. For each $x\in X$, write $x=\sum_{i=1}^N x_i e_i$, and define $\|x\|_2:=\left(\sum_{i=1}^N |x_i|^2\right)^{1/2}$.
+
+We will show that there exist constants $c,C>0$ such that $c\|x\|_2\leq \|x\|\leq C\|x\|_2$ for all $x\in X$.
+
+###### Upper Bound
+Let $M:=\max_{1\leq i\leq N}\|e_i\|$. Then, for any $x=\sum_{i=1}^N x_i e_i\in X$, we have
+
+$$
+\|x\|
+=
+\left\|\sum_{i=1}^N x_i e_i\right\|
+\leq
+\sum_{i=1}^N |x_i|\|e_i\|
+\leq
+M\sum_{i=1}^N |x_i|
+\overset{C.S}{\leq}
+\sqrt N\left(\sum_{i=1}^N |x_i|^2\right)^{1/2}
+=\sqrt N\|x\|_2
+$$
+Hence $\|x\|\leq M\sqrt N\|x\|_2$. Therefore the upper bound holds with $C:=M\sqrt N$.
+
+###### Lower Bound
+
 >[!claim]
->$f:(\mathbb{K}^N, \|\cdot\|_2) \to (\mathbb{R}, |\cdot|)$ is continuous
-###### Proof
-$$|f(x) - f(y)| = |\|x\| - \|y\|| \overset{Rev\: \Delta-ineq}{\leq} \|x-y\| \leq C\|x-y\|_2$$
-which is Lipschitz continuous and hence $f$ is continuous on $\mathbb{K}^n$.  $\square$
+>Define $f:(X,\|\cdot\|_2)\to(\mathbb R,|\cdot|)$ by $f(x):=\|x\|$. The $f$ is continuous.
 
-Now consider $S = \{x \in \mathbb{K}^n \:|\: \|x\|_2 = 1\}$. $S$ is clearly closed and bounded hence it is compact by [[Main Definitions|Fish's Heine-Borel Theorem]].
+- **Proof:**
+	For all $x,y\in X$, by the reverse triangle inequality, $|f(x)-f(y)|=\big|\|x\|-\|y\|\big|\leq\|x-y\|.$
+	Using the upper bound already proven, $\|x-y\|\leq C\|x-y\|_2$. Therefore $|f(x)-f(y)|\leq C\|x-y\|_2$.
+	So $f$ is Lipschitz continuous, and hence continuous. $\square$
 
-Since $f$ is continuous on $(\mathbb{K}^n, \|\cdot\|_2)$ from the claim above, it attains min/max due to Extreme Value Theorem. We only need the minimum though.
 
-So $\exists x_0 \in S$ such that $\forall x \in S$, $f(x_0) = \|x_0\| \leq \|x\| = f(x)$. Note that $C = \|x_0\|>0$ so $x_0 \neq 0$.
-Therefore $\forall x \in S, C\leq \|x\|$ and so $\forall x \in \mathbb{K}^n \setminus \{0\}$, $$C \leq \left\|\frac{x}{\|x\|_2}\right\|_2=1 \implies f(\tfrac{x}{\|x\|_2}) = \frac{\|x\|}{\|x\|_2}\geq C$$
-therefore $C\|x\|_2\leq \|x\|$. 
-Since $\exists c_1,c_2$ such that $c_1\|x\|_2\leq \|x\| \leq c_2\|x\|_2$, then $\|x\|\sim \|x\|_2$. $\square$
+Now consider $S:=\{x\in X:\|x\|_2=1\}$. Since $X$ is finite-dimensional, $S$ is closed and bounded, hence compact by [[Main Definitions|Fish's Heine-Borel]].
+
+Since $f$ is continuous on $S$, the Extreme Value Theorem implies that $f$ attains its minimum on $S$. Hence there exists $x_0\in S$ such that $f(x_0)\leq f(x)$ for all $x\in S$. Equivalently, $\|x_0\|\leq \|x\|$ for all $x\in S$.
+
+Let $c:=\|x_0\|$. Since $x_0\in S$, we have $\|x_0\|_2=1$, so $x_0\neq 0$. Since $\|\cdot\|$ is a norm, $c=\|x_0\|>0$. Therefore, for all $x\in S$, $c\leq \|x\|$.
+
+Now let $x\in X\setminus\{0\}$. Then $\frac{x}{\|x\|_2}\in S$, so
+
+$$
+c
+\leq
+\left\|\frac{x}{\|x\|_2}\right\|
+=
+\frac{\|x\|}{\|x\|_2} \qquad\implies \qquad c\|x\|_2\leq \|x\|.
+$$
+
+This inequality also holds when $x=0$, since both sides are $0$.
+
+Thus, for all $x\in X$, we have $c\|x\|_2\leq \|x\|\leq C\|x\|_2$. Therefore $\|\cdot\|\sim \|\cdot\|_2$.
+Finally, let $\|\cdot\|_a$ and $\|\cdot\|_b$ be any two norms on $X$. Since both are equivalent to $\|\cdot\|_2$, they are equivalent to each other.
+ $\square$
 
 
 ### Banach-ness of Finite Dimensional Vector Spaces
@@ -142,5 +180,7 @@ Take $x^{(m)} = (1,1/2,1/3,...,1/m,0,0,...)$. Then each $x^{(m)}\in \ell_F$.
 Let $x := (1,1/2,1/3,1/4,...)$. Then $x \in \ell^2$ since $$\|x\|_2^2 = \sum_{n=1}^\infty \frac{1}{n^2} < \infty$$but $x \not\in \ell_F$ since it has infinitely many nonzero terms.
 So $\|x^{(m)}-x\|_2 \to 0$. Thus $x^{(m)}\to x$ in $\ell^2$ with all $x^{(m)}\in \ell_F$ but the limit $x \not\in \ell_F$.
 Therefore $\ell_F$ is not closed.
+
+*Therefore* $\ell_F$ *is not Banach*.
 
 
