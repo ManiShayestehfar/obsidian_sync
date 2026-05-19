@@ -133,12 +133,34 @@ $Y^\perp = \{m \in M \:|\: \beta(y,m) =0 \:\forall y \in Y\}\subseteq X^\perp$ s
 >Suppose $U \subseteq S \subseteq M \cong M^*$ (self-dual). Then 
 >$$S/U \cong (U^\perp/S^\perp)^*$$
 ##### Proof
-Define a map $\Theta:S \to (U^\perp/S^\perp)^*$ by $\Theta(x) = \theta_x: U^\perp/S^\perp \to \mathbb{F}$ where $\theta_x(u+S^\perp) = \beta(x,u)$ for all $u \in U^\perp$.
+Define a map $\Theta:S \to (U^\perp/S^\perp)^*$ by $\Theta(x) = \theta_x: U^\perp/S^\perp \to \mathbb{F}$
+where $\theta_x(u+S^\perp) = \beta(x,u)$ for all $u \in U^\perp$.
 
 >[!Claim]
->$\Theta$ is a $\mathbb{F}G$-module.
+>$\Theta$ is a $\mathbb{F}G$-module isomorphism.
 
 ###### Well-definedness
+$$\begin{align*}
+u+S^\perp = y + S^\perp &\implies u-y \in S^\perp \\[3pt]
+&\implies \beta(x,u-y) = 0 \qquad (x \in S^\perp) \\[3pt]
+&\implies \beta(x,u) = \beta(x,y) \\[3pt]
+&\implies \theta_x(u+S^\perp) = \theta_x(y+S^\perp).
+\end{align*}$$
 
-$$u+S^\perp = y + S^\perp$$
-....
+###### Linearity
+- $\theta_x$ is linear because $\beta$ is linear in the second position implies
+$$\theta_s \in (U^\perp/S^\perp)^* = \text{Hom}_\mathbb{F}(U^\perp/S^\perp, \mathbb{F}).$$
+
+- $\Theta$ is linear because $\beta$ is also linear in the first position: $\Theta(gs) = \theta_{gs}$. And
+  $\theta_{g\cdot x}(u+ S^\perp) = \beta(g\cdot x,u) = \beta(x,g^{-1}\cdot u) = \theta_s(g^{-1}\cdot x) = g \cdot \theta_x(u+S^\perp)$.
+
+Thus $\Theta$ is an $\mathbb{F}G$-module homomorphism.
+###### Kernel
+$$\begin{align*}
+\ker \Theta &= \{s \in S \:|\: \theta_s=0\}\\[2pt]
+&= \{s \in S \:|\: \beta(s,x)=0 \:\:\:\: \forall x \in U^\perp\}\\[2pt]
+&= S \cap (U^\perp)^\perp \\[2pt]
+&= S \cap U = U
+\end{align*}$$
+By the first isomorphism theorem,
+$$S/U = S/\ker \Theta \cong \text{im }\Theta \subseteq (U^\perp/S^\perp)^$$
