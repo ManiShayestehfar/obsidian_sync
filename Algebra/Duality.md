@@ -155,7 +155,7 @@ $$\theta_s \in (U^\perp/S^\perp)^* = \text{Hom}_\mathbb{F}(U^\perp/S^\perp, \mat
   $\theta_{g\cdot x}(u+ S^\perp) = \beta(g\cdot x,u) = \beta(x,g^{-1}\cdot u) = \theta_s(g^{-1}\cdot x) = g \cdot \theta_x(u+S^\perp)$.
 
 Thus $\Theta$ is an $\mathbb{F}G$-module homomorphism.
-###### Kernel
+###### Isomorphism
 $$\begin{align*}
 \ker \Theta &= \{s \in S \:|\: \theta_s=0\}\\[2pt]
 &= \{s \in S \:|\: \beta(s,x)=0 \:\:\:\: \forall x \in U^\perp\}\\[2pt]
@@ -163,4 +163,24 @@ $$\begin{align*}
 &= S \cap U = U
 \end{align*}$$
 By the first isomorphism theorem,
-$$S/U = S/\ker \Theta \cong \text{im }\Theta \subseteq (U^\perp/S^\perp)^$$
+$$S/U = S/\ker \Theta \cong \text{im }\Theta \subseteq (U^\perp/S^\perp)^*$$
+But 
+$$\dim(U^\perp/S^\perp)^* = \dim (U^\perp/S^\perp) = (\dim M - \dim U) - (\dim M - \dim S) = \dim S - \dim U = \dim S/U$$
+Thus $\text{im }\Theta = (U^\perp/S^\perp)^*$ and $S/U \cong (U^\perp/S^\perp)^*$.
+$\square$
+
+
+>[!Corollary]
+>$M \cong M^\perp$ with a SNAF $\beta$. 
+>Let $S$ be a $\mathbb{F}G$-submodule of $M$. 
+>Then $S/(S \cap S^\perp)$ is self-dual.
+##### Proof
+Let $U = S\cap S^\perp$. By the previous proposition
+$$S/(S\cap S^\perp) \cong \left(\frac{(S\cap S^\perp)^\perp}{S^\perp}\right)^* = \left(\frac{S+S^\perp}{S^\perp}\right)^*$$
+where we use the fact that $S\cap S^\perp = (S^\perp + S)^\perp$ from the properties of the orthogonal submodule. Finally by the second isomorphism theorem
+$$S/(S\cap S^\perp) \cong  \cdots \cong \left(\frac{S+S^\perp}{S^\perp}\right)^* \cong \left(\frac{S}{S\cap S^\perp}\right)^*$$
+is self-dual.
+
+>[!Success] Moral
+>The useful fact is that the following chain is useful to show that every irreducible $\mathbb{F}S_n$-module is isomorphic to $S/(S\cap S^\perp)$ for some $S$.
+
