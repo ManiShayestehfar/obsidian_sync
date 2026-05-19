@@ -138,3 +138,7 @@ Define a map $\Theta:S \to (U^\perp/S^\perp)^*$ by $\Theta(x) = \theta_x: U^\per
 >[!Claim]
 >$\Theta$ is a $\mathbb{F}G$-module.
 
+###### Well-definedness
+
+$$u+S^\perp = y + S^\perp$$
+....
