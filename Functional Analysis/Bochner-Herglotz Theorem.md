@@ -1,7 +1,7 @@
 #  Main Theorem
 
 > [!Theorem] Bochner-Herglotz Theorem for Matrix Coefficients of Unitary Operators
-> Let $H$ be a complex Hilbert space, let $U : H \to H$ be a unitary operator, and let $v \in H$. Then there exists a finite positive Borel measure $\mu_v$ on the unit circle $\mathbb T = \{z \in \mathbb C : |z| = 1\}$ such that
+> Let $\mathcal{H}$ be a complex Hilbert space, let $U : \mathcal{H} \to \mathcal{H}$ be a unitary operator, and let $v \in \mathcal{H}$. Then there exists a finite positive Borel measure $\mu_v$ on the unit circle $\mathbb T = \{z \in \mathbb C : |z| = 1\}$ such that
 > $$
 > \langle U^n v, v \rangle = \int_{\mathbb T} z^n \, d\mu_v(z)
 > $$
