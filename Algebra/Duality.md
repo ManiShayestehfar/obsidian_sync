@@ -184,3 +184,4 @@ is self-dual.
 >[!Success] Moral
 >The useful fact is that the following chain is useful to show that every irreducible $\mathbb{F}S_n$-module is isomorphic to $S/(S\cap S^\perp)$ for some $S$.
 
+![[Screenshot 2026-05-19 at 1.02.15 pm.png|300]]
