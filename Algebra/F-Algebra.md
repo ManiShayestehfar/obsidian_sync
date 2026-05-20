@@ -77,9 +77,10 @@ This proves that $V$ itself is also semisimple.       $\square$
 3. For $C_4 =\langle x | x^4=1\rangle$ acting on $V = \mathbb{R}^2$ via $x \mapsto \left[\begin{smallmatrix}0 & 1 \\ -1 & 0\end{smallmatrix}\right]$. $\text{End}_{\mathbb{R}G}(V) \cong \mathbb{C}$ (shown in Tutorial 3) and $V$ is irreducible. Hence $V$ is NOT Schurian
 4. For $G=S_n$ and $\mathbb{F}$ any field, then $\mathbb{F}S_n$ is Schurian (not obvious)
 5. If $p = \text{char } \mathbb{F}$ and $p=0$ or $p \nmid |G|$, then $\mathbb{F}G$ is completely reducible by [[Maschke's Theorem]].
+
 # Opposite Algebra
 
->[!def] 
+>[!definition] 
 >Let $B$ be an $\mathbb{F}$-algebra. The **opposite algebra** of $B$ is the $\mathbb{F}$-algebra $B^{op}$ that is equal to $B$ as an $\mathbb{F}$-vector space but with multiplication $a\cdot b = ba$ where the multiplication on the left-hand is in $B^{op}$ and multiplication on the right-hand side is in $B$.
 
 
@@ -88,5 +89,9 @@ This proves that $V$ itself is also semisimple.       $\square$
 >[!lemma] 
 >Let $A$ be an $\mathbb{F}$-algebra. Then $A \cong \text{End}_A(A)^{op}$.
 >Also if we consider $A$ as a *right* $A$-module then the statement becomes $A \cong \text{End}_A(A)$.
+
+##### Proof
+Notice that if 
+
 
 ![[F-Algebra-1753017145112.png]]
