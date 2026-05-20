@@ -47,9 +47,14 @@ Consequently, $\Phi(v + \ker \varphi) = \varphi(v) = \varphi(v') = \Phi(v'+\ker 
 
 ###### G-module homomorphism
 $\Phi$ is a $G$-module homomorphism because it is linear by definition. So 
-$$\Phi(g\cdot(v+\ker\varphi)) = \Phi(g\cdot v+ \ker \varphi)= \varphi(g\cdot v)=g \cdot \varphi(v) = g \cdot \Phi(v + \ker )$$
+$$\Phi(g\cdot(v+\ker\varphi)) = \Phi(g\cdot v+ \ker \varphi)= \varphi(g\cdot v)=g \cdot \varphi(v) = g \cdot \Phi(v + \ker \varphi).$$
+###### Isomorphism
+$\Phi$ is surjective by definition because if $w \in \text{im }\varphi$, then there exists $v \in V$ such that $w = \varphi(v) = \Phi(v+\ker \varphi)$ so $w \in \text{im }\Phi$.
+Therefore $\Phi$ is *surjective*.
 
-![[Screenshot 2025-03-07 at 12.58.28 pm.png]]
+If $\Phi(v + \ker \varphi)= 0$, then $\varphi(v)=0$. So $v \in \ker \varphi$ and thus $v + \ker \varphi = 0+ \ker \varphi$.
+Hence $\ker \Phi = \{0 + \ker \varphi\}$, which is the zero vector in $V/\ker \varphi$.
+Therefore $\Phi$ is *injective*.
 
 # Other Isomorphism Theorems
 
@@ -60,7 +65,7 @@ Let $V$ be a $G$-module.
 >4. Suppose $W$ is a submodule of $V$. Then there is a 1-to-1 inclusion preserving correspondence between submodules of $V$ that contain $W$ and the submodules of $V/W$
 ##### Proof Sketch
 ###### 2. 
-Recap: If $X$ and $Y$ are subspaces of $V$, then $X+Y = \{x + y \:|\: x \in X, y \in Y\}\subseteq V$. 
+*Recap:* If $X$ and $Y$ are subspaces of $V$, then $X+Y = \{x + y \:|\: x \in X, y \in Y\}\subseteq V$. 
 If we take $x \in X$ and $y \in Y$, then $g(x+y) = gx+gy \in X+Y$ so $X+Y$ is a $G$-submodule of $V$.
 
 Define $\Psi:Y\to (X+Y)/X$  by $\Psi(y) = y+X \in (X+Y)/X$.
@@ -93,8 +98,8 @@ Let $\{u_1,...,u_m\}$ be a basis of $U$. By the basis extension theorem, $V$ has
 >So $\dim V/U = \dim V - \dim U = n-m$
 ##### Proof
 $$\begin{align*}
-V/U = \langle v+ U \:|\: v \in V\rangle &= \langle \sum_{i=1}^m\lambda_iu_i + \sum_{i=m+1}^n \mu_iv_i \: + U\rangle \\
-&= \langle \sum_{i=m+1}^n \mu_iv_i \: + U \:|\: \mu_i \in \mathbb{F}\rangle\\
+V/U = \langle v+ U \:|\: v \in V\rangle &= \left\langle \sum_{i=1}^m\lambda_iu_i + \sum_{i=m+1}^n \mu_iv_i \: + U\right \rangle \\
+&= \left \langle \sum_{i=m+1}^n \mu_iv_i \: + U \:|\: \mu_i \in \mathbb{F}\right \rangle\\
 \end{align*}$$
 So $\{v_{m+1}+U,...,v_n+U\}$ spans $V/U$. Still need to show it is linearly independent.
 If $0 = \sum_{i=m+1}^n \mu_i(v_i + U) = \sum_{i=m+1}^n(\mu_iv_i)+ U$,
