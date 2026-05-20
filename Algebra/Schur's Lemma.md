@@ -3,7 +3,7 @@
 >$$\text{Hom}_A(D,E) \cong \begin{cases} \mathbb{F} & \text{if}\:\: D \cong E \\[4pt]
 >0 & \text{otherwise}
 \end{cases}$$
-Moreover, $\text{End}_A(D) \cong \mathbb{F}$. In particular, $A$ is a *Schurian* [[F-Algebra]].
+Moreover, $\text{End}_A(D) \cong \mathbb{F}$ (or a division algebra in general). In particular, $A$ is a *Schurian* [[F-Algebra]].
 ##### Proof
 Split the proof into two parts: when $D \not\cong E$, and $D \cong E$.
 
@@ -13,13 +13,14 @@ $$D / \ker \varphi \cong \text{im }\varphi.$$
 But since both $D,E$ are irreducible, meaning no proper submodule of $D$ exists:
 - $\ker \varphi = 0$ or $D$
 - $\text{im }\varphi = E$ or $0$.
-Since $\varphi \neq 0$, we must have that $\ker \varphi =0$, and $\text{im }\varphi = E$. Meaning that $\varphi$ is an isomorphism and $D \cong E$. Therefore, if $D \neq E$, then any homomorphism $\varphi$ must be $0$. i.e. $\text{Hom}_A(D,E) = 0$.
+Since $\varphi \neq 0$, we must have that $\ker \varphi =0$, and $\text{im }\varphi = E$. Meaning that $\varphi$ is an isomorphism and $D \cong E$. 
+Therefore, if $D \neq E$, then any homomorphism $\varphi$ must be $0$. i.e. $\text{Hom}_A(D,E) = 0$.
 
 
 ###### $D \cong E$
 For $D \cong E$, $\text{Hom}_A(D,E) \cong \text{End}_A(D)$. We want to show that 
 $$\text{End}_A(D) = \{\rho_\lambda\:|\: \lambda \in \mathbb{F}\} \cong \mathbb{F}$$
-Since $D$ is an $A$-module (and by extension a [[vector space]]), we can find and fix a basis $\{d_1,...,d_n\}$ for it, and let $\varphi \in \text{End}_A(D)$. Then:
+Since $D$ is an $A$-module (and a [[vector space]]), we can find and fix a basis $\{d_1,...,d_n\}$ for it, and let $\varphi \in \text{End}_A(D)$. Then:
 $$\varphi(d_i) = \sum_{j}a_{ij}d_j,\quad\quad a_{ij} \in \mathbb{F}.$$
 So $\varphi$ is represented by some matrix $(a_{ij})$. Since $F$ is algebraically closed, the matrix has at least one eigenvalue $\lambda \in \mathbb{F}$. Let $v_\lambda$ be the corresponding eigenvector with $\varphi(v_\lambda) = \lambda v_\lambda$.
 
