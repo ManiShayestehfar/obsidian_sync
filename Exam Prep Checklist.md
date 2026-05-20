@@ -1,8 +1,8 @@
 # Representation Theory
 
-- [ ] A-Module
+- [x] A-Module
 - [ ] Algebraic Integers
-- [ ] Artin–Wedderburn Decomposition.
+- [ ] Artin–Wedderburn Decomposition
 - [x] Associative Algebra
 - [ ] Centre
 - [ ] Characters
