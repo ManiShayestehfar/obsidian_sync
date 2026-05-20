@@ -19,9 +19,25 @@ Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 
 >[!proposition]
 >Let $V$ be an $n$-dimensional $G$-module. Then $V$ determines a representation $\rho_V: G\to GL_n(\mathbb{F})$. Conversely, if $\rho:G \to GL_{n}(\mathbb{F})$ is a group homomorphism then $V = \mathbb{F}^n$ becomes a $G$-module by defining the action of $g \in G$ on $V$ to be given by matrix multiplication by $\rho(g)$.
- 
-![[Screenshot 2025-03-06 at 12.50.18 pm.png]]
-![[Screenshot 2026-02-26 at 11.41.00 am.png]]
+##### Proof
+Fix a basis $\{e_1,\ldots,e_n\}$ of $V$ and for each $g \in G$ define the matrix $\mathbf{g}$ as above. We claim that the map $\rho_V : G \to GL_n(\mathbb{F}); g \mapsto \mathbf{g}$ is a representation of $G$.
+
+We have already shown that $\rho_V(gh) = \rho_V(g)\rho_V(h)$.
+So it remains to show that $\rho(g) \in GL_n(\mathbb{F})$ for $g \in G$. However, if $g \in G$, then $g^m = 1$ for some $m \geq 1$ since $G$ is a finite group. Therefore,
+$$\mathbf{g}^m = \rho_V(g)^m = \rho_V(g^m) = I_n,$$
+ where $I_n$ is the $n \times n$ identity matrix. Consequently, $\mathbf{g} = \rho_V(g)$ is an invertible matrix, and so $\rho_V(g) \in GL_n(\mathbb{F})$. Hence, $\rho_V$ is a matrix representation of $G$.
+
+If $\{f_1,\ldots,f_n\}$ is another basis of $V$, then there is an invertible matrix $A = (a_{jk}) \in GL_n(\mathbb{F})$ such that $f_k = \sum_{j=1}^n a_{jk}e_j$. Let $B = A^{-1} = (b'_{ij})$, so that $e_j = \sum_{i=1}^n b'_{ij}f_i$. Then
+$$\begin{aligned}
+gf_k
+&= g\left(\sum_{j=1}^n a_{jk}e_j\right) \\
+&= \sum_{j=1}^n a_{jk}ge_j \\
+&= \sum_{j=1}^n a_{jk}\left(\sum_{i=1}^n g_{ij}e_i\right) \\
+&= \sum_{j=1}^n a_{jk}\left(\sum_{i=1}^n g_{ij}\left(\sum_{l=1}^n b'_{li}f_l\right)\right) \\
+&= \sum_{l=1}^n\left(\sum_{i=1}^n\sum_{j=1}^n b'_{li}g_{ij}a_{jk}\right)f_l \\
+&= \sum_{l=1}^n (A^{-1}\mathbf{g}A)_{lk}f_l.
+\end{aligned}$$
+Therefore, with respect to the basis $\{f_1,\ldots,f_n\}$, $g$ acts on $V$ via the matrix $A^{-1}\mathbf{g}A$. Hence, the matrix representation corresponding to the basis $\{f_1,\ldots,f_n\}$ is $\mathbf{g} \mapsto A^{-1}\mathbf{g}A$, where $A$ is the transition matrix from that $e$-basis to the $f$-basis. $\square$
 
 **Remark:** $\text{im } \rho_{V}^{E} = A^{-1}\text{im } \rho_{V}^{F}A$  are conjugate subgroups of $GL_n(\mathbb{F})$
 
