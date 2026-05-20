@@ -91,7 +91,12 @@ This proves that $V$ itself is also semisimple.       $\square$
 >Also if we consider $A$ as a *right* $A$-module then the statement becomes $A \cong \text{End}_A(A)$.
 
 ##### Proof
-Notice that if 
+Notice that if $\varphi \in \text{End}_A(A)^{op}$, then $\varphi(a) = \varphi(a \cdot 1_A) = a \varphi(1_A)$, for $a \in A$. 
+So $\varphi$ is uniquely determined by $\varphi(1_A)$.
+
+Define a map $\Theta: \text{End}_A(A)^{op}\to A$ by $\Theta(\varphi) = \varphi(1_A)$. 
+$\Theta$ is $\mathbb{F}$-linear because 
+$$\Theta(r\varphi+s \psi) = (r\varphi + s \psi)$$
 
 
 ![[F-Algebra-1753017145112.png]]
