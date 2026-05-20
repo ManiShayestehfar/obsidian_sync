@@ -1,6 +1,6 @@
 # Definition
 
->[!def]
+>[!definition]
 >A **group** is an ordered pair $(G, \ast)$ where:
 >
 >1. **Closure:** For every $a, b \in G$, the result of the operation $a \ast b$ is also in $G$.
@@ -91,9 +91,10 @@ $$G = \bigsqcup_{\substack{x \text{ conj.} \\ \text{class reps}}} \mathscr{C}_g 
 where $x \sim y \iff \mathscr{C}_x = \mathscr{C}_y$.
 
 >[!Lemma]
->Let $H$ be a subgroup of $G$. $H$ is normal $\iff$ $H$ is a union of conjugacy classes
+>Let $H$ be a subgroup of $G$. 
+>$H$ is normal $\iff$ $H$ is a union of conjugacy classes
 ##### Proof
-$H$ is normal $\iff gHg^{-1}=H \forall g \in G \iff gHg^{-1} \in H \iff$ $H$ is a union of conjugacy classes $\square$
+$H$ is normal $\iff gHg^{-1}=H \:\:\forall g \in G \iff gHg^{-1} \in H \iff$ $H$ is a union of conjugacy classes $\square$
 
 
 ### Examples

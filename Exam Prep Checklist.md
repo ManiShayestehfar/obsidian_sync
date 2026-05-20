@@ -11,10 +11,10 @@
 - [ ] Commutator Subspace
 - [ ] Duality
 - [ ] F-Algebra
-- [ ] Field
+- [x] Field
 - [ ] Filtration and Composition Series
 - [ ] G-Modules
-- [ ] Group
+- [x] Group
 - [ ] Indecomposable Modules
 - [ ] Integral Domain
 - [ ] Isotypic Component

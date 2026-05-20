@@ -1,7 +1,7 @@
 
->[!def]
+>[!definition]
 >A **vector space** is a set $V$ together with two operations—**vector addition** and **scalar multiplication**—that satisfy the following axioms. 
-
+>
 Let $F$ be a field. Then $V$ is a vector space over $F$ if the following conditions hold for all vectors $\mathbf{u}, \mathbf{v}, \mathbf{w}$ in $V$ and all scalars $a, b$ in $F$:
 
 1. **Closure under Addition:**  $\mathbf{u} + \mathbf{v} \in V.$
@@ -16,18 +16,24 @@ Let $F$ be a field. Then $V$ is a vector space over $F$ if the following conditi
 10. **Distributivity of Scalar Multiplication over Field Addition:** $(a + b)\mathbf{u} = a\mathbf{u} + b\mathbf{u}.$ 
 
 
-## F-Vector Space Homomorphism
+# F-Vector Space Homomorphism
 
 Let $\mathbb{F}$ be a field. Let $V$ and $W$ be  $\mathbb{F}$-vector spaces. Then a **$\mathbb{F}$-vector space homomorphism** is a map $\varphi: V \to W$  is a homomorphism of abelian groups that commutes with the $\mathbb{F}$-[[R-Module|action]]. That is,
 - $\varphi(v + v') = \varphi(v) + \varphi(v')$, 
 - $\varphi(\lambda v) = \lambda \varphi(v)$        for all $\lambda \in \mathbb{F}$ and $v,v'\in V$.
 
 
->[!theorem|(The Isomorphism Theorems)]  
->![[Screenshot 2025-03-06 at 11.41.54 am.png]]
+# Isomorphism Theorems
+
+>[!Theorem]
+>1. Suppose $\varphi: V \to W$ is a vector space homomorphism. Then $V/\ker \varphi \cong \text{im }\varphi$
+>2. Suppose $X,Y$ are subspaces of $V$. Then $(X+Y)/Y \cong X/(X \cap Y)$
+>3. Suppose $U \leq W \leq V$. Then $V/W \cong (V/U)/(W/U)$
+>4. Suppose $W \leq V$. Then there is a one-to-one inclusion preserving correspondence between the submodules of $V$ that contain $W$ and submodules of $V/W$.
+>
 
 
-## Direct Sum
+# Direct Sum
 
 Let $X_1,...,X_n$ be vector spaces
 
@@ -37,5 +43,5 @@ Let $X_1,...,X_n$ be vector spaces
 >where addition and multiplication are defined componentwise
 
 $$X_1+\cdots +X_n \cong X_1 \oplus \cdots \oplus X_n \iff x'\in X_1+\cdots+X_n, \:\:x' = \sum_{i=1}^nx_i\:\:\text{for}\: x_i \in X_i$$
-- In this case $X_1+\dots+X_n$ is the **internal direct sum** of $X_1,\dots X_n$
+- In this case $X_1+\dots+X_n$ is the **internal direct sum** of $X_1,\dots,X_n$
 
