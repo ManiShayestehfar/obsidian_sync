@@ -17,7 +17,7 @@ $R$ has **units** if $\exists \mathbb{1} \in R$  such that $\forall x \in R$, $\
 ### Subrings
 
 >[!def] 
->$S$ \subset $R$ is a subset such that $S$ is a ring with some operation.
+>$S \subset R$ is a subset such that $S$ is a ring with some operation.
 
 ### Ring Homomorphism
 
@@ -42,7 +42,9 @@ $R$ has **units** if $\exists \mathbb{1} \in R$  such that $\forall x \in R$, $\
 >[!proposition]
 >For any $\varphi : R \to S$, $\ker \varphi$ is an ideal of $R$.
 ##### Proof
-Page 3
+$\ker \varphi$ is clearly and additive subgroup since $\varphi(r+r') = \varphi(r)+\varphi(r')=0$ so $r+r' \in \ker \varphi$. 
+Take $x \in R$, and $y \in \ker \varphi$.
+Then $\varphi(xy) = \varphi(x) \varphi(y)=0$. So $xy \in \ker \varphi$. $\square$
 
 ## Principal Ideal
 
