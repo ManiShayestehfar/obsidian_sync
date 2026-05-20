@@ -34,7 +34,7 @@
 
 # $\mathbb{F}$-Algebra Homomorphism
 
->[!def]
+>[!defintion]
 >An $\mathbb{F}$-Algebra **homomorphism** is a [[Vector Space]] homomorphism $\varphi: A \to B$ that is also a ring homomorphism.
 
 - Two algebras are **isomorphic** if there is a bijective algebra homomorphism between them
