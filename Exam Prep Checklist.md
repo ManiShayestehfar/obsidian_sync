@@ -1,0 +1,61 @@
+# Representation Theory
+
+- [ ] A-Module
+- [ ] Algebraic Integers
+- [ ] Artin–Wedderburn Decomposition.
+- [ ] Associative Algebra
+- [ ] Centre
+- [ ] Characters
+- [ ] Class Function
+- [ ] Cn Representation
+- [ ] Commutator Subspace
+- [ ] Duality
+- [ ] F-Algebra
+- [ ] Field
+- [ ] Filtration and Composition Series
+- [ ] G-Modules
+- [ ] Group
+- [ ] Indecomposable Modules
+- [ ] Integral Domain
+- [ ] Isotypic Component
+- [ ] Jordan-Holder Theorem
+- [ ] Maschke's Theorem
+- [ ] Nilpotent & Radical Ideals
+- [ ] Number of Irreducible CG-Modules
+- [ ] Number of Irreducible FG-Modules
+- [ ] Quotient Module
+- [ ] R-Module
+- [ ] Ring
+- [ ] Schur's Lemma
+- [ ] Sn Representation
+- [ ] Vector Space
+
+# Functional Analysis
+
+- [ ] Adjoint Operators
+- [ ] Baire's Theorem
+- [ ] Banach Spaces
+- [ ] ~~Bochner–Herglotz Theorem~~
+- [ ] Compact Operators
+- [ ] Completion
+- [ ] Dual Spaces
+- [ ] ~~Ergodicity~~
+- [ ] General Linear Group
+- [ ] Hahn–Banach Theorem
+- [ ] Hilbert Space
+- [ ] Inner product
+- [ ] ~~Koopman Operators~~
+- [ ] Lebesgue Spaces
+- [ ] Linear Operators
+- [ ] Main Definitions
+- [ ] Normed Spaces
+- [ ] Open Mapping Theorem
+- [ ] Orthogonality
+- [ ] Posets
+- [ ] Principle of Uniform Boundedness
+- [ ] Quotient Spaces
+- [ ] Riesz Representation
+- [ ] Spectral Theory
+- [ ] Stone–Weierstrass
+- [ ] The Unit Ball
+- [ ] Zorn's Lemma
