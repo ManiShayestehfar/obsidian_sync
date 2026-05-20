@@ -11,7 +11,7 @@ Fix prime $p >0$.
 ## Brauer's Theorem
 
 >[!Theorem] Brauer's Theorem
->Let $\mathbb{F}$ be an algebraically closed field of characteristic $p \geq 0$. Then 
+>Let $\mathbb{F}$ be a field (NOT necessarily algebraically closed) of characteristic $p \geq 0$. Then 
 >$$\# \text{Irr}(\mathbb{F}G) \:\leq\: \# p'\text{-conjugacy classes}$$
 >with equality of $\mathbb{F}G$ is Schurian.
 ##### Proof

@@ -69,10 +69,14 @@ Let $V$ be a $G$-module.
 If we take $x \in X$ and $y \in Y$, then $g(x+y) = gx+gy \in X+Y$ so $X+Y$ is a $G$-submodule of $V$.
 
 Define $\Psi:Y\to (X+Y)/X$  by $\Psi(y) = y+X \in (X+Y)/X$.
+$\Psi$ is a $G$-module homomorphism because it is both linear and an intertwiner.
+
 By the first isomorphism theorem, $Y/\ker \Psi \cong \text{im }\Psi = (X+Y)/X$ and $\ker \Psi = \{y \in Y \:|\: y + X = 0_{(X+Y)/Y}\} = X \cap Y$ since $y + X = 0 + X \iff y \in X$. $\square$
 
 ###### 3.
-Define $\Theta: V \to (V/X)/(Y/X)$ by $\Theta(v)= (v+X) + Y/X$ which we can check to be well-defined.
+Define $\Theta: V \to (V/U)/(Y/U)$ by $\Theta(v)= (v+U) + W/U$ which we can check to be well-defined.
+$\Theta$ is a $G$-module homomorphism because it is both linear and an intertwiner.
+
 By first isomorphism theorem, $V/\ker \Theta \cong \text{im }\Theta = (V/X)/(Y/X)$ and $\ker \theta = \{v \in V \:|\: v \in Y\} = V \cap Y = Y$. 
 Therefore $V/Y \cong (V/X)/(Y/X)$. $\square$
 

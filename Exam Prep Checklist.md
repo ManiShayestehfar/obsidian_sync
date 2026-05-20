@@ -13,10 +13,9 @@
 - [ ] F-Algebra
 - [x] Field
 - [ ] Filtration and Composition Series
-- [ ] G-Modules
+- [x] G-Modules
 - [x] Group
 - [ ] Indecomposable Modules
-- [ ] Integral Domain
 - [ ] Isotypic Component
 - [ ] Jordan-Holder Theorem
 - [ ] Maschke's Theorem
