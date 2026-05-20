@@ -96,7 +96,16 @@ So $\varphi$ is uniquely determined by $\varphi(1_A)$.
 
 Define a map $\Theta: \text{End}_A(A)^{op}\to A$ by $\Theta(\varphi) = \varphi(1_A)$. 
 $\Theta$ is $\mathbb{F}$-linear because 
-$$\Theta(r\varphi+s \psi) = (r\varphi + s \psi)$$
+$$\Theta(r\varphi+s \psi) = (r\varphi + s \psi)(1_A) = r\varphi(1_A)+s \psi(1_A) = r\Theta(\varphi) + s\Theta(\psi)$$
+for all $r,s \in \mathbb{F}$ and $\varphi,\psi \in \text{End}_A(A)$. 
+
+$\Theta$ is also a ring homomorphism because
+$$\Theta(\varphi\psi) = (\varphi\psi)(1_A) = \varphi(\psi(1_A)) = \varphi(\psi(1_A)\cdot 1_A)= \psi(1_A)\varphi(1_A) = \Theta(\psi)\Theta(\varphi),$$
+where the third equality comes from the fact that $\varphi$ is an $A$-module homomorphism (so $\varphi(ab)=a \varphi(b)$ for $a,b \in A$).
+
+
+
+
 
 
 ![[F-Algebra-1753017145112.png]]
