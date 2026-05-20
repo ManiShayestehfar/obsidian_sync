@@ -221,9 +221,35 @@ $\square$
 >2. If $g \in S_n$, then $ge_t=e_{gt}$.
 >3. $S^\lambda$ is spanned by $\{e_t \:|\: t \in \text{Tab}(\lambda)\}$.
 ##### Proof
-
+###### 2.
 By definition, $S^\lambda=\mathbb{F}S_n\kappa_{t^\lambda}\rho_{t^\lambda}$, and $m_{t^\lambda}= \rho_{t^\lambda}$. So $S^\lambda= \mathbb{F}S_n e_{t^\lambda}$.
+If $g \in S_n$, then $ge_t= g \kappa_t m_t = \kappa_{gt}\cdot gm_t = \kappa_{gt}m_{gt}=e_{gt}$ which proves (2).
 
-If $g \in S_n$, then $ge_t= g \kappa_t m_t = \kappa_{gt}\cdot gm_t = \kappa_{gt}m_{gt}=e_{gt}$ which proves (3).
+###### 1.
+In particular, $d^{-1}_te_t=e_{d^{-1}_tt}=e_{t^\lambda}$.
+so $e_{t^\lambda}\in \mathbb{F}S_ne_t$, and hence $S^\lambda \subseteq \mathbb{F}S_ne_t$.
+
+By definition, $e_t=\kappa_tm_t=\kappa_td_tm_{t^\lambda}=d_t\kappa_{t^\lambda}m_{t^\lambda}$. Hence $e_t = d_te_{t^\lambda}\in S^\lambda\implies \mathbb{F}S_ne_t \subseteq S^\lambda$
+Combining with the previous dot point gives $S^\lambda=\mathbb{F}S_ne_t$.
+
+###### 3.
+$S^\lambda$ is spanned by $\{ge_{t^\lambda}\:|\: g \in S_n\} = \{e_t \:|\: t \in \text{Tab}(\lambda)\}$ using (2).
+$\square$
 
 
+# Dominance
+
+>[!Definition]
+>Define a **partial order** on $\mathcal{P}_n$, such that $\lambda \trianglerighteq\mu$ ("$\lambda$ dominates $\mu$") if
+>$$\sum_{i=1}^r \lambda_i \geq \sum_{i=1}^r \mu_i$$
+>for all $r\geq1$.
+
+![[Specht Modules-1779277892123.png|380]]
+
+## Key Lemma
+
+>[!lemma]
+>Let $s \in \text{Tab}(\lambda)$, $t \in \text{Tab}(\mu)$ for $\lambda,\mu \in \mathcal{P}_n$ and suppose that $\kappa_sm_t \neq 0$.
+>Then $\lambda \trianglerighteq \mu$. 
+>Moreover, if $\lambda = \mu$ then $\kappa_sm_t=\pm e_s$.
+##### Proof
