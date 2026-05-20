@@ -103,7 +103,19 @@ $\Theta$ is also a ring homomorphism because
 $$\Theta(\varphi\psi) = (\varphi\psi)(1_A) = \varphi(\psi(1_A)) = \varphi(\psi(1_A)\cdot 1_A)= \psi(1_A)\varphi(1_A) = \Theta(\psi)\Theta(\varphi),$$
 where the third equality comes from the fact that $\varphi$ is an $A$-module homomorphism (so $\varphi(ab)=a \varphi(b)$ for $a,b \in A$).
 
-Next, $\Theta(\varphi)=0 \iff \varphi(1_A)=0$. Hence if $a \in A$, then 
+*Injectivity:* $\Theta(\varphi)=0 \iff \varphi(1_A)=0$. Hence if $a \in A$, then $\varphi(a)=\varphi(a\cdot 1_A) = a \varphi(1_A)=0$ so $\varphi$ is identically zero. Thus $\Theta$ is injective.
+
+*Surjectivity:* Fix $a \in A$ and define a map $\rho_a: A \to A$ by $\rho_a(x) = xa$ for $x \in A$.
+Then $\rho_a$ is $\mathbb{F}$-linear since multiplication in $A$ is linear. 
+$\rho_a(xy)=(xy)a=x(ya) = x\rho_a(y)$ for $x,y \in A$.
+Hence $\rho_a \in \text{End}_A(A)^{op}$.
+By definition $\Theta(\rho_a)=a$, so $\Theta$ is surjective.
+$\square$
+
+
+
+
+
 
 
 
