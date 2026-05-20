@@ -51,7 +51,7 @@ Suppose $V$ is an $A$-module.
 
 ## Isomorphism Classes of Irreducibles
 
->[!Def]
+>[!Definition]
 > $\text{Irr}(A) = \left\{\text{Isom. Classes of Irreducible }A\text{-modules} \right\}$
 
 
@@ -62,7 +62,6 @@ Suppose $V$ is an $A$-module.
 >- An $A$-module $V$ is **irreducible** (or **simple**) if $V$ contains no nonzero proper submodules.
 >- It is **completely reducible**, or **semisimple** if it is a direct sum of irreducible $A$-modules.
 >	- Equivalently, $V$ is **semisimple** if $\text{Rad }V=0$.
-
 
 
 
@@ -83,14 +82,11 @@ In addition, $\varphi$ is an $A$-module homomorphism as
 $$\varphi(ax) = (ax)v = a(xv) = a\varphi(x) \quad a,x\in A.$$
 Also $\varphi$ is surjective since $V = Av = \text{im }\varphi$, so $V \cong A / \text{ker }\varphi$ by the First Isomorphism Theorem.
 
-Moreover since $V$ is irreducible, $\ker \varphi$ is a maximal ideal of $A$ by the Isomorphism theorems above.  $\square$ 
-
->[!warning] Note
->The submodules of $A$ are exactly its left [[Ring|ideals]] 
+Moreover since $V$ is irreducible, $\ker \varphi$ is a maximal ideal of $A$ by the correspondence theorem. $\square$ 
 
 
 >[!lemma]
->$V \subseteq A$.
+>Let $V \subseteq A$.
 >$V$ a submodule of $A \iff$ $V$ is a left-ideal of $A$
 >
 
