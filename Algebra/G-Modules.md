@@ -140,6 +140,38 @@ for all $g,h,x \in G$ and therefore associativity is given. $\square$
 ![[Screenshot 2025-03-13 at 11.42.54 am.png]]
 
 
+> [!Proposition]
+> If multiplication is defined by
+>
+> $$\left(\sum_{x \in G} \lambda_x x\right)\left(\sum_{y \in G} \mu_y y\right)
+> =
+> \sum_{z \in G}\left(\sum_{\substack{x,y \in G \\ z = xy}} \lambda_x \mu_y\right)z,$$
+>
+> for $\lambda_x,\mu_y \in \mathbb{F}$, then $\mathbb{F}G$ is an associative ring with $1_G$ as identity. The natural multiplication comes from a natural multiplication in $G$.
+>
+> Equivalently,
+>
+> $$\left(\sum_{x \in G} \lambda_x x\right)\left(\sum_{y \in G} \mu_y y\right)
+> =
+> \sum_{z \in G}\left(\sum_{g \in G} \lambda_{zg^{-1}}\mu_g\right)z
+> =
+> \sum_{z \in G}\left(\sum_{g \in G} \lambda_g\mu_{g^{-1}z}\right)z.$$
+##### Proof
+By the last lemma, $\mathbb{F}G$ is a vector space. In particular, it is an abelian group under addition. Looking at the formula above for multiplication in $\mathbb{F}G$, we have
+$$\left(\sum_{x \in G} \lambda_x x\right)\left(\sum_{y \in G} \mu_y y\right)
+=
+\sum_{x \in G} \lambda_x x\left(\sum_{y \in G} \mu_y y\right)
+=
+\sum_{y \in G} \mu_y\left(\sum_{x \in G} \lambda_x x\right)y.$$
+
+So, multiplication in $\mathbb{F}G$ is bilinear. That is, linear in both the $x$’s and the $y$’s. Hence, it suffices to check that the associative and distributive laws hold on the basis of $\mathbb{F}G$ given by the group elements.
+
+The multiplication in $G$ is associative, so $x(yz) = (xy)z$ for all $x,y,z \in G$, showing that multiplication in $\mathbb{F}G$ is also associative.
+
+For the distributive laws, by linearity we need only check that $(a+b)x = ax + bx$ and $x(a+b) = xa + xb$ for $x \in G$ and $a,b \in \mathbb{F}G$; however, this follows from the multiplication formulas given above.
+
+Finally, it is clear that $1_G$ is an identity element for $\mathbb{F}G$, so we are done. $\square$
+
 >[!success] NOTE
 >$\mathbb{F}G$  is both an $\mathbb{F}$-[[Vector Space]], and a [[Ring]]
 
@@ -174,7 +206,6 @@ Since $D$ is irreducible, then it must be in correspondence with $\mathbb{F}G/M$
 >for some $M \subseteq \mathbb{F}G^{\oplus n}$
 ##### Proof
 Let $\{v_1,...,v_n\}$ be a basis of $V$. Define a map $\psi: \mathbb{F}G \oplus ... \oplus \mathbb{F}G \to V$ by $(x_1,...,x_n) \mapsto \sum_{i=1}^n x_iv_i$ 
-
 It follows from the pervious proof that $\psi$ is indeed a $G$-module homomorphism.
 
 ---

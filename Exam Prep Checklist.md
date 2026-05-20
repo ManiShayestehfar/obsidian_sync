@@ -10,7 +10,7 @@
 - [ ] Cn Representation
 - [ ] Commutator Subspace
 - [ ] Duality
-- [ ] F-Algebra
+- [x] F-Algebra
 - [x] Field
 - [ ] Filtration and Composition Series
 - [x] G-Modules
