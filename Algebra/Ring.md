@@ -42,9 +42,11 @@ $R$ has **units** if $\exists \mathbb{1} \in R$  such that $\forall x \in R$, $\
 >[!proposition]
 >For any $\varphi : R \to S$, $\ker \varphi$ is an ideal of $R$.
 ##### Proof
-$\ker \varphi$ is clearly and additive subgroup since $\varphi(r+r') = \varphi(r)+\varphi(r')=0$ so $r+r' \in \ker \varphi$. 
-Take $x \in R$, and $y \in \ker \varphi$.
-Then $\varphi(xy) = \varphi(x) \varphi(y)=0$. So $xy \in \ker \varphi$. $\square$
+Since $\varphi(0_R)=0_S$ we have $0_R \in \ker \varphi$. If $a,b \in \ker \varphi$, then
+$$\varphi(a-b)=\varphi(a)-\varphi(b)=0_S$$
+So $\ker \varphi$ is an additive subgroup of $R$.
+
+Take $x \in R$, and $y \in \ker \varphi$. Then $\varphi(xy) = \varphi(x) \varphi(y)=0$. So $xy \in \ker \varphi$. $\square$
 
 ## Principal Ideal
 
