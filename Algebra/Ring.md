@@ -81,13 +81,13 @@ Take $x \in R$, and $y \in \ker \varphi$. Then $\varphi(xy) = \varphi(x) \varphi
 
 ## Quotient Map
 
->[!def]
+>[!definition]
 >$\pi : R \to R/I$ a ring homomorphism, $x \mapsto x+I$ is surjective and $\ker \pi  = I$.
 >
 
 # Integral Domain
 
->[!def] 
+>[!definition] 
 >A non-zero ring without zero-divisors $\neq 0$ is called an **integral domain**.
 
 

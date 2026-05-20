@@ -25,7 +25,7 @@
 - [ ] Number of Irreducible FG-Modules
 - [ ] Quotient Module
 - [ ] R-Module
-- [ ] Ring
+- [x] Ring
 - [ ] Schur's Lemma
 - [ ] Sn Representation
 - [ ] Vector Space
