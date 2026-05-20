@@ -103,6 +103,7 @@ $\Theta$ is also a ring homomorphism because
 $$\Theta(\varphi\psi) = (\varphi\psi)(1_A) = \varphi(\psi(1_A)) = \varphi(\psi(1_A)\cdot 1_A)= \psi(1_A)\varphi(1_A) = \Theta(\psi)\Theta(\varphi),$$
 where the third equality comes from the fact that $\varphi$ is an $A$-module homomorphism (so $\varphi(ab)=a \varphi(b)$ for $a,b \in A$).
 
+Next, $\Theta(\varphi)=0 \iff \varphi(1_A)=0$. Hence if $a \in A$, then 
 
 
 
