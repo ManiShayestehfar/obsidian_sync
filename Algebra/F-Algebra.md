@@ -89,7 +89,6 @@ This proves that $V$ itself is also semisimple.       $\square$
 >[!lemma] 
 >Let $A$ be an $\mathbb{F}$-algebra. Then $A \cong \text{End}_A(A)^{op}$.
 >Also if we consider $A$ as a *right* $A$-module then the statement becomes $A \cong \text{End}_A(A)$.
-
 ##### Proof
 Notice that if $\varphi \in \text{End}_A(A)^{op}$, then $\varphi(a) = \varphi(a \cdot 1_A) = a \varphi(1_A)$, for $a \in A$. 
 So $\varphi$ is uniquely determined by $\varphi(1_A)$.
@@ -112,13 +111,3 @@ Hence $\rho_a \in \text{End}_A(A)^{op}$.
 By definition $\Theta(\rho_a)=a$, so $\Theta$ is surjective.
 $\square$
 
-
-
-
-
-
-
-
-
-
-![[F-Algebra-1753017145112.png]]

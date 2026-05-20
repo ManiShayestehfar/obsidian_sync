@@ -3,7 +3,7 @@
 - [ ] A-Module
 - [ ] Algebraic Integers
 - [ ] Artin–Wedderburn Decomposition.
-- [ ] Associative Algebra
+- [x] Associative Algebra
 - [ ] Centre
 - [ ] Characters
 - [ ] Class Function

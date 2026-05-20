@@ -1,5 +1,5 @@
 
->[!def] 
+>[!definition] 
 >Let $A$ be an [[F-algebra]]. A (left) **$A$-module** is a $\mathbb{F}$-[[vector space]] $V$ that is equipped with a unitary bilinear $A$-action.  i.e.
 >$$A \times V \to V \quad;\:(a,v) \to av$$
 >such that
@@ -8,9 +8,10 @@
 >3. **Bilinearity:** $a(\lambda v + \mu w) = \lambda (av) + \mu (aw)$, and $(\lambda a + \mu b)v = \lambda (av) + \mu (bv)$  for all $a,b \in A$, $\lambda_\mu \in \mathbb{F}$, $v,w \in V$. 
 
 # Examples
+
 - A [[Representation|regular representation]] of $A$. i.e. $A$ an $\mathbb{F}$-algebra, then the right $A$-module with $A$-action as right multiplication. 
   
-  *Question:* Is $A$ irreducible as an $A$ module
+  *Question:* Is $A$ irreducible as an $A$ module?
   Take $a \in A$, then $a = (a_{ij}) \in \text{Mat}_n(\mathbb{F})$ 
   $X = (x_{ij})$, then $ax = \sum_{k=1}^n a_{ih}x_{hj}$ (matrix multiplication). Then on the $j$-th column of $X$, we get subspaces of the form $$D_j = \left\{\begin{pmatrix}0 &\cdots & 0&\lambda_{1j} & 0 &\cdots&0  \\ &&& \vdots &&&  \\
   0 &\cdots & 0&\lambda_{nj} & 0 &\cdots&0 
