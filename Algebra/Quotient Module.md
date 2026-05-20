@@ -8,25 +8,56 @@ where $v \sim w \iff w-v \in W$ for any $v,w \in V$.
 - We know that $V/W$ is a [[vector space]], but is also a [[G-Modules|G-Module]].
 
 
-> [!proposition]
-> ![[Pasted image 20250306225042.png]]
+# Submodule Structure
 
-![[Pasted image 20250306225314.png]]
+>[!Proposition]
+>Suppose $W$ is a submodule of a $G$-module $V$. Then $V/W$ becomes a $G$-module via
+>$$g\cdot (v+W)=g\cdot v + W,\qquad g \in G,\: v \in V$$
+##### Proof
+###### Well-definedness
+
+Suppose $v+W = v'+W$ and $g \in G$. Then $v-v' \in W$. So $g\cdot v-g\cdot v'= g \cdot (v-v') \in W$.
+Thus $g \cdot v+W = g\cdot v'+W$.
+
+###### Three Axioms
+
+**Unital:** Take $v \in V$. Then $1_G\cdot (v+W)=1_G \cdot v + W = v + W$
+
+**Associativity:** $v \in V,$ and $g,h \in G$. Then
+$$(gh)\cdot (v+W)=(gh)\cdot v + W = g\cdot (h \cdot v)+W = g(h\cdot v+W)= g\cdot(h\cdot(v+W))$$
+**Linearity:** Take $v,v'\in V$, $\lambda,\mu \in \mathbb{F}$, and $g \in G$. Then
+$$g\cdot(\lambda(v+W)+ \mu(v'+W)) = g\cdot((\lambda v+\mu v') + W) = (\lambda g v + \mu g v') + W = \lambda(g\cdot v + W) + \mu (g \cdot v' + W)$$
+hence the action of $G$ on $V/W$ is linear, so $V/W$ is a $G$-module.
+$\square$
 
 # First Isomorphism Theorem
 
-Suppose $\varphi: V\to W$ is a $G$-module homomorphism. Then 
+>[!Theorem]
+>Suppose $\varphi: V\to W$ is a $G$-module homomorphism. Then 
 $$V / \ker \varphi \cong \text{im }\varphi$$
 as $G$-modules.
+##### Proof
+We know that $\text{im }\varphi$ and $\ker \varphi$ are both $G$-submodules so the statement makes sense.
+
+Define a map $\Phi: V/\ker \varphi \to \text{im }\varphi$ by $\Phi(v+ \ker \varphi) = \varphi(v)$ for all $v \in V$. 
+
+###### Well-definedness
+Take $v+\ker \varphi = v' + \ker \varphi$. Then $v-v' \in \ker \varphi$. i.e. $0=\varphi(v-v')=\varphi(v)-\varphi(v')$ so $\varphi(v)=\varphi(v')$.
+Consequently, $\Phi(v + \ker \varphi) = \varphi(v) = \varphi(v') = \Phi(v'+\ker \varphi)$.
+
+###### G-module homomorphism
+$\Phi$ is a $G$-module homomorphism because it is linear by definition. So 
+$$\Phi(g\cdot(v+\ker\varphi)) = \Phi(g\cdot v+ \ker \varphi)= \varphi(g\cdot v)=g \cdot \varphi(v) = g \cdot \Phi(v + \ker )$$
 
 ![[Screenshot 2025-03-07 at 12.58.28 pm.png]]
 
 # Other Isomorphism Theorems
-Let $V$ be a $G$-module
 
-2. . Suppose $X$ and $Y$ are submodules of $V$ $\implies (X+Y)/Y \:\cong\: X/(X\cap Y)$ 
-3. Suppose $U \leq W \leq V$ are submodules of $V$ $\implies V/W \:\cong\: (V/U)/(W/U)$
-4. Suppose $W$ is a submodule of $V$. Then there is a 1-to-1 inclusion preserving correspondence between submodules of $V$ that contain $W$ and the submodules of $V/W$
+>[!Theorem]
+Let $V$ be a $G$-module.
+>2. Suppose $X$ and $Y$ are submodules of $V$ $\implies (X+Y)/Y \:\cong\: X/(X\cap Y)$ 
+>3. Suppose $U \leq W \leq V$ are submodules of $V$ $\implies V/W \:\cong\: (V/U)/(W/U)$
+>4. Suppose $W$ is a submodule of $V$. Then there is a 1-to-1 inclusion preserving correspondence between submodules of $V$ that contain $W$ and the submodules of $V/W$
 ##### Proof Sketch
 ###### 2. 
 Recap: If $X$ and $Y$ are subspaces of $V$, then $X+Y = \{x + y \:|\: x \in X, y \in Y\}\subseteq V$. 
