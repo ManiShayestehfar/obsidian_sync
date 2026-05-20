@@ -22,12 +22,12 @@
 - [ ] Nilpotent & Radical Ideals
 - [ ] Number of Irreducible CG-Modules
 - [ ] Number of Irreducible FG-Modules
-- [ ] Quotient Module
-- [ ] R-Module
+- [x] Quotient Module
+- [x] R-Module
 - [x] Ring
 - [ ] Schur's Lemma
 - [ ] Sn Representation
-- [ ] Vector Space
+- [x] Vector Space
 
 # Functional Analysis
 
