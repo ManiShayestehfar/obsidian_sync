@@ -77,8 +77,8 @@ By the first isomorphism theorem, $Y/\ker \Psi \cong \text{im }\Psi = (X+Y)/X$ a
 Define $\Theta: V \to (V/U)/(Y/U)$ by $\Theta(v)= (v+U) + W/U$ which we can check to be well-defined.
 $\Theta$ is a $G$-module homomorphism because it is both linear and an intertwiner.
 
-By first isomorphism theorem, $V/\ker \Theta \cong \text{im }\Theta = (V/X)/(Y/X)$ and $\ker \theta = \{v \in V \:|\: v \in Y\} = V \cap Y = Y$. 
-Therefore $V/Y \cong (V/X)/(Y/X)$. $\square$
+By first isomorphism theorem, $V/\ker \Theta \cong \text{im }\Theta = (V/U)/(W/U)$ and $\ker \Theta = \{v \in V \:|\: v \in W\} = V \cap W = W$. 
+Therefore $V/W \cong (V/U)/(Y/U)$. $\square$
 
 ###### 4.
 We have a natural map $\pi: V \to V/U$ given by $\pi(v) = v+ U$. 
