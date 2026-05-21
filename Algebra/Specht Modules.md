@@ -102,7 +102,7 @@ For $\lambda =(4,3,2,1,1)= (4,3,2,1^2)$:
 ## Key Observation
 
 $S_n$ acts on $\text{Tab}(\lambda)$ via composition of maps 
-![[Specht Modules-1779191214545.png|500]]
+![[Specht Modules-1779191214545.png|400]]
 $gt$ is the tableaux obtained by replacing $m$ in $t$ with $g(m)$
 
 For example if $g = (1\:3\:2)$, then
