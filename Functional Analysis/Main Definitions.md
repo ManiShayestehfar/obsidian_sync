@@ -80,3 +80,54 @@ If $A$ is unital, then $1 \in A \subseteq \overline{A}$, so $\overline{A}$ is al
 >$\mathcal{A}\subseteq C(X)$ is called **separating points** of $X$ if 
 >$\forall x,y \in X$ ($x\neq y$), $\exists f \in \mathcal{A}: f(x) \neq f(y)$.
 
+
+# Topological vector spaces over $\mathbb{R}$
+
+> [!Definition] Topological vector space
+> A topological vector space over $\mathbb{R}$ is a real vector space $X$ equipped with a topology such that the two maps $X \times X \to X$, $(x,y) \mapsto x+y$, and $\mathbb{R} \times X \to X$, $(t,x) \mapsto tx$, are continuous.
+
+- Thus the topology and the linear structure are compatible. Normed spaces are examples, but many important topological vector spaces are *not* *normable*.
+
+## Hausdorf 
+
+> [!Definition] Hausdorff topological vector space
+> A topological vector space $X$ is Hausdorff if for any two distinct points $x,y \in X$, there exist disjoint open sets $U,V \subseteq X$ such that $x \in U$ and $y \in V$.
+>
+> Equivalently, in a topological vector space, $X$ is Hausdorff if and only if $\{0\}$ is closed.
+
+## Convex Set
+
+> [!Definition] Convex set
+> A subset $C \subseteq X$ is convex if for every $x,y \in C$ and every $t \in [0,1]$, $tx + (1-t)y \in C$.
+
+## Locally Convex Topological Vector Space
+
+> [!Definition] Locally convex topological vector space
+> A Hausdorff topological vector space $X$ over $\mathbb{R}$ is called locally convex if there is a neighbourhood basis of $0$ consisting of convex sets.
+>
+> Equivalently, for every neighbourhood $U$ of $0$, there exists a convex neighbourhood $V$ of $0$ such that $0 \in V \subseteq U$.
+
+### Examples
+
+1. Every normed vector space is locally convex: the open balls around $0$ are convex.
+2. If $X$ is compact Hausdorff, then $C(X)$ with the supremum norm is locally convex. Its dual space $C(X)^*$, equipped with the weak-* topology, is also locally convex.
+
+
+## Extreme points and faces
+
+> [!Definition] Extreme point
+> Let $K \subseteq X$ be convex. A point $x \in K$ is called an extreme point of $K$ if whenever $x = ty + (1-t)z$ with $y,z \in K$ and $0 < t < 1$, then $y = z = x$.
+>
+> The set of extreme points of $K$ is denoted by $\operatorname{Ext}(K)$.
+
+> [!Definition] Face
+> Let $K \subseteq X$ be convex. A convex subset $F \subseteq K$ is called a face of $K$ if whenever $tx + (1-t)y \in F$, $x,y \in K$, and $0 < t < 1$, then $x,y \in F$.
+>
+> Singleton faces are precisely extreme points: $x \in \operatorname{Ext}(K)$ if and only if $\{x\}$ is a face of $K$.
+
+> [!Definition] Convex hull
+> For $A \subseteq X$, the convex hull of $A$ is
+>
+> $$\operatorname{co}(A)=\left\{\sum_{j=1}^n t_j a_j : n \in \mathbb{N},\ a_j \in A,\ t_j \geq 0,\ \sum_{j=1}^n t_j = 1\right\}.$$
+>
+> The closed convex hull is denoted by $\overline{\operatorname{co}}(A)$.
