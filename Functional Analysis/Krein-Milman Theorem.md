@@ -233,7 +233,7 @@ Therefore $P_T(X)$ is closed in compact $P(X)$, hence compact.
 
 We prove that every probability measure on $X$ can be approximated in the weak-* topology by finitely supported probability measures.
 
-> [!Theorem] 6.1
+> [!Theorem]
 > Let $X$ be a compact metric space. Then
 >
 > $$P(X)=\overline{\operatorname{co}\{\delta_x : x \in X\}}^{w^*}.$$
@@ -243,7 +243,6 @@ We prove that every probability measure on $X$ can be approximated in the weak-*
 > $$\left|\int_X f_i\,d\mu - \sum_{j=1}^m a_j f_i(x_j)\right| < \varepsilon$$
 >
 > for every $i=1,\ldots,n$.
-
 ##### Proof
 
 We regard $P(X)$ as a subset of the dual space $C(X)^*$. By the Riesz representation theorem, $P(X)$ is precisely the set of positive linear functionals $L \in C(X)^*$ satisfying $L(1)=1$.
@@ -280,7 +279,7 @@ $$P(X)=\overline{\operatorname{co}\{\delta_x:x \in X\}}^{w^*}.$$
 
 Thus every Borel probability measure on $X$ is a weak-* limit of finite convex combinations of Dirac measures.
 
-## 7 Ergodic measures and the Krein–Milman theorem
+# Ergodic measures and the Krein–Milman theorem
 
 Let $X$ be a compact metric space and let $T:X \to X$ be a homeomorphism.
 
@@ -294,19 +293,15 @@ $$\int_X f \circ T\,d\mu = \int_X f\,d\mu$$
 
 for every $f \in C(X)$.
 
-### 7.1 Compactness and convexity
+### Compactness and convexity
 
-> [!Proposition] 7.1
+> [!Proposition]
 > The set $P_T(X)$ is compact and convex in the weak-* topology.
 
 ##### Proof
-
 Convexity is immediate.
-
 To prove compactness, it suffices to show that $P_T(X)$ is closed inside the compact space $P(X)$.
-
 Suppose $\mu_n \to \mu$ weak-*, and each $\mu_n$ is $T$-invariant. Then for every $f \in C(X)$,
-
 $$\int_X f \circ T\,d\mu_n = \int_X f\,d\mu_n.$$
 
 Passing to the limit gives
@@ -315,30 +310,26 @@ $$\int_X f \circ T\,d\mu = \int_X f\,d\mu.$$
 
 Hence $\mu$ is $T$-invariant. Therefore $P_T(X)$ is closed in compact $P(X)$, and is therefore compact.
 
-### 7.2 Ergodic measures
+## Ergodic measures
 
-> [!Definition] 7.2
+> [!Definition]
 > A measure $\mu \in P_T(X)$ is called ergodic if whenever $T^{-1}A=A$ for a Borel set $A \subseteq X$, then $\mu(A) \in \{0,1\}$.
 >
 > We denote the set of ergodic measures by $E_T(X)$.
 
-### 7.3 Extreme points of $P_T(X)$
+## Extreme points of $P_T(X)$
 
-> [!Theorem] 7.3
+> [!Theorem]
 > The extreme points of $P_T(X)$ are precisely the ergodic measures:
 >
 > $$\operatorname{Ext}(P_T(X))=E_T(X).$$
-
 ##### Proof
-
 We first show that every non-ergodic measure is not extreme.
-
 Suppose $\mu \in P_T(X)$ is not ergodic. Then there exists a Borel set $A \subseteq X$ such that $T^{-1}A=A$ and $0 < \mu(A) < 1$.
 
 Define probability measures
 
 $$\mu_1(B)=\frac{\mu(B \cap A)}{\mu(A)}, \qquad \mu_2(B)=\frac{\mu(B \cap A^c)}{1-\mu(A)}.$$
-
 Since $A$ is $T$-invariant, both $\mu_1$ and $\mu_2$ are $T$-invariant. Indeed,
 
 $$\mu_1(T^{-1}B)=\frac{\mu(T^{-1}B \cap A)}{\mu(A)}=\frac{\mu(T^{-1}(B \cap A))}{\mu(A)}=\frac{\mu(B \cap A)}{\mu(A)}=\mu_1(B),$$
@@ -358,11 +349,8 @@ We claim that $f_i \circ T = f_i$ $\mu$-a.e. Indeed, for every $g \in C(X)$,
 $$\int_X g \circ T\, f_i\,d\mu = \int_X g \circ T\,d\mu_i = \int_X g\,d\mu_i = \int_X gf_i\,d\mu.$$
 
 Since $\mu$ is $T$-invariant,
-
 $$\int_X g \circ T\, f_i\,d\mu = \int_X g(f_i \circ T^{-1})\,d\mu.$$
-
 Hence
-
 $$\int_X g(f_i - f_i \circ T^{-1})\,d\mu = 0$$
 
 for every $g \in C(X)$, and therefore $f_i = f_i \circ T^{-1}$ $\mu$-a.e. Thus $f_i$ is $T$-invariant.
@@ -377,28 +365,23 @@ Hence $f_i=1$ $\mu$-a.e. and therefore $\mu_i=\mu$. Thus $\mu$ is extreme.
 
 We conclude that $\operatorname{Ext}(P_T(X))=E_T(X)$.
 
-### 7.4 Application of Krein–Milman
+## Application of Krein–Milman
 
-We now apply the Krein–Milman theorem.
-
-> [!Theorem] 7.4
+> [!Theorem]
 > Let $X$ be compact metric and let $T:X \to X$ be a homeomorphism. Then
 >
 > $$P_T(X)=\overline{\operatorname{co}(E_T(X))}$$
 >
 > in the weak-* topology.
-
 ##### Proof
-
 The set $P_T(X)$ is compact and convex, and its extreme points are exactly the ergodic measures. Therefore the Krein–Milman theorem gives
 
 $$P_T(X)=\overline{\operatorname{co}(\operatorname{Ext}(P_T(X)))}.$$
-
 Since $\operatorname{Ext}(P_T(X))=E_T(X)$, we obtain
 
 $$P_T(X)=\overline{\operatorname{co}(E_T(X))}.$$
 
-> [!Remark] 7.5
+> [!Remark]
 > The theorem shows that every invariant probability measure can be approximated in the weak-* topology by finite convex combinations of ergodic measures.
 >
 > To obtain an actual integral decomposition
