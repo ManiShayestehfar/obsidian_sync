@@ -32,8 +32,6 @@ Since $v_\lambda \neq 0$, this means that $\ker \psi \neq 0$ and so $\ker \psi =
 Therefore, every $A$-module endomorphism $\varphi$ is a scalar multiplication defined by $\rho_\lambda$. i.e.  $\text{End}_A(D) = \{\rho_\lambda \:|\: \lambda \in \mathbb{F}\} \cong \mathbb{F}$.
 
 
-
-
 Finally, we need to confirm that this is not just a vector space isomorphism but also an $\mathbb{F}$-algebra isomorphism. Let $\rho_\lambda,\rho_\mu \in \text{End}_A(D)$. Then:
 - $\rho_\lambda + \rho_\mu = \rho_{\lambda + \mu}$,
 - $\rho_\lambda \circ \rho_\mu = \rho_{\lambda\mu}$
