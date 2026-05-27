@@ -2,12 +2,12 @@
 
 - [x] A-Module
 - [ ] Algebraic Integers
-- [ ] Artin–Wedderburn Decomposition
+- [x] Artin–Wedderburn Decomposition
 - [x] Associative Algebra
 - [ ] Centre
 - [ ] Characters
 - [ ] Class Function
-- [ ] Cn Representation
+- [x] Cn Representation
 - [ ] Commutator Subspace
 - [ ] Duality
 - [x] F-Algebra
@@ -26,7 +26,7 @@
 - [x] R-Module
 - [x] Ring
 - [x] Schur's Lemma
-- [ ] Sn Representation
+- [x] Sn Representation
 - [x] Vector Space
 
 # Functional Analysis

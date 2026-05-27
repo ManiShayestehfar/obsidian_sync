@@ -23,3 +23,13 @@ so $X^3=I \implies \det(X-\lambda I)= \lambda^3 +1$.
 *Over $\mathbb{C}$:* $\lambda = 1,\omega,\omega^2$ for $\omega= e^{2\pi i /3}$ so we have three $1$-dimensional subspaces
 $$I = I_{trivial}, \quad \quad L_\omega = \{\lambda (1, \omega^2, \omega)\:|\: \lambda \in \mathbb{C}\},\quad\quad L_\omega = \{\lambda (1, \omega, \omega^2)\:|\:\lambda \in \mathbb{C}\}$$
 $$$$
+# $C_n$
+
+Let $G = C_n = \langle x | x^n =1 \rangle$ and let $\mathbb{F} = \mathbb{C}$.
+
+Let $\zeta = e^{2\pi i/n} \in \mathbb{C}$.
+
+By tutorial 4, $G$ has $n$ x $1$-dim reps: $x \mapsto \zeta^k$ for $k=0,1,...,n-1$.
+$\implies D_i = \mathbb{C}v_k$ where $v_k = \prod_{i\neq k} (x-\zeta^i)$
+Hence
+$$\sum_{i=0}^{n-1} (\dim D_i)^2 = \sum_{i=0}^{n-1}1^2 = n = \# C_n$$
