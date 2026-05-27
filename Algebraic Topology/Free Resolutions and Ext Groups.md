@@ -16,7 +16,7 @@
    is exact.
 
 
->[!def]
+>[!definition]
 >Given a free resolution $F$ of an abelian group $H$, get the cochain complex
 >$$\cdots \overset{}{\longleftarrow}F_1^* \overset{f_1^*}{\longleftarrow}F_0^* \overset{f_0^*}{\longleftarrow}H^* \overset{}{\longleftarrow}0$$
 >ignore the last term $$\cdots \overset{}{\longleftarrow}F_1^* \overset{g_1^*}{\longleftarrow}F_0^* \overset{g_0^*}{\longleftarrow}0.$$
