@@ -17,7 +17,7 @@
 - [x] Group
 - [ ] Indecomposable Modules
 - [ ] Isotypic Component
-- [ ] Jordan-Holder Theorem
+- [x] Jordan-Holder Theorem
 - [ ] Maschke's Theorem
 - [ ] Nilpotent & Radical Ideals
 - [ ] Number of Irreducible CG-Modules

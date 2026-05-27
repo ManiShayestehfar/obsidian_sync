@@ -62,6 +62,7 @@ Hence not matter how you choose the composition series, the simple factors (with
 
 >[!Corollary]
 >Let $A$ be a finite-dimensional $\mathbb{F}$-algebra. Then $A$ has *at most* $\dim A$ pairwise non-isomorphic irreducible $A$-modules.
+>$$\#\text{Irr}(A)\leq \dim_\mathbb{F}A$$
 >- Think of $A$ as an $A$-module here
 ##### Proof
 Let $E$ be an irreducible $A$-module.
@@ -72,6 +73,6 @@ $\implies [A:E]>0$. That is, $E$ is a composition factor of $A$.
 As every irreducible module is a composition factor of $A$, there are only finitely many.
 - Irreducible by Jordan-Holder $\implies$ finitely many irreducibles
 
-The maximum number of irreducibles (up to isomorphism) is the length of a composition series as $\dim M_i/M_{i+1} \geq 1$ and $\dim A = \sum_{i=0}^n \dim M_i / M_{i+1}$, it follows that $k \leq \dim A$.
+The maximum number of irreducibles (up to isomorphism) is the length of a composition series as $\dim M_i/M_{i+1} \geq 1$ and $\dim A = \sum_{i=0}^{k-1} \dim M_i / M_{i+1}$, it follows that $k \leq \dim A$.
 Hence there are at most $\dim A$ different irreducible $A$-modules.
 $\square$
