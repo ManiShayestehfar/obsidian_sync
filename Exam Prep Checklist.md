@@ -12,7 +12,7 @@
 - [ ] Duality
 - [x] F-Algebra
 - [x] Field
-- [ ] Filtration and Composition Series
+- [x] Filtration and Composition Series
 - [x] G-Modules
 - [x] Group
 - [ ] Indecomposable Modules
