@@ -26,3 +26,30 @@ Now consider $(a,i)(n,j)v = (0,...,1,...,0,-1) \in U$ where we swap $i,j$ with $
 Then $U\subseteq W$ since it contains the basis vectors of $W$. $\implies U =W$.
 Therefore $W$ is irreducible because every nonzero submodule of $W$ is equal to $W$.  $\square$
 
+
+
+# $S_3$
+Let $G=S_3$ and let $\text{char } \mathbb{F}=0$, or $\text{char }\mathbb{F} > 3$.
+
+| Irreps                                   | Name         | Action                                                                                       | Dimension |
+| ---------------------------------------- | ------------ | -------------------------------------------------------------------------------------------- | --------- |
+| $\bf{1}$                                 | Trivial Rep  | $g \mapsto 1$                                                                                | 1         |
+| $\boldsymbol{\varepsilon}_{\text{sign}}$ | Sign Rep     | $g \mapsto \text{sgn}(g)$                                                                    | 1         |
+| $W$                                      | Standard Rep | $\left\{ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}\: : \: x_1 + x_2 + x_3 = 0\right\}$ | 2         |
+$\implies \# S_3 = 6 = |G| = 1^2 + 1^2 + 2^2$ 
+
+# $S_4$
+Let $G=S_4$ and let $\text{char } \mathbb{F}=0$, or $\text{char }\mathbb{F} > 4$.
+
+| Irreps                             | Name                | Action                                                                                                   | Dimension |
+| ---------------------------------- | ------------------- | -------------------------------------------------------------------------------------------------------- | --------- |
+| $\bf{1}$                           | Trivial Rep         | $g \mapsto 1$                                                                                            | 1         |
+| $\xi_{\text{sign}}$                | Sign Rep            | $g \mapsto \text{sgn}(g)$                                                                                | 1         |
+| $W$                                | Standard Rep        | $\left\{ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4\end{pmatrix}\: : \: x_1 + x_2 + x_3 + x_4 = 0\right\}$ | 3         |
+| $W' = \xi_{\text{sign}} \otimes W$ | Signed Standard Rep | $g \mapsto \text{sgn}(g)\rho_{\text{std}}(g)$                                                            | 3         |
+| ...                                | ...                 | ...                                                                                                      | 2         |
+Notice that for the last subrep, we could either have 2 x 1-dim or 1 x 2-dim irresp.
+But $1$-dim reps are group homomorphisms $G \overset{\varphi}{\longrightarrow} F^{\times}$. We know
+- $\ker \varphi \trianglelefteq G$ is a normal subgroup, and
+- $S_4$ has only $2$ x $1$-dim irreps as its only normal subgroups are $S_4$ and $A_3$.
+Therefore the dimension of the left over irrep must be $2$
