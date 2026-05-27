@@ -74,3 +74,4 @@ As every irreducible module is a composition factor of $A$, there are only finit
 
 The maximum number of irreducibles (up to isomorphism) is the length of a composition series as $\dim M_i/M_{i+1} \geq 1$ and $\dim A = \sum_{n=0}^n \dim M_i / M_{i+1}$, it follows that $k \leq \dim A$.
 Hence there are at most $\dim A$ different irreducible $A$-modules.
+$\square$
