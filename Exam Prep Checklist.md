@@ -25,7 +25,7 @@
 - [x] Quotient Module
 - [x] R-Module
 - [x] Ring
-- [ ] Schur's Lemma
+- [x] Schur's Lemma
 - [ ] Sn Representation
 - [x] Vector Space
 
