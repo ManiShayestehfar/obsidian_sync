@@ -10,8 +10,8 @@
 1. Trivial submodules are indecomposable
 2. Any irreducible module $D$ is indecomposable
 3. $G = S_n, V = \mathbb{F}^n \implies$$$\begin{cases}
-V = I \oplus W & \text{char} \mathbb{F} \nmid n  \\[3pt]
-V \text{ is indecomp. } & \text{char} \mid n \end{cases}$$
+V = I \oplus W & \text{char} \:\mathbb{F} \nmid n  \\[3pt]
+V \text{ is indecomp. } & \text{char}\:\mathbb{F} \mid n \end{cases}$$
 
 # Principal Indecomposable A-modules (PIM)
 

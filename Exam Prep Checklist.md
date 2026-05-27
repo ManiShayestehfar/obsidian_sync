@@ -34,7 +34,6 @@
 - [ ] Adjoint Operators
 - [ ] Baire's Theorem
 - [ ] Banach Spaces
-- [ ] ~~Bochner–Herglotz Theorem~~
 - [ ] Compact Operators
 - [ ] Completion
 - [ ] Dual Spaces
@@ -43,7 +42,6 @@
 - [ ] Hahn–Banach Theorem
 - [ ] Hilbert Space
 - [ ] Inner product
-- [ ] ~~Koopman Operators~~
 - [ ] Lebesgue Spaces
 - [ ] Linear Operators
 - [ ] Main Definitions
