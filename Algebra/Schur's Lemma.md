@@ -54,7 +54,7 @@ Hence, $\rho_a$ is an $A$-module homomorphism.
 
 Since $D$ is irreducible and $A$ is Schurian, then by Schur's Lemma: $\text{End}_A(D) \cong \mathbb{F}$. i.e.
 - Every $A$-module endomorphism $\rho_a$ is just scalar multiplication
-- So there exists $\lambda \in \mathbb{F}$ such that:	$$\rho_a(d) = ad$$
+- So there exists $a \in \mathbb{F}$ such that:	$$\rho_a(d) = ad$$
 	i.e. $d$ is an eigenvector for *every* $a \in A$.
 
 Since we showed this for every $a$, then *every* vector in $D$ is an eigenvector of *every* $a \in A$.
