@@ -46,8 +46,7 @@ Hence $V$ is a direct sum of indecomposables.  $\square$
 >3. Suppose $e,f$ are orthogonal idempotents. Then $A(e+f)=Ae\oplus Af$
 
 ##### Proof
-
-###### 3. $(\Rightarrow)$
+###### 3.
 $(\subseteq)$
 $a(e+f) = ae+af \in Ae \oplus Af$ where $Ae \cap Af= 0$ since $ef=fe=0$.
 
