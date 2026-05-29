@@ -85,7 +85,7 @@ For $P$ a PIM, write $A \cong P \oplus Q$ for some $A$-module $Q$.
 Now define the projection map: $\pi: A \to P$ and let $e:= \pi(1_A)\in A$.
 
 For any $a \in A$, $\pi(a) = \pi(a\cdot1_A) = a \cdot\pi(1_A)= ae$,
-so every element of $P = \text{im }P$ is of the form $ae$. Thus $P = Ae$.
+so every element of $P = \text{im }\pi$ is of the form $ae$. Thus $P = Ae$.
 
 **Idempotence:** 
 $$e^2 = \pi(1_A)\pi(1_A) = \pi(1_A \cdot 1_A) = \pi(1_A) = e$$
