@@ -27,14 +27,48 @@ If $M \in \text{Mat}_n(\mathbb{Z})$, and if $\lambda$ is an eigenvalue of $M$, t
 
 Conversely suppose we have monic $p(x) \in \mathbb{Z}[x]$ such that $p(\lambda)=0$ (i.e. $\lambda \in \mathbb{A}$ is algebraic).
 The **companion** matrix of $p(x)$ is
-![[Screenshot 2026-05-12 at 1.38.18 pm.png|250]]
+$$
+P=
+\begin{pmatrix}
+0 & \cdots & 0 & -p_0 \\
+1 & \ddots & \vdots & -p_1 \\
+\vdots & \ddots & 0 & \vdots \\
+0 & \cdots & 1 & -p_{n-1}
+\end{pmatrix}
+$$
 Expanding the determinant along the first row gives
-
-![[Screenshot 2026-05-12 at 1.39.01 pm.png]]
+$$\begin{aligned}  
+c_P(x)  
+&= \det(xI_n - P) \\[1ex]  
+&= \det  
+\begin{pmatrix}  
+x & \cdots & 0 & p_0 \\  
+-1 & x & \ddots & p_1 \\  
+\vdots & \ddots & \ddots & \vdots \\  
+0 & \cdots & -1 & x+p_{n-1}  
+\end{pmatrix} \\[2ex]  
+&= x \det  
+\begin{pmatrix}  
+x & \cdots & 0 & p_1 \\  
+-1 & x & \ddots & p_2 \\  
+\vdots & \ddots & \ddots & \vdots \\  
+0 & \cdots & -1 & x+p_{n-1}  
+\end{pmatrix}  
++ (-1)^{n-1} p_0  
+\det  
+\begin{pmatrix}  
+-1 & x & \cdots & 0 \\  
+0 & -1 & \ddots & \vdots \\  
+\vdots & \ddots & \ddots & x \\  
+0 & \cdots & 0 & -1  
+\end{pmatrix} \\[2ex]  
+&= p(x).  
+\end{aligned}$$
 where the last equality follow by induction on $n$.
 Hence the characteristic equation of $P$ is $\det(P-xI)= p(x)$, so $\lambda \in \mathbb{A}$ is the eigenvalue of an integer valued matrix.
 
-- The argument for $\overline{\mathbb{Q}}$ follows similarly. 
+###### 2.
+The argument for $\overline{\mathbb{Q}}$ follows similarly. 
 $\square$
 
 # Ring and Field Properties
@@ -62,7 +96,8 @@ In particular
 $$(X \otimes Y)(u \otimes v) = Xu \otimes Yv = \lambda u \otimes \mu v = \lambda\mu(u \otimes v)$$
 So $\lambda \mu$ is an eigenvalue of $X \otimes Y$ $\implies \lambda \mu \in \mathbb{A}$.
 
-Similarly $(X \otimes I_m \pm I_n \otimes Y) ( u \otimes v) = (X \otimes I_n)(u \otimes v) \pm (I_n \otimes Y) (u \otimes v) = \lambda u \otimes v \pm \mu u \otimes v = (\lambda \pm \mu)(u \otimes v)$ 
+Similarly 
+$(X \otimes I_m \pm I_n \otimes Y) ( u \otimes v) = (X \otimes I_n)(u \otimes v) \pm (I_n \otimes Y) (u \otimes v) = \lambda u \otimes v \pm \mu u \otimes v = (\lambda \pm \mu)(u \otimes v)$ 
 So $\lambda \pm \mu \in \mathbb{A}$.
 
 The same argument works for $\overline{\mathbb{Q}}$. Thus both $\mathbb{A}, \overline{\mathbb{Q}}$ are *rings*.

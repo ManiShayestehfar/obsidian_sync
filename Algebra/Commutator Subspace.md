@@ -6,6 +6,8 @@
 >$$[A,A] = \langle ab-ba \:|\: a,b \in A \rangle$$
 
 - $[A,A]$ is NOT usually a subalgebra or even a ring.
+  - Usually not closed under multiplication
+
 
 ## Lemma
 
@@ -38,7 +40,7 @@ Hence by Lemma 10J(c), $\dim A/[A,A] = \sum_{i=1}^t \dim \mathcal{O}_i \geq t = 
 >[!Warning] Remark
 >To do the quotienting correctly we need to consider the following:
 >Suppose $V = V_1 \oplus \cdots \oplus V_t$ and $W = W_1 \oplus \cdots \oplus W_t$, where $W_i \subseteq V_i$ (subspaces). Using the third isomorphism theorem for the third equality,
->$$V/W = (V_1\oplus \cdots V_t)/W = \sum_{i=1}^t (V_i+W)/W \cong \sum_{i=1}^t V_i/(V_i\cap W) = \bigoplus_{i=1}^t V_i/W_i$$
+>$$V/W = (V_1\oplus \cdots \oplus V_t)/W = \sum_{i=1}^t (V_i+W)/W \cong \sum_{i=1}^t V_i/(V_i\cap W) = \bigoplus_{i=1}^t V_i/W_i$$
 >where the last sum is direct since $V_i \cap V_j = 0$.
 
 

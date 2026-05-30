@@ -26,7 +26,7 @@
 By definition $Z(A)$ is a $\mathbb{F}$-vector subspace of $A$. If $z_1,z_2 \in Z(A)$, then $(\lambda z_1+\mu z_2)a = \lambda z_1 a + \mu z_2 a = a(\lambda z_1 + \mu z_2)$.
 Also $a(z_1z_2)=(az_2)z_2=(z_1a)z_2=z_1(az_2)=z_1(z_2a)=(z_1z_2)a$.
 
-Finally, $Z(A)$ is unital since $1_A \in Z(A)$, and $Z(A)$.
+Finally, $Z(A)$ is unital since $1_A \in Z(A)$.
 $Z(A)$ is clearly commutative.
 
 ###### 2.
@@ -41,36 +41,44 @@ $\square$
 
 ### Conjugacy classes and basis for Z(FG)
 
-Recall that $\overline{x}= \sum_{y \in \mathscr{C}_x}y = \sum_{x \sim y}y$.
+> [!Proposition]  
+> Let $\mathscr{C}_{x_1},\ldots,\mathscr{C}_{x_t}$ be the conjugacy classes of a finite group $G$, where $x_1,\ldots,x_t$ are chosen representatives. For each $i$, define
+> 
+> $$\overline{x_i}=\sum_{y\in \mathscr{C}_{x_i}}y.$$
+> 
+> Then ${\overline{x_i}\mid 1\leq i\leq t}$ is a basis for $Z(\mathbb{F}G)$.
 
->[!Proposition]
->Let $\mathscr{C}_1,...,\mathscr{C}_{x_t}$ be conjugacy classes of $G$.
->Then $\{\overline{x_i}\:|\: 1 \leq i \leq t\}$ is a basis for $Z(\mathbb{F}G)$
 ##### Proof
-Implicitly, $x_1,...,x_t$ is some choice of conjugacy class reps for $G$.
+###### Well-defined
+First, we show that $\overline{x_i}\in Z(\mathbb{F}G)$ for each $i$.  
+  
+Since $\mathbb{F}G$ has basis $G$, it is enough to show that $\overline{x_i}$ commutes with every $g\in G$. Fix $g\in G$. Then  
+$$g\overline{x_i}g^{-1}=\sum_{y\in \mathscr{C}_{x_i}}gyg^{-1}.$$
+The map $\mathscr{C}_{x_i}\to\mathscr{C}_{x_i}$ given by $y\mapsto gyg^{-1}$ is a bijection, since conjugation preserves conjugacy classes and has inverse $y\mapsto g^{-1}yg$. Hence  
+$$g\overline{x_i}g^{-1}=\sum_{y\in \mathscr{C}_{x_i}}y=\overline{x_i}.$$
+Therefore $g\overline{x_i}=\overline{x_i}g$. Since this holds for every $g\in G$, it follows by linearity that $\overline{x_i}\in Z(\mathbb{F}G)$.  
 
-We check:
-1. $\overline{x_i} \in Z(\mathbb{F}G)$
-2. $\{\overline{x_i}\}$ are linearly independent
-3. $\{\overline{x_i}\}$ spans $Z(A)$
-###### 1.
-We need to show $a \overline{x_i}= \overline{x_i}a$ for all $a \in \mathbb{F}G$.
-It is enough to check that $g \overline{x_i}= \overline{x_i}g \iff g \overline{x_i}g^{-1}=\overline{x_i}$ for $g \in G$.
-Now $g \overline{x_i}g^{-1}=\sum_{y\sim x_i} gyg^{-1} = \sum_{y \sim x_i y} = \overline{x_i}\implies \overline{x_i} \in Z(\mathbb{F}G)$.
+###### Linear Independence
+Next, we show that the elements $\overline{x_1},\ldots,\overline{x_t}$ are linearly independent.  
+  
+Suppose $\sum_{i=1}^t\lambda_i\overline{x_i}=0$, where $\lambda_i\in\mathbb{F}$. Since the conjugacy classes form a disjoint partition of $G$, every $g\in G$ appears in exactly one conjugacy class. Thus, if $g\in\mathscr{C}_{x_i}$, then the coefficient of $g$ in $\sum_{i=1}^t\lambda_i\overline{x_i}$ is $\lambda_i$.  
+  
+Since $G$ is an $\mathbb{F}$-basis of $\mathbb{F}G$, all coefficients must be zero. Hence $\lambda_i=0$ for every $i$. Therefore $\overline{x_1},\ldots,\overline{x_t}$ are linearly independent.  
 
-###### 2.
-Since $\sim$ is an equivalence relation, $G = \mathscr{C}_{x_1} \sqcup \cdots \sqcup \mathscr{C}_{x_t} \implies$ the $\overline{x_i}$ are sums of disjoint sets.
-As $\{x \:|\: x \in G\}$ is a basis of $\mathbb{F}G$, this implies $\sum_{i=1}^t \lambda_i \overline{x_i}=0 \iff \lambda_i=0$.
+###### Span
+Finally, we show that the elements $\overline{x_1},\ldots,\overline{x_t}$ span $Z(\mathbb{F}G)$.  
+  
+Let $a=\sum_{x\in G}\lambda_xx\in Z(\mathbb{F}G)$. 
+Since $a$ is central, $gag^{-1}=a$ for every $g\in G$. Expanding gives  
+$$gag^{-1}=\sum_{x\in G}\lambda_xgxg^{-1}.$$
+Fix $g,y\in G$.
+Comparing the coefficient of $y$ on both sides of $gag^{-1}=a$, the coefficient of $y$ on the right-hand side is $\lambda_y$, while on the left-hand side it is $\lambda_{g^{-1}yg}$. Therefore  
+$$\lambda_y=\lambda_{g^{-1}yg}.$$
+Hence the coefficients $\lambda_x$ are constant on conjugacy classes. Therefore, if $y\in\mathscr{C}_{x_i}$, then $\lambda_y=\lambda_{x_i}$. So  
+$$a=\sum_{x\in G}\lambda_xx=\sum_{i=1}^t\sum_{y\in\mathscr{C}_{x_i}}\lambda_yy=\sum_{i=1}^t\lambda_{x_i}\sum_{y\in\mathscr{C}_{x_i}}y=\sum_{i=1}^t\lambda_{x_i}\overline{x_i}.$$
+Thus $a\in\operatorname{Span}\{\overline{x_i}\mid 1\leq i\leq t\}$.  
 
-###### 3.
-Suppose $a = \sum_{x\in G}\lambda_x x \in Z(G)$. 
-Then $ga=ag$ for $g \in G$. So $\sum_{x \in G} \lambda_xgx = \sum_{x \in G} \lambda_x xg$. So
-$$\sum_{x \in G} \lambda_xx = \sum_{x\in G} \lambda_x g^{-1} xg.$$
-Comparing the coefficients of $gy \in G$ on both sides:
-$\lambda_y = \lambda_{g^{-1}yg}$ since $xg=gy \implies y = g^{-1}xg$. So
-$$a = \sum_{i=1}^t \lambda_{x_i}\overline{x_i} \in \text{Span}\{\overline{x_i}\}$$
-$\square$
+Hence $\{\overline{x_i}\mid 1\leq i\leq t\}$ is a linearly independent spanning set for $Z(\mathbb{F}G)$, and therefore it is a basis. $\square$
 
 >[!Corollary]
->If $\text{char }\mathbb{F} \nmid |G|$, then $\#\text{Irr}(\mathbb{F}G) \leq \#\text{ Conjg. Classes}$.
-
+>If $\text{char }\mathbb{F} \nmid |G|$, then $\#\text{Irr}(\mathbb{F}G) \leq \#\text{ Conj. Classes}$.

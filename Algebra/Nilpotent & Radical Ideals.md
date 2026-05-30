@@ -257,10 +257,10 @@ as required. $\square$
 >1. The algebra $A$ is semisimple $\iff \text{Rad }A=0$
 >2. Every $A$-module $V$ is semisimple $\iff \text{Rad }V = 0$
 >3. Every PIM is irreducible
->4. $A$ is completely reducible $\iff$ direct sum of irreducibles
+>4. $A$ is semisimple $\iff$ direct sum of irreducibles
 >5. $A$ is a sum of irreducible $A$-modules (not necessarily direct)
 >6. Every $A$-module is a sum of irreducibles
->7. Every  $A$-module is completely reducible (direct sum of irreducibles)
+>7. Every  $A$-module is semisimple (direct sum of irreducibles)
 
 ##### Proof
 ###### 1 -> 2
@@ -268,32 +268,31 @@ Obvious as $\text{Rad }A=0 \implies \text{Rad }V = (\text{Rad }A)V=0$
 ###### 2 -> 3
 $P$ a PIM. By (2), $\text{Rad }P =0 \implies P/\text{Rad }P\cong P$. So $P$ is irreducible.
 ###### 3 -> 4
-Write $A=P_1,...,P_z$ (each a PIM). By (3), each $P_i$ is irreducible, and so $A$ is completely reducible.
+Write $A=P_1+\cdots+P_z$ (each a PIM). By (3), each $P_i$ is irreducible, and so $A$ is completely reducible.
 ###### 4 -> 5
 Every direct sum is a sum
 ###### 5 -> 6
-Write $A = D_1+\cdots + D_z$ (each irreducible $A$-modules). Let $V$ be any $A$-module.
-Then $\Theta: A^{\oplus n} \to V$ is an isomorphism for $n \geq 1$.
-Then $V = \sum_{\substack{1 \leq i \leq n \\ 1 \leq j \leq z}} \text{im }\Theta(D_{ij})$.
-So $A^{\oplus n} = D_{11}+ \cdots  + D_{1z} + \cdots D_{n1} + \cdots D_{nz}$.
-By Schur's lemma, $\Theta|_{D_{ij}}=0$ or $\cong D_{ij}$. Thus $V$ is a sum of irreducible modules.
+Write $A = D_1+\cdots + D_z$ (each irreducible $A$-modules). 
+As a left A-module, every finite direct sum $A^{\oplus n}$ is a direct sum of irreducible modules. If $V$ is finitely generated $A$-module, choose a surjection:
+$$\Theta:A^{\oplus n}\twoheadrightarrow V.$$
+Then $V$ is the sum of the images of irreducible summands of $A^{\oplus n}$. 
+Each such image is either $0$ or irreducible.  Hence $V$ is a sum of irreducible modules so $V$ is semisimple.
+
 ###### 6 -> 7
 Suppose $V$ is an $A$-module and $V=D_1+\cdots+D_z$ (each irreducible modules).
 Let $I \subseteq \{1,..,z\}$ be minimal such that $V = \sum_{i \in I}D_i$.
 
 **Claim:** $V = \bigoplus_{i \in I} D_i$.
-If this was not true, there exists $j \in I$ such that $0 \neq d \in D_j \cap \sum_{i \in I \setminus \{j\}} D_i = 0$.
+If this was not true, there exists $j \in I$ such that $0 \neq d \in D_j \cap \sum_{i \in I \setminus \{j\}} D_i$.
 Then $D_j= Ad$ since $D_j$ is irreducible. So 
 $$D_j \subseteq Ad \subseteq \sum_{ i \in I \setminus \{j\}} AD_i = \sum_{\substack{i \in I \\ i \neq j}} D_i$$
 Contradicting the minimality of $I$.
 Hence $V = \bigoplus_{i \in I} D_i$. 
 
 ###### 7 -> 1
-If every $A$-module is completely reducible, then in particular, every PIM is completely reducible. Hence every PIM is irreducible.
-By $(7) \Rightarrow (3)$, $\text{Rad }P=0$.
-Write $A = P_1 \oplus \cdots \oplus P_z$ for $P_i$ indecomposable. 
-$\implies \text{Rad }A = (\text{Rad }P_1)\oplus \cdots \oplus (\text{Rad }P_z) = 0$.
-That is, $A$ is semisimple. 
+If every $A$-module is semisimple, then $A$ treated as an $A$-module is semisimple. Hence
+$$A = \bigoplus_i^n D_i$$
+with each $D_i$ irreducible. Hence $A$ is semisimple, so $\text{Rad }A= 0$.
 $\square$
 
 
@@ -304,18 +303,25 @@ $\square$
 >The following are equivalent:
 >1. Characteristic of $\mathbb{F}$ does not divide order of $G$
 >2. Every $\mathbb{F}G$-module is completely reducible
->3. The group algebra is semisimple
+>3. $\mathbb{F}G$ is semisimple
 >4. Every indecomposable $\mathbb{F}G$-module is irreducible
 >5. $\text{Rad }\mathbb{F}G = 0$ 
-
 ##### Proof
 
 (1) to (2) follows from [[Maschke's Theorem]]. By the last theorem parts (2), (3), (4)
  are equivalent. Only need to show (5) -> (1).
 ###### 5 -> 1
-We prove by contrapositive that if the characteristic of $\mathbb{F}$ does divide $|G|$, then $\text{Rad }\mathbb{F}G \neq 0$. 
+We prove by contrapositive that if $\text{char }\mathbb{F} \:|\: |G|$, then $\text{Rad }\mathbb{F}G \neq 0$. 
 
-In particular in $\mathbb{F}$, $|G| = |G|\cdot 1_{\mathbb{F}}=0$.  Let $x_G = \sum_{x\in G} x$. Then $gx_G =x_G$ for all $g \in G$. So $x_G^2 = |G|x_G = 0$ in $\mathbb{F}G$. Hence $\mathbb{F}x_G$ is a nonzero nilpotent ideal of $\mathbb{F}G$, so $\text{Rad }\mathbb{F}G \neq 0$. 
+In particular in $\mathbb{F}$, $|G| = |G|\cdot 1_{\mathbb{F}}=0$.  
+Let $x_G = \sum_{g\in G} g \in \mathbb{F}G$.
+For any $h \in G$, $hx_G = \sum_{g \in G}hg = \sum_{g'\in G}g' = x_G$. So $\mathbb{F}x_G$ is a nonzero left ideal of $\mathbb{F}G$.
+Also
+$$x_G^2=\left(\sum_{g\in G}g\right)x_G = \sum_{g\in G}gx_G= \sum_{g \in G} x_G=|G|x_G=0.$$
+So $\mathbb{F}x_G$ is a nonzero *nilpotent* left ideal of $\mathbb{F}G$. Hence $\mathbb{F}x_G \subseteq \text{Rad }\mathbb{F}G$.
+i.e. $\text{Rad }\mathbb{F}G\neq 0$.
+
+By contrapositive, if $\text{Rad }\mathbb{F}G=0$, then $\text{char }\mathbb{F}\:\nmid\: |G|$.
 $\square$
 
 
@@ -350,7 +356,7 @@ Hence $\overline{A}$ is an $\mathbb{F}$-algebra. $\square$
 > 	- i.e. $[A :P_D] = [\overline{A}:D]$
 >3. $\overline{A}$ is semisimple
 >4. $A$ is Schurian $\iff$ $\overline{A}$ is Schurian
->5. $$\dim A \leq \sum_{D \in \text{Irr}(A)}(\dim P_d)(\dim D)\qquad,\qquad \dim \overline{A} \leq \sum_{D \in \text{Irr}(\overline{A})} (\dim D)^2$$
+>5. $$\dim A \leq \sum_{D \in \text{Irr}(A)}(\dim P_D)(\dim D)\qquad,\qquad \dim \overline{A} \leq \sum_{D \in \text{Irr}(\overline{A})} (\dim D)^2$$
 >   with equality $\iff A$ is Schurian.
 ##### Proof
 ###### 1. 
@@ -373,7 +379,7 @@ For each $i$, consider $\pi_i:A \to P_i$ the projection map and define $\pi:\ove
 *Homomorphism:*  Each $\pi_i$ is an $A$-module homomorphism, and so $\pi$ is an $\overline{A}$-module homomorphism.
 
 *Isomorphism:* Notice that if $a \in A$, then $\pi(a + \text{Rad }A)=0 \iff \pi_i(a) \in \text{Rad }P_i$ for all $i$.
-Recall that $Rad A = \text{Rad }P_1 +\cdots + \text{Rad }P_t$. Therefore $\pi_i(a) \in \text{Rad }P_i$ for all $i$ if and only if $a \in \text{Rad }A$. Hence $\pi$ is injective.
+Recall that $\text{Rad } A = \text{Rad }P_1 +\cdots + \text{Rad }P_t$. Therefore $\pi_i(a) \in \text{Rad }P_i$ for all $i$ if and only if $a \in \text{Rad }A$. Hence $\pi$ is injective.
 Since $\pi_i(P_i)=D_i$, the map $\pi$ is surjective.
 So $\pi$ is an isomorphism.
 ###### 3.
@@ -381,4 +387,16 @@ Using part (2), $\overline{A} = D_1 \oplus \cdots \oplus D_z$ is completely redu
 ###### 4.
 This follows because if $D$ is a simple $A$-module, then $\text{End}_A(D)\cong \text{End}_{\overline{A}}(D)$ as $\mathbb{F}$-algebras, since the action of $\overline{A}$ on $D$ is given by the action of $A$.
 ###### 5.
-NEED TO PROVE
+Let $E_D=\operatorname{End}_A(D)^{\operatorname{op}}$. Since $\operatorname{Rad}A$ kills every simple $A$-module, $\operatorname{Irr}(A)=\operatorname{Irr}(\overline A)$.
+
+By Wedderburn theory, $\overline A\cong \bigoplus_{D\in\operatorname{Irr}(A)}\operatorname{End}_{E_D}(D)$. 
+As a left $\overline A$-module, $\operatorname{End}_{E_D}(D)\cong D^{\oplus \dim_{E_D}D}$, so if $a_D=\dim_{E_D}D=\frac{\dim D}{\dim\operatorname{End}_A(D)}$, then $\overline A\cong\bigoplus_D D^{\oplus a_D}$.
+
+Taking projective covers gives $A\cong\bigoplus_D P_D^{\oplus a_D}$. Hence
+$\dim A=\sum_D a_D\dim P_D=\sum_D\frac{(\dim D)(\dim P_D)}{\dim\operatorname{End}_A(D)}\leq\sum_D(\dim P_D)(\dim D)$.
+
+Similarly,
+$\dim\overline A=\sum_D a_D\dim D=\sum_D\frac{(\dim D)^2}{\dim\operatorname{End}_A(D)}\leq\sum_D(\dim D)^2$.
+
+In both inequalities, equality holds iff $\dim\operatorname{End}_A(D)=1$ for every $D\in\operatorname{Irr}(A)$, i.e. iff $\operatorname{End}_A(D)\cong k$ for every simple $D$. Thus equality holds iff $A$ is Schurian.
+$\square$

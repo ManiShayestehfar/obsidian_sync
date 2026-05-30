@@ -1,14 +1,14 @@
 # Representation Theory
 
 - [x] A-Module
-- [ ] Algebraic Integers
+- [x] Algebraic Integers
 - [x] Artin–Wedderburn Decomposition
 - [x] Associative Algebra
-- [ ] Centre
+- [x] Centre
 - [ ] Characters
 - [ ] Class Function
 - [x] Cn Representation
-- [ ] Commutator Subspace
+- [x] Commutator Subspace
 - [ ] Duality
 - [x] F-Algebra
 - [x] Field
@@ -19,7 +19,7 @@
 - [ ] Isotypic Component
 - [x] Jordan-Holder Theorem
 - [x] Maschke's Theorem
-- [ ] Nilpotent & Radical Ideals
+- [x] Nilpotent & Radical Ideals
 - [ ] Number of Irreducible CG-Modules
 - [ ] Number of Irreducible FG-Modules
 - [x] Quotient Module
