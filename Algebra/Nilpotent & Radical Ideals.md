@@ -1,8 +1,9 @@
 # Nilpotent Ideal
 
-An ideal $I$ of $A$ is **nilpotent** if $I\neq0$ and $I^n=0$ for some $n>0$.
-Notice that $I^n = \langle x_1,...,x_n \:|\: x_i \in I \rangle \subseteq I$. Hence we have a weakly decreasing chain
-$I = I_0 \supseteq I_1 \supseteq I_2 \supseteq \cdots \supseteq I_n$ which stabilises since $I$ is finite-dimensional. 
+>[!Definition]
+>An ideal $I$ of $A$ is **nilpotent** if $I\neq0$ and $I^n=0$ for some $n>0$.
+
+- Notice that $I^n = \langle x_1,...,x_n \:|\: x_i \in I \rangle \subseteq I$. Hence we have a weakly decreasing chain $I  \supseteq I^1 \supseteq I^2 \supseteq \cdots \supseteq I^n$ which stabilises since $I$ is finite-dimensional. 
 
 >[!proposition]
 >Suppose $I$ is a submodule of $A$ such that $I^n\neq0$. Then $I$ contains an idempotent.

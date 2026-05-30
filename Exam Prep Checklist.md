@@ -15,7 +15,7 @@
 - [x] Filtration and Composition Series
 - [x] G-Modules
 - [x] Group
-- [ ] Indecomposable Modules
+- [x] Indecomposable Modules
 - [ ] Isotypic Component
 - [x] Jordan-Holder Theorem
 - [x] Maschke's Theorem
