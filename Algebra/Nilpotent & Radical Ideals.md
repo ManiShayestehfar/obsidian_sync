@@ -98,7 +98,7 @@ $\square$
 
 
 
-## Isomorphism bet ween PIMs and Irreducible Modules
+## Isomorphism between PIMs and Irreducible Modules
 $$\left\{\text{PIMs of A}\right\} \overset{\cong}{\longrightarrow} \left\{\text{Irreducible }A\text{-modules}\right\};\qquad P \longmapsto D_p := P/\text{Rad }P$$
 
 Let $A$ be a finite dimensional $\mathbb{F}$-algebra.
