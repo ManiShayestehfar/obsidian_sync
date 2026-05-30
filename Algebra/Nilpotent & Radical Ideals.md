@@ -65,7 +65,8 @@ Now we are done because $e_i\neq0$ since $x=e_ix$. On the other hand, $N$ is nil
 >3. Suppose $P$ is a principal indecomposable $A$-module. Then $\text{Rad } P = P \cap \text{Rad }A = (\text{Rad }A)e$ is the maximal nilpotent submodule of $P$, which is a proper ideal of $P$.
 ##### Proof
 ###### 1)
-Tutorials
+**Subspace:**
+
 
 ###### 2) 
 Recall that every $A$-submodule contains a maximal nilpotent submodule, say $N$.
