@@ -14,7 +14,7 @@ Let $K$ be a minimal ideal of $J$ such that $JK\neq0$. $K$ exists because $J^2 \
 Let $x \in K$ such that $Jx\neq0$, Then $K=Jx$ by minimality of $K$. Hence there exists an element $e \in J$ such that $x = ex$. Consequently $x = ex=e^2x=\cdots$. In particular $e$ is nonzero.
 
 If $e^2 = e$ then $e$ is idempotent and we are done. 
-Otherwise, let $N = \text{Ann}_A(x) = \{a\in J\:|\: ax=0\}$. Then $e - e^2 \in N$, so $N$ is a nonzero ideal of $J$. Also $N \neq J$ since $e \not\in N$. However, $J$ is a minimal non-nilpotent ideal, so $N$ must be nilpotent.
+Otherwise, let $N = \text{Ann}_L(x) = \{a\in J\:|\: ax=0\}$. Then $e - e^2 \in N$, so $N$ is a nonzero ideal of $J$. Also $N \neq J$ since $e \not\in N$. However, $J$ is a minimal non-nilpotent ideal, so $N$ must be nilpotent.
 
 Set $e_0:=e$ and $e_{i+1}:=3e_i^2-2e_i^3$.
 
