@@ -78,27 +78,23 @@ Recall that every $A$-submodule contains a maximal nilpotent submodule, say $N$.
 Then $N \subseteq V \cap \text{Rad} A$ as $\text{Rad}A$ is the unique maximal ideal of $A$. On the other hand, $V \cap \text{Rad} A$ is nilpotent, so $V \cap \text{Rad}A\subseteq N$. Hence $N = V \cap \text{Rad }A$.
 Note that: $(V \cap \text{Rad }A)^n \subseteq (\text{Rad }A)^n \implies (V \cap \text{Rad }A)^n = 0$. Hence $V \cap \text{Rad }A$ is indeed nilpotent.
 ###### 3)
-Write $P = Ae$ for a primitive idempotent $e\in A$. Then $e \not\in \text{Rad }P$ because $e^2 = e \neq 0$. So $\text{Rad } P \neq P$.
-   
-**First equality:**
-By part (2), $P \cap \text{Rad }A$ is the maximal nilpotent submodule of $P$. So $\text{Rad }P \subseteq P \cap \text{Rad }A$.
-Now $A = Ae \oplus A(1_A- e)\implies \text{Rad }A = \text{Rad }Ae \oplus \text{Rad }A(1_A-e)$ where the direct sum remains.
-If $x \in P \cap \text{Rad }A$, then $x=xe$ (since $x \in P=Ae$, then $x =ae$, $xe =x$).
-Hence $x \in (\text{Rad }A)e\implies (\text{Rad }A)e \subseteq P \cap \text{Rad }A$.
+Let $J=\operatorname{Rad}A$. Since $P$ is principal indecomposable, write $P=Ae$ for some primitive idempotent $e\in A$.
 
-**Second equality:**
-$(\text{Rad }A)e$ is a nilpotent ideal in $P$, because 
-$$\begin{align*}
-[(\text{Rad }A)e]^n &= (\text{Rad }A)e \cdot (\text{Rad }A)e \cdots (\text{Rad }A)e \\[2pt]
-&\subseteq (\text{Rad }A)\cdot (\text{Rad }A) \cdots (\text{Rad }A)e  \\[2pt]
-&\subseteq (\text{Rad }A)^ne   
-\end{align*}$$
-Then $(\text{Rad }A)e$ is nilpotent for some $n>0$ because $\text{Rad }A$ is nilpotent.
-By part (2), $\text{Rad }P \subseteq P \cap \text{Rad }A$, so $(\text{Rad }A)e = P \cap \text{Rad }A$.
+First, $P$ is not radical: indeed $e\in P$, but $e\notin J$, since $e^2=e\neq 0$ while $J$ is nilpotent. Hence $P\cap J\neq P$.
 
-**Third equality:**
-$\text{Rad }P = (\text{Rad }A)P = (\text{Rad }A)Ae \subseteq (\text{Rad }A)e$ since $\text{Rad }A$ is a two-sided ideal.
-Hence $(\text{Rad }A)e = \text{Rad }P$. $\square$
+Now $P\cap J=Ae\cap J$. We claim that $Ae\cap J=Je$.
+If $x\in Ae\cap J$, then $x=ae$ for some $a\in A$, so $xe=ae^2=ae=x$. 
+Since $x\in J$, this gives $x=xe\in Je$. Thus $Ae\cap J\subseteq Je$.
+Conversely, since $J$ is a two-sided ideal, we have $Je\subseteq Ae$ and $Je\subseteq J$, so $Je\subseteq Ae\cap J$. Therefore $P\cap \operatorname{Rad}A=Je=(\operatorname{Rad}A)e$. 
+
+By part (2), $P\cap J$ is the maximal nilpotent submodule of $P$. Hence $\operatorname{Rad}P=P\cap J$. Combining this with the equality above gives
+
+$$
+\operatorname{Rad}P=P\cap \operatorname{Rad}A=(\operatorname{Rad}A)e.
+$$
+
+Finally, this submodule is proper because $e\in P$ but $e\notin \operatorname{Rad}A$, so $P\cap\operatorname{Rad}A\neq P$. Thus $\operatorname{Rad}P$ is a proper submodule of $P$.
+$\square$
 
 
 
