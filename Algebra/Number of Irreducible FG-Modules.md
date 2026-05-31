@@ -8,7 +8,7 @@ Fix prime $p >0$.
 >[!Definition]
 >A **$p'$-conjugacy class** is a conjugacy class consisting of $p'$-elements.
 
-## Brauer's Theorem
+# Brauer's Theorem
 
 >[!Theorem] Brauer's Theorem
 >Let $\mathbb{F}$ be a field (NOT necessarily algebraically closed) of characteristic $p \geq 0$. Then 
@@ -17,15 +17,15 @@ Fix prime $p >0$.
 ##### Proof
 We aim to show this in the proof below.
 
-# Strategy To find $\# \text{Irr}(A)$
+## Strategy To find $\# \text{Irr}(A)$
 
 $\mathbb{F}G$ is not necessarily semisimple. In turn, we can consider $\overline{\mathbb{F}G} = \mathbb{F}G/ \text{Rad}\mathbb{F}G$.
-But $\text{Rad}\overline{\mathbb{F}G} = 0$ so $\overline{\mathbb{F}G}$ is semisimple. 
+But $\text{Rad }\overline{\mathbb{F}G} = 0$ so $\overline{\mathbb{F}G}$ is semisimple. 
 
 >[!failure] Notation
 >$$R = \text{Rad }A\qquad,\qquad T = [A,A] \qquad,\qquad S = R+T \qquad,\qquad \overline{A} = A/R = A/\text{Rad }A$$
 
-## Upper bound
+### Upper bound
 
 >[!Proposition]
 >Let $A$ be a finite dimensional $\mathbb{F}$-algebra. Then
@@ -49,7 +49,7 @@ Hence $\# \text{Irr}(A) \leq \dim A/S$.  $\square$
 
 Fix a choice $\{x_1,...,x_t\}$ of conjugacy class representatives such that $\{x_1,...,x_s\}$ is the set of $p'$-conjugacy reps.
 
-## Finding Basis
+### Finding Basis
 
 >[!Success] Goal
 >$\{x_1+S,...,x_s + S\}$ is a basis of $\mathbb{F}G/S$.
@@ -81,7 +81,7 @@ That is, $\lambda_j =0$ for all $j$. Hence $\{x_1+T ,...,x_t+T\}$ is linearly in
 Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 
 
-## Necessary Lemmas
+### Necessary Lemmas
 
 >[!Lemma]
 >1. If $a,b \in A$, then $(a+b)^p = a^p + b^p \:(\text{mod } T)$.
@@ -145,7 +145,7 @@ Hence $T_p \subseteq S$, which completes the proof. $\square$
 ##### Proof 
 NEED TO PROVE (pretty easy)
 
-## Proving Brauer's Theorem
+### Proving Brauer's Theorem
 
 >[!Theorem]
 >Let $G$ be a finite group. Then 
