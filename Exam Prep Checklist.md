@@ -37,7 +37,6 @@
 - [ ] Compact Operators
 - [ ] Completion
 - [ ] Dual Spaces
-- [ ] ~~Ergodicity~~
 - [ ] General Linear Group
 - [ ] Hahn–Banach Theorem
 - [ ] Hilbert Space
