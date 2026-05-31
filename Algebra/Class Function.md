@@ -32,7 +32,8 @@ We can extend $\langle -,- \rangle$ to $\mathcal{C}(G)$ by setting $\langle \psi
 ###### 1.
 Basically the definition of $\mathcal{C}(G)$.
 If $\varphi \in \mathcal{C}(G)$, then $\varphi = \sum_C \varphi(C) 1_C$. $\implies \{1_C\}$ spans $\mathcal{C}(G)$.
-Moreover $\sum_{C} \lambda_C 1_C = 0$. If $x_C \in C$, then $\lambda_C = 0$. 
+
+Moreover let $\sum_{C} \lambda_C 1_C = 0$. If $x_C \in C$, then $\lambda_C = 0$. 
 So $\{1_C\}$ are linearly independent.
 
 ###### 2.
@@ -48,7 +49,7 @@ $\square$
 
 >[!Lemma]
 >Let $C_k$ be a conjugacy class of $G$. Then 
->$$1_{C_k} = \frac{|C_k|}{|G|}= \sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
+>$$1_{C_k} = \frac{|C_k|}{|G|}\sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
 ##### Proof
 By part (3) of the last proposition. $1_{C_k}= \sum_{i=1}^t \langle 1_{C_k}, \chi_i \rangle \chi_i$.
 So we need to compute

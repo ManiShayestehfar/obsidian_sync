@@ -6,7 +6,7 @@
 - [x] Associative Algebra
 - [x] Centre
 - [ ] Characters
-- [ ] Class Function
+- [x] Class Function
 - [x] Cn Representation
 - [x] Commutator Subspace
 - [ ] Duality

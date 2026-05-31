@@ -184,16 +184,15 @@ $$\begin{align*}
 &= |G| \dim V \qquad \square
 \end{align*}$$
 
+---
+# Central Idempotents from Characters
+
 Recall:
 - $D_1,...,D_t$ irreducible $\mathbb{C}G$-modules, with $\chi_1,...,\chi_t$ where $\chi_i = \chi_{D_i}$.
   $\mathbb{C}G= B_1 \oplus \cdots \oplus B_t$ where $B_i$ is the $D_i$-th isotopic factor of $\mathbb{C}G$.
-- $1_G = e_1+\cdots+e_t$ for unique $e_i \in B_i$ $\implies r_ir_j = \delta_{ij} e_i$
+- $1_G = e_1+\cdots+e_t$ for unique $e_i \in B_i$ $\implies e_ie_j = \delta_{ij} e_i$
 - $e_i \in Z(B_i) = \mathbb{C}\cdot e_i$
 - $B_i \cong \text{Mat}_{\chi_i(1)}(\mathbb{C})$ where $\chi_i(1) = \dim D_i$
-
-
----
-# Central Idempotents from Characters
 
 >[!Theorem]
 >Suppose $1 \leq i \leq t$, then
@@ -222,7 +221,6 @@ $$d_i = \frac{|G|}{\chi_i(1)}e_i \iff e_i = \frac{\chi_i(1)}{|G|}d_i\qquad \squa
 >where the left hand side is a *unique* central primitive idempotent, but $e_{ij}$ is a *non-unique* primitive idempotent (not central).
 
 ---
-
 
 # Character Inner Product
 
@@ -257,7 +255,7 @@ $$\begin{align*}
 &= \frac{1}{|G|}\psi(d_\chi) 
 \end{align*}$$
 But 
-$$\langle d_\chi, d_\psi\rangle = \left \langle\sum_{g \in G}\chi(g^{-1})g,\: \sum_{h \in G}\psi(h^{-1})h\right \rangle = \sum_{g,h \in G} \chi(g^{-1})\psi(h^{-1}) \langle g,h \rangle = \sum_{g\in G} \chi(g^{-1})\psi(g) = |G|\langle\chi ,\psi \rangle $$
+$\langle d_\chi, d_\psi\rangle = \left \langle\sum_{g \in G}\chi(g^{-1})g,\: \sum_{h \in G}\psi(h^{-1})h\right \rangle = \sum_{g,h \in G} \chi(g^{-1})\psi(h^{-1}) \langle g,h \rangle = \sum_{g\in G} \chi(g^{-1})\psi(g) = |G|\langle\chi ,\psi \rangle$
 where the second-last equality holds since $\langle g , h \rangle = 1 \iff h = g^{-1}$ and $0$ otherwise.
 Thus
 $$\langle\chi, \psi \rangle = \frac{1}{|G|} \langle d_\chi, d_\psi \rangle.$$
@@ -271,9 +269,9 @@ $$\langle\chi, \psi \rangle = \frac{1}{|G|} \langle d_\chi, d_\psi \rangle.$$
 >$$\langle \chi_i, \chi_j \rangle = \delta_{ij}$$
 ##### Proof
 By definition 
-$$\langle\chi_i, \chi_j \rangle = \frac{1}{|G|}\sum_{g \in G} \chi_i(g^{-1})\chi_j(g) = \frac{1}{|G|}\chi_i\left(\sum_{g \in G} \chi_i(g^{-1})g\right) = \frac{1}{|G|}\chi_j(d_i)$$
+$$\langle\chi_i, \chi_j \rangle = \frac{1}{|G|}\sum_{g \in G} \chi_i(g^{-1})\chi_j(g) = \frac{1}{|G|}\chi_j\left(\sum_{g \in G} \chi_i(g^{-1})g\right) = \frac{1}{|G|}\chi_j(d_i)$$
 Recall that $e_i = \frac{\chi_i(1)}{|G|}d_i$, then
-$$\frac{1}{|G|}\chi_j(d_i) = \frac{1}{|G|} \cdot \frac{|G|}{\chi_i(1)}\chi_j(e_i) = \begin{cases}
+$$\frac{1}{|G|}\chi_j(d_i) = \frac{1}{|G|} \cdot |G|\chi_j\left(\frac{1}{\chi_i(1)}e_i\right) = \begin{cases}
 1 & i = j  \\
 0 & i \neq j
 \end{cases} = \delta_{ij}$$
@@ -284,16 +282,16 @@ since $e_i$ acts on $D_i$ as identity and as the zero map on $D_j \subseteq B_j$
 
 >[!Corollary]
 >$D_1,...,D_t$ are irreducible $\mathbb{C}G$-modules.
->1. Then $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle} \iff \chi_V = \sum_{i=1}^t \langle \chi_V,\chi_i\rangle \chi_i$ 
+>1. $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle} \iff \chi_V = \sum_{i=1}^t \langle \chi_V,\chi_i\rangle \chi_i$ 
 >2. If $V,W$ are $\mathbb{C}G$-modules then $V\cong W \iff \chi_V = \chi_W$
 >3. If $V$ is a $\mathbb{C}G$-module, then $V$ is irreducible $\iff \langle \chi_V ,\chi_V \rangle = 1$.
 ##### Proof
 ###### 1.
-Since $\mathbb{C}G$ is complete reducible, $V \cong \bigoplus_{i=1}^t D_i^{\oplus a_i}$ for some $a_i \geq 0$ where each $D_i$ is irreducible and has character $\chi_i$.
+Since $\mathbb{C}G$ is semisimple, $V \cong \bigoplus_{i=1}^t D_i^{\oplus a_i}$ for some $a_i \geq 0$ where each $D_i$ is irreducible and has character $\chi_i$.
 $\implies \chi_V = \sum_{i=1}^t a_i\chi_i$.
 
 Since characters are additive for direct sums,
-$$\langle \chi_V, \chi_i \rangle = \left \langle \sum_{i=1}^t a_i\chi_i\:,\: \chi_i \right \rangle = \sum_{i=1}^t a_i \langle \chi_i, \chi_i \rangle = a_i.$$So $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$ and $\chi_V= \sum_{i=1}^t \langle \chi_V, \chi_i \rangle \chi_i$.
+$$\langle \chi_V, \chi_i \rangle = \left \langle \sum_{j=1}^t a_j\chi_j\:,\: \chi_i \right \rangle = \sum_{j=1}^t a_j \langle \chi_j, \chi_i \rangle = a_i.$$So $V \cong \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$ and $\chi_V= \sum_{i=1}^t \langle \chi_V, \chi_i \rangle \chi_i$.
 
 ###### 2.
 Write $V = \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_V, \chi_i \rangle}$, and $W = \bigoplus_{i=1}^t D_i^{\oplus \langle \chi_W, \chi_i \rangle}$
@@ -309,9 +307,11 @@ $$\begin{align*}
 Now $\langle\chi_V, \chi_i \rangle \in \mathbb{N}$. Hence $\langle\chi_V, \chi_V \rangle \geq 1$.  with equality if and only if $\langle \chi_V, \chi_i \rangle = \delta_{ij}$ for some $j$.
 if and only if $V \cong D_i$ is irreducible. $\square$
 
+## Diagonalisability
+
 >[!Proposition]
 >Let $V$ be a $\mathbb{C}G$-module and $g \in G$ and $g \in G$.
->Then $g$ acts diagonalisably on $V$. That is, there is a basis $\{v_{g,1},...,v_{g,n}\}$ of $V$ and scalars $\lambda_{g,i}\in \mathbb{C}$ such that $gv_{g,i}= \lambda_{g,i}v_{g,i}$ $\iff$ w.r.t this basis $g$ acts as 
+>Then $g$ acts **diagonalisably** on $V$. That is, there is a basis $\{v_{g,1},...,v_{g,n}\}$ of $V$ and scalars $\lambda_{g,i}\in \mathbb{C}$ such that $gv_{g,i}= \lambda_{g,i}v_{g,i}$ $\iff$ w.r.t this basis $g$ acts as 
 >$$
 \begin{pmatrix}\lambda_{g,1} & 0 & \cdots & 0 \\0 & \lambda_{g,2} & \cdots & 0 \\\vdots & \vdots & \ddots & \vdots \\0 & 0 & \cdots & \lambda_{g,n}\end{pmatrix}
 $$
@@ -347,7 +347,7 @@ By the previous proposition $g$ acts diagonalisably on $V$, there exists a basis
 Moreover, if $m=|g|$, then $\lambda_{g,i}^m=1 \implies \lambda_{g,i}$ are $m$-th roots of unity.
 So $|\lambda_{g,i}|=1$.
 
-Now $gv_{g,i}= \lambda_{g,i}v_{g,i}$. So $g^{-1}v_{g,i}= \frac{1}{\lambda_{g,i}}= \overline{\lambda_{g,i}}v_{g,i}$.
+Now $gv_{g,i}= \lambda_{g,i}v_{g,i}$. So $g^{-1}v_{g,i}= \frac{1}{\lambda_{g,i}} v_{g,i}= \overline{\lambda_{g,i}}v_{g,i}$.
 Since $|\lambda_{g,i}|=1$, then $\chi_V(g^{-1})= \sum_{i=1}^n \overline{\lambda_{g,i}} = \overline{\sum_{i=1}^n \lambda_{g,i}} = \chi_V(g)$.     $\square$  
 
 >[!Remark]
@@ -373,7 +373,7 @@ So $\chi(g) \in \mathbb{R}$. $\square$
 >Suppose $1 \leq i,j \leq t$. Then
 $$\frac{1}{|G|} \sum_{k=1}^t |C_i| \:\overline{\chi_k(C_i)}\chi_k(C_i)= \delta_{ij}$$
 ##### Proof
-$$\delta_{ij} = 1_{C_i}(C_j) = \frac{|C_k|}{|G|}= \sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
+$$\delta_{ij} = 1_{C_i}(C_j) = \frac{|C_k|}{|G|}\sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
 
 ## Corollary
 
