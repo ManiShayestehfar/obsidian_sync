@@ -22,7 +22,7 @@
 Recall that for a fixed basis $\{v_1,...,v_n\}$ of $V$ and for $g \in G$, We defined $\mathbf{g} = (g_{ij})\in \text{Mat}_n(\mathbb{C})$ by $gv_j = \sum_{i=1}^n g_{ij}v_i$.
 Then $\chi_V(g) = \text{tr}(\mathbf{g})= \sum_{i=1}^n g_{ii}$.
 If $\{v_1',...,v_n'\}$ is another basis of $V$, then $v_j' = \sum_{i=1}^n a_{ij}v_j$ for an invertible matrix $A = (a_{ij})\in \text{Mat}_n(\mathbb{C})$.
-From week 2: $\mathbf{g}' = \mathbf{g} = A^{-1}\mathbf{g}A$ . 
+From week 2: $\mathbf{g}'  = A^{-1}\mathbf{g}A$ . 
 Hence by linearity of $\text{tr}$, $\chi_{V'}=\text{tr}(\mathbf{g}')= \text{tr}(\mathbf{g}) = \chi_V$.
 So the character is independent of the choice of basis.
 
@@ -60,7 +60,7 @@ If $V = I_G=$ trivial representation of $\mathbb{C}G$, then $\chi_{I_G}(g)=1$
 
 $\mathbb{C}G$ acts on $V=\mathbb{C}^n$ as $ge_i = e_{g(i)}$. i.e. $g(\lambda_1, ..., \lambda _n) = (\lambda_{g^{-1}(1)},...,\lambda_{g^{-1}(n)})$.
 
->[!Claim]
+>[!Claim] 
 >$\chi_V(g) = \#\text{Fix}(\mathbf{g})$
 >where $\#\text{Fix}(\mathbf{g}) = \{1 \leq i \leq n \:|\: g(i) = i\}$
 
@@ -114,9 +114,9 @@ Equivalently, $\langle\sum_{g\in G} \lambda_gg, \sum_{h\in G} \mu_h h \rangle = 
 For Symmetry and Associativity it is enough to verify it on the basis (due to bilinearity).
 If $g,h,k \in G$, then
 - $\langle g,h \rangle = \delta_{gh^{-1}}= \delta_{hg^{-1}} = \langle h, g \rangle$
-- $\langle gh, k \rangle = \delta_{(gh)k^{-1}} = \delta_{g(hk)^{-1}} = \langle g, hk \rangle$ ??
+- $\langle gh, k \rangle = \delta_{(gh)k^{-1}} = \delta_{g(hk)^{-1}} = \langle g, hk \rangle$
   since $gh = k^{-1} \iff g = k^{-1}h^{-1} = (hk)^{-1}$
-
+78
 Finally suppose $0 \neq a \in \mathbb{C}G$.
 Write $a = \sum_{g \in G} \lambda_g g$  for $\lambda_g \in \mathbb{C}$.
 Since $a \neq 0$, $\lambda_g \neq 0$ for some $g$. Thus $\langle a, g^{-1} \rangle = \lambda_g  \neq 0$.

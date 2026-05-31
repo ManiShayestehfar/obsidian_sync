@@ -53,7 +53,7 @@ Fix a choice $\{x_1,...,x_t\}$ of conjugacy class representatives such that $\{x
 >$\{x_1+S,...,x_s + S\}$ is a basis of $\mathbb{F}G/S$.
 >i.e. $p \mid |x_i| \iff s < i \leq t$
 
->[!Lemma]
+>[!Lemma] 
 >$\{x_1+T,...,x_t+ T\}$ is a basis of $\mathbb{F}G/T$
 ##### Proof
 ###### Spanning 
@@ -81,7 +81,7 @@ Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 
 ### Necessary Lemmas
 
->[!Lemma] 
+>[!Lemma]  
 >1. If $a,b \in A$, then $(a+b)^p = a^p + b^p \:(\text{mod } T)$.
 >2. If $T^{[p]} = \{a^p \:|\: a \in T\}$. Then $T^{[p]} \subseteq T$
 >3. Let $T_p := \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \:\: \exists\: n \geq0\}$. Then $T_p = S$.
@@ -160,7 +160,18 @@ $x \sim y \iff x=gyg^{-1}$ for $g\in G$.
 Then $x^k = (gyg^{-1})^k = gy^{k}g^{-1} \implies x^k \sim y^k$.
 
 ###### 2.
+Take $g \in G$ and write $|g| =p^mn$ where $p \nmid n$ and $m \geq0$.
+Since $\gcd(p^m,n)=1$, then by Bezout's identity: $ap^m+bn = 1$ for $a,b \in \mathbb{Z}$.
 
+Define $x:=g^{ap^m}$ and $y:=g^{bn}$.
+Since $x,y \in \langle g \rangle$, then $xy=yx$. Also 
+$$xy=g^{ap^m}g^{bn}= g^{ap^m+bn}=g.$$
+Now for the orders, $x^n=g^{abp^m}=g^{a|g|}=1$. So $|x| \mid n$, and hence $p \nmid |x|$.
+Similarly $y^{p^m}=g^{bnp^m}=g^{b|g|=1}$. So $|y| \mid p^m$. 
+Importantly $|y| = p^r$ for some $0 \leq r\leq m$. We need to show $r=m$.
+
+With the right Bezout coefficient, $|y|=p^m$ since $bn \cong 1 \mod p^m$. so $\gcd(b,p)=1$. 
+$\square$
 
 
 
@@ -184,13 +195,13 @@ Then $(g-x)^{p^m}=g^{p^m} -x^{p^m} \:\:(\text{mod }T)=0\:\:(\text{mod }T)$. Henc
 
 ###### Linear Independence
 Suppose $\sum_{i=1}^s \lambda_i(x_i+S)= 0$.
-$\sum_{i=1}^s\lambda_i x_i \in S= 0 \implies \sum_{i=1}^s \lambda_i x_i \in S \implies \left(\sum_{i=1}^s \lambda_i x_i\right)^{p^n} \in T$, for some $n \gg 0$.
+$0=\sum_{i=1}^s\lambda_i x_i \in S \implies \sum_{i=1}^s \lambda_i x_i \in S \implies \left(\sum_{i=1}^s \lambda_i x_i\right)^{p^n} \in T$, for some $n \gg 0$.
 
 Hence, $\sum_{i=1}^s \lambda_i^{p^n} x_i^{p^n} \in T$.
 Since $\{x_1+T,...,x_t+T\}$ is a basis of $\mathbb{F}G/T$, the only way that some $\lambda_i \neq 0$ is if $x_i^{p^n} \sim y_j^{p^n}$ for $i \neq j$.
 Write $|G| = qp^N$ with $p \nmid q$.
 Without loss of generality assume $n \geq N$.
-Then $\gcd(q,p^n)=1$, so $1 = aq +bp^N$ for $a,b \in \mathbb{Z}$.
+Then $\gcd(q,p^n)=1$, so $1 = aq +bp^N$ for $a,b \in \mathbb{Z}$ (by Bezout).
 Therefore, $x_i = x_i^1 = x_i^{aq+bp^N} = (x_i^q)^{a}(x_i^{p^N})^b = (x_i^{p^N})^b$. We have $(x_i^q)^a=1$ by Lagrange's theorem since $x^{|G|}=1$. 
 
 Therefore $x_i^{p^n} \sim x_j^{p^n} \implies (x_i^{p^n})^b \sim (x_j^{p^n})^b \implies x_i \sim x_j \implies i =j$.

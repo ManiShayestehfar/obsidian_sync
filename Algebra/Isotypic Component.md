@@ -17,18 +17,28 @@
 >   Also $e_D \in Z(B_D)\subseteq Z(A)$.
 ##### Proof
 ###### 1.
-$A$ is semisimple so there exists $a_i>0$ and $A$-submodules $\{D_{ij} \:|\: 1\leq i \leq t, 1 \leq j \leq a_i\}$ where each $D_{ij}\cong D_i$ for $1 \leq j \leq a_i$. So
-$$A = \bigoplus_{i=1}^t \bigoplus_{j=1}^{a_i}D_{ij}$$
-as a left $A$-module. 
-By definition $D_{ij}\subseteq D_i$, so $\bigoplus_{j=1}^{a_i}D_{ij}\subseteq B_{D_i} =: B_i$. Hence $\dim B_i \geq a_i^2$.
-By the Krull-Schmidt theorem, $B_i \cap B_j =0$ if $i \neq j$.
+Fix $D \in \operatorname{Irr}(A)$.
+By definition, $B_D$ is the sum of all left $A$-submodules $M \subseteq A$ such that $M \cong D$. 
+Therefore $B_D$ is itself a left $A$-submodule of $A$. 
+Hence, for every $a \in A$ and $b \in B_D$, we have $ab \in B_D$. 
+Thus $AB_D \subseteq B_D$, so $B_D$ is a left ideal of $A$.
 
-Therefore $A = B_1 \oplus \cdots \oplus B_t$ and $B_i = \bigoplus_{j=1}^{a_i}D_{ij} \cong D_i^{\oplus a_i}$ as an $A$-module, by counting dimensions.
+It remains to show that $B_D$ is a right ideal. 
+Let $a \in A$. Define $R_a : A \to A$ by $R_a(x)=xa$. 
+We claim that $R_a$ is a left $A$-module homomorphism. 
+Indeed, for any $c,x \in A$, we have $R_a(cx)=(cx)a=c(xa)=cR_a(x)$. Hence $R_a$ is left $A$-linear.
 
-Now suppose $D \subseteq B_i$ where $D \cong D_i$. Id $Da \neq 0$ for some $a \in A$, then define a map $\varphi: D \to Da$ by $\varphi(d)=da$. Since multiplication in $A$ is linear and associative, $\varphi$ is an $A$-module homomorphism.
-Since $Da \neq0$, the image of $\varphi$ is nonzero so $\varphi$ is an isomorphism by Schur's lemma.
-Hence $Da \cong D \cong D_i$, so $Da \subseteq B_i$. 
-Therefore $B_i$ is a two-sided ideal of $A$.
+Now let $M \subseteq B_D$ be a left $A$-submodule with $M \cong D$. 
+Since $R_a$ is left $A$-linear, $R_a(M)=Ma$ is a left $A$-submodule of $A$. 
+Also, $M$ is simple because $D$ is simple. Therefore $\ker(R_a|_M)$ is either $0$ or $M$.
+
+If $\ker(R_a|_M)=M$, then $Ma=0 \subseteq B_D$. 
+If $\ker(R_a|_M)=0$, then $R_a|_M : M \to Ma$ is an isomorphism of left $A$-modules, so $Ma \cong M \cong D$. 
+By definition of $B_D$, this implies $Ma \subseteq B_D$.
+
+Thus, for every left $A$-submodule $M \subseteq B_D$ with $M \cong D$, we have $Ma \subseteq B_D$. Since $B_D$ is the sum of all such submodules $M$, it follows that $B_Da \subseteq B_D$.
+
+Since this holds for every $a \in A$, we have $B_DA \subseteq B_D$. Therefore $B_D$ is a right ideal.
 
 ###### 2.
 Week 9 Tutorial
@@ -45,7 +55,7 @@ Without loss of generality assume $Ad \cong D_i$. then $\rho$ restricts to a non
 $B_j$ has a submodule isomorphic to $D_j$ so $i=j$.
 
 So we have
-$$A \cong \text{End}_A(A)^{op} = \bigoplus_{i=1}^t \text{End}_A(B)^{op}$$
+$$A \cong \text{End}_A(A)^{op} = \bigoplus_{i=1}^t \text{End}_A(B_i)^{op}$$
 So $B_i \cong \text{End}_A(B_i)^{op} \cong \text{Mat}_{a_i}(\mathcal{O}_i)$ as $\mathbb{F}$-algebras. Thus $B_i = D_i^{\oplus a_i}$.
 
 ###### 4.
@@ -72,4 +82,5 @@ Since $A = B_1 \oplus \cdots \oplus B_t$, there exist elements $e_i \in B_i$ suc
 If $i \ne j$, then $e_j b_i,, b_i e_j \in B_i \cap B_j$, so $e_j b_i = 0 = b_i e_j$. 
 Hence, $b_i = \delta_{i,j} e_j b_i = \delta_{i,j} b_i e_j$. 
 Hence, $B_i = e_i A e_i = e_i A = A e_i$, and $e_i$ is a left and right identity on $B_i$. (So, $B_i$ is an $F$-algebra with multiplicative identity $e_i$.) 
+
 In particular, if $b = b_1 + \cdots + b_t \in A$, with $b_i \in B_i$, then $e_i b = b_i = b e_i$, so $e_i \in Z(A)$. Hence, $e_i \in B_i \cap Z(A)$, so $e_i \in Z(B_i)$. 

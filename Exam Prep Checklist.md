@@ -16,12 +16,12 @@
 - [x] G-Modules
 - [x] Group
 - [x] Indecomposable Modules
-- [ ] Isotypic Component
+- [x] Isotypic Component
 - [x] Jordan-Holder Theorem
 - [x] Maschke's Theorem
 - [x] Nilpotent & Radical Ideals
 - [ ] Number of Irreducible CG-Modules
-- [ ] Number of Irreducible FG-Modules
+- [x] Number of Irreducible FG-Modules
 - [x] Quotient Module
 - [x] R-Module
 - [x] Ring
