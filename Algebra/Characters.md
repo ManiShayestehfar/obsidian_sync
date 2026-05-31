@@ -440,12 +440,12 @@ which is also a normal subgroup.
 
 >[!Facts]
 >1. Let $N$ be a normal subgroup of $G$. Then $G/N = \{gN \:|\: g \in G\}$ is a quotient group
->2. If $\psi \in \text{Irr}(G/N)$, define the **lift** $\psi^G: G \to \mathbb{C}$ by $\psi^G(g)=\psi(gN)$ for $g \in G$. Then:
+>2. If $\psi \in \text{IrrChar}(G/N)$, define the **lift** $\psi^G: G \to \mathbb{C}$ by $\psi^G(g)=\psi(gN)$ for $g \in G$. Then:
 > 	  - $\psi^G$ is a character of $G$.
-> 	  - $\psi \in \text{Irr}(G/N) \iff \psi^G \in \text{Irr}(G)$
+> 	  - $\psi \in \text{IrrChar}(G/N) \iff \psi^G \in \text{IrrChar}(G)$
 >3. If $\chi$ is a character of $G$ such that $N \subseteq \ker \chi$, then define $\chi_{G/N}:G/N \to \mathbb{C}$ by $\chi_{G/N}(gN)= \chi(g)$. Then
 > 	  - $\chi_{G/N}$ is a character of $G/N$.
-> 	  - $\chi \in \text{Irr}(G) \iff \chi_{G/N} \in \text{Irr}(G/N)$
+> 	  - $\chi \in \text{IrrChar}(G) \iff \chi_{G/N} \in \text{IrrChar}(G/N)$
 
 - $\psi \sim \psi^G \implies N \subseteq \ker \psi^G \implies (\psi^G)_{G/N}=\psi$. 
 
@@ -456,7 +456,7 @@ Week 10 Tutorial
 If $I \subseteq \{1,...,t\}$, then $N_I$ is normal. 
 
 For the converse, suppose that $N \trianglelefteq G$.
-Let $\text{Irr}(G/N) = \{\psi_1,...,\psi_s\}$. Hence $\psi_1^G,...,\psi_s^G \in \text{Irr}(G)$.
+Let $\text{IrrChar}(G/N) = \{\psi_1,...,\psi_s\}$. Hence $\psi_1^G,...,\psi_s^G \in \text{IrrChar}(G)$.
 Let $I$ be defined such that $\{x_i \:|\: i \in I\} = \{\psi_1^G,...,\psi_s^G\}$.
 If $n \in N$, then for $1 \leq j \leq s$, $\psi_j^G(n) = \psi_j(nN)= \psi_j(1_G N)= \psi_j^G(1_G).$ So $N \subseteq N_I$.
 
@@ -484,7 +484,6 @@ Let $G= S_3$. Then $N_{\{1\}}=G$ and $N_{\{2\}} = \{1_G\}$, and $N_{\{3\}}=\{1,(
 These are the only normal subgroups.
 The character table matches the corollary above.
 
-
 |          | $(1)$ | $(i j)$ | $(ijk)$ |
 | -------- | ----- | ------- | ------- |
 | $\chi_1$ | 1     | 1       | 1       |
@@ -496,14 +495,14 @@ The character table matches the corollary above.
 
 # Linear Characters
 
->[!Definition]
+>[!Definition] 
 >A character if **linear** if $\chi(1_G)=1$.
 
 - If $\chi$ is linear, and $\chi=\chi_V$, then $\dim V=1=\chi(1_G)$. So $\chi$ is an irreducible character and $V$ is an irreducible module
 
 - If $0 \neq v \in V$, and $g \in G$, then: $g\cdot v= \chi(g)v$ since $\chi(g)v = \text{tr}(g)$
 
->[!Claim]
+>[!Claim] 
 >$\chi:G \to \mathbb{C}^\times$ is a group homomorphism
 ##### Proof
 $(gh)\cdot v = g (h \cdot v)$. But $\chi(gh)v = \chi(g)\chi(h)v$. So $\chi$ is a group homomorphism. $\square$
@@ -511,13 +510,13 @@ $(gh)\cdot v = g (h \cdot v)$. But $\chi(gh)v = \chi(g)\chi(h)v$. So $\chi$ is a
 
 ## Lift as Linear Character
 
->[!Theorem]
+>[!Theorem] 
 >Let $\{\psi_1,...,\psi_s\}$ be the irreducible characters of $G/G'$.
 >Then $\{\psi_1^G,...,\psi_s^G\}$ are the linear characters of $G$.
 >In particular, $G$ has $[G:G']=|G/G'|$ linear characters.
 ##### Proof
 
->[!Claim]
+>[!Claim] 
 >All irreducible characters of $G/G'$ are one-dimensional
 ###### Proof
 **Forward:**

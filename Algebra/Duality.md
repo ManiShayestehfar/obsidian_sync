@@ -3,7 +3,7 @@
 >[!Definition]
 >Assume $\mathbb{F}$ is an arbitrary field, $A$ an $\mathbb{F}$-algebra, and $M$ an $A$-module.
 >The **dual** of $M$ is
->$$M^* = \text{Hom}_\mathbb{F}(M,F) = \{\varphi: M \to \mathbb{F}\::\: \varphi\text{ linear}\}$$
+>$$M^* = \text{Hom}_\mathbb{F}(M,\mathbb{F}) = \{\varphi: M \to \mathbb{F}\::\: \varphi\text{ linear}\}$$
 
 # Properties
 
@@ -86,7 +86,7 @@ $\square$
 ## SNAF
 
 >[!Definition] 
->A **Symmetric NAF (SNAF)** is a NAF $\beta: M \times m \to \mathbb{F}$ such that $\beta(x,y) = \beta(y,x)$ for all $x,y \in M$.
+>A **Symmetric NAF (SNAF)** is a NAF $\beta: M \times M \to \mathbb{F}$ such that $\beta(x,y) = \beta(y,x)$ for all $x,y \in M$.
 >
 
 Let $S$ be an $\mathbb{F}G$-submodule of $M$, which has a SNAF.
@@ -101,7 +101,8 @@ Define $S^\perp = \{m \in M \:|\: \beta(s,m) = 0 \:\:\:\forall s \in S\}$.
 >5. If $X \subseteq Y$ are submodules, then $Y^\perp \subseteq X^\perp$.
 ##### Proof
 ###### 1.
-Since $\beta$ is linear in the second input, then $S^\perp$ is a vector space if: $m \in S^\perp$ and $g \in G$, then for $s \in S$, $\beta(x,gm) = \beta(g^{-1}s,m)=0$ since $g^{-1}s \in S \implies gm \in S^\perp \implies S^\perp$ is an $\mathbb{F}G$-modules.
+Since $\beta$ is linear in the second input, then $S^\perp$ is a vector space
+If $m \in S^\perp$ and $g \in G$, then for $s \in S$, $\beta(s,gm) = \beta(g^{-1}s,m)=0$ since $g^{-1}s \in S \implies gm \in S^\perp \implies S^\perp$ is an $\mathbb{F}G$-modules.
 
 ###### 2.
 Let $\{v_1,...,v_m\}$ is a basis of $M$ such that $\{v_1,...,v_s\}$ is a basis of $S$. 
@@ -121,22 +122,22 @@ But $\dim(S^\perp)^\perp = \dim M - \dim S^\perp = \dim M - (\dim M - \dim S) = 
 So $(S^\perp)^\perp = S$. $\square$
 
 ###### 4.
-$(X+Y)^\perp = \{m \in M \:|\: \beta(a,m) = 0 \:\: a \in X+Y\} = \{m \in M \:|\: \beta(x+y,m) = 0 \:\: x \in X,y \in Y\}$
-$= \{m \in M \:|\: \beta(x,m) = 0,\:\: \eta(y,m)=0 \:\: x \in X,y \in Y\} = X^\perp \cap Y^\perp$. $\square$
+$(X+Y)^\perp = \{m \in M \:|\: \beta(a,m) = 0 ,\:\: a \in X+Y\} = \{m \in M \:|\: \beta(x+y,m) = 0, \:\: x \in X,y \in Y\}$
+$= \{m \in M \:|\: \beta(x,m) = 0,\:\: \beta(y,m)=0 \:\: x \in X,y \in Y\} = X^\perp \cap Y^\perp$. $\square$
 
 ###### 5.
 $Y^\perp = \{m \in M \:|\: \beta(y,m) =0 \:\forall y \in Y\}\subseteq X^\perp$ since $X \subseteq Y$.  $\square$
 
 
 
->[!Proposition]
+>[!Proposition] 
 >Suppose $U \subseteq S \subseteq M \cong M^*$ (self-dual). Then 
 >$$S/U \cong (U^\perp/S^\perp)^*$$
 ##### Proof
 Define a map $\Theta:S \to (U^\perp/S^\perp)^*$ by $\Theta(x) = \theta_x: U^\perp/S^\perp \to \mathbb{F}$
 where $\theta_x(u+S^\perp) = \beta(x,u)$ for all $u \in U^\perp$.
 
->[!Claim]
+>[!Claim] 
 >$\Theta$ is a $\mathbb{F}G$-module isomorphism.
 
 ###### Well-definedness
@@ -165,7 +166,7 @@ $$\begin{align*}
 By the first isomorphism theorem,
 $$S/U = S/\ker \Theta \cong \text{im }\Theta \subseteq (U^\perp/S^\perp)^*$$
 But 
-$$\dim(U^\perp/S^\perp)^* = \dim (U^\perp/S^\perp) = (\dim M - \dim U) - (\dim M - \dim S) = \dim S - \dim U = \dim S/U$$
+$\dim(U^\perp/S^\perp)^* = \dim (U^\perp/S^\perp) = (\dim M - \dim U) - (\dim M - \dim S) = \dim S - \dim U = \dim S/U$
 Thus $\text{im }\Theta = (U^\perp/S^\perp)^*$ and $S/U \cong (U^\perp/S^\perp)^*$.
 $\square$
 

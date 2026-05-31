@@ -43,7 +43,7 @@ Let $z_c = \sum_{x \in C}x \in  Z(\mathbb{C}G)$.
 Notice, if $g \in G$, then $g$ acts on $\mathbb{C}G$ with respect to the basis $\{x \:|\: x\in G\}$ by permutation matrix. i.e. matrix with nonzero entries in each row and column and that entry is $1$.
 So $g$ acts by a matrix in $\text{Mat}_{|G|}(\mathbb{Z})$.
 
-So $Z_c$ acts on $\mathbb{C}G$ via a matrix in $\text{Mat}_{|G|}(\mathbb{Z})$. Thus eigenvalues of $z_c$ on $\mathbb{C}G$ are in $\mathbb{A}$.
+So $z_c$ acts on $\mathbb{C}G$ via a matrix in $\text{Mat}_{|G|}(\mathbb{Z})$. Thus eigenvalues of $z_c$ on $\mathbb{C}G$ are in $\mathbb{A}$.
 Now $\mathbb{C}G \cong \bigoplus_{j=1}^i D_j^{\oplus \dim D_j}$ by the Artin-Wedderburn theorem.
 Hence the eigenvalues of $z_c$ on each $D_j$ are in $\mathbb{A}$.
 
@@ -55,7 +55,7 @@ Taking characters:
 $\chi(z_c) = \text{tr}(\lambda_c I_{|G|}) = \lambda_c \chi(1).$
 But also $\chi(z_c) = \chi\left(\sum_{x \in C}x\right)= \sum_{x \in C}\chi(x) = |C|\chi(C)$.
 Thus 
-$$\lambda c = \frac{|C| \chi(C)}{\chi(1)} \in \mathbb{A}.$$
+$$\lambda_c = \frac{|C| \chi(C)}{\chi(1)} \in \mathbb{A}.$$
 $\square$
 
 # Step 4: Proving the Goal

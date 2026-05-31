@@ -5,11 +5,11 @@
 - [x] Artin–Wedderburn Decomposition
 - [x] Associative Algebra
 - [x] Centre
-- [ ] Characters
+- [x] Characters
 - [x] Class Function
 - [x] Cn Representation
 - [x] Commutator Subspace
-- [ ] Duality
+- [x] Duality
 - [x] F-Algebra
 - [x] Field
 - [x] Filtration and Composition Series
@@ -20,7 +20,7 @@
 - [x] Jordan-Holder Theorem
 - [x] Maschke's Theorem
 - [x] Nilpotent & Radical Ideals
-- [ ] Number of Irreducible CG-Modules
+- [x] Number of Irreducible CG-Modules
 - [x] Number of Irreducible FG-Modules
 - [x] Quotient Module
 - [x] R-Module
