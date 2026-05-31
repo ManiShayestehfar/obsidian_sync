@@ -44,12 +44,10 @@ $$\overline{A} / [\overline{A}, \overline{A}] = (A/R)/(S/R) \cong A/S$$
 by the second isomorphism theorem.
 Hence $\# \text{Irr}(A) \leq \dim A/S$.  $\square$
 
+### Finding Basis
 
 **Now specialise to:** $A = \mathbb{F}G$.
-
 Fix a choice $\{x_1,...,x_t\}$ of conjugacy class representatives such that $\{x_1,...,x_s\}$ is the set of $p'$-conjugacy reps.
-
-### Finding Basis
 
 >[!Success] Goal
 >$\{x_1+S,...,x_s + S\}$ is a basis of $\mathbb{F}G/S$.
@@ -71,7 +69,7 @@ $$\sum_{i=1}^t \lambda_i(x_i+T) = 0$$
 in $\mathbb{F}G/T$ for some $\lambda_i\in \mathbb{F}$. Let $\mathscr{C}_j$ be the conjugacy class of $x_j$, for $1 \leq j \leq t$. Define the linear indicator map:
 $$\mathbb{1}_j: \mathbb{F}G \to \mathbb{F}, \qquad \mathbb{1}_j(g) = \begin{cases}
 1 & g \in \mathscr{C}_j  \\
-0 & \text{otherweise}
+0 & \text{otherwise}
 \end{cases}$$
 Then $\mathbb{1}_j(gh-hg) = \mathbb{1}_j(gh) - \mathbb{1}_j(h^{-1}(hg)h) = \mathbb{1}_j(gh) - \mathbb{1}_j(gh) = 0$ since $\mathbb{1}_j$ is constant on conjugacy classes.
 Hence $\mathbb{1}_j(a) = 0$ for all $a \in T$. So we have a well-defined map $\overline{\mathbb{1}_j}: \mathbb{F}G/T \to \mathbb{F}$ given by $\overline{\mathbb{1}_j}(x+T) = \mathbb{1}_j(x)$.
@@ -83,7 +81,7 @@ Thus the set is also a basis of $\mathbb{F}G/T$.   $\square$
 
 ### Necessary Lemmas
 
->[!Lemma]
+>[!Lemma] 
 >1. If $a,b \in A$, then $(a+b)^p = a^p + b^p \:(\text{mod } T)$.
 >2. If $T^{[p]} = \{a^p \:|\: a \in T\}$. Then $T^{[p]} \subseteq T$
 >3. Let $T_p := \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \:\: \exists\: n \geq0\}$. Then $T_p = S$.
@@ -106,11 +104,11 @@ By part (2), $T_p = \{a \in \mathbb{F}G \:|\: a^{p^n} \in T \text{ for }n \gg 0\
 Therefore if $a,b \in T_p$, then $a^{p^n},b^{p^n} \in T$ for $n \gg 0$. 
 Hence, using part (1)
 $$(a+b)^{p^n} \equiv (a^p + b^p)^{p^{n-1}} \equiv \cdots \equiv a^{p^n} + b^{p^n} \equiv 0 \:\: (\text{mod }T).$$
-Hence, $a+n \in T_p$ by part (2). In particular, $T_p$ is a vector space.
-Now $T \subseteq T_p$ by definition, and $R = \text{Rad}\mathbb{F}G \subseteq T_p$ since $R$ is nilpotent.
+Hence, $a+b \in T_p$ by part (2). In particular, $T_p$ is a vector space.
+Now $T \subseteq T_p$ by definition, and $R = \text{Rad }\mathbb{F}G \subseteq T_p$ since $R$ is nilpotent.
 Therefore, $S = R+T \subseteq T_p$ since $T_p$ is closed under addition.
 
-**Forward inclusion:**
+**Forward inclusion $(T_p \subseteq S)$:** 
 Suppose $a \in \mathbb{F}G$, with $a^{p^n}\in T$ for $n \geq 0$.
 Then 
 $$(a+R)^{p^n} = a^{p^n}+R \in (T+R)/R = S/R = [\overline{\mathbb{F}G},\overline{\mathbb{F}G}].$$
@@ -122,10 +120,24 @@ where $\mathcal{O}_D = \text{End}_{\mathbb{F}G}(D)$ is commutative, and $a_D$ as
 Also 
 $$[\overline{\mathbb{F}G},\overline{\mathbb{F}G}] = \bigoplus_{D \in \text{Irr}(\overline{\mathbb{F}G})} \mathfrak{sl}_{d}(\mathcal{O}_D),$$
 where $\mathfrak{sl}_D(\mathcal{O}_D) = \{X \in \text{Mat}_{d}(\mathcal{O}_D) \:|\: \text{tr}(X) = 0\}$.
+
 Suppose $\mathbb{F} = \overline{\mathbb{F}}$ is algebraically closed and let $\lambda_1,...,\lambda_d$ be eigenvalues of a matrix $M \in \text{Mat}_d(\overline{\mathbb{F}})$. 
 Consider the Jordan canonical form of $M$ and consider $M^k$ for $k >0$:
-
-![[Screenshot 2026-04-23 at 3.27.46 pm.png|600]]
+$$M \sim  
+\begin{pmatrix}  
+\lambda_1 & * & \cdots & * \\  
+0 & \lambda_2 & \ddots & \vdots \\  
+\vdots & \ddots & \ddots & * \\  
+0 & \cdots & 0 & \lambda_d  
+\end{pmatrix}  
+\quad \Longrightarrow \quad  
+M^k \sim  
+\begin{pmatrix}  
+\lambda_1^k & * & \cdots & * \\  
+0 & \lambda_2^k & \ddots & \vdots \\  
+\vdots & \ddots & \ddots & * \\  
+0 & \cdots & 0 & \lambda_d^k  
+\end{pmatrix}.$$
 Then, since $\overline{\mathbb{F}}$ is a field of characteristic $p >0$,
 $$\text{tr}(M^{p^n}) = \sum_{i=1}^d \lambda_i^{p^n} = \left(\sum_{i=1}^d \lambda_i\right)^{p^n} = (\text{tr}(M))^{p^n}.$$
 So $\text{tr}(M^{p^n})= \text{tr}(M)^{p^n}$.
@@ -143,7 +155,14 @@ Hence $T_p \subseteq S$, which completes the proof. $\square$
 >1. If $x \sim y$, then $x^k\sim y^k$ for $k \in \mathbb{Z}$
 >2. If $g \in G$, then there exists $x,y \in G$ such that $g = xy=yx$ such that $p \nmid |x|$ and $|y| = p^m$ for some $m \geq 0$.
 ##### Proof 
-NEED TO PROVE (pretty easy)
+###### 1.
+$x \sim y \iff x=gyg^{-1}$ for $g\in G$.
+Then $x^k = (gyg^{-1})^k = gy^{k}g^{-1} \implies x^k \sim y^k$.
+
+###### 2.
+
+
+
 
 ### Proving Brauer's Theorem
 
