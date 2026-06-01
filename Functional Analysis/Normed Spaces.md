@@ -69,7 +69,7 @@ Follows from the claim
 **Proof by contrapositive:**
 Assume the norms are not equivalent. Without loss of generality, $\|x\|_A \leq C\|x\|_B$ does not hold. 
 Hence $\forall n\geq 1$, $\exists x_n \in X$ such that $\|x_n\|_A \geq n\|x_n\|_B$.
-Since $x_n \neq 0$, then $$\left\|\frac{x_n}{\|x_n\|_A}\right\|_B \leq \frac{1}{n}\implies \frac{\|x_n\|_B}{\|x\|_A} \leq \frac{1}{n} \longrightarrow 0 \quad \text{w.r.t. } \|\cdot\|_B$$
+Since $x_n \neq 0$, then $$\left\|\frac{x_n}{\|x_n\|_A}\right\|_B \leq \frac{1}{n}\implies \frac{\|x_n\|_B}{\|x_n\|_A} \leq \frac{1}{n} \longrightarrow 0 \quad \text{w.r.t. } \|\cdot\|_B$$
 But $\left\|\frac{x_n}{\|x_n\|_A}\right\|_A = 1 \neq 0$ and hence the limits are not the same. $\square$
 
 
