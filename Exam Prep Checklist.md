@@ -43,7 +43,7 @@
 - [ ] Inner product
 - [ ] Lebesgue Spaces
 - [ ] Linear Operators
-- [ ] Main Definitions
+- [x] Main Definitions
 - [ ] Normed Spaces
 - [ ] Open Mapping Theorem
 - [ ] Orthogonality

@@ -91,19 +91,19 @@ If $A$ is unital, then $1 \in A \subseteq \overline{A}$, so $\overline{A}$ is al
 ## Hausdorff
 
 > [!Definition] Hausdorff topological vector space
-> A topological vector space $X$ is Hausdorff if for any two distinct points $x,y \in X$, there exist disjoint open sets $U,V \subseteq X$ such that $x \in U$ and $y \in V$.
+> A topological vector space $X$ is **Hausdorff** if for any two distinct points $x,y \in X$, there exist disjoint open sets $U,V \subseteq X$ such that $x \in U$ and $y \in V$.
 >
 > Equivalently, in a topological vector space, $X$ is Hausdorff if and only if $\{0\}$ is closed.
 
 ## Convex Set
 
 > [!Definition] Convex set
-> A subset $C \subseteq X$ is convex if for every $x,y \in C$ and every $t \in [0,1]$, $tx + (1-t)y \in C$.
+> A subset $C \subseteq X$ is **convex** if for every $x,y \in C$ and every $t \in [0,1]$, $tx + (1-t)y \in C$.
 
 ## Locally Convex Topological Vector Space
 
 > [!Definition] Locally convex topological vector space
-> A Hausdorff topological vector space $X$ over $\mathbb{R}$ is called locally convex if there is a neighbourhood basis of $0$ consisting of convex sets.
+> A Hausdorff topological vector space $X$ over $\mathbb{R}$ is called **locally convex** if there is a neighbourhood basis of $0$ consisting of convex sets.
 >
 > Equivalently, for every neighbourhood $U$ of $0$, there exists a convex neighbourhood $V$ of $0$ such that $0 \in V \subseteq U$.
 
@@ -116,12 +116,12 @@ If $A$ is unital, then $1 \in A \subseteq \overline{A}$, so $\overline{A}$ is al
 ## Extreme points and faces
 
 > [!Definition] Extreme point
-> Let $K \subseteq X$ be convex. A point $x \in K$ is called an extreme point of $K$ if whenever $x = ty + (1-t)z$ with $y,z \in K$ and $0 < t < 1$, then $y = z = x$.
+> Let $K \subseteq X$ be convex. A point $x \in K$ is called an **extreme point** of $K$ if whenever $x = ty + (1-t)z$ with $y,z \in K$ and $0 < t < 1$, then $y = z = x$.
 >
 > The set of extreme points of $K$ is denoted by $\operatorname{Ext}(K)$.
 
 > [!Definition] Face
-> Let $K \subseteq X$ be convex. A convex subset $F \subseteq K$ is called a face of $K$ if whenever $tx + (1-t)y \in F$, $x,y \in K$, and $0 < t < 1$, then $x,y \in F$.
+> Let $K \subseteq X$ be convex. A convex subset $F \subseteq K$ is called a **face** of $K$ if whenever $tx + (1-t)y \in F$, $x,y \in K$, and $0 < t < 1$, then $x,y \in F$.
 >
 > Singleton faces are precisely extreme points: $x \in \operatorname{Ext}(K)$ if and only if $\{x\}$ is a face of $K$.
 
