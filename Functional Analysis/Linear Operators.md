@@ -22,7 +22,7 @@
 
 **Continuity of $T$ at $x=a$:**
 $\forall \varepsilon >0$, $\exists \delta >0$ such that $\|x-a\|_X < \delta \implies \|Tx-Ty\|_Y \leq \varepsilon$
-e.g. if $x_n \to A$ (in $X$), then $Tx \to Ta$ (in $Y$)
+e.g. if $x_n \to a$ (in $X$), then $Tx \to Ta$ (in $Y$)
 
 
 # Linear Operator Characterisation of Continuity
