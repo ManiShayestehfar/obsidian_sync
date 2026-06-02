@@ -23,7 +23,7 @@ But $\|f_n-0 \|_\infty = \|f_n\|_\infty = 1 \neq 0$
 ## Examples
 
 1. $(\mathbb{K}, \|\cdot\|)$ is complete $\implies$ It is Banach
-2. $(\ell^p, \|\cdot\|_p)$ is Banach
+2. $(\ell^p, \|\cdot\|_p)$ is Banach for $1 \leq p \leq \infty$
 3. $(c, \|\cdot \|_p)$ is Banach for $c = \{(x_n) \in \ell \:|\: \lim_{n\to \infty} x_n \text{ exists}\}$
 4. *Non-example:* (Polynomials on $[a,b]$, $\|\cdot\|_\infty$) is NOT complete and hence not Banach
 

@@ -41,7 +41,7 @@
 - [ ] Hahn–Banach Theorem
 - [ ] Hilbert Space
 - [x] Inner product
-- [ ] Lebesgue Spaces
+- [x] Lebesgue Spaces
 - [ ] Linear Operators
 - [x] Main Definitions
 - [x] Normed Spaces
