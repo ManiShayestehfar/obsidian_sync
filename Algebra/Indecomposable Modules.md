@@ -56,25 +56,20 @@ Then
 $$x+y = ae+bf =a(e+f) + (b-a)f \in A(e+f)$$
 $\square$
 ###### 1. 
-Suppose $V$ is an indecomposable summand of $A$. i.e. $A = V \oplus X$ for some $A$-submodule $X$.
-$\implies 1_A = e_v + e_x$ for unique $e_v \in V$, $e_x \in X$.
+**Forward: Contrapositive**
+Suppose $e=f+g$  where $f,g$ are orthogonal idempotents.
+Then $Ae = A(f+g) \subseteq Af + Ag$. But also $Af =Afe \subseteq Ae$ and $Ag = Age \subseteq Ae$. So $Ae = Af + Ag$. 
 
->[!Claim] 
->$V = Ae_v$ and $e_v$ and $e_x$ are orthogonal idempotents. 
+The sum is direct since if $a,b \in Af \cap Ag$, then $af =bg$. Multiply by $f$ on both sides to get $af = bgf=0$ since $f$ is idempotents and $gf=fg=0$. So $a=0$. Similarly we can show that $b=0$. 
+Hence $Ae = Af \oplus Ag$. So $Ae$ is decomposable.
 
--  If $v \in V$, then $v = v\cdot 1_A = ve_v + ve_x$.
-  $\implies \underbrace{v - ve_v}_{\in V} = \underbrace{v e_x}_{\in X} \in V \cap X = 0$ 
-  $\implies v = v e_v$ and $ve_x = 0$
-  $\implies V \subseteq Ae_v \subseteq V \implies V = Ae_v$
-  
-  Also $e_v = e_v^2 \implies e_v$ is an idempotent (note that $e_v \neq 0$ since $0 \neq V = Ae_v$) and $e_ve_x = 0$.  
-  By symmetry if $x\in X$ then $x = xe_x$ and $xe_v = 0$ 
-  $\implies e_x = e_x^2$ and $e_xe_v = 0$. 
-
-Finally, if $e_v$ is *not* primitive, then $e_v = f +g$ for orthogonal idempotents $f,g$.
-$\implies V = Ae_v = Af \oplus Ag$  (by part (3))
-This contradicts $V$ being indecomposable so $e_v$ is primitive
+**Backwards: Contrapositive**
+If $Ae$ is decomposable, then $Ae = B \oplus C$. So there exists $f \in B$ and $g \in C$ such that $1 = f+g$.
+Therefore $f = f\cdot 1=f(f+g)=f^2+fg$. Similarly $g=g\cdot 1 = g(f+g)=gf+g^2$.
+So $fg = f-f^2$ and $gf=g-g^2$, both in $A \cap B=0$.
+Hence $f,g$ are orthogonal idempotents. Hence $e$ is not primitive.
 $\square$
+
 
 >[!success] Moral
 >Indecomposable summands of $A$     $\equiv$     Primtive idempotents in $A$
