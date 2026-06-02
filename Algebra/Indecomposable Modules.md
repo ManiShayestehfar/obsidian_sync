@@ -72,7 +72,7 @@ $\square$
 
 
 >[!success] Moral
->Indecomposable summands of $A$     $\equiv$     Primtive idempotents in $A$
+>Indecomposable summands of $A$     $\equiv$     Primitive idempotents in $A$
 
 
 ###### 2.
