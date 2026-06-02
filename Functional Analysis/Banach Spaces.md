@@ -42,18 +42,15 @@ But $\|f_n-0 \|_\infty = \|f_n\|_\infty = 1 \neq 0$
 ###### 1.
 Let $(f_n)$ be a Cauchy sequence in $(X,\|\cdot\|_\infty)$. We need to show that $(f_n)$ converges in $\|\cdot\|_\infty$ to some function $f\in X$.  
 
-
 Since $(f_n)$ is Cauchy in $\|\cdot\|_\infty$, for every $\varepsilon>0$, there exists $N\in\mathbb N$ such that for all $n,m\geq N$,  $\|f_n-f_m\|_\infty<\varepsilon$.  
 Hence, for every $x\in[a,b]$ and all $n,m\geq N$,  $|f_n(x)-f_m(x)|\leq \|f_n-f_m\|_\infty<\varepsilon.$  
 Therefore, for each fixed $x\in[a,b]$, the sequence $(f_n(x))$ is Cauchy in $\mathbb K$. Since $\mathbb K$ is complete, there exists a value $f(x)\in\mathbb K$ such that $f_n(x)\to f(x)$.  
 
 Thus we may define $f:[a,b]\to\mathbb K$ by $f(x):=\lim_{n\to\infty} f_n(x)$.  
 
-  
 We now show that $f_n\to f$ uniformly. Fix $\varepsilon>0$. Since $(f_n)$ is Cauchy in $\|\cdot\|_\infty$, there exists $N\in\mathbb N$ such that for all $n,m\geq N$, $\|f_n-f_m\|_\infty<\varepsilon$.  
 Fix $n\geq N$ and $x\in[a,b]$. Since $f_m(x)\to f(x)$ as $m\to\infty$, and since the absolute value is continuous, we may let $m\to\infty$ in $|f_n(x)-f_m(x)|<\varepsilon$ to obtain $|f_n(x)-f(x)|\leq \varepsilon.$  
 Since this holds for *every* $x\in[a,b]$, we get $\|f_n-f\|_\infty\leq \varepsilon$ for all $n\geq N$. Hence $f_n\to f$ *uniformly* on $[a,b]$.  
-
 
 It remains to prove that $f\in C([a,b])$. Let $x_0\in[a,b]$ and let $\varepsilon>0$. Since $f_n\to f$ uniformly, choose $n\in\mathbb N$ such that $\|f_n-f\|_\infty<\varepsilon/3$.  
 Since $f_n$ is continuous at $x_0$, there exists $\delta>0$ such that if $x\in[a,b]$ and $|x-x_0|<\delta$, then $|f_n(x)-f_n(x_0)|<\varepsilon/3$. Therefore, whenever $x\in[a,b]$ and $|x-x_0|<\delta$,  
@@ -100,20 +97,6 @@ $$\begin{align*}
 \end{align*}$$
 So $f(x) = 1$ for $x \in [0,1/2]$. Similarly $f(x)=0$ for $x \in [1/2,1]$. But such $f$ is not continuous. So this is a contradiction. $\square$
 
-
-
-
-
-## Banach $\not \Rightarrow$ Compact
-
-$\bar{B}(0,1) = \{f \in C([0,1]) \:|\: \|f\|_\infty < 1\}$ is a Banach space.
-We show that it is NOT compact.
-
-We show that for the following graph of sequence $(f_n)$ there is not convergent subsequence.
-
-
-For $m>n$, $\|f_n - f_m\|_\infty \geq |f_n(y_n) - f_m(y_n)| = |1-0| = 1$.
-Hence $f_n$ is not a Cauchy sequence and in a metric space every convergent sequence is indeed Cauchy. Hence there is no convergent subsequence. Therefore $\bar{B}(0,1)$ is not compact.  $\square$
 
 
 ## Banach $\nRightarrow$ Compact
