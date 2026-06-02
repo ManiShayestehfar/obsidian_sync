@@ -33,7 +33,7 @@
 
 - [ ] Adjoint Operators
 - [ ] Baire's Theorem
-- [ ] Banach Spaces
+- [x] Banach Spaces
 - [ ] Compact Operators
 - [ ] Completion
 - [ ] Dual Spaces
