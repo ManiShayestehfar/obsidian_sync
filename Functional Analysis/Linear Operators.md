@@ -137,7 +137,7 @@ $\therefore \|T_n-T\|\to 0$.  $\square$
    Also $\|L(0,1,0,...)\|_1 = \|(1,0,0,...)\|_1 = 1 =\|(0,1,0,...)\|_1$. So $\|L\| \geq 1$.
    $\implies \|L\|=1$
 
-2. $T:\ell^2 \to \ell^1$, $Tx(\tfrac{x_1}{1}, \tfrac{x_2}{2},...)$. Using Cauchy-Schwartz we showed $\|Tx\| \leq \tfrac{\pi}{\sqrt{6}} \|x\|_2$ so $\|T\|\leq \tfrac{\pi}{\sqrt{6}}$
+2. $T:\ell^2 \to \ell^1$, $Tx=(\tfrac{x_1}{1}, \tfrac{x_2}{2},...)$. Using Cauchy-Schwartz we showed $\|Tx\| \leq \tfrac{\pi}{\sqrt{6}} \|x\|_2$ so $\|T\|\leq \tfrac{\pi}{\sqrt{6}}$
    Take $x_0 = (\tfrac{1}{1}, \tfrac{2}{1}, \tfrac{3}{1},...) \in \ell^2$ 
    So $\|Tx_0\|_1 = \sum_{k=1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6} = \frac{\pi}{\sqrt{6}}\|x_0\|_2$ 
    $\therefore \|T\|=\frac{\pi}{\sqrt{6}}$.

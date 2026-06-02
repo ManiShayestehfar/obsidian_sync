@@ -52,7 +52,7 @@ The best natural choice for $\varphi_y$ is the "dot product": $\varphi_y(x) = \s
 By Holder's inequality: $\sum_{k=1}^\infty |x_ky_k| \leq \|x\|_p\|y\|_q$ so the series converges and so $\Theta$ is well-defined.
 
 But $\Theta$ should be continuous as well. Take $\varphi_y \in (\ell^p)'$ for each $y \in \ell^q$. 
-Clearly $\varphi_y \in (\ell^p)^*$, so $|\varphi_y(x)|\leq\|y\|_q\|x\|_p \implies \|\varphi_y(x)\|\leq \|y\|_q$ so $\Theta$ is continuous.
+Clearly $\varphi_y \in (\ell^p)^*$, so $|\varphi_y(x)|\leq\|y\|_q\|x\|_p \implies \|\varphi_y\|\leq \|y\|_q$ so $\Theta$ is continuous.
 
 ##### 2. Injective
 If $\Theta(y) = \Theta(y')$ then $\varphi_y(x) = \varphi_{y'}(x)$ for all $x \in \ell^p$.

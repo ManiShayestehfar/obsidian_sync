@@ -36,13 +36,13 @@
 - [x] Banach Spaces
 - [ ] Compact Operators
 - [x] Completion
-- [ ] Dual Spaces
+- [x] Dual Spaces
 - [ ] General Linear Group
 - [ ] Hahn–Banach Theorem
 - [ ] Hilbert Space
 - [x] Inner product
 - [x] Lebesgue Spaces
-- [ ] Linear Operators
+- [x] Linear Operators
 - [x] Main Definitions
 - [x] Normed Spaces
 - [ ] Open Mapping Theorem
