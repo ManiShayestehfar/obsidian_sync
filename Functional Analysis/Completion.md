@@ -32,11 +32,12 @@ Let $1 < p < \infty$, then $\widehat{(\ell_F, \|\cdot\|_p)} = (\ell^p, \|\cdot\|
 Take $\varphi: (\ell_F, \|\cdot\|_p) \to (\ell^p, \|\cdot\|_p)$ given by the identity map.
 This is clearly an isometric embedding since the norms are the same.
 
-We need to prove $\bar{\ell_F} = \ell^p$.
+We need to prove $\widehat{\ell_F} = \ell^p$.
 Take any $x := (x_1,x_2,...,x_n,...) \in \ell^p$, and $y_n = (x_1,x_2,...,x_n,0,0,...) \in \ell_F$ 
 
 clearly $\|x-y\|_p^p = \sum_{k=n+1}^\infty |x_k|^p \to 0$ as $n \to \infty$. So $y_n \to x \in \ell^p$.
-$\therefore \bar{\ell_F} = \ell^p$ 
+$\therefore \widehat{\ell_F} = \ell^p$ 
+
 
 **Question:** How about the completion of $(\ell_F, \|\cdot\|_\infty)$? Is it $\ell^\infty$?
 Take $\mathbb{1} := (1,1,...)\in \ell^\infty$, then $\text{dist}_{\|\cdot\|_\infty}(\mathbb{1}, \ell_F) = \inf_{y \in \ell^\infty}\|\ \mathbb{1} - y\:\|_\infty = 1$. 
@@ -46,4 +47,4 @@ Therefore the completion is **NOT** $\ell^\infty$.
 Now take $x = (x_k) \subset \ell^\infty$ satisfying $|x_k| \to 0$ by assumption.
 Let $x^{(n)} = (x_1,x_2,...,x_n,0,0,...)\in \ell_F$.
 Then $\|x^{(n)} - x\|_\infty = \sup_{k \geq n+1} |x_k| \to 0 \implies x^{(n)} \to x$ .
-Therefore $\widehat(\ell_F, \|\cdot\|_\infty) = (c_0, \|\cdot\|_\infty)$ where as a reminder $c_0 = \{(x_n) \in \ell^\infty \:|\: |x_k| \to 0\}$ 
+Therefore $\widehat{(\ell_F, \|\cdot\|_\infty)} = (c_0, \|\cdot\|_\infty)$ where as a reminder $c_0 = \{(x_n) \in \ell^\infty \:|\: |x_k| \to 0\}$ 

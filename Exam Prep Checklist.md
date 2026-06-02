@@ -35,7 +35,7 @@
 - [ ] Baire's Theorem
 - [x] Banach Spaces
 - [ ] Compact Operators
-- [ ] Completion
+- [x] Completion
 - [ ] Dual Spaces
 - [ ] General Linear Group
 - [ ] Hahn–Banach Theorem
