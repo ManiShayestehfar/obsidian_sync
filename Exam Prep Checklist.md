@@ -40,11 +40,11 @@
 - [ ] General Linear Group
 - [ ] Hahn–Banach Theorem
 - [ ] Hilbert Space
-- [ ] Inner product
+- [x] Inner product
 - [ ] Lebesgue Spaces
 - [ ] Linear Operators
 - [x] Main Definitions
-- [ ] Normed Spaces
+- [x] Normed Spaces
 - [ ] Open Mapping Theorem
 - [ ] Orthogonality
 - [ ] Posets
@@ -53,5 +53,5 @@
 - [ ] Riesz Representation
 - [ ] Spectral Theory
 - [ ] Stone–Weierstrass
-- [ ] The Unit Ball
+- [x] The Unit Ball
 - [ ] Zorn's Lemma
