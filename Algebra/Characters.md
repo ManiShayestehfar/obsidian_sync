@@ -371,7 +371,7 @@ So $\chi(g) \in \mathbb{R}$. $\square$
 
 >[!Theorem]
 >Suppose $1 \leq i,j \leq t$. Then
-$$\frac{1}{|G|} \sum_{k=1}^t |C_i| \:\overline{\chi_k(C_i)}\chi_k(C_i)= \delta_{ij}$$
+$$\frac{|C_i|}{|G|} \sum_{k=1}^t  \:\overline{\chi_k(C_i)}\chi_k(C_j)= \delta_{ij}$$
 ##### Proof
 $$\delta_{ij} = 1_{C_i}(C_j) = \frac{|C_k|}{|G|}\sum_{i=1}^t \overline{\chi_i(C_k)}\chi_i$$
 
