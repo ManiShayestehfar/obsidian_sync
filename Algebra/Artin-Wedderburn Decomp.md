@@ -52,8 +52,7 @@ ENTER PROOF
 ## Decomposition of $\text{Hom}$
 
 >[!Proposition]
->Let $X_1,...,X_n$ and $Y_1,...,Y_m$ be $A$-modules, and set $X = X_1\oplus ... \oplus X_n$ and $Y = Y_1 \oplus ... \oplus Y_m$ as $\mathbb{F}$-vector spaces. Then $$\text{Hom}_A(X,Y) = \bigoplus_{\substack{1 \leq i \leq n \\ 1 \leq j \leq m}}\text{Hom}_A(X_i,Y_j)$$
-
+>Let $X_1,...,X_n$ and $Y_1,...,Y_m$ be $A$-modules, and set $X = X_1\oplus \cdots \oplus X_n$ and $Y = Y_1 \oplus \cdots \oplus Y_m$ as $\mathbb{F}$-vector spaces. Then $$\text{Hom}_A(X,Y) = \bigoplus_{\substack{1 \leq i \leq n \\ 1 \leq j \leq m}}\text{Hom}_A(X_i,Y_j)$$
 ##### Proof
 Same as the endomorphism proof, except now we have $\varphi \in \text{Hom}(X,Y)$. $\square$
 
