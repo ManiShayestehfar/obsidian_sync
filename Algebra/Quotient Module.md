@@ -63,22 +63,45 @@ Let $V$ be a $G$-module.
 >2. Suppose $X$ and $Y$ are submodules of $V$ $\implies (X+Y)/Y \:\cong\: X/(X\cap Y)$ 
 >3. Suppose $U \leq W \leq V$ are submodules of $V$ $\implies V/W \:\cong\: (V/U)/(W/U)$
 >4. Suppose $W$ is a submodule of $V$. Then there is a 1-to-1 inclusion preserving correspondence between submodules of $V$ that contain $W$ and the submodules of $V/W$
-##### Proof Sketch
+##### Proof
 ###### 2. 
-*Recap:* If $X$ and $Y$ are subspaces of $V$, then $X+Y = \{x + y \:|\: x \in X, y \in Y\}\subseteq V$. 
-If we take $x \in X$ and $y \in Y$, then $g(x+y) = gx+gy \in X+Y$ so $X+Y$ is a $G$-submodule of $V$.
+Since $X$ and $Y$ are submodules of $V$, their sum $X+Y=\{x+y\mid x\in X,\ y\in Y\}$ is also a submodule of $V$. Indeed, if $g\in G$ and $x+y\in X+Y$, then $g(x+y)=gx+gy\in X+Y$, since $gx\in X$ and $gy\in Y$.
 
-Define $\Psi:Y\to (X+Y)/X$  by $\Psi(y) = y+X \in (X+Y)/X$.
-$\Psi$ is a $G$-module homomorphism because it is both linear and an intertwiner.
+Define $\Phi:X\to (X+Y)/Y$ by $\Phi(x)=x+Y$. This is the restriction to $X$ of the quotient map $X+Y\to (X+Y)/Y$, so $\Phi$ is a $G$-module homomorphism.
 
-By the first isomorphism theorem, $Y/\ker \Psi \cong \text{im }\Psi = (X+Y)/X$ and $\ker \Psi = \{y \in Y \:|\: y + X = 0_{(X+Y)/Y}\} = X \cap Y$ since $y + X = 0 + X \iff y \in X$. $\square$
+We now show that $\Phi$ is surjective. Let $(x+y)+Y\in (X+Y)/Y$, where $x\in X$ and $y\in Y$. Since $y+Y=Y$, we have $(x+y)+Y=x+Y=\Phi(x)$. Hence $\operatorname{im}\Phi=(X+Y)/Y$.
+
+Next,
+$$
+\ker\Phi
+=
+\{x\in X\mid \Phi(x)=Y\}
+=
+\{x\in X\mid x+Y=Y\}
+=
+\{x\in X\mid x\in Y\}
+=
+X\cap Y.
+$$
+
+Therefore, by the first isomorphism theorem, $X/\ker\Phi\cong\operatorname{im}\Phi$. Since $\ker\Phi=X\cap Y$ and $\operatorname{im}\Phi=(X+Y)/Y$, we obtain
+$$
+X/(X\cap Y)\cong (X+Y)/Y.
+$$
+Equivalently, $(X+Y)/Y\cong X/(X\cap Y)$.
+
 
 ###### 3.
-Define $\Theta: V \to (V/U)/(Y/U)$ by $\Theta(v)= (v+U) + W/U$ which we can check to be well-defined.
-$\Theta$ is a $G$-module homomorphism because it is both linear and an intertwiner.
+Define $\Theta:V\to (V/U)/(W/U)$ by $\Theta(v)=(v+U)+W/U$. 
+This is well-defined because $U\leq W\leq V$, so $W/U$ is a submodule of $V/U$.
 
-By first isomorphism theorem, $V/\ker \Theta \cong \text{im }\Theta = (V/U)/(W/U)$ and $\ker \Theta = \{v \in V \:|\: v \in W\} = V \cap W = W$. 
-Therefore $V/W \cong (V/U)/(Y/U)$. $\square$
+The map $\Theta$ is a $G$-module homomorphism, since for $v_1,v_2\in V$, $\lambda\in F$ and $g\in G$, we have $\Theta(v_1+\lambda v_2)=((v_1+\lambda v_2)+U)+W/U=((v_1+U)+W/U)+\lambda((v_2+U)+W/U)=\Theta(v_1)+\lambda\Theta(v_2)$, and $\Theta(gv)=(gv+U)+W/U=g((v+U)+W/U)=g\Theta(v)$.
+
+The map $\Theta$ is surjective because every element of $(V/U)/(W/U)$ has the form $(v+U)+W/U=\Theta(v)$ for some $v\in V$.
+
+Moreover, $\ker\Theta=\{v\in V\mid (v+U)+W/U=W/U\}=\{v\in V\mid v+U\in W/U\}=\{v\in V\mid v\in W\}=W$.
+
+Therefore, by the first isomorphism theorem, $V/\ker\Theta\cong\operatorname{im}\Theta$. Since $\ker\Theta=W$ and $\operatorname{im}\Theta=(V/U)/(W/U)$, we obtain $V/W\cong (V/U)/(W/U)$.
 
 ###### 4.
 We have a natural map $\pi: V \to V/U$ given by $\pi(v) = v+ U$. 
