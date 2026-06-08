@@ -1,42 +1,61 @@
->[!lemma]
->Suppose that $\mathbb{F}$ is an algebraically closed [[Field|field]] and that $D,E$ are irreducible [[A-Module]]. Then as vector spaces,
->$$\text{Hom}_A(D,E) \cong \begin{cases} \mathbb{F} & \text{if}\:\: D \cong E \\[4pt]
->0 & \text{otherwise}
-\end{cases}$$
-Moreover, $\text{End}_A(D) \cong \mathbb{F}$ (or a division algebra in general). In particular, $A$ is a *Schurian* [[F-Algebra]].
+> [!lemma] Schur's Lemma  
+> Suppose that $\mathbb{F}$ is an algebraically closed [[Field|field]], and let $D$ and $E$ be irreducible [[A-Module|$A$-modules]]. Then, as vector spaces,  
+> $$  
+> \operatorname{Hom}_A(D,E) \cong  
+> \begin{cases}  
+> \mathbb{F}, & \text{if } D \cong E, \\[4pt]  
+> 0, & \text{otherwise}.  
+> \end{cases}  
+> $$  
+> Moreover, $\operatorname{End}_A(D) \cong \mathbb{F}$. More generally, if $\mathbb{F}$ is not algebraically closed, then $\operatorname{End}_A(D)$ is a division algebra over $\mathbb{F}$.
 ##### Proof
-Split the proof into two parts: when $D \not\cong E$, and $D \cong E$.
+###### Part 1: The case $D \not\cong E$
 
-###### $D \not\cong E$
-For $D\not\cong E$, define $\varphi:D \to E$, where $\varphi \in \text{Hom}_A(D,E)$. By the 1st isomorphism theorem
-$$D / \ker \varphi \cong \text{im }\varphi.$$
-But since both $D,E$ are irreducible, meaning no proper submodule of $D$ exists:
-- $\ker \varphi = 0$ or $D$
-- $\text{im }\varphi = E$ or $0$.
-Since $\varphi \neq 0$, we must have that $\ker \varphi =0$, and $\text{im }\varphi = E$. Meaning that $\varphi$ is an isomorphism and $D \cong E$. 
-Therefore, if $D \neq E$, then any homomorphism $\varphi$ must be $0$. i.e. $\text{Hom}_A(D,E) = 0$.
+Let $\varphi \in \operatorname{Hom}_A(D,E)$. Since $\varphi$ is an $A$-module homomorphism, $\ker \varphi$ is a submodule of $D$, and $\operatorname{im} \varphi$ is a submodule of $E$.
 
+Because $D$ and $E$ are irreducible, their only submodules are the trivial submodule and the whole module. Hence $\ker \varphi$ is either $0$ or $D$, and $\operatorname{im} \varphi$ is either $0$ or $E$.
 
-###### $D \cong E$
-For $D \cong E$, $\text{Hom}_A(D,E) \cong \text{End}_A(D)$. We want to show that 
-$$\text{End}_A(D) = \{\rho_\lambda\:|\: \lambda \in \mathbb{F}\} \cong \mathbb{F}$$
-Since $D$ is an $A$-module (and a [[vector space]]), we can find and fix a basis $\{d_1,...,d_n\}$ for it, and let $\varphi \in \text{End}_A(D)$. Then:
-$$\varphi(d_i) = \sum_{j}a_{ij}d_j,\quad\quad a_{ij} \in \mathbb{F}.$$
-So $\varphi$ is represented by some matrix $(a_{ij})$. Since $F$ is algebraically closed, the matrix has at least one eigenvalue $\lambda \in \mathbb{F}$. Let $v_\lambda$ be the corresponding eigenvector with $\varphi(v_\lambda) = \lambda v_\lambda$.
+Suppose, for contradiction, that $\varphi \neq 0$. Then $\ker \varphi \neq D$, so $\ker \varphi = 0$. Similarly, $\operatorname{im} \varphi \neq 0$, so $\operatorname{im} \varphi = E$. Therefore $\varphi$ is both injective and surjective, and hence $\varphi$ is an $A$-module isomorphism $D \cong E$.
 
-Define the map $\rho_\lambda: D \to D$,  $\rho_\lambda(d) = \lambda d$. Since $\rho_\lambda$ is an $A$-module map (because scalar multiplication commutes with $A$-action), then $\rho_\lambda \in \text{End}_A(D)$.
+This contradicts the assumption that $D \not\cong E$. Therefore every $A$-module homomorphism $\varphi : D \to E$ must be zero, and so $\operatorname{Hom}_A(D,E)=0$.
 
-Now define $\psi := \varphi - \rho_v$ where $\psi \in \text{End}_A(D)$. Then
-$$\psi(v_\lambda) = \varphi(v_\lambda) - \rho_v(v_\lambda) = \varphi(v_\lambda) - \lambda v_\lambda = 0.$$
-Since $v_\lambda \neq 0$, this means that $\ker \psi \neq 0$ and so $\ker \psi = D$. This forces $\psi = 0$ and therefore $\varphi \equiv \rho_v$. 
-Therefore, every $A$-module endomorphism $\varphi$ is a scalar multiplication defined by $\rho_\lambda$. i.e.  $\text{End}_A(D) = \{\rho_\lambda \:|\: \lambda \in \mathbb{F}\} \cong \mathbb{F}$.
+###### Part 2: The case $D \cong E$
 
+If $D \cong E$, then $\operatorname{Hom}_A(D,E) \cong \operatorname{End}_A(D)$ as vector spaces. Hence it remains to show that $\operatorname{End}_A(D) \cong \mathbb{F}$.
 
-Finally, we need to confirm that this is not just a vector space isomorphism but also an $\mathbb{F}$-algebra isomorphism. Let $\rho_\lambda,\rho_\mu \in \text{End}_A(D)$. Then:
-- $\rho_\lambda + \rho_\mu = \rho_{\lambda + \mu}$,
-- $\rho_\lambda \circ \rho_\mu = \rho_{\lambda\mu}$
-since they both act by scalar multiplication. So the map $$\mathbb{F}\to \text{End}_A(D),\quad \lambda \mapsto \rho_\lambda$$ is an isomorphism of $\mathbb{F}$-algebras.     $\square$
+*Eigenvalue argument:*
+Let $\varphi \in \operatorname{End}_A(D)$. Since $D$ is a finite-dimensional vector space over $\mathbb{F}$, and since $\mathbb{F}$ is algebraically closed, the linear map $\varphi : D \to D$ has an eigenvalue $\lambda \in \mathbb{F}$. Choose a corresponding non-zero eigenvector $v \in D$, so that $\varphi(v)=\lambda v$.
 
+*Eigenvalue map construction:*
+Define $\rho_\lambda : D \to D$ by $\rho_\lambda(d)=\lambda d$ for all $d \in D$. This is an $A$-module homomorphism because scalar multiplication commutes with the $A$-action. Thus $\rho_\lambda \in \operatorname{End}_A(D)$.
+
+*Equivalence of the two maps:*
+Now consider $\psi := \varphi - \rho_\lambda$. Since both $\varphi$ and $\rho_\lambda$ are $A$-module endomorphisms of $D$, we have $\psi \in \operatorname{End}_A(D)$. Moreover,  
+$$  
+\psi(v) =\varphi(v)-\rho_\lambda(v)= \lambda v-\lambda v =0
+$$
+
+Since $v \neq 0$, it follows that $\ker \psi \neq 0$. But $\ker \psi$ is a submodule of $D$, and $D$ is irreducible. Hence $\ker \psi = D$. Therefore $\psi = 0$, so $\varphi = \rho_\lambda$.
+
+Thus every $A$-module endomorphism of $D$ is scalar multiplication by some $\lambda \in \mathbb{F}$. Therefore  
+$$  
+\operatorname{End}_A(D) = \{{\rho_\lambda : \lambda \in \mathbb{F}}\} \cong \mathbb{F}.  
+$$
+*Isomorphism of F-algebras:*
+Finally, the map $\mathbb{F} \to \operatorname{End}_A(D)$ given by $\lambda \mapsto \rho_\lambda$ is an $\mathbb{F}$-algebra isomorphism. Indeed, for $\lambda,\mu \in \mathbb{F}$, we have $\rho_\lambda+\rho_\mu=\rho_{\lambda+\mu}$, $\rho_\lambda \circ \rho_\mu=\rho_{\lambda\mu}$, and $\rho_1=\operatorname{id}_D$.
+
+Hence $\operatorname{End}_A(D) \cong \mathbb{F}$ as $\mathbb{F}$-algebras. Consequently, if $D \cong E$, then $\operatorname{Hom}_A(D,E) \cong \mathbb{F}$ as vector spaces.
+
+Hence
+$$  
+\operatorname{Hom}_A(D,E) \cong  
+\begin{cases}  
+\mathbb{F}, & \text{if } D \cong E, \\[4pt]  
+0, & \text{otherwise}.  
+\end{cases}  
+$$
+
+$\square$
 
 
 
