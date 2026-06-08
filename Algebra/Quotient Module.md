@@ -88,7 +88,7 @@ Therefore, by the first isomorphism theorem, $X/\ker\Phi\cong\operatorname{im}\P
 $$
 X/(X\cap Y)\cong (X+Y)/Y.
 $$
-Equivalently, $(X+Y)/Y\cong X/(X\cap Y)$.
+Equivalently, $(X+Y)/Y\cong X/(X\cap Y)$. $\square$
 
 
 ###### 3.
@@ -101,20 +101,21 @@ The map $\Theta$ is surjective because every element of $(V/U)/(W/U)$ has the fo
 
 Moreover, $\ker\Theta=\{v\in V\mid (v+U)+W/U=W/U\}=\{v\in V\mid v+U\in W/U\}=\{v\in V\mid v\in W\}=W$.
 
-Therefore, by the first isomorphism theorem, $V/\ker\Theta\cong\operatorname{im}\Theta$. Since $\ker\Theta=W$ and $\operatorname{im}\Theta=(V/U)/(W/U)$, we obtain $V/W\cong (V/U)/(W/U)$.
+Therefore, by the first isomorphism theorem, $V/\ker\Theta\cong\operatorname{im}\Theta$. Since $\ker\Theta=W$ and $\operatorname{im}\Theta=(V/U)/(W/U)$, we obtain $V/W\cong (V/U)/(W/U)$. $\square$
 
 ###### 4.
-We have a natural map $\pi: V \to V/U$ given by $\pi(v) = v+ U$. 
-$\text{im }\pi = V/U$ and $\ker \pi = U$. 
-If $W$ is a $G$-submodule of $V$ that contains $U$, then $W/U = \pi(W)$ is a $G$-submodule of $V/U$.
+Let $V$ be a $G$-module, and let $U$ be a $G$-submodule of $V$. Let $\pi : V \to V/U$ be the quotient map, defined by $\pi(v) = v + U$.
 
-Conversely if $\mathcal{W}$ is a $G$-submodule of $V/U$ then $W = \pi^{-1}(\mathcal{W}) = \{v \in V \:| \pi (v) \in \mathcal{W}\}$ 
-is a vector subspace of $V$ (since $\pi$ is linear).
-$U \subseteq W$ because if $u \in U$, then $\pi(u) = u + U = 0_{V/U} \in \mathcal{W}$.
-Moreover, $W$ is a $G$-submodule because if $g \in G$ and $w \in W$, then $\pi(gw) = g\pi(w) \in \mathcal{W}$ since $\mathcal{W}$ is a $G$-module. 
-$\implies gw \in W \implies W$ is a $G$-submodule of $V$ containing $U$. $\square$
+We claim that there is a one-to-one inclusion-preserving correspondence between the $G$-submodules $W \leq V$ such that $U \subseteq W$, and the $G$-submodules $\mathcal W \leq V/U$.
+
+First, suppose $W \leq V$ is a $G$-submodule with $U \subseteq W$. Then $\pi(W) = W/U$, so $W/U$ is a vector subspace of $V/U$. Moreover, if $g \in G$ and $w + U \in W/U$, then $gw \in W$ because $W$ is a $G$-submodule. Hence $g(w+U) = gw + U \in W/U$, so $W/U$ is a $G$-submodule of $V/U$.
 
 
+Conversely, suppose $\mathcal W \leq V/U$ is a $G$-submodule. Define $W = \pi^{-1}(\mathcal W) = \{v \in V : \pi(v) \in \mathcal W\}$. Since $\pi$ is linear, $W$ is a vector subspace of $V$. Also, $U \subseteq W$, because if $u \in U$, then $\pi(u) = u + U = 0_{V/U} \in \mathcal W$. Finally, if $g \in G$ and $w \in W$, then $\pi(w) \in \mathcal W$, so $\pi(gw) = g\pi(w) \in \mathcal W$, since $\mathcal W$ is a $G$-submodule. Therefore $gw \in W$, and hence $W$ is a $G$-submodule of $V$ containing $U$.
+
+These constructions are inverse to each other. Indeed, if $W \leq V$ contains $U$, then $\pi^{-1}(W/U) = W$. Also, if $\mathcal W \leq V/U$, then $\pi(\pi^{-1}(\mathcal W)) = \mathcal W$, since $\pi$ is surjective.
+
+Therefore the maps $W \mapsto W/U$ and $\mathcal W \mapsto \pi^{-1}(\mathcal W)$ give a one-to-one correspondence between $G$-submodules of $V$ containing $U$ and $G$-submodules of $V/U$. Moreover, the correspondence is inclusion-preserving, since if $W_1 \subseteq W_2$, then $W_1/U \subseteq W_2/U$, and if $\mathcal W_1 \subseteq \mathcal W_2$, then $\pi^{-1}(\mathcal W_1) \subseteq \pi^{-1}(\mathcal W_2)$. $\square$
 
 # Dimension of $V/U$
 

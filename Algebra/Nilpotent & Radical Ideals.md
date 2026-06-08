@@ -250,7 +250,7 @@ D \cong P_i / \operatorname{Rad} P_i,
 $$
 as required. $\square$
 
-
+## Equivalence of Semi-Simplicity  
 
 >[!Theorem] Theorem 8K
 >Suppose $A$ is a finite dimensional $\mathbb{F}$-algebra. Then TFAE:
@@ -297,7 +297,7 @@ $\square$
 
 
 
-## Corollaries
+### Corollaries
 
 >[!corollary]
 >The following are equivalent:
@@ -325,7 +325,7 @@ By contrapositive, if $\text{Rad }\mathbb{F}G=0$, then $\text{char }\mathbb{F}\:
 $\square$
 
 
-## Quotienting By Radicals
+# Quotienting By Radicals
 
 By Artin-Wedderburn theorem we know that 
 $$A \cong \bigoplus_{D \in \text{Irr}(A)} P^{\oplus a_D}$$
