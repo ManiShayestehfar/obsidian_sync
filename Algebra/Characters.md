@@ -329,7 +329,7 @@ for some $\lambda_{g,i}\in \mathbb{C}$. Then $\mathbf{g} = AJA^{-1}$ for some $A
 Let $m = |g|$, the order of $g$.
 Then $g^m = 1\implies \mathbf{g}^m=I_n \implies J^m = I_n \implies \lambda_{g,i}^m =1$ for $1 \leq i \leq n$.
 The *minimal polynomial* of $\mathbf{g}$ divides $X^m-1$.
-The roots of $X^m-1$ are the $m$-th roots of unity (explicitly, $\zeta = \exp(2\pi i /m) \implies X^m-1 = \prod_{k=1}^m(X-\zeta^k)$)
+The roots of $X^m-1$ are the $m$-th roots of unity (explicitly, $\zeta = \exp(2\pi i /m) \implies X^m-1 = \prod_{k=1}^m(X-\zeta^kI_n)$)
 Then the roots of $X^m-1$ are distinct.
 
 Minimal polynomial of $\mathbf{g}$ is of the form $M_g(X) = \prod_{k \in I \subseteq \{1,...,m\}} (X - \zeta^kI_n)$.
