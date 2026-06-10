@@ -60,7 +60,7 @@ $\square$
 Suppose $e=f+g$  where $f,g$ are orthogonal idempotents.
 Then $Ae = A(f+g) \subseteq Af + Ag$. But also $Af =Afe \subseteq Ae$ and $Ag = Age \subseteq Ae$. So $Ae = Af + Ag$. 
 
-The sum is direct since if $a,b \in Af \cap Ag$, then $af =bg$. Multiply by $f$ on both sides to get $af = bgf=0$ since $f$ is idempotents and $gf=fg=0$. So $a=0$. Similarly we can show that $b=0$. 
+The sum is direct since if $a,b \in Af \cap Ag$, then $af =bg$. Multiply by $f$ on both sides to get $af = bgf=0$ since $f$ is idempotent and $gf=fg=0$. So $a=0$. Similarly we can show that $b=0$. 
 Hence $Ae = Af \oplus Ag$. So $Ae$ is decomposable.
 
 **Backwards: Contrapositive**
