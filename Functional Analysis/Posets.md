@@ -1,9 +1,8 @@
-
 # Partial Ordering
 
 >[!def] Partial Ordering
 >A relation $<$ on a set $X$ is called a **partial ordering** of $X$ if:
->- *reflexivity:* $x < x$ for all $x \in X$
+>- *Reflexivity:* $x < x$ for all $x \in X$
 >- *Transitivity:* $x < y$ and $y < z \implies x < z$
 >- *Anti-symmetry:* $x<y$ and $y < x \implies x=y$ 
 >
@@ -17,7 +16,7 @@
 
 # Maximal, Upper bound, Chain, Totally-ordered set, First element
 
->[!def] 
+>[!definition] 
 >$(X,<)$ a poset. Then
 >1. $m \in X$ is **maximal** in $X$ if $\forall x \in X$ with $m < x$, we have $x < m$
 >2. $m \in X$ is an **upper bound** for $S \subseteq X$ if $x < m$ for all $x \in S$
