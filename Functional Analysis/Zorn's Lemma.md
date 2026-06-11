@@ -35,56 +35,27 @@ Let $V$ be a vector space over $\mathbb{K}$. $S \subseteq V$ is called a **Hamel
 >3. $S$ is linearly independent and $\text{Span}(S) = V$
 ##### Proof (of existence of Hamel Basis)
 
-Let $\mathcal{L}(V) = \{S\subseteq V \:|\: S \text{ is linearly indep.}\}$ 
-Then $(\mathcal{L}, \subseteq)$ is a non-empty poset.
-
-Then by lemma, it is enough to find a maximal element in $\mathcal{L}$ to prove the existence of Hamel Basis.
-
-Let $C = (L_\alpha)_{\alpha \in A}$ be a chain. So, for $\alpha,\beta \in A$, either $L_\alpha \subseteq L_\beta$ or $L_\beta \subseteq L_\alpha$. Let $$L = \bigcup_{\alpha \in A} L_\alpha.$$Clearly this is an upper bound, provided that it really is in $\mathcal{L}$. i.e. provided it is linearly independent if $v_1,...,v_n \in \mathcal{L}$, then there are $\alpha_1,...,\alpha_n \in A$ with $v_j \in L_{\alpha_j}$.
-Since $C$ is a chain, there is $1 \leq k\leq n$ with $L_{\alpha_j}\subseteq L_{\alpha_k}$ for all $j \in\{1,...,n\}$. 
-So $v_1,...,v_n \in L_{\alpha_k}$, since this set is linearly independent, so too is $L$.
-
-By Zorn's lemma if every chain has an upper bound, then there is a maximal linearly independent set which is the basis, call it $\mathcal{M}$.     $\square$
-
 Let $\mathcal L=\{S\subseteq V \mid S \text{ is linearly independent}\}$.  
+Then $(\mathcal{L}, \subseteq)$ is a non-empty poset (non-empty since $\varnothing\in\mathcal L$)
+
+We want to apply Zorn's lemma.
+Let $C=\{L_\alpha\}_{\alpha\in A}$ be a chain in $\mathcal L$. Thus, for any $\alpha,\beta\in A$, either $L_\alpha\subseteq L_\beta$ or $L_\beta\subseteq L_\alpha$.  
   
-We partially order $\mathcal L$ by inclusion. This poset is non-empty, since $\varnothing\in\mathcal L$.  
-  
-We want to apply Zorn's lemma. Let $C=\{L_\alpha\}_{\alpha\in A}$ be a chain in $\mathcal L$. Thus, for any $\alpha,\beta\in A$, either $L_\alpha\subseteq L_\beta$ or $L_\beta\subseteq L_\alpha$.  
-  
-Define $L=\bigcup_{\alpha\in A}L_\alpha$.  
-  
+Define 
+$$L=\bigcup_{\alpha\in A}L_\alpha.$$
 Clearly $L_\alpha\subseteq L$ for every $\alpha\in A$, so $L$ is an upper bound for $C$, provided that $L\in\mathcal L$. Therefore, we need to show that $L$ is linearly independent.  
   
 Take finitely many vectors $v_1,\dots,v_n\in L$. By definition of $L$, for each $j\in\{1,\dots,n\}$, there exists $\alpha_j\in A$ such that $v_j\in L_{\alpha_j}$.  
   
-Since $C$ is a chain, the finitely many sets $L_{\alpha_1},\dots,L_{\alpha_n}$ are totally ordered by inclusion. Hence one of them contains all the others. That is, there exists some $k\in\{1,\dots,n\}$ such that $L_{\alpha_j}\subseteq L_{\alpha_k}$ for every $j\in\{1,\dots,n\}$.  
-  
-Therefore $v_1,\dots,v_n\in L_{\alpha_k}$.  
+Since $C$ is a chain, the finitely many sets $L_{\alpha_1},\dots,L_{\alpha_n}$ are totally ordered by inclusion. Hence one of them contains all the others. That is, there exists some $k\in\{1,\dots,n\}$ such that $L_{\alpha_j}\subseteq L_{\alpha_k}$ for every $j\in\{1,\dots,n\}$.  Therefore $v_1,\dots,v_n\in L_{\alpha_k}$.  
   
 But $L_{\alpha_k}\in\mathcal L$, so $L_{\alpha_k}$ is linearly independent. Hence the vectors $v_1,\dots,v_n$ are linearly independent. Since every finite subset of $L$ is linearly independent, $L$ is linearly independent. Thus $L\in\mathcal L$.  
   
-Therefore every chain in $\mathcal L$ has an upper bound in $\mathcal L$. By Zorn's lemma, $\mathcal L$ has a maximal element. Call it $M$. Thus $M$ is a maximal linearly independent subset of $V$.  
-  
-It remains to show that $M$ is a Hamel basis of $V$. Since $M$ is linearly independent by construction, it remains to show that $M$ spans $V$.  
-  
-Suppose, for contradiction, that $\operatorname{span}(M)\neq V$. Then there exists $v\in V$ such that $v\notin\operatorname{span}(M)$.  
-  
-We claim that $M\cup\{v\}$ is linearly independent. Suppose $a_1m_1+\cdots+a_nm_n+bv=0$, where $m_1,\dots,m_n\in M$ and $a_1,\dots,a_n,b\in K$.  
-  
-If $b\neq 0$, then $v=-b^{-1}(a_1m_1+\cdots+a_nm_n)$, so $v\in\operatorname{span}(M)$, which is a contradiction. Hence $b=0$.  
-  
-Therefore $a_1m_1+\cdots+a_nm_n=0$.  
-  
-Since $M$ is linearly independent, we get $a_1=\cdots=a_n=0$.  
-  
-Thus all coefficients are zero, so $M\cup\{v\}$ is linearly independent.  
-  
-But this contradicts the maximality of $M$, because $M\subsetneq M\cup\{v\}$ and $M\cup\{v\}$ is linearly independent.  
-  
-Therefore our assumption was false, so $\operatorname{span}(M)=V$.  
-  
-Hence $M$ is linearly independent and spans $V$. Therefore $M$ is a Hamel basis of $V$. $\square$
+Therefore every chain in $\mathcal L$ has an upper bound in $\mathcal L$. 
+By Zorn's lemma, $\mathcal L$ has a maximal element. Call it $M$. 
+Thus $M$ is a maximal linearly independent subset of $V$.  $\square$
+
+
 ## Any topological dynamical system contains a minimal subsystem
 
 ### Dynamical System
