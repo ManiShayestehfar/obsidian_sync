@@ -88,11 +88,9 @@ Since $x\in J$, this gives $x=xe\in Je$. Thus $Ae\cap J\subseteq Je$.
 Conversely, since $J$ is a two-sided ideal, we have $Je\subseteq Ae$ and $Je\subseteq J$, so $Je\subseteq Ae\cap J$. Therefore $P\cap \operatorname{Rad}A=Je=(\operatorname{Rad}A)e$. 
 
 By part (2), $P\cap J$ is the maximal nilpotent submodule of $P$. Hence $\operatorname{Rad}P=P\cap J$. Combining this with the equality above gives
-
 $$
 \operatorname{Rad}P=P\cap \operatorname{Rad}A=(\operatorname{Rad}A)e.
 $$
-
 Finally, this submodule is proper because $e\in P$ but $e\notin \operatorname{Rad}A$, so $P\cap\operatorname{Rad}A\neq P$. Thus $\operatorname{Rad}P$ is a proper submodule of $P$.
 $\square$
 
