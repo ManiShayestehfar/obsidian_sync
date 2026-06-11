@@ -101,7 +101,7 @@ The map $\Theta$ is surjective because every element of $(V/U)/(W/U)$ has the fo
 
 Moreover, $\ker\Theta=\{v\in V\mid (v+U)+W/U=W/U\}=\{v\in V\mid v+U\in W/U\}=\{v\in V\mid v\in W\}=W$.
 
-Therefore, by the first isomorphism theorem, $V/\ker\Theta\cong\operatorname{im}\Theta$. Since $\ker\Theta=W$ and $\operatorname{im}\Theta=(V/U)/(W/U)$, we obtain $V/W\cong (V/U)/(W/U)$. $\square$
+	Therefore, by the first isomorphism theorem, $V/\ker\Theta\cong\operatorname{im}\Theta$. Since $\ker\Theta=W$ and $\operatorname{im}\Theta=(V/U)/(W/U)$, we obtain $V/W\cong (V/U)/(W/U)$. $\square$
 
 ###### 4.
 Let $V$ be a $G$-module, and let $U$ be a $G$-submodule of $V$. Let $\pi : V \to V/U$ be the quotient map, defined by $\pi(v) = v + U$.
