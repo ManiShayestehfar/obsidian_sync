@@ -16,7 +16,7 @@
 - [x] Normed Spaces
 - [ ] Open Mapping Theorem
 - [ ] Orthogonality
-- [ ] Posets
+- [x] Posets
 - [ ] Principle of Uniform Boundedness
 - [ ] Quotient Spaces
 - [ ] Riesz Representation

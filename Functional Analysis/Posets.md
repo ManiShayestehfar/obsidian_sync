@@ -29,7 +29,7 @@
 >[!def] Well-ordered Set
 >A poset $(X,<)$ is a **well-ordered set** if every subset has a first element
 
-- Well-ordered $\implies$ Totally-ordered
+- Well-ordered $\subseteq$ Totally-ordered
 
 ## Example
 
