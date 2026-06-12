@@ -10,7 +10,7 @@ In terms of the inner product on $\mathbb{K}^n$, the adjoint relation is $$\lang
 >3. $(T\circ S)^* = S^*\circ T^*$ 
 ##### Proof
 ###### Existence
-Fix $y\in \mathcal H_2$. Define $\varphi_y:\mathcal H_1\to K$ by $\varphi_y(x):=\langle Tx,y\rangle_2.$
+Fix $y\in \mathcal H_2$. Define $\varphi_y:\mathcal H_1\to K$ by $\varphi_y(x):=\langle Tx,y\rangle_2.$ (NOT NECESSARILY BOUNDED)
 Since
 $$
 |\varphi_y(x)|
