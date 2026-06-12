@@ -34,23 +34,27 @@ Let $V$ be a vector space over $\mathbb{K}$. $S \subseteq V$ is called a **Hamel
 >2. $S$ is a *maximal* spanning set of $V$. i.e. $\forall v \in S,\: \text{Span}(S \setminus\{0\}) \neq V$
 >3. $S$ is linearly independent and $\text{Span}(S) = V$
 ##### Proof (of existence of Hamel Basis)
-
+*Poset construction:*
 Let $\mathcal L=\{S\subseteq V \mid S \text{ is linearly independent}\}$.  
 Then $(\mathcal{L}, \subseteq)$ is a non-empty poset (non-empty since $\varnothing\in\mathcal L$)
 
-We want to apply Zorn's lemma.
+*Chain and bounding union:*
+We want to apply Zorn's lemma, so we need an upper bound.
 Let $C=\{L_\alpha\}_{\alpha\in A}$ be a chain in $\mathcal L$. Thus, for any $\alpha,\beta\in A$, either $L_\alpha\subseteq L_\beta$ or $L_\beta\subseteq L_\alpha$.  
   
 Define 
 $$L=\bigcup_{\alpha\in A}L_\alpha.$$
 Clearly $L_\alpha\subseteq L$ for every $\alpha\in A$, so $L$ is an upper bound for $C$, provided that $L\in\mathcal L$. Therefore, we need to show that $L$ is linearly independent.  
-  
-Take finitely many vectors $v_1,\dots,v_n\in L$. By definition of $L$, for each $j\in\{1,\dots,n\}$, there exists $\alpha_j\in A$ such that $v_j\in L_{\alpha_j}$.  
+
+*Linear independence of L:*
+Take finitely many vectors $v_1,\dots,v_n\in L$.
+By definition of $L$, for each $j\in\{1,\dots,n\}$, there exists $\alpha_j\in A$ such that $v_j\in L_{\alpha_j}$.  
   
 Since $C$ is a chain, the finitely many sets $L_{\alpha_1},\dots,L_{\alpha_n}$ are totally ordered by inclusion. Hence one of them contains all the others. That is, there exists some $k\in\{1,\dots,n\}$ such that $L_{\alpha_j}\subseteq L_{\alpha_k}$ for every $j\in\{1,\dots,n\}$.  Therefore $v_1,\dots,v_n\in L_{\alpha_k}$.  
   
 But $L_{\alpha_k}\in\mathcal L$, so $L_{\alpha_k}$ is linearly independent. Hence the vectors $v_1,\dots,v_n$ are linearly independent. Since every finite subset of $L$ is linearly independent, $L$ is linearly independent. Thus $L\in\mathcal L$.  
-  
+
+*Zorn's lemma:*
 Therefore every chain in $\mathcal L$ has an upper bound in $\mathcal L$. 
 By Zorn's lemma, $\mathcal L$ has a maximal element. Call it $M$. 
 Thus $M$ is a maximal linearly independent subset of $V$.  $\square$
