@@ -15,7 +15,7 @@
 - [x] Main Definitions
 - [x] Normed Spaces
 - [ ] Open Mapping Theorem
-- [ ] Orthogonality
+- [x] Orthogonality
 - [x] Posets
 - [ ] Principle of Uniform Boundedness
 - [ ] Quotient Spaces

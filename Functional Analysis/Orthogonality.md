@@ -79,7 +79,7 @@ but every point on $M$ attains this distance and so $P_M$ is not unique.
 - We are required to prove that each $x \in \mathcal{H}$ can be written in exactly one way as $x = m + m'$.
 
 ###### Uniqueness
-If $x = m_1 + m_1'=m_2 + m_2'$, then $M \ni m_1-m_2 = (x-m_1^\perp) - (x-m_2^\perp) = m_2^\perp - m_1^\perp \in M^\perp$ .
+If $x = m_1 + m_1^\perp=m_2 + m_2^\perp$, then $$M \ni m_1-m_2 = (x-m_1^\perp) - (x-m_2^\perp) = m_2^\perp - m_1^\perp \in M^\perp.$$
 So $\|m_1-m_2\|^2 = \langle \underbrace{m_1-m_2}_{\in M}, \underbrace{m_1-m_2}_{\in M'} \rangle = 0$ and so $m_1=m_2$ and $m_1^\perp = m_2^\perp$.
 
 ###### Existence
