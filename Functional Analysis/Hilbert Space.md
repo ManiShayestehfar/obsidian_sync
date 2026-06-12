@@ -53,8 +53,7 @@ for all $e,e' \in S$.
 2. $\mathcal{H} = \ell^2(\mathbb{K})$. Then the  set $S := \{e_n \:|\: n \geq 1\}$ is orthonormal.
    Also $\text{Span}(S) = \{\text{finitely supported sequences}\}$ which we proved to be dense in $\ell^2$. Hence $S$ is a Hilbert basis
 
-3. $\mathcal{H}= L_\mathbb{C}^2([0,2\pi])$. Then the set $S = \{\tfrac{1}{\sqrt{2\pi}}e^{int} \:|\: n \in \mathbb{Z}\}$ is orthonormal. Let $e_n(t) = \frac{1}{\sqrt{2\pi}}e^{int}$. Then 
-   $$\begin{align*}
+3. $\mathcal{H}= L_\mathbb{C}^2([0,2\pi])$. Then the set $S = \{\tfrac{1}{\sqrt{2\pi}}e^{int} \:|\: n \in \mathbb{Z}\}$ is orthonormal. Let $e_n(t) = \frac{1}{\sqrt{2\pi}}e^{int}$. Then $$\begin{align*}
 \langle e_m , e_n \rangle &= \int_0^{2\pi} e_m(t) \overline{e_n(t)}\:dt \\
 &= \frac{1}{2\pi}\int_0^{2\pi}e^{i(m-n)t}\:dt \\[3pt]
 &= \begin{cases}
@@ -62,7 +61,7 @@ for all $e,e' \in S$.
 0 & m \neq n
 \end{cases}
 \end{align*}$$
-	to show that $\overline{\text{Span}(S)}= L_\mathbb{C}^2 ([0,2\pi])$ we need Stone-Weierstrass.
+	to show that $\overline{\text{Span}(S)}= L_\mathbb{C}^2 ([0,2\pi])$ we need [[Stone-Weierstrass]].
 
 
 # General Fourier Series

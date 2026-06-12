@@ -36,7 +36,7 @@ For $k,l \geq 1$, we have$$\begin{align*}
 &= 2\|m_k-x\|^2 + 2\|m_l - x\|^2 - 4 \left\|\frac{m_k+m_l}{2}-x\right\|
 \end{align*}$$
 Since $\frac{m_k + m_l}{2}\in M$ (by convexity), we have $$\begin{align*}
-\|m_k - m_l\|^2 &\leq 2\|m_k-x\|^2 + 2\|m_l - 4d^2\\[3pt]
+\|m_k - m_l\|^2 &\leq 2\|m_k-x\|^2 + 2\|m_l -x\|^2 - 4d^2\\[3pt]
 &\leq 2\left(d^2 + \frac{1}{k}\right) + 2\left(d^2 + \frac{1}{l}\right)  - 4 d^2 \\[3pt]
 &= 2 \left(\frac{1}{k} + \frac{1}{l}\right)
 \end{align*}$$
