@@ -19,7 +19,7 @@
 - [x] Posets
 - [ ] Principle of Uniform Boundedness
 - [ ] Quotient Spaces
-- [ ] Riesz Representation
+- [x] Riesz Representation
 - [ ] Spectral Theory
 - [ ] Stone–Weierstrass
 - [x] The Unit Ball
