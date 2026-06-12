@@ -1,6 +1,6 @@
 # Functional Analysis
 
-- [ ] Adjoint Operators
+- [x] Adjoint Operators
 - [ ] Baire's Theorem
 - [x] Banach Spaces
 - [ ] Compact Operators
