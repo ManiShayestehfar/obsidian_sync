@@ -34,6 +34,7 @@ Let $V$ be a vector space over $\mathbb{K}$. $S \subseteq V$ is called a **Hamel
 >2. $S$ is a *maximal* spanning set of $V$. i.e. $\forall v \in S,\: \text{Span}(S \setminus\{0\}) \neq V$
 >3. $S$ is linearly independent and $\text{Span}(S) = V$
 ##### Proof (of existence of Hamel Basis)
+###### Via Linear Independence
 *Poset construction:*
 Let $\mathcal L=\{S\subseteq V \mid S \text{ is linearly independent}\}$.  
 Then $(\mathcal{L}, \subseteq)$ is a non-empty poset (non-empty since $\varnothing\in\mathcal L$)
@@ -59,6 +60,40 @@ Therefore every chain in $\mathcal L$ has an upper bound in $\mathcal L$.
 By Zorn's lemma, $\mathcal L$ has a maximal element. Call it $M$. 
 Thus $M$ is a maximal linearly independent subset of $V$.  $\square$
 
+###### Via Spanning
+Consider the poset $\mathcal{P}  =  \{\, M \subseteq L : M \text{ is linearly independent} \,\}$  w.r.t inclusion.  
+  
+Let $\mathcal{C}$ be a chain in $\mathcal{P}$. Define  
+$$  
+U=\bigcup_{M\in\mathcal{C}} M.  
+$$
+Since $\mathcal{C}$ is totally ordered by inclusion, every finite subset of $U$ is contained in some member of the chain. Hence every finite linear relation among elements of $U$ is already a linear relation in a linearly independent set. Therefore $U$ is linearly independent.  
+  
+Thus every chain in $\mathcal{P}$ has an upper bound in $\mathcal{P}$, so by Zorn's lemma there exists a maximal linearly independent subset $M\subseteq L$.  *So far the same as the previous proof*.
+  
+>[!Claim]
+>$$  
+\operatorname{span}(M)=\operatorname{span}(L).  
+$$
+
+Suppose not. Then there exists  
+$$  
+v\in \operatorname{span}(L)\setminus \operatorname{span}(M).  
+$$
+Since $v\notin \operatorname{span}(M)$, the set $M\cup\{v\}$ is linearly independent. Because $v\in \operatorname{span}(L)$, adding $v$ still yields a linearly independent subset of $\operatorname{span}(L)$, contradicting the maximality of $M$.  
+  
+Hence $\operatorname{span}(M)=\operatorname{span}(L).$  
+  
+We now show that $M$ is minimal among the subsets of $L$ spanning $\operatorname{span}(L)$.  
+
+Assume that there exists a proper subset $M'\subsetneq M$ such that $\operatorname{span}(M') =  \operatorname{span}(M)$.
+Choose $v\in M\setminus M'$. Since $\operatorname{span}(M')=\operatorname{span}(M)$, we have $v\in \operatorname{span}(M').$  
+Therefore $M'\cup\{v\}$ is linearly dependent. But $M'\cup\{v\}\subseteq M,$  which implies that $M$ itself is linearly dependent, contradicting the construction of $M$.  
+Therefore no proper subset of $M$ spans the same space as $M$.  
+  
+Setting $L'=M$, we obtain $\operatorname{span}(L')=\operatorname{span}(L),$ and every non-empty proper subset $L''\subsetneq L'$ satisfies  $\operatorname{span}(L'')\neq \operatorname{span}(L').$
+
+Thus $L'$ is a minimal spanning subset of $L$.  $\square$
 
 ## Any topological dynamical system contains a minimal subsystem
 

@@ -23,4 +23,4 @@
 - [ ] Spectral Theory
 - [ ] Stone–Weierstrass
 - [x] The Unit Ball
-- [ ] Zorn's Lemma
+- [x] Zorn's Lemma
