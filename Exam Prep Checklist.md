@@ -7,7 +7,7 @@
 - [x] Completion
 - [x] Dual Spaces
 - [ ] General Linear Group
-- [ ] Hahn–Banach Theorem
+- [x] Hahn–Banach Theorem
 - [ ] Hilbert Space
 - [x] Inner product
 - [x] Lebesgue Spaces

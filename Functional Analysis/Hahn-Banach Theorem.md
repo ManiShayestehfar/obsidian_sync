@@ -106,7 +106,7 @@ That is $-p(-y_1-x_0)-\varphi_0(y_1)\leq p(y_2+x_0)- \varphi_0(y_2)$
 $\implies \varphi_0(y_2) - \varphi_0(y_1)\leq p(y_2+x_0) + p(-y-x_0)$
 $\implies \varphi_0(y_2-y_1)\leq p(y_2+x_0)+ p(-y_1-x_0)$. (We need to show this)
 
-But recall that $\varphi_0(y_2-y_1)\leq p(y_2-y_1) = p(y_2+x_0 + (-y-x_0)) \leq p(y_2+x_0) + p(-y_1-x_0)$
+But recall that $\varphi_0(y_2-y_1)\leq p(y_2-y_1) = p(y_2+x_0 + (-y_1-x_0)) \leq p(y_2+x_0) + p(-y_1-x_0)$
 as required. 
 Thus setting $$\begin{align*}
 a &= \sup_{y\in Y} (-p(-y-x_0)- \varphi_0(y))\\[5pt]
