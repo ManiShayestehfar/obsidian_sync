@@ -106,7 +106,7 @@ For each $x \in X$, let $U_x = \{z\in X \:|\: p_x(z) > f(z) - \epsilon\}$, where
 As before, $U_x$ is an open set. Since $x \in U_x$ (as $p_x(x) = f(x)$), we have
 $$X = \bigcup_{x \in X} U_x = \bigcup_{j=1}^n U_{x_j}$$
 for some $\{x_1,...,x_n\}\subseteq X$. 
-Let $P = \max(p_{x_1},...,p_{x_n})$. If $z \in X$, then $p(z) = p_{x_i}(z)$ for some $i$. So
+Let $p = \max(p_{x_1},...,p_{x_n})$. If $z \in X$, then $p(z) = p_{x_i}(z)$ for some $i$. So
 $$p(z) = p_{x_i}(z) \leq f(z) + \epsilon,$$
 and since $z \in U_{x_j}$ for some $j$,
 $$p(z)\geq p_{x_j}(z) > f(z)-\epsilon.$$
@@ -151,9 +151,9 @@ $$P_\mathbb{Q}([a,b]) = \left\{\text{polys } p:[a,b] \to \mathbb{K} \text{ with 
 is countable and dense.  $\square$
 
 
->[!Corollary]
+>[!Corollary] 
 Let $\mathbb{T}= \{s \in \mathbb{C} \:|\: |s|=1 \}$.
-Then $\overline{\mathcal{A}} :=\overline{\mathbb{C}[s,s^{-1}]} = \mathbb{C}(\mathbb{T})$.
+Then $\overline{\mathcal{A}} :=\overline{\mathbb{C}[s,s^{-1}]} = C(\mathbb{T})$.
 ##### Proof
 $\mathcal{A}$ is a subalgebra, with
 1. $1 \in \mathcal{A}$
@@ -167,7 +167,7 @@ Now we apply Stone-Weierstrass and so we are done. $\square$
 >A **trigonometric polynomial** is an expression
 >$$\sum_{n \in \mathbb{Z}} c_ne^{int}\quad c_n \in \mathbb{C}\:\:\text{(finitely many nonzero)}$$
 
->[!Corollary]
+>[!Corollary] 
 >The space of all trigonometric polynomials is dense in 
 >$$C_{2\pi}([0,2\pi])= \{f \in C[0,2\pi]\:|\: f(0) = f(2\pi)\}$$
 >w.r.t $\|\cdot\|_\infty$.

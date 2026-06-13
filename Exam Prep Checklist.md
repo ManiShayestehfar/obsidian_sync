@@ -18,9 +18,9 @@
 - [x] Orthogonality
 - [x] Posets
 - [ ] Principle of Uniform Boundedness
-- [ ] Quotient Spaces
+- [x] Quotient Spaces
 - [x] Riesz Representation
 - [ ] Spectral Theory
-- [ ] Stone–Weierstrass
+- [x] Stone–Weierstrass
 - [x] The Unit Ball
 - [x] Zorn's Lemma
