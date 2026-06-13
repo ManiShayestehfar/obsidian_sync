@@ -67,7 +67,7 @@ This is *NOT* continuous as $\|Te_n\|_2 = n \|e_n\|_2 \to \infty$.
 
 Recall the Fourier series of $f \in L_\mathbb{C}^2 ([0,2\pi])$ with respect to Hilbert basis $S = \{e_n(t) \:|\: n\in \mathbb{Z}\}$ where $e_n(t) = \frac{1}{\sqrt{2\pi}}e^{int}$, is 
 $$f= \sum_{n \in \mathbb{Z}} \langle f,e_n \rangle e_n,$$
-where $\langle f, e_n \rangle = \frac{1}{\sqrt{\pi}} \int_0^{2\pi} f(t) e^{-int}\:dt$.
+where $\langle f, e_n \rangle = \frac{1}{\sqrt{2\pi}} \int_0^{2\pi} f(t) e^{-int}\:dt$.
 
 This is only an $L^2$-equality. It was conjectured that
 $$f \in C_{2\pi}([0,2\pi]) \qquad \implies \qquad f(t)= \sum_{n \in \mathbb{Z}} \langle f,e_n \rangle e_n(t)\:\: \forall t \in [0,2\pi].$$
@@ -111,7 +111,7 @@ $$s(t) = \begin{cases}
 -1 & D_n(t) \leq 0
 \end{cases}$$
 Recall by the [[Lebesgue Spaces|Fisher-Risz Theorem]], that $C([a,b])$ is dense in $L^1$ w.r.t $\|\cdot\|_1$. So the step function can be uniformly approximated in $L^1$-norm by continuous functions.
-Thus give $\varepsilon >0$, there exists $g \in C_{2\pi}([2,\pi])$ with $\|g\|_\infty =1$  and 
+Thus given $\varepsilon >0$, there exists $g \in C_{2\pi}([2,\pi])$ with $\|g\|_\infty =1$  and 
 $$\left|\frac{1}{2\pi} \int_0^{2\pi} (g(a-t)- s(t))\: D_n(t)\:dt\right| < \varepsilon$$
 So 
 $$\left| T_n g - \frac{1}{2\pi} \int_0^{2\pi} |D_n(t)|\: dt\right| < \varepsilon \tag{by definition of $s(t)$}$$
