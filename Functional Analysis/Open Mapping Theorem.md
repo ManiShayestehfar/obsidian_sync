@@ -6,7 +6,7 @@
 
 ## Example
 
-1. $\sin: \mathbb{R} \to \mathbb{R}$ is *NOT* open. e.e.g $\sin(-10,10) = [-1,1]$ (closed)
+1. $\sin: \mathbb{R} \to \mathbb{R}$ is *NOT* open. e.g $\sin(-10,10) = [-1,1]$ (closed)
 2. $f(x) = x$ is open for $f: \mathbb{R} \to \mathbb{R}$.
 
 ---
@@ -104,19 +104,38 @@ Take $T: \ell_F \to \ell_F$ given by $Tx = (x_1/1,x_2/2,x_3/3,...)$ is continuou
 Yet $T^{-1}x = (x_1,2x_2,3x_3,...)$ is not continuous since $\|T^{-1}e_n\| = n\|e_n\| \to \infty$.
 
 *What if we replaced $\ell_F$ with $\ell^\infty$?*
-Then $T: \ell^\infty \to \ell^\infty$ still still makes sense (i.e. it is continuous and injective).
+Then $T: \ell^\infty \to \ell^\infty$ still makes sense (i.e. it is continuous and injective).
 However, it fails to be surjective, because if $x \in \ell^\infty$, then $Tx = (x_1/1,x_2/2,...) \in c_0$.
 
 
->[!Corollary]
+>[!Corollary] 
 >Let $X,Y$ be Banach. If $T \in \mathcal{L}(X,Y)$ is bijective, then there are constants, $c,C>0$ such that 
 >$$c\|x\| \leq \|Tx\| \leq C\|x\| \qquad \forall x \in X$$
 ##### Proof
-NEED TO PROVE
+Since $T \in \mathcal L(X,Y)$, there exists $C>0$ such that $\|Tx\| \le C\|x\|$ for all $x \in X$.  
+  
+Since $T$ is bijective, $T^{-1}:Y \to X$ exists. 
+Also, since $X$ and $Y$ are Banach spaces, the Bounded Inverse Theorem implies that $T^{-1} \in \mathcal L(Y,X)$.  
+Hence there exists $M>0$ such that $\|T^{-1}y\| \le M\|y\|$ for all $y \in Y$.  
+  
+Now take $y=Tx$. Then $T^{-1}Tx=x$, so $\|x\| \le M\|Tx\|$ for all $x \in X$.  
+Therefore $\frac{1}{M}\|x\| \le \|Tx\|$ for all $x \in X$.  
+Let $c=\frac{1}{M}$. Then $c>0$, and so $c\|x\| \le \|Tx\| \le C\|x\|$ for all $x \in X$. $\square$
 
->[!Corollary]
+
+>[!Corollary] 
 >Let $(X, \|\cdot\|)$ and $(X, \|\cdot\|')$ be Banach.
 >If $\|x\| \leq C \|x\|'$ for all $x \in X$, then $\|\cdot\|$ and $\|\cdot\|'$ are equivalent.
 
 ##### Proof
-NEED TO PROVE
+Define $I:(X,\|\cdot\|') \to (X,\|\cdot\|)$ by $Ix=x$.  
+The assumption says that $\|Ix\|=\|x\| \le C\|x\|'$ for all $x \in X$. Hence $I$ is bounded.  
+  
+Clearly $I$ is bijective. 
+Since $(X,\|\cdot\|')$ and $(X,\|\cdot\|)$ are Banach spaces, the Corollary above applied to $I$ gives constants $c,C_1>0$ such that $c\|x\|' \le \|Ix\| \le C_1\|x\|'$ for all $x \in X$.  
+  
+Since $Ix=x$, we have $c\|x\|' \le \|x\|$ for all $x \in X$.  
+Thus $\|x\|' \le \frac{1}{c}\|x\|$ for all $x \in X$.  
+  
+Together with the assumption $\|x\| \le C\|x\|'$, the two norms bound each other. Therefore $\|\cdot\|$ and $\|\cdot\|'$ are equivalent.
+$\square$

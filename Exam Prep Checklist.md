@@ -14,10 +14,10 @@
 - [x] Linear Operators
 - [x] Main Definitions
 - [x] Normed Spaces
-- [ ] Open Mapping Theorem
+- [x] Open Mapping Theorem
 - [x] Orthogonality
 - [x] Posets
-- [ ] Principle of Uniform Boundedness
+- [x] Principle of Uniform Boundedness
 - [x] Quotient Spaces
 - [x] Riesz Representation
 - [ ] Spectral Theory

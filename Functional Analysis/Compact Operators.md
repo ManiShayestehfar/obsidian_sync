@@ -112,7 +112,16 @@ So $\|Tx_m'-Tx_n'\|\leq \frac{2}{3}\varepsilon + \frac{1}{3}\varepsilon = \varep
 >Let $X,Y$ be normed vector spaces. 
 >If $T \in \mathcal{L}(X,Y)$ has finite rank, the $T$ is compact.
 ##### Proof
-NEED TO PROVE
+Let $B_X := \{x \in X : \|x\|_X \leq 1\}$.  
+Since $T$ has finite rank, $\operatorname{im}T$ is finite-dimensional. Let $F := \operatorname{im}T$. Since $F$ is a finite-dimensional normed vector space, every bounded subset of $F$ has compact closure.  
+  
+Because $T \in \mathcal L(X,Y)$, $T$ is bounded. Hence there exists $C \geq 0$ such that $\|Tx\|_Y \leq C\|x\|_X$ for all $x \in X$.  
+Therefore, for every $x \in B_X$, we have $\|Tx\|_Y \leq C$. So $T(B_X)$ is a bounded subset of $F$.  
+  
+Since $F$ is finite-dimensional, $\overline{T(B_X)}$ is compact in $F$. Also, because $F \subseteq Y$, this compactness is the same when viewed inside $Y$.  
+Thus $T(B_X)$ has compact closure in $Y$. Hence $T$ is compact.  
+Therefore, every finite-rank operator $T \in \mathcal L(X,Y)$ is compact. $\square$
+
 
 ### Example
 The operator $T:\ell^1\to\ell^1$ with $T_x= (\frac{x_1}{1},\frac{x_2}{2},...)$ is compact.
