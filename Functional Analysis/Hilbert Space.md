@@ -85,14 +85,12 @@ Fix $k \in \{1,...,n\}$. Taking inner products with $e_k$, we get
 $$\langle x, e_k \rangle = \sum_{j=1}^n \alpha_j \langle e_j, e_k \rangle = \alpha_k$$
 Now substituting this back to the basis expansion of $x$ gives $$x = \sum_{j=1}^n \langle x, e_j \rangle e_j\qquad \square$$
 ###### Parseval's Identity
-
 Using the Fourier series, write $$\begin{align*}
 \|x\|^2 = \langle x,x \rangle = \left \langle \sum_{j=1}^n \langle x,e_j \rangle e_j\:,\: \sum_{j=1}^n\langle x,e_j \rangle e_j \right \rangle &= \sum_{j=1}^n \sum_{k=1}^n \langle x,e_j \rangle \overline{\langle x,e_k \rangle} \langle e_j, e_k \rangle \\[3pt]
 &=  \sum_{j=1}^n \langle x, e_j \rangle \overline{\langle x, e_j \rangle} \\
 &= \sum_{j=1}^n |\langle x,e_j \rangle|^2  \qquad \square
 \end{align*}$$
 ###### Projection Formula
-
 Let $m := \sum_{e \in S'} \langle x,e \rangle e \in M$ since $m$ is a finite linear combination of vectors in $S$'.
 We show that $x-m \in M^\perp$. Since $S'$ spans $M$, it is enough to show $$\langle x-m , e_0 \rangle=0\quad\forall e_0 \in S'.$$
 Fix $e_0 \in S'$. Then $$\langle x-m, e_0 \rangle = \left \langle x- \sum_{e \in S'} \langle x, e \rangle e, e_0 \right \rangle = \langle x, e_0 \rangle - \sum_{e \in S'} \langle x,e \rangle \langle e, e_0 \rangle.$$
