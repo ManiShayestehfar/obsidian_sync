@@ -1,7 +1,7 @@
 # Functional Analysis
 
 - [x] Adjoint Operators
-- [ ] Baire's Theorem
+- [x] Baire's Theorem
 - [x] Banach Spaces
 - [ ] Compact Operators
 - [x] Completion
