@@ -131,19 +131,34 @@ Let $s_N=\sum_{n=1}^N x_n$. Since $s_N\to s$, part 1 gives
 $\langle s,y\rangle=\lim_{N\to\infty}\langle s_N,y\rangle =\lim_{N\to\infty}\sum_{n=1}^N\langle x_n,y\rangle =\sum_{n=1}^\infty\langle x_n,y\rangle$.
 
 ###### 3. 
-Let $s_N=\sum_{n=1}^N\alpha_ne_n$.
-Since $(e_n)$ is orthonormal, for $M>N$, then
-$$\|s_M-s_N\|^2=\|\sum_{n=N+1}^M\alpha_ne_n\|^2 =\sum_{n=N+1}^M|\alpha_n|^2.$$
-$(s_N)$ is Cauchy in $\mathcal H$ $\iff$ $\sum |\alpha_n|^2$ is Cauchy in $\mathbb R$ $\iff \sum |\alpha_n|^2$ converges. 
-Since $\mathcal H$ is complete, this proves $\sum \alpha_ne_n$ converges in $\mathcal H \iff \sum |\alpha_n|^2$ converges in $\mathbb R$.
+Suppose first that $s=\sum_{n=1}^{\infty}\alpha_n e_n$ converges in $\mathcal H$. By part (2),
+$$\langle s,s\rangle =\sum_{n=1}^{\infty}\alpha_n\langle e_n,s\rangle =\sum_{n=1}^{\infty}\sum_{m=1}^{\infty}\alpha_n\overline{\alpha_m}\langle e_n,e_m\rangle =\sum_{n=1}^{\infty}|\alpha_n|^2.$$
+Since $\langle s,s\rangle=\|s\|^2<\infty$, it follows that $\sum_{n=1}^{\infty}|\alpha_n|^2$ converges.
 
-Finally, if $s=\sum_{n=1}^\infty\alpha_ne_n$, then $s_N\to s$, so 
-$$\|s\|^2=\lim_{N\to\infty}\|s_N\|^2 =\lim_{N\to\infty}\sum_{n=1}^N|\alpha_n|^2 =\sum_{n=1}^\infty|\alpha_n|^2.$$
+Conversely, suppose that $\sum_{n=1}^{\infty}|\alpha_n|^2$ converges. 
+Define $s_n=\sum_{k=1}^n\alpha_k e_k$.
+For $m\ge n$,
+$$\begin{align*}
+\|s_m-s_n\|^2
+&=\left\|\sum_{k=n+1}^m \alpha_k e_k\right\|^2 \\
+&=\left\langle \sum_{k=n+1}^m \alpha_k e_k,\,
+\sum_{j=n+1}^m \alpha_j e_j \right\rangle \\
+&=\sum_{k=n+1}^m \sum_{j=n+1}^m
+\alpha_k \overline{\alpha_j}\,\langle e_k,e_j\rangle \\
+&=\sum_{k=n+1}^m |\alpha_k|^2 \\
+&\le \sum_{k=n+1}^{\infty} |\alpha_k|^2
+\;\xrightarrow[n\to\infty]{}\;0.
+\end{align*}$$
+Hence $(s_n)$ is Cauchy. 
+Since $\mathcal H$ is complete, $(s_n)$ converges in $\mathcal H$, so $\sum_{n=1}^{\infty}\alpha_n e_n$ converges.
+
+Therefore $\sum_{n=1}^{\infty}\alpha_n e_n \text{ converges in } \mathcal H \iff \sum_{n=1}^{\infty}|\alpha_n|^2 \text{ converges in } \mathbb R.$
+
+Moreover, if $s=\sum_{n=1}^{\infty}\alpha_n e_n$, then $\|s\|^2=\langle s,s\rangle=\sum_{n=1}^{\infty}|\alpha_n|^2.$
 $\square$
 
 
-
->[!Lemma] Lemma 2
+>[!Lemma] Countable Bessel's Inequality
 > If $\{e_1,...,e_n \}$ is orthonormal, then $$\sum_{j=1}^n |\langle x, e_j \rangle|^2 \leq \|x\|^2 \qquad x \in \mathcal{H}$$
 ##### Proof
 Let $y = \sum_{j=1}^n \langle x,e_j \rangle e_j$. By Pythagoras', $\|y\|^2 = \sum_{j=1}^n |\langle x,e_j \rangle|^2$. 
@@ -160,7 +175,7 @@ Hence $\|x\|^2 = \|y\|^2 + \|x-y\|^2 \geq \|y\|^2$ by Pythagoras' theorem. $\squ
 >[!Corollary] Corollary 1
 >If $S \subseteq \mathcal{H}$ is orthonormal, then for each $x \in \mathcal{H}$, the set $\{e \in S \:|\: \langle x,e \rangle\neq 0\}$ is countable.
 ##### Proof
-Let $k \geq 1$. If $e_1,...,e_N \in S$ with $|\langle x,e_j \rangle| > \frac{1}{k}$ for $j =1,...,N$, then $|\langle kx, e_j \rangle|>1$ and so by Lemma 2: 
+Let $k \geq 1$. If $e_1,...,e_N \in S$ with $|\langle x,e_j \rangle| > \frac{1}{k}$ for $j =1,...,N$, then $|\langle kx, e_j \rangle|>1$ and so by the countable version of Bessel's inequality: 
 $$N < \sum_{j=1}^N |\langle kx, e_j \rangle|^2 \leq \|kx\|^2$$
 and so $N < k^2 \|x\|^2$. Thus the set $\{e \in S \: | \: |\langle x,e \rangle|> \frac{1}{k} \}$ is *finite* for each fixed $x$, and each $k \geq 1$. So 
 $$\{e \in S \:|\:  \langle x,e \rangle \neq 0\} = \bigcup_{k\geq 1} \{e \in S \:|\: |\langle x,e \rangle|>\tfrac{1}{k}\}$$
@@ -226,10 +241,9 @@ $\square$
 ### General Principles
 To show $S$ satisfies the separability condition, it is sufficient to find that:
 - $|S| > |\mathbb{N}|$, and
--  $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
+-  **To disprove:** $\exists \varepsilon >0$ such that $\forall x_1,x_2 \in S$, $\|x_1-x_2\|_\infty \geq \varepsilon$ 
 
 ## Examples
-
 1. $(\mathbb{K}^N, \|\cdot\|)$ is separable if 
    $$S = \begin{cases}
 \mathbb{Q}^N & \mathbb{K} = \mathbb{R}  \\[2pt]
@@ -281,7 +295,7 @@ so $\Theta(x) \in \ell^2$.
 **Injectivity:** $\Theta(x) = 0 \implies 0 = \|\Theta(x) \| = \|x\| \implies x=0$
 
 **Surjectivity:** If $y = (y_1,y_2,...) \in \ell^2$, then define $x := \sum_{j=1}^\infty y_j e_j \in \mathcal{H}$
-(by Lemma 1 above, since $\sum_{j=1}^\infty |y_j|^2  < \infty \iff \sum_{y_j e_j}$ converges in $\mathcal{H}$).
+(by Lemma 1 above, since $\sum_{j=1}^\infty |y_j|^2  < \infty \iff \sum {y_j e_j}$ converges in $\mathcal{H}$).
 Then $\Theta(x) = y$ by construction. $\square$
 
 ### Example of Non-Separable Hilbert Space
