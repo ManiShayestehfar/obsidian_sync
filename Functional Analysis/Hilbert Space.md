@@ -116,11 +116,31 @@ $$\|x\|^2 \geq \sum_{e \in S'} |\langle x,e \rangle|^2\qquad \square$$
 >[!Lemma] Lemma 1
 >Let $\mathcal{H}$ be a Hilbert space. 
 >1. If $x_n \to x$ in $\mathcal{H}$, then $\langle x,y \rangle = \lim_{n \to \infty} \langle x_n, y \rangle \qquad \forall y \in \mathcal{H}$ 
->2. If $(x_n)$ is such that $s = \sum_{n=1}^\infty x_n$ converges in $\mathcal{H}$, then $\langle s,y \rangle = \sum_{n=1}^\infty \langle x_n, y \rangle \qquad \forall y \in \mathcal{H}$
+>2. If $(x_n)$ is such that $s = \sum_{n=1}^\infty x_n$ converges in $\mathcal{H}$, then 
+>   $$\langle s,y \rangle = \sum_{n=1}^\infty \langle x_n, y \rangle \qquad \forall y \in \mathcal{H}$$
 >3. If $\{e_n \: |\: n \geq 1\}$ is orthonormal, then $$\sum_{n=1}^\infty \alpha_ne_n \text{ converges in } \mathcal{H} \iff \sum_{n=1}^\infty |\alpha_n|^2 \text{ converges in } \mathbb{R}$$
 >   moreover if $\sum|\alpha_n|^2$ converges, then $\left\| \sum_{n=1}^\infty \alpha_n e_n \right\|^2 = \sum_{n=1}^\infty |\alpha_n|^2$
 ##### Proofs
-NEED TO PROVE
+Fix $y\in\mathcal H$.
+###### 1.
+Since $x_n\to x$, we have $|\langle x_n,y\rangle-\langle x,y\rangle|=|\langle x_n-x,y\rangle|\overset{C.S}{\le} \|x_n-x\|\|y\|\to0$.
+Hence $\langle x,y\rangle=\lim_{n\to\infty}\langle x_n,y\rangle$.
+
+###### 2.
+Let $s_N=\sum_{n=1}^N x_n$. Since $s_N\to s$, part 1 gives
+$\langle s,y\rangle=\lim_{N\to\infty}\langle s_N,y\rangle =\lim_{N\to\infty}\sum_{n=1}^N\langle x_n,y\rangle =\sum_{n=1}^\infty\langle x_n,y\rangle$.
+
+###### 3. 
+Let $s_N=\sum_{n=1}^N\alpha_ne_n$.
+Since $(e_n)$ is orthonormal, for $M>N$, then
+$$\|s_M-s_N\|^2=\|\sum_{n=N+1}^M\alpha_ne_n\|^2 =\sum_{n=N+1}^M|\alpha_n|^2.$$
+$(s_N)$ is Cauchy in $\mathcal H$ $\iff$ $\sum |\alpha_n|^2$ is Cauchy in $\mathbb R$ $\iff \sum |\alpha_n|^2$ converges. 
+Since $\mathcal H$ is complete, this proves $\sum \alpha_ne_n$ converges in $\mathcal H \iff \sum |\alpha_n|^2$ converges in $\mathbb R$.
+
+Finally, if $s=\sum_{n=1}^\infty\alpha_ne_n$, then $s_N\to s$, so 
+$$\|s\|^2=\lim_{N\to\infty}\|s_N\|^2 =\lim_{N\to\infty}\sum_{n=1}^N|\alpha_n|^2 =\sum_{n=1}^\infty|\alpha_n|^2.$$
+$\square$
+
 
 
 >[!Lemma] Lemma 2
