@@ -6,7 +6,7 @@
 - [ ] Compact Operators
 - [x] Completion
 - [x] Dual Spaces
-- [ ] General Linear Group
+- [x] General Linear Group
 - [x] Hahn–Banach Theorem
 - [ ] Hilbert Space
 - [x] Inner product
@@ -20,7 +20,7 @@
 - [x] Principle of Uniform Boundedness
 - [x] Quotient Spaces
 - [x] Riesz Representation
-- [ ] Spectral Theory
+- [x] Spectral Theory
 - [x] Stone–Weierstrass
 - [x] The Unit Ball
 - [x] Zorn's Lemma

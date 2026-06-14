@@ -44,15 +44,15 @@ Spectral theory generalises this.
 >3. $\sigma(T) \subseteq \{\lambda \in \mathbb{C}\:|\: |\lambda|\leq \|T\|\}$
 #### Proof
 ##### 3.
-If $S,T \in \mathcal{L}(X,X)$, then $\|STx\|\leq \|S\|\|Tx\|\leq \|S\|\|T\|x$.
+If $S,T \in \mathcal{L}(X,X)$, then $\|STx\|\leq \|S\|\|Tx\|\leq \|S\|\|T\|\|x\|$.
 So $\|ST\| \leq \|S\|\|T\|$. In particular $\|T^n\|\leq \|T\|^n$.
 
->[!Proposition]
+>[!Proposition] 
 >Let $X$ be Banach over $\mathbb{C}$, and $T \in \mathcal{L}(X,X)$. Then
 >$$\sigma(T) \subseteq \{\lambda \in \mathbb{C} \:|\: |\lambda| \leq \|T\|\}$$
 ###### Proof
 We need to show that if $|\lambda| > \|T\|$, then $\lambda I - T$ is invertible. A good approach is to guess what the inverse is and check it.
-**Guess:** $(\lambda I -T)^{-1} = \frac{1}{\lambda}(I - \frac{1}{\lambda}T)^{-1} \overset{??}{=} \sum_{k=0}^\infty \frac{1}{\lambda^{k+1}}T^k$.
+**Guess:** $(\lambda I -T)^{-1} = \frac{1}{\lambda}(I - \frac{1}{\lambda}T)^{-1} \overset{\text{by GL exercise}}{=} \sum_{k=0}^\infty \frac{1}{\lambda^{k+1}}T^k$.
 
 Let $S_n = \sum_{k=0}^n \frac{1}{\lambda^{k+1}}T^k \in \mathcal{L}(X,X)$. Since 
 $$\sum_{k=0}^\infty \left\|\frac{1}{\lambda^{k+1}} T^k\right\| \leq \frac{1}{|\lambda|}\sum_{k=0}^\infty \left(\frac{\|T\|}{|\lambda|}\right)^k < \infty \tag{since $|\lambda|>\|T\|$} $$
@@ -74,12 +74,12 @@ So $\sigma(T)$ is closed. $\square$
 
 ##### 1.
 
->[!Definition]
+>[!Definition] 
 >The **resolvent set** of $T\in\mathcal{L}(X,X)$ is 
 >$$\rho(T) = \mathbb{C}\setminus \sigma(T).$$
 >Let $R_T: \rho(T) \to \mathcal{L}(X,X)$ given by $\lambda \mapsto (\lambda I - T)^{-1}$ be the **resolvent operator**
 
->[!Lemma]
+>[!Lemma] 
 >Let $\varphi\in \mathcal{L}(X,X)'$ and let $f_\varphi= \varphi \circ R_T: \rho(T) \to \mathbb{C}$.
 >Then $f_\varphi$ is analytic on the open set $\rho(T)$.
 ###### Proof
@@ -94,6 +94,7 @@ $$\begin{align*}
 Since $\varphi$ is continuous, and $T \mapsto T^{-1}$ is continuous (by proposition in [[General Linear Group]]), we have
 $$\lim_{\lambda \to \lambda_0} \frac{f_\varphi(\lambda) - f_\varphi(\lambda_0)}{\lambda - \lambda_0} = - \varphi((\lambda_0I-T)^{-2})$$
 $\square$
+
 
 >[!Corollary]
 >Let $X \neq \{0\}$ be Banach over $\mathbb{C}$, and $T \in \mathcal{L}(X,X)$. Then $\sigma(T)\neq \varnothing$.
@@ -183,7 +184,7 @@ Strict inequality may hold. e.g. $T:\mathbb{C}^2 \to \mathbb{C}^2$ with $\|\cdot
 $$Tx = \begin{pmatrix}0 & 1 \\ 0 & 0\end{pmatrix}\binom{x_1}{x_2}.$$
 Then $\det(\lambda I -T)= \det \left(\begin{smallmatrix} \lambda & 1 \\ 0 & \lambda \end{smallmatrix} \right) = \lambda^2=0$. 
 So $\sigma(T) = \{0\}$, so $r(T)=0$, yet
-$$\|T\|= \sup_{x_1^2+x_2^2=1}\|Tx\|_2 = \sup_{x_1^2+x_2^2+1}\sqrt{|x_2|^2}= 1.$$
+$$\|T\|= \sup_{x_1^2+x_2^2=1}\|Tx\|_2 = \sup_{x_1^2+x_2^2=1}\sqrt{|x_2|^2}= 1.$$
 
 ## Example
 
@@ -265,6 +266,7 @@ $$\sigma(T) = \sigma_p(T) \sqcup \sigma_c(T) \sqcup \sigma_r(T)$$
 4. If $\dim(X) < \infty$, then $\sigma(T)=\sigma_p(T)$, and $\sigma_c(T)=\sigma_r(T) = \varnothing$.
 
 ## Examples: Left and Right Shift
+### Left Shift
 
 >[!Proposition]
 >If $1 \leq p < \infty$, then $L:\ell_\mathbb{C}^p \to \ell_\mathbb{C}^p$ has 
@@ -323,6 +325,8 @@ y_1 \\
 y_N  
 \end{bmatrix}.$$
 And since the coefficient matrix has determinant $\lambda^n\neq0$, we can solve for $x \neq 0$. $\square$
+
+### Right Shift
 
 >[!Proposition]
 >If $1 < p < \infty$, then $R:\ell_\mathbb{C}^p \to \ell_\mathbb{C}^p$ has
