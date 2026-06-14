@@ -3,7 +3,7 @@
 >[!Definition]
 >Let $X,Y$ be normed vector spaces.
 >An operator $T \in \text{Hom}(X,Y)$ is **compact** if
->$$B\subseteq X \text{ compact } \implies T(B) \text{ is \textbf{relatively compact}}$$
+>$$B\subseteq X \text{ bounded } \implies T(B) \text{ is \textbf{relatively compact}}$$
 >i.e. $\overline{T(B)}$ is compact in $Y$.
 
 
@@ -20,9 +20,19 @@ So $T \in \mathcal{L}(X,Y)$ with $\|T\|\leq M$. $\square$
 >Let $X,Y$ be normed spaces and $T \in \mathcal{L}(X,Y)$. Then
 >$$T \text{ is compact } \iff T(\overline{B(0,1)}) \text{ is relatively compact}$$
 ##### Proof
-Forward direction is trivial since $\overline{B}$ is bounded.
+###### $(\Rightarrow)$
+If $T$ is compact, then since $\overline{B(0,1)}$ is bounded, then clearly $T(\overline{B(0,1)})$ is relatively compact by definition.
 
-Assume 
+###### $(\Leftarrow)$
+Suppose $T(\overline{B(0,1)})$ is relatively compact. i.e. $\overline{T(\overline{B(0,1)})}$ is compact in $Y$.
+If $A\subseteq X$ is bounded, the there exists $r >0$ such that $\|x\|_X \leq r$ for all $x \in A$. 
+Hence $A \subseteq r\overline{B(0,1)}$.
+Using linearity of $T$,
+$$T(A)\subseteq T(r\overline{B(0,1)}) \subseteq rT(\overline{B(0,1)}).$$
+Multiplication by scalars is a homeomorphism of $Y$, so $rT(\overline{B(0,1)})$ is still relatively compact.
+Since subsets of relatively compact sets are relatively compact, then $T(A)$ is relatively compact.
+Thus $T$ maps every bounded subset of $X$ to a relatively compact subset of $Y$. Hence $T$ is compact.
+$\square$
 
 >[!Proposition]
 >Let $X$ be a normed space. 
@@ -30,8 +40,7 @@ Assume
 ##### Proof
 If $I$ is compact,  $\overline{I(\overline{B(0,1)})} = \overline{B}(0,1)$ is compact, so $\dim(X) < \infty$ from before.
 
-Conversely if $\dim(X)<\infty$, Then $\overline{B}(0,1)= \overline{I(\overline{B(0,1)})}$ is compact by [[Main Definitions|Fish's Heine-Borel]], so $I$ is compact by the previous proposition. $\square$
-
+Conversely if $\dim(X)<\infty$, Then $\overline{B(0,1)}= \overline{I(\overline{B(0,1)})}$ is compact by [[Main Definitions|Fish's Heine-Borel]], so $I$ is compact by the previous proposition. $\square$
 
 
 # Characterisation of Compact Operators
