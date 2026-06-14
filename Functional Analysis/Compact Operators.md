@@ -133,7 +133,7 @@ Therefore, every finite-rank operator $T \in \mathcal L(X,Y)$ is compact. $\squa
 
 
 ### Example
-The operator $T:\ell^1\to\ell^1$ with $T_x= (\frac{x_1}{1},\frac{x_2}{2},...)$ is compact.
+The operator $T:\ell^1\to\ell^1$ with $Tx= (\frac{x_1}{1},\frac{x_2}{2},...)$ is compact.
 To see this: define $T_n:\ell^1\to\ell^1$ as 
 $$T_nx= \left(\frac{x_1}{1},\frac{x_2}{2},...,\frac{x_n}{n},0,0,...\right)$$
 So $T_n$ is compact (finite rank).
@@ -150,7 +150,7 @@ so $\|T-T_n\|\leq \frac{1}{n+1} \to 0$ so $T_n \to T$. $\square$
 # Hilbert-Schmidt Operators
 
 >[!Proposition]
->Let $k  \in L^2([a,b]\times[a,b])$. The **Hilbert-Schmidt operator** given by $T: [a,b] \to [a,b]$ given by
+>Let $K  \in L^2([a,b]\times[a,b])$. The **Hilbert-Schmidt operator** given by $T: [a,b] \to [a,b]$ given by
 >$$Tf(x) = \int_a^b K(x,y)f(y)\:dy$$
 >is compact.
 ##### Proof
@@ -191,10 +191,10 @@ $\square$
 
 ## Applications
 
->[!Corollary]
+>[!Corollary] 
 >Let $X$ be a normed space. Then $\mathcal{K}(X) := \mathcal{K}(X,X)$ is a two-sided ideal of the algebra $\mathcal{L}(X)$.
 
->[!Proposition]
+>[!Proposition] 
 >Let $X$ be Banach over $\mathbb{C}$. If $\dim X = \infty$, then $0 \in \sigma(T)$ for all $T \in \mathcal{K}(X)$.
 ##### Proof
 If $0 \not \in \sigma(T)$, then $T$ is invertible. By the bounded inverse theorem, $T^{-1}$ is continuous.
