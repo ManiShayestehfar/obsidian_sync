@@ -376,7 +376,7 @@ Moreover, $\widetilde{T}: M^\perp \to M^\perp$ is:
 **Case 1:** If $\sigma(\widetilde{T}) = \{0\}$, then $\|\widetilde{T}\|= r(\widetilde{T}) = 0$ (as $\widetilde{T}$ is normal) so $\widetilde{T}=0$.
 So each $x \in M^\perp \setminus \{0\}$ is a $0$-eigenvector of $T$ and so $M^\perp \subseteq V(0) \subseteq M$, which is a contradiction.
 
-**Case 2:** If $\sigma(\widetilde{T})=\{0\}$, choose $\lambda \in \sigma(\widetilde{T}) \setminus \{0\}$.
+**Case 2:** If $\sigma(\widetilde{T})\neq\{0\}$, choose $\lambda \in \sigma(\widetilde{T}) \setminus \{0\}$.
 By the spectral theorem $\lambda \in \sigma_p(\widetilde{T})$, so there is $x \in M^\perp \setminus \{0\}$ with $\widetilde{T}x = \lambda x$ so $Tx = \lambda x$.
 Hence $x \in M^\perp \cap V(\lambda)$ contradicting that $M \cap M^\perp = \{0\}$.  $\square$
 
@@ -424,7 +424,7 @@ where $T^*g (x) = \int_x^1 g(t)\:dt$. The reparametrisation in $(\ast)$ comes fr
 
 ### Finding $\sigma_p(T^*T)$
 
-Solve $T*T f = \lambda f$. That is
+Solve $T^*T f = \lambda f$. That is
 $$\int_x^1 \int_0^t f(s) \:ds\:dt = \lambda f(x) \tag{$\ast$}$$
 For now if we assume $f$ is continuous, then $(\ast)$ implies $f$ is twice differentiable. $\color{red} \text{(see W11 lecture 2 for proof)}$.
 

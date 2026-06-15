@@ -8,7 +8,7 @@
 - [x] Dual Spaces
 - [x] General Linear Group
 - [x] Hahn–Banach Theorem
-- [ ] Hilbert Space
+- [x] Hilbert Space
 - [x] Inner product
 - [x] Lebesgue Spaces
 - [x] Linear Operators
