@@ -326,7 +326,7 @@ Then $|S| = |[a,b]| = \aleph > \aleph_0 = |\mathbb{N}|$. Thus from general princ
 >1. If $T$ is normal and $\mathcal{H}$ is over $\mathbb{C}$ $\implies \|T\| = r(T)$.
 >2. If $T$ is Hermitian $\implies \sigma(T) \subseteq \mathbb{R}$.
 ##### Proof
-NEED TO PROVE
+Tutorial 9, Question 3
 
 # Spectral Theorem (compact + normal operators)
 
@@ -343,12 +343,12 @@ NEED TO PROVE
 >2. Each $V(\lambda)$ is $T$ and $T^*$ invariant
 ##### Proof
 
->[!Claim]
+>[!Claim] 
 >$$Tx = \lambda x \iff T^*x = \overline{\lambda}x$$
 ###### Proof
 Suppose $Tx = \lambda x$. Then $Ax := (T - \lambda  I)x=0$. $A$ is normal since $(T-\lambda I)^* = T^* - \overline{\lambda}I$, and normality is preserved by subtracting scalar multiples of the identity.
 For any normal operator $A$, $\|A\|=\|A^*\|$.
-Since $Ax= 0$, then $0 = \|Ax\| = \|A^*\| \implies A^*x=0$. That is $(T-\lambda I)^*x=0 \implies T^*x = \overline{\lambda} x$.
+Since $Ax= 0$, then $0 = \|Ax\| = \|A^*x\| \implies A^*x=0$. That is $(T-\lambda I)^*x=0 \implies T^*x = \overline{\lambda} x$.
 The reverse direction holds similarly since $T^*$ is also normal. $\square$
 
 

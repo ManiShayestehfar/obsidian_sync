@@ -3,7 +3,7 @@
 - [x] Adjoint Operators
 - [x] Baire's Theorem
 - [x] Banach Spaces
-- [ ] Compact Operators
+- [x] Compact Operators
 - [x] Completion
 - [x] Dual Spaces
 - [x] General Linear Group
