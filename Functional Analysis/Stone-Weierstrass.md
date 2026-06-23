@@ -24,9 +24,9 @@
 
 >[!Remark]
 >The general Weierstrass theorem holds:
->1. $1 \in \mathcal{P}[a,b]$
->2. If $p(x) = \sum_{i=0}^n a_ix^i$, then $p^*(x) = \sum_{i=0}^n \overline{a_i}x^i \in \mathcal{P}[a,b]$ 
->3. If $x \neq y$, then $p(x) = x$ has $p(x) \neq p(y)$
+>4. $1 \in \mathcal{P}[a,b]$
+>5. If $p(x) = \sum_{i=0}^n a_ix^i$, then $p^*(x) = \sum_{i=0}^n \overline{a_i}x^i \in \mathcal{P}[a,b]$ 
+>6. If $x \neq y$, then $p(x) = x$ has $p(x) \neq p(y)$
 
 ## Absolute Value 
 
