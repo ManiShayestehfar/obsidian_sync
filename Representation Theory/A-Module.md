@@ -1,6 +1,6 @@
 
 >[!definition] 
->Let $A$ be an [[F-algebra]]. A (left) **$A$-module** is a $\mathbb{F}$-[[vector space]] $V$ that is equipped with a unitary bilinear $A$-action.  i.e.
+>Let $A$ be an [[F-Algebra]]. A (left) **$A$-module** is a $\mathbb{F}$-[[Vector Space]] $V$ that is equipped with a unitary bilinear $A$-action.  i.e.
 >$$A \times V \to V \quad;\:(a,v) \to av$$
 >such that
 >1. **Unital:** $1_A v = v$ for all $v \in V$

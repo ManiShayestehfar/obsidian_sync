@@ -3,7 +3,7 @@
 Let $G$ be a *finite* group, and $\mathbb{F}$ a field.
 
 >[!def]
->An **$\mathbb{F}G$-module** or a **representation of $G$**, is an $\mathbb{F}$-[[vector space]] $V$ that comes equipped with a unitary linear $G$-action. i.e. a map $G \times V\to V$ given by $(g,v)\to gv$ such that 
+>An **$\mathbb{F}G$-module** or a **representation of $G$**, is an $\mathbb{F}$-[[Vector Space]] $V$ that comes equipped with a unitary linear $G$-action. i.e. a map $G \times V\to V$ given by $(g,v)\to gv$ such that 
 >
 >**Unital:** $1_G v = v$  for all $v \in V$
 >**Associative:** $(gh)v = g(hv)$  for $g,h\in G$ and $v \in V$

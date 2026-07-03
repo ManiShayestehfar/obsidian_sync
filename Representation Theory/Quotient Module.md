@@ -5,7 +5,7 @@
 $$V/W =\{v+W\:|\:v\in V\}$$
 where $v \sim w \iff w-v \in W$ for any $v,w \in V$. 
 
-- We know that $V/W$ is a [[vector space]], but is also a [[G-Modules|G-Module]].
+- We know that $V/W$ is a [[Vector Space]], but is also a [[G-Modules|G-Module]].
 
 
 # Submodule Structure
