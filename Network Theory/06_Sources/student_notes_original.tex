@@ -1,0 +1,1988 @@
+\documentclass[12pt]{article}
+% \usepackage{times}
+\usepackage{fullpage}
+\usepackage{amsmath,amsthm,amssymb,enumerate, parskip}
+\usepackage{hyperref,cleveref}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{10pt}
+\renewcommand{\baselinestretch}{1.3} 
+\theoremstyle{definition}
+
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\usepackage{arydshln}
+\usepackage{bbm}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{note}{Note}[section]
+\usepackage{tabularx}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\B}[1]{\boldsymbol{\boldsymbol{#1}}}
+\newcommand{\ddiam}{d_\mathrm{diameter}}
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\Lcal}{\mathcal{L}}
+
+\newcommand{\given}{\;|\;}
+\newcommand{\diff}[1]{\hspace{1.5pt}\mathrm{d}{#1}}
+\newcommand{\ip}[1]{\left\langle{#1}\right\rangle}
+\newcommand{\br}[1]{\left({#1}\right)}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\cur}[1]{\left\{{#1}\right\}}
+
+\usepackage{tikz-cd}
+\begin{document}
+
+\title{DATA5441 Notes}
+\author{Jeny Yuan\\
+Networks and High-Dimensional Inference}
+
+\maketitle
+
+\section{Introduction}
+
+\begin{definition}
+    Let $\mathcal N$ be a set $n=1,2,...,N=|\mathcal N|$ be the \textbf{nodes} or \textit{\textbf{vertices}}. Let $\mathcal L$ be a set $\ell=1,2,...,L=|\mathcal L|$ be \textbf{links} or \textit{\textbf{edges}}. If all links $\ell\in\mathcal L$ are such that $\ell=\{n_j,n_k\}$, with $n_j, n_k\subset \mathcal N$, we say $\mathcal N$ and $\mathcal L$ build a \textbf{network} or simple \textit{\textbf{graph}}. Networks can be represented \textit{graphically}, with an \textbf{adjacency matrix}, or with a \textbf{list of links}. With $N$ nodes, there can exist $2^{\frac{N(N-1)}{2}}$ networks. 
+\end{definition}
+
+Some examples of networks: 
+\begin{itemize}
+    \item \textbf{Lattice}: Start with points in $\mathbb Z^d$ as nodes, and link all nodes within a lattice distance $r$. 
+    \item \textbf{Trees}: Networks with no loops (single path between any two nodes). 
+    \item \textbf{Complete graph}: All-to-all connections. 
+\end{itemize}
+
+Basic concepts and network measurements: 
+\begin{itemize}
+    \item \textbf{Local} measures: nodes, edges, or values around them. 
+    \item \textbf{Global} measures: the network as a whole. 
+    \item \textbf{Path}: any sequence of nodes such that there is a link between consecutive nodes. 
+    \item \textbf{Length} of a path: the number of links in the path. 
+    \item \textbf{Simple path}: no repeated nodes in the path. 
+    \item \textbf{Shortest (geodesic) path}: the smallest distance for which there is a path. 
+    \item \textbf{Closed path}: path that finishes at the starting node. 
+    \item \textbf{Neighbourhood} of node $i$: all nodes $j$ such that $A_{ij}=1$. 
+    \item \textbf{Path distance}: to characterise the closeness of a node to others. 
+    \begin{itemize}
+        \item Local measure: $d_i=\langle d_{ij}\rangle_j\equiv\frac{1}{N-1}\sum_{k=1,\ k\neq i}^Nd_{ik}$
+        \item Global measure: $d=\langle d_{i}\rangle_i\equiv\frac{1}{N}\sum_{i=1}^Nd_{i}$
+    \end{itemize}
+    \item \textbf{Diameter}: $d_{diam}=\max_{\{i,j\}}\{d_{ij}\}$
+    \item \textbf{Components}: all nodes for which $d_{ij}<\infty$ defines a connected component. 
+    \item \textbf{Degree} of node $i$: 
+    \begin{itemize}
+        \item Local measure: $z_i=\sum_{j=1}^N A_{ij}\equiv$ number of neighbours of node $i$. 
+        \item Global measure: $\langle z_i\rangle_i\equiv \frac{1}{N}\sum_{i=1}z_i=\frac{2L}{N}$ where $L=$ number of links in the network. 
+    \end{itemize}
+    \item \textbf{Sparse} networks: a network where most $A_{ij}=0$, more precisely $\langle z\rangle\xrightarrow[N\rightarrow\infty]{}\text{constant}$. 
+    \item \textbf{Clustering coefficient}: 
+    \begin{itemize}
+        \item Local clustering: $C_i\equiv \frac{\text{Number of neighbours of $i$ that are connected}}{\text{Number of pairs of neighbours}}=\frac{2\times\text{Number of 'triangles' involving $i$}}{z_i(z_i-1)}$
+        \item Global clustering: 
+        \begin{itemize}
+            \item $\langle C_i\rangle_i=\frac{1}{N}\sum_{i=1}^NC_i$
+            \item $C_{net}\equiv \frac{\text{Number of closed paths of length $r=3$}}{\text{Number of simple paths of length $r=2$}} = \frac{6\times\text{Numbers of triangles in the network}}{\text{Number of simple paths of length $r=2$}}$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Week 2}
+
+\section{Graph Measures}
+
+\subsection{Centrality}
+
+\textbf{Centrality measures} of node $i$: 
+\begin{itemize}
+    \item Degree $z_i$
+    \item Average shortest path $\langle d\rangle_i$
+    \item \textbf{Between-ness centrality} $B_i\equiv\sum_{s=1, s\neq i}^N\sum_{t=1}^N\frac{\eta_{st}^i}{|\eta_{st}|}$ where
+    \begin{itemize}
+        \item $\eta_{st}^i$ is the number of shortest paths between nodes $s$ and $t$ that pass through node $i$. 
+        \item $|\eta_{st}|$ is the number of shortest paths between $s$ and $t$. 
+    \end{itemize}
+    \item \textbf{Eigenvector centrality} $x_i=v_{1i}\in\mathbb{R}$ where $x_i=\frac{1}{\lambda_1}\sum_{j=1}^NA_{ij}x_j$ (see below ofr P-F Theorem and propagation process). 
+    \begin{itemize}
+        \item Note that in directed networks, $A_{ij}\neq A_{ji}$. So nodes with $z^{\text{in}}=0$ have $x=0$, and nodes that have in-degree from nodes with $z^{\text{in}}=0$ also have $x=0$. 
+        \item Another problem: centrality is passed on in full to neighbours. This might not make sense eg. Google links to everyone and has high centrality would mean everyone gets Google's centrality.
+    \end{itemize}
+    \item \textbf{Katz centrality} $\boldsymbol{x}=\frac{\beta}{\gamma}(I-\frac{\alpha}{\gamma}A^{-1})\mathbbm{1}$ which comes from that $\boldsymbol{x}(t+1)=\alpha A\boldsymbol{x}(t)+\beta\mathbbm{1} \implies \boldsymbol{x}(t+1) \propto \gamma\boldsymbol{x}(t)$ for $\alpha,\beta, \gamma\in\mathbb{R}$ and $\mathbbm{1}$ a unit vector. As we are interested in relative measures, we can set $\beta=\gamma=1$. 
+
+    \item \textbf{Page-rank algorithm} $\boldsymbol{x}(t+1)=\alpha\sum_{j=1}^N\frac{A_{ij}x_j}{z_j^{\text{out}}}+\beta\mathbbm{1}$
+
+    This time, the centrality of a high degree node is shared amongst the nodes that it links to. An expression for the PageRank update is
+    \[ \boldsymbol{x}(t+1) = \alpha AD^{-1}\boldsymbol{x}(t)  + \beta \mathbbm 1 \implies \boldsymbol{x} = \beta(I - \alpha AD^{-1})^{-1} 
+    \mathbbm 1\]
+    and again we set $\beta = 1$ and hence $\boldsymbol{x} = (I - \alpha AD^{-1})^{-1} \mathbbm 1$. 
+    
+\end{itemize}
+\begin{theorem}[Perron-Frobenius Theorem]
+    Let $|\lambda_1|\geq...\geq|\lambda_N|$ be the $N$ eigenvalues of a $N\times N$ matrix $A$, and $\boldsymbol{v}_1,...,\boldsymbol{v}_N$ be their corresponding eigenvectors: $A_i\boldsymbol{v}_i=\lambda_i\boldsymbol{v}_i$. We hypothesise that the entries of $A$ are non-negative, and that $A$ is irreducible (single connected component). Then, the theorem states that:
+    \begin{itemize}
+        \item The largest eigenvalue $\lambda_1: \min_{ij}A_{ij}\leq\lambda_1\leq\max_i\sum_jA_{ij}$ is real. 
+        \item The components of $\boldsymbol{v}_1=(v_{11},...,v_{1N})$ are all real. 
+    \end{itemize}
+\end{theorem}
+
+Process - \textbf{propagation} through the network: 
+\begin{itemize}
+    \item Start with a measure $\boldsymbol{x}=(x_1,...,x_{N})$ for $x_i\in\mathbb{R}$
+    \item Evolve it in time as: 
+    \[
+    x_i(t+1)=\sum_{j=1}^NA_{ij}x_j(t)\implies \boldsymbol{x}(t+1)=A\boldsymbol{x}(t)
+    \]
+    \item Decompose $\boldsymbol{x}_0=\sum_{k=1}^Na_k\boldsymbol{v}_k$ and set initial condition $\boldsymbol{x}(t=0)=\boldsymbol{x}_0$
+    \item Then
+    \[
+    \boldsymbol{x}(t)=A^t\boldsymbol{x}(0)=A^t\sum_{k=1}^Na_k\boldsymbol{v}_k(0)=\sum_{k=1}^Na_k\lambda_k^t\boldsymbol{v}_k=\lambda_1^t\sum_{k=1}^Na_k\left(\frac{\lambda_k}{\lambda_1}\right)^t\boldsymbol{v}_k
+    \]
+    where $\lim_{t\rightarrow\infty}\left|\left(\frac{\lambda_k}{\lambda_1}\right)^t\right|\rightarrow 0$ for all $k\neq 1$. 
+\end{itemize}
+
+\subsection{Sampling}
+
+Let $m=1,2,...,M$ be the different types of observations, and $m(s)$ be the type of sample $s$. Let $\mu(m):\mathbb{N}\rightarrow\mathbb{R}$ be a function of the sample type. The expected value over the population is:
+\[
+\mathbb E(\mu) \equiv \lim_{Q\rightarrow\infty}\frac{1}{Q}\sum_{q=1}^Q\mu(m(q))=\sum_{m=1}^M p_m\mu(m)
+\]
+where $p_m=\lim_{Q\to\infty}\frac{1}{Q}\sum_{q=1}^\infty \delta(m(q)-m)$ is the probability of sampling a ball of type $m$ ($\delta(0)=1$ and $\delta(x)=0$ for $x\neq 0$). 
+
+We estimate $\mathbb E(\mu)$ and $p_m$ as $\hat{\mu}$ and $\hat{p}$ from finite sample sizes $S$: 
+\begin{align*}
+    \hat{p}_m &= \frac{1}{S}\sum_{s=1}^S\delta(m(s)-m) \\
+    \hat{\mu} &\equiv \sum_{m=1}^M \hat{p}_m\mu(m)
+\end{align*}
+
+The expected value of estimators over $r=1,...,R$ realisations:
+\[
+ \mathbb E(\hat{p}_m)=\lim_{R\to \infty}\frac{1}{R}\sum_{r=1}^R \hat{p}_m(r)=\lim_{R\rightarrow\infty}\frac{1}{RS} \sum_{r=1}^R \sum_{s=1}^S\delta(m(s)-m)=p_m
+\]
+ie. $\hat{p}_m$ is an unbiased estimator of $p_m$. Similarly:
+\[
+\mathbb E(\hat \mu)\equiv\lim_{R\rightarrow\infty}\frac{1}{R}\sum_{r=1}^R\hat{\mu}(r)=\lim_{R\to\infty}\frac{1}{R}\sum_{r=1}^R \sum_{s=1}^S\mu(m(s))= \lim_{R\to \infty} \frac 1R \sum_{r=1}^R \sum_{m=1}^M \hat p_m(r) \mu(m) = \sum_{m=1}^Mp_m\mu(m)=\mathbb E(\mu)
+\]
+
+Observed data are often finite and biased samples. Sampling methods to obtain networks include: 
+\begin{itemize}
+    \item Node sampling: pick users and look at all links. 
+    \item Edge sampling: pick links and check users involved. 
+    \item Random walks: start at a node, pick a random link, check all links to the new node, repeat. 
+    \item Snowball sampling: start at a node, pick all neighbours, go to all neighbours, repeat. 
+\end{itemize}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Week 3}
+
+\section{Random Graph Models}
+
+\subsection{Network Models}\label{section:wk3_networkModels}
+
+There are \textbf{simple network models} (single graph), and \textbf{random network models}.
+We can use random networks as a null model to test our graph and our metrics.
+
+\begin{definition}[Random Graph]
+    A random graph (RG) is a set $\Omega$ of graphs and probabilities $p(g)$ for all $g\in\Omega$ such that $0\leq p(g)\leq 1$ and $\sum_{g\in\Omega}p(g)=1$. 
+\end{definition}
+
+Some measures $x(g)$ on a random graph: $g\in\Omega\rightarrow\mathbb{R}$
+\begin{itemize}
+    \item Expected $x$ of a random graph: $\bar{x}=\sum_{g\in\Omega}p(g)x(g)$
+    \item Standard deviation: $\sigma_x=\sqrt{(\overline{x^2}) - (\overline{x})^2}$
+    \item Probability of $x=x^*$: $p(x^*)=\sum_{g\in\Omega} p(g)\delta(x(g)-x^*)$
+\end{itemize}
+Remark: for $N\rightarrow\infty$, we often have $\sigma_x\rightarrow 0$ and $p(x^*\neq\bar{x})\rightarrow 0$.  We say $\bar x := x(\text{random graph)}$ is the \textit{value of the measure} evaluated on the random graph.
+
+Take a random graph with $N$ nodes. We have $|\Omega|=2^Y$, $Y=\frac{N(N-1)}{2}$, and $p(g)=\frac{1}{|\Omega|}$. 
+
+Consider $x \colon \Omega \to \mathbb N$ given by $x(g) = L$ (number of links in $g$). Then
+\[
+\bar{L}=\sum_{g\in\Omega}p(g)L(g)=\frac{1}{|\Omega|}\sum_{g\in \Omega}L(g)=\sum_{L=0}^Yp(L)\cdot L
+\]
+where $p(L)\equiv\frac{N(L)}{|\Omega|}$ for $N(L)$ the number of $g\in\Omega$ with $L$ links: $N(L)=\binom{Y}{L}=\frac{Y!}{(Y-L)!L!}$, so 
+\[
+\bar{L} = \frac{1}{2^Y}\sum_{L=0}^Y L\binom{Y}{L}=\frac{1}{2^Y}2^{Y-1}Y=\frac{Y}{2}=\frac{N(N-1)}{4}=\frac{L_{\max}}{2}\,.
+\]
+This network is relatively \textit{dense} as we have $L\sim N^2$. Moreover, $p(L)\rightarrow 0$ for any $L\neq\bar{L}$ as $N\rightarrow\infty$. 
+
+
+Consider $L^*=\alpha Y$ for $0\leq\alpha\leq 1$. We have
+\[
+p(L^*)=\frac{1}{|\Omega|}\sum_{g\in\Omega}\delta(L-L^*) = \frac{\binom{Y}{L^*}}{2^Y} = \frac{1}{2^Y}\frac{Y!}{(Y-L^*)!L^*!}
+\]
+Using the \textit{Stirling approximation} that $\ln q!\approx q\ln q - q$, if we apply $\ln$ to both sides
+\begin{equation}
+    \ln p(L^*) = -Y\ln 2 + (Y\ln Y - Y) - (Y-L^*)\ln(y-L^*) + (Y-L^*)  -L^*\ln L^*+L^*
+\end{equation}
+and sub $L^* = \alpha Y$ back in, we get
+\[
+\ln p(L^*) = -Y[\ln 2 + (1-\alpha)\ln (1-\alpha) + \alpha\ln \alpha]\,.
+\]
+If we set $B(\alpha) := \ln 2 + (1-\alpha)\ln (1-\alpha) + \alpha\ln \alpha$, the minimum of $B(\alpha)$ occurs at $\alpha = \frac{1}{2}$, then $B(\frac{1}{2})=0$. For $\alpha\neq \frac{1}{2}$, we have $B(\alpha)>0$ and $\ln p(L^*) \to -\infty$ as $Y\to \infty$.
+
+
+One type of random graph model is the \textbf{Poisson random graph model}, defined as such:
+\[
+G(N,q):
+\begin{cases}
+    N & \text{is the number of nodes} \\
+    q & \text{is the fixed probability of each link}
+\end{cases}
+\]
+Here $p_g$ is defined implicitly as
+\[
+p(g)=(1-q)^{Y-L}q^L \quad \text{where}\quad L=L(g)
+\]
+then
+\[
+\bar{L} = \sum_{g\in\Omega}p(g)L(g)=qY
+\]
+To fit $G(N,q)$ to an observed network $g^*$ with $N^*$ nodes and $L^*$ edges, fix $N=N^*$. The
+n
+\[
+\bar{L}=L^*\implies q=\frac{2L^*}{N^*(N^*-1)} = \frac{\langle z\rangle}{N^*-1}
+\]
+
+Properties of the Poisson RG as $N\rightarrow\infty$: 
+\begin{itemize}
+    \item For fixed $q$, we have $\langle z\rangle \sim N$ (specifically $\langle z\rangle = q(N-1)$), which produces \textit{dense} networks. 
+    \item For fixed $\langle z\rangle$, we have $q \sim \frac{1}{N}$ (specifically $q=\frac{\langle z\rangle}{N-1}$), which produces \textit{sparse} networks. 
+    \item Degree distribution: the probability of having a node with degree $z$ follows a binomial distribution $p(z)=\binom{N-1}{q}q^z(1-q)^{N-1-z}$. Then for $N>>z$ and $q\ll 1$ such that $q(N-1)=\langle z\rangle=\text{constant}$, this becomes a Poisson distribution: 
+    \[
+    p(z)\approx\frac{1}{z!}e^{-q(N-1)}(q(N-1))^z
+    \]
+    \item Variance: $\sigma_z^2=\langle z^2\rangle - \langle z\rangle^2=\langle z\rangle = q(N-1)$
+    \item Degree variability: $\frac{\sigma_z}{\langle z\rangle}=\frac{1}{\sqrt{\langle z\rangle}}=\begin{cases} \rightarrow 0 & \text{if dense ie $q$ const.} \\ \rightarrow \text{const.} < 1 & \text{if sparse, ie $\langle z\rangle$ const.}  \end{cases}$
+    \item Clustering: $\langle C\rangle \approx C_{net}$ because $\frac{\sigma_z}{\langle z\rangle}<1$. Then $C=q=\frac{\langle z\rangle}{N-1}=\begin{cases} \rightarrow \text{const.} & \text{if dense} \\ \rightarrow 0 & \text{if sparse} \end{cases}$
+    \item Distances (largest component): under the assumption of sparsity ($\sigma_z/\langle z\rangle$ constant) for $N(d)$ nodes at distance $d$ from node $i$, $N(d)\approx \langle z\rangle^d$. This stops when $N(d)=N$ at $d=d_{diam}$. Then $d_{diam}\approx\frac{\ln N}{\ln \langle z\rangle}$ (plus a positive constant). 
+    \item Number of components and size of largest component: let $N_c$ be the number of components and $K_k$ for $k=1,...,N_c$ be the fraction of nodes in component $k$. The fraction $U$ of nodes not in $k=1$ is approximately equal to the probability of a node not being connected to $k=1$ when $N\rightarrow\infty$ and $\langle z\rangle=\text{const.}$ 
+
+    The options of a node $i$ not being connected to $k=1$ via node $j$ are either that $i$ is not connected to $j$ (probability $1-q$), or that $i$ is connected to $j$ but $j$ is not connected to $k=1$ (probability $qU$). Then we get the self-consistent equation 
+    \[
+    U=(1-q+qU)^{N-1} \quad (\text{for all }j\neq i)
+    \]
+    Taking the log of both sides, noting $1-q+qU=1-\frac{\langle z\rangle}{N-1}(1-U) =: 1-\varepsilon$, and using the sparse limit (when $q\ll 1$, $N>>1$, and $\langle z\rangle=\text{const}$) that $\ln(1-\varepsilon)\approx -\varepsilon$ where $\varepsilon\ll 1$, we get the implicit equation
+    \[
+    U=e^{-\langle z\rangle(1-U)}\implies 1-K_1=e^{-\langle z\rangle K_1}
+    \]
+    which, if we solve graphically, we get that $K_1=0$ and $K_1=K^*$ for $\langle z\rangle > 1$, or simply $K_1=0$ for $\langle z\rangle <1$. 
+\end{itemize}
+
+\textbf{Recap:}
+
+In the limit as $N\to \infty$, we have
+
+\begin{itemize}
+    \item Poisson RG: dense case $q=\langle z\rangle/(N-1)$ is constant. Then the variation $\sigma_z/\langle z\rangle = 1/\sqrt{\langle z\rangle} \to 0$. The clustering $C_{\mathrm{net}} \approx q$ is a constant.
+
+    \item Poisson RG: sparse case $\langle z\rangle$ constant, $q\to 0$. Then the variation $\sigma_z/\langle z\rangle$ is a constant, and we estimate $d_{\mathrm{diam}}$ with RG $\approx$ tree with $\langle  z\rangle$, so $d_{\mathrm{diam}} \approx \log N/\log \langle z\rangle$. The clustering $C_{\mathrm{net}} \approx q \sim 1/N\to 0$.
+
+    \item $k$-regular. The variation $\sigma_z/\langle z\rangle = 0$, distances $\approx \log N $, and clustering satisfies $C_{\mathrm{net}} \approx q \sim 1/N$
+
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Week 4}
+
+\section{Monte Carlo Methods}
+
+\begin{enumerate}
+    \item Start with $g=g_0\in\Omega$ (eg. $g_0=g^*$). 
+    \item Apply a transformation $g'=T(g): \Omega\rightarrow\Omega$. 
+    \item Measure $x(g')$. 
+    \item Repeat steps 2 and 3 $t$ times. 
+\end{enumerate}
+
+When does this work? 
+\begin{itemize}
+    \item Let $W(g\rightarrow g')$ be the probability of moving from $g$ to $g'$ via $T$. We would like $\sum_{g'\in\Omega} W(g\rightarrow g')=1$. 
+    \item Let $w_g(t)$ be the probability of being at $g$ at time $t$, with $\B{w}=(w_1,w_2,...,w_g,...,w_{|\Omega|})$. A \textbf{Monte Carlo iteration} is given by the Markov Chain: 
+    \[
+    w_g(t+1)=\sum_{g^+\in\Omega} W(g^+\rightarrow g) w_{g^+}(t)
+    \]
+    or
+    \[
+    \B{w}(t+1)=W\B{w}(t)
+    \]
+\end{itemize}
+
+Let the initial condition be $g=g_0\implies \B{w}=(0,0,...,1,...,0)$ where the $1$ is situated at $g_0$. 
+
+We expect that, for large $t$, $\B{w}(t)\propto\B{w}_1$, which is the eigenvector associated with the largest eigenvalue of $W$ by the Perron-Frobenius theorem.
+
+We would like to know when $\B{w}_1$ is equal to $\B{p}=(p_1,p_2,...,p_g,...,p_{|\Omega|})$. 
+
+There are three conditions that should be satisfied
+\begin{enumerate}
+    \item $g\in\Omega\implies T(g)\in\Omega$ or in other words, $W(g\to g')=0$ for $g'\notin \Omega$. 
+    \item Ergodicity: there is a nonzero probability to go from any $g\in \Omega$ to any other $g'\in \Omega$ for $t\to \infty$.
+    \item Detailed balance (equilibrium): $p_g W(g\to g')=p_{g'}W(g'\to g)$ for all $g,g'\in\Omega$. 
+\end{enumerate}
+
+Justification:
+\begin{itemize}
+    \item From (3) we sum over all $g'\in \Omega$ and get
+    \begin{align*}
+        \sum_{g'\in \Omega} p_gW(g\to g') &=  \sum_{g'\in \Omega} p_{g'}W(g'\to g)\\
+        p_g \sum_{g'\in \Omega} W(g\to g')&= \sum_{g'\in \Omega} p_{g'}W(g'\to g)\\
+        \boldsymbol p &= \boldsymbol p W 
+    \end{align*}
+    so $1$ is an eigenvalue of $W$ with eigenvector $\boldsymbol p$.
+    \item (2) implies that $W$ is an irreducible matrix. So we can use the Throb theorem to see that $\lambda_i\leq 1$. Altogether, this implies $\lambda=1$ is the largest eigenvalue, which implies $\B{w}_1\propto\B{p}$. 
+\end{itemize}
+
+\subsection{Simple Graph with Fixed Number of Nodes}
+
+Let $p(g)=\frac{1}{|\Omega|}=2^{-\frac{N(N-1)}{2}}$, where $N$ is fixed. 
+
+One possible transformation $T(g)$ is: 
+\begin{enumerate}
+    \item Picking two nodes $i$ and $j$ randomly where $i\neq j$. 
+    \item Flipping links: if $A_{ij}=1$, then $A_{ij}\leftarrow 0$; if $A_{ij}=0$, then $A_{ij}\leftarrow 1$. 
+\end{enumerate}
+
+We check the conditions
+\begin{enumerate}
+    \item It is clear that if $g\in \Omega$ then $T(g)\in \Omega$.
+    \item Ergodicity also holds
+    \item We have
+    \[W(g\to g') = \begin{cases}
+    1/\binom N2 & \text{if $|L(g)-L(g')| = 1$}\\ 
+        0 & \text{otherwise}
+    \end{cases}\]
+    so 
+    \[ p_g W(g\to g') = \begin{cases}
+        1/|\Omega|\cdot  1/\binom N2 = p_{g'}W(g'\to g) \\
+        0
+    \end{cases}\]
+\end{enumerate}
+
+In principle, this MCMC can sample  graphs with any number of edges $L=L^*$. However, in a random graph $G$ with fixed $N$, the peak of the distribution of $p(L)$ is at $L=\frac{Y}{2}=\frac{N(N-1)}{4}$, then the sample mainly contains $L=\frac{Y}{2}$ where $Y=\binom N2$. Hence in practice we do not sample graphs with $L\ll\frac{Y}{2}$ in reasonable time. 
+
+\subsection{Networks with Fixed $N$ and $L$}
+
+\begin{equation*}
+    \left\{\text{Case 2: simple graphs with $N,L$ fixed}\right\} \subseteq \left\{\text{Case 1: simple graphs with $N$ fixed}\right\}  \subseteq \Omega
+\end{equation*}
+
+A possible transformation $T$ is as such: 
+\begin{itemize}
+    \item Pick an edge ($A_{i,j}=1$) randomly. 
+    \item Pick a non-edge ($A_{s,t}=0$) randomly. 
+    \item Swap the edges: $A_{i,j}\leftarrow 0$ and $A_{s,t}\leftarrow 1$. 
+\end{itemize}
+
+
+Note that: 
+\begin{itemize}
+    \item The sampling is NOT iid from $p_g$. 
+    \item $\B{w}(t)\xrightarrow[t \to\infty]{} \B{p}$. 
+    \item We need to wait for equilibration ($t>t_{\text{equilibrium}}$) and sample over time $t>t_{\text{correlation}}$. 
+    \item $t_{\text{equilibrium}}\approx t_{\text{correlation}}$ scales as
+    \begin{itemize}
+        \item $\frac{N(N-1)}{2}$ in case 1. 
+        \item $L$ in case 2. 
+    \end{itemize}
+\end{itemize}
+
+\subsection{Networks with Fixed $N$ and fixed degree sequence $\{z_i\}$ (Refer to Configuration Model)}
+
+Possible Transformation $T$:
+\begin{enumerate}
+    \item Pick two edges randomly, suppose have $(i,j)$ and $(s,r)$
+    \item Consider all allowable swaps between $(i,j)$ and $(s,r)$, i.e. no self-loops, no multi-edge. For example, swap in to $(i,r)$ and $(s,j)$
+    \item Perform one acceptable swap chosen randomly. 
+\end{enumerate}
+\textit{Check conditions:}
+\begin{enumerate}
+    \item $g\in \Omega\implies g':=T(g) \in \Omega$
+    \item Ergodicity
+    \item Detailed balance: $W(g\to g') = W(g'\to g)$ and $p(g)=p(g') = \mathrm{cst} \implies\mathrm{D.B.}$
+\end{enumerate}
+
+We expect the equilibration time $t_e\sim L$. We can thus compute:
+\[
+\hat{x}_{RG}=\frac{1}{|S|}\sum_{g\in S} x(g)
+\]
+where $g=g(t)$ and $S$ is the set of sampled graphs in the MCMC, requiring $t>t_{\text{equilibrium}}$ and $t_{\text{sampling}}\gg t_{\text{correlation}}$. 
+
+\subsection{Configuration Model}
+
+\begin{enumerate}
+    \item Choose a degree sequence $\{z\}=(z_1,z_2,...,z_n)$. 
+    \item Generate the $z_i$ "stubs" of links $i=1,...,N$. 
+    \item Connect stubs randomly with equal probability. 
+\end{enumerate}
+\begin{note}
+    This allows for \textit{multi-edges} and \textit{self-loop}, i.e. may not be simple. 
+\end{note}
+
+Properties of the model: 
+\begin{itemize}
+    \item The network is sparse if the degree sequence is chosen from a distribution with a well-defined $\langle z\rangle$. 
+    \item The probability of a link between nodes $i$ and $j$: 
+    \begin{itemize}
+        \item For a stub in $i$: $p=\frac{z_i}{2L}$
+        \item Sum over all stubs in $i$ and $j$: $p_{ij} =z_j \frac{z_i}{2L}$
+    \end{itemize}
+    \item Clustering: $p_{jk}=\frac{z_jz_k}{2L}$ for $2L=\langle z\rangle N$ and constant $z_j$, $z_k$. Then $C\sim \frac{1}{N}\to 0$ as $N\to\infty$. 
+    \item $d_{\text{diameter}}$: sparse and $C\to 0\implies d_{\text{diameter}}\sim \frac{\ln N}{\ln \langle z\rangle}$
+\end{itemize}
+
+To note: 
+\begin{itemize}
+    \item Not all degree sequences generate (simple) graphs, see Erd\"os–Gallai theorem.
+    \item Typical realisations of configuration models are not simple graphs due to self and multiple loops. 
+    \item For large $N$, we expect that \textit{almost all} graphs of the configuration model will not be simple graphs, and that the fraction of edges that violate the simple graph conditions \textit{decays to zero}. 
+\end{itemize}
+
+\newpage
+
+\section*{Week 5}
+
+\section{The Small World Effect}
+
+There are three properties of the small world phenomenon
+\begin{itemize}
+    \item The networks are sparse: $\frac{L}{N^2} \to 0$ and $\langle z\rangle \to \mathrm{constant}$
+    \item The clustering $C\to C^* >0$ as $N\to \infty$.
+    \item Short distances: $\langle \langle d\rangle \rangle \sim \log N \ll N^{\beta}$.
+\end{itemize}
+
+\subsection{Watts-Strogatz Model}
+
+\begin{enumerate}
+    \item Start with a ring with $N$ nodes connected to $Q$ ring neighbours.
+    \begin{figure}[h]
+        \centering
+        \begin{tikzcd}
+	& 8 & 1 \\
+	7 &&& 2 \\
+	6 &&& 3 \\
+	& 5 & 4
+	\arrow[no head, from=1-2, to=1-3]
+	\arrow[no head, from=1-2, to=2-4]
+	\arrow[no head, from=1-3, to=2-4]
+	\arrow[no head, from=1-3, to=3-4]
+	\arrow[no head, from=2-1, to=1-2]
+	\arrow[no head, from=2-1, to=1-3]
+	\arrow[no head, from=2-1, to=3-1]
+	\arrow[no head, from=2-1, to=4-2]
+	\arrow[no head, from=2-4, to=3-4]
+	\arrow[no head, from=2-4, to=4-3]
+	\arrow[no head, from=3-1, to=1-2]
+	\arrow[no head, from=3-1, to=4-2]
+	\arrow[no head, from=3-1, to=4-3]
+	\arrow[no head, from=3-4, to=4-3]
+	\arrow[no head, from=4-2, to=3-4]
+	\arrow[no head, from=4-3, to=4-2]
+\end{tikzcd}
+\caption{$Q=2$ and $N=8$ links}
+    \end{figure}
+    \item For each of the $L$ edges, rewire with probability $p$. When rewiring, we can either delete the link and add a new one randomly, or delete one end of a link and attach it to a random node. 
+\end{enumerate}
+
+\textbf{Question:} for which values  of $Q$ and $P$ are these random graph networks small world?
+
+\begin{enumerate}
+    \item Sparsity: we know 
+    \[L= NQ \implies \langle z\rangle = \frac{2L}{N} = 2Q = \mathrm{constant}\]
+    so it is sparse by construction.
+
+    \item Clustering:
+    \begin{itemize}
+        \item For a ring (i.e. $p=0$), as $N\to\infty$ we have 
+    \[ C_{ring} = C_i = \frac{\Delta_i}{\binom{z_i}{2}} \propto \frac{\binom Q2}{\binom{2Q}{2}} = \frac{Q-1}{2Q(2Q-1)} > 0 \]
+
+    \item If $p>0$, we check the probability of a triangle surviving the rewiring process. The odds of each edge surviving is $1-p$.
+    \[\begin{tikzcd}
+	& \bullet \\
+	\bullet && \bullet
+	\arrow["{1-p}"', no head, from=1-2, to=2-1]
+	\arrow["{1-p}", no head, from=1-2, to=2-3]
+	\arrow["{1-p}"', no head, from=2-1, to=2-3]
+\end{tikzcd}\]
+    \[
+    C(p) = C_{\mathrm{ring}}f(p) = C_{\mathrm{ring}}(1-p)^3
+    \]
+    \end{itemize}
+
+    \item Short distances: $d_\mathrm{diameter}$
+    \begin{itemize}
+        \item $p=0$ we have $d_{\mathrm{diam}} \approx N/2Q$.
+        \item For $p>0$ we write $d_{\mathrm{diam}} (p) = d_{\mathrm{diam}}(\mathrm{ring})g(p)$
+
+        Intuition: for $p\to1$, $\ddiam\sim \ln N$. For small $p$, a \textit{rewired edge} act as a \textit{shortcut}. Hence, $g(p)$ decays as soon as a few $("B")$ shortcuts appear, $B(N)$ grown slower than $N$.
+
+        The number of shortcuts is given by $pL =  pQN \geq B$ for $N\gg1$. Short distances appear for $p>\frac{B}{QN} \implies\frac{B}{QN}\ll1$, i.e. the $p$ required for short distances goes to zero. 
+
+        In the limit $N\to\infty$, we have that $\frac{C}{C_\mathrm{ring}}=(1-p)^3$
+
+       \begin{figure}[h]
+           \centering
+           \includegraphics[width=0.75\linewidth]{imgs/watts-strogatz.png}
+           % \caption{}
+       \end{figure}
+        
+        Key idea is that there is a region of $p$-values such that the diameter decreases sharply because of the existence of shortcuts, but the clustering does not decrease yet. 
+        So if we start from a ring graph and add a few random links, the clustering is not strongly affected, but the distance is strongly affected.
+    \end{itemize}
+    \end{enumerate}
+
+\newpage
+\subsection{Scale-Free Networks}
+
+How does $\frac{\sigma_z}{\langle z\rangle}$ grow with $N$? 
+
+The degree distribution is such that $p(z)=\frac{1}{N}\sum_{i=1}^N \delta(z_i-z)$. If $p(z) \sim z^{-\gamma}$ (fat tail), then 
+\[
+\langle z^2\rangle\approx \int_1^\infty z^2z^{-\gamma}dz=z^{3-\gamma}\bigr|_1^\infty\to \infty \qquad \text{for }\gamma\leq 3
+\]
+
+So for $2<\gamma\leq 3$, $$\begin{cases} \langle z\rangle & \text{is defined (sparsity)} \\ \langle z^2\rangle & \text{diverges}\end{cases} \implies \frac{\sigma_z}{\langle z\rangle} = \frac{\sqrt{\langle z^2\rangle}}{\langle z\rangle}\to\infty$$
+
+How is $\ip{z^2}$ diverging with $N$? Suppose we have the pdf of $z$ is given by $z^{-\gamma}$. We argue that the expected \textit{maximum value} by taking $N$ samples is $\frac{1}{N}$. 
+
+Hence, although $\ip{z^2}$ diverges, we have that for a finite sample of $z$'s, the expected degree is finite. 
+
+The expected maximum of $z$ over $N$ samples $z_{\max}$: 
+\[
+p(z_{\max})=\frac{1}{N} \sim z_{\max}^{-\gamma}\implies z_{\max}\sim N^{\frac{1}{\gamma}}
+\]
+\[
+\ip{z^2}\approx c\left.\int_1^{z_{\max}}z^{-\gamma+2}dz\propto (z^{-\gamma+3})\right|_1^{z_{\max}}=N^\beta
+\]
+where
+\[
+\beta = \frac{-\gamma+3}{\gamma} = -1+\frac{3}{\gamma} \qquad \text{that is, grows with $N$ for }\gamma<3
+\]
+
+\subsection{Empirical Conjecture}
+We see some variations of the interpretation of \textit{fat tails}
+\begin{itemize}
+    \item \textbf{Weakest interpretation:} $\exists\alpha>2$ such that $\ip{z^\alpha}\to \infty$ as $N\to\infty$
+    \item \textbf{Weak interpretation:} $\frac{\sigma_z}{\ip{z}}\xrightarrow[N\to\infty]{}\infty$
+    \item \textbf{Strong interpretation (power-law distribution):} $p(z)=Az^{-\gamma}$ for $2\leq \gamma\leq 3$ and large $z$. Then, $\log p(z)\approx -\gamma\log z + \log A$ (linear behaviour)
+\end{itemize}
+
+\subsection{Preferential Attachment Model}
+
+\begin{enumerate}
+    \item Start at $t=0$ with $N_0\ll N$ nodes randomly connected. 
+    \item At each $t>0$, add one node and connect to $m$ existing nodes for $m\leq N_0 \ll N$. 
+    \item The probability of linking to node $i$ is proportional to the degree of the node: $\pi_i=\frac{z_i}{\sum_i z_i}=\frac{z_i}{2L(t)}$
+\end{enumerate}
+
+As $t\to\infty$, we have 
+\begin{itemize}
+    \item $N=N_0+t\approx t$, since $N_0\ll N$
+    \item $L(t)=L_0+mt\approx mt$ as $L_0\ll mt$
+\end{itemize}
+But what about $P(z)$? 
+
+Let's focus on one node $i$ created at time $t_i\ll t$ such that $z_i\gg m$. Hence, 
+\[
+    \frac{\diff{z_i}}{\diff{t}} = m\pi(z_i) =\frac{mz_i}{2L(t)} \approx \frac{z_i}{2t}
+\]
+This is a first order separable ODE with the \textit{general solution}: 
+\[
+\int \frac{1}{z_i}\diff{z_i} = \int\frac{1}{2t}\diff{t}\implies \ln z_i=\frac{1}{2}\ln t+c\implies z_i=A\sqrt{t} \quad\text{where }A=e^c\text{ is a constant}
+\]
+The initial condition is the node created at time $t_i$, i.e. $z_i(t=t_i) = m = A\sqrt{t_i}$. Hence, the \textit{particular solution} is 
+\[
+    A=\frac{m}{\sqrt{t_i}} \implies z_i(t) =m \sqrt{\frac{t}{t_i}}
+\]
+So then
+\[
+z_i>z\implies m\sqrt{\frac{t}{t_i}}>z\implies m^2\frac{t}{t_i}>z^2\implies t_i<\frac{m^2t}{z^2}
+\]
+Hence, we have complement CDF of the degree distribution in terms of $t$, given by 
+\[
+    P\left(z_i(t)>z\right) = P\left(t_i<\frac{m^2}{z^2}t\right) =\frac{m^2}{z^2}t\cdot\frac{1}{N}=\frac{m^2}{z^2}
+\]
+
+Then the degree distribution is
+\[
+p(z)=\frac{\partial p(z_i>z)}{\partial z}\sim \frac{\partial}{\partial z}\frac{m^2}{z^2}\sim\frac{1}{z^3} \quad\text{in the }\gamma=3\text{ case}
+\]
+
+To summarise, we have
+\begin{itemize}
+    \item $\langle z\rangle = 2L/N$
+    \item For Barabasi-Albert it depends on two parameters $m$ and $N$, so $L=mt$ and $N=t$
+    \item For Poisson random graph, depends on the parameters $p$ and $N$ and $L=p\binom N2$. 
+\end{itemize}
+
+Some positive characteristics of the Barabasi-Albert preferential attachment model
+
+\begin{itemize}
+    \item Always creates a simple connected component
+    \item BA networks have a large $\sigma_z/\langle z\rangle$, and a power law for $p(z)$, which is exhibited by real world networks.
+\end{itemize}
+
+Some limitations are
+\begin{itemize}
+    \item $\gamma =3$ is a restriction for the scale factor. Most empirical cases have a slope $2 < \gamma < 3$ so the model might not be a good fit for the real world network. To resolve this we might need a modification of $\pi_i(z)$.
+    \item Older models are always the hubs $z_i \sim \sqrt{t/t_i}$ in the Barabasi-Albert. But sometimes there is a tendency to focus on recent trends. This can be resolved by some sort of ageing effect $\pi(z_i, t-t_i)$.
+
+    \item The clustering coefficient $C(N)\to 0$, more slowly than the Poisson random  graph, but $C(N)\sim N^{-\beta}$ for some $\beta \in (0,1)$.
+\end{itemize}
+Power law distribution appear also in other network quantities (e.g. Betweeness centrality)
+
+    Why scale free? Suppose $p(z) = cz^{-\gamma}$ then if we rescale $z$ by a factor $\alpha$ then the map $z\mapsto \alpha z$ has degree distribution $p(\alpha z ) = c(\alpha z)^{-\gamma} = c\alpha^{-\gamma}z^{-\gamma} = \tilde c z^{-\gamma} $ is again a power law distribution so it is invariant under scaling transformations. There is no characteristic scale for the network.
+
+\newpage
+\section*{Week 6}
+
+We want to sample random graphs that have a high clustering. It is computationally difficult to explore this space using local Monte-Carlo methods like Case I, II and III sampling.
+
+Recall in our previous methods we could sample $g\in \Omega$ with uniform probability and weigh it by $x(g)$. But this is not feasible because we will never sample $g$ with $x(g)$ far from a ``typical" value $x(g)$.
+
+In our methods we have always kept $p(g) = p(x(g))$ a constant in our random graph model. But we will now choose $p(g)$ to give more weight to graphs with a higher clustering, and create an MCMC that samples from $p_g$ as $\{x_g\}_{p_g}$. Two main problems arise: (1) what $p_g$ should be used, and (2) how can we sample from an arbitrary $p_g$?
+
+\section{Metropolis-Hastings MCMC \& ERGMs}
+
+\subsection{Metropolis-Hastings MCMC}
+
+To answer the second question, we consider the \textbf{Metropolis-Hastings MCMC}. Start from the \textit{detailed balance} condition
+\[ p(g)W(g\to g') = p(g') W(g'\to g)\]
+
+The key idea is to split $W(g\to g')$ into two steps (Accept-Reject method): 
+\begin{enumerate}
+    \item \textbf{Proposal} probability $\pi(g\to g')$ 
+    \item \textbf{Acceptance} probability $A(g\to g')$
+    \item Hence $W(g\to g') = \pi(g\to g')A(g\to g')$. 
+\end{enumerate}
+From the detailed balance we want 
+\[ \frac{W(g\to g')}{W(g'\to g)} = \frac{\pi(g\to g')A(g\to g')}{\pi(g'\to g)A(g'\to g)} = \frac{p(g')}{p(g)} \]
+and hence
+\[ \frac{A(g\to g')}{A(g'\to g)} = \frac{p(g')\pi(g'\to g)}{p(g)\pi(g\to g')} \,.\]
+And as $A()$ is a probability $\in[0,1]$, the fraction is either
+\[ \frac{p(g')\pi(g'\to g)}{p(g)\pi(g\to g')}\geq 1 \quad\text{or}\quad \frac{p(g)\pi(g\to g')}{p(g')\pi(g'\to g)} \geq 1\]
+
+We can choose either $A(g\to g')=1$ or $A(g'\to g)=1$. A solution to the detailed balance is 
+\begin{equation}\label{metroAlgo1}
+A(g\to g') = \min \left\{ 1, \frac{p(g')\pi(g' \to g)}{p(g)\pi(g\to g')}\right\} 
+\end{equation}
+
+The Markov chain will sample from $p(g)$ if we choose a sample using this method (assuming Ergodicity). This is the \textit{Metropolis-Hastings} choice. Note also that we frequently have $\pi(g\to g') = \pi(g'\to g)$. 
+
+Explicitly, the \textit{Metropolis-Hastings algorithm} is:
+\begin{equation}\label{metroAlgo2}
+A(g\to g') = 
+    \begin{cases}
+        1 & \mathrm{for}\;p(g')\geq p(g)\\
+        \frac{p(g')}{p(g)} & \mathrm{for}\;p(g')< p(g)
+    \end{cases}
+\end{equation}
+The algorithm to estimate $x_{RG}$ from a RG $(\Omega,p_g)$ is as such: 
+\begin{enumerate}
+    \item Start with $g(t=0)\in \Omega$.
+    \item Propose a state $g'$ with probability $\pi(g\to g')$. For example using $T(g\to g')$ suitable to $\Omega$.
+    \item Compute $A=A(g\to g')$ using \cref{metroAlgo1} or \cref{metroAlgo2}. 
+    \item Draw a random number $r\in [0,1]$: 
+    \begin{itemize}
+        \item If $r>A$ then we reject $g'$ which means $g(t+1)= g$. 
+        \item If $r<A$ then we accept $g'$ and let $g(t+1)=g'$. 
+    \end{itemize}
+    \item Repeat step 2 to 4, $t$ times, sampling $g(t)$. 
+\end{enumerate}
+We consider samples $S$ for $t>t_{\text{equilibrium}}$: 
+\[ \hat x_{RG} = \frac 1 {|S|} \sum_{g\in S} x(g(t))\]
+
+Some remarks:
+    \begin{itemize}
+        \item $T(g)$ needs to ergodically explore $\Omega$ and $p(g)>0$ for all $g\in \Omega$. 
+        \item Sampling occurs also when rejecting, i.e. Markov time is evolving when we reject as well. (q.v. step 4 in above and when $r>A$)
+    \end{itemize}
+
+\subsection{Exponential Random Graph Models (ERGMs)}
+
+To solve the second main problem on how to choose $p(g)$, let us consider $i=1,2,...,m$ different constraints $x_i$. To constrain $p(g)$ we use
+\[
+\begin{cases}
+    x_i^{RG} \equiv \sum_{g\in \Omega} p(g)x_i(g) = x_i^* & \text{for }i=1,...,m \\
+    \quad \sum_{g\in \Omega} p(g) = 1 
+\end{cases}
+\]
+So we have $|\Omega|$ unknowns where the number of constraints $m+1 \ll |\Omega|$. So in general it is impossible to fully determine the unknowns. 
+
+\subsubsection{Maximum Entropy Principle}
+
+The best choice of $p(g)$ is the one that satisfies one of the equivalent statements below: 
+\begin{itemize}
+    \item Adds no additional information beside the constraints
+    \item Maximises the randomness
+    \item Maximises the Gibbs-Shannon entropy (subject to constraints)
+    \[
+    H(p)=-\sum_{g\in\Omega}p(g)\log p(g)
+    \]
+\end{itemize}
+
+\textbf{Example}
+
+If $m=0$ then the only constraint is $\sum_{g\in \Omega} p(g) =1$. We can use the Method of Lagrange Multipliers: 
+\[
+\mathcal L (\boldsymbol p ; \lambda ) = -\sum_{g\in \Omega} p(g)\log p(g) - \lambda \left( 1-\sum_{g\in \Omega} p(g)\right)
+\]
+and $\lambda$ is our Lagrange multiplier. We maximise $\mathcal L$ with respect to $p(g)$ for \textit{one} graph $g$. Then
+\[ 
+\frac{d\mathcal L}{d p(g)} = -\log p(g) - p(g)\cdot \frac 1p(g) +\lambda = 0
+\]
+so $\log p(g) = \lambda - 1$ and $p(g)=\exp(\lambda -1)$ is a constant. We fix $\lambda$ 
+\[ \sum_{g\in \Omega} p(g) = \sum_{g\in \Omega} \exp(-\lambda-1) = 1 \implies p_g=\frac{1}{|\Omega|} \text{ is constant}\] 
+
+Case with $m+1$ constraints ($x_i$ for $i=1,...,m$): 
+\[
+\mathcal L(p;\lambda)=-\sum_{g\in\Omega}p(g)\log p(g)-\lambda\left(1-\sum_{g\in\Omega}p(g)\right) - \sum_{i=1}^m\beta_i\left(x_i^*-\sum_{g\in\Omega}p(g)x(g)\right)
+\]
+where each $\beta_i$ are also Lagrange multipliers. So we maximise $\mathcal L$ for a graph $g$.
+\begin{align*}
+\frac{d\mathcal L}{d p(g)} &= -\log p(g) - p(g)\cdot \frac{1}{p(g)} + \lambda +\sum_{i=1}^m \beta_i x_i(g) = 0\\
+\log p(g) &= \lambda-1+\sum_{i=1}^m \beta_i x_i(g) \\
+p(g) &= \exp(\lambda-1)\exp\left(\sum_{i=1}^m\beta_ix_i\right)\\
+\exp(\lambda-1) &= \frac{1}{\mathcal Z} \quad \text{for } \mathcal Z \text{ partition function}\\
+\sum_{i=1}^m \beta_i x_i &\equiv H(x) \to \mathrm{Hamiltonian}\\
+p(g)&=\frac{1}{\mathcal Z} \exp(\sum_{i=1}^m \beta_i x_i(g)) \text{ Boltzmann distribution}
+\end{align*}
+
+Now to consider \textbf{exponential random graph models (ERGMs)}, we have: 
+\begin{itemize}
+    \item $\Omega$ is a suitable set of graphs.
+    \item Define $p(g)=\exp(\sum \beta_i x_i(g))/\mathcal Z$ for any $g\in \Omega$ and $x_i\colon g\to \mathbb R$ is a graph measure. The normalisation constant $\mathcal Z$ is not important in the sampling. We can tune $\beta_i$ for $i=1,\dots, m$ to impose the constraints that we want. Fixing the parameters is typically done based on $m$ observables/statistics of interest: $x_1^*,...,x_m^*$. 
+    \item If $x(g) = L(g)$, the number of edges is fixed (on average), the Poisson RG is retrieved. Hence, ERGMs are generalisations of the Poisson RG for different observables $x(g)$. 
+\end{itemize}
+
+\subsection{Metropolis for ERGMs}
+
+We will sample ERGMs using the Metropolis Hastings approach.
+
+\begin{enumerate}
+    \item Fit $\beta$ by repeating the Metropolis algorithm for $\beta\in[\beta_{\min}, \beta_{\max}]$. For $\beta=0$, we have uniform probability, therefore a normal random graph, and the clustering coefficient remains low. However, as we increase $\beta$, the clustering increases. Here the acceptance of the Metropolis algorithm is
+    \[
+        A(g\to g') = 
+        \begin{cases}
+            1 & {p(g')>p(g)} \\
+            \frac{p(g')}{p(g)}  = \exp{(\beta(x(g')-x(g)))} & p(g')\leq p(g)
+        \end{cases}
+    \]
+    \item For $\beta_i = \beta_i^*$ (i.e. we have fitted our $\beta$'s). We discard the equilibration time and collect samples $g(t)$ using the same Metropolis algorithm. 
+\end{enumerate}
+
+\textbf{Remarks: }
+\begin{itemize}
+    \item When $g'$ is rejected, we sample $g$ again $(t\to t+1)$. 
+    \item Equilibration/Mixing time of the chain depends on moving in $g\in\Omega$, and thus on the \textit{`acceptance rate'}. 
+\end{itemize}
+
+\newpage
+
+\section*{Week 7}
+
+Recall we can consider measures at either the microscale like $z_i$ and $C_i$ of each node, and the macroscale, like $C_{net}$, $\frac{\sigma_z}{\ip{z}}$ and $d_{diam}$. However, it is not enough to only look at the node level, neither is it enough to look at the network as a whole. 
+
+Now we consider what happens at the intermediate level (\textbf{mesoscale} structures). 
+
+Examples of mesoscale structures include
+\begin{itemize}
+    \item Assortative communities: e.g. in the Karate club there are two groups in the study. These two groups are mesoscale. 
+    \item Core-Periphery structures: e.g. rail network of Sydney -- everything is connected to City Circle / Redfern / Sydenham. 
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imgs/mesoscale.png}
+\end{figure}
+
+Our goal is to model and find such structures. This is related to the \textit{clustering problem}. 
+
+\section{Stochastic Block Models and Statistical Inference}
+
+\subsection{Stochastic Block Models (SBM)}
+
+\begin{definition}
+    Say $N$ nodes of the network are partitioned into $B$ groups (blocks). This clustering is mutually exclusive and exhaustive. We say that the block assignment $b_i \subseteq \{\alpha_1, \dots, \alpha_B\}$ is a latent variable for each node $i=1,\dots, N$. 
+
+    A link between $i$ and $j$ is created with probability $P_{r,s}$ that depends on the block assignment $b_i$ and $b_j$ with 
+    \[ P_{rs} = P(A_{ij}=1) \quad \text{with} \quad b_i = \alpha_r,\quad  b_j = \alpha_s \,\]
+\end{definition}
+The connectivity matrix $P_{rs}=P(A_{ij})$ is defined as follows: 
+\[
+\left[\begin{array}{c:c:c}
+P_{1,1}  & \cdots & P_{1,B} \\
+\hdashline
+\vdots&\ddots&\vdots\\
+\hdashline
+P_{B,1} & \cdots & P_{B,B}
+\end{array}\right]
+\]
+
+This is a generalisation of the Poisson RG, where the edge links are generated with probability given by their block assignments. SBMs can generate different types of mesoscale structures
+\begin{itemize}
+    \item When $B=1$ we recover the  Poisson RG. Everyone is in the same group so we have the same linking probability between two nodes. 
+    \item $\beta=2$ $P_{1,1}=P_{2,2}=0, P_{2,1} = P_{1,2}\neq0$ is a bipartite graph: 
+    \[\begin{tikzcd}
+	{\mathrm{Group}\ 1} & \bullet & \bullet & \bullet & \bullet & \bullet & \bullet \\
+	\\
+	{\mathrm{Group}\ 2} & \bullet & \bullet & \bullet & \bullet & \bullet & \bullet
+	\arrow[no head, from=1-2, to=3-3]
+	\arrow[no head, from=1-2, to=3-5]
+	\arrow[no head, from=1-3, to=3-3]
+	\arrow[no head, from=1-6, to=3-7]
+	\arrow[no head, from=1-7, to=3-3]
+	\arrow[no head, from=3-2, to=1-5]
+	\arrow[no head, from=3-4, to=1-4]
+	\arrow[no head, from=3-5, to=1-6]
+	\arrow[no head, from=3-6, to=1-5]
+\end{tikzcd}\]
+
+    \item For an arbitrary $B$, we usually have 
+    \[ P_{rs} = \begin{cases}
+        \varepsilon & r\neq s\\
+        p\gg \varepsilon & r = s
+    \end{cases}
+    \]
+    which creates assortative communities. $P_{rs}$ can also be visualised as: 
+    \[
+        \left[\begin{array}{c:c:c:c:c}
+        p&\varepsilon  & \cdots&\varepsilon & \varepsilon \\
+        \hdashline
+        \varepsilon&p  & \cdots&\varepsilon & \varepsilon \\
+        \hdashline
+        \vdots&&\ddots&&\vdots\\
+        \hdashline
+        \varepsilon &\varepsilon  & \cdots& p&\varepsilon \\
+        \hdashline
+        \varepsilon&\varepsilon & \cdots&\varepsilon & p
+        \end{array}\right]
+    \]
+    \item For $B=2$
+    \[
+    P_{1,1}\gg P_{0,0}, P_{1,2}=P_{2,1}>P_{0,0}
+    \]
+\end{itemize}
+
+\subsection{Inference in Networks}
+
+We can use the SBM to generate some networks. From a given network, we can perform some \textit{inference} to say something about the block allocation of the nodes by evaluating statistics of the graph against the parameters of the SBM (random graph models). 
+
+We can use a \textbf{Bayesian} framework, where we denote $D$ to be the data and $M$ to be the model with parameters $\Theta$: 
+\[ \underbrace{P(M\mid D)}_{\mathrm{Posterior}} = {\frac{\overbrace{P(D\mid M)}^{\mathrm{Likelihood}}\overbrace{P(M)}^{\mathrm{Prior}}}{\underbrace{P(D)}_{\mathrm{Evidence}}}}\]
+\begin{itemize}
+    \item Model selection/optimisation: maximum likelihood $P\br{D\given M}$ or maximum a posteriori estimate $P(M\given D)$
+    \item  Explore/sample plausible models/parameters from $P\br{D\given M}$ or $P\br{M\given D}$
+\end{itemize}
+
+The data is often a single network, hence only a single observation is available. However, for stochastic block models and Poisson RGs, the edges are conditionally independent ($P\br{A,B\given C} = P\br{A\given C}P\br{B\given C}$) which implies that we have $L$ observations. 
+
+\begin{center}
+\begin{tabular}{ c c c }
+Models & $M$ & Parameters $\Theta$ \\ 
+ \hline
+ & Poisson RGs & $N,p;\hat{p}=L/\binom N2$ \\  
+& Exponential RGs& $\beta$'s \\
+& Stochastic Block models & 
+     \# blocks $B$, probs $p_{r,s}$, allocations $\boldsymbol b$.
+\end{tabular}
+\end{center}
+
+\subsubsection{Inference in SBMs}
+
+The likelihood of a simple graph with 
+$\A = A_{ij}$ is 
+\begin{equation}
+\label{eq:star}
+    P(\A) = \prod_{{r,s<i}} P_{r,s}^{A_{i,j}} \bigl(1-P_{r,s}\bigr)^{1-A_{i,j}} = \prod_{r,s}\prod_{b_j=\alpha_s}\prod_{b_i=\alpha_r} P_{r,s}^{A_{i,j}}(1-P_{r,s})^{1-A_{i,j}}
+\end{equation}
+where $\boldsymbol b$ the block allocation vector is taken as fixed. Let
+\[ 
+\ell_{r,s} = \sum_{b_i \in \alpha_n, b_j\in \alpha_s} A_{i,j} = \text{number of edges between blocks $r$ and $s$}
+\]
+and 
+\[
+g_{r,s} = 
+\begin{cases}
+    |\alpha_r|\cdot |\alpha_s|, \qquad r\neq s \\
+    \abs{\alpha_r} \br{\abs{\alpha_r}-1}) \text{ (no self-edges)}
+\end{cases}\qquad\mathrm{maximum}\; \ell_{rs}
+\]
+then \eqref{eq:star} can be written as
+\begin{equation}
+\label{eq:MLE}
+   P(g) =P(\mathbb A) = \prod_{r,s \leq 1}^B P_{r,s}^{l_{r,s}} (1-P_{r,s})^{g_{r,s} - l_{r,s}}
+\end{equation}
+
+Now $P_{r,s}$ are independent parameters of the SBM, so the maximum of \eqref{eq:MLE} is the maximum of each term:
+\[ \hat P_{r,s} = \frac{\ell_{r,s}}{g_{r,s}} = \text{fraction of links between }\alpha_r \text{ and }\alpha_s\]
+
+Our challenge is to find the allocation vector $\boldsymbol{b}$ that maximises \eqref{eq:MLE}.
+
+The number of possible block assignments is $\frac{B^N}{B!}$, where the $B!$ comes from dividing by the number of permutations given $B$ blocks, but we identify them to be the same, as we only care about the partition. 
+
+Computationally, we prefer to minimise $-\log{\eqref{eq:MLE}}$, which is given by 
+\[
+-\log P\br{g} = -\sum_{r\text{ and }s\geq r}^B \ell_{rs} \log(P_{rs}) +\br{g_{rs}-\ell_{rs}}\log(1-P_{rs})
+\]
+where $P_{rs} = \frac{\ell_{r,s}}{g_{r,s}}$
+
+\subsection{Lessons from Tutorial 7}
+
+For Q2 of Tutorial 7, we were looking for the best partition of the Karate Club graph that maximises the log likelihood according to the stochastic block model.
+
+For a SBM, the Karate Club partition was more likely than random but unlikely overall compared to the best possible partition, which involved the $5$ central hub nodes in the same block. This is surprising considering that the karate club is comprised of two assortative communities.
+
+For SBMs, this is inevitable. Complex networks often have a degree variability, and from the perspective of the stochastic block model, the only way to account for this is to put the nodes of high degree (hub nodes) into their own block with high connection probability to other blocks. From this perspective, the SBM is naive.
+
+In 2011, [Neumann , Karrer] proposed a degree-corrected stochastic block model where
+\[ P(A_{i,j}) \sim z_iz_j \lambda_{r,s}\]
+where $\lambda_{r,s}$ is a SBM parameter. [??]
+
+The problem of finding $B$ requires accounting for the model complexity. A maximum likelihood estimate is not useful because 
+\[ B = N \implies \mathcal L = 1\implies -\log \mathcal L = 0\]
+is the maximum (all nodes in their own block with $\{0,1\}$ connection probability. 
+
+\subsection{High Dimensional Inference}
+
+Consider the following issues: 
+\begin{enumerate}
+    \item The likelihood $P(\mathrm{data}\mid \mathrm{model})$ or the posterior $P(\mathrm{model}\mid \mathrm{data})$ are intractable, i.e. no analytical solution for maxima. 
+    \item High dimensional parameter space: $\#\text{ parameters }= N \implies \text{space of possibilities } \sim e^N$, therefore exhaustive exploration is unfeasible. 
+\end{enumerate}
+Hence we require efficient computational methods. 
+
+\subsubsection{Variational Inference}
+
+The idea is to propose a family of \textit{tractable} probability functions $q(M)$ that approximates $P\br{D\given M}$ or $P\br{M\given D}$. For inference, minimise the \textit{``distance"} between $q(M)$ and $P\br{D\given M}$ or $P\br{M\given D}$. We use a mean-field approximation, that is the parameter space can be partitioned into parameters that are independent to create a more tractable family of probability densities.
+
+\textit{Example:} minimise the \textit{Kullback-Leibler divergence}
+\[
+q(M^*) = \min_{q(M)}\operatorname{KL}\br{q(M)||P(D\given M)}
+\]
+where 
+\[
+\operatorname{KL}(p\mid q) = H(q)-H(q\given P) = \sum_\theta p\log p - \sum_\theta p\log q
+\]
+
+\subsubsection{MCMC}
+
+This MCMC occurs in the parameter space for the SBM (compared to sampling graphs).
+
+\textbf{Greedy algorithm/variation:}
+\begin{enumerate}
+    \item Check all $k\in\cur{1,\cdots, N}$. 
+    \item Select the one that reduces $-\log L$ the most. 
+    \item Perform the best change. 
+    \item Repeat until no improvement is possible. 
+\end{enumerate}
+The problem with the greedy algorithm is that the proposal is simple, but the algorithm is prone to getting stuck within a local optimum.
+
+\textbf{Metropolis MCMC:}
+\begin{enumerate}
+    \item Start in $\boldsymbol{ b} = \boldsymbol{b}(t=0)$. 
+    \item Propose some $\boldsymbol{b}' = T(\boldsymbol{b})$ by flipping one randomly chosen $b_{k}$.
+    \item Accept / reject depending on $-\Delta \log (\mathcal L)$. 
+    \item Repeat. 
+\end{enumerate}
+where the proposal satisfies: 
+\begin{itemize}
+    \item $\B{b}\in$ set of partitions $\implies \B{b}=T(\B{b})$ 
+    \item Ergodicity
+    \item Detailed balance ($\pi\br{b\to b'}=\pi\br{b'\to b}=\frac{1}{N}$)
+\end{itemize}
+
+and where the acceptance is such that: 
+\begin{align*}
+    A\br{b\to b'} &= \min\br{1,\frac{\Lcal\br{b'}}{\Lcal\br{b}}}\qquad \Lcal\br{b} = P\br{D\given M}\\
+    &=\min\br{1,\exp\br{-\Delta\log\Lcal}}
+\end{align*}
+
+Therefore we will be sampling partitions $\B b$ according to the likelihood $\mathcal L(\B b)$ which allows us to do statistics over ``plausible" graphs with a good likelihood.
+
+It is also natural to add the inverse temperature $\beta$, 
+\[
+A\br{b\to b'} = \begin{cases}
+    1 & -\Delta\log\Lcal<0\\
+    \exp\br{\beta\Delta\log\Lcal} & -\Delta\log\Lcal>0
+\end{cases}
+\]
+so the Metropolis method will sometimes accept a worse configuration, which allows the algorithm to escape local optima. 
+
+Note that $\beta=0$ is a random search through the parameter space (yields bad partitions). If $\beta=1$ then we are sampling from $\mathcal L$ as per the previous case. Finally if $\beta\to \infty$ then we will only accept if we improve, which is similar to the greedy approach. 
+
+\subsection{Local Minima Problem}
+
+When we are optimising over local minima, the minus log likelihood will have many local minima (dips and valleys). So there are many opportunities for local moves to get stuck.
+Hence, the \textit{greedy} algorithm will likely get stuck at some local minima close to the initial. Therefore, convergence of the greedy or $\beta\to\infty$ methods depends on the initial $\theta(t=0), b(t=0)$. 
+
+MCMC-metropolis can jump over barriers. The probability to jump over a barrier of height $-\Delta\log\Lcal$ is $\exp\br{-\beta\Delta\log}$. A power idea for optimisation is \textbf{simulated annealing}, where we start with $\beta=0$, then move to $\beta\to \infty $ slowly. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imgs/simAnn.png}
+    \caption{Simulated Annealing}
+    \label{fig:simAnn}
+\end{figure}
+
+\newpage
+
+\section*{Week 8}
+
+\section{Community Detection}
+
+\textbf{Communities} are assortative mesoscale structures with more links within the group than across different groups. 
+
+Community detection is the problem of identifying the communities, or to partition the network based on only the graph.
+Typically, our number of communities are unknown and need to be inferred from the graph. This is challenging because the number of partitions of $N$ nodes in $B$ groups grows quickly. Naively, we might think: 
+\[ \mathrm{Naively:}\quad \sum_{B=1}^N \frac{B^N}{B!} \,,\]
+but this is \textbf{not} correct because this allows for empty partitions. Actually, we have
+\[ \operatorname{Be}(N) = \sum_{B=1}^N \genfrac\{\}{0pt}{}{N}{B}\]
+where $\operatorname{Be}$ is the \textbf{Bell number}, $\genfrac\{\}{0pt}{}{N}{B}$ is the \textbf{Stirling number} of the second kind. The Bell number is super exponential, but slower than a factorial. We want a solution that scales like polynomials in $N$.
+
+\subsection{Graph Partitioning/Mode Clustering}
+
+We aim to minimise the "cut size", i.e. the number of links between communities that you need to cut before these two communities are separated.
+
+To simplify, consider the case where $B=2$, and $N_1$ and $N_2$ are known where $N_1+N_2=N$. The number of possible partitions is then $\binom{N}{N_1}\sim e^N$, assuming $P\neq NP$, such that we do not have a polynomial algorithm. 
+
+The \textbf{Kernighan-Lin algorithm} for graph bisection is as such: 
+\begin{enumerate}
+    \item Initialisation: have any partition with $B=2$ and the given $N_1$ and $N_2$. 
+    \item For all pairs of nodes, identify the node swap that \textit{minimises} the cut size (or the one with the least increase). 
+    \item Perform the swap and repeat step 2, now excluding the pairs already swapped. 
+    \item Optional: check the cut size through steps 2-3 and pick the one with minimal cut size. 
+    \item Repeat steps 2-4 until no improvement. 
+\end{enumerate}
+The \textit{efficiency} of this algorithm is $O(N^2)$ (polynomial in $N$). However, there is no possible simple extension to find $B$, as the cut size for $B=1$ or $N_1=0$ is $0$. So we can do this hierarchically, but this is a different question to finding the best $B$.
+
+\subsection{Modularity Maximisation Methods}
+
+We would like to find $B$, with the community allocation $b_i\subset\{\alpha_1,...,\alpha_B\}$ for $i=1,...,N$ nodes. The idea is as such: 
+\begin{enumerate}
+    \item We take the links within the same community and sum
+    \[ L_c = \sum_{\mathrm{edges\  }(i,j)} \delta(b_i =b_j) = \frac12 \sum_{i=1}^N \sum_{j=1}^N A_{i,j} \delta(b_i = b_j)\]
+    where $\delta(x)=\begin{cases} 1 & \text{if $x$ occurs } \\ 0 & \text{otherwise}\end{cases}$
+    \item We want the expected number of such links by chance. The probability of a random $(i,j)$ link should be $P_{i,j} = \frac{z_iz_j}{2L}$. Then the random expectation is
+    \[ L_R = \frac12 \sum_{i=1}^N \sum_{j=1}^N\ \frac{z_i z_j}{2L} \delta(b_i = b_j)\]
+    The quantity to be maximised, the \textit{modularity} $Q$, is 
+    \[
+        Q=\frac{L_C-L_R}{L}=\frac{1}{2L}\sum_{i=1}^N \sum_{j=1}^N \br{A_{i,j}-\frac{z_iz_j}{2L}} \delta(b_i = b_j)
+    \]
+    We can see that: 
+    \begin{align*}
+        B=1 &\implies L_C=L_R\implies Q=0 \\ 
+        B=N &\implies \delta(b_i=b_j)=1\iff i=j\implies A_{ij}=0\implies L_C=0\implies Q\leq 0
+    \end{align*}
+    Hence, for $1<B<N$, it is likely that $Q>0$, so we choose $B$ and the partition  $\boldsymbol{b}$ that maximises $Q$.
+\end{enumerate}
+
+We can use the greedy algorithm to change a partition $\boldsymbol{b}$ systematically, and then vary it to maximise the modularity of the clustering.
+\begin{itemize}
+    \item \textbf{Agglomerative methods:} take two partitions and combine them into one. 
+    \item \textbf{Divisive methods:} take one partition and divide into two. 
+\end{itemize}
+
+Consider an example of a greedy \textit{agglomerative} or \textit{divisive} method: 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|cc}
+       Method  & Agglomerative & Divisive \\
+       \hline
+       1. Start with  & $B=N$ & $B=1$\\
+       2. Check all possible & merges &divisions\\
+        3. Choose the one that maximises $Q$ &&\\
+        4. Repeat 2-3 until& $B=1$ & $B=N$
+    \end{tabular}
+\end{table}
+Select $B$ and $\boldsymbol{b}$ that maximises $Q$.
+
+The computational cost involves looking at pairs of block assignments, so it is $B^2\sim O(N^2)$, i.e. polynomial in $N$, which is not so bad.
+
+\begin{remark}
+    The efficiency of the greedy methods be improved to $O(n(\log n)^2)$ by testing possible merges only between connected communities. We will need to store the links between communities during the algorithm, forming a multi-graph type structures with communities as nodes.
+
+    There are also other optimisation methods applicable to modularity, such as the \textit{Louvain method}.
+
+    There are different variations of modularity, for example, $z$-modularity, and others.  
+\end{remark}
+
+\subsection{Other Community Detection Methods}
+
+\subsubsection{Centrality-Based Approaches}
+
+The idea is to identify ``bridging edges" and cut them in order. For example, the \textbf{Girvan-Newmann method} uses between-ness centrality to identify the nodes to cut then tracks modularity to select communities. 
+
+\subsubsection{Dynamical Approaches}
+
+An example is \textbf{label propagation}: 
+\begin{itemize}
+    \item Each node starts in its own community $B=N$. 
+    \item At each step, each node adopts the community of most neighbours or one by chance. 
+\end{itemize}
+
+Another example if \textbf{infomap} which is based on transfer operators. 
+
+\subsubsection{Spectral Methods}
+
+Based on the eigenvalues  of the Graph Laplacian given by . 
+
+An example is the \textbf{Graph Laplacian}: 
+\[
+\mathbb{L} = \mathbb{D-A}
+\]
+where $\mathbb D = \operatorname{diag}(z_1,\dots, z_n)$ is a diagonal matrix with the node degrees along the diagonal.
+
+Consider $A$ with $B$ components that are completely disconnected. Then the graph Laplacian $\mathbb L$ is block diagonal with the structure
+\[ \mathbb L = 
+\begin{bmatrix}
+    \mathbb L_1 & 0 & \cdots & 0 \\ 0 & \mathbb L_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \mathbb L_B \,.
+\end{bmatrix}
+\]
+where there are $B$ eigenvectors that each correspond to $\mathbb{L}_1,...,\mathbb{L}_B$: 
+\[
+\B{v}_1=
+\begin{pmatrix}
+    c_1 \\ c_1 \\ \vdots \\ c_1 \\ 0 \\ 0 \\ 0
+\end{pmatrix}, 
+\quad \B{v}_2=
+\begin{pmatrix}
+    0 \\ \vdots \\ 0 \\ c_2 \\ c_2 \\ 0 \\ 0
+\end{pmatrix}, 
+\quad ...\quad, \quad \B{v}_B =
+\begin{pmatrix}
+    0 \\ 0 \\ \vdots \\ 0 \\ c_B \\ c_B \\ c_B
+\end{pmatrix}
+\]
+
+If we compute the eigenvalues and eigenvectors of the matrix we will see the vectors are of this format, and this will produce a community assignment for the notes. We construct an $N\times B$ matrix which is given by
+\[ \begin{bmatrix}
+    \boldsymbol{v_1} & \boldsymbol{v_2} & \cdots & \boldsymbol{v_B} 
+\end{bmatrix}\]
+and the $i$-th column corresponds to the nodes in community $i$.
+
+Now consider a small perturbation of the disconnected case, where we modify $\mathbb{L}$ by adding in random ``one"s (sparse) in areas off the block diagonals. This corresponds to random links between communities. Thomas section: \textit{Under this small perturbation, the eigenvalues should not move enough to coalesce with another one and become multiple, see Perturbation Theory for Linear Operators [Kato] Moreover, the corresponding normalised eigenvectors are only slightly shifted.}
+
+\begin{itemize}
+    \item Choose $B$ from the spectral gap, i.e. $\lambda$ increases sharply. 
+    \item Take the $B$ eigenvectors associated to $\lambda_1,\cdots,\lambda_B$. 
+    \item Construct the $B\times N$ matrix. 
+    \item Then we can cluster the nodes in a $B$-dimensional Euclidean space, via $k$-means or some other algorithm. The cluster associated to the node is the community associated with this node. 
+\end{itemize}
+
+\subsection{Which Method is the Best / Should be Used?}
+This is not a mathematically well defined problem. However there are two considerations in community detection that we need to take into account
+\begin{enumerate}
+    \item Find ``best" partitions, or assortative mesoscale structures that we know exist. 
+    \item The more ambitious task is to decide whether community structures exist at all, within the graph. For example, is the clustering stronger than what is expected by chance. (Is the signal that we find strong enough?)
+\end{enumerate}
+
+Question: why is modularity maximisation unable to identify that a Poisson random graph should not have any clusters. Recall that modularity is introduced as the expected number of edges within clusters minus the number you expect by random chance. Why does modularity maximisation find $\sqrt N$ communities?
+
+The modularity maximisation method does not account for the fact that the number of possible partitions rises super exponentially. When maximising, we are looking over a very huge space with a big fluctuation, so it is expected that under some partition within the space with a high modularity. We need to control for the probability of the partition. The function makes sense, but when optimising over a large space, it breaks down.
+
+\begin{itemize}
+    \item Modularity maximisation and other methods, eg. label propogation find communities even in Poisson random graphs (where there should not be any communities) because they don't control for fluctuations of $Q$ over the space of possible partitions.
+
+    \item They can find the best partition, even with noise, if there is a strong belief that the assortative communities are a dominant feature of the network. If we do not know if the network has these communities, then applying these methods blindly can result in detecting networks that do not exist and only appear due to noise.
+
+    \item Methods based on statistical inference are required for problems I and II.
+\end{itemize}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Week 9}
+
+\section{Network Reconstruction}
+
+Idea: given an incomplete observation (data) on a network $G$, the goal is to reconstruct $G$, ie. what are the links and nodes of $G$?
+
+For example
+\begin{itemize}
+    \item Social networks: from some friendship links, predict unobserved future friendships -- eg. recommendation systems.
+    \item Product-Buyer bipartite network
+    \item Protein-protein interactions -- which protein interactions do we test experimentally, given limited information?
+\end{itemize}
+
+\subsection{General Approaches}
+\subsubsection{Heuristic Methods}
+Heuristic methods are based on experience and heuristic functions, so we can assume the observation have clustering $C>0$. We can predict that links between nodes with similar neighbours are more likely to occur because they increase the clustering. 
+
+\subsubsection{Inferential methods}
+Based on a generative process of the data $P(D\mid M)$ where $D$ is the data and $M$ is the model. Some possible settings are 
+\begin{itemize}
+    \item Random graph models define the probability of a graph given the model.
+    \item Inference can happen using MCMC-Metropolis to sample / optimise models $M$ from $P(D\mid M)$ or $P(M\mid D)$ and also to sample $P(g\mid M)$. Sampled $g$'s are candidates for network reconstruction.
+\end{itemize}
+Note that in the community-detection problem, we have: 
+\begin{itemize}
+    \item Heuristic methods: finding a partition of the graph that maximises modularity. 
+    \item Inferential methods: stochastic block models - using the probability of observing edges in a certain graph to infer the structure of the graph. 
+    \item Note that modularity maximisation will overfit and find communities even in random graph models like Poisson RG which are entirely noise. 
+\end{itemize}
+
+\subsection{Link Prediction}
+
+Given the \textit{data} $\ell_1,...,\ell_L$ links between $N$ nodes, which build an observed network $g_o$. 
+
+The \textit{goal} is to predict ``missing" links $\ell_{L+1},\dots, \ell_{L+L^*}$ between the same $N$ nodes of an underlying network $g$ (where $g_0\subseteq g$). 
+
+The \textit{method} is to rank all $\frac{N(N-1)}{2}-L$ non-links according to their probabilities of being ``real" links. 
+
+\subsubsection{Heuristic methods}
+
+Let $\Gamma(i)$ be the set of neighbours of node $i$ in the observed network $g_0$. Denote $|\Gamma(i)|$, the observed degree of node $i$, as it's length ($\abs{\Gamma(i)}\equiv z_i$). 
+
+A potential link $(i,j)$ is ranked higher if the neighbours of nodes $i$ and the neighbours of node $j$ have a large intersection $|\Gamma(i)\cap \Gamma(j)|$ is big. 
+
+\begin{enumerate}
+    \item Jaccard Coefficient: 
+    \[ J_{i,j} = \frac{|\Gamma(i)\cap \Gamma(j)|}{|\Gamma(i)\cup \Gamma(j)|}\,.\]
+    The Jaccard coefficient is proportional to the fraction of common neighbours (there is a normalisation). 
+    \item Resource Allocation Index
+    \[
+        \mathrm{RA}_{ij} = \sum_{k\in \Gamma(i)\cap\Gamma(j)} \frac{1}{\abs{\Gamma(k)}}
+    \]
+    Here, neighbour contribution is inversely proportional to degree. Its like saying Jenny is more likely to be Friends with Mitch vs Taylor Swift.
+    \item Adamic-Adar index:
+    \[
+        \mathrm{AA}_{ij} = \sum_{k\in \Gamma(i)\cap\Gamma(j)} \frac{1}{\log{\abs{\Gamma(k)}}}
+    \]
+    There is a smaller penalty for degree in view of higher degree variability 
+    \item Preferential-attachment score: 
+    \[
+    \mathrm{PA}_{ij}=|\Gamma(i)||\Gamma(j)|
+    \]
+    Here, there is a preference for hubs. 
+\end{enumerate}
+
+\subsection{Inferential Methods}
+
+\begin{enumerate}
+    \item Choose a random graph model  $M$ with parameters $\Theta$. For example, exponential random graph model, SBM, etc. which define $P(G\mid M,\Theta)$
+    \item We then fit the model $M$ to data $D$ to estimate the best parameters $\Theta$, eg. the maximum likelihood values $\Theta^* = \operatorname{argmax}_{\Theta}P(D\mid M,\Theta)$.
+    \item We can sample $\{g_t\}$ from $P(g\mid M,\theta^*)$ and compute links
+    \[
+    p_{ij}=P(\ell=(i,j))=\sum_{g\in\{g_t\}}\frac{\delta(A_{ij}=1)}{|\{g_i\}|}
+    \]
+\end{enumerate}
+For example, SBM as RG, $\Theta = \boldsymbol{b}$ and $P_{ij} = P\br{\ell=\br{i,j}} P_{rs}$ with $\boldsymbol{b}(i) =r,b(j) = s$
+
+\subsection{Comparing Methods}
+
+\begin{enumerate}
+    \item Start from $g$, and remove a number (e.g. 10\%) of links to obtain $g_o$. 
+    \item Apply (various) link prediction methods to $g_o$. 
+    \item Evaluate the methods based on comparison with the ground-truth removed links, using the AUC. (Area under the Curve score)
+    \item Average over different realisations of removed links. 
+\end{enumerate}
+To predicted links, we can calculate
+\begin{itemize}
+    \item True positive rate: $\operatorname{TPR}=\frac{\mathrm{TP}}{\mathrm{TL}}$ 
+    \item False positive rate: $\operatorname{FPR} = \frac{\mathrm{FP}}{\mathrm{FL}}$
+\end{itemize}
+
+We try to achieve $\operatorname{TPR}=1$, and $\operatorname{FPR}=0$. A $\operatorname{FPR}=1$ can occur if we accept all possible links. As I move my threshold for accepting a link, I move from $(0,0)$ to $(1,1)$ in $\operatorname{FPR}-\operatorname{TPR}$ curve. This is the ROC plot for binary prediction. 
+
+If we consider the area under the ROC curve, then that is the AUC value. If the method is perfect, it will have area $1$. Note that if we randomly pick nodes, we will move on the diagonal $y=x$, and so AUC will be $1/2$.
+
+Below are some AUCs for heuristic models: 
+\begin{itemize}
+    \item JD 0.714
+    \item AA 0.714
+    \item RA 0.711
+    \item BA 0.552
+\end{itemize}
+
+Now we consider the SBM approach: 
+\begin{itemize}
+    \item Fix $B$, and compute $\vec{b}^*$, and calculate AUC. 
+    \item We can use this to infer the optimal $B$ by maximising AUC (can easily confirm this by generating SBM with known $B$ and calculate the AUC for different $B$'s)
+\end{itemize}
+
+
+\subsection{Bayesian Approach}
+
+Bayesian inference of $B$:
+\[
+P(M\mid D)=\frac{P(D\mid M)P(M)}{P(D)}
+\]
+if we take the log of both sides
+\[
+\log P(M\mid D) = \log P(D\mid M) + \log P(M) + \log P(D)
+\]
+where $\log P(M)$ are the log priors and $\log P(D)$ are constants. 
+
+Recall from Week 7 that we aimed to minimise
+\[
+-\log P\br{g} = -\sum_{r\text{ and }s\geq r}^B \ell_{rs} \log(P_{rs}) +\br{g_{rs}-\ell_{rs}}\log(1-P_{rs})
+\]
+
+Since we are in a Bayesian framework, we need to choose a prior, ie. $P(M)\equiv P(\boldsymbol{b})$. We will use a noninformative (uniform) prior.
+
+We use
+\[P(\boldsymbol{b}) = P(\boldsymbol{b}\mid B)P(B)\]
+where $B$ is a hyperprior. In our case, we can use $P(B)=1/N$ as a flat prior as $B$ the number of blocks can be $1,2,\dots, N$. The allocation over $B$ must be 
+\[ p(\boldsymbol b\mid B) = \text{number of different allocations we have} = \frac{1}{B! \genfrac\{\}{0pt}{}{N}{B}}\]
+This would account for the increasing complexity of a model with a larger $B$. Then taking the log we have
+\[
+\log P(\B{b}\mid D) = - \log P(D\mid \B{b}) + \log B! + \log \genfrac\{\}{0pt}{}{N}{B} + \log N + \mathrm{constant}
+\]
+
+When we add the $-\log P(D\mid \boldsymbol{b}^*)$ with $\boldsymbol{b}^*$, obtained using the greedy algorithm with $B$. \textbf{CHECK}
+There is a correction factor.
+
+\subsection{Reconstruction from Node Activity}
+
+Consider the \textit{data} of node attributes $s_i$ for $i=1,...,N$ at different times $t=1,...,T$. The simplest case of which is where $s\in[-1,1]$. We assume that nodes influence each other through a network $g$ such that $s_i=s_j$ is more likely if $A_{ij}=1$. 
+
+\subsubsection{Heuristic Methods}
+
+The idea of the methods is as such: 
+\begin{enumerate}
+    \item Compute the pairwise ``similarity" of $s_i(t)$ and $s_j(t)$. 
+    \item Threshold the similarity and predict $g$ as all links with similarity above the threshold. 
+    \item Some similarity measures we may look at are:
+    \begin{itemize}
+        \item Pearson correlation
+        \item Mutual information
+    \end{itemize} 
+    \item An example of a threshold can be the prior guesses on numbers of edges, where we can compute the p-value of chance similarity. (\textbf{CHECK})
+\end{enumerate}
+
+\subsubsection{Inferential methods}
+Data: $\B{s}(t) =\br{s_1(t),\cdots,s_N(t)}$ for $t=1,\cdots, T$ where $s_i(t)\in\cur{-1,1}$. We consider
+\[
+P(D\mid M)=P(\B{s}\mid g)=Ae^{-E(\B{s})}
+\]
+where $E(\B{s})=-\sum_{i<j}A_{ij}s_is_j$ is the Ising model. Then, 
+\[
+-\log P(\B{s}\mid g) = E(\B{s})\implies \text{Maximum Likelihood}\equiv\min E(\B{s})
+\]
+
+The heuristic approach is as such: 
+\begin{itemize}
+    \item Compute the Pearson correlation, assuming that $L=100$ is known. 
+\end{itemize}
+The inferential approach is as such: 
+\begin{itemize}
+    \item Use the Ising model. 
+    \item Sample $g$'s from $P(\B{s}\mid \B{g})$ with fixed $L$ using MCMC Metropolis add/remove proposals. 
+    \item Then, average over multiple graphs by taking $g(t)$ for $t>t^*$. 
+\end{itemize}
+
+
+
+\newpage
+\section*{Week 10}
+
+\section{Dynamics on Networks}
+
+\textbf{Question:} How senstive is a network against perturbation?
+
+For example,
+\begin{itemize}
+    \item Communications networks. What happens if a link fails? Can the data still reach the destination?
+    \item Power grid networks. What happens if the cables are broken? Can the energy still be transmitted by rerouting it?
+\end{itemize}
+
+In a simplified setting, 
+\begin{enumerate}
+    \item Start with a graph $g$. 
+    \item Delete a fraction of the links of $g$, or the nodes, denoted by $q$ 
+    \item Measure how a network property $x(g)$ depends on $q$.
+\end{enumerate}
+
+If the metric changes rapidly with $q$, the network might be sensitive to this change -- susceptible to this failure.
+
+The key observable is $x(g)\cong K_1(g)\equiv \lim_{N\to \infty} \frac{N_{k=1}}{N}$ i.e. the size of the largest component. Then the network will still exist in some sense.
+
+\subsection{Percolation}
+
+We can map these problems to those of percolation in applied mathematics.
+
+Imagine in a sponge is full of holes and we pour some water in it. If the sponge has almost no holes, or very tiny holes, then the water has a difficult time finding a path to navigate the sponge. 
+
+In a 3d lattice some of the links could be ON or OFF, and we want to find a path following only ON edges that takes you from the top layer to the bottom layer. 
+
+The \textbf{percolation theory} is the study of the existence of such paths as a function of how many edges is ON or OFF. 
+
+For each link (\textit{bond}) or node (\textit{site}), we define a state: 
+\[
+\phi_i=
+\begin{cases}
+    1 & \text{on or occupied} \\
+    0 & \text{off or empty}
+\end{cases}
+\]
+where we choose $\phi_i$ such that $\langle\phi_i\rangle=p=1-q$, which is the probability of being ``on". 
+
+We would like to find the probability $\pi$ such that there is a percolation path connecting both sides of the network. Usually, when $N\to\infty$ we have, for the critical value $p_c$,
+\[
+\pi=
+\begin{cases}
+    0 & p<p_c \\
+    1 & p>p_c
+\end{cases}
+\]
+
+An equivalent consideration is whether we can travel through a network for an arbitrary distance if links are ON with probability $p$. First consider some examples: 
+\begin{itemize}
+    \item $1$d lattice $(z=2)$ for nodes. The trivial answer is yes only if $p=1, q=0$ and $P_c=1$, $q_c=0$. 
+    \item Bethe Lattice (a tree where all nodes have degree 3). Denote $\theta$ to be the probability of travelling through an infinite path as $N\to \infty$. Then $\theta(p)=?$
+
+    Let $\omega := 1-\theta$ be the probability of stopping. If we stop, it is because of one of two possibilities: 
+    \begin{itemize}
+        \item the link is OFF with probability  $1-p$. 
+        \item The link is ON but it leads to a dead end. 
+    \end{itemize}
+    The probability of stopping for each link is then $1-p+p\omega$. For the two outgoing links, it is $(1-p+p\omega)^2$. The self consistent equation is
+    \[
+    \omega=(1-p+p\omega)^2\implies \omega=1 \text{ or }\left(1-\frac{1}{p}\right)^2\,,    \]
+    then
+    \[
+    \theta = 1-\omega = \br{\underbrace{0}_{\text{trivial solution}},\underbrace{1-\abs{\frac{1}{p}-1}^2}_{\theta^*,\text{ non-trivial solution}}}
+    \]
+    and
+    \[
+    \theta`^*=1-\frac{1}{p}-1+\frac{2}{p}=\frac{1}{p}\left(2-\frac{1}{p}\right)
+    \]
+    If $0\leq \theta^*\leq 1$ then at $p=\frac{1}{2}$ we have $\theta^*=0$, and at $p>\frac{1}{2}$, we have $\theta^*>0$. Hence the critical value $p_c=\frac{1}{2}$. 
+\end{itemize}
+
+So the percolation result is that $K_1$ decreases concavely with $q$ until $q_c$ where it reaches 0, then is 0 for $q>q_c$. 
+
+I wish it only took babies 9 weeks to come out
+and then half of them die upon birth. 
+
+\subsection{Giant Component and Robustness of Random Graphs}
+
+\subsubsection*{Random Graph with Fixed Degree Distribution $P(z)$}
+
+We consider percolation to be equivalent to the onset of a giant component, which happens when a node $i$ is connected to $j$ and has at least one additional link. The expectation of degree of $z_i$ conditioned on a link between $i$ and $j$: 
+\[
+\langle z_i\mid i\leftrightarrow j\rangle\geq 2
+\]
+which can be written as
+\begin{equation*} \label{eq:star_w10}
+\sum_{z=1}^\infty z P(z\mid i\leftrightarrow j)\geq 2 \tag{*}
+\end{equation*}
+Using Bayes formula: 
+\[
+P(z_i\mid i\leftrightarrow j)=P(i\leftrightarrow j\mid z_i)\frac{P(z)}{P(i\leftrightarrow j)}
+\]
+where $p(z)$ is the degree distribution. We also have that same $P(i\leftrightarrow j)=\frac{\langle z\rangle}{N-1}$ and $P(i\leftrightarrow j\mid z_i)=\frac{z_i}{N-1}$ so inserting back into \ref{eq:star_w10}, we get
+\[
+\sum_{z=1}^\infty z\frac{z_i}{N-1}\frac{N-1}{\langle z\rangle}P(z)=\sum_{z}\frac{z^2P(z)}{\langle z\rangle}=\frac{\langle z^2\rangle}{\langle z\rangle}\geq 2
+\]
+
+\underline{Consider the example} of the Poisson RG. The property of the Poisson distribution is that $\sigma_z^2=\langle z\rangle$ (equivariance), so
+\[
+\langle z^2\rangle - \langle z\rangle^2=\langle z\rangle \implies \frac{\langle z^2\rangle}{\langle z\rangle}=1 + \langle z\rangle\geq 2\implies \langle z\rangle\geq 1
+\]
+
+\subsubsection*{Random Deletion of Nodes or Links (Failure) in a RG with $P(z)$}
+
+We go from $P(z)\to P(z')$ after deleting links with probability $q$. We are then interested in computing $P(z')$, using the previous formula: 
+\[
+P(z')=\sum_{z=1}^\infty P(z)P(z\to z')
+\]
+where
+\[
+P(z\to z')=\binom{z}{z'}(1-q)^{z'}q^{z-z'}
+\]
+so to compute the components we have 
+\[
+\begin{cases}
+    \langle z'\rangle &= \sum_{z'=1}^\infty z' P(z')= (1-q)\langle z\rangle \\ 
+    \langle z'^2\rangle &= \sum_{z'=1}^\infty z'^2P(z')= (1-q)^2\langle z^2\rangle+\langle z\rangle q(1-q)
+\end{cases}
+\]
+which if we insert into \ref{eq:star_w10} we have
+\[
+\frac{\langle z'^2\rangle}{\langle z'\rangle} = \frac{(1-q)^2\langle z^2\rangle+\langle z\rangle q(1-q)}{(1-q)\langle z\rangle}\geq 2
+\]
+solving for $q$: 
+\begin{align*}
+(1-q)\frac{\langle z^2\rangle}{\langle z\rangle}+q\geq 2 &\implies q\left(1-\frac{\langle z^2\rangle}{\langle z\rangle}\right)\geq 2-\frac{\langle z^2\rangle}{\langle z\rangle} \\
+&\implies q\leq\frac{1+1-\frac{\langle z^2\rangle}{\langle z\rangle}}{1-\frac{\langle z^2\rangle}{\langle z\rangle}}=1+\frac{1}{1-\frac{\langle z^2\rangle}{\langle z\rangle}}=1-\frac{1}{\frac{\langle z^2\rangle}{\langle z\rangle}-1}
+\end{align*}
+So the critical value of $q$ is
+\[
+q_c=1-\frac{1}{\frac{\langle z^2\rangle}{\langle z\rangle}-1}\implies p_c=1-q_c=\frac{1}{\frac{\langle z^2\rangle}{\langle z\rangle}-1}
+\]
+
+\underline{Consider some examples} from the previous tutorial cases: 
+\begin{itemize}
+    \item In the simplest case of the $K$-regular graph (this includes the Bethe Lattice result) we have
+    \[ P(z) = \delta(z-3) \implies \langle z\rangle = \sum z\delta(z-3) = 3 \,, \langle z^2\rangle = 9\,.\]
+    Then the critical value is 
+    \[ q_c= 1-\frac{1}{3-1} = \frac12\,.\]
+    \item In the Poisson RG of the W10 tutorial, we had $\langle z\rangle = 4$. Then
+    \[
+    q_c=1-\frac{1}{\langle z\rangle +1-1}=1-\frac{1}{4}=\frac{3}{4}
+    \]
+    \item For the general random scale-free network ($P(z)\sim z^{-\gamma}$ for $2\leq \gamma\leq 3$, remember the BA graph is the case where $\gamma=3$) we have $\langle z^2\rangle\to\infty$ as $N\to\infty$, so the critical value
+    \[
+    q_c\to 1
+    \]
+    hence there is no percolation threshold in scale-free networks (i.e. they are robust against random failures). 
+\end{itemize}
+
+
+\subsection{Networks Under Attack}
+
+What happens if the nodes are not deleted randomly, but instead we attack the high-degree nodes, ie. the hubs?
+
+For the setup, consider starting with a graph (RG with $P(z)$), and removing a fraction $q$ of nodes either randomly or from highest to smallest degree. 
+
+We can again consider the formula
+\[
+q_c=1-\frac{1}{\frac{\langle z^2\rangle}{\langle z\rangle}-1}
+\]
+but the problem with this formula is that it was computed for links, not nodes, and for random removal, not targeted attacks. 
+
+The idea for this is to compute finite $N$ results: 
+\[
+z_{\max}\sim\frac{1}{N^{\gamma-1}}
+\]
+and delete the top node
+\[
+z_{\max}^{(n)}\to z_{\max}'(N-1)
+\]
+which removes $z_{\max}$ edges. Then we can use the previous formula. 
+
+For scale-free networks
+\[
+P(z)\sim z^{-\gamma} \quad\text{for }2\leq\gamma\leq 3
+\]
+the conclusion is that
+\begin{enumerate}
+    \item They are robust against failures ($q_c=1$). 
+    \item They are fragile against top-node attacks ($q_c\leq 1$). 
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Week 11}
+
+\textbf{Goal:} connect the network structure properties to dynamical properties over the networks.
+
+\textbf{Setting:} we have a state $\phi_i(t)$ of node $i$ that evolves over time and depends on $\phi_j(t^*)$ for $A_{i,j}\neq 0 $ and $t^* \leq t$.
+
+\section{General Setting, Binary Models}
+
+Consider a \textit{sparse simple} graph $g$ with $N$ nodes, and let $k_i$ be the degree of node $i$. The on/off state is denoted $\phi_i\in[0,1]$. Nodes will change from state 0 to state 1 with rate (probability per unit of time) $F$, and from 1 to 0 with rate $R$. The rates depend on $k_i$ and on $m_i=\sum_{i=1}^N A_{ij}\phi_j$, the number of neighbours in $\phi=1$.  (Binary state dynamics)
+
+The main quantity of interest is how many nodes in the network.
+\begin{itemize}
+    \item $\rho(t)=\frac{1}{N} \sum_{i=1}^N \phi_i(t)$ ie the fraction of nodes in state $1$ as $\to \infty$.
+\end{itemize}
+
+Some examples:
+\begin{itemize}
+    \item Voter Models: probability of switching is $m/k$ or $1-m / k$ proportional to the fraction of the $m$ neighbours with the opposite opinion
+    \item Majority vote with $Q=0$ update to the opinion of most of your neighbours.
+\end{itemize}
+
+Consider the case of a large random graph with high polarisation. We want to know if consensus is achieved as $t\to\infty$, that is 
+\[
+    \lim_{t\to \infty} \rho(t) = 1 \text{ or } 0 
+\]
+Consider SI, SIS models ($S$ is susceptible, denote 0, $I$ is infected , denote 1) We want to consider $\rho_\infty$ where $\rho_\infty = 0$ means there is no infection/outbreak and $\rho_\infty =1$ means all are infected
+
+\subsection{Methods to Investigate Dynamics on Networks}
+
+\subsubsection{Direct Numerical Simulations}
+
+A specific update rule needs to be specified to fully define the model. 
+\begin{itemize}
+    \item Synchronous update: all nodes have their states updated at the same time ($t\to t+\Delta t$). 
+    \item Alternatively, we can update asynchronously in which case one node is updated at each time step. This is a different way of counting time ($t'\to t'+\Delta t'$ where $N\Delta t'=\Delta t$). We can select nodes randomly or sequentially. 
+\end{itemize}
+
+\subsubsection{Approximating Through Differential Equations}
+
+As $N\to \infty$, we have $\Delta t = 1\implies \Delta t' = dt = \frac1N$ in the asynchronous case. Then $\rho(t)=\sum_{i=1}^N\frac{\phi_i(t)}{N}$. 
+
+The order 0 approximation/mean-field approximation is (for degree class $k$)
+\[
+\frac{d}{dt}\rho_k=-\rho_k\sum_{m=0}^k R_{k,m}B_{k,m}(\omega)+(1-\rho_k)\sum_{m=0}^k F_{k,m}B_{k,m}(\omega) \quad
+\]
+where recall $R_{k,m}$ and $F_{k,m}$ are transition probabilities, $\rho_k(0)=\rho(0)$ is the initial condition, and 
+\[
+B_{k,m}(q)=\binom k m q^m(1-q)^{k-m}
+\]
+If $\omega\equiv$ probability of a node being infected $=\langle\frac{k\rho_k}{\langle k \rangle}\rangle$.
+
+Key simplifying assumption: no correlation between the state of a node and the state of the neighbours. In sparse random graphs models we can often use the mean-field approximation
+
+\subsection{Cascades}
+In particular, cascades of failures or innovation spreading. For example
+\begin{itemize}
+    \item Blackouts in power-grids 
+    \item Adaptation of innovations 
+    \item Spreading of memes like 6 7 (-Eduardo G. Altmann (with the hand signs)) 
+\end{itemize}
+Threshold model (watts, PNAS 2002)
+Initial condition $\phi_i(0) =0$ for almost all nodes $i$
+\[
+    \phi_i(t+1) =\begin{cases}
+        1 & \text{if } \frac{m_i}{k_i}>q_i\\
+        0 & \text{else}
+    \end{cases}
+\]
+here $m_i/k_i \equiv$ fraction of neighbours who adopted and $q_j \equiv$ parameter for threshold adoption, fixed in $t$ for each $i$. In simulation will be drawn iid from some distribution $f(q)$. We are interested in $\rho_\infty = \lim_{t\to\infty} \frac 1 N \sum_{i=1}^N\phi_i(t)$. For $N\to\infty$ we are interested in two cases: 
+\begin{itemize}
+    \item $\rho_\infty=0$, no cascade
+    \item $\rho_\infty>0$, global cascade
+\end{itemize}
+
+A \textbf{vulnerable node} is a node $i$ for which $\frac{1}{k_i}>q_i$ (aka a node susceptible to infection with 6 7). A sufficient condition for a \textit{global cascade} in the threshold model is to have the vulnerable nodes percolate through the network. 
+
+The fraction of nodes with degree $k$ that are vulnerable is $\rho_kP(k)$, where
+\[
+\rho_k=\mathbb{P}_F\left(q< \frac 1 k\right), \qquad F(q)=\int_0^qf(q^*)dq^*
+\]
+Last week we saw that
+\[
+\frac{\langle k^2\rangle_{\text{vulnerable}}}{\langle k\rangle_{\text{vulnerable}}} = \frac{\sum_{k=1}^\infty k^2\rho_kP(k)}{\sum_{k=1}^\infty k\rho_kP(k)}\geq 2
+\]
+is a sufficient condition for a cascade in a RG model with $P(k)$. 
+
+\subsection{Epidemic Spreading}
+
+\textbf{SIS (Susceptible, Infected, Susceptible) model:}
+
+When the susceptible nodes interact with the infected nodes, then they can become infected too. So we go from \verb|SI| pair to \verb|II| configuration. This happens with a rate $\lambda$. However, an infected node recovers spontaneously with rate $\mu$.
+
+\textbf{SIR (Susceptible, Infected, Recovered) model}
+
+Nodes which recently recover from infection shouldn't get infected for some time, because of some immunity. Now we have state \verb|I| transitions to $\verb|R|$ (recovery state) with rate $\mu$. Once you have recovered you do not take part of the epidemic (can't get sick again).
+
+We are interested in $N\to \infty$, $\langle z\rangle = \text{``const."}$ with random graph interactions. We are looking for equations for
+\[
+\begin{cases}
+    s &\equiv \frac{\#\text{ of nodes with $\phi_i = S$} }{N} \\
+    r &\equiv \frac{\#\text{ of nodes with $\phi_i = R$}}{N} \\
+    \rho &\equiv \frac{\#\text{ of nodes with $\phi_i = I$}}{N}
+\end{cases}
+\]
+Note that $s+r+\rho=1$ for all $t$. 
+
+We use an order $0$ Mean Field Approximation where susceptible nodes meet other nodes by chance. 
+
+Nodes have a typical number of connections $\langle z\rangle$. 
+We take
+\[ \text{Contacts to infected nodes per unit of time} = \langle z\rangle \rho \]
+Then we have the 3 ODEs
+\[
+\begin{cases}
+    \frac{ds}{dt} &= -\lambda s\underbrace{\langle z  \rangle \rho}_{\text{rate of decay} }\\
+    \frac{d\rho}{dt} &=  \lambda s\underbrace{\langle z  \rangle \rho}_{\text{rate of decay} } - \mu \rho\\
+    \frac{dr}{dt} &= \mu\rho
+\end{cases}
+\]
+where we note that $\rho+s+r=1$ for all $t$, and that $\frac{d}{dt}(\rho+s+r)=0$. We have the initial conditions
+\[
+\begin{cases}
+    \rho(t=0)&=1-S_0 \ll 1 \\
+    s(t=0)&=S_0\approx 1 \\
+    r(t=0)&=0
+\end{cases}
+\]
+At time $t\to \infty $ the number of infectious will be zero, and the number of susceptible and recovered should stabilise.
+
+Let's solve
+\[ \frac{ds}{dr} = -\frac{\lambda \langle z\rangle}{\mu} s \implies s(r) = s_0\exp \left(-\frac{\lambda \langle z\rangle}{\mu} r\right) \]
+is a linear separable ODE.
+
+We have the general solution
+\[
+s=s_0 e^{-\frac{\lambda\langle z\rangle}{\mu}r}
+\]
+and particular solution
+\[
+s(0)=s_0\approx 1 \quad\text{and}\quad r(0)=0 \implies s(r)=e^{-\frac{\lambda\langle z\rangle}{\mu}r}
+\]
+for $t\to\infty$, 
+\[
+s(r)\to s_\infty=e^{-\frac{\lambda\langle z\rangle}{\mu}r_\infty}
+\]
+Since $r+s+\rho = 1$ where $\rho_\infty\to 0$, we have an implicit solution for $r_{\infty}$ given by 
+\[
+r_\infty = 1-s_\infty = 1- \exp\br{-\frac{\lambda\langle z\rangle}{\mu}r_\infty}
+\]
+This is akin to the problem of finding a giant component in Poisson random graph, see end of \cref{section:wk3_networkModels}. The condition for the existence of the non-trivial solution (epidemic) is that
+\[
+\left.\frac{d \text{RHS}}{dr_\infty}\right|_{r_\infty=0}>1 \implies \frac \lambda \mu > \frac{1}{\langle z\rangle}
+\]
+which makes $\frac{\lambda}{\mu}=\frac{1}{\langle z\rangle}$ an \textbf{epidemic threshold}. 
+
+Now let's consider whether we can include degree variability in the model. The order 1 mean-field approximation is as such:
+\begin{itemize}
+    \item RG with a fixed degree distribution $P(z)$
+    \item Each degree class $z$ is treated separately
+\end{itemize}
+That is, the SIR are given by 
+\[
+\cur{s(t),\rho(t),r(t)} = \sum_{z=1}^{z_{\max}} P(z) \cur{s_z(t),\rho_z(t),r_z(t)}
+\]
+The number of connections to infected nodes per time unit is 
+\[
+\theta(t) = \sum_{z=1}^{z_{\max}} P(z)\frac{z\rho_z(t)}{\ip{z}}
+\]
+Then the ODEs become
+\[
+\begin{cases}
+    \frac{ds_z}{dt} &= -\lambda s_z z\theta(t) \\
+    \frac{d\rho_z}{dt} &= \lambda s_z z\theta(t)-\mu\rho_z \\
+    \frac{dr_z}{dt} &= \mu\rho_z
+\end{cases}
+\]
+with the same initial conditions for $s_z,\rho_z,r_z$ for all $z$. So as before, we write
+\[
+s(t)=e^{-\lambda z\int\theta(t)dt}
+\]
+and the condition for the existence of a non-trivial solution is
+\[
+\frac{\lambda}{\mu} > \frac{\langle z\rangle}{\langle z^2\rangle}
+\]
+
+
+There is a connection to Percolation
+\begin{enumerate}
+    \item Each node is "ON" infectious for a time $T\sim 1/\mu$ 
+    \item Probability of transmission ot a neighbour
+    \[p=1-(1-\lambda dt)^{T/dt} \approx 1-e^{-\lambda dt T/dt} \approx \lambda / \mu\]
+    where $\lambda / \mu \approx 0$.
+\end{enumerate}
+From last week, we derived the critical percolation threshold is give by 
+\[
+p_c =\frac{1}{\frac{\ip{z^2}}{\ip{z}}-1} \approx \frac{\ip{z}}{\ip{z^2}} \qquad \text{for } \ip{z^2} \gg \ip{z}
+\]
+Since $p\approx \frac{\lambda}{\mu}>p_c \approx \frac{\ip{z}}{\ip{z^2}} \implies \frac{\lambda}{\mu} > \frac{\ip{z}}{\ip{z^2}} $
+
+Key idea: for a scale free network, there is an infinite second moment, so as $N\to\infty$ there is no epidemic threshold ($\frac{\ip{z}}{\ip{z^2}}\to0$), so all viruses lead to an outbreak (there exist super-spreader individuals). 
+
+\newpage
+\section*{Week 12}
+
+\section{Dynamics on Networks: Games and Continuous Time}
+
+\subsection{Games on Networks}
+
+\begin{definition}
+    A game between two players $i$ and $j$ is defined by 
+    \begin{enumerate}
+        \item a set $A$ of possible actions or strategies $\{e_1,\dots, e_{Q}\}$
+        \item a $Q\times Q$ payoff matrix $M_{e_i,e_j}$.
+    \end{enumerate}
+\end{definition}
+
+An individual optimal strategy is the choice of $e_i$ that maximises its own payoff $m_i$ assuming $e_j$ is fixed (Nash equilibrium). 
+
+A collective optimum will be the maximum of $M_{e_i,e_j}$, i.e. best combined payoff $M_1+M_2$ given by $\underset{e_i,e_j}{\max}{(M_1+M_2)}$. When individual optimum leads to the collective optimum this leads to a win-win situation. 
+
+The more interesting case is when this is not true. An individual optimum does not lead to the collective optimum. For example, the prisoner's dilemma. 
+
+Here, $Q=2$ with strategies $\{e_1,e_2\} = \{\text{cooperate}, \text{defect}\}$ then
+\[  M_{e_i,e_j} = \begin{array}{c|c|c}
+ & \text{B Cooperates} & \text{B Defects} \\
+\hline
+\text{A Cooperates} & (1, 1) & (0, b) \\
+\text{A Defects} & (b, 0) & (0, 0) \\
+\end{array}
+\]
+The collective optimum is $e_1,e_1$ (coorperate, cooperate) and $M_{1,1}+M_{1,1}=-4$. However, the individual optimum for player 1 is defect, regardless of the choice of player 2. 
+
+Question: how can cooperation be achieved and is stable?
+
+\begin{enumerate}
+    \item Change the payoff (regulation)
+    \item Allow for new strategies 
+    \item The game repeats (there is memory in the system)
+    \item Allowing for communication
+\end{enumerate}
+However, the first two choices are essentially changing the premise of the game. Hence, we focus on the other two choices.
+
+\subsection{The role of networks in achieving global cooperation}
+Setting of the game: 
+\begin{enumerate}
+    \item Nodes start with attribute $C$ or $D$ (cooperate or defect), random distributed.
+    \item In each round, a game is played on each edge, the payoff for node $i$ is then given by
+    \[
+        S_i = \sum_{j=1}^N A_{ij} M_{e_i e_j}
+    \]
+    \item Strategy update: pick a random neighbour $j$, if $S_j>S_i$, change to their strategy, i.e. $e_i$ switch to $e_j$
+\end{enumerate}
+Measure: how cooperation evolves 
+\[
+    \rho(t) = \frac{1}{N} \sum_{i=1}^N \delta\br{e_i=c}(t)
+\]
+The above measures the fraction of the nodes that cooperates at time $t$. Hence if 
+\[
+\lim_{t\to\infty} \rho(t) = 1 \implies \text{cooperation prevails}
+\]
+
+Consider a toy model:
+
+At $t=0$, the number of cooperation nodes is approximately the number of defectors. Pick two nodes $x$ that coorerates and $y$ that defects. The degree $z_x = z_y = z$. The payoff of $x$ and $y$:
+
+\[ t=0\implies s_x = \frac{z}{2} \cdot 1 + \frac z2 \cdot 0\leq s_y  = \frac z2 b + \frac z2 \cdot 0\]
+
+Initially, the defector hubs are better off. The chance that $x$ switches to $D$ is the chance of copying $y$
+
+For a intermediate $t$, the defector nodes will be copied, and if $x$ resisted the temptation to copy $y$, then its cooperation strategy will be quickly copied by its neighbours. Then the payoff of $x$ would be 
+\[
+S_x = \br{z-1}\cdot 1 + 0 \geq S_y = b+ \br{z-1}\cdot0
+\]
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{imgs/image.png}
+\end{figure}
+
+This time $y$ will copy $x$ and cooperation will prevail.
+
+Initially there is a lot of time for defectors to exploit the situation. But if the cooperators have enough time to create a community that cooperates with themselves, they can succeed in the long run. Hubs facilitate the formation of these communities. Other networks assortative communities may play a similar role.
+
+\subsection{Continuous Time dynamical systems}
+
+For each node, associate it with a vector-valued function $x_i(t)\colon \mathbb R\to \mathbb R^d$ that evolves according to time $t$. We say 
+\begin{equation}
+\frac{dx_i(t)}{dt} = f_i(x_i) + \sum_{j=1}^N A_{i,j} g_i(x_i, x_j)    
+\end{equation}
+where $f_i\colon \mathbb R^d \to \mathbb R^d$ represents the internal dynamics and $g_i\colon \mathbb R^{2d}\to \mathbb R^d$ are the couplings through the network. 
+
+We connect properties of $A_{i,j}$ to the collective behaviour of $x_i(t)$. 
+
+We use the simplifications
+\begin{itemize}
+    \item $d=1$
+    \item identical internal dynamics $f_i(x_i)=f(x_i)$
+    \item coupling $g(x,x)=0$
+\end{itemize}
+
+Examples include: 
+\begin{enumerate}
+    \item Diffusion-like dynamics: $\frac{dx_i}{dt}=\beta\sum_{j=1}^NA_{ij}(x_i-x_j)$
+    \item Kuramoto model: $\frac{d\theta}{dt}=\omega_i+\frac{K}{\langle z\rangle}\sum_{j=1}^NA_{ij}\sin(\theta_i-\theta_j)$ for $\theta\in[0,2\pi]$, where $\omega_i$ is the natural frequency of the oscillator. In the model it is typically distributed randomly from an unimodal density function. 
+\end{enumerate}
+
+\subsubsection{Kuramoto Model and Synchronisation}
+
+Define a macroscopic order parameter $r(t)$, such that
+\[
+r(t)e^{I\psi(t)}=\frac1N\sum_{j=1}^Ne^{I\theta_j(t)}
+\]
+where $I:=\sqrt{-1}$ is the imaginary number because $i$ is taken by $j$!
+\begin{itemize}
+    \item If all $\theta_j$ are independent, then $r(t)=0$
+    \item If all $\theta_j$ are perfectly synchronised, then $r(t) =1$
+    \item $0\leq r\leq 1$ is the phase coherence, partial synchronisation
+\end{itemize}
+We are interested in the long term dynamic of $r(t)$, i.e.
+\[
+    r_\infty = \lim_{t\to\infty} r(t), \qquad \text{ for } N\to\infty
+\]
+Kuramoto was able to show that for all-to-all networks, we see a phase transition curve similar to that of existence of giant component in ER random graph. Let $K_c$ be the critical value for all-to-all networks.
+
+For random graphs with arbitrary distribution, the phase transition happens at $K_c^*$, given by 
+\[
+K_c^* = K_c\frac{\ip{z}}{\ip{z^2}}
+\]
+
+\subsubsection{Linear Stability of fixed point solution}
+
+Consider the DE
+\[
+\frac{dx_i}{dt}=f(x_i)+\sum_{j=1}^NA_{ij}g(x_i,x_j)
+\]
+with dimension $d=1$. Let $x^*$ be the fixed point. We have
+\[
+\frac{dx_i}{dt}=f(x^*)=0\quad\text{for all }(x_i^*=x^*)
+\]
+Then, $g(x,x)=0\implies g(x^*,x^*)=0\implies x^*$ is a fixed point of the coupled dynamics. 
+
+Question: how does the stability of $x^*$ depend on $A_{ij}$ in the simplest case where $g(x_i,x_j)=g(x_i)-g(x_j)$? 
+
+We consider a small perturbation: let $\vec{x} = \vec{x}^* + \vec{\epsilon}$, then 
+\[
+  \frac{d{x_i}}{dt}=\frac{d(x_i^*+\epsilon_i)}{dt}=\frac{d\epsilon_i}{dt}=f(x^*+\epsilon_i)+\sum_{j=1}^NA_{ij}g(x^*+\epsilon_i,x^*+\epsilon_j)  
+\]
+
+Consider the Taylor expansion around $x^*$:
+\begin{align*}
+\frac{d\epsilon_i}{dt}&\approx f(x^*)+\epsilon_i\underbrace{\frac{df}{dx}(x^*)}_{\equiv\alpha}+\sum_{j=1}^NA_{ij}g(x^*,x^*)+\sum_{j=1}^NA_{ij}\epsilon_i\underbrace{\frac{\partial g}{\partial x_i}(x^*,x^*)}_{\equiv\beta} + \sum_{j=1}^NA_{ij}\epsilon_j\underbrace{\frac{\partial g}{\partial x_j}(x^*,x^*)}_{\equiv\beta} \\
+&\approx \alpha\epsilon_i+\epsilon_i\beta\sum_{j=1}^NA_{ij}-\beta \\
+&= \alpha\epsilon_i+\beta(\epsilon_iz_i-\sum_{j=1}^NA_{ij}\epsilon_j)\\
+&= \alpha\epsilon_i + \beta\sum_{j=1}^N(\delta_{ij}z_i-A_{ij})\epsilon_j
+\end{align*}
+In vector notation this is
+\[ \frac{d\boldsymbol\epsilon}{dt} \approx (\alpha I + \beta \mathbb L)\boldsymbol{\epsilon}\]
+where $I$ is the identity matrix and $\mathbb L = \boldsymbol{z} I - \mathbb A$ is the graph Laplacian.
+The fixed point $\boldsymbol{x}^*$ is stable if all eigenvalues of $\alpha \mathbb I+ \beta \mathbb L$ are smaller than $0$.
+
+We take that $\vec{v_r}$ is an eigenvector of $\mathbb{L}$ with eigenvalue $\lambda_r$ for granted. 
+\begin{proposition}
+    $\vec{v_r}$ is an eigenvector of $\alpha I-\beta\mathbb{L}$ with eigenvalue $(\alpha+\beta\lambda_r)$ for any $\alpha,\beta\in \mathbb{R}$
+\end{proposition}
+\begin{proof}
+    Follows directly from computation
+\end{proof}
+
+Hence, the \textit{stability condition} is 
+\[
+\alpha+\beta\lambda_r>0, \qquad \text{ for all }\lambda_r \text{ eigenvalues of } \mathbb{L}
+\]
+Suppose $\lambda_1\leq\cdots\leq \lambda_N$, the \textit{Master Stability condition} is $\alpha+\beta\lambda_N<$. Therefore, 
+\[
+    \frac{1}{\lambda_N} >\frac{-\beta}\alpha \qquad \text{for }\alpha<0
+\]
+Recall that 
+\begin{itemize}
+    \item \textit{Properties of the dynamics:} $\alpha = \frac{\diff{f}}{\diff{x}}\br{x^*}$, $\beta = \frac{\partial g}{\partial x}\br{x^*,x^*}$
+
+$\alpha<0$ is the stability of the internal dynamics, a necessary condition for the stability of $x^*$ in the network, but NOT sufficient. 
+\item \textit{Network property:} $\lambda_N$ is the largest eigenvalue of $\mathbb{L}$.
+\end{itemize}
+
+\section*{Week 13}
+
+\textbf{Exam key facts}
+
+Condition for the existence off a largest component is the ratio of second moment to first moment of degree distribution is greater than 2
+
+Look at the dependence on $q$ and the critical transition value $q_c$ for the proportion of nodes in the largest component.
+
+\[q_c = 1- \frac{1}{\frac{\langle z^2\rangle}{\langle z\rangle -1 }}\]
+
+consider variations of the random graphs, e.g. Q6 - binomial sum identity questions 
+
+
+
+\end{document}
+

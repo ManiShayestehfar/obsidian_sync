@@ -1,0 +1,73 @@
+[
+  {
+    "source": "Lecturer's notes/Notes Week 1 - 2026.pdf",
+    "sha256": "ce83763bfda5339dfc9de2e7a6e02030f14de331a47d5a9a30de02df34b55737"
+  },
+  {
+    "source": "Jupyter Notebooks/week_1/main.ipynb",
+    "sha256": "222118f8648a17f084d05cdb524f21f1fdd941d7f9ccc156efd38ef7634864df",
+    "cells": 32
+  },
+  {
+    "source": "Lecturer's notes/Notes Week 2 - 2026.pdf",
+    "sha256": "d5df68f595fe5350f0dd5341e36b577506d268f113917e8ac1b9e01c92335171"
+  },
+  {
+    "source": "Jupyter Notebooks/week_2/tutorial2.ipynb",
+    "sha256": "048a79ee09f7be1e6b7ec08b92ad79f43585042e4a25159c0c0778e923aee541",
+    "cells": 51
+  },
+  {
+    "source": "Lecturer's notes/Notes Week 3 - 2026.pdf",
+    "sha256": "333f4213142b0fd6afb803154c359a158d12d9ea71743d99ceb0e9755a36683c"
+  },
+  {
+    "source": "Jupyter Notebooks/week_3/tutorial3.ipynb",
+    "sha256": "d6035d82a941c543131db3086217210e9a579a585021b9294a930865dd6370cc",
+    "cells": 59
+  },
+  {
+    "source": "Lecturer's notes/Notes Week 4 - 2026.pdf",
+    "sha256": "42939cb13e90db2dfaf14cdf65f6a2e6fb4e55c99a8546e6f48ed36bfae818ef"
+  },
+  {
+    "source": "Jupyter Notebooks/week_4/tutorial4.ipynb",
+    "sha256": "3949fd4180cf6ee7d3384d36fe0af11143cfcc6fa4857623f2224f60530956ef",
+    "cells": 37
+  },
+  {
+    "source": "Lecturer's notes/Notes Week 5 2026.pdf",
+    "sha256": "c20a057ecb7a06a13143bf21b7299c0cfa24943605181aef6b0d90620a11915a"
+  },
+  {
+    "source": "Jupyter Notebooks/week_5/tutorial5.ipynb",
+    "sha256": "1265594fc6c5e1661f67a17fffcf2c29440657724202898b735ab3a4d87ee333",
+    "cells": 44
+  },
+  {
+    "source": "Lecturer's notes/Notes Week 6 - 2026.pdf",
+    "sha256": "2f0d57e39786788f8b37db97add7630a91fda909247d6338dfe710f5ed390ebe"
+  },
+  {
+    "source": "Jupyter Notebooks/week_6/tutorial6.ipynb",
+    "sha256": "dd8dff076db7ec71ba48b4fdc10d263b358cbb61456c41b3244981de9930494f",
+    "cells": 46
+  },
+  {
+    "source": "Lecturer's notes/Notes Week 7 - 2026.pdf",
+    "sha256": "07ead498591f5d7376ddef95a742774040f45ad8882c72125662847049f6a090"
+  },
+  {
+    "source": "Jupyter Notebooks/week_7/tutorial7.ipynb",
+    "sha256": "126e19c190f67be1da91e66dd5da79bdbd7e1b7b301b90279196047b79664a2d",
+    "cells": 70
+  },
+  {
+    "source": "latex_notes.tex",
+    "sha256": "2b68cafd05d3912003c957954f54b4844bb035dd50cb849e735147b7c35bad97"
+  },
+  {
+    "source": "Mark Newman - Networks (2018, Oxford University Press) - libgen.li.pdf",
+    "sha256": "47ca3a1cefe43888ed5f93e2b0e49cb71ec2b915c8be040fb5c774f2d742413e"
+  }
+]
