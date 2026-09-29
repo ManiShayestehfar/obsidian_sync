@@ -1,7 +1,6 @@
 ---
 tags: [inference]
 ---
-
 # Community detection
 
 Communities are groups with relatively dense internal connection patterns. Finding an attractive partition and demonstrating statistically meaningful group structure are different tasks. A core–periphery pattern need not be a set of assortative communities.
