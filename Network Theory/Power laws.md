@@ -11,7 +11,7 @@ A few very large degrees can dominate a network’s variability and branching. T
 > $$\Pr(K\ge k)\asymp k^{1-\gamma}.$$
 > Thus histogram and survival-plot slopes are respectively $-\gamma$ and $-(\gamma-1)$. A broad tail need not be a power law.
 
-![[Assets/power-law-tails.png|760]]
+![[power-law-tails.png|760]]
 *Analytic continuous-Pareto illustration at exponent 2.5: density and survival functions have different log–log slopes. This is not a fit to data.*
 
 > [!theorem] Moment criterion

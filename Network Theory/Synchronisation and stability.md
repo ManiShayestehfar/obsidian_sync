@@ -31,7 +31,7 @@ For $\dot x=-\beta\mathcal Lx$ with $\beta>0$, the mean is conserved because $\m
 $$x(t)\longrightarrow\left(N^{-1}\sum_i x_i(0)\right)\mathbf1.$$
 The slowest nonconstant decay rate is $\beta\lambda_2$. This is convergence to a manifold of equilibria, not asymptotic stability of one predetermined constant vector against mean-changing perturbations.
 
-![[Assets/diffusion-to-consensus.png|760]]
+![[diffusion-to-consensus.png|760]]
 *Newly drawn solution of the linear diffusion equation on a six-vertex path. Vertex values approach the conserved mean; this illustrates the modal formula in the text.*
 
 ## Phase synchronisation

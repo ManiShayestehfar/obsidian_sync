@@ -22,7 +22,7 @@ The standard rate-equation solution has limiting degree proportions
 $$p_k=\frac{2m(m+1)}{k(k+1)(k+2)},\qquad k\ge m,$$
 with the same exponent three. The seed and finite-time process still affect a finite network.
 
-![[Assets/preferential-attachment-growth.png|760]]
+![[preferential-attachment-growth.png|760]]
 *One newly generated BA realisation (N=50,m=2, seed 5441). Larger nodes have higher degree; colour records arrival order. Individual outcomes fluctuate.*
 
 ## What the mechanism explains

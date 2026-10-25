@@ -32,7 +32,7 @@ For $B$ disconnected components, their indicator vectors span the first $B$ mode
 >
 > An eigengap is a diagnostic, not a proof that statistically meaningful communities exist. An eigenbasis inside a repeated eigenspace can rotate; including the whole eigenspace makes Euclidean distances invariant to that rotation.
 
-![[Assets/tutorial-8-cell-67-plot-1.png|800]]
+![[tutorial-8-cell-67-plot-1.png|800]]
 *Supplied Tutorial 8, cell 67: a conspicuous gap after the third mode motivates three groups for this particular planted SBM.*
 
 > [!code]- A complete small-graph clustering example
@@ -83,7 +83,7 @@ The notebook also handles disconnected training graphs by including **all zero m
 > ```
 > If the chosen cutoff splits a repeated positive eigenspace, the partial embedding can depend on the selected basis; a clear gap or inclusion of the whole tied subspace avoids this ambiguity.
 
-![[Assets/tutorial-9-cell-34-plot-1.png|650]]
+![[tutorial-9-cell-34-plot-1.png|650]]
 *Supplied Tutorial 9, cell 34: mean AUC and SD across its Karate splits. One positive direction gives the highest displayed mean; this is not a universal optimum for other graphs or splits.*
 
 ## For revision

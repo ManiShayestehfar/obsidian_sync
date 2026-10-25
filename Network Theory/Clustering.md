@@ -36,7 +36,7 @@ Many network interactions close triangles: two neighbours of a vertex are also c
 > print(local, mean_local, transitivity, triangles)
 > ```
 
-![[Assets/clustering-definitions.png|760]]
+![[clustering-definitions.png|760]]
 *Newly drawn tutorial example: local coefficients and the two different graph-level averages on the same network.*
 
 ## Lessons from lattices and random graphs

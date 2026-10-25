@@ -17,7 +17,7 @@ Couple different retention values using the same uniform random number per edge 
 
 ## Lattices: geometry matters
 
-![[Assets/tutorial-10-cell-06-plot-1.png|850]]
+![[tutorial-10-cell-06-plot-1.png|850]]
 *Supplied Tutorial 10, cell 6: four-neighbour square-lattice **site** percolation. White sites are absent; colours distinguish occupied clusters, with a crossing cluster shown in black when present.*
 
 | Infinite lattice | Site retention threshold $p_c$ | Bond retention threshold $p_c$ |
@@ -30,7 +30,7 @@ Couple different retention values using the same uniform random number per edge 
 These are infinite-model values. Finite crossing probabilities vary smoothly with $p$ and have sampling error. The eight-neighbour square lattice contains all four-neighbour links, so adding diagonals cannot make percolation harder. Tutorial 10 estimates its site threshold by the finite-size crossing-probability midpoint, finding values near $0.4072$ for its larger grids. A fine parameter grid alone does not establish a matching number of statistically reliable digits.
 
 > [!example]- Estimating a lattice threshold from finite crossings
-> ![[Assets/tutorial-10-cell-11-plot-2.png|720]]
+> ![[tutorial-10-cell-11-plot-2.png|720]]
 > Supplied Tutorial 10, cell 11: crossing frequencies for eight-neighbour grids of increasing side length. The 50% crossing point is a finite-size estimator. Finite sampling and finite-size bias remain even when the parameter grid is fine.
 
 > [!theorem] Existence and rooted survival are different probabilities
@@ -99,7 +99,7 @@ For degree-dependent site retention $\phi_k$, the locally tree-like branching fa
 $$R_\phi=\frac{\sum_k k(k-1)p_k\phi_k}{\langle k\rangle}.$$
 Removing hubs changes this expression differently from uniform failure. A **static degree attack** ranks original degrees once; an **adaptive attack** reranks as the graph changes. Tutorial 10 uses the static version and removes $\lfloor qN_0\rfloor$ vertices, with random tie-breaking.
 
-![[Assets/tutorial-10-cell-58-plot-1.png|850]]
+![[tutorial-10-cell-58-plot-1.png|850]]
 *Supplied Tutorial 10, cell 58: static attacks on ER and BA examples at two mean degrees. BA breaks apart earlier in this experiment. The diameter peak is a finite-size indicator, not an exact critical-point theorem.*
 
 An empty surviving graph has undefined diameter. The notebook’s final `np.argmax` summary can select the NaN endpoint and incorrectly print a peak at $q=1$; exclude non-finite values or use a suitable finite mask before interpreting a peak.

@@ -36,7 +36,7 @@ The synchronous rule on two adjacent vertices with states $(0,1)$ swaps them to 
 
 **Proof.** If a vertex has $a$ disagreeing and $b$ agreeing incident edges with $a>b$, flipping changes the disagreement count by $b-a<0$. A tie is not flipped. This nonnegative integer can decrease only finitely often. Whenever an unstable vertex remains, independent uniform selections eventually choose an unstable vertex with probability one, causing another decrease. Thus the process cannot remain forever outside the fixed configurations. $\square$
 
-![[Assets/tutorial-11-cell-13-plot-2.png|650]]
+![[tutorial-11-cell-13-plot-2.png|650]]
 *Supplied Tutorial 11, cell 13: examples of synchronous consensus, a mixed fixed point and a period-two cycle. Constant active fraction can conceal a changing configuration.*
 
 > [!code]- Correct synchronous and asynchronous sweeps

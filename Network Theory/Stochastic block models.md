@@ -11,7 +11,7 @@ A block model turns group structure into a generative hypothesis about edges. Th
 > $$A_{ij}\mid b,p\sim\mathrm{Bernoulli}(p_{b_i b_j}),\qquad i<j.$$
 > $B=1$ gives ER. Large diagonal and small off-diagonal probabilities describe assortative communities. With two groups, $p_{11}>p_{12}>p_{22}$ describes one core–periphery pattern. Zero diagonal block probabilities give a random bipartite graph.
 
-![[Assets/sbm-block-structure.png|760]]
+![[sbm-block-structure.png|760]]
 *Newly drawn planted three-block example: ordering the adjacency matrix by block exposes its diagonal structure. This is an illustrative model draw, not an inferred empirical partition.*
 
 Let $n_r$ be block size, $y_{rr}=\binom{n_r}2$ and $y_{rs}=n_rn_s$ for $r<s$. Let $l_{rs}$ count edges of each type, counting within-block edges once.

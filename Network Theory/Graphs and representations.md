@@ -16,7 +16,7 @@ A network model begins by deciding what counts as an entity and an interaction. 
 
 **Proof.** Each undirected edge contributes one to the degree of each of its two endpoints. Taking the resulting even sum modulo two proves the parity statement. For a multigraph, count a loop twice in the degree.
 
-![[Assets/graph-and-matrix.png|760]]
+![[graph-and-matrix.png|760]]
 *Newly drawn example: the same simple graph as a labelled network and adjacency matrix; each edge contributes to two degrees.*
 
 ## Representations and variants

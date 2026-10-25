@@ -18,7 +18,7 @@ Empirical degree heterogeneity may explain structure that a density-only baselin
 
 Erasing loops and merging repeated edges changes degrees. It cannot be used as an exact degree-preserving null. Rejection of the **entire** pairing until it is simple does yield a uniform simple graph: every simple graph with this labelled degree sequence corresponds to $\prod_i k_i!$ stub pairings. Acceptance may be prohibitively rare.
 
-![[Assets/configuration-stubs.png|760]]
+![[configuration-stubs.png|760]]
 *Newly drawn legal pairing with degrees (2,3,1): loops preserve stub degrees but prevent a simple graph.*
 
 ## Excess degree and branching

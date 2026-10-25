@@ -10,7 +10,7 @@ Suppose the edges are hidden and only the vertices’ states are measured. Simil
 
 In the tutorial, $D=(s_i^{(t)})\in\{-1,+1\}^{T\times N}$ contains $T=200$ configurations of $N=50$ vertices. The synthetic generator has $L=100$ edges and coupling $J=0.4$. **The reconstruction is supplied with $L$**; inferring the number of edges is not part of this benchmark.
 
-![[Assets/tutorial-9-cell-39-plot-1.png|300]]
+![[tutorial-9-cell-39-plot-1.png|300]]
 *Supplied Tutorial 9, cell 39: columns are vertices and rows are observed configurations. This array contains states, not an adjacency matrix.*
 
 > [!definition] Correlation reconstruction
@@ -72,7 +72,7 @@ For $J>0$, alignment $s_i h_i>0$ should increase the conditional probability. Th
 > ```
 > Use the symmetric edge replacement and Metropolis machinery in [[Monte Carlo sampling]] with log target $-F_{PL}$. `logaddexp` avoids numerical overflow; preserve the state-column/node-order mapping.
 
-![[Assets/tutorial-9-cell-49-plot-2.png|850]]
+![[tutorial-9-cell-49-plot-2.png|850]]
 *Supplied Tutorial 9, cell 49: two graph-sampling runs using different $J$. Left: overlap with the true graph, used only for evaluation. Right: negative log pseudolikelihood per observed node state. These are different targets and their samples must not be pooled.*
 
 The supplied chains have very low post-burn-in acceptance, around $0.005$ in this run. A flattening trace is insufficient evidence of mixing. At $J=0$, every conditional is $1/2$, $F_{PL}=TN\log2$ is constant and the graph target is uniform; expected edge overlap returns to the chance value.

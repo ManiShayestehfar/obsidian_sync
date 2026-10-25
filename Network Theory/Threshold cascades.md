@@ -13,7 +13,7 @@ A single contact can spread a simple infection; adoption of a new behaviour may 
 > $$\frac{m_i}{k_i}>q_i.$$
 > Once active it stays active. Isolates remain inactive unless seeded. The **strict inequality** is the Week 11 lecture/tutorial convention; using $\ge$ changes behaviour at exact threshold values.
 
-![[Assets/threshold-activation.png|760]]
+![[threshold-activation.png|760]]
 *Illustration of the strict rule at $q=0.4$: one active neighbour out of three is insufficient; two suffice. The central vertex is the candidate for activation.*
 
 For a fixed graph, seeds and thresholds, the active set grows monotonically. Under any fair update order, the final active set equals the smallest set containing the seeds that is closed under activation. To see this, successive activations belong to every closed superset of the seeds; conversely a fair process cannot stop before all eligible vertices have activated. This equality concerns the **final set**, not identical time trajectories.
@@ -65,7 +65,7 @@ The lecture’s moment ratio needs careful interpretation. A ratio $\langle d^2\
 
 ## Reading the experiments
 
-![[Assets/tutorial-11-cell-36-plot-1.png|720]]
+![[tutorial-11-cell-36-plot-1.png|720]]
 *Supplied Tutorial 11, cell 36: internal-degree moment ratio of the vulnerable subgraph of its fixed ER graph. The discontinuities occur as the strict threshold crosses values $1/k$.*
 
 For uniform $q$, vulnerability switches at reciprocal degrees: at $q=0.2$, a degree-five vertex is no longer vulnerable because $1/5>0.2$ is false. Increasing $q$ can only shrink the cascade for fixed graph and seeds. Increasing ER density need not help monotonically: sparse graphs lack paths, while large degrees require more than one reinforcing neighbour.

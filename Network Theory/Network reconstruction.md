@@ -72,7 +72,7 @@ Set an empty-union Jaccard score to zero by convention. In a simple loop-free gr
 
 For an SBM partition fitted on the training graph, candidate vertices in blocks $r,s$ receive the block-density score $\widehat p_{rs}=l_{rs}/y_{rs}$. With $B=1$, every candidate receives the same score: **AUC is $0.5$ because all positive/negative comparisons are tied**, not because the model predicts half the edges correctly.
 
-![[Assets/tutorial-9-cell-27-plot-1.png|650]]
+![[tutorial-9-cell-27-plot-1.png|650]]
 *Supplied Tutorial 9, cell 27: mean and SD over six matched splits of a planted three-block graph. The largest displayed mean is at $B=4$ (about $0.862$), not the planted $B=3$. The heuristic means in cell 12 are about $0.732$ or lower for this instance.*
 
 This example shows that predictive performance need not identify the generating block count. The differences between nearby $B$ values overlap in the displayed variability; do not treat the maximum curve point as decisive model evidence.

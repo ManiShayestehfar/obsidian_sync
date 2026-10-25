@@ -46,7 +46,7 @@ At $\gamma=1$, a single group gives $Q=0$; singleton groups give $Q=-\sum_i(k_i/
 > [!algorithm] Greedy agglomeration
 > Start with $N$ singleton groups. At each step choose the merge producing the largest $Q$ and retain that partition. To reproduce the tutorial’s entire curve, continue to one group **even when all remaining merges reduce $Q$**, then select the best partition along the path. Stopping at the first local optimum answers a different computational task.
 
-![[Assets/tutorial-8-cell-44-plot-1.png|720]]
+![[tutorial-8-cell-44-plot-1.png|720]]
 *Supplied Tutorial 8, cell 44: modularity along one greedy merge path for Karate Club. Its best point occurs at three groups. This is a heuristic path, not an exhaustive optimum over all partitions.*
 
 ## Other objectives and methods

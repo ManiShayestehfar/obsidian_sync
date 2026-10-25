@@ -20,7 +20,7 @@ A central vertex can have many contacts, short routes, or influence inherited fr
 
 Here $\sigma_{st}$ counts shortest paths and $\sigma_{st}(i)$ counts those passing internally through $i$. Unreachable pairs contribute zero to betweenness. Ordered versus unordered pairs, inclusion of endpoints and normalisation must be fixed before comparing values.
 
-![[Assets/centrality-comparison.png|760]]
+![[centrality-comparison.png|760]]
 *Newly drawn comparison on one barbell graph: colour increases with the indicated score. A bridge vertex can broker routes without having the largest degree.*
 
 ## Recursive scores and spectral assumptions

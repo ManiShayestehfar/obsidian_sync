@@ -37,7 +37,7 @@ Near $c=1+\epsilon$, expansion gives $S\sim2\epsilon$ as $\epsilon\downarrow0$. 
 > [!warning] Giant does not mean connected
 > A giant occupies a positive fraction; other components remain. Whole-graph connectivity instead appears around $q\sim\log N/N$. For fixed $c>1$ away from criticality, typical distances within the giant are logarithmic in $N$, with branching heuristic $\log N/\log c$. Do not apply it to unreachable pairs or the critical regime.
 
-![[Assets/er-giant-component.png|760]]
+![[er-giant-component.png|760]]
 *Numerical evaluation of the stated sparse-limit equation, not a finite-network simulation. The nonzero giant fraction begins at mean degree one.*
 
 ## Simulation lesson

@@ -65,7 +65,7 @@ For a fixed degree $k$ under an independent-neighbour closure, the selected susc
 $$\dot\rho\approx\lambda c\rho(1-\rho)-\mu\rho.$$
 Its zero state is linearly unstable when $\lambda c>\mu$, and its positive fixed point is $\rho^*=1-\mu/(\lambda c)$ in that regime. These are mean-field predictions in sweep-time units, not exact thresholds for every discrete graph process.
 
-![[Assets/tutorial-11-cell-60-plot-1.png|720]]
+![[tutorial-11-cell-60-plot-1.png|720]]
 *Supplied Tutorial 11, cell 60: fixed $\lambda=0.004,\mu=0.08$ gives the mean-field reference $c_c=20$. Simulation points are late-window averages with variation across runs, not proof of eternal infection.*
 
 > [!theorem] Finite SIS has an absorbing extinction state

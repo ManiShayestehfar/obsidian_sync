@@ -18,7 +18,7 @@ A local lattice has many triangles but long routes. A few distant shortcuts can 
 
 The approximation $C(p)\approx C(0)(1-p)^3$ counts surviving original triangles, ignoring new triangles and changed local denominators. A small number of shortcuts can shorten many routes. The regime $pNQ\gg1$ and $p\ll1$ motivates a finite-size crossover, but does not prove logarithmic distance for every scaling $p=p(N)$.
 
-![[Assets/small-world-rewiring.png|760]]
+![[small-world-rewiring.png|760]]
 *Three illustrative WS realisations in the same ring layout (N=30, degree parameter 4, seed 13). Rewiring changes long-range routes while preserving edge count.*
 
 > [!code]- Sweep rewiring with an explicit distance convention
