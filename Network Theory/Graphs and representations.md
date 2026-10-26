@@ -9,7 +9,8 @@ A network model begins by deciding what counts as an entity and an interaction. 
 > [!definition] Graph conventions
 > A finite **simple undirected graph** is $G=(V,E)$, with $E\subseteq\{\{i,j\}:i,j\in V,\ i\ne j\}$. Write $N=|V|$, $L=|E|$ and $Y=\binom N2$. Its adjacency matrix has $A_{ij}=1$ for an edge and zero otherwise; $A=A^\top$ and $A_{ii}=0$.
 >
-> The neighbours of $i$ are $\Gamma(i)=\{j:A_{ij}=1\}$ and its degree is $k_i=|\Gamma(i)|=\sum_jA_{ij}$. Lectures also write $z_i$ for degree. Angle brackets denote a uniform vertex average: $\langle k^r\rangle=N^{-1}\sum_i k_i^r$. Model expectations use $\mathbb E$.
+> The neighbours of $i$ are $\Gamma(i)=\{j:A_{ij}=1\}$ and its degree is $k_i=|\Gamma(i)|=\sum_jA_{ij}$. Lectures also write $z_i$ for degree. Angle brackets denote a uniform vertex average:
+> $$\langle k^r\rangle=\frac1N\sum_i k_i^r.$$
 
 > [!theorem] Handshaking identity
 > $\sum_i k_i=2L$, so $\langle k\rangle=2L/N$ for $N>0$. The number of odd-degree vertices is even.
