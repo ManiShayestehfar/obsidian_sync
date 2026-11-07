@@ -12,6 +12,7 @@ aliases: [Week 2, Chapter 2]
 - [[Sampling and friendship paradox]]: degree bias, $\langle z^2\rangle/\langle z\rangle$
 
 ## Key results at a glance
+
 > [!summary]+ Memorise
 > - Betweenness $b_i=\sum_{s<t}\sigma_{st}(i)/\sigma_{st}$, normalised by $\binom{N-1}2$
 > - Eigenvector: $x(t+1)=Ax(t)\to$ Perron vector; fails to converge on bipartite graphs

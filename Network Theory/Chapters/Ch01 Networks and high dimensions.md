@@ -28,9 +28,9 @@ Load data (`read_edgelist`, `from_pandas_edgelist`), remove self-loops, compute 
 > See [[Exam patterns]] for worked trial-exam items and [[Formula sheet]] for what is provided.
 
 ## Revision checklist
-- [ ] Reproduce every boxed statement in [[Graphs and representations]] and answer its self-test without looking.
-- [ ] Reproduce every boxed statement in [[Paths and components]] and answer its self-test without looking.
-- [ ] Reproduce every boxed statement in [[Clustering]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Graphs and representations]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Paths and components]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Clustering]] and answer its self-test without looking.
 
 ---
 Up: [[00 Home]]
