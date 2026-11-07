@@ -39,6 +39,9 @@ aliases: [Exam formula sheet]
 > See [[Percolation and robustness]].
 
 > [!warning] Not on the sheet — memorise these
+> - **Sparsity/Density Condition:**
+> - **Betweenness Centrality:**
+> - 
 > - **ER:** $p=2L/[N(N-1)]$, $C\approx p$, $S=1-e^{-\langle z\rangle S}$.
 > - **Giant component:** $\langle z^2\rangle/\langle z\rangle>2$.
 > - **Graph-space sizes:** $2^Y$ and $\binom YL$.
