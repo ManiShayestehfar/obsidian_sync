@@ -1,0 +1,11 @@
+/* DATA5441 revision callouts. Enable: Settings → Appearance → CSS snippets. */
+.callout[data-callout="definition"]  { --callout-color: 66, 133, 244;  --callout-icon: lucide-book-open; }
+.callout[data-callout="theorem"]     { --callout-color: 156, 39, 176;  --callout-icon: lucide-sigma; }
+.callout[data-callout="proposition"] { --callout-color: 123, 31, 162;  --callout-icon: lucide-sigma-square; }
+.callout[data-callout="lemma"]       { --callout-color: 171, 71, 188;  --callout-icon: lucide-puzzle; }
+.callout[data-callout="proof"]       { --callout-color: 120, 120, 120; --callout-icon: lucide-pen-tool; }
+.callout[data-callout="algorithm"]   { --callout-color: 0, 137, 123;   --callout-icon: lucide-list-ordered; }
+.callout[data-callout="remark"]      { --callout-color: 255, 160, 0;   --callout-icon: lucide-message-square; }
+.callout[data-callout="exam"]        { --callout-color: 229, 57, 53;   --callout-icon: lucide-graduation-cap; }
+.callout[data-callout="code"]        { --callout-color: 96, 125, 139;  --callout-icon: lucide-code-2; }
+.callout[data-callout="selftest"]    { --callout-color: 67, 160, 71;   --callout-icon: lucide-help-circle; }
