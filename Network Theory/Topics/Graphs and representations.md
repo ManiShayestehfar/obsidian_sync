@@ -29,17 +29,17 @@ aliases: [Graph, Adjacency matrix, Degree, Degree distribution, Sparse and dense
 ## Degree
 
 > [!definition] Degree, neighbours
-> The neighbours of $i$ are $\Gamma(i)=\{j:A_{ij}=1\}$. The **degree** is
+> The **neighbours** of $i$ are $\Gamma(i)=\{j:A_{ij}=1\}$. The **degree** is
 > $$z_i=|\Gamma(i)|=\sum_{j}A_{ij}.$$
 > In a directed graph, $z_i^{out}=\sum_jA_{ij}$ (row sum) and $z_i^{in}=\sum_jA_{ji}$ (column sum).
 
-> [!theorem] Handshaking lemma *(formula sheet)*
+> [!theorem] Handshaking lemma
 > For an undirected graph, $\displaystyle\sum_{i=1}^N z_i=2L$, hence $\langle z\rangle=2L/N$. The number of odd-degree nodes is even.
 
 > [!proof]-
 > Each link $\{i,j\}$ contributes $1$ to $z_i$ and $1$ to $z_j$, so it contributes exactly $2$ to $\sum_i z_i$. Summing over the $L$ links gives $2L$. Since $\sum_i z_i$ is even, the number of odd terms in it must be even. $\square$
 
-> [!definition] Degree distribution and moments *(formula sheet)*
+> [!definition] Degree distribution and moments
 > Let $N_z$ be the number of nodes of degree $z$. Then
 > $$P(z)=\frac{N_z}{N}=\frac1N\sum_{i=1}^N\delta_{z,z_i},\qquad \langle z^n\rangle=\sum_z z^nP(z)=\frac1N\sum_{i=1}^N z_i^n,\qquad \sigma_z=\sqrt{\langle z^2\rangle-\langle z\rangle^2}.$$
 > The **relative degree variability** $\sigma_z/\langle z\rangle$ measures degree heterogeneity. It is $0$ for a regular graph, $\approx1/\sqrt{\langle z\rangle}$ for a Poisson (ER) graph, and large for heavy-tailed graphs.
