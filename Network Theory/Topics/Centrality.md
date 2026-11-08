@@ -15,7 +15,8 @@ aliases: [Centrality measures, Betweenness, Eigenvector centrality, PageRank, Ka
 > [!definition] Degree centrality
 > The degree $z_i$, often normalised as $z_i/(N-1)$. It identifies nodes with the most direct contacts ("students with the most friends").
 
-*Limitation:* Treats each neighbour equally
+*Limitation:* Treats each neighbour equally.
+
 ### Betweenness Centrality
 
 > [!definition] Betweenness centrality
@@ -24,54 +25,65 @@ aliases: [Centrality measures, Betweenness, Eigenvector centrality, PageRank, Ka
 > It identifies **brokers or bridges**, e.g. students who connect different school years.
 
 *Limitations:* 
-1. high betweenness does not automatically mean removing the node disconnects the graph: alternative routes may exist, but be longer.
-2. The measure assumes that the process of interest follows shortest path
+1. High betweenness does not automatically mean removing the node disconnects the graph: alternative routes may exist, but be longer.
+2. The measure assumes that the process of interest follows shortest paths.
 
-
-> [!example] Trial Exam 2, Q1(i)
-> Node $5$ is the only route between a group of $4$ nodes and a group of $5$ nodes. All $4\times5=20$ shortest paths between the groups pass through it, so $b_5=20$. With $N=10$, $\tilde b_5=20/\binom92=20/36=5/9$.
 
 ![[centrality-comparison.png|650]]
 
+
 ## Spectral (recursive) measures
+
+All three methods let **a node inherit importance from other nodes**. For directed graphs, use $A_{ij}=1$ for an edge $j\to i$, so $(Ax)_i$ collects incoming scores; $\mathbf1$ denotes the all-ones vector.
 
 ### Eigenvector Centrality
 
-> [!theorem] Perron–Frobenius (undirected, connected)
-> If $A$ is the adjacency matrix of a connected undirected graph with $N\ge2$, then:
-> 1. its largest eigenvalue $\lambda_1=\rho(A)$ is simple;
-> 2. $\lambda_1$ has an eigenvector with all entries strictly positive, unique up to scaling;
-> 3. $\min_iz_i\le\lambda_1\le\max_iz_i$.
+**Idea:** A node is important when its neighbours are important (unlike degree, which counts all neighbours equally).
 
-> [!proposition] Convergence of power iteration
-> Write $x(0)=\sum_r a_rv_r$ in an orthonormal eigenbasis of the symmetric $A$. Then
-> $$\frac{A^tx(0)}{\lambda_1^t}=a_1v_1+\sum_{r\ge2}a_r\Big(\frac{\lambda_r}{\lambda_1}\Big)^tv_r .$$
-> This converges to the Perron direction iff $a_1\ne0$ and $|\lambda_r|<\lambda_1$ for all $r\ge2$.
-> **Obstruction:** a connected **bipartite** graph has eigenvalue $-\lambda_1$, so the iteration oscillates. Iterating with $A+I$ instead fixes this, because it keeps the eigenvectors and shifts every eigenvalue by $+1$.
+1. **Define importance recursively:** $x_i\propto\sum_j A_{ij}x_j$. With a common proportionality constant,
+   $$\boxed{x_i=\frac1{\lambda_1}\sum_jA_{ij}x_j\quad\Longleftrightarrow\quad Ax=\lambda_1x.}$$
+   Choose the **principal (Perron) eigenvector**, $x=v_1\ge0$, for $\lambda_1=\rho(A)$. Its scale is arbitrary.
+2. **Why this eigenvector?** Propagating scores gives $x(t+1)=Ax(t)$, hence $x(t)=A^tx(0)$. If $A$ is symmetric, expand $x(0)=\sum_k a_kv_k$ to obtain
+   $$\frac{x(t)}{\lambda_1^t}=a_1v_1+\sum_{k\ge2}a_k\left(\frac{\lambda_k}{\lambda_1}\right)^tv_k.$$
+   When $a_1\ne0$ and $|\lambda_k|<\lambda_1$ for $k\ge2$, the direction tends to $v_1$.
 
-> [!definition] Eigenvector centrality *(formula sheet)*
-> Iterate $x_i(t+1)=\sum_jA_{ij}x_j(t)$ and normalise at each step. The limit satisfies $Ax=\lambda_1x$ with $\lambda_1$ the largest eigenvalue: a node is important if its neighbours are important.
+> [!theorem] Perron–Frobenius — exam essentials
+> For a **connected undirected** graph with $N\ge2$, $\lambda_1>0$ is simple and has a strictly positive eigenvector, unique up to scale; $\min_i z_i\le\lambda_1\le\max_i z_i$. A connected **bipartite** graph also has eigenvalue $-\lambda_1$, so ordinary power iteration may oscillate (using $A+I$ resolves this). Directed graphs require strong connectivity for the corresponding strict-positivity guarantee.
+
+**Limitations:** A node passes its full score to every outgoing neighbour; some nodes in directed graphs can receive score $0$. These issues motivate Katz and PageRank.
 
 ### Katz Centrality
 
-> [!definition] Katz centrality
-> Add a baseline $\beta>0$: $x=\alpha A^\top x+\beta\mathbf 1$, so
-> $$x=\beta(I-\alpha A^\top)^{-1}\mathbf1=\beta\sum_{t\ge0}\alpha^t(A^\top)^t\mathbf1.$$
-> The series converges iff $0\le\alpha<1/\lambda_1$. 
-> Then $x_i$ counts incoming walks of every length, discounted by $\alpha^{\text{length}}$.
+**Idea:** Eigenvector centrality can give zero scores in directed graphs. Give every node an intrinsic **baseline** $\beta>0$.
 
+1. **Add a source term** ($\alpha\ge0$ controls neighbour influence):
+   $$x(t+1)=\alpha Ax(t)+\beta\mathbf1.$$
+2. **Solve for equilibrium** $x(t+1)=x(t)=x$:
+   $$x=\alpha Ax+\beta\mathbf1\quad\Longrightarrow\quad\boxed{x=\beta(I-\alpha A)^{-1}\mathbf1.}$$
+   Only relative scores matter, so $\beta=1$ is a common choice.
+3. **Interpret and constrain $\alpha$:** For $0\le\alpha<1/\rho(A)$ (when $\rho(A)>0$),
+   $$\boxed{x=\beta\sum_{k=0}^{\infty}\alpha^kA^k\mathbf1.}$$
+   Katz counts walks arriving at each node, weighting length-$k$ walks by $\alpha^k$; $k=0$ supplies the baseline. Small $\alpha$ emphasises direct connections; larger $\alpha$ gives longer walks more influence. If $\rho(A)=0$, the finite series is valid for any finite $\alpha$.
+
+**Limitation:** Katz prevents zero scores, but still passes the *full* score along every outgoing link.
 
 ### PageRank
 
-> [!definition] PageRank *(formula sheet form)*
-> $$x_i(t+1)=\alpha\sum_jA_{ij}\frac{x_j(t)}{z_j^{out}}+\beta ,$$
-> where the sum runs over the nodes $j$ linking to $i$ (index convention of the formula sheet). Each node splits its score equally among its out-links, so a link from a node with many out-links is worth less. The constant $\beta$ is the teleportation/baseline term. For $0<\alpha<1$ and $\beta>0$ there is a unique positive fixed point. A random walker that follows a uniformly chosen out-link with probability $\alpha$ and teleports otherwise has this fixed point (normalised) as its stationary distribution.
+**Idea:** A node should **share** its importance among outgoing links rather than transmit its full score to each recipient.
 
-> [!remark] Why baselines matter in directed graphs
-> Plain eigenvector centrality can give zero score to every node outside a strongly connected "sink". Katz and PageRank give every node baseline mass $\beta$. Nodes with zero out-degree ("dangling" nodes) need a convention in PageRank.
+1. **Normalise each outgoing contribution.** Let $z_j^{\mathrm{out}}$ be node $j$'s out-degree. The course update is
+   $$\boxed{x_i(t+1)=\alpha\sum_jA_{ij}\frac{x_j(t)}{z_j^{\mathrm{out}}}+\beta.}$$
+   So an incoming link from a node with many outgoing links contributes less.
+2. **Write the fixed point.** If all out-degrees are positive, set $D_{\mathrm{out}}=\operatorname{diag}(z_j^{\mathrm{out}})$ and $P=AD_{\mathrm{out}}^{-1}$; each column of $P$ sums to $1$. Then, for $0\le\alpha<1$,
+   $$x=\alpha Px+\beta\mathbf1\quad\Longrightarrow\quad\boxed{x=\beta(I-\alpha P)^{-1}\mathbf1.}$$
+3. **Random-surfer interpretation.** With probability $\alpha$ (commonly $0.85$), follow a random outgoing link; otherwise, teleport uniformly. For a probability vector $p$,
+   $$\boxed{p(t+1)=\alpha Pp(t)+\frac{1-\alpha}{N}\mathbf1.}$$
+   The stationary probability $p_i$ is node $i$'s PageRank. The course's arbitrary $\beta>0$ gives the **same ranking after normalisation**; the probability form uses $\beta=(1-\alpha)/N$.
 
-> [!example] Star graph
-> On a star with $N$ nodes, the hub maximises degree, closeness, betweenness and eigenvector centrality. Its eigenvector-centrality ratio to a leaf is $\sqrt{N-1}$, whereas its degree ratio is $N-1$. Centralities from different measures are not on comparable scales.
+> [!warning] Dangling nodes
+> If $z_j^{\mathrm{out}}=0$, the denominator is undefined. Standard PageRank replaces that node's transition column with a teleportation distribution (e.g. uniform), restoring a valid stochastic matrix.
+
+**Remember:** **Eigenvector:** important neighbours. **Katz:** important neighbours **+ baseline**. **PageRank:** baseline **+ out-degree-normalised contributions**.
 
 > [!code]- NetworkX (tutorial 2)
 > ```python
