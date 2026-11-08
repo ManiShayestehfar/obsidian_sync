@@ -2,51 +2,104 @@
 tags: [data5441, ch03, models]
 aliases: [Random graph model, Null model, Ensemble]
 ---
+
+---
 # Random graph ensembles
 
 > [!abstract] Summary
-> A random-graph model is a set of graphs with a probability on each. Choosing what is held fixed ($N$, $L$, the degrees, …) decides which question a null-model comparison answers.
-> Chapter: [[Ch03 Random graph models]]
+> A **random graph** is a probability distribution over possible graphs. Its **sample space** specifies which graphs are allowed; its **probabilities** specify how likely they are. We use ensembles as null models to ask whether an observed network property can be explained by specified constraints alone.
+> Chapter: [[Ch03 Random graph models]] · Lecture: **Week 3, pp. 30–35**
 
-> [!definition] Random graph (ensemble)
-> A random graph $\mathcal G$ is a set $\Omega$ of graphs together with probabilities $p(g)\ge0$, $\sum_{g\in\Omega}p(g)=1$. Unless stated otherwise, $\Omega$ consists of **labelled** simple graphs.
+## 1. Why introduce random graphs?
 
-> [!proposition] Sizes of graph spaces
-> With $Y=\binom N2$:
-> $$|\Omega_N|=2^{Y}\quad(\text{all simple graphs on }N\text{ labelled nodes}),\qquad |\Omega_{N,L}|=\binom{Y}{L}\quad(\text{exactly }L\text{ links}).$$
+A single graph describes an observed network. A **random-graph model** describes many possible networks generated under chosen assumptions. It lets us predict typical properties and compare observations against a baseline.
 
-> [!proof]-
-> Each of the $Y$ node pairs is independently either a link or not, giving $2^Y$ graphs. A graph with exactly $L$ links is a choice of $L$ pairs from $Y$, giving $\binom YL$ graphs. $\square$
+The central modelling choice is **what to preserve and what to randomise**: the number of nodes, the number of links, the degree sequence, or other properties.
 
-| Model | Fixed | Probability |
+> [!definition] Random-graph ensemble
+> An ensemble is a pair $(\Omega,p)$, where $\Omega$ is a set of admissible graphs and
+> $$p(g)\ge0,\qquad \sum_{g\in\Omega}p(g)=1.$$
+> A random graph $G$ is drawn from this distribution. Throughout, graphs are **labelled, simple and undirected**, unless otherwise specified.
+
+## 2. Observables and ensemble averages
+
+A **network observable** is a numerical quantity $X:\Omega\to\mathbb R$, such as the number of links, clustering coefficient or largest-component size. It varies between graph realisations.
+
+> [!definition] Ensemble expectation and variance
+> $$\mathbb E[X]=\sum_{g\in\Omega}p(g)X(g), \qquad \sigma_X^2(X)= \langle X^2 \rangle - \langle X\rangle^2$$
+> For a discrete value $x$, its probability is
+> $$\Pr(X=x)=\sum_{g\in\Omega:\,X(g)=x}p(g).$$
+
+The **ensemble mean** is not the value of $X$ in every sampled graph. Its standard deviation measures graph-to-graph fluctuations. Whether an observable concentrates near its mean for large $N$ depends on the model and observable; it is **not automatic**.
+
+## 3. Counting admissible graphs
+
+For $N$ labelled vertices, let $Y=\binom N2=N(N-1)/2$ be the number of possible undirected edges.
+
+> [!proposition] Two basic sample spaces
+> - **Fixed $N$:** $\Omega_N$ contains all simple graphs on these vertices:
+>   $$\boxed{|\Omega_N|=2^Y.}$$
+> - **Fixed $N,L$:** $\Omega_{N,L}$ contains graphs with exactly $L$ links:
+>   $$\boxed{|\Omega_{N,L}|=\binom YL.}$$
+> **Reason:** each potential edge is present or absent in $\Omega_N$; specifying $L$ edges instead means choosing $L$ of the $Y$ possible pairs.
+
+### Uniform does not mean uniform in the number of edges
+
+If every graph in $\Omega_N$ is equally likely, $p(g)=2^{-Y}$. Then a particular $g$ has probability $2^{-Y}$, but the event **$L(g)=\ell$** includes $\binom Y\ell$ different graphs:
+$$
+\boxed{\Pr(L=\ell)=\binom Y\ell\,2^{-Y},\qquad L\sim\mathrm{Bin}(Y,1/2).}
+$$
+Consequently,
+$$
+\mathbb E[L]=\frac Y2,\qquad \operatorname{Var}(L)=\frac Y4,
+\qquad \operatorname{Var}\!\left(\frac LY\right)=\frac1{4Y}.
+$$
+As $N\to\infty$, $L/Y\to1/2$ in probability. Thus a **typical uniformly chosen graph is dense**, with about half of all possible edges, even though sparse graphs belong to $\Omega_N$.
+
+> [!proof]- Why the edge density concentrates
+> For any $\varepsilon>0$, Chebyshev's inequality gives
+> $$\Pr\!\left(\left|\frac LY-\frac12\right|\ge\varepsilon\right)\le\frac1{4Y\varepsilon^2}\longrightarrow0.$$
+> The lecture also gives a stronger large-deviation estimate: for $0<\alpha<1$ and $\ell=\alpha Y$ an integer,
+> $$\log\Pr(L=\ell)=-Y I(\alpha)+O(\log Y),$$
+> $$I(\alpha)=\log2+\alpha\log\alpha+(1-\alpha)\log(1-\alpha).$$
+> Here $I(\alpha)\ge0$, with equality only at $\alpha=1/2$; densities away from $1/2$ are exponentially unlikely.
+
+## 4. Which ensemble is the appropriate null model?
+
+| Ensemble | What is fixed? | Distribution within the admissible space |
 |---|---|---|
-| Uniform on $\Omega_N$ | $N$ | $2^{-Y}$; links i.i.d. Bernoulli$(1/2)$ |
-| $G(N,p)$ (ER/Poisson) | $N,p$ | $p^{L(g)}(1-p)^{Y-L(g)}$ |
-| $G(N,L)$ | $N,L$ | $1/\binom YL$ on $\Omega_{N,L}$ |
-| Configuration / fixed degrees | every $z_i$ | uniform over admissible graphs |
-| ERGM | expected statistics | $e^{\beta\cdot x(g)}/Z$ |
-| SBM | blocks $b_i$, $p_{rs}$ | independent links given blocks |
+| Uniform on $\Omega_N$ | $N$ | Every graph has probability $2^{-Y}$ |
+| **Erdős–Rényi** $G(N,p)$ | $N$ and link parameter $p$ | Each potential edge is independently present with probability $p$; **$L$ fluctuates** |
+| $G(N,L)$ | $N$ and **exactly** $L$ | Uniform on $\Omega_{N,L}$ |
+| Fixed degree sequence | $N$ and each $z_i$ | Can be uniform over *simple* realisations of that sequence |
+| SBM | Block labels and link probabilities $p_{rs}$ | Independent edges conditional on blocks |
+| ERGM | Parameters controlling expected statistics | $p_\beta(g)\propto e^{\beta\cdot X(g)}$ |
 
-Nesting: $\Omega_{\mathbf z}\subseteq\Omega_{N,L}\subseteq\Omega_N$. Each extra constraint asks a different question: is a pattern surprising given the size, given the density, or given every degree?
+The admissible spaces satisfy
+$$\Omega_{\boldsymbol z}\subseteq\Omega_{N,L}\subseteq\Omega_N,\qquad \sum_i z_i=2L.$$
+More constraints mean **fewer admissible graphs**, but the probability distribution still needs to be specified. For the configuration model, ordinary random stub pairing allows self-loops and parallel edges; **conditioning on simplicity** gives a uniform distribution over labelled simple graphs with the prescribed degrees.
 
-> [!theorem] Conditioning ER on $L$ gives $G(N,L)$
-> For $0<p<1$, conditioning $G(N,p)$ on $L(g)=\ell$ gives the uniform law on $\Omega_{N,\ell}$.
+> [!proposition] Conditioning $G(N,p)$ on the edge count
+> For $0<p<1$, the law of $G(N,p)$ given $L=\ell$ is precisely $G(N,\ell)$:
+> $$\Pr(G=g\mid L=\ell)=\frac{p^\ell(1-p)^{Y-\ell}}{\binom Y\ell p^\ell(1-p)^{Y-\ell}}=\boxed{\frac1{\binom Y\ell}}.$$
+> Hence the distinction is **fixed $L$ versus fluctuating $L$**; even though links are independent in $G(N,p)$, they are *not* independent after conditioning on their total count.
 
-> [!proof]-
-> Every $g$ with $L(g)=\ell$ has the same probability $p^\ell(1-p)^{Y-\ell}$. Dividing by $\Pr(L=\ell)=\binom Y\ell p^\ell(1-p)^{Y-\ell}$ gives $1/\binom Y\ell$. $\square$
+## 5. Using an ensemble as a null model
 
-> [!remark] Uniform graphs are dense
-> Under the uniform law on $\Omega_N$, $L\sim\mathrm{Bin}(Y,1/2)$, with mean $Y/2$ and standard deviation $\sqrt Y/2$. A uniformly random graph is therefore almost surely near density $1/2$. Rejection sampling to obtain a sparse graph would almost never succeed. This motivates MCMC on constrained spaces; see [[Markov chain Monte Carlo on graphs]].
+Suppose an observed graph $g^*$ has a statistic $X(g^*)$. To ask whether it is unusual:
+1. **Select constraints** that the model should preserve (e.g. $N$ or both $N,L$).
+2. **Specify and fit** the probability law $p(g)$.
+3. **Calculate or sample** the null distribution of $X(G)$.
+4. **Compare** $X(g^*)$ with the null distribution and its fluctuations.
 
-> [!example] Trial Exam 2, Q2
-> On $\Omega_N$, consider $p_1(g)=1/|\Omega|$, $p_2(g)=L(g)^2/Z$ and $p_3(g)=e^{\beta L(g)}/Z_\beta$.
-> - $|\Omega|=2^Y$.
-> - $\langle L\rangle_2>\langle L\rangle_1$, because $p_2$ up-weights graphs with many links.
-> - $\langle L\rangle_3=\langle L\rangle_1$ iff $\beta=0$.
-> - For the empty graph: $p_1=2^{-Y}$, $p_2=0$, $p_3=1/Z_\beta$.
+A fitted null model may match the number of edges by construction without matching clustering, path lengths or community structure. Compare with the **distribution of $X(G)$**, not just the uncertainty in the estimated mean. MCMC draws may be correlated; see [[Markov chain Monte Carlo on graphs]].
 
-> [!remark] How to compare a network with a null model
-> Generate many independent draws from the fitted ensemble. Compare the observed statistic with the **ensemble distribution** (its spread), not with the standard error of the ensemble mean. Matching one statistic, such as $L$, does not mean the model explains the others.
+> [!exam] Essential distinctions
+> - $p(g)$ = probability of **one particular graph**; $\Pr(L=\ell)$ = probability of **all graphs** with $\ell$ links.
+> - Uniform over $\Omega_N$ means $G(N,1/2)$, **not** a uniform distribution over $L$.
+> - $|\Omega_N|=2^{\binom N2}$ and $|\Omega_{N,L}|=\binom{\binom N2}{L}$.
+> - A graph with atypically few links is rare under the uniform $\Omega_N$ model; use an appropriately constrained or sparse model instead.
+> - Trial Exam 2, Q2 compares $p_1(g)=2^{-Y}$, $p_2(g)\propto L(g)^2$, and $p_3(g)\propto e^{\beta L(g)}$. The latter two alter probabilities **within the same graph space**; $\beta=0$ recovers the uniform model.
 
 ---
 Related: [[Erdos-Renyi graphs]] · [[Configuration model]] · [[Maximum entropy and ERGMs]] · [[Stochastic block models]]

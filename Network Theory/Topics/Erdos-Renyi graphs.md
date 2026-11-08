@@ -2,86 +2,149 @@
 tags: [data5441, ch03, models]
 aliases: [ER graph, Poisson random graph, G(N,p), Giant component]
 ---
+---
 # Erdős–Rényi graphs
 
 > [!abstract] Summary
-> $G(N,p)$ makes every link independent with probability $p$. It has binomial (Poisson in the sparse limit) degrees, clustering $\approx p$, distances $\sim\log N$, and a giant component once $\langle z\rangle>1$. It is the baseline that real networks are compared with.
-> Chapter: [[Ch03 Random graph models]]
+> In $G(N,p)$, each possible edge is present **independently** with probability $p$. Degrees are binomial (Poisson in the sparse limit), clustering is governed by $p$, and the appearance of a giant component is controlled by the expected degree $\langle z\rangle$. The model is a fundamental null model for real networks.
+> Chapter: [[Ch03 Random graph models]] · Lecture: **Week 3, pp. 36–44**
 
-> [!definition] $G(N,p)$
-> Each of the $Y=\binom N2$ node pairs is a link independently with probability $p$. A particular graph $g$ has probability
-> $$P(g)=p^{L(g)}(1-p)^{Y-L(g)} .$$
-> There is no binomial coefficient: that belongs to the distribution of $L$, not to the probability of one graph.
+## 1. Definition and fitting
 
-> [!theorem] Links and degrees
-> $$L\sim\mathrm{Bin}(Y,p),\quad \langle L\rangle=pY;\qquad z_i\sim\mathrm{Bin}(N-1,p),\quad \langle z\rangle=p(N-1),\quad \sigma_z^2=(N-1)p(1-p).$$
-> Each follows by writing the quantity as a sum of independent Bernoulli$(p)$ link indicators. Degrees of different nodes are weakly dependent, because they share the indicator of the link between them.
-
-> [!proposition] Fitting ER to data
-> The maximum-likelihood (and moment-matching) estimate is
-> $$\hat p=\frac{L}{Y}=\frac{2L}{N(N-1)},\qquad\text{so that}\quad \langle z\rangle_{ER}=\hat p(N-1)=\frac{2L}{N}.$$
-> The fitted ER graph has the **same average degree** as the data.
-
-> [!theorem] Poisson limit (sparse regime)
-> If $p=c/(N-1)$ with $c$ fixed, then for each fixed $z\ge0$,
-> $$\binom{N-1}{z}p^z(1-p)^{N-1-z}\ \longrightarrow\ e^{-c}\frac{c^z}{z!}\qquad(N\to\infty).$$
-> Hence $\sigma_z/\langle z\rangle\to1/\sqrt c$.
-
-> [!proof]-
-> $\binom{N-1}{z}\big(\frac c{N-1}\big)^z=\frac{(N-1)(N-2)\cdots(N-z)}{(N-1)^z}\frac{c^z}{z!}\to\frac{c^z}{z!}$, since $z$ is fixed. Also $\big(1-\frac c{N-1}\big)^{N-1-z}\to e^{-c}$. A Poisson$(c)$ variable has variance $c$, so $\sigma_z/\langle z\rangle=\sqrt c/c$. $\square$
-
-> [!definition] Dense vs sparse ER
-> - **Fixed $p$:** $\langle z\rangle=p(N-1)\to\infty$, so the graph is dense, and $\sigma_z/\langle z\rangle\to0$.
-> - **Fixed $\langle z\rangle=c$:** $p=c/(N-1)\to0$, so the graph is sparse, with Poisson degrees and $C\approx p\to0$.
-
-> [!theorem] Clustering and distances
-> $C\approx p=\langle z\rangle/(N-1)$. In the sparse regime with $c>1$, typical distances in the giant component scale as $\ell\approx\dfrac{\log N}{\log\langle z\rangle}$.
-
-> [!proof]- Heuristic for $\ell$
-> In a locally tree-like graph, about $\langle z\rangle^d$ nodes lie at distance $d$ from a given node. Setting $\langle z\rangle^\ell\approx N$ gives $\ell\approx\log N/\log\langle z\rangle$.
-
-## Giant component
-
-> [!theorem] Giant component of sparse ER
-> Let $\langle z\rangle=c$ be fixed and $N\to\infty$. The fraction $S$ of nodes in the largest component satisfies
-> $$S=1-e^{-cS}.$$
-> - For $c\le1$, the only solution is $S=0$: there is no giant component.
-> - For $c>1$, there is a unique positive solution, which is the physical one.
+> [!definition] Erdős–Rényi model $G(N,p)$
+> Take $N$ labelled vertices, with $Y=\binom N2$ possible undirected edges. Include each edge independently with probability $p\in[0,1]$.
 >
-> The transition is at $\langle z\rangle=1$. Near it, $S\approx2(c-1)$ for $c\downarrow1$. Reference values: $S(2)\approx0.797$, $S(3)\approx0.940$.
+> For a **particular** graph $g$ with $L(g)$ edges,
+> $$\boxed{\Pr(G=g)=p^{L(g)}(1-p)^{Y-L(g)}.}$$
+> There is **no binomial coefficient**: this is the probability of one graph, not the probability of having a particular number of edges.
 
-> [!proof]-
-> Let $u$ be the probability that a node is **not** in the giant component. A node is outside it iff each of its neighbours fails to connect it, independently with probability $u$ each in the tree-like limit. Averaging over Poisson$(c)$ degrees gives
-> $$u=\sum_z e^{-c}\frac{c^z}{z!}u^z=e^{c(u-1)} .$$
-> With $S=1-u$ this is $S=1-e^{-cS}$.
-> Let $f(S)=1-e^{-cS}-S$. Then $f(0)=0$, $f'(0)=c-1$, $f''<0$ and $f(1)<0$. If $c\le1$, concavity forces $f<0$ on $(0,1]$, so there is no positive root. If $c>1$, $f$ is positive just above $0$ and negative at $1$, and concavity gives exactly one positive root. $\square$
+Since the $Y$ edge indicators are independent Bernoulli$(p)$ variables,
+$$\mathbb E[L]=pY=\frac{pN(N-1)}2,\qquad \boxed{\langle z\rangle=(N-1)p.}$$
 
-> [!remark] Giant ≠ connected
-> Whole-graph connectivity needs $p\gtrsim\log N/N$, i.e. $\langle z\rangle\gtrsim\log N$. For fixed $c>1$, a positive fraction of nodes stays outside the giant component.
+**Fitting to data.** For an observed network $g^*$ with $N$ vertices and $L^*$ edges, the maximum-likelihood estimate is
+$$\boxed{\widehat p=\frac{L^*}{Y}=\frac{2L^*}{N(N-1)}.}$$
+It matches the observed average degree **in expectation**:
+$$\boxed{\langle z\rangle=(N-1)\widehat p=\frac{2L^*}{N}.}$$
+Other measures, such as clustering, are **not** matched automatically.
 
-![[er-giant-component.png|600]]
+## 2. Number of links and degree distribution
 
-> [!exam] Typical questions
-> Trial 1 Q4 and Trial 1 Q6 / Trial 2 Q4 ask for:
-> - $p=2L/[N(N-1)]$, $\langle z\rangle=2L/N$, $C\approx p$;
-> - "$p=12/N$: sparse or dense?" Sparse, since $\langle z\rangle\to12$.
-> - "For which $N$ is the graph complete?" $p=1$.
-> - "For which $N$ is $C=0.2$?" $12/N=0.2\Rightarrow N=60$.
-> - $\sigma_z/\langle z\rangle\approx1/\sqrt{\langle z\rangle}$.
+> [!proposition] Exact finite-$N$ distributions
+> $$\boxed{L\sim\operatorname{Bin}(Y,p),\qquad \mathbb E[L]=Yp,\qquad \sigma_L^2=Yp(1-p).}$$
+> Each vertex has $N-1$ potential neighbours, so
+> $$\boxed{z_i\sim\operatorname{Bin}(N-1,p),\qquad \langle z\rangle=(N-1)p,\qquad \sigma_z^2=\langle z\rangle(1-p).}$$
 >
-> ER fails to reproduce **high clustering** and **broad degree distributions**.
+> These follow by summing independent edge indicators. Degrees of **different** vertices are not independent, because they share the indicator for their mutual edge.
 
-> [!code]- NetworkX (tutorial 3)
+### Dense versus sparse limits
+
+| Regime                           | Choice of $p$ as $N\to\infty$                          | Expected degree                    | Expected links                               |
+| -------------------------------- | ------------------------------------------------------ | ---------------------------------- | -------------------------------------------- |
+| **Dense**                        | $p\in(0,1)$ fixed                                      | $\langle z\rangle=p(N-1)\to\infty$ | $\mathbb E[L]=\Theta(N^2)$                   |
+| **Sparse** (bounded mean degree) | $\langle z\rangle>0$ fixed, $p=\langle z\rangle/(N-1)$ | $\langle z\rangle=\text{constant}$ | $\mathbb E[L]=N\langle z\rangle/2=\Theta(N)$ |
+
+> [!theorem] Poisson limit in the sparse regime
+> Fix $\langle z\rangle>0$ and let $p=\langle z\rangle/(N-1)$. For each fixed integer $z\ge0$,
+> $$\boxed{\Pr(z_i=z)=\binom{N-1}{z}p^z(1-p)^{N-1-z}\longrightarrow e^{-\langle z\rangle}\frac{\langle z\rangle^z}{z!}.}$$
+> Thus the limiting degree distribution is $\operatorname{Poisson}(\langle z\rangle)$, with mean and variance both equal to $\langle z\rangle$.
+
+> [!proof]- Short derivation
+> For fixed $z$,
+> $$\binom{N-1}{z}\left(\frac{\langle z\rangle}{N-1}\right)^z\longrightarrow\frac{\langle z\rangle^z}{z!},$$
+> $$\left(1-\frac{\langle z\rangle}{N-1}\right)^{N-1-z}\longrightarrow e^{-\langle z\rangle}.$$
+> Multiply the limits.
+
+**Relative degree variability.** The *exact* finite-$N$ expression is
+$$\boxed{\frac{\sigma_z}{\langle z\rangle}=\sqrt{\frac{1-p}{\langle z\rangle}}.}$$
+Therefore,
+$$\frac{\sigma_z}{\langle z\rangle}\longrightarrow\begin{cases}
+0,&p\in(0,1)\text{ fixed (dense)},\\[3pt]
+1/\sqrt{\langle z\rangle},&\langle z\rangle\text{ fixed (sparse)}.
+\end{cases}$$
+Dense ER degrees become relatively homogeneous; sparse ER retains nonzero relative degree fluctuations.
+
+## 3. Clustering and distances
+
+### Clustering
+
+For a vertex $i$ with at least two neighbours, each possible edge between its neighbours exists independently with probability $p$. Hence
+$$\boxed{\mathbb E[C_i\mid z_i\ge2]=p.}$$
+The expected closure probability and the usual large-network approximation for global clustering is
+$$\boxed{C_{\mathrm{net}}\approx p=\frac{\langle z\rangle}{N-1}.}$$
+It remains of constant order in the dense regime, but tends to $0$ like $1/N$ in the sparse regime.
+
+> [!remark] Local versus global clustering
+> $\langle C\rangle=\frac1N\sum_i C_i$ and $C_{\mathrm{net}}$ are **different averages**. If $C_i=0$ for $z_i<2$, then $\mathbb E[C_i]=p\Pr(z_i\ge2)$, not necessarily $p$. Thus $\langle C\rangle\approx C_{\mathrm{net}}\approx p$ is a useful course-level approximation, **not an exact identity** in sparse graphs.
+
+### Shortest-path distances
+
+For sparse ER with $\langle z\rangle>1$, exploration of the giant component is approximately a branching process: the number of reached vertices grows initially like $\langle z\rangle^d$. Setting this to order $N$ gives
+$$\boxed{d_{\mathrm{diam}}\approx\frac{\log N}{\log\langle z\rangle}\qquad(\langle z\rangle>1),}$$
+## 4. Giant-component phase transition
+
+A **giant component** contains a positive fraction of all vertices as $N\to\infty$. In the sparse regime, let $S$ denote the limiting fraction of vertices in the largest component, and set $U=1-S$.
+
+> [!theorem] Giant component in sparse $G(N,p)$
+> Keep $\langle z\rangle>0$ fixed and take $p=\langle z\rangle/(N-1)$. The limiting giant-component fraction satisfies
+> $$\boxed{S=1-e^{-\langle z\rangle S}.}$$
+> - If $\langle z\rangle\le1$, then $S=0$: **no giant component**.
+> - If $\langle z\rangle>1$, there is a **unique positive solution** $S\in(0,1)$: the largest component contains approximately $SN$ vertices.
+>
+> Thus $\boxed{\langle z\rangle_{\mathrm{critical}}=1.}$ The equation always has the trivial solution $S=0$; above the threshold, select the positive solution.
+
+### Derivation of the self-consistency equation
+
+1. For a potential neighbour $j$ of a node $i$, either there is **no edge** ($1-p$), or there is an edge but $j$ does **not** lead to the giant component (approximately $pU$).
+2. Using the locally tree-like approximation, all $N-1$ potential neighbours must fail to connect $i$ to the giant component:
+   $$U\approx(1-p+pU)^{N-1}.$$
+3. Substitute $p=\langle z\rangle/(N-1)$ and let $N\to\infty$:
+   $$U=e^{-\langle z\rangle(1-U)}.$$
+4. Since $S=1-U$,
+   $$\boxed{S=1-e^{-\langle z\rangle S}.}$$
+
+**Why the threshold is $1$.** The curve $F(S)=1-e^{-\langle z\rangle S}$ has slope $F'(0)=\langle z\rangle$. A positive intersection with the line $S$ appears precisely when this slope exceeds $1$.
+
+![[er-giant-component.png|650]]
+
+> [!important] Giant component $\ne$ connected graph
+> For every fixed $\langle z\rangle>1$, the giant fraction satisfies $S<1$, so the graph is **not fully connected** with high probability. Full connectivity occurs at the higher scale $p\sim(\log N)/N$, corresponding to $\langle z\rangle\sim\log N$.
+
+## 5. Summary: ER properties across regimes
+
+### Dense versus sparse ER
+
+| Property                    | **Dense:** $p\in(0,1)$ fixed                | **Sparse:** $\langle z\rangle>0$ fixed, $p=\langle z\rangle/(N-1)$              |
+| --------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------- |
+| Expected edges              | $\Theta(N^2)$                               | $N\langle z\rangle/2=\Theta(N)$                                                 |
+| Expected degree             | $\langle z\rangle\sim pN\to\infty$          | Constant                                                                        |
+| Degree law                  | $\operatorname{Bin}(N-1,p)$                 | $\longrightarrow\operatorname{Poisson}(\langle z\rangle)$                       |
+| Relative degree variability | $\sigma_z/\langle z\rangle\to0$             | $\to1/\sqrt{\langle z\rangle}$                                                  |
+| Clustering                  | $\approx p$, nonzero                        | $\approx\langle z\rangle/N\to0$                                                 |
+| Typical distances           | Bounded; diameter $2$ with high probability | $\sim\log N/\log\langle z\rangle$ **if $\langle z\rangle>1$**, within the giant |
+| Connectivity                | Connected with high probability             | Not connected with high probability for fixed $\langle z\rangle$                |
+
+### Component structure within the sparse regime
+
+| Expected degree | Largest component | Network behaviour |
+|---|---|---|
+| $\langle z\rangle<1$ | $O(\log N)$ | **Subcritical:** no giant component |
+| $\langle z\rangle=1$ | Order $N^{2/3}$ | **Critical:** onset of the phase transition; still no positive giant fraction |
+| $\langle z\rangle>1$ | $\approx SN$, where $S=1-e^{-\langle z\rangle S}>0$ | **Supercritical:** a giant component, but not full connectivity |
+
+
+> [!exam] Remember
+> - **Fit:** $\widehat p=2L^*/[N(N-1)]$ and $\langle z\rangle=2L^*/N$.
+> - **Exact laws:** $L\sim\operatorname{Bin}(Y,p)$ and $z_i\sim\operatorname{Bin}(N-1,p)$.
+> - **Sparse Poisson limit:** $p=\langle z\rangle/(N-1)$ with $\langle z\rangle$ fixed.
+> - **Clustering:** $C_{\mathrm{net}}\approx p$; it vanishes in sparse ER.
+> - **Giant threshold:** $\langle z\rangle=1$; **connectivity scale:** $\langle z\rangle\sim\log N$.
+> - **Typical distances:** logarithmic only in the sparse **supercritical** giant component; do not confuse the estimate with an exact diameter formula.
+
+> [!code]- NetworkX (interpretation)
 > ```python
-> G = nx.erdos_renyi_graph(N, p, seed=13)        # G(N,p)
-> G = nx.gnm_random_graph(N, L, seed=13)        # G(N,L)
-> S = len(max(nx.connected_components(G), key=len)) / N
+> G = nx.erdos_renyi_graph(N, p, seed=13)  # Independent edges: G(N,p)
+> H = nx.gnm_random_graph(N, L, seed=13)   # Exactly L edges: G(N,L)
 > ```
-
-> [!selftest]- Self-test
-> 1. Why does the fitted ER graph have the same $\langle z\rangle$ as the data? — Because $\hat p=L/Y$ gives $\langle L\rangle=L$.
-> 2. Solve the threshold: at what $\langle z\rangle$ does the giant component appear? — At $\langle z\rangle=1$.
-> 3. Why is ER clustering small in sparse graphs? — Because $C\approx p\to0$.
 
 ---
 Related: [[Random graph ensembles]] · [[Configuration model]] · [[Percolation and robustness]] · [[Small-world networks]]
