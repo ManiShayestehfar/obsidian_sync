@@ -28,8 +28,8 @@ Compare an empirical network with repeated ER draws; dense (fixed $p$) vs sparse
 > See [[Exam patterns]] for worked trial-exam items and [[Formula sheet]] for what is provided.
 
 ## Revision checklist
-- [ ] Reproduce every boxed statement in [[Random graph ensembles]] and answer its self-test without looking.
-- [ ] Reproduce every boxed statement in [[Erdos-Renyi graphs]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Random graph ensembles]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Erdos-Renyi graphs]] and answer its self-test without looking.
 
 ---
 Up: [[00 Home]]
