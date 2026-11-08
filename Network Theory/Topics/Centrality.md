@@ -10,16 +10,23 @@ aliases: [Centrality measures, Betweenness, Eigenvector centrality, PageRank, Ka
 
 ## Local and path-based measures
 
+### Degree Centrality
+
 > [!definition] Degree centrality
 > The degree $z_i$, often normalised as $z_i/(N-1)$. It identifies nodes with the most direct contacts ("students with the most friends").
 
-> [!definition] Closeness and harmonic centrality
-> On a connected graph, closeness is $c_i=\dfrac{N-1}{\sum_{j\ne i}d_{ij}}$. Harmonic centrality, $h_i=\sum_{j\ne i}1/d_{ij}$ with $1/\infty=0$, also works on disconnected graphs.
+*Limitation:* Treats each neighbour equally
+### Betweenness Centrality
 
 > [!definition] Betweenness centrality
 > Let $\sigma_{st}$ be the number of shortest paths from $s$ to $t$, and $\sigma_{st}(i)$ the number of those that pass through $i$ as an internal node. Then
 > $$b_i=\sum_{s<t,\ s,t\ne i}\frac{\sigma_{st}(i)}{\sigma_{st}},\qquad \tilde b_i=\frac{b_i}{\binom{N-1}{2}}\in[0,1].$$
 > It identifies **brokers or bridges**, e.g. students who connect different school years.
+
+*Limitations:* 
+1. high betweenness does not automatically mean removing the node disconnects the graph: alternative routes may exist, but be longer.
+2. The measure assumes that the process of interest follows shortest path
+
 
 > [!example] Trial Exam 2, Q1(i)
 > Node $5$ is the only route between a group of $4$ nodes and a group of $5$ nodes. All $4\times5=20$ shortest paths between the groups pass through it, so $b_5=20$. With $N=10$, $\tilde b_5=20/\binom92=20/36=5/9$.
@@ -28,8 +35,7 @@ aliases: [Centrality measures, Betweenness, Eigenvector centrality, PageRank, Ka
 
 ## Spectral (recursive) measures
 
-> [!definition] Eigenvector centrality *(formula sheet)*
-> Iterate $x_i(t+1)=\sum_jA_{ij}x_j(t)$ and normalise at each step. The limit satisfies $Ax=\lambda_1x$ with $\lambda_1$ the largest eigenvalue: a node is important if its neighbours are important.
+### Eigenvector Centrality
 
 > [!theorem] Perron–Frobenius (undirected, connected)
 > If $A$ is the adjacency matrix of a connected undirected graph with $N\ge2$, then:
@@ -43,9 +49,19 @@ aliases: [Centrality measures, Betweenness, Eigenvector centrality, PageRank, Ka
 > This converges to the Perron direction iff $a_1\ne0$ and $|\lambda_r|<\lambda_1$ for all $r\ge2$.
 > **Obstruction:** a connected **bipartite** graph has eigenvalue $-\lambda_1$, so the iteration oscillates. Iterating with $A+I$ instead fixes this, because it keeps the eigenvectors and shifts every eigenvalue by $+1$.
 
+> [!definition] Eigenvector centrality *(formula sheet)*
+> Iterate $x_i(t+1)=\sum_jA_{ij}x_j(t)$ and normalise at each step. The limit satisfies $Ax=\lambda_1x$ with $\lambda_1$ the largest eigenvalue: a node is important if its neighbours are important.
+
+### Katz Centrality
+
 > [!definition] Katz centrality
-> Add a baseline $\beta>0$: $x=\alpha A^\top x+\beta\mathbf 1$, so $x=\beta(I-\alpha A^\top)^{-1}\mathbf1=\beta\sum_{t\ge0}\alpha^t(A^\top)^t\mathbf1$.
-> The series converges iff $0\le\alpha<1/\lambda_1$. Then $x_i$ counts incoming walks of every length, discounted by $\alpha^{\text{length}}$.
+> Add a baseline $\beta>0$: $x=\alpha A^\top x+\beta\mathbf 1$, so
+> $$x=\beta(I-\alpha A^\top)^{-1}\mathbf1=\beta\sum_{t\ge0}\alpha^t(A^\top)^t\mathbf1.$$
+> The series converges iff $0\le\alpha<1/\lambda_1$. 
+> Then $x_i$ counts incoming walks of every length, discounted by $\alpha^{\text{length}}$.
+
+
+### PageRank
 
 > [!definition] PageRank *(formula sheet form)*
 > $$x_i(t+1)=\alpha\sum_jA_{ij}\frac{x_j(t)}{z_j^{out}}+\beta ,$$
@@ -66,9 +82,9 @@ aliases: [Centrality measures, Betweenness, Eigenvector centrality, PageRank, Ka
 > ```
 
 > [!selftest]- Self-test
-> 1. Which centrality identifies bridges between communities? — Betweenness.
-> 2. What is the condition on $\alpha$ for Katz centrality? — $\alpha<1/\lambda_1$.
-> 3. Why can power iteration fail on a bipartite graph? — Because $-\lambda_1$ is also an eigenvalue, the iterates oscillate.
+> 4. Which centrality identifies bridges between communities? — Betweenness.
+> 5. What is the condition on $\alpha$ for Katz centrality? — $\alpha<1/\lambda_1$.
+> 6. Why can power iteration fail on a bipartite graph? — Because $-\lambda_1$ is also an eigenvalue, the iterates oscillate.
 
 ---
 Related: [[Graphs and representations]] · [[Paths and components]] · [[Spectral graph theory]]
