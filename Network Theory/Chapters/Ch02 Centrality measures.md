@@ -29,8 +29,8 @@ Centralities of simple and directed examples; Les Misérables / Star Wars; latti
 > See [[Exam patterns]] for worked trial-exam items and [[Formula sheet]] for what is provided.
 
 ## Revision checklist
-- [ ] Reproduce every boxed statement in [[Centrality]] and answer its self-test without looking.
-- [ ] Reproduce every boxed statement in [[Sampling and friendship paradox]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Centrality]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Sampling and friendship paradox]] and answer its self-test without looking.
 
 ---
 Up: [[00 Home]]
