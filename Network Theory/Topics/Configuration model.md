@@ -4,10 +4,6 @@ aliases: [Fixed degree sequence, Stub matching, Molloy–Reed, Excess degree]
 ---
 
 ---
-tags: [data5441, ch04, models]
-aliases: [Configuration model, Stub-matching model, Degree-preserving null model]
----
-
 # Configuration model
 
 > [!abstract] Summary
