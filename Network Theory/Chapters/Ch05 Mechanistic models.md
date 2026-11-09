@@ -13,6 +13,7 @@ aliases: [Week 5, Chapter 5]
 - [[Preferential attachment]]: BA growth, $\gamma=3$
 
 ## Key results at a glance
+
 > [!summary]+ Memorise
 > - Small world = sparse + $\ell\sim\log N$ + high $C$
 > - WS: $C(0)=\frac{3(Q-1)}{2(2Q-1)}$, $C(p)\approx C(0)(1-p)^3$
@@ -23,6 +24,7 @@ aliases: [Week 5, Chapter 5]
 WS rewiring sweeps; degree-preserving lattice swaps; BA vs density-matched ER; political-blog degree variability.
 
 ## Exam patterns
+
 > [!exam] How this chapter is examined
 > Match BA to ER via $m=\langle z\rangle/2$; compare $\sigma_z/\langle z\rangle$; assess each small-world condition.
 > See [[Exam patterns]] for worked trial-exam items and [[Formula sheet]] for what is provided.

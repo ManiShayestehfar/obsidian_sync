@@ -27,8 +27,8 @@ Les Misérables null ensembles: fixed $N$; fixed $N,L$; fixed degree sequence (s
 > See [[Exam patterns]] for worked trial-exam items and [[Formula sheet]] for what is provided.
 
 ## Revision checklist
-- [ ] Reproduce every boxed statement in [[Markov chain Monte Carlo on graphs]] and answer its self-test without looking.
-- [ ] Reproduce every boxed statement in [[Configuration model]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Markov chain Monte Carlo on graphs]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Configuration model]] and answer its self-test without looking.
 
 ---
 Up: [[00 Home]]
