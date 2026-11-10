@@ -30,9 +30,9 @@ WS rewiring sweeps; degree-preserving lattice swaps; BA vs density-matched ER; p
 > See [[Exam patterns]] for worked trial-exam items and [[Formula sheet]] for what is provided.
 
 ## Revision checklist
-- [ ] Reproduce every boxed statement in [[Small-world networks]] and answer its self-test without looking.
-- [ ] Reproduce every boxed statement in [[Power laws]] and answer its self-test without looking.
-- [ ] Reproduce every boxed statement in [[Preferential attachment]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Small-world networks]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Power laws]] and answer its self-test without looking.
+- [x] Reproduce every boxed statement in [[Preferential attachment]] and answer its self-test without looking.
 
 ---
 Up: [[00 Home]]
