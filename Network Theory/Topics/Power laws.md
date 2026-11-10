@@ -2,42 +2,131 @@
 tags: [data5441, ch05, models]
 aliases: [Scale-free, Fat tails, Heavy tails, Natural cutoff]
 ---
+---
 # Power laws and fat tails
 
-> [!abstract] Summary
-> Many real degree distributions are broad: $P(z)\sim z^{-\gamma}$, usually with $2<\gamma<3$. Then the mean is finite but $\langle z^2\rangle$ diverges with $N$. This drives the absence of epidemic thresholds and robustness to random failure.
-> Chapter: [[Ch05 Mechanistic models]]
+> [!abstract] Core idea
+> A network is **scale-free** when its degree distribution has a power-law tail, $P(z)\propto z^{-\gamma}$: **many nodes have few links, but a small number are hubs**. For $2<\gamma\le3$, the mean degree can remain finite while the second moment grows without bound with network size.
+>
+> **Key formulas:** $P(z)\sim Az^{-\gamma}$; $\langle z^n\rangle<\infty\iff\gamma>n+1$; $\sigma_z/\langle z\rangle\to\infty$ for $2<\gamma\le3$; $z_{\max}\sim N^{1/(\gamma-1)}$ for an idealised i.i.d. sample.
+>
+> Course: **Week 5**, lecture PDF pp. **68–70**. Next: [[Preferential attachment]].
 
-> [!definition] Power-law (scale-free) degree distribution
-> $P(z)\simeq Az^{-\gamma}$ for large $z$, with $\gamma>1$. The complementary cumulative distribution then satisfies $P_>(z)=\Pr(Z\ge z)\sim z^{-(\gamma-1)}$.
-> On log–log axes the histogram has slope $-\gamma$ and the CCDF has slope $-(\gamma-1)$. Plot the CCDF: it is less noisy.
+## 1. Motivation: beyond Poisson degrees
 
-> [!theorem] Which moments are finite
-> For an (infinite-support) power-law tail with exponent $\gamma$, the $n$-th moment $\langle z^n\rangle$ is finite iff $\gamma>n+1$.
-> In particular, for $2<\gamma\le3$ the mean is finite and $\langle z^2\rangle=\infty$.
+For $N$ nodes with degrees $z_1,\ldots,z_N$, define the **degree distribution**
 
-> [!proof]-
-> Compare $\sum_z z^n z^{-\gamma}$ with $\int^\infty z^{n-\gamma}dz$, which converges iff $n-\gamma<-1$. Finitely many small-$z$ terms do not affect convergence. $\square$
+$$P(z)=\frac1N\sum_{i=1}^N\mathbf 1_{\{z_i=z\}},\qquad \langle z\rangle=\sum_z zP(z),\quad \sigma_z^2=\langle z^2\rangle-\langle z\rangle^2.$$
 
-> [!theorem] Natural cutoff (largest degree)
-> In a sample of $N$ independent degrees, the largest degree $z_{max}$ is set by expecting about one node at or above it:
-> $$N\,P_>(z_{max})\approx1\ \Longrightarrow\ z_{max}\sim N^{1/(\gamma-1)} .$$
-> Consequently the finite-$N$ second moment grows: $\langle z^2\rangle\sim z_{max}^{3-\gamma}\sim N^{(3-\gamma)/(\gamma-1)}$ for $2<\gamma<3$.
+In a sparse Erdős–Rényi (ER) graph, $P(z)$ is approximately **Poisson**, concentrated around its mean $\langle z\rangle$. In many empirical networks the distribution is much broader: most nodes have small degrees, but a few **hubs** have very large degrees.
 
-> [!remark] Precision
-> - Every finite graph has finite moments, since $z_i\le N-1$. "Diverging $\langle z^2\rangle$" means growth with $N$.
-> - A straight-looking log–log plot is not proof of a power law. A broad (fat-tailed) distribution need not be a power law.
+![[Assets/power-law-shapes.png|760]]
 
-![[power-law-tails.png|600]]
+*These are illustrative probability distributions, not observed WWW data. A power law decays much more slowly than a Poisson distribution in the tail; on log–log axes a power law is a straight line.*
 
-> [!example] $\gamma=2.5$
-> Here $z_{max}\sim N^{2/3}$ and $\langle z^2\rangle\sim N^{1/3}\to\infty$. Consequences:
-> - $\langle z^2\rangle/\langle z\rangle\to\infty$, so the failure threshold $q_c\to1$ (see [[Percolation and robustness]]);
-> - the SIR threshold $\lambda/\mu\to0$ (see [[SIR model and epidemic threshold]]).
+## 2. Power laws and how to recognise them
 
-> [!selftest]- Self-test
-> 1. For $\gamma=2.5$, which moments are finite? — Only $\langle z\rangle$ (and $\langle z^0\rangle$).
-> 2. What is the log–log slope of the CCDF? — $-(\gamma-1)$.
+> [!definition] Power-law degree tail
+> For sufficiently large degree $z$, 
+> $$\boxed{P(z)\sim Az^{-\gamma}},\qquad \gamma>1.$$
+> The exponent $\gamma$ controls the rarity of hubs: **smaller $\gamma$ means a heavier tail** (among comparable normalised distributions).
+
+Taking logarithms,
+
+$$\log P(z)\approx\underbrace{\log A}_{\text{intercept}}-\underbrace{\gamma}_{\text{absolute slope}}\log z.$$
+
+Thus a **degree-frequency plot** of $\log P(z)$ against $\log z$ has slope approximately $-\gamma$. For the **complementary cumulative distribution** (CCDF), $P_>(z)=\Pr(Z\ge z)$, the tail scales as $P_>(z)\propto z^{-(\gamma-1)}$, so its log–log slope is **$-(\gamma-1)$**, not $-\gamma$.
+
+> [!note] Why “scale-free”?
+> Multiplying degree by $a>0$ changes the power-law value only by a factor: $P(az)\sim a^{-\gamma}P(z)$. Hence the tail has no preferred *degree scale*.
+
+## 3. Interpreting the WWW figure (lecture p. 70)
+
+A **web page is a node** and a **hyperlink is a directed edge**. Each page has two degrees:
+
+![[Assets/www-directed-degrees.png|750]]
+
+- **In-degree $z_{\mathrm{in}}$:** how many other pages point **to** this page. A very popular page may have enormous in-degree.
+- **Out-degree $z_{\mathrm{out}}$:** how many other pages this page points **to**. A directory or index page may have large out-degree.
+
+Every directed hyperlink adds one to total in-degree and one to total out-degree. Therefore $\langle z_{\mathrm{in}}\rangle=\langle z_{\mathrm{out}}\rangle=L/N$, even though their *distributions* can differ.
+
+![[Assets/www-degree-distributions-lecture.jpeg|760]]
+
+
+The historical fits are approximately **$\gamma_{\mathrm{in}}=2.1$** and **$\gamma_{\mathrm{out}}=2.45$**. Both tails are much heavier than a Poisson tail: the data include pages with far more links than an ER-type model predicts. **These plots show empirical distributions, not networks generated by the BA model.** The preferential-attachment model is introduced afterwards to *explain why such tails could arise*.
+
+## 4. Which moments diverge?
+
+> [!proposition] Moment criterion
+> If $P(z)\sim Az^{-\gamma}$ for unbounded $z$, then
+> $$\boxed{\langle z^n\rangle<\infty\ \Longleftrightarrow\ \gamma>n+1}$$
+> (assuming $n\ge0$ and a normalisable tail).
+
+> [!proof]- One-line derivation
+> Only the tail matters. Compare the sum with an improper integral:
+> $$\langle z^n\rangle\ \sim\ A\sum_{z\gg1}z^{n-\gamma}\ \longleftrightarrow\ A\int_1^\infty z^{n-\gamma}\,dz.$$
+> This integral converges exactly when $n-\gamma<-1$, or $\gamma>n+1$. At equality it diverges **logarithmically**. $\square$
+
+| Exponent range | $\langle z\rangle$ | $\langle z^2\rangle$ | Interpretation |
+|---|---|---|---|
+| $\gamma>3$ | Finite | Finite | Power-law tail, but finite degree variance |
+| $\gamma=3$ | Finite | Logarithmically divergent | Borderline case (including BA) |
+| $2<\gamma<3$ | Finite | Divergent | **Sparse on average, yet very heterogeneous** |
+| $1<\gamma\le2$ | Divergent | Divergent | Not finite-mean under an unbounded, size-independent law |
+
+In the lecture's main regime $2<\gamma\le3$, 
+$$\sigma_z=\sqrt{\langle z^2\rangle-\langle z\rangle^2}\longrightarrow\infty,\qquad \boxed{\frac{\sigma_z}{\langle z\rangle}\longrightarrow\infty}.$$
+This explains why scale-free networks can have **far greater relative degree variability** than sparse Poisson random graphs.
+
+## 5. How does the largest degree grow with $N$?
+
+A finite graph has $z_{\max}\le N-1$, so there is no literal infinite moment for finite $N$. The lecture asks how the finite-size cutoff increases as the graph grows.
+
+> [!derivation]- Natural cutoff for $N$ independent degrees
+> The quantity that counts extreme observations is the **tail probability**, not the probability of exactly one degree:
+>
+> $$P_>(z)=\Pr(Z\ge z)\sim c z^{1-\gamma}.$$
+>
+> The largest degree is on the scale where **about one** of $N$ observations exceeds $z_{\max}$:
+>
+> $$N P_>(z_{\max})\asymp1\quad\Longrightarrow\quad\boxed{z_{\max}\asymp N^{1/(\gamma-1)}}.$$
+>
+> For $2<\gamma<3$, truncating the second-moment integral at this cutoff gives
+>
+> $$\langle z^2\rangle_N\asymp\int_1^{z_{\max}}z^{2-\gamma}\,dz\asymp z_{\max}^{3-\gamma}\asymp\boxed{N^{(3-\gamma)/(\gamma-1)}}.$$
+>
+> At $\gamma=3$, the integral instead grows as $\log z_{\max}=\Theta(\log N)$.
+
+> [!warning] Correction to the lecture's shortcut (p. 69)
+> The lecture writes $P(z_{\max})\sim1/N$, which yields $z_{\max}\sim N^{1/\gamma}$ and $\langle z^2\rangle\sim N^{(3-\gamma)/\gamma}$. That is a **heuristic based on the probability of one exact degree**; it is **not the usual extreme-value estimate**. For i.i.d. samples, use $N\Pr(Z\ge z_{\max})\asymp1$ as above. The lecture's shortcut suggests polynomial growth when $2<\gamma<3$, but misses the **logarithmic divergence at $\gamma=3$**. The corrected tail-probability argument covers both cases.
+
+> [!example] $\gamma=5/2$
+> Under the i.i.d. cutoff, $z_{\max}\asymp N^{2/3}$ and $\langle z^2\rangle_N\asymp N^{1/3}$. The mean stays finite, but the spread of degrees increases with network size.
+
+## 6. What “fat-tailed” means in the lecture
+
+The lecture (p. 70) distinguishes three increasingly strong descriptions:
+1. **Weakest:** some moment $\langle z^q\rangle$ with $q>2$ diverges as $N\to\infty$.
+2. **Weak:** relative degree variability $\sigma_z/\langle z\rangle\to\infty$.
+3. **Strong (the lecture's main case):** $P(z)\propto z^{-\gamma}$ with $2<\gamma\le3$ for large $z$.
+
+These are **not interchangeable**. A distribution can have a fat tail without following a power law; a power law with $\gamma>3$ has a finite second moment.
+
+## 7. Exam essentials
+
+> [!exam] Remember
+> - **Power law:** $P(z)\propto z^{-\gamma}$ gives a straight line of slope $-\gamma$ on a **log–log probability-mass plot**.
+> - **Sparse but variable:** $2<\gamma\le3$ gives bounded $\langle z\rangle$ but diverging $\langle z^2\rangle$.
+> - **WWW:** distinguish incoming from outgoing hyperlinks, and **measured power-law tail** from the much shorter **Poisson tail**.
+> - **Caution:** a straight-looking log–log plot alone is not definitive statistical proof of a power law.
+
+> [!question]- Self-test
+> 1. **Why does $\gamma=2.5$ imply infinite second moment?** Because $2-\gamma=-0.5>-1$, so $\int_1^\infty z^{-0.5}dz$ diverges.
+> 2. **What are the log–log slopes of $P(z)$ and $P_>(z)$?** $-\gamma$ and $-(\gamma-1)$, respectively.
+> 3. **Why is the green curve in the WWW plot insufficient?** The Poisson model predicts extremely few high-degree pages, unlike the empirical observations.
+> 4. **Why does the empirical WWW figure not prove the BA model?** Many mechanisms produce broad tails; the figure demonstrates a distribution, not its cause.
 
 ---
-Related: [[Preferential attachment]] · [[Configuration model]] · [[Percolation and robustness]] · [[SIR model and epidemic threshold]]
+Related: [[Preferential attachment]] · [[Erdos-Renyi graphs]] · [[Configuration model]] · [[Percolation and robustness]] · [[SIR model and epidemic threshold]]
+
