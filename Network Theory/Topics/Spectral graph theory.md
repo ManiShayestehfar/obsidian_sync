@@ -5,54 +5,93 @@ aliases: [Laplacian, Laplace matrix, Spectral clustering, Fiedler vector, Eigeng
 # Spectral graph theory
 
 > [!abstract] Summary
-> The Laplacian $\mathbf L=D-A$ is positive semi-definite. Its zero eigenvalues count components, and its small eigenvalues reveal nearly disconnected groups. Spectral clustering embeds nodes using the first eigenvectors and then clusters them. The same embedding scores missing links.
-> Chapter: [[Ch08 Community detection]]
+> Spectral methods replace a difficult discrete partitioning problem with one involving **eigenvectors of a graph matrix**. For the Laplacian $\mathcal L=D-A$, small eigenvalues correspond to directions that vary little across edges. Zero eigenvalues count connected components; the next eigenvectors reveal **almost-disconnected communities**. In Week 9, the same idea becomes a **low-dimensional embedding** for link prediction.
+> Chapter: [[Ch08 Community detection]] · Sources: DATA5441 **Week 8**, lecture pp. 109–111; **Week 9**, p. 118; Tutorials 8–9.
+
+## 1. The graph Laplacian and its meaning
 
 > [!definition] Laplace matrix *(formula sheet)*
-> $$\mathbf L=D-A,\qquad \mathbf L_{ij}=z_i\delta_{ij}-A_{ij},\qquad D=\operatorname{diag}(z_1,\dots,z_N).$$
-> Its eigenvalues are ordered $0=\lambda_1\le\lambda_2\le\dots\le\lambda_N$. Do not confuse $\mathbf L$ with the number of links $L$.
+> For a simple undirected graph, with adjacency matrix $A$ and $z_i=\sum_j A_{ij}$,
+> $$\boxed{\mathcal L=D-A,\qquad D=\operatorname{diag}(z_1,\ldots,z_N).}$$
+> Since $\mathcal L$ is symmetric, it has orthonormal eigenvectors $u_1,\ldots,u_N$ and real eigenvalues $0=\lambda_1\le\lambda_2\le\cdots\le\lambda_N$. We use $\mathcal L$ for the **matrix** and $L$ for the **number of links**.
 
-> [!definition] Spectral method
-> Any clustering method based on the eigenvalues and eigenvectors of a matrix representing the graph (here $\mathbf L$).
+> [!theorem] Laplacian energy and connected components
+> For $x\in\mathbb R^N$,
+> $$\boxed{x^{\mathsf T}\mathcal Lx=\sum_{\{i,j\}\in E}(x_i-x_j)^2\ge0.}$$
+> Therefore $\mathcal L$ is **positive semidefinite**. Moreover,
+> $$\boxed{\dim\ker\mathcal L=\text{number of connected components}.}$$
+> If the graph is connected, $\lambda_1=0$ is simple and $u_1=\mathbf1/\sqrt N$.
 
-> [!theorem] Quadratic form and number of components
-> For all $x\in\mathbb R^N$,
-> $$x^\top\mathbf Lx=\sum_{\{i,j\}\in\mathcal L}(x_i-x_j)^2\ \ge0 .$$
-> Hence $\mathbf L$ is positive semi-definite. Its kernel is spanned by the component indicator vectors, so
-> $$\#\{r:\lambda_r=0\}=\text{number of connected components}.$$
+> [!proof]- Why both claims hold
+> Using $\sum_i z_ix_i^2=\sum_{\{i,j\}\in E}(x_i^2+x_j^2)$ and $x^{\mathsf T}Ax=2\sum_{\{i,j\}\in E}x_ix_j$, subtraction gives the sum of squares. Energy zero means $x_i=x_j$ for **every edge**, hence $x$ is constant on each component. Independent component-indicator vectors form a basis of the kernel.
 
-> [!proof]-
-> $x^\top Dx=\sum_iz_ix_i^2=\sum_{\{i,j\}\in\mathcal L}(x_i^2+x_j^2)$ and $x^\top Ax=2\sum_{\{i,j\}\in\mathcal L}x_ix_j$. Subtracting gives the sum of squares.
-> $x^\top\mathbf Lx=0$ iff $x_i=x_j$ on every link, i.e. iff $x$ is constant on each component. The component indicators are linearly independent and span this set, so the dimension of the kernel equals the number of components. $\mathbf L$ is symmetric, so its eigenvalues are real, and they are non-negative by the inequality. $\square$
+**Interpretation:** Think of $x_i$ as a number or coordinate attached to node $i$. The energy is small when **linked nodes have similar coordinates**. That is why the smallest eigenvectors capture large-scale groups.
 
-> [!proposition] Cut size and the Fiedler vector
-> Encode a bisection by $x_i=\pm1$. Then $R=\tfrac14x^\top\mathbf Lx$.
-> Relaxing to real $x\perp\mathbf1$ with $\|x\|=1$, the minimum of $x^\top\mathbf Lx$ is $\lambda_2$, attained at the eigenvector $u_2$ (Fiedler vector). Splitting by the sign of $u_2$ is a heuristic bisection. A small $\lambda_2$ means a nearly disconnected graph.
+## 2. From minimising a cut to an eigenvector
 
-> [!algorithm] Spectral clustering
-> 1. Compute the smallest eigenvalues of $\mathbf L$. Choose $B$ at a large **eigengap** $\lambda_{B+1}-\lambda_B$.
-> 2. Form $U\in\mathbb R^{N\times B}$ from the first $B$ eigenvectors.
-> 3. Treat **row $i$** of $U$ as coordinates of node $i$, and cluster the rows (e.g. $k$-means).
+> [!proposition] Spectral relaxation of a bisection
+> Represent a bisection by $x_i=+1$ on one side and $x_i=-1$ on the other. Every crossing edge contributes $(+1-(-1))^2=4$, so
+> $$\boxed{R=\frac14 x^{\mathsf T}\mathcal Lx.}$$
+> For a **balanced** bisection, $x^{\mathsf T}\mathbf1=0$. Instead of searching discrete $\{\pm1\}$ assignments, allow real vectors with $x\perp\mathbf1$ and $\|x\|=1$. Rayleigh–Ritz gives
+> $$\min_{x\perp\mathbf1,\ \|x\|=1}x^{\mathsf T}\mathcal Lx=\lambda_2.$$
+> A minimiser is a **Fiedler vector** $u_2$. Splitting nodes by its sign is a **heuristic** approximation to a graph bisection; the exact cut problem remains discrete.
+
+> [!remark] Why the second eigenvector, not the first?
+> For a connected graph, $u_1$ is **constant** and cannot separate nodes. The first non-constant eigenvector $u_2$ is the smoothest non-trivial direction. Small $\lambda_2$ indicates weak connectivity **between** some regions; if $\lambda_2=0$, the graph is disconnected.
+
+## 3. Spectral community detection: several groups
+
+> [!definition] Eigengap
+> If a graph has exactly $B$ disconnected components, then $\lambda_1=\cdots=\lambda_B=0$ and $\lambda_{B+1}>0$. If the components are joined by **few weak links**, the first $B$ eigenvalues become small and often remain separated from the rest by a **gap** $\lambda_{B+1}-\lambda_B$. This suggests $B$ groups, but the gap is a **heuristic**, not a theorem that the planted value must be recovered.
+
+> [!algorithm] Laplacian spectral clustering (Tutorial 8)
+> 1. Compute the *smallest* eigenpairs $(\lambda_k,u_k)$ of $\mathcal L=D-A$.
+> 2. Look for a large eigengap and select a tentative number of groups $B$.
+> 3. Form $U=[u_1\;u_2\;\cdots\;u_B]\in\mathbb R^{N\times B}$.
+> 4. Regard the **$i$th row** $U_{i,:}$ as coordinates of node $i$ in $\mathbb R^B$.
+> 5. Cluster these $N$ points into $B$ groups (e.g. **$k$-means**); map the cluster labels back to the nodes.
 >
-> Intuition: with $B$ disconnected groups, the first $B$ eigenvectors are group indicators (rows are identical within a group). Weak links between groups perturb this only slightly.
+> In the exactly disconnected case, rows corresponding to nodes within the same component coincide (for any orthonormal basis of the nullspace). A small number of bridges perturbs these ideal clusters.
 
-![[tutorial-8-cell-67-plot-1.png|600]]
+![[Assets/w8-spectral-embedding.png|720]]
 
-> [!definition] Spectral link prediction (embedding)
-> On the training graph, embed node $i$ as $v_i=(u_2(i),\dots,u_{d+1}(i))$ and score a pair by $s_{ij}=-\|v_i-v_j\|^2$, so nearby nodes are likely linked. Recompute the embedding after removing the test links, to avoid leakage. See [[Link prediction]].
+> [!remark] Things that can mislead you
+> - **Columns** of $U$ are eigenvectors; **rows** are the embedded nodes.
+> - Eigenvector **signs** are arbitrary, as are rotations within a repeated eigenspace; the relative geometry, not axis orientation, matters.
+> - Large degree heterogeneity may favour a **normalised Laplacian**, but the course's main derivations use $D-A$.
+> - Spectral clustering outputs a **partition**; it does not assign a probability to each edge by itself.
 
-> [!code]- NumPy (tutorials 8–9)
+## 4. The Week 9 connection: spectral *link prediction*
+
+> [!definition] Laplacian spectral embedding score
+> To predict missing links, compute the Laplacian **from the training graph**. For a connected graph, discard the constant eigenvector and choose $d$ non-trivial directions:
+> $$v_i=(u_2(i),\ldots,u_{d+1}(i))\in\mathbb R^d.$$
+> Nearby embedded nodes are expected to connect; give the unobserved pair $(i,j)$ the **ranking score**
+> $$\boxed{s_{ij}=-\|v_i-v_j\|^2.}$$
+> The minus sign ensures that **shorter distance gives higher score**. This is a score for ranking, **not a calibrated probability**.
+
+> [!remark] $B$ versus $d$, and disconnected training graphs
+> - **Community detection:** $B$ is the requested number of groups, and the course uses the first $B$ eigenvectors.
+> - **Link prediction:** $d$ is the number of informative **positive-eigenvalue directions** retained. For $B$ ideal disconnected groups, there are $B-1$ non-constant group directions relative to the global constant.
+> - A training graph may become disconnected when test links are removed. **Tutorial 9 explicitly retains *all* zero modes**, then adds the first $d$ positive modes. This avoids arbitrarily discarding component information; the simple $u_2,\ldots,u_{d+1}$ expression assumes connectivity.
+> - Choose $d$ based on validation performance; increasing $d$ does not necessarily improve AUC.
+
+> [!code]- Minimal spectral clustering (Tutorial 8)
 > ```python
-> Lap = nx.laplacian_matrix(G).toarray()
-> lam, U = np.linalg.eigh(Lap)                 # ascending eigenvalues
+> import numpy as np
 > from sklearn.cluster import KMeans
-> labels = KMeans(B, n_init=10, random_state=13).fit_predict(U[:, :B])
+> Lap = nx.laplacian_matrix(G, weight=None).toarray()
+> eigenvalues, U = np.linalg.eigh(Lap)       # ascending eigenvalues
+> B = 3                                       # chosen from eigengap
+> labels = KMeans(n_clusters=B, n_init=10,
+>                 random_state=13).fit_predict(U[:, :B])
 > ```
 
 > [!selftest]- Self-test
-> 1. Prove $x^\top\mathbf Lx=\sum_{\text{links}}(x_i-x_j)^2$.
-> 2. A graph has spectrum $0,0,0,0.4,2.1,\dots$. How many components does it have? — $3$.
-> 3. Can spectral methods be used for link prediction? — Yes, via the embedding.
+> 1. **Why $\mathcal L\succeq0$?** — Its quadratic form is a sum of squared edge differences.
+> 2. **Spectrum $0,0,0,0.4,2.1,\ldots$?** — Three connected components.
+> 3. **What does a large gap after $\lambda_B$ suggest?** — About $B$ weakly connected groups.
+> 4. **Why negate the embedding distance for link prediction?** — AUC expects larger scores for more likely links.
 
 ---
-Related: [[Community detection]] · [[Link prediction]] · [[Centrality]] · [[Synchronisation and stability]]
+Related: [[Community detection]] · [[Link prediction]] · [[Stochastic block models]] · [[Centrality]] · [[Synchronisation and stability]]
