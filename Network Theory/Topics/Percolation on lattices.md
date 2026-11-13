@@ -5,46 +5,78 @@ aliases: [Site percolation, Bond percolation, Percolation threshold, Bethe latti
 # Percolation on lattices
 
 > [!abstract] Summary
-> Keep each site or bond independently with probability $p$. Above a critical $p_c$ a spanning or infinite cluster appears. The value of $p_c$ depends on the geometry. On a tree with branching factor $k-1$, $p_c=1/(k-1)$, the template for the random-graph results.
-> Chapter: [[Ch10 Resilience and percolation]]
+> **Percolation** asks whether randomly available sites or links can form a connected path across a system. Below a critical occupation probability $p_c$, only finite clusters occur in the infinite system; above it, an infinite cluster can occur. The **tree calculation** $p_c=1/(k-1)$ motivates the network-robustness criterion in [[Percolation and robustness]].
+> Chapter: [[Ch10 Resilience and percolation]] · **Week 10**, lecture pp. 128–136; Tutorial 10 §1.
+
+## 1. The percolation question
 
 > [!definition] Site and bond percolation
-> - **Bond:** each link is kept (occupied) independently with probability $p$.
-> - **Site:** each node is kept with probability $p$, together with the links between kept nodes.
+> Start with a fixed lattice/graph. Independently retain each **site** (node) or **bond** (edge) with probability $p$; remove it with probability $q=1-p$.
+> - **Bond percolation:** all nodes remain, but only occupied edges can be traversed.
+> - **Site percolation:** occupied nodes remain together with edges connecting occupied neighbours.
+> A **cluster** is a connected component of the retained network. The geometry matters: a square lattice with four neighbours is different from one with eight.
+
+> [!definition] Critical occupation and observables
+> In an infinite lattice, $p_c$ marks the onset of an **infinite connected cluster**. The probability that a designated node belongs to one is an order parameter $\theta(p)$, with $\theta(p)=0$ below $p_c$.
+> In finite simulations, there is no true singularity. Measure the **largest-cluster fraction** $S_N(p)=N_1(p)/N$ or the **probability of crossing** a box. Increasing $N$ sharpens the crossover.
+
+![[Assets/w10-site-percolation.png|760]]
+
+> [!remark] How to read the figure
+> The three panels use the **same random site marks** and increase $p$, so clusters can only merge or grow. The dramatic increase of the largest cluster near $p\simeq0.59$ is a *finite-size illustration*, not a calculation of $p_c$ from one picture.
+
+## 2. One-dimensional and tree examples
+
+> [!example] One-dimensional line
+> An infinite occupied path requires *every* bond along that path to survive. For any $p<1$, the probability that the first $n$ bonds all survive is $p^n\to0$. Thus $\boxed{p_c=1}$ (for either bonds or sites in one dimension).
+
+> [!theorem] Bond percolation on a $k$-regular tree
+> Every reached vertex has $k-1$ **onward** edges (excluding the arrival edge). A positive probability of an infinite occupied branch appears precisely when
+> $$\boxed{p(k-1)>1\quad\Longleftrightarrow\quad p>p_c=\frac1{k-1}.}$$
+> In particular, a degree-$3$ Bethe lattice has $p_c=1/2$.
+
+> [!derivation]- Two equivalent derivations
+> **Branching:** each reached node has $\operatorname{Bin}(k-1,p)$ occupied onward links, giving mean offspring $p(k-1)$. The exploration survives with positive probability when this exceeds $1$.
 >
-> Write $q=1-p$ for the failure (removal) probability.
+> **Self-consistency:** let $u$ be the probability that following a *specified edge* fails to reach an infinite cluster. Either the edge is closed, or it is open and all $k-1$ outward branches fail:
+> $$u=1-p+pu^{k-1}.$$
+> The solution $u=1$ always exists; a second solution $u<1$ appears when the slope of the right-hand side at $u=1$ exceeds $1$, namely $p(k-1)>1$. For $k=3$, the non-trivial root is $u=(1-p)/p$.
+>
+> **Distinguish the probabilities:** $1-u$ is the chance a *particular outward direction* connects to infinity. The chance that a vertex belongs to an infinite occupied cluster is $1-u^k$ (bond model).
 
-> [!definition] Order parameter
-> $\theta(p)=\lim_{N\to\infty}N_1/N$, where $N_1$ is the size of the largest cluster, normalised by the **original** $N$. The threshold is $p_c=\inf\{p:\theta(p)>0\}$. In a finite box, use the probability of a cluster crossing the box.
-
-> [!theorem] Bond percolation on a regular tree (Bethe lattice)
-> On an infinite tree where every node has degree $k$, so each reached node has $k-1$ onward branches,
-> $$p_c=\frac1{k-1}.$$
-
-> [!proof]-
-> Exploring from a node, each occupied bond leads to a node with $k-1$ further bonds, each occupied with probability $p$. The number of new occupied branches has mean $p(k-1)$. A Galton–Watson process survives with positive probability iff its mean offspring is $>1$ (excluding degenerate cases). Hence $p_c(k-1)=1$. $\square$
-> For the probability $u$ that a branch is finite, $u=1-p+pu^{k-1}$. For $k=3$ the non-trivial root is $u=(1-p)/p$ for $p>1/2$.
+## 3. Geometry changes the threshold
 
 | Infinite lattice | Site $p_c$ | Bond $p_c$ |
-|---|---|---|
+|---|---:|---:|
 | 1D line | $1$ | $1$ |
-| Square (4 neighbours) | $\approx0.5927$ | $1/2$ |
+| Square, 4 neighbours | $\approx0.5927$ | $1/2$ |
 | Triangular | $1/2$ | $2\sin(\pi/18)\approx0.3473$ |
-| $k$-regular tree | $1/(k-1)$ | $1/(k-1)$ |
+| $k$-regular tree, $k\ge3$ | $1/(k-1)$ | $1/(k-1)$ |
 
-> [!remark] Tutorial 10 lessons
-> - The 8-neighbour square lattice contains all 4-neighbour links, so its threshold is **lower**: the site $p_c\approx0.407$ was estimated from the 50% crossing point.
-> - In finite systems the transition is smooth and shifts with system size.
-> - Coupling all $p$ values to the same random numbers gives nested clusters.
+> [!example] Tutorial 10 — add diagonal neighbours
+> An **eight-neighbour square lattice** allows extra paths, so its site threshold is **lower** than in the four-neighbour model (about $0.407$ rather than $0.593$). In Tutorial 10 the threshold is estimated from crossing probabilities, comparing multiple lattice sizes. Adding edges cannot make an existing crossing path disappear.
 
-![[tutorial-10-cell-06-plot-1.png|650]]
+> [!algorithm] Finite-size site-percolation experiment
+> 1. Fix an $M\times M$ lattice and sample one independent $U_i\sim\operatorname{Uniform}(0,1)$ per node.
+> 2. For each $p$, retain the sites with $U_i<p$; connect occupied lattice neighbours.
+> 3. Identify components and measure $N_1/M^2$ or whether any component crosses the box.
+> 4. Repeat independently, average the observables, and compare larger $M$ values.
+>
+> Reusing the same marks across $p$ gives **nested realisations** and a clearer plot; it does not replace independent repetitions for error bars.
 
-> [!theorem] Zero–one law (background)
-> On an infinite connected locally finite graph, the existence of **some** infinite cluster is a tail event, so it has probability $0$ or $1$ (Kolmogorov). The probability that a **given** node is in an infinite cluster can lie strictly between $0$ and $1$.
+> [!remark] Zero–one law (conceptual)
+> For independent percolation on an infinite lattice, the event **“there exists at least one infinite cluster somewhere”** has probability $0$ or $1$. This is *not* the probability that a specified node lies in an infinite cluster, which can be strictly between $0$ and $1$.
 
-> [!selftest]- Self-test
-> 1. Bond $p_c$ of the $3$-regular tree? — $1/2$.
-> 2. Why can adding diagonals not raise $p_c$? — More links can only create more connections.
+> [!exam] Remember
+> 1. **Occupied fraction:** $p=1-q$; higher $p$ means more connectivity.
+> 2. **1D line:** $p_c=1$; **degree-$3$ tree:** $p_c=1/2$.
+> 3. **Tree calculation:** subtract the edge used to arrive, giving $k-1$ new possibilities.
+> 4. **Lattices versus random graphs:** geometry changes the threshold, while the branching idea transfers to random networks.
+
+> [!selftest]- Check your understanding
+> 1. Why does bond percolation on a $5$-regular tree have $p_c=1/4$? — Each reached node has four onward edges.
+> 2. Does a finite lattice literally undergo a discontinuous transition? — No; use finite-size crossing probabilities or largest-cluster statistics.
+> 3. Why can adding diagonals only decrease (or preserve) $p_c$? — Every previously available occupied path is still possible.
 
 ---
 Related: [[Percolation and robustness]] · [[Configuration model]] · [[Erdos-Renyi graphs]]

@@ -5,39 +5,73 @@ aliases: [SI model, SIS model, Epidemic simulation]
 # SI and SIS models (discrete simulation)
 
 > [!abstract] Summary
-> In tutorial 11, susceptible nodes are infected with probability $1-(1-\lambda)^m$ when selected, and infected nodes recover with probability $\mu$ (SIS). SI on a connected graph eventually infects everyone. Mean field predicts an SIS threshold at $\lambda\langle z\rangle=\mu$, but finite SIS always dies out eventually.
-> Chapter: [[Ch11 Cascades and binary models]]
+> **SI** has infection without recovery; **SIS** has infection followed by a return to susceptibility. Tutorial 11 simulates both by **random asynchronous node updates**. Simple mean-field equations predict logistic SI growth and an SIS persistence threshold, but **every finite SIS system without imported infections eventually reaches the disease-free absorbing state**.
+> Chapter: [[Ch11 Cascades and binary models]] · **Week 11**, Tutorial 11 §3 (linked to Week 12 continuous-time epidemic lecture).
 
-> [!definition] One asynchronous update (tutorial convention)
-> Pick a node uniformly at random. Let $m$ be its number of infected neighbours.
-> - **S node:** becomes I with probability $1-(1-\lambda)^m$.
-> - **I node:** in SI, stays I; in SIS, becomes S with probability $\mu$.
+## 1. Individual node-update rules
+
+> [!definition] Tutorial 11 convention
+> Each elementary step chooses **one node uniformly at random**. Write $m_i$ for its number of infected neighbours. If the selected node is
+> - **Susceptible (S):** it becomes infected (I) with probability
+> $$\boxed{P(S\to I\mid m_i)=1-(1-\lambda)^{m_i}}.$$
+> - **Infected (I):** in **SI**, it stays infected; in **SIS**, it recovers to S with probability $\mu$.
 >
-> $\lambda$ and $\mu$ are probabilities per selection, and $N$ selections make one sweep.
+> Here $\lambda,\mu\in[0,1]$ are **per-selection probabilities**, and $N$ selections constitute approximately one sweep. These are not yet continuous-time transition rates.
 
-> [!proof]- Infection probability
-> Each of the $m$ infected neighbours independently fails to transmit with probability $1-\lambda$. All fail with probability $(1-\lambda)^m$, so infection occurs with probability $1-(1-\lambda)^m\approx\lambda m$ for small $\lambda$. $\square$
+> [!derivation]- Why is infection probability $1-(1-\lambda)^m$?
+> Suppose each of the $m$ infected neighbours independently transmits with probability $\lambda$ during the selected node's update. The event **no transmission** has probability $(1-\lambda)^m$, so infection has the complementary probability. For $\lambda\ll1$ and moderate $m$,
+> $$1-(1-\lambda)^m=\lambda m+O(\lambda^2 m^2),$$
+> explaining the familiar infection rate $F_{z,m}\approx\lambda m$ in [[Binary-state dynamics]].
 
-> [!proposition] SI long-time behaviour
-> On a finite graph with $\lambda>0$, every node in a component containing an initial infection is eventually infected (almost surely). Other components stay susceptible.
+## 2. SI: infection spreads, nobody recovers
 
-> [!theorem] Homogeneous mean-field SI and SIS
-> Ignore correlations and replace degree by $\langle z\rangle$.
-> - **SI:** $\dot\rho=\lambda\langle z\rangle\rho(1-\rho)$, a logistic curve $\rho(t)=\Big[1+\frac{1-\rho_0}{\rho_0}e^{-\lambda\langle z\rangle t}\Big]^{-1}$. Curves collapse when plotted against $\lambda\langle z\rangle t$, for equal $\rho_0$.
-> - **SIS:** $\dot\rho=\lambda\langle z\rangle\rho(1-\rho)-\mu\rho$. The state $\rho=0$ is unstable iff $\lambda\langle z\rangle>\mu$, in which case $\rho^*=1-\dfrac{\mu}{\lambda\langle z\rangle}$.
+> [!proposition] Long-time SI on a finite graph
+> If $\lambda>0$, then with fair random updates, **every vertex in a connected component containing an initial infected node eventually becomes infected almost surely**. Components without initially infected vertices remain susceptible. On a connected graph with at least one infected seed, $\rho(t)\to1$.
 
-> [!theorem] Finite SIS dies out
-> On a finite graph with $\mu>0$ and no external infection, the all-susceptible state is absorbing and reachable from every state. So extinction happens almost surely. A long-lived endemic plateau is **metastable**.
+> [!derivation]- Homogeneous mean-field SI
+> Assume every node has about $c=\langle z\rangle$ neighbours and neighbouring states are independent. The infection gain is proportional to **susceptible fraction** $(1-\rho)$ times **infected-contact density** $c\rho$:
+> $$\dot\rho=\lambda c\rho(1-\rho).$$
+> For $\rho(0)=\rho_0\in(0,1)$, separation of variables gives
+> $$\boxed{\rho(t)=\frac1{1+(\rho_0^{-1}-1)e^{-\lambda ct}}}. $$
+> This **logistic curve** is a continuum approximation to the discrete tutorial simulation; a disconnected graph or correlations can invalidate it.
 
-> [!proof]-
-> From any configuration, the sequence "select each infected node in turn and let it recover" has positive probability and ends at all-S. A finite Markov chain with an absorbing state reachable from everywhere is absorbed almost surely. $\square$
+## 3. SIS: competition between infection and recovery
 
-![[tutorial-11-cell-60-plot-1.png|600]]
+> [!definition] Homogeneous mean-field SIS
+> Add the loss of infected nodes due to recovery:
+> $$\boxed{\dot\rho=\lambda c\rho(1-\rho)-\mu\rho=\rho[\lambda c(1-\rho)-\mu].}$$
+> Its fixed points are $\rho_0^*=0$ and, when positive,
+> $$\boxed{\rho_\mathrm{endemic}^*=1-\frac{\mu}{\lambda c}}.$$
+> Linearising about $\rho=0$ gives $\dot\rho\approx(\lambda c-\mu)\rho$, so the **homogeneous mean-field** persistence condition is
+> $$\boxed{\frac{\lambda}{\mu}>\frac1c\quad\text{(or }\lambda c>\mu\text{)}.}$$
 
-> [!selftest]- Self-test
-> 1. Derive $1-(1-\lambda)^m$.
-> 2. What is the mean-field SIS threshold? — $\lambda\langle z\rangle=\mu$.
-> 3. Why does finite SIS die out? — The all-susceptible state is absorbing.
+![[Assets/w11-si-sis-meanfield.png|760]]
+
+> [!remark] How to interpret the curves
+> The plot solves the **mean-field ODEs**, not a stochastic network simulation. SI approaches full infection; SIS can approach a non-zero **mean-field plateau** above its threshold or decay below it. More accurate degree-heterogeneous epidemic approximations are introduced in [[SIR model and epidemic threshold]].
+
+> [!theorem] Finite SIS always becomes extinct eventually
+> In any **finite** graph, with $\mu>0$ and no external infection, the all-susceptible configuration is **absorbing** (no infected neighbour can start a new infection). It is reachable with positive probability from every configuration; hence SIS reaches it **almost surely**, even when mean-field predicts a stable endemic fraction.
+
+> [!proof]- Why an apparent endemic state can still disappear
+> From any state with $k$ infected nodes, there is a positive-probability sequence of selections in which each currently infected node is selected and recovers before any new infection occurs. That reaches the all-S state. On a finite Markov chain with this absorbing state reachable from every state, absorption happens eventually with probability $1$. A long-lived plateau is therefore **metastable**, not an exact non-zero stationary prevalence of a finite closed SIS system.
+
+## 4. Tutorial algorithm and interpretation
+
+> [!algorithm] Random asynchronous SIS simulation
+> 1. Initialise the graph and the set of infected nodes; choose $\lambda,\mu$.
+> 2. Repeat $N$ times per sweep: select a node uniformly **with replacement**.
+> 3. If S, count infected neighbours and infect with probability $1-(1-\lambda)^m$; if I, recover with probability $\mu$.
+> 4. Update its state **immediately**; record $\rho(t)$ after each sweep.
+> 5. Repeat for several random seeds, graph types and parameters, and interpret plateaux versus extinction separately.
+
+> [!exam] SI versus SIS
+> **SI:** infection is permanent; any initially infected component ultimately becomes all-I (if $\lambda>0$). **SIS:** recovery permits a disease-free absorbing state; a persistent fraction is a **large-population or finite-time** concept. Always distinguish the tutorial's **probabilities per update** from continuous-time **rates**.
+
+> [!selftest]- Check your understanding
+> 1. With two infected neighbours and $\lambda=0.1$, what is the per-update infection probability? — $1-0.9^2=0.19$.
+> 2. For $c=5$, $\lambda=0.02$, $\mu=0.2$, is homogeneous SIS above threshold? — No, since $\lambda c=0.1<0.2$.
+> 3. How can SIS have an endemic mean-field fixed point but certain eventual extinction at finite $N$? — Mean-field neglects fluctuations and the absorbing state.
 
 ---
-Related: [[Binary-state dynamics]] · [[SIR model and epidemic threshold]]
+Related: [[Binary-state dynamics]] · [[SIR model and epidemic threshold]] · [[Threshold model and cascades]]
