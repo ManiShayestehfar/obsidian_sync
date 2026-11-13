@@ -55,14 +55,11 @@ aliases: [Binary dynamics, Voter model, Majority rule, Synchronous update, Async
 
 > [!proof]- Disagreeing-edge potential
 > Let $H$ be the number of edges joining nodes in opposite states. A node flips only when it has **more disagreeing than agreeing neighbours**. If these numbers are $a>b$, then after the flip $H$ changes by $b-a<0$. Thus every actual flip **strictly decreases a non-negative integer**. There are only finitely many flips. Fair random selection eventually updates any remaining unstable node, so the chain settles into a fixed point. This reasoning does **not** apply unchanged to synchronous updates, since many flips occur together.
-
 ## 4. Mean-field idea (optional bridge to Week 12)
 
 > [!derivation]- Degree-class closure
-> Let $\rho_z(t)$ be the fraction of degree-$z$ nodes in state $1$ and $P(z)$ the degree distribution. Under an **uncorrelated, independent-neighbour approximation**, the probability that a neighbour is active is
-> $$\omega(t)=\frac{\sum_z zP(z)\rho_z(t)}{\langle z\rangle}.$$
-> A degree-$z$ node then sees $m$ active neighbours with approximate probability $B_{z,m}(\omega)=\binom zm\omega^m(1-\omega)^{z-m}$. For continuous-time transition rates,
-> $$\dot\rho_z=(1-\rho_z)\sum_mF_{z,m}B_{z,m}(\omega)-\rho_z\sum_mR_{z,m}B_{z,m}(\omega).$$
+> Let $\rho_z(t)$ be the fraction of degree-$z$ nodes in state $1$ and $P(z)$ the degree distribution. Under an **uncorrelated, independent-neighbour approximation**, the probability that a neighbour is active is $$\omega(t)=\frac{\sum_z zP(z)\rho_z(t)}{\langle z\rangle}.$$
+> A degree-$z$ node then sees $m$ active neighbours with approximate probability $B_{z,m}(\omega)=\binom zm\omega^m(1-\omega)^{z-m}$. For continuous-time transition rates, $$\dot\rho_z=(1-\rho_z)\sum_mF_{z,m}B_{z,m}(\omega)-\rho_z\sum_mR_{z,m}B_{z,m}(\omega).$$
 > This **closure assumption**, not an exact network identity, is the reason the full $2^N$-state dynamics becomes a few equations.
 
 > [!exam] Remember
