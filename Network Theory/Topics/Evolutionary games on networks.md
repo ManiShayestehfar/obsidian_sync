@@ -5,76 +5,104 @@ aliases: [Game theory, Prisoner's dilemma, Nash equilibrium, Cooperation on netw
 # Evolutionary games on networks
 
 > [!abstract] Summary
-> A **game** specifies players' actions and payoffs. In the prisoner's dilemma, individuals gain by defecting even though mutual cooperation is better collectively. Put players on a **network**, sum payoffs over neighbours and allow imitation of successful neighbours: cooperation can then survive, particularly around **cooperative hubs** and densely connected groups. These are model-dependent tendencies, not guarantees.
-> Chapter: [[Ch12 Epidemics and games on networks]] · **Week 12**, lecture pp. 160–167.
+> A **game** specifies available actions and their payoffs. The **prisoner's dilemma** illustrates the conflict between the individually optimal choice (defection) and the collective optimum (cooperation). On a network, each node plays its neighbours and may imitate a better-scoring neighbour. The lecture uses this model to explain how **hubs and cooperative neighbourhoods** can support cooperation.
+> Chapter: [[Ch12 Epidemics and games on networks]] · **2026 lecture pp. 160–167** · Jeny pp. 57–59.
 
-## 1. Payoff matrices and two kinds of optimum
+## 1. Actions, payoffs and optimality
 
-> [!definition] A two-player game
-> Each player chooses an action $e\in\mathcal Q$. The payoff matrix $M_{e_i,e_j}$ gives the **row player's payoff** for actions $e_i$ (row) and $e_j$ (column). The other player has its corresponding payoff. A **best response** maximises one player's payoff while holding the other's action fixed.
-> - **Nash equilibrium:** neither player can **strictly improve** their payoff by changing action alone.
-> - **Collective optimum:** the pair of actions maximising the **sum** of their payoffs.
+> [!definition] Two-player game (lecture)
+> A game between players $i$ and $j$ has:
+> 1. a set $\mathcal Q=\{e_1,\ldots,e_{|\mathcal Q|}\}$ of possible actions (strategies);
+> 2. a payoff matrix $M_{e_i,e_j}$, giving the **payoff to the player choosing the row action $e_i$** against an opponent choosing column action $e_j$.
+
+> [!definition] Individual versus collective optimum
+> - **Individually optimal choice / best response:** maximise your own payoff while the opponent's choice is held fixed.
+> - **Collective optimum:** maximise the **sum** of both players' payoffs.
+> - A **Nash equilibrium** is an action pair in which neither player benefits from unilaterally switching strategy.
 >
-> A Nash equilibrium need **not** be collectively optimal.
+> When the best responses produce the collective optimum, the lecture calls this a **win–win** situation. When not, there is a conflict between individual and collective incentives.
 
-> [!example] Classical prisoner's dilemma (lecture)
-> With actions $C$ (cooperate), $D$ (defect), take the following *row-player payoffs* (negative years in prison):
-> $$M=\begin{array}{c|cc} & C&D\\\hline C&-2&-10\\D&0&-5\end{array}.$$
-> If the other cooperates, defecting gives $0>-2$; if the other defects, defecting gives $-5>-10$. Thus **D is strictly dominant**, so $(D,D)$ is the **unique Nash equilibrium**. Yet $(C,C)$ yields total payoff $-4$, better than $-10$ at $(D,D)$.
+## 2. Prisoner's dilemma
 
-> [!remark] What can change the outcome?
-> Regulation changes payoffs; repeating games adds memory; communication changes information. **Network structure** can also change which strategies accumulate high payoffs and therefore get copied.
+> [!example] Classical prisoner’s dilemma (lecture p. 160)
+> Let $C$ mean **cooperate** and $D$ mean **defect**. Taking payoffs to be **minus years in prison**, the row player's matrix is
+> $$M=\begin{array}{c|cc}&C&D\\\hline C&-2&-10\\D&0&-5\end{array}.$$
+> - Against **C**, defecting yields $0>-2$.
+> - Against **D**, defecting yields $-5>-10$.
+> Therefore D is each player's **dominant choice** and $(D,D)$ is the Nash equilibrium, with total payoff $-10$.
+> - But $(C,C)$ gives total payoff $-4$, the **collective optimum**.
 
-## 2. The weak prisoner's dilemma used in network simulations
+> [!remark] Lecture's examples and possible changes
+> Similar tensions arise for **public goods (fishing)**, **arms races** and **advertising competition**. The lecture lists changing payoffs through regulation, **repeated** encounters and increased **communication** as possible mechanisms for cooperation. It then asks whether **network structure itself** can help.
 
-> [!definition] Weak prisoner's dilemma
-> The lecture also uses the simplified payoff matrix
-> $$\boxed{M=\begin{array}{c|cc}&C&D\\\hline C&1&0\\D&b&0\end{array},\qquad 1<b<2.}$$
-> Here $b$ is the **temptation to defect**: against C, D earns $b>1$; against D, both actions earn $0$. Therefore D is **weakly dominant** (not strictly, because the payoffs tie against D). Mutual cooperation gives the highest **total** payoff when $b<2$.
+## 3. Weak prisoner's dilemma used for the network model
 
-## 3. Evolution on a fixed network
-
-> [!definition] Payoff accumulated from neighbours
-> Give each node $i$ a strategy $e_i\in\{C,D\}$. In each round every adjacent pair plays the game; node $i$ receives
-> $$\boxed{S_i=\sum_{j=1}^N A_{ij}M_{e_i,e_j}.}$$
-> This is the **sum** of payoffs from all its edges, not the average. Hence a high-degree node can achieve a large score simply because it plays more games.
-
-> [!algorithm] Network evolutionary-game simulation (lecture rule)
-> 1. **Initialise:** assign C or D to each node (often at random).
-> 2. **Play:** on every edge, evaluate both players' payoffs using the matrix.
-> 3. **Aggregate:** calculate the total score $S_i$ for each node.
-> 4. **Imitate:** each node $i$ chooses one random neighbour $j$ and, if $S_j>S_i$, adopts $j$'s strategy. Otherwise it keeps its own. Specify whether all strategies change **simultaneously** after score calculation or by a chosen asynchronous convention.
-> 5. Repeat and measure the cooperator fraction $\rho_C(t)=N^{-1}\sum_i\mathbf1\{e_i=C\}$.
+> [!definition] Lecture's simplified payoff matrix (p. 162)
+> $$\boxed{M=\begin{array}{c|cc}&C&D\\\hline C&1&0\\D&b&0\end{array},\qquad b>1,\quad\text{example: }b=1.5.}$$
+> Here $b$ is the **temptation to defect**. Against a cooperator, a defector receives $b>1$, while a cooperator receives $1$. Against a defector, both earn $0$ in this simplified model.
 >
-> This is a **dynamical process on a fixed graph**; the links do not change. The outcome can vary with initial states, update details, $b$ and topology.
+> At the lecture's $b=1.5$, $(C,C)$ has total payoff $2$, whereas $(D,C)$ has total payoff $1.5$: mutual cooperation is collectively better, although exploiting a cooperator is individually tempting.
 
-## 4. How cooperative hubs can help
+## 4. Playing the game on a fixed network
 
-![[Assets/w12-game-hubs.png|740]]
+> [!definition] Network payoff (lecture)
+> Each node $i$ adopts an action $e_i\in\{C,D\}$. The game is played on **each edge** in a round, and node $i$ accumulates the **sum**
+> $$\boxed{S_i=\sum_{j=1}^{N}A_{ij}M_{e_i,e_j}.}$$
+> The total payoff generally depends on degree because a high-degree node plays more games. **Do not divide by the degree:** the lecture uses an accumulated score, not an average payoff.
 
-> [!example] Two-hub explanation (lecture toy model)
-> Consider a cooperative hub $x$ joined to five C leaves and one defecting hub $y$. Let $y$ be joined to five D leaves and to $x$. Under the weak prisoner's dilemma:
-> $$S_x=5\cdot1+0=5,\qquad S_y=b+5\cdot0=b.$$
-> At $b=1.5$, $S_x>S_y$, so **if** $y$ samples $x$ as its neighbour, it imitates cooperation. By contrast, in an **initially mixed** neighbourhood with about half the neighbours cooperating, a D hub can initially outscore a C hub because $b>1$. The lecture's narrative is: **C initially struggles, but cooperative neighbourhoods can organise and then outperform D hubs**.
+> [!algorithm] Evolutionary game on a network (lecture pp. 163–164)
+> 1. **Initialise:** assign each node C or D, typically at random.
+> 2. **Play:** each connected pair plays the game; compute $S_i$ for all nodes.
+> 3. **Choose a neighbour:** each node $i$ chooses a random neighbour $j$.
+> 4. **Imitate:** if $S_j>S_i$, node $i$ adopts $j$'s strategy; otherwise it keeps its own.
+> 5. **Repeat** rounds; measure the fraction of cooperators,
+> $$\boxed{\rho_C(t)=\frac1N\sum_{i=1}^{N}\mathbf1\{e_i(t)=C\}.}$$
+> Cooperation **prevails** when $\rho_C(t)\to1$. The lecture's rule is a successful-neighbour imitation rule, not a universal rule for all evolutionary games.
 
-> [!remark] Why degree heterogeneity matters — and its limitation
-> Hubs influence many neighbours, and accumulated scores favour well-connected successful players. An established cooperative hub can create a reinforcing region of cooperation. This helps explain why scale-free networks may sustain cooperation better than homogeneous networks in the lecture's comparison. It does **not** imply that every BA graph or every value of $b$ achieves full cooperation; the result depends on the precise payoff and update rule.
+> [!remark] What the time evolution looks like (lecture p. 164)
+> The lecture's example initially shows $\rho_C(t)$ **falling** (defectors exploit cooperators), then **rising** towards 1. The model outcome depends on the network and the selected game parameters; the plotted trajectory is an example, not a guarantee.
 
-## 5. Beyond static networks
+![[Assets/w12-lecture-cooperation-trajectory.png|660]]
 
-> [!definition] Co-evolution
-> The models above keep the adjacency matrix $A$ fixed and evolve only strategies. **Co-evolutionary** models allow strategies **and** connections to change, for instance by breaking links with defectors or forming links with cooperators. This is an extension, not part of the basic simulation.
+![[Assets/w12-lecture-cooperation-comparison.png|660]]
 
-> [!exam] Remember
-> - **Nash:** no player benefits from changing **alone**; **collective optimum:** maximum **sum**.
-> - **Lecture game:** $S_i=\sum_jA_{ij}M_{e_i,e_j}$, then imitation of a better-scoring neighbour.
-> - **Weak** prisoner's dilemma has ties against D; don't call D **strictly** dominant.
-> - **Hubs and cooperative clusters** can help, but are not a universal proof of cooperation.
+> [!note] How to read the lecture's comparison
+> The lecturer reproduces a study comparing **scale-free networks (red squares)** with **regular networks (black circles)** for two network sizes. The **left column** is the prisoner's dilemma (horizontal variable $b$); the **right column** is the snowdrift game (horizontal variable $r$, introduced in the figure but not mathematically developed in the lecture). Both illustrate that **degree variability can favour cooperation** in these models. These are simulation results, not a proof that all networks with hubs cooperate.
 
-> [!selftest]- Check your understanding
-> 1. Why is $(D,D)$ a Nash equilibrium in the classical prisoner’s dilemma? — D is each player's strict best response to D.
-> 2. If a C node has $4$ C neighbours and $3$ D neighbours in the weak game, what is its payoff? — $4$.
-> 3. Why can the outcome depend on network topology even with identical payoffs? — The topology determines interaction partners, cumulative scores and imitation opportunities.
+## 5. Why hubs can help: the lecture's two-hub explanation
+
+![[Assets/w12-game-hubs.png|650]]
+
+> [!example] Two interconnected hubs $x$ and $y$ (lecture pp. 165–166; Jeny pp. 58–59)
+> Let $x$ be a **cooperator** (C) and $y$ a **defector** (D), with approximately equal degree $z$, and suppose they are linked.
+>
+> **Initially:** their neighbours are roughly half C and half D, giving
+> $$S_x\approx\frac z2,\qquad S_y\approx b\frac z2.$$
+> Since $b>1$, the defecting hub initially scores more. However, hub $x$ switches to D in the lecture's imitation step **only if it chooses $y$** (or another better-scoring D neighbour); if $y$ is its only relevant D rival, that chance is roughly $1/z$.
+>
+> **At an intermediate stage:** suppose $x$'s other $z-1$ neighbours are C, and $y$'s other $z-1$ neighbours are D. Then
+> $$\boxed{S_x=z-1,\qquad S_y=b.}$$
+> If $z-1>b$, the cooperative hub now has the higher payoff. When $y$ selects $x$, it imitates C; cooperation can spread from the cluster around $x$.
+>
+> **Main idea:** a group of cooperating neighbours can reinforce one another's payoffs. High-degree nodes can support this process, helping explain the lecture's scale-free versus regular-network comparison.
+
+## 6. Beyond the fixed-network game
+
+> [!remark] Co-evolution (brief closing remark, lecture p. 167)
+> So far, **strategies evolve** while the network $A$ stays fixed. The lecture briefly mentions **co-evolution**: strategies and network connections may both change. No additional co-evolution algorithm is derived in the provided lecture notes.
+
+> [!exam] Essential points
+> - Distinguish **individual** and **collective** optima and calculate them from a payoff matrix.
+> - For the lecture's classical game, $(D,D)$ is Nash, but $(C,C)$ is collectively best.
+> - Know the weak game $M$ with temptation $b$.
+> - Be able to compute $S_i=\sum_j A_{ij}M_{e_i,e_j}$ and apply the **successful-neighbour imitation** rule.
+> - Explain the **two-hub payoff reversal** from $z/2$ versus $bz/2$ to $z-1$ versus $b$.
+
+> [!selftest]- Quick checks
+> 1. In the weak game, what does D earn from a C neighbour? — $b$.
+> 2. A cooperator has 4 C neighbours and 3 D neighbours. What is its score? — $4$.
+> 3. Why is using the *sum*, rather than the average, important? — Degree affects the total score and the success of hubs.
+> 4. Is the toy model a proof that every scale-free network reaches full cooperation? — No; it explains the lecture's observed mechanism.
 
 ---
 Related: [[Binary-state dynamics]] · [[Power laws]] · [[Community detection]]

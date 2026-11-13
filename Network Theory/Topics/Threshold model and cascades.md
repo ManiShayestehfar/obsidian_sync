@@ -5,76 +5,102 @@ aliases: [Threshold model, Watts cascade model, Vulnerable nodes, Global cascade
 # Threshold model and cascades
 
 > [!abstract] Summary
-> Adoption spreads when the **fraction** of active neighbours exceeds a node-specific threshold. A node is **vulnerable** when **one** active neighbour suffices. Vulnerable nodes can pass activity along paths; if they contain a giant connected component, even a very small seed can trigger a macroscopic cascade with positive probability.
-> Chapter: [[Ch11 Cascades and binary models]] · **Week 11**, lecture pp. 148–150; Tutorial 11 §2.
+> The **Watts threshold model** describes innovation or failure spreading: a node adopts when the fraction of its adopting neighbours is **strictly greater** than its threshold. A node is *vulnerable* if one active neighbour suffices. Large connected components of vulnerable nodes provide a mechanism for **global cascades**.
+> Chapter: [[Ch11 Cascades and binary models]] · **2026 lecture pp. 148–150** · **Tutorial 11, Section 2** · Jeny pp. 52–53.
 
-## 1. Mechanism: individual adoption thresholds
+## 1. Motivation and definition
 
-> [!definition] Watts threshold model
-> Let $\phi_i(t)\in\{0,1\}$ denote whether node $i$ has adopted. Set $m_i(t)=\sum_jA_{ij}\phi_j(t)$ and fix a threshold $q_i\in[0,1]$ for each node. The **permanent-adoption** rule used in the tutorial is
-> $$\boxed{\phi_i(t+1)=\phi_i(t)\;\lor\;\mathbf1\!\left\{\frac{m_i(t)}{z_i}>q_i\right\},\qquad z_i>0.}$$
-> A small initial seed set (innovators) is active at $t=0$; adopted nodes **stay** adopted. Isolated inactive nodes cannot be activated by neighbours. We study $\rho_\infty=\lim_{t\to\infty}N^{-1}\sum_i\phi_i(t)$.
+Examples from the lecture include **power-grid blackouts**, **adoption of innovations** and **spreading of memes**. The central question is: *Can a small number of initially active nodes trigger a macroscopic response?*
 
-> [!example] A fixed threshold $q=0.4$
-> - Degree $2$, one active neighbour: $1/2>0.4$, so **adopts**.
-> - Degree $3$, one active neighbour: $1/3<0.4$, so **does not adopt yet**.
-> - Degree $3$, two active neighbours: $2/3>0.4$, so **adopts**.
+> [!definition] Watts threshold model (2002)
+> Start with $\phi_i(0)=0$ for almost all nodes, apart from a small set of **innovators** (seeds). For node $i$, let $k_i$ be its degree and $m_i(t)$ its number of adopting neighbours. Its personal threshold $q_i$ is fixed in time.
+> $$\boxed{\phi_i(t+1)=\begin{cases}1,&m_i(t)/k_i>q_i,\\0,&\text{otherwise},\end{cases}}$$
+> with the **irreversible-adoption convention** of Tutorial 11: once $\phi_i=1$, it stays 1. A seed is kept active; an isolated non-seed node cannot activate.
 >
-> **High degree can make a node *harder* to activate by one neighbour**, even though it may have many active neighbours in total.
+> In the heterogeneous model, thresholds are sampled independently from a density $f(q)$, with cumulative distribution $F(q)=\Pr(q_i\le q)=\int_0^qf(x)\,dx$.
 
-![[Assets/w11-threshold-cascade.png|730]]
+> [!remark] Two distinct probabilities
+> $p$ may denote the **link probability** in an ER graph $G(N,p)$; $q_i$ is a **node's adoption threshold**. Increasing $p$ changes the network. Increasing $q_i$ makes adoption more difficult.
 
-> [!remark] Read the example
-> The left and right panels have exactly the same graph and initial adopter $0$; only the common threshold changes. Node $2$ has degree $3$. A single adopter in its neighbourhood is enough at $q=0.25$ but insufficient at $q=0.40$, so the latter cascade stops after two nodes.
+## 2. How a cascade propagates
 
-## 2. Vulnerable nodes
-
-> [!definition] Vulnerability
-> A degree-$z$ node is **vulnerable** if a *single* active neighbour would trigger adoption:
-> $$\boxed{q_i<\frac1z.}$$
-> If thresholds are independent of degrees with cumulative distribution $F(q)$, the degree-dependent vulnerability probability is
-> $$v_z=\Pr(q_i<1/z)=F(1/z^-),$$
-> where the left limit records the **strict inequality**. For a continuous threshold distribution, this equals $F(1/z)$. The fraction of all nodes both degree $z$ and vulnerable is $P(z)v_z$.
-
-> [!remark] Why one vulnerable node is not enough
-> A chain of vulnerable vertices transmits adoption from a single activated neighbour at every step. A **giant vulnerable component** provides the possibility of a **global cascade**, provided the seeds reach it. Non-vulnerable nodes can also activate later from two or more active neighbours, so the final cascade need not equal the vulnerable component.
-
-## 3. Derive the vulnerable-cluster criterion
-
-> [!theorem] Vulnerable branching condition (uncorrelated random graph)
-> Suppose the underlying random graph is locally tree-like, and vulnerability depends only on original degree. Following a random edge reaches degree $z$ with probability $zP(z)/\langle z\rangle$; the reached node is vulnerable with probability $v_z$ and offers $z-1$ new edges. Hence
-> $$\boxed{R_v=\frac{\sum_z z(z-1)P(z)v_z}{\langle z\rangle}>1}$$
-> is the supercritical condition for a giant **vulnerable connected component**, and therefore a route to cascades from rare seeds.
-
-> [!derivation]- Why the denominator matters
-> The expected number of *vulnerable onward branches* reached from a random edge is $\sum_z[zP(z)/\langle z\rangle]\,v_z\,(z-1)$. The denominator is the mean degree of the **entire original network**, since the randomly followed edge may lead to a node that is *not vulnerable*.
+> [!example] Lecture example: $q_i=0.4$
+> - A node with $k_i=2$ and $m_i=1$ adopts because $1/2>0.4$.
+> - A node with $k_i=3$ and $m_i=1$ **does not** adopt because $1/3<0.4$.
+> - The node of degree 3 can adopt later if **two** neighbours become active, since $2/3>0.4$.
 >
-> **Lecture shorthand versus precise formula:** the lecture motivates this using the moment ratio of vulnerable nodes, $\sum z^2v_zP(z)/\sum zv_zP(z)>2$. That ratio treats the original degrees as if they were degrees **inside the induced vulnerable graph** and is not generally the correct site-percolation test. For a measured vulnerable **induced subgraph**, use its *actual internal degrees* to apply a Molloy–Reed approximation; for the original configuration-model ensemble use $R_v>1$ above.
+> This explains how a cascade may travel along a chain of low-degree nodes and stop at a high-degree node.
 
-## 4. Why cascades appear only in a window
+![[Assets/w11-threshold-cascade.png|670]]
 
-> [!remark] Sparse versus dense random graphs (Tutorial 11)
-> - **Very sparse:** many nodes are easy to activate, but the graph has no large connected structure to carry a cascade.
-> - **Intermediate degree:** enough connections exist, and plenty of vertices remain vulnerable — global cascades are possible.
-> - **Very dense:** $1/z$ is small, making most nodes **not vulnerable**; a single seed often cannot start a large cascade.
+> [!algorithm] Simulate the threshold model (Tutorial 11)
+> 1. Construct a graph and mark an innovator as active.
+> 2. Select an inactive node (or compute all candidates for a synchronous step).
+> 3. Count its active neighbours $m_i$ and evaluate $m_i/k_i>q_i$.
+> 4. If the inequality holds, change $\phi_i$ to 1 **permanently**.
+> 5. Continue until **no inactive node is eligible** to adopt. A sweep with no observed changes is not, by itself, proof of completion under random selection.
 >
-> Thus adding more edges can first **help** spreading and then **suppress** single-seed cascades.
+> The output is $\rho(t)=N^{-1}\sum_i\phi_i(t)$ and its final value.
 
-> [!algorithm] Simulating permanent threshold adoption
-> 1. Choose a fixed graph, thresholds $q_i$, and initial active seeds.
-> 2. Examine inactive nodes and compute their **current** active-neighbour fraction $m_i/z_i$.
-> 3. Activate those satisfying the strict inequality; never deactivate an adopted node.
-> 4. Repeat fairly until a complete pass causes no new adoption. Return $\rho_\infty$.
+> [!definition] Global cascade
+> In the large-network limit, $\rho_\infty>0$ indicates a **global cascade** (a non-vanishing fraction of nodes activated); $\rho_\infty=0$ indicates no macroscopic cascade. For **Exercise 2.1 only**, the notebook operationally calls a *finite* cascade **large** if at least half the nodes activate.
+
+## 3. Vulnerability and the percolation connection
+
+> [!definition] Vulnerable node
+> A degree-$k_i>0$ node is **vulnerable** if one adopting neighbour is already sufficient:
+> $$\boxed{\frac1{k_i}>q_i.}$$
+> The strict inequality matters. For instance, if $q=0.2$, a degree-4 node is vulnerable ($1/4>0.2$), whereas a degree-5 node is **not** ($1/5=0.2$).
+
+> [!proposition] Vulnerability by degree (lecture)
+> For a graph with degree distribution $P(k)$, let $\rho_k$ denote the probability that a degree-$k$ node is vulnerable:
+> $$\rho_k=\Pr(q_i<1/k)=F(1/k)\quad\text{for a continuous threshold distribution}. $$
+> Therefore $\rho_kP(k)$ is the **fraction of all nodes** that are both degree $k$ and vulnerable. Larger $k$ makes the one-neighbour fraction $1/k$ smaller, so vulnerability generally becomes less likely.
+
+> [!remark] Why percolation enters
+> A connected component made of vulnerable nodes can propagate activation **from a single activated entry point**: each vulnerable node needs only one active neighbour. Hence a *giant vulnerable component* is a **sufficient mechanism for a global cascade**, provided an initial innovator reaches it.
 >
-> Synchronous and fair asynchronous updates may have different **trajectories**, but for this monotone fixed-threshold rule they reach the same smallest final active set containing the seeds.
+> This does **not** mean a large vulnerable component guarantees a cascade from *every* innovator. Adoption can also spread beyond the vulnerable set once non-vulnerable nodes receive several active neighbours.
 
-> [!exam] Remember
-> **Threshold is a proportion, not a count.** Vulnerable means $1/z>q$; for fixed $q$, vulnerability changes at $q=1/z$. The giant **vulnerable** component explains why a tiny seed can sometimes trigger a macroscopic cascade, not why *every* seed must do so.
+## 4. Course's moment-ratio test and how the tutorial uses it
 
-> [!selftest]- Check your understanding
-> 1. At $q=0.2$, is a degree-$5$ node vulnerable? — **No**, because $1/5>0.2$ is false.
-> 2. Why is there no global cascade in an extremely sparse graph, even with many vulnerable nodes? — They are not in a giant connected set.
-> 3. Can a non-vulnerable vertex ever activate? — Yes, after multiple neighbours adopt.
+> [!proposition] Lecture's degree-moment comparison
+> Writing $\rho_kP(k)$ for vulnerable-node frequencies, the Week 11 lecture relates the vulnerable-node test to Week 10's giant-component criterion and displays
+> $$\frac{\langle k^2\rangle_{\mathrm{vuln}}}{\langle k\rangle_{\mathrm{vuln}}}=\frac{\sum_k k^2\rho_kP(k)}{\sum_k k\rho_kP(k)}>2.$$
+> **Read this as the lecture's heuristic comparison.** The $k$ in the displayed sum is the **original degree**; by itself, this expression is **not** the internal-degree moment ratio of the network remaining after removing non-vulnerable nodes.
+
+> [!algorithm] Operational test in Tutorial 11, Exercise 2.2
+> 1. On the **original graph**, find every vulnerable node using its **original** degree $k_i$ and $1/k_i>q$.
+> 2. Remove the non-vulnerable nodes; retain the **induced subgraph** on vulnerable nodes.
+> 3. Recompute the degrees $k'_i$ **inside this induced subgraph**.
+> 4. Calculate its largest component size $K_1/N$, normalised by the **original** $N$.
+> 5. Calculate $\langle (k')^2\rangle/\langle k'\rangle$ from these **new degrees**, compare with the reference value 2, and compare the result to actual simulated cascades.
+>
+> **Do not interchange the two degree conventions.** The tutorial's computed quantity and the lecture's weighted original-degree expression are not automatically equal.
+
+![[Assets/w11-vulnerable-subgraph.png|710]]
+
+> [!remark] Why the plots jump with $q$
+> For common threshold $q$, node $i$ changes from vulnerable to non-vulnerable at $q=1/k_i$. Degrees are integers, so the vulnerable set changes in **steps**, not continuously. Removing a few key vulnerable nodes can abruptly split a large component.
+
+## 5. What Tutorial 11 asks you to investigate
+
+> [!exam] Exercise 2.1 — simulation
+> The notebook uses an ER graph $G(N,p)$ with $N=500$ and a small set of innovators (in the supplied code, **one** innovator). Investigate:
+> - fixed $p=0.01$: whether a cascade is large at $q=0.15$;
+> - what happens as $q$ increases, and where a large cascade disappears;
+> - at fixed $q$, how changing $p$ changes cascade size (the notebook suggests $0\le p\le0.03$).
+>
+> **Interpretation:** Raising $q$ inhibits adoption. Raising $p$ can initially aid spreading by adding connections but can also reduce vulnerability by raising degrees. Do not assume larger $p$ always causes a larger cascade.
+
+> [!exam] Exercise 2.2 — vulnerability versus actual cascades
+> Vary $q$ over $0<q<0.3$ on the same graph. Compare the final active fraction, $K_1/N$ of the vulnerable graph, and its internal-degree moment ratio. The threshold $\langle(k')^2\rangle/\langle k'\rangle=2$ is the **reference**, not a promise that every finite sample changes sharply at exactly that point.
+
+> [!selftest]- Quick checks
+> 1. $q=0.2$ and $k=5$: vulnerable? — **No**, because $1/5=0.2$ does not satisfy a strict $>$.
+> 2. What is a global cascade? — A positive fraction of nodes ultimately adopts as $N\to\infty$.
+> 3. Why does $K_1/N$ sometimes jump at a specific $q$? — Vulnerability changes at the discrete values $q=1/k$.
+> 4. Which degree is used to decide vulnerability? Which for the tutorial's moment ratio? — **Original** degree; then **induced-subgraph** degree.
 
 ---
-Related: [[Binary-state dynamics]] · [[Percolation and robustness]] · [[Configuration model]] · [[SI and SIS models]]
+Related: [[Binary-state dynamics]] · [[Percolation and robustness]] · [[SI and SIS models]] · [[Configuration model]]

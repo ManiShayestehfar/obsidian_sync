@@ -5,70 +5,113 @@ aliases: [Binary dynamics, Voter model, Majority rule, Synchronous update, Async
 # Binary-state dynamics on networks
 
 > [!abstract] Summary
-> Here the **graph is fixed**, but each node has a changing binary state $\phi_i\in\{0,1\}$. Local rules determine state changes, and the **update schedule** can change the outcome. The same framework includes voter, majority, threshold and epidemic dynamics; distinguish **transition rates** (continuous time) from **per-update probabilities** (discrete simulation).
-> Chapter: [[Ch11 Cascades and binary models]] · **Week 11**, lecture pp. 144–147; Tutorial 11 §1.
+> **Week 11 starts with a fixed network and states that evolve on it.** For binary states $\phi_i\in\{0,1\}$, the probability of changing state depends on a node's degree $k_i$ and its number $m_i$ of active neighbours. The **update rule and update schedule** must both be specified: synchronous and asynchronous dynamics can have different long-time outcomes.
+> Chapter: [[Ch11 Cascades and binary models]] · **2026 lecture pp. 144–147** · **Tutorial 11, Section 1** · Jeny pp. 51–52.
 
-## 1. General binary-state framework
+## 1. From a network to a dynamical system
 
-> [!definition] States, neighbourhood counts and transitions
-> For an undirected graph with adjacency matrix $A$, let
-> $$\phi_i(t)\in\{0,1\},\qquad z_i=\sum_jA_{ij},\qquad m_i(t)=\sum_jA_{ij}\phi_j(t).$$
-> Thus $m_i$ is the number of neighbours of node $i$ presently in state $1$. In a **continuous-time** model, let $F_{z,m}$ denote the rate $0\to1$ and $R_{z,m}$ the rate $1\to0$. The principal observable is
-> $$\rho(t)=\frac1N\sum_i\phi_i(t),$$
-> the fraction in state $1$. It may settle, oscillate or fluctuate; a constant fraction does **not** imply the node states are unchanged.
-
-| Rule (interpretation) | $0\to1$ | $1\to0$ |
-|---|---|---|
-| **SI** (infection only) | rate $\lambda m$ | $0$ |
-| **SIS** (infection and recovery) | rate $\lambda m$ | rate $\mu$ |
-| **Voter** (copy random neighbour) | probability $m/z$ | probability $(z-m)/z$ |
-| **Strict majority** (adopt majority) | switch if $m>z/2$ | switch if $m<z/2$ |
-| **Permanent threshold adoption** | activate if $m/z>q_i$ | $0$ |
-
-> [!remark] These rows have different time conventions
-> SI and SIS rates are *continuous-time* descriptions (or small-step approximations). Voter and majority rules here specify the outcome of a **node-selection update**. For isolated nodes, $m/z$ is undefined; specify an explicit convention, normally **no change**. See [[SI and SIS models]] and [[Threshold model and cascades]].
-
-## 2. Update order is part of the model
-
-> [!definition] Synchronous versus asynchronous
-> - **Synchronous:** update *all* nodes simultaneously using the same previous-time configuration.
-> - **Asynchronous random:** choose one node uniformly, update its state, and repeat; one **sweep** means $N$ selections. Choices are usually with replacement.
-> - **Asynchronous sequential / random permutation:** visit nodes one at a time in a specified or reshuffled order, updating the current configuration after each move.
+> [!definition] Network, states and transitions
+> Let $g$ be a sparse, simple graph on $N$ nodes, with adjacency matrix $A$ and node degrees $k_i=\sum_j A_{ij}$. Assign node $i$ the binary state $\phi_i(t)\in\{0,1\}$. Define
+> $$m_i(t)=\sum_{j=1}^N A_{ij}\phi_j(t),\qquad 0\le m_i\le k_i.$$
+> Thus $m_i$ counts the **neighbours in state 1**, not all active nodes in the network.
 >
-> In random-with-replacement sweeps, a particular node is not selected with probability $(1-1/N)^N\to e^{-1}$; therefore **one sweep does not guarantee one update per node**.
+> The binary-state framework uses transition rates (or probabilities, for discrete updates)
+> $$\boxed{0\xrightarrow{\,F_{k,m}\,}1,\qquad 1\xrightarrow{\,R_{k,m}\,}0.}$$
+> The functions $F_{k,m}$ and $R_{k,m}$ encode the particular model.
 
-![[Assets/w11-update-schedules.png|710]]
+> [!definition] Main observable
+> The fraction of nodes in state 1 is
+> $$\boxed{\rho(t)=\frac1N\sum_{i=1}^N\phi_i(t)}.$$
+> We investigate the evolution of $\rho(t)$ and, when it exists, the long-time value $\rho_\infty=\lim_{t\to\infty}\rho(t)$. **The same $\rho$ can correspond to different network configurations.**
 
-> [!example] Why synchronous majority can oscillate
-> Two linked nodes in states $(0,1)$ each see the opposite value. Updating both simultaneously gives $(0,1)\to(1,0)\to(0,1)\to\cdots$, a **period-two cycle** with $\rho=1/2$. If node $1$ is updated first asynchronously, $(0,1)\to(1,1)$, an absorbing consensus. The model rule alone does not determine the outcome: the **schedule matters**.
+## 2. Models using the same framework
 
-## 3. Long-time outcomes and a useful convergence argument
+| Model | What state 1 represents | $0\to1$: $F_{k,m}$ | $1\to0$: $R_{k,m}$ |
+|---|---|---|---|
+| **SI** | Infected | Infection through infected neighbours | $0$ (no recovery) |
+| **SIS** | Infected | Infection through infected neighbours | Recovery at rate $\mu$ |
+| **Voter** | Opinion 1 | $m/k$ | $(k-m)/k$ |
+| **Majority rule** | Opinion 1 | Choose the majority opinion | Choose the majority opinion |
+| **Threshold** | Adopted an innovation | Adopt when $m/k>q_i$ | $0$ (irreversible adoption) |
 
-> [!definition] Attractors and terminology
-> - **Consensus:** all nodes are $0$, or all are $1$.
-> - **Mixed fixed point:** some $0$ and some $1$ remain, but no selected node would change.
-> - **Cycle:** repeated configurations under synchronous deterministic updates.
-> - **Stochastic consensus:** many finite voter-model realisations eventually reach consensus, but the winning opinion is random.
+> [!remark] Interpret the table carefully
+> - For the **voter model**, a node copies a uniformly chosen neighbour. Consequently, a 0-node switches with probability $m/k$; a 1-node switches with probability $(k-m)/k$.
+> - In **majority rule**, the node takes the strict majority of its neighbours' states. The Tutorial 11 convention is to **retain the current state on a tie**.
+> - The SIS/SI **continuous-time rates** used in the Week 12 lecture and the **per-selection probabilities** used in Tutorial 11 are different conventions: see [[SI and SIS models]].
+> - An isolated node ($k=0$) requires a convention; in the tutorial, it retains its state under majority and cannot be newly activated by the threshold rule.
 
-> [!theorem] Strict asynchronous majority reaches a fixed point
-> On a **finite undirected graph**, use the deterministic strict-majority rule, with ties leaving the node unchanged. If nodes are selected fairly (e.g. independently and uniformly), the process reaches a fixed point **almost surely**, possibly a mixed one.
+![[Assets/w11-lecture-binary-table-crop.png|740]]
+^binary-lecture-table
 
-> [!proof]- Disagreeing-edge potential
-> Let $H$ be the number of edges joining nodes in opposite states. A node flips only when it has **more disagreeing than agreeing neighbours**. If these numbers are $a>b$, then after the flip $H$ changes by $b-a<0$. Thus every actual flip **strictly decreases a non-negative integer**. There are only finitely many flips. Fair random selection eventually updates any remaining unstable node, so the chain settles into a fixed point. This reasoning does **not** apply unchanged to synchronous updates, since many flips occur together.
-## 4. Mean-field idea (optional bridge to Week 12)
+> [!note] Reading the lecturer's comparison table
+> Lecture p. 146 shows several processes in the $F$/$R$ framework. The key exam skill is **recognising the transition rule**, not memorising every entry in the literature table.
 
-> [!derivation]- Degree-class closure
-> Let $\rho_z(t)$ be the fraction of degree-$z$ nodes in state $1$ and $P(z)$ the degree distribution. Under an **uncorrelated, independent-neighbour approximation**, the probability that a neighbour is active is $$\omega(t)=\frac{\sum_z zP(z)\rho_z(t)}{\langle z\rangle}.$$
-> A degree-$z$ node then sees $m$ active neighbours with approximate probability $B_{z,m}(\omega)=\binom zm\omega^m(1-\omega)^{z-m}$. For continuous-time transition rates, $$\dot\rho_z=(1-\rho_z)\sum_mF_{z,m}B_{z,m}(\omega)-\rho_z\sum_mR_{z,m}B_{z,m}(\omega).$$
-> This **closure assumption**, not an exact network identity, is the reason the full $2^N$-state dynamics becomes a few equations.
+## 3. Updating states: an essential modelling choice
 
-> [!exam] Remember
-> To describe a dynamical network model completely, state its **states, local transition rule, time convention, update order and measured observable**. For majority dynamics, *fixed $\rho$* does not mean *fixed configuration*.
+> [!algorithm] Synchronous update — **all at once**
+> 1. Start from the current vector $\phi(t)$.
+> 2. Compute each proposed $\phi_i(t+1)$ from the **same old configuration** $\phi(t)$.
+> 3. Replace all states simultaneously.
+>
+> The order in which the proposals are calculated does not change the outcome of this step.
 
-> [!selftest]- Check your understanding
-> 1. Why can one random asynchronous sweep leave some nodes unselected? — Sampling is with replacement.
-> 2. Is a majority-rule mixed fixed point possible? — Yes; each node may agree with a local majority without global consensus.
-> 3. What quantity decreases on each strict-majority asynchronous flip? — The number of disagreeing edges.
+> [!algorithm] Random asynchronous update — **one at a time** (Tutorial 11)
+> 1. Select a node $i$ uniformly at random, **with replacement**.
+> 2. Compute its new state using the **current** states of its neighbours.
+> 3. Change only node $i$.
+> 4. Repeat $N$ selections to obtain **one sweep**; repeat sweeps as required.
+>
+> A node may be selected several times, or not at all, within one sweep. **Sequential** and **random-permutation** asynchronous updating are other choices mentioned in the lecture.
+
+> [!remark] Comparing time conventions
+> One synchronous step updates all $N$ nodes; one asynchronous sweep makes $N$ *attempted* single-node updates. In the lecture's notation, $N\Delta t'=\Delta t$. In a random sweep, the probability that a specified node is never selected is $(1-1/N)^N\to e^{-1}$.
+
+![[Assets/w11-update-schedules.png|640]]
+
+## 4. Majority-rule dynamics and long-time outcomes
+
+> [!definition] Strict majority with ties unchanged (Tutorial 11)
+> If $m_i$ of the $k_i$ neighbours are in state 1, the proposed state is
+> $$\phi_i^{\mathrm{new}}=\begin{cases}1,&2m_i>k_i,\\0,&2m_i<k_i,\\\phi_i,&2m_i=k_i.\end{cases}$$
+
+> [!example] Why the update schedule matters
+> On a single edge, take initial states $(0,1)$. Synchronous majority makes both nodes copy their neighbour:
+> $$(0,1)\longrightarrow(1,0)\longrightarrow(0,1)\longrightarrow\cdots.$$
+> This is a **period-two cycle**, with $\rho(t)=1/2$ throughout. Under asynchronous updating, the first node chosen copies the other, giving $(0,0)$ or $(1,1)$: **consensus**.
+
+> [!definition] Classifying simulation outcomes (Tutorial 11, Exercise 1.1)
+> - **Consensus:** all nodes are 0, or all are 1.
+> - **Mixed fixed point:** both states occur, but no node changes on further updates.
+> - **Oscillatory/cyclic behaviour:** configurations repeat without settling (possible under synchronous updates).
+>
+> **Do not infer a fixed point just because $\rho(t)$ is constant.** Inspect the node states, or check the transition rule.
+
+## 5. Degree-class approximation (Jeny's Week 11 notes)
+
+> [!remark] Motivation and assumption
+> Simulating each node separately becomes expensive for large networks. Jeny presents a **degree-class mean-field approximation**: instead of tracking every $\phi_i$, track $\rho_k(t)$, the fraction of degree-$k$ nodes in state 1. Approximate the states of a node's neighbours as independent.
+>
+> The probability that a random *neighbour* is in state 1 is
+> $$\omega(t)=\frac{\sum_k kP(k)\rho_k(t)}{\langle k\rangle}.$$
+> Under the independence assumption, the number $m$ of active neighbours of a degree-$k$ node follows
+> $$B_{k,m}(\omega)=\binom{k}{m}\omega^m(1-\omega)^{k-m}.$$
+
+> [!proposition] Mean-field equation (as presented by Jeny)
+> $$\boxed{\frac{d\rho_k}{dt}=(1-\rho_k)\sum_{m=0}^{k}F_{k,m}B_{k,m}(\omega)-\rho_k\sum_{m=0}^{k}R_{k,m}B_{k,m}(\omega).}$$
+> **Meaning:** rate entering state 1 minus rate leaving state 1. The binomial factor averages over the number of active neighbours. This is an **approximation**, not an exact equation for a fixed graph.
+
+> [!exam] Essential distinctions
+> 1. **Graph structure:** $A_{ij}$ and $k_i$ specify who interacts.
+> 2. **Local influence:** $m_i=\sum_jA_{ij}\phi_j$.
+> 3. **Transition model:** $F_{k,m}$ and $R_{k,m}$ specify what can happen.
+> 4. **Update schedule:** simultaneous versus one-node-at-a-time updates specify when it happens.
+> 5. **Outcome:** consensus, mixed fixed point, or cycle; $\rho(t)$ alone may not distinguish them.
+
+> [!selftest]- Quick checks
+> 1. In a voter model, why is $F_{k,m}=m/k$? — A uniform neighbour is in state 1 with probability $m/k$.
+> 2. With 4 neighbours, 2 active, and a strict-majority rule, what happens? — A tie; retain the current state.
+> 3. What is the difference between one asynchronous *update* and one *sweep*? — One selected node versus $N$ selections.
+> 4. Can $\rho(t)$ stay constant while the configuration changes? — Yes; the two-node synchronous cycle is an example.
 
 ---
 Related: [[Threshold model and cascades]] · [[SI and SIS models]] · [[SIR model and epidemic threshold]] · [[Evolutionary games on networks]]
